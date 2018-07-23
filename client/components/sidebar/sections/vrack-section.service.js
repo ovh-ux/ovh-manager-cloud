@@ -24,9 +24,9 @@ class VrackSectionSidebarService {
     }
 
     createSection (vrackProducts) {
-        if (vrackProducts && _.isArray(vrackProducts)) {
+        if (vrackProducts) {
             // save vRacks belonging to logged in user to be used later
-            this.vRacks.resolve(vrackProducts[0]);
+            this.vRacks.resolve(_.get(vrackProducts, "VRACK", []));
         }
         // All PaaS (Platform as a Service) main item
         const vrackMenuSection = this.SidebarMenu.addMenuItem({

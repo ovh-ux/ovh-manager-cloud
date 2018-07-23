@@ -1,7 +1,6 @@
 "use strict";
-
 angular.module("managerApp")
-    .directive("hterm", hterm => ({
+    .directive("hterm", $interval => ({
         restrict: "EA",
         scope: {
             sendData: "&",
@@ -10,28 +9,25 @@ angular.module("managerApp")
         },
         link: (scope, element) => {
 
-            const term = scope.term || new hterm.Terminal();
-            term.getPrefs().set("send-encoding", "raw");
+            Terminal.applyAddon(fit);
+            const term = scope.term || new Terminal();
 
-            term.onTerminalReady = function () {
-                const io = term.io.push();
+            term.on("data", data => {
+                scope.sendData({ data });
+            });
 
-                io.onVTKeystroke = function (str) {
-                    scope.sendData({ data: str });
-                };
+            term.on("resize", size => scope.sendConfig({ config: {
+                columns: size.cols,
+                rows: size.rows
+            } }));
 
-                io.sendString = io.onVTKeystroke;
 
-                io.onTerminalResize = function (columns, rows) {
-                    scope.sendConfig({ config: {
-                        columns,
-                        rows
-                    } });
-                };
-
-                term.installKeyboard();
-                scope.term = term;
-            };
-            term.decorate(element.context);
+            term.open(element.context);
+            const interval = $interval(() => {
+                term.fit();
+            }, 600);
+            scope.$on("$destroy", () => {
+                interval.cancel();
+            });
         }
     }));

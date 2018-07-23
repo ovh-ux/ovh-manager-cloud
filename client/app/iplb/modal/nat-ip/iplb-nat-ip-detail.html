@@ -1,16 +1,11 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="IpLoadBalancerNatIpDetailCtrl.dismiss()"></cui-modal-header>
-    <cui-modal-body data-title=":: 'iplb_modal_nat_ip_title' | translate">
-        <oui-spinner data-ng-if="IpLoadBalancerNatIpDetailCtrl.isModalLoading()"></oui-spinner>
-        <div data-ng-if="!IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
-            <cui-modal-text data-text="'iplb_modal_nat_ip_description' | translate"></cui-modal-text>
-
-            <div data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-                <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
-                    <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
-                    <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
-                </div>
-            </div>
+<oui-modal
+    data-title="{{ ::'iplb_modal_nat_ip_title' | translate }}"
+    data-on-dismiss="IpLoadBalancerNatIpDetailCtrl.dismiss()"
+    data-loading="IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
+        <p class="oui-modal__text" data-translate="iplb_modal_nat_ip_description"></p>
+        <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
+            <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
+            <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
         </div>
-    </cui-modal-body>
-</cui-modal>
+    </div>
+</oui-modal>

@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.4.1",
+  "version": "7.4.9",
   "license": "BSD-3-Clause",
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
@@ -68,7 +68,7 @@
     "@bower_components/ovh-angular-jquery-ui-droppable": "ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1",
     "@bower_components/ovh-angular-jsplumb": "ovh-ux/ovh-angular-jsplumb#^3.0.5",
     "@bower_components/ovh-angular-list-view": "ovh-ux/ovh-angular-list-view#^0.1.5",
-    "@bower_components/ovh-angular-otrs": "ovh-ux/ovh-angular-otrs#^6.0.1",
+    "@bower_components/ovh-angular-otrs": "ovh-ux/ovh-angular-otrs#^6.1.1",
     "@bower_components/ovh-angular-pagination-front": "ovh-ux/ovh-angular-pagination-front#^5.1.0",
     "@bower_components/ovh-angular-proxy-request": "ovh-ux/ovh-angular-proxy-request#^0.1.0",
     "@bower_components/ovh-angular-q-allsettled": "ovh-ux/ovh-angular-q-allSettled#^0.3.1",
@@ -90,8 +90,9 @@
     "@bower_components/ovh-manager-webfont": "ovh-ux/ovh-manager-webfont#^1.0.1",
     "@bower_components/uri.js": "medialize/URI.js#~1.15.0",
     "@bower_components/validator-js": "chriso/validator.js#~3.37.0",
-    "ovh-ui-angular": "~2.16.1",
-    "ovh-ui-kit": "~2.16.1",
+    "xterm": "^3.4.1",
+    "ovh-ui-angular": "~2.16.4",
+    "ovh-ui-kit": "~2.16.3",
     "popper.js": "^1.14.1"
   },
   "devDependencies": {

@@ -27,10 +27,6 @@
 
         .tablet({
             width: 100%;
-
-            .cui-dropdown-menu {
-                float: right;
-            }
         });
     }
 
@@ -70,7 +66,15 @@
 }
 
 .oui-tile-h-100 {
+    // This fix can be removed once fixed in the component
     .oui-tile {
         height: 100%;
     }
 }
+
+.oui-popover__content-container {
+    // Fix done to avoid words in the pop-over from breaking.
+    // This fix can be removed, once this fix is in the component.
+    word-break: normal;
+}
+

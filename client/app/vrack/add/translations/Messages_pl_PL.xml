@@ -5,7 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Skorzystaj z opcji darmowej realizacji na <a href="{{url}}" target='_blank'>zamówieniu</a>.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Usługa vRack zostanie udostępniona po kilku minutach od zatwierdzenia zamówienia.</translation>
    <translation id="vrack_order" qtlid="43558">Zamów</translation>
-   <translation id="vrack_order_install_now_label" qtlid="492042">Installer maintenant</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Zainstaluj teraz.</translation>
    <translation id="vrack_contract_empty" qtlid="245688">Zaakceptowałeś wszystkie regulaminy związane z tym produktem.</translation>
    <translation id="vrack_error" qtlid="148981">Wystąpił błąd.</translation>
    <translation id="vrack_error_reason" qtlid="323223">Wystąpił błąd: {{message}}</translation>

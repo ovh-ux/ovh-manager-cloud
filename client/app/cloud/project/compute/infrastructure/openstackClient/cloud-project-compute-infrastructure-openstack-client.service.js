@@ -57,7 +57,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
             const data = event.data.slice(1);
             switch (event.data[0]) {
                 case "0":
-                    term.io.writeUTF8(atob(data));
+                    term.write(atob(data));
                     break;
                 default :break;
             }

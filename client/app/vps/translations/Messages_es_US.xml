@@ -108,7 +108,7 @@
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
    <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
-   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Non configuré</translation>
+   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">No configurado</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secundario</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">No hay dominios configurados</translation>
    <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">{{ count }} dominio(s) configurado(s)</translation>

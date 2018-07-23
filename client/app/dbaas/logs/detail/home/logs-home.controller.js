@@ -27,7 +27,6 @@ class LogsHomeCtrl {
                     } else {
                         this.dataUsageGraphData = this.LogsConstants.DATA_USAGE_GRAPH_CONFIGURATION;
                         this.runLoaders()
-                            .then(() => this._initActions())
                             .then(() => this._prepareDataUsageGraphData());
                     }
                     return service;
@@ -37,9 +36,7 @@ class LogsHomeCtrl {
     }
 
     goToAccountSetupPage () {
-        this.$state.go("dbaas.logs.detail.setup", {
-            serviceName: this.serviceName
-        });
+        return this.gotoState("dbaas.logs.detail.setup");
     }
 
     /**
@@ -99,88 +96,20 @@ class LogsHomeCtrl {
         };
     }
 
-    /**
-     * initializes the actions for menus
-     *
-     * @memberof LogsHomeCtrl
-     */
-    _initActions () {
-        this.actions = {
-            changeName: {
-                text: this.$translate.instant("common_edit"),
-                state: "dbaas.logs.detail.home.account",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
-            },
-            editTokens: {
-                text: this.$translate.instant("common_edit"),
-                callback: () => this.editTokens(),
-                isAvailable: () => !this.tokenIds.loading && !this.tokenIds.hasErrors
-            },
-            changePassword: {
-                text: this.$translate.instant("common_edit"),
-                callback: () => this.editPassword(),
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
-            },
-            lastStream: {
-                text: this.accountDetails.data.last_stream ? this.accountDetails.data.last_stream.info.title : "",
-                href: this.accountDetails.data.last_stream ? this.accountDetails.data.last_stream.graylogWebuiUrl : "",
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
-                isExternal: true
-            },
-            allStream: {
-                text: this.$translate.instant("logs_home_shortcuts_all_stream"),
-                state: "dbaas.logs.detail.streams",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => true
-            },
-            lastDashboard: {
-                text: this.accountDetails.data.last_dashboard ? this.accountDetails.data.last_dashboard.info.title : "",
-                href: this.accountDetails.data.last_dashboard ? this.accountDetails.data.last_dashboard.graylogWebuiUrl : "",
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
-                isExternal: true
-            },
-            allDashboard: {
-                text: this.$translate.instant("logs_home_shortcuts_all_dashboard"),
-                state: "dbaas.logs.detail.dashboards",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => true
-            },
-            graylog: {
-                text: this.$translate.instant("logs_home_shortcuts_graylog"),
-                href: this.accountDetails.data.graylogWebuiUrl,
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
-                isExternal: true
-            },
-            graylogApi: {
-                text: this.$translate.instant("logs_home_shortcuts_graylog_api"),
-                href: this.accountDetails.data.graylogApiUrl,
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
-                isExternal: true
-            },
-            elasticsearch: {
-                text: this.$translate.instant("logs_home_shortcuts_elasticsearch"),
-                href: this.accountDetails.data.elasticSearchApiUrl,
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
-                isExternal: true
-            },
-            messagesAndPorts: {
-                text: this.$translate.instant("logs_home_formats_and_ports"),
-                callback: () => this.openMessagesAndPorts(),
-                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
-            },
-            changeOffer: {
-                text: this.$translate.instant("common_edit"),
-                state: "dbaas.logs.detail.offer",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.account.loading && !this.account.hasErrors && !this.isAccountDisabled
-            },
-            editOptions: {
-                text: this.$translate.instant("common_edit"),
-                callback: () => this.goToOptionsPage(),
-                isAvailable: () => !this.options.loading && !this.options.hasErrors && !this.isAccountDisabled
-            }
-        };
+    changeName () {
+        return this.gotoState("dbaas.logs.detail.home.account");
+    }
+
+    goToAllStreams () {
+        return this.gotoState("dbaas.logs.detail.streams");
+    }
+
+    goToAllDashboards () {
+        return this.gotoState("dbaas.logs.detail.dashboards");
+    }
+
+    goToChangeOffer () {
+        return this.gotoState("dbaas.logs.detail.offer");
     }
 
     /**
@@ -188,12 +117,9 @@ class LogsHomeCtrl {
      */
     goToOptionsPage () {
         if (this.LogsHelperService.isBasicOffer(this.account.data)) {
-            this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
-        } else {
-            this.$state.go("dbaas.logs.detail.options", {
-                serviceName: this.serviceName
-            });
+            return this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
         }
+        return this.gotoState("dbaas.logs.detail.options");
     }
 
     /**
@@ -202,9 +128,7 @@ class LogsHomeCtrl {
      * @memberof LogsHomeCtrl
      */
     editTokens () {
-        this.$state.go("dbaas.logs.detail.tokens", {
-            serviceName: this.serviceName
-        });
+        return this.gotoState("dbaas.logs.detail.tokens");
     }
 
     /**
@@ -214,6 +138,12 @@ class LogsHomeCtrl {
      */
     editPassword () {
         this.openChangePasswordModal();
+    }
+
+    gotoState (state) {
+        return this.$state.go(state, {
+            serviceName: this.serviceName
+        });
     }
 
     /**
