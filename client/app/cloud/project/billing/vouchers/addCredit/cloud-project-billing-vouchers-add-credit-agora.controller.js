@@ -46,7 +46,7 @@ angular.module("managerApp").controller("CloudProjectBillingVouchersAddcreditAgo
                 value: "public_cloud"
             }]
         };
-        this.$window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank");
+        this.$window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank", "noopener");
         this.$uibModalInstance.dismiss();
     }
 
