@@ -102,12 +102,38 @@ class CloudProjectSidebar {
             searchable: false
         }, subSection);
         this.SidebarMenu.addMenuItem({
+            title: this.$translate.instant("cloud_sidebar_pci_object_storage"),
+            state: "iaas.pci-project.compute.storage",
+            stateParams: {
+                projectId: project.serviceName || project.project_id
+            },
+            loadOnState: "iaas.pci-project.compute.storage",
+            loadOnStateParams: {
+                projectId: project.serviceName || project.project_id
+            },
+            category: "action-page",
+            searchable: false
+        }, subSection);
+        this.SidebarMenu.addMenuItem({
             title: this.$translate.instant("cloud_sidebar_pci_manage"),
             state: "iaas.pci-project.billing",
             stateParams: {
                 projectId: project.serviceName || project.project_id
             },
             loadOnState: "iaas.pci-project.billing",
+            loadOnStateParams: {
+                projectId: project.serviceName || project.project_id
+            },
+            category: "action-page",
+            searchable: false
+        }, subSection);
+        this.SidebarMenu.addMenuItem({
+            title: this.$translate.instant("cloud_sidebar_pci_openstack"),
+            state: "iaas.pci-project.compute.openstack",
+            stateParams: {
+                projectId: project.serviceName || project.project_id
+            },
+            loadOnState: "iaas.pci-project.compute.openstack",
             loadOnStateParams: {
                 projectId: project.serviceName || project.project_id
             },
