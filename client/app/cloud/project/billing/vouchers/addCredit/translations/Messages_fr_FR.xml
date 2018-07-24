@@ -11,5 +11,7 @@
    <translation id="cpb_vouchers_add_credit_cancel" qtlid="37863">Annuler</translation>
    <translation id="cpb_vouchers_add_credit_error" qtlid="255599">Oups, l'achat de crédit cloud à échoué.</translation>
    <translation id="cpb_vouchers_add_credit_success" qtlid="295907">Le bon de commande pour votre crédit de {{ amount }} est disponible <a href="{{ url }}" target="_blank">ici</a>.</translation>
+   <translation id="cpb_vouchers_add_credit_load_err">Oups, une erreur est survenue lors du chargement de l'achat de crédit cloud.</translation>
+   <translation id="cpb_vouchers_add_credit_quantity">Nombre de crédits ({{ price }} par crédit) :</translation>
 
 </translations>

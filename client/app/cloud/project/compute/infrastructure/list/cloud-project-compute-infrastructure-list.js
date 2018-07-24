@@ -10,6 +10,6 @@ angular.module("managerApp").config($stateProvider => {
                 controllerAs: "ComputeInfrastructureListCtrl"
             }
         },
-        translations: ["common"]
+        translations: ["common", "cloud/project/billing/vouchers/addCredit"]
     });
 });

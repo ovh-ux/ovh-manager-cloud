@@ -35,6 +35,16 @@
                                 data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.buyIpFailOver()">
                         </button>
                     </li>
+                    <li class="divider"
+                        data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
+                    </li>
+                    <li data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
+                        <button type="button"
+                                class="btn fs14"
+                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.orderCredit()"
+                                data-translate="cpb_vouchers_add_credit_title">
+                        </button>
+                    </li>
                     <li class="divider" role="presentation"></li>
                     <li role="menuitem">
                         <button type="button" class="btn fs14"
