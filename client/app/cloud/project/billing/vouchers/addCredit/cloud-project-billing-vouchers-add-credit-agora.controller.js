@@ -6,10 +6,14 @@ angular.module("managerApp").controller("CloudProjectBillingVouchersAddcreditAgo
         this.$uibModalInstance = $uibModalInstance;
         this.$window = $window;
         this.CloudMessage = CloudMessage;
+        this.orderLimits = {
+            min: 1,
+            max: 20000000
+        };
     }
 
     $onInit () {
-        this.amount = 1000;
+        this.amount = 10;
         this.loading = true;
         return this.$http.get("/order/catalog/formatted/cloud", {
             serviceType: "apiv6",
@@ -40,13 +44,13 @@ angular.module("managerApp").controller("CloudProjectBillingVouchersAddcreditAgo
             planCode: "credit",
             productId: "cloud",
             pricingMode: "default",
-            quantity: this.amount,
+            quantity: Math.floor(this.amount / this.price.value),
             configuration: [{
                 label: "type",
                 value: "public_cloud"
             }]
         };
-        this.$window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank", "noopener");
+        this.$window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank");
         this.$uibModalInstance.dismiss();
     }
 
