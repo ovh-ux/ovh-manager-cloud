@@ -1,55 +1,45 @@
-<cui-modal>
-    <form name="VpsBackupStorageAddForm" data-ng-submit="$ctrl.confirm()">
-        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-        <cui-modal-body data-title=":: 'vps_backup_storage_access_add' | translate">
-            <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-                <oui-spinner></oui-spinner>
-            </div>
-            <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
-                <div data-ng-if="!$ctrl.isAvailable()">
-                    <cui-modal-text data-text="'vps_backup_storage_access_add_no_block' | translate"></cui-modal-text>
-                </div>
-                <div data-ng-if="$ctrl.isAvailable()">
-                    <cui-modal-text data-text="'vps_backup_storage_access_add_info' | translate"></cui-modal-text>
+<form novalidate name="form" data-ng-submit="form.$valid && $ctrl.confirm()">
+    <oui-modal
+        data-title="{{:: 'vps_backup_storage_access_add' | translate}}"
+        data-primary-label="{{ ($ctrl.isAvailable() ? 'common_confirm' : 'common_close') | translate }}"
+        data-secondary-action="$ctrl.cancel()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="$ctrl.cancel()"
+        data-loading="$ctrl.ipBlocks.loading || $ctrl.addStorage.loading">
 
-                    <!-- ipBlocks choice -->
-                    <label for="access-ip" class="oui-label" data-translate="vps_backup_storage_access_add_ip"></label>
-                    <div class="oui-select">
-                        <select name="access-ip" id="access-ip" class="oui-select__input" multiple required
-                                data-ng-options="ip for ip in $ctrl.available"
-                                data-ng-model="$ctrl.model.ip" required>
-                        </select>
-                        <!-- <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i> -->
-                    </div>
-
-                    <!-- cifs/fps/nfs choice -->
-                    <cui-modal-text data-text="'vps_backup_storage_access_add_info3' | translate"></cui-modal-text>
-                    <cui-modal-text data-text="'vps_backup_storage_access_add_authorization' | translate"></cui-modal-text>
-                    <oui-checkbox
-                        data-text="{{ 'vps_tab_backup_storage_table_cifs' | translate }}"
-                        id="acces-cifs"
-                        name="acces-cifs"
-                        data-model="$ctrl.model.cifs">
-                    </oui-checkbox>
-                    <oui-checkbox
-                        data-text="{{ 'vps_tab_backup_storage_table_ftp' | translate }}"
-                        id="acces-ftp"
-                        name="acces-ftp"
-                        data-model="$ctrl.model.ftp">
-                    </oui-checkbox>
-                    <oui-checkbox
-                        data-text="{{ 'vps_tab_backup_storage_table_nfs' | translate }}"
-                        id="acces-nfs"
-                        name="acces-nfs"
-                        data-model="$ctrl.model.nfs">
-                    </oui-checkbox>
+        <div data-ng-if="!$ctrl.ipBlocks.loading && !$ctrl.isAvailable()">
+            <p class="oui-modal__text" data-translate="vps_backup_storage_access_add_no_block"></p>
+        </div>
+        <div data-ng-if="!$ctrl.ipBlocks.loading && $ctrl.isAvailable()">
+            <p class="oui-modal__text" data-translate="vps_backup_storage_access_add_info"></p>
+            <oui-field data-label="{{ ::'vps_backup_storage_access_add_ip' | translate }}">
+                <div class="oui-select">
+                    <select name="access-ip" id="access-ip" class="oui-select__input" multiple required
+                            data-ng-options="ip for ip in $ctrl.available track by ip"
+                            data-ng-model="$ctrl.model.ip" required>
+                    </select>
                 </div>
-            </div>
-        </cui-modal-body>
-        <cui-modal-footer data-ng-if="$ctrl.isAvailable()">
-            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-            <cui-submit-button data-text="'common_confirm' | translate"
-                               data-disabled="$ctrl.loader.init || $ctrl.loader.save || !$ctrl.validateCheckboxes() || VpsBackupStorageAddForm.$invalid"></cui-submit-button>
-        </cui-modal-footer>
-    </form>
-</cui-modal>
+            </oui-field>
+            <p class="oui-modal__text" data-translate="vps_backup_storage_access_add_info3"></p>
+            <p class="oui-modal__text" data-translate="vps_backup_storage_access_add_authorization"></p>
+            <oui-checkbox
+                data-text="{{ ::'vps_tab_backup_storage_table_cifs' | translate }}"
+                id="acces-cifs"
+                name="acces-cifs"
+                data-model="$ctrl.model.cifs">
+            </oui-checkbox>
+            <oui-checkbox
+                data-text="{{ ::'vps_tab_backup_storage_table_ftp' | translate }}"
+                id="acces-ftp"
+                name="acces-ftp"
+                data-model="$ctrl.model.ftp">
+            </oui-checkbox>
+            <oui-checkbox
+                data-text="{{ ::'vps_tab_backup_storage_table_nfs' | translate }}"
+                id="acces-nfs"
+                name="acces-nfs"
+                data-model="$ctrl.model.nfs">
+            </oui-checkbox>
+        </div>
+    </oui-modal>
+</form>
