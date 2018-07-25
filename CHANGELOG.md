@@ -1,3 +1,13 @@
+<a name="7.4.10"></a>
+## [7.4.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.9...v7.4.10) (2018-07-25)
+
+
+### Features
+
+* **cloud:** add button for BigData platform CLI call ([ade4162](https://github.com/ovh-ux/ovh-manager-cloud/commit/ade4162))
+
+
+
 <a name="7.4.9"></a>
 ## [7.4.9](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.8...v7.4.9) (2018-07-12)
 
