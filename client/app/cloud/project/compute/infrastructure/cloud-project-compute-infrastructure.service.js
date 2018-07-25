@@ -42,6 +42,17 @@ class CloudProjectComputeInfrastructureService {
         }).result;
     }
 
+    orderCredit () {
+        if (this.TARGET === "US") {
+            return this.$uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit-agora.html",
+                controller: "CloudProjectBillingVouchersAddcreditAgoraCtrl",
+                controllerAs: "$ctrl"
+            }).result;
+        }
+    }
+
     openLoginInformations (vm) {
         return this.$uibModal.open({
             templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/loginInformation/cloud-project-compute-infrastructure-virtual-machine-login-information.html",

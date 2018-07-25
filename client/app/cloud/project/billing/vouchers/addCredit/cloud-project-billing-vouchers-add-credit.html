@@ -8,7 +8,7 @@
             
         <p class="oui-modal__text" data-translate="cpb_vouchers_add_credit_info"></p>
         <oui-field data-label="{{ ::'cpb_vouchers_add_credit_amount' | translate }}">
-            <input type="number" class="oui-input"
+            <input type="number" class="oui-input hide-arrows"
                 data-ng-class="{'oui-input_error': form.$submitted && form.amount.$invalid}"
                 id="amount" name="amount" pattern="^\d{1,8}$"
                 placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
