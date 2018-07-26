@@ -248,8 +248,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Masowe tworzenie:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Liczba instancji do utworzenia:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Wprowadź poprawną liczbę instancji.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Twoja aktualna <a ui-sref="iaas.pci-project.billing.quota">quota</a> pozwala na utworzenie jednocześnie do {{max}} instancji typu {{type}} dla regionu {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Twoja aktualna <a ui-sref="iaas.pci-project.billing.quota">quota</a> nie pozwala na utworzenie więcej niż jednej instancji typu  {{type}} w regionie {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Przypisz prywatną sieć</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Żaden</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Wystąpił problem z pobraniem listy prywatnych sieci. {{ message }}</translation>

@@ -6,6 +6,7 @@
    <translation id="cpc_tab_ssh" qtlid="104830">Llaves SSH</translation>
    <translation id="cpc_tab_loadbalancer" qtlid="323499">Load Balancer</translation>
    <translation id="cpc_tab_project" qtlid="261283">Gestión y consumo del proyecto</translation>
+   <translation id="cpb_tab_quota" qtlid="6874">Límite</translation>
    <translation id="cpc_message" qtlid="439767">¡El cloud de OVH llega a Alemania! <a href="http://superlienverslapage">Descubra nuestro datacenter de Limburgo.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">¡Inauguramos nuestra nueva región UK1 en Londres, Reino Unido!</translation>
    <translation id="cloud_message_pci_uk1_link" qtlid="439793">Descubra qué implica esto para usted.</translation>

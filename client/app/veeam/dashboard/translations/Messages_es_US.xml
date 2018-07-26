@@ -9,14 +9,14 @@
    <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Offre</translation>
    <translation id="veeam_tiles_configuration_label_stockage_number" qtlid="403697">No. de espacios de almacenamiento</translation>
    <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">No. de VM</translation>
-   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacentre</translation>
+   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Centro de datos</translation>
 
-   <translation id="veeam_tiles_subscription_title" qtlid="28891">Abonnement</translation>
+   <translation id="veeam_tiles_subscription_title" qtlid="28891">Pago</translation>
    <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Renouvellement automatique</translation>
    <translation id="veeam_tiles_subscription_label_renewal_renew_link" qtlid="16301">Gérer</translation>
    <translation id="veeam_tiles_subscription_label_renewal_warning" qtlid="403723">Su servicio se desactivará dentro de {{remainingDays}} días.</translation>
    <translation id="veeam_tiles_subscription_label_renewal_warning_link" qtlid="403684">Aumentar el plan</translation>
-   <translation id="veeam_tiles_subscription_label_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="veeam_tiles_subscription_label_creation_date" qtlid="26419">Fecha de creación</translation>
 
    <translation id="veeam_message_product_disabled" qtlid="403736">Su servicio está desactivado porque la demo ha caducado.</translation>
 </translations>

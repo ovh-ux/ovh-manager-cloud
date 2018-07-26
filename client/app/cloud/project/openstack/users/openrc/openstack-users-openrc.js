@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
 .config(function ($stateProvider) {
-    $stateProvider.state("iaas.pci-project.openstack.users.openrc", {
+    $stateProvider.state("iaas.pci-project.compute.openstack.users.openrc", {
         url: "/openrc",
         templateUrl: "app/cloud/project/openstack/users/openrc/openstack-users-openrc.html",
         controller: "OpenstackUsersOpenrcCtrl",

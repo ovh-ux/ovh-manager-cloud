@@ -248,8 +248,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Mass creation:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Number of instance(s) to create:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Please enter a valid instance number.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Your current <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> lets you simultaneously create up to {{max}} {{type}} instances for the {{region}} region.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Your current <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> only lets you create one {{type}} instance for the {{region}} region.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Link to the private network </translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">None</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oops, unable to retrieve list of private networks. {{ message }}</translation>

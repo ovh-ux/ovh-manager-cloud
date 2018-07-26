@@ -7,9 +7,10 @@ angular.module("managerApp").config($stateProvider => {
             cloudProjectComputeInfrastructure: {
                 templateUrl: "app/cloud/project/compute/infrastructure/diagram/cloud-project-compute-infrastructure-diagram.html",
                 controller: "CloudProjectComputeInfrastructureDiagramCtrl",
-                controllerAs: "ComputeInfrastructureDiagramCtrl"
+                controllerAs: "ComputeInfrastructureDiagramCtrl",
+                noTranslations: true
             }
         },
-        translations: ["common"]
+        translations: ["common", "cloud/project/billing/vouchers/addCredit"]
     });
 });

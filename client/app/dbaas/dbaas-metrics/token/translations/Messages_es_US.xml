@@ -4,7 +4,7 @@
    <translation id="metrics_token_back" qtlid="208925">Volver al inicio</translation>
    <translation id="metrics_token_search" qtlid="98288">Rechercher...</translation>
 
-   <translation id="metrics_table_create_date" qtlid="26419">Date de création</translation>
+   <translation id="metrics_table_create_date" qtlid="26419">Fecha de creación</translation>
    <translation id="metrics_table_expiry_date" qtlid="33010">Date d'expiration</translation>
    <translation id="metrics_table_name" qtlid="3818">Nombre</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
@@ -34,11 +34,11 @@
    <translation id="metrics_token_preview_title" qtlid="439931">Resumen del token</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Mostrar los revocados</translation>
 
-   <translation id="metrics_token_edit" qtlid="37875">Modifier</translation>
+   <translation id="metrics_token_edit" qtlid="37875">Modificar</translation>
    <translation id="metrics_token_edit_title" qtlid="415870">Editar el token</translation>
    <translation id="metrics_token_edit_name" qtlid="415818">Nombre (opcional)</translation>
    <translation id="metrics_token_edit_cancel" qtlid="37863">Cancelar</translation>
-   <translation id="metrics_token_edit_confirm" qtlid="37875">Modifier</translation>
+   <translation id="metrics_token_edit_confirm" qtlid="37875">Modificar</translation>
 
    <translation id="metrics_token_delete_title" qtlid="439944">Eliminar el token</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">¿Está seguro(a) de que desea eliminar el token?</translation>

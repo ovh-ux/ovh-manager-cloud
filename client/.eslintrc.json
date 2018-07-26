@@ -31,6 +31,8 @@
         }]
     },
 	"globals": {
-        "JSURL": true
+        "JSURL": true,
+        "Terminal": true,
+        "fit": true
     }
 }

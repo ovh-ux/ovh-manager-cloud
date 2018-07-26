@@ -11,7 +11,7 @@
    <translation id="cpc_snapshot_total2" qtlid="269994">A modo de información, los snapshots actuales suman <span class="text-danger">{{size | bytes:2:'true':'GiB'}}</span>, es decir, aproximadamente <span class="text-danger">{{price}}/mes</span>.</translation>
 
    <translation id="cpc_snapshot_price" qtlid="270007">Precio/mes</translation>
-   <translation id="cpc_snapshot_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="cpc_snapshot_creation_date" qtlid="26419">Fecha de creación</translation>
    <translation id="cpc_snapshot_type" qtlid="2642">Tipo</translation>
    <translation id="cpc_snapshot_create_vm_button" qtlid="246572">Crear un servidor a partir de este snapshot</translation>
    <translation id="cpc_snapshot_create_vm_button_info" qtlid="246585">Usted ha sido redireccionado. La interfaz de creación de servidores se está cargando. Este snapshot será seleccionado automáticamente.</translation>

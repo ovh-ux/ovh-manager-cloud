@@ -12,14 +12,14 @@
    <translation id="cda_detail_status_label_DELETED" qtlid="134514">Eliminado</translation>
    <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Tâche en cours d'exécution</translation>
 
-   <translation id="cda_detail_status" qtlid="26443">Statut</translation>
+   <translation id="cda_detail_status" qtlid="26443">Estado</translation>
    <translation id="cda_detail_crush_tunables" qtlid="354431">Crush tunables</translation>
    <translation id="cda_detail_service_name" qtlid="3818">Nombre</translation>
    <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
    <translation id="cda_detail_size" qtlid="7726">Taille</translation>
    <translation id="cda_detail_region" qtlid="32434">Région</translation>
    <translation id="cda_detail_monitor" qtlid="354444">Monitor</translation>
-   <translation id="cda_detail_create_date" qtlid="26419">Date de création</translation>
+   <translation id="cda_detail_create_date" qtlid="26419">Fecha de creación</translation>
    <translation id="cda_detail_update_date" qtlid="293905">Fecha de edición</translation>
    <translation id="cda_detail_version" qtlid="34210">Version</translation>
 

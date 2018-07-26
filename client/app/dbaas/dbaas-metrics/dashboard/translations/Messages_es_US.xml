@@ -11,9 +11,9 @@
    <translation id="metrics_tiles_configuration_name" qtlid="3818">Nombre</translation>
    <translation id="metrics_tiles_configuration_retention" qtlid="415532">Retención</translation>
    <translation id="metrics_tiles_configuration_retention_month" qtlid="40222">mois</translation>
-   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Datacentre</translation>
+   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Centro de datos</translation>
 
-   <translation id="metrics_tiles_subscription_title" qtlid="28891">Abonnement</translation>
+   <translation id="metrics_tiles_subscription_title" qtlid="28891">Pago</translation>
    <translation id="metrics_tiles_subscription_offer" qtlid="38217">Offre</translation>
    <translation id="metrics_tiles_subscription_priceplan_free_trial" qtlid="415545">Prueba gratuita</translation>
    <translation id="metrics_tiles_subscription_metrics-free-trial" qtlid="415545">Prueba gratuita</translation>
@@ -30,9 +30,9 @@
    <translation id="metrics_tiles_subscription_metrics-live-1t" qtlid="415688">Suscripción Live 1 TB</translation>
    <translation id="metrics_tiles_subscription_metrics-live-2t" qtlid="415701">Suscripción Live 2 TB</translation>
 
-   <translation id="metrics_tiles_modify" qtlid="37875">Modifier</translation>
+   <translation id="metrics_tiles_modify" qtlid="37875">Modificar</translation>
    <translation id="metrics_dashboard_modif_cancel" qtlid="37863">Cancelar</translation>
-   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modifier</translation>
+   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modificar</translation>
    <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nombre por defecto</translation>
    <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nombre personalizado</translation>
    <translation id="metrics_dashboard_modif_retention" qtlid="8218">Durée</translation>

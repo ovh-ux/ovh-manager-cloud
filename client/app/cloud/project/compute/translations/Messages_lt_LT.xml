@@ -6,6 +6,7 @@
    <translation id="cpc_tab_ssh" qtlid="104830">SSH raktai</translation>
    <translation id="cpc_tab_loadbalancer" qtlid="323499">IP Load Balancer</translation>
    <translation id="cpc_tab_project" qtlid="261283">Projekto valdymas bei resursų naudojimas</translation>
+   <translation id="cpb_tab_quota" qtlid="6874">Kvota</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud atvyko į Vokietiją! <a href="http://superlienverslapage">Susipažinkite su duomenų centru Limburge.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Mūsų naujo UK1 regiono atidarymas Londone, Jungtinėje Karalystėje!</translation>
    <translation id="cloud_message_pci_uk1_link" qtlid="439793">Sužinokite, kokie privalumai</translation>

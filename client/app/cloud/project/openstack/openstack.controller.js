@@ -9,13 +9,13 @@
     	}
 
     	$onInit () {
-    		this.$state.go("iaas.pci-project.openstack.users");
+    		this.$state.go("iaas.pci-project.compute.openstack.users");
     		this.loadMessages();
     	}
 
     	loadMessages () {
-            this.CloudMessage.unSubscribe("iaas.pci-project.openstack");
-            this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.openstack", { onMessage: () => this.refreshMessage() });
+            this.CloudMessage.unSubscribe("iaas.pci-project.compute.openstack");
+            this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute.openstack", { onMessage: () => this.refreshMessage() });
         }
 
     	refreshMessage () {

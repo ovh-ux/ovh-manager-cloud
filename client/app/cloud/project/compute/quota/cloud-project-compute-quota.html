@@ -1,25 +1,25 @@
-<div class="cloud-billing-quota cui-page__content">
+<div class="cloud-compute-quota cui-page__content">
 
     <!-- INIT LOADER -->
-    <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.quota">
+    <div class="text-center" data-ng-if="CloudProjectComputeQuotaCtrl.loader.quota">
         <oui-spinner></oui-spinner>
     </div>
 
     <!-- UNLEASH LOADER -->
-    <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.unleash">
+    <div class="text-center" data-ng-if="CloudProjectComputeQuotaCtrl.loader.unleash">
         <oui-spinner></oui-spinner>
     </div>
 
-    <div data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">
+    <div data-ng-if="!CloudProjectComputeQuotaCtrl.loader.quota && !CloudProjectComputeQuotaCtrl.loader.unleash">
 
         <!-- THERE IS NO PAYMENT MEAN - SHOW A MESSAGE TO ADD IT -->
-        <div data-ng-if="CloudProjectBillingQuotaCtrl.state.isRestrictedQuota && !CloudProjectBillingQuotaCtrl.datas.defaultPaymentMean">
+        <div data-ng-if="CloudProjectComputeQuotaCtrl.state.isRestrictedQuota && !CloudProjectComputeQuotaCtrl.datas.defaultPaymentMean">
 
             <div class="well">
 
                 <p class="bold">{{ :: 'cpb_quota_restricted_account' | translate }}</p>
                 <p data-translate="cpb_quota_restricted_account_unlock"
-                   data-translate-values="{'url': CloudProjectBillingQuotaCtrl.paymentmeanUrl}">
+                   data-translate-values="{'url': CloudProjectComputeQuotaCtrl.paymentmeanUrl}">
                 </p>
 
             </div>
@@ -27,13 +27,13 @@
         </div>
 
         <!-- THERE IS A PAYMENT MEAN BUT QUOTA IS RESTRICTED -  -->
-         <div data-ng-if="CloudProjectBillingQuotaCtrl.state.isRestrictedQuota && CloudProjectBillingQuotaCtrl.datas.defaultPaymentMean">
+         <div data-ng-if="CloudProjectComputeQuotaCtrl.state.isRestrictedQuota && CloudProjectComputeQuotaCtrl.datas.defaultPaymentMean">
 
             <div class="well">
 
                 <p class="bold">{{ :: 'cpb_quota_restricted_paymentmean_active' | translate }}</p>
                 <button class="oui-button oui-button_primary"
-                        data-ng-click="CloudProjectBillingQuotaCtrl.unleashAccount()">
+                        data-ng-click="CloudProjectComputeQuotaCtrl.unleashAccount()">
                     {{ :: 'cpb_quota_restricted_unlock_button' | translate }}
                 </button>
 
@@ -42,7 +42,7 @@
         </div>
 
         <!-- ITS NOT RESTRICTED AND THERE IS A PAYMENT MEAN -->
-        <div class="well" data-ng-if="!CloudProjectBillingQuotaCtrl.state.isRestrictedQuota">
+        <div class="well" data-ng-if="!CloudProjectComputeQuotaCtrl.state.isRestrictedQuota">
 
             <p class="bold">{{ :: 'cpb_quota_protect_explain' | translate }}</p>
 
@@ -50,25 +50,42 @@
 
             <button type="button"
                     class="oui-button oui-button_primary"
-                    data-ng-disabled="!CloudProjectBillingQuotaCtrl.datas.quota || (CloudProjectBillingQuotaCtrl.datas.quota && CloudProjectBillingQuotaCtrl.datas.quota.length === 0)"
-                    data-ng-click="CloudProjectBillingQuotaCtrl.openSupport()"
-                    write-right-required>
-                {{ :: 'cpb_quota_protect_more_btn' | translate }}
+                    data-ng-if="CloudProjectComputeQuotaCtrl.TARGET !== 'US'"
+                    data-ng-disabled="!CloudProjectComputeQuotaCtrl.datas.quota || (CloudProjectComputeQuotaCtrl.datas.quota && CloudProjectComputeQuotaCtrl.datas.quota.length === 0)"
+                    data-ng-click="CloudProjectComputeQuotaCtrl.openSupport()"
+                    write-right-required
+                    data-translate="cpb_quota_protect_more_btn">
             </button>
+
+            <div data-ng-if="CloudProjectComputeQuotaCtrl.TARGET === 'US'"
+                 data-write-right-required>
+                <button type="button"
+                        class="oui-button oui-button_primary no-transition"
+                        data-ng-if="!CloudProjectComputeQuotaCtrl.datas.quota || (CloudProjectComputeQuotaCtrl.datas.quota && CloudProjectComputeQuotaCtrl.datas.quota.length === 0)"
+                        data-ng-disabled="true"
+                        data-translate="cpb_quota_protect_more_btn">
+                </button>
+
+                <a class="oui-button oui-button_primary no-transition"
+                   data-ng-if="CloudProjectComputeQuotaCtrl.TARGET === 'US' && CloudProjectComputeQuotaCtrl.datas.quota.length"
+                   data-ng-href="{{ CloudProjectComputeQuotaCtrl.supportUrl }}"
+                   data-translate="cpb_quota_protect_more_btn">
+                </a>
+            </div>
 
         </div>
 
         <!-- QUOTA TABLE -->
         <strong>{{ :: 'cpb_quota_current_limit' | translate }}</strong>
 
-        <oui-datagrid data-rows="CloudProjectBillingQuotaCtrl.datas.quota">
+        <oui-datagrid data-rows="CloudProjectComputeQuotaCtrl.datas.quota">
             <oui-column data-title="'cloud_common_region' | translate" data-property="region" data-sortable="asc">
                 <div class="flag-box">
                     <div class="flag-wrapper inline-block vertical-middle">
-                        <span class="flag-icon {{ :: CloudProjectBillingQuotaCtrl.regionService.getRegionIconFlag($row.region) }} flag"></span>
+                        <span class="flag-icon {{ :: CloudProjectComputeQuotaCtrl.regionService.getRegionIconFlag($row.region) }} flag"></span>
                     </div>
                     <div class="flag-text inline-block left-space-m8 top-space-m8 vertical-middle">
-                        {{ :: CloudProjectBillingQuotaCtrl.regionService.getTranslatedMicroRegion($row.region) }}
+                        {{ :: CloudProjectComputeQuotaCtrl.regionService.getTranslatedMicroRegion($row.region) }}
                     </div>
                 </div>
             </oui-column>

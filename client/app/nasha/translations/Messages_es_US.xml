@@ -8,7 +8,7 @@
    <translation id="nasha_dashboard_datacenter" qtlid="369321">Centro de datos</translation>
    <translation id="nasha_dashboard_capacity" qtlid="75822">Capacité totale</translation>
    <translation id="nasha_dashboard_capacity_delay_text" qtlid="369334">Los datos de almacenamiento no se actualizan en tiempo real.</translation>
-   <translation id="nasha_dashboard_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="nasha_dashboard_creation_date" qtlid="26419">Fecha de creación</translation>
    <translation id="nasha_dashboard_expiration_date" qtlid="33010">Date d'expiration</translation>
    <translation id="nasha_dashboard_monitoring" qtlid="31666">Monitoring</translation>
    <translation id="nasha_partition" qtlid="120835">Partitions</translation>

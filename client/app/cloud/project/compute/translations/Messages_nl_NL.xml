@@ -6,6 +6,7 @@
    <translation id="cpc_tab_ssh" qtlid="104830">SSH-key</translation>
    <translation id="cpc_tab_loadbalancer" qtlid="323499">Load Balancing IP</translation>
    <translation id="cpc_tab_project" qtlid="261283">Beheer en gebruik van het project</translation>
+   <translation id="cpb_tab_quota" qtlid="6874">Quota</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud is nu ook in Duitsland! <a href="http://superlienverslapage">Ontdek ons datacenter in het Duitse Limburg.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Ons nieuwe Britse UK1 datacenter in London is nu open!</translation>
    <translation id="cloud_message_pci_uk1_link" qtlid="439793">Wat kan dit voor u betekenen</translation>

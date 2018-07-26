@@ -43,8 +43,8 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
         }
 
         function loadMessage () {
-            CloudMessage.unSubscribe("iaas.pci-project.storage");
-            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.storage", { onMessage: () => refreshMessage() });
+            CloudMessage.unSubscribe("iaas.pci-project.compute.storage");
+            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.compute.storage", { onMessage: () => refreshMessage() });
         }
 
         $scope.loadStep = function (step) {
@@ -76,7 +76,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
 
                 return $timeout(function () {
                     CloudMessage.success($translate.instant("add_storage_storage_added"));
-                    $state.go("iaas.pci-project.storage.detail-container", { projectId: $scope.projectId, storageId: resp.id });
+                    $state.go("iaas.pci-project.compute.storage.detail-container", { projectId: $scope.projectId, storageId: resp.id });
                 }, 3000)
                 .then(function () {
                     return resp;
