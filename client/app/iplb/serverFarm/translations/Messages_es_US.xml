@@ -17,7 +17,7 @@
    <translation id="iplb_farm_update_error" qtlid="437817">Se ha producido un error al modificar la granja de servidores: {{message}}.</translation>
    <translation id="iplb_farm_update_success" qtlid="437830">La granja de servidores se ha modificado correctamente.</translation>
 
-   <translation id="iplb_farm_server_list_col_server" qtlid="8290">Serveur</translation>
+   <translation id="iplb_farm_server_list_col_server" qtlid="8290">Servidor</translation>
    <translation id="iplb_farm_server_list_col_ipv4" qtlid="101781">IPv4</translation>
    <translation id="iplb_farm_server_list_col_active" qtlid="29635">Active</translation>
    <translation id="iplb_farm_server_list_col_status" qtlid="251970">Estado</translation>
@@ -44,7 +44,7 @@
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocolo (no puede modificarse después de la creación)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Puerto asociado a la granja (1 a {{portMax}}). Por defecto, heredado del puerto del frontend.</translation>
-   <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacentre</translation>
+   <translation id="iplb_farm_edit_datacenter" qtlid="30802">Centro de datos</translation>
    <translation id="iplb_farm_edit_private_network" qtlid="482342">Red privada</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Paramètres avancés</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>
@@ -87,7 +87,7 @@
    <translation id="iplb_farm_preview_name" qtlid="3818">Nombre</translation>
    <translation id="iplb_farm_preview_protocol" qtlid="19711">Protocole</translation>
    <translation id="iplb_farm_preview_port" qtlid="9034">Port</translation>
-   <translation id="iplb_farm_preview_datacenter" qtlid="30802">Datacentre</translation>
+   <translation id="iplb_farm_preview_datacenter" qtlid="30802">Centro de datos</translation>
    <translation id="iplb_farm_preview_balance" qtlid="430265">Modo de balanceo</translation>
    <translation id="iplb_farm_preview_stickiness" qtlid="429823">Seguimiento de sesión</translation>
    <translation id="iplb_farm_preview_probe" qtlid="429797">Sonda</translation>

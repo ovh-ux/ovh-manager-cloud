@@ -250,8 +250,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Creazioni simultanee:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Numero di istanze da creare:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Inserisci un nomero di istanze valido</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">La tua <a ui-sref="iaas.pci-project.billing.quota">quota</a> disponibile ti permette di creare contemporaneamente fino a {{max}} instanze di tipo {{type}} per la Region {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">La tua <a ui-sref="iaas.pci-project.billing.quota">quota</a> disponibile non permette di creare più di un'istanza di tipo {{type}} per la Region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Associa alla rete privata</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Nessuno</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Ops! Impossibile recuperare la lista delle reti private. {{ message }}</translation>

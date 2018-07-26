@@ -88,8 +88,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Supporto telefonico</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notifiche</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Ops! Impossibile avviare il menu!</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Errore</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Visualizza tutte le notifiche</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Ops, si è verificato un problema</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Non è possibile avviare il menu</translation>

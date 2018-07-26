@@ -88,8 +88,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Assistência telefónica</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notificações via e-mail</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Ups, não conseguimos inicializar o menu!</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Erro</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Consultar todas as notificações</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oops, existe um problema!</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nós não podemos inicializar o menu.</translation>

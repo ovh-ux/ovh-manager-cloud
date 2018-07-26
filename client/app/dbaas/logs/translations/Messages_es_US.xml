@@ -23,7 +23,7 @@
    <translation id="logs_dashboards_name" qtlid="473986">panel de control</translation>
    <translation id="logs_dashboards_total_used" qtlid="473999">paneles de control utilizados</translation>
    <translation id="logs_dashboards_col_name" qtlid="3818">Nombre</translation>
-   <translation id="logs_dashboards_col_description" qtlid="9238">Description</translation>
+   <translation id="logs_dashboards_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Opción asociada</translation>
    <translation id="logs_dashboards_graylog_access" qtlid="426820">Acceso Graylog</translation>
    <translation id="logs_dashboards_col_shared" qtlid="474012">Panel compartido</translation>
@@ -80,7 +80,7 @@
    <translation id="logs_accounts_add" qtlid="350872">Nueva cuenta</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Nombre</translation>
    <translation id="logs_accounts_col_offer_type" qtlid="50254">Type d'offre</translation>
-   <translation id="logs_accounts_col_status" qtlid="26443">Statut</translation>
+   <translation id="logs_accounts_col_status" qtlid="26443">Estado</translation>
    <translation id="logs_accounts_col_entry_point" qtlid="421165">Punto de entrada</translation>
    <translation id="logs_accounts_col_streams" qtlid="422452">Flujo de datos</translation>
    <translation id="logs_accounts_col_dashboards" qtlid="474220">Paneles de control</translation>
@@ -144,7 +144,7 @@
    <translation id="logs_home_options" qtlid="23395">Options</translation>
    <translation id="logs_home_options_empty" qtlid="8674">Aucune</translation>
    <translation id="logs_home_service" qtlid="474610">Servicio Logs Data Platform</translation>
-   <translation id="logs_home_start_date" qtlid="26419">Date de création</translation>
+   <translation id="logs_home_start_date" qtlid="26419">Fecha de creación</translation>
    <translation id="logs_home_data_received" qtlid="474623">Datos recibidos</translation>
    <translation id="logs_home_number_of_documents" qtlid="424662">Número de documentos</translation>
    <translation id="logs_home_no_usage_data" qtlid="89689">Aucune donnée disponible</translation>
@@ -160,7 +160,7 @@
    <translation id="logs_home_formatsports_title" qtlid="421191">Formato de mensaje y puertos disponibles</translation>
    <translation id="logs_home_formatsports_name" qtlid="3818">Nombre</translation>
    <translation id="logs_home_formatsports_not_supported" qtlid="190771">No compatible</translation>
-   <translation id="logs_home_account_title" qtlid="71741">Modifier le nom</translation>
+   <translation id="logs_home_account_title" qtlid="71741">Editar el nombre</translation>
    <translation id="logs_home_account_description" qtlid="474740">Modificar el nombre {{displayName}} mostrado en el menú de la izquierda, así como en el encabezamiento.</translation>
    <translation id="logs_home_account_display_name_field" qtlid="3818">Nombre</translation>
 
@@ -219,7 +219,7 @@
    <translation id="logs_options_option_type" qtlid="474870">Tipo de opción</translation>
    <translation id="logs_options_details" qtlid="37527">Détails</translation>
    <translation id="logs_options_linked_items" qtlid="475169">Elementos asociados</translation>
-   <translation id="logs_options_status" qtlid="26443">Statut</translation>
+   <translation id="logs_options_status" qtlid="26443">Estado</translation>
    <translation id="logs_options_action_overview" qtlid="433371">Ver la vista previa</translation>
    <translation id="logs_options_action_disable" qtlid="90973">Désactiver</translation>
    <translation id="logs_options_action_enable" qtlid="76734">Activer</translation>
@@ -308,7 +308,7 @@
    <translation id="logs_tokens_col_name" qtlid="3818">Nombre</translation>
    <translation id="logs_tokens_col_token" qtlid="421490">Token</translation>
    <translation id="logs_tokens_col_platform" qtlid="475858">Plataforma</translation>
-   <translation id="logs_tokens_col_createdAt" qtlid="26419">Date de création</translation>
+   <translation id="logs_tokens_col_createdAt" qtlid="26419">Fecha de creación</translation>
    <translation id="logs_tokens_cluster" qtlid="232414">Cluster</translation>
    <translation id="logs_tokens_select_cluster" qtlid="475871">Elegir un cluster</translation>
    <translation id="logs_tokens_delete_title" qtlid="475884">Eliminar el token</translation>
@@ -328,7 +328,7 @@
    <translation id="logs_streams_add_data_feed" qtlid="426170">Añadir un flujo de datos</translation>
    <translation id="logs_streams_name" qtlid="475338">flujo(s)</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Nombre</translation>
-   <translation id="logs_streams_col_description" qtlid="9238">Description</translation>
+   <translation id="logs_streams_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Archivos</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Actions</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Alertes</translation>
@@ -419,7 +419,7 @@
    <translation id="streams_archives_file_name" qtlid="469972">Nombre de archivo</translation>
    <translation id="streams_archives_size" qtlid="7726">Taille</translation>
    <translation id="streams_archives_signatures" qtlid="69953">Signatures</translation>
-   <translation id="streams_archives_status" qtlid="26443">Statut</translation>
+   <translation id="streams_archives_status" qtlid="26443">Estado</translation>
    <translation id="streams_archives_md5_value" qtlid="476651">MD5: {{md5}}</translation>
    <translation id="streams_archives_sha256_value" qtlid="476664">SHA256: {{sha256}}</translation>
    <translation id="streams_archives_sealed" qtlid="469985">Congelado</translation>
@@ -518,7 +518,7 @@
    <translation id="inputs_name" qtlid="477223">recopilador</translation>
    <translation id="inputs_tool" qtlid="477236">Herramienta</translation>
    <translation id="inputs_col_name" qtlid="3818">Nombre</translation>
-   <translation id="inputs_description" qtlid="9238">Description</translation>
+   <translation id="inputs_description" qtlid="9238">Descripción</translation>
    <translation id="inputs_software" qtlid="423973">Software</translation>
    <translation id="inputs_linked_option" qtlid="426768">Opción asociada</translation>
    <translation id="inputs_state" qtlid="251970">Estado</translation>
@@ -528,7 +528,7 @@
    <translation id="inputs_state_pending" qtlid="424168">Inicio pendiente</translation>
    <translation id="inputs_state_running" qtlid="424155">Operativo</translation>
    <translation id="inputs_state_unknown" qtlid="77142">Inconnu</translation>
-   <translation id="inputs_edit" qtlid="37875">Modifier</translation>
+   <translation id="inputs_edit" qtlid="37875">Modificar</translation>
    <translation id="inputs_start" qtlid="25951">Démarrer</translation>
    <translation id="inputs_restart" qtlid="33538">Redémarrer</translation>
    <translation id="inputs_stop" qtlid="108480">Arrêter</translation>
@@ -550,7 +550,7 @@
    <translation id="inputs_logs_title_add" qtlid="423193">Añadir una nueva herramienta de recopilación</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Modificar el recopilador</translation>
    <translation id="inputs_logs_edit_description" qtlid="477379">Para el recopilador <strong>{{ name }}</strong></translation>
-   <translation id="inputs_logs_step1_edit" qtlid="37875">Modifier</translation>
+   <translation id="inputs_logs_step1_edit" qtlid="37875">Modificar</translation>
    <translation id="inputs_logs_step1_add" qtlid="37923">Añadir</translation>
    <translation id="inputs_logs_step2" qtlid="4010">Configurer</translation>
    <translation id="inputs_logs_step3" qtlid="470258">Autorizar redes</translation>
@@ -564,7 +564,7 @@
    <translation id="logs_inputs_network_add_error" qtlid="477444">Se ha producido un error al añadir la red {{network}} al recopilador {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_network_remove_error" qtlid="477457">Se ha producido un error al eliminar la red {{network}} del recopilador {{inputTitle}}: {{message}}</translation>
    <translation id="inputs_logs_edit_title_field" qtlid="3818">Nombre</translation>
-   <translation id="inputs_logs_edit_description_field" qtlid="9238">Description</translation>
+   <translation id="inputs_logs_edit_description_field" qtlid="9238">Descripción</translation>
    <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
    <translation id="inputs_logs_edit_port_field" qtlid="470271">Puerto TCP a abrir</translation>
    <translation id="inputs_logs_edit_stream_field" qtlid="423349">Asociar a un flujo de datos</translation>
@@ -633,7 +633,7 @@
    <translation id="logs_streams_quota_get_error" qtlid="477912">Se ha producido un error al cargar el límite.</translation>
    <translation id="logs_index_col_index" qtlid="426729">Índice</translation>
    <translation id="logs_index_name_text" qtlid="3818">Nombre</translation>
-   <translation id="logs_index_col_description" qtlid="9238">Description</translation>
+   <translation id="logs_index_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Espacio disponible</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Índice compartido</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Acceso Elasticsearch</translation>
@@ -652,7 +652,7 @@
    <translation id="logs_index_modal_edit_description" qtlid="478055">Para el índice <strong>{{ name }}</strong></translation>
    <translation id="logs_index_modal_suffix" qtlid="59267">Suffixe</translation>
    <translation id="logs_index_suffix_description" qtlid="470427">Solo se permiten minúsculas de la a a la z, números y caracteres - o _.</translation>
-   <translation id="logs_index_modal_description" qtlid="9238">Description</translation>
+   <translation id="logs_index_modal_description" qtlid="9238">Descripción</translation>
    <translation id="logs_index_modal_select" qtlid="469478">Seleccionar la opción asociada</translation>
    <translation id="logs_index_modal_notification" qtlid="32386">Notification</translation>
    <translation id="logs_index_modal_checkbox" qtlid="470479">Notificarme por correo electrónico cuando el índice alcance un tamaño crítico.</translation>
@@ -672,11 +672,11 @@
    <translation id="logs_aliases_add" qtlid="143538">Añadir un alias</translation>
    <translation id="logs_aliases_name" qtlid="478159">alias</translation>
    <translation id="logs_aliases_col_title" qtlid="3818">Nombre</translation>
-   <translation id="logs_aliases_col_description" qtlid="9238">Description</translation>
+   <translation id="logs_aliases_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_aliases_col_shared" qtlid="478172">Alias compartido</translation>
    <translation id="logs_aliases_col_streams" qtlid="478185">Flujos de datos vinculados</translation>
    <translation id="logs_aliases_col_indices" qtlid="478198">Índices vinculados</translation>
-   <translation id="logs_aliases_edit" qtlid="37875">Modifier</translation>
+   <translation id="logs_aliases_edit" qtlid="37875">Modificar</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Eliminar</translation>
    <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Acceso Elasticsearch</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Asociar el contenido al alias</translation>
@@ -727,7 +727,7 @@
    <translation id="logs_roles_quota_get_error" qtlid="477912">Se ha producido un error al cargar el límite.</translation>
    <translation id="logs_roles_col_role" qtlid="403398">Función</translation>
    <translation id="logs_roles_col_name" qtlid="3818">Nombre</translation>
-   <translation id="logs_roles_col_description" qtlid="9238">Description</translation>
+   <translation id="logs_roles_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_roles_col_permissions" qtlid="6946">Permissions</translation>
    <translation id="logs_roles_col_members" qtlid="425169">Miembros</translation>
    <translation id="logs_roles_col_link" qtlid="426768">Opción asociada</translation>
@@ -740,7 +740,7 @@
    <translation id="logs_role_modal_edit_title" qtlid="470674">Editar el rol</translation>
    <translation id="logs_role_modal_edit_desription" qtlid="478601">Para el rol <strong>{{ role }}</strong></translation>
    <translation id="logs_role_modal_name" qtlid="3818">Nombre</translation>
-   <translation id="logs_role_modal_description" qtlid="9238">Description</translation>
+   <translation id="logs_role_modal_description" qtlid="9238">Descripción</translation>
    <translation id="logs_role_modal_option" qtlid="469478">Seleccionar la opción asociada</translation>
    <translation id="logs_roles_tooltip" qtlid="469309">Por cada flujo de datos, alias o panel de control que adquiera, recibirá un rol de usuario de forma gratuita (p. ej.: 5 flujos = 5 roles).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Eliminar el rol</translation>
@@ -755,7 +755,7 @@
    <translation id="logs_role_overview_title" qtlid="478718">Resumen del rol</translation>
    <translation id="logs_role_overview_role" qtlid="403398">Función</translation>
    <translation id="logs_role_overview_note" qtlid="26011">Note</translation>
-   <translation id="logs_role_overview_description" qtlid="9238">Description</translation>
+   <translation id="logs_role_overview_description" qtlid="9238">Descripción</translation>
    <translation id="logs_role_overview_permissions" qtlid="6946">Permissions</translation>
    <translation id="logs_role_overview_members" qtlid="425169">Miembros</translation>
    <translation id="logs_role_overview_linked_option" qtlid="426768">Opción asociada</translation>

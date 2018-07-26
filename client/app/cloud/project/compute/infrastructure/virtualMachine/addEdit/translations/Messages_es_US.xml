@@ -173,7 +173,7 @@
    <translation id="cpcivm_addedit_table_disk_short_ssd" qtlid="327146">{{ size }} SSD</translation>
    <translation id="cpcivm_addedit_table_disk_details_ha" qtlid="296466">{{ size }} HA Block Storage</translation>
    <translation id="cpcivm_addedit_table_disk_details_ssd" qtlid="296479">{{ size }} Local SSD</translation>
-   <translation id="cpcivm_addedit_table_network" qtlid="25591">Réseau</translation>
+   <translation id="cpcivm_addedit_table_network" qtlid="25591">Red</translation>
    <translation id="cpcivm_addedit_table_network_details_mega" qtlid="296492">{{ size }} Mbps de ancho de banda</translation>
    <translation id="cpcivm_addedit_table_network_details_giga" qtlid="296505">{{ size }} Gbps de ancho de banda</translation>
    <translation id="cpcivm_addedit_table_guaranteed" qtlid="296518">Recursos garantizados</translation>
@@ -248,8 +248,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Creación masiva:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Número de instancia(s) a crear:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Por favor, introduzca un número válido de instancias.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Su <a ui-sref="iaas.pci-project.billing.quota">límite</a> actual le permite crear simultáneamente hasta {{max}} instancias de tipo {{type}} para la región {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Su <a ui-sref="iaas.pci-project.billing.quota">límite</a> actual no le permite crear más de una instancia de tipo {{type}} para la región {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Asociar a la red privada</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Aucun</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Lo sentimos: no se ha podido cargar la lista de redes privadas. {{ message }}</translation>

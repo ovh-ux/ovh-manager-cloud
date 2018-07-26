@@ -13,7 +13,7 @@
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Expiré</translation>
    <translation id="cpc_loadbalancer_openstack_status_created" qtlid="124952">No configurado</translation>
    <translation id="cpc_loadbalancer_openstack_status_not_imported" qtlid="124952">No configurado</translation>
-   <translation id="cpc_loadbalancer_status" qtlid="8230">État</translation>
+   <translation id="cpc_loadbalancer_status" qtlid="8230">Estado</translation>
    <translation id="cpc_loadbalancer_actions" qtlid="72809">Actions</translation>
    <translation id="cpc_loadbalancer_actions_configure" qtlid="4010">Configurer</translation>
    <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Configuración avanzada</translation>
@@ -34,7 +34,7 @@
    <translation id="cpc_loadbalancer_configure_frontend" qtlid="429615">Frontend</translation>
    <translation id="cpc_loadbalancer_configure_protocole" qtlid="232703">Protocolo:</translation>
    <translation id="cpc_loadbalancer_configure_servers" qtlid="19459">Servidores</translation>
-   <translation id="cpc_loadbalancer_configure_server_name" qtlid="8290">Serveur</translation>
+   <translation id="cpc_loadbalancer_configure_server_name" qtlid="8290">Servidor</translation>
    <translation id="cpc_loadbalancer_configure_servers_condition" qtlid="447469">Debe seleccionar al menos un servidor para activar el Load Balancer.</translation>
    <translation id="cpc_loadbalancer_configure_openstack" qtlid="241586">Openstack</translation>
    <translation id="cpc_loadbalancer_configure_openstack_explanation" qtlid="447482">Usted puede configurar su Load Balancer directamente con la API de OpenStack.<br />Para ello, deberá crear un usuario OpenStack siguiendo los pasos que se indican en <a href="{{guideHorizon}}">esta guía</a> para conectarse a la CLI o a la interfaz Horizon.<br />Una vez validada esta opción, será redirigido a una nueva página de autenticación para autorizar a la aplicación OpenStack a utilizar la API de OVH.</translation>

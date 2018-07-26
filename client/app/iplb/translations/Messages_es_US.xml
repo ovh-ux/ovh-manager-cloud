@@ -19,7 +19,7 @@
    <translation id="iplb_modal_nat_ip_title" qtlid="429459">IPv4 de salida</translation>
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">Debe autorizar a esas direcciones IP para que se conecten a sus servidores.</translation>
 
-   <translation id="iplb_modal_name_change_title" qtlid="71741">Modifier le nom</translation>
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Editar el nombre</translation>
    <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Nombre por defecto</translation>
    <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Nombre personalizado</translation>
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Se ha producido un error al cambiar el nombre.</translation>

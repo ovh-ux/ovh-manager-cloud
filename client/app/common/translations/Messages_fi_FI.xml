@@ -88,8 +88,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Puhelintuki</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Ilmoitukset</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Hups, valikkoa ei pystytä alustamaan!</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Virhe</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Katso kaikki ilmoitukset</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Hups, jokin meni vikaan!</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Valikon käynnistäminen ei onnistu.</translation>

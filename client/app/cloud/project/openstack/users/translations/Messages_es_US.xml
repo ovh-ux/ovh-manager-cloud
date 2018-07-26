@@ -10,7 +10,7 @@
    <translation id="openstackusers_users_userlist_empty" qtlid="245311">No hay usuarios openstack asociados a su cuenta cloud OVH.</translation>
    <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Haga clic en el botón siguiente para añadir un usuario:</translation>
    <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identifiant</translation>
-   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Description</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Descripción</translation>
    <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">État</translation>
    <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Mot de passe</translation>
    <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Cambiar la contraseña</translation>
