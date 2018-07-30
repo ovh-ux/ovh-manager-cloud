@@ -33,9 +33,14 @@ class IpLoadBalancerDashboardHeaderCtrl {
         this.guides.title = this.$translate.instant("iplb_guides");
         this.guides.list = [{
             name: this.$translate.instant("iplb_guides_title"),
-            url: this.ovhDocUrl.getDocUrl("iplb")
+            url: this.ovhDocUrl.getDocUrl("iplb"),
+            external: true
         }];
-        this.guides.footer = this.$translate.instant("iplb_guide_footer");
+        this.guides.footer = {
+            name: this.$translate.instant("iplb_guide_footer"),
+            url: "http://docs.ovh.com/",
+            external: true
+        };
     }
 }
 

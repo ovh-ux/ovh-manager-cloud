@@ -1,8 +1,6 @@
 <div ui-view class="cui-page">
 
-    <cui-page-header
-        data-title-text="'vdi_header' | translate">
-    </cui-page-header>
+    <oui-page-header data-heading="{{ ::'vdi_header' | translate }}"></oui-page-header>
 
     <div class="cui-page__content">
         <oui-spinner data-ng-show="DeskaasCtrl.flags.initializing"></oui-spinner>

@@ -1,5 +1,5 @@
 class LogsHelperService {
-    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper, LogsConstants) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper, LogsConstants, ovhDocUrl) {
         this.$translate = $translate;
         this.$state = $state;
         this.ServiceHelper = ServiceHelper;
@@ -7,6 +7,8 @@ class LogsHelperService {
         this.ControllerModalHelper = ControllerModalHelper;
         this.LogsConstants = LogsConstants;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
+        this.ovhDocUrl = ovhDocUrl;
+        this.initGuides();
     }
 
     killPoller () {
@@ -80,6 +82,28 @@ class LogsHelperService {
             okButtonText: this.$translate.instant("options_upgradequotalink_increase_quota_upgrade")
         })
             .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName }));
+    }
+
+    /**
+     * creates guide menu object having LDP and OVH guide links
+     */
+    initGuides () {
+        this.guides = {};
+        this.guides.title = this.$translate.instant("logs_guides");
+        this.guides.list = [{
+            name: this.$translate.instant("logs_guides_title"),
+            url: this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME),
+            external: true
+        }];
+        this.guides.footer = {
+            name: this.$translate.instant("logs_guides_footer"),
+            url: "http://docs.ovh.com/",
+            external: true
+        };
+    }
+
+    getGuides () {
+        return this.guides;
     }
 
     /**

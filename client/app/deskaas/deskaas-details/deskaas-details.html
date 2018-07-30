@@ -1,7 +1,13 @@
 <div ui-view class="cui-page">
-    <cui-page-header data-title-text="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.alias : $ctrl.details.serviceName"
-                 data-subtitle-text="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.serviceName :''">
-    </cui-page-header>
+    <header class="oui-page-header">
+        <div class="oui-page-header__container">
+            <div class="oui-page-header__content">
+                <oui-spinner data-size="m" data-ng-if="$ctrl.flags.init.details"></oui-spinner>
+                <h1 class="oui-page-header__title" data-ng-if="!$ctrl.flags.init.details" data-ng-bind="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.alias : $ctrl.details.serviceName"></h1>
+                <h2 class="oui-page-header__description" data-ng-if="!$ctrl.flags.init.details" data-ng-bind="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.serviceName :''"></h2>
+            </div>
+        </div>
+    </header>
     <div>
         <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
     </div>

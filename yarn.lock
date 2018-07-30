@@ -6261,18 +6261,18 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@~2.16.0:
-  version "2.16.4"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.16.4.tgz#9d58afc801f6ae15f9142d75a0d65011036c8c2a"
+ovh-ui-angular@~2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.17.0.tgz#130f8c29f041032aee10d38181177cc056b6f85b"
   dependencies:
     clipboard "2.0.1"
     escape-string-regexp "^1.0.5"
     flatpickr "4.5.0"
     popper.js "^1.14.3"
 
-ovh-ui-kit@~2.16.0:
-  version "2.16.3"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.16.3.tgz#4a94f52f291a49d7186091826fbd95210ebfe38c"
+ovh-ui-kit@~2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.17.0.tgz#f52f7032f35596c126d9be8806cca51aee652717"
   dependencies:
     less-plugin-remcalc "^0.0.1"
 
@@ -8456,6 +8456,10 @@ xmlhttprequest-ssl@1.5.3:
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+
+xterm@^3.4.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/xterm/-/xterm-3.5.1.tgz#d2e62ab26108a771b7bd1b7be4f6578fb4aff922"
 
 y18n@^3.2.1:
   version "3.2.1"
