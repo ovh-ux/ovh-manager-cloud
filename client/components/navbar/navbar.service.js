@@ -117,7 +117,7 @@ class ManagerNavbarService {
                                 }
                             }, {
                                 title: this.$translate.instant("cloud_sidebar_pci_object_storage"),
-                                state: "iaas.pci-project.storage",
+                                state: "iaas.pci-project.compute.storage",
                                 stateParams: {
                                     projectId: service.serviceName
                                 }
@@ -129,7 +129,7 @@ class ManagerNavbarService {
                                 }
                             }, {
                                 title: this.$translate.instant("cloud_sidebar_pci_openstack"),
-                                state: "iaas.pci-project.openstack",
+                                state: "iaas.pci-project.compute.openstack",
                                 stateParams: {
                                     projectId: service.serviceName
                                 }

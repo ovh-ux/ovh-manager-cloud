@@ -24,7 +24,7 @@
    <translation id="metrics_welcome" qtlid="403242">¡Bienvenido(a) al proyecto de Metrics!</translation>
    <translation id="metrics_read" qtlid="6958">Lecture</translation>
    <translation id="metrics_write" qtlid="17321">Ecriture</translation>
-   <translation id="metrics_desc" qtlid="9238">Description</translation>
+   <translation id="metrics_desc" qtlid="9238">Descripción</translation>
    <translation id="metrics_series" qtlid="403255">Series</translation>
    <translation id="metrics_mads" qtlid="403268">Series activas por mes</translation>
    <translation id="metrics_ddp" qtlid="403281">Puntos por día</translation>
@@ -32,8 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Retención (meses)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Pronto alcanzará el límite autorizado de series.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Considere la migración a un plan superior.</translation>
-   <translation id="metrics_contact_admin" qtlid="43948">Administrateur</translation>
-   <translation id="metrics_contact_billing" qtlid="32950">Facturation</translation>
+   <translation id="metrics_contact_admin" qtlid="43948">Administrador</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Facturación</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Se ha producido un error al cargar el servicio.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Se ha producido un error al cargar el consumo.</translation>

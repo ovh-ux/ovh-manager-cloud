@@ -34,7 +34,7 @@ angular.module("managerApp")
         userSSH: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/ssh",
         userAdvanced: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/advanced",
         contacts: null, // not yet available to US users
-        horizon: "https://horizon.cloud.ovh.net/openstackdashboard?username={username}",
+        horizon: "https://horizon.cloud.ovh.us/openstackdashboard?username={username}",
         ipAction: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip?action={action}&ip={ip}&ipBlock={ipBlock}",
         vRack: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vrack?landingTo=networks",
         nas: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas?landingTo=networks",
@@ -68,7 +68,7 @@ angular.module("managerApp")
         website_order: {
             "cloud-resell-eu": {
                 US: projectName =>
-                    `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
+                    `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
             },
             dedicated_server: {
                 US: "https://ovhcloud.com/order/dedicated/#/dedicated/select"
@@ -135,7 +135,7 @@ angular.module("managerApp")
             },
             ssh: {
                 create: {
-                    US: "https://ovhcloud.com/g1769.creating_ssh_keys"
+                    US: "https://support.ovhcloud.com/hc/en-us/articles/115001588250"
                 },
                 add: {
                     US: "https://ovhcloud.com/g1924.configuring_additionnal_ssh_key"

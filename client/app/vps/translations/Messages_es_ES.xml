@@ -43,12 +43,6 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Sistema</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Usuario</translation>
 
-   <translation id="vps_dashboard_upgrade_1">A major update of the infrastructure VPS 2016 and 2018 in area os-sbg1-006, os-sbg1-010, os-sbg1-011, os-sbg1-012 and os-sbg1-013 is scheduled on Wednesday 11th July from 9 AM UTC+2 to 1 PM UTC+2.</translation>
-   <translation id="vps_dashboard_upgrade_2">During this upgrade, your VPS will remain available but you won’t be able to request any task like : stop/launch, backup, adding additional disk, creating new VPS.</translation>
-   <translation id="vps_dashboard_upgrade_3">The VPSes in rescued mode will be un-resced and stop during the upgrade.</translation>
-   <translation id="vps_dashboard_upgrade_4">More details on travaux task</translation>
-   <translation id="vps_dashboard_upgrade_5">Opens a new tab</translation>
-
    <translation id="vps_dashboard_task" qtlid="195633">Tareas en curso</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Tareas en proceso completadas</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Reinicio</translation>
@@ -113,7 +107,7 @@
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Consultar la guía</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Registro inverso</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Registro DNS inverso</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">No configurado</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secundario</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">No hay dominios configurados</translation>
@@ -172,7 +166,7 @@
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">El cambio será inmediato, pero tenga en cuenta que el tiempo de propagación es de aproximadamente 24 horas.</translation>
    <translation id="vps_configuration_reversedns_success" qtlid="452475">El registro inverso del VPS {{serviceName}} se ha modificado correctamente.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Se ha producido un error al cambiar el registro inverso.</translation>
-   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Registro inverso</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Registro DNS inverso</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">La resolución inversa es lo contrario de una resolución DNS clásica: asocia un dominio a una dirección IP.</translation>
    <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">El registro inverso es especialmente útil en caso de que utilice su VPS como servidor de correo privado. Esto se debe a que muchos servidores de correo están configurados para rechazar los mensajes provenientes de direcciones IP que no tengan registro inverso.</translation>
    <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Indicando un registro inverso, incrementa las probabilidades de que su correo no sea considerado spam.</translation>

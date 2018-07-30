@@ -1,7 +1,7 @@
 <div class="cui-page__content">
     <oui-back-button data-state="dbaas.logs.detail.aliases"
-        data-title="{{ ::'logs_aliases_link_title' | translate }}"
-        data-state-params="{ serviceName: ctrl.serviceName}">
+                     data-heading="{{ ::'logs_aliases_link_title' | translate }}"
+                     data-state-params="{ serviceName: ctrl.serviceName}">
     </oui-back-button>
 
     <h6 data-ng-if="!ctrl.alias.loading" class="oui-header_6">
@@ -54,6 +54,3 @@
         </div>
     </form>
 </div>
-
-
-

@@ -43,12 +43,6 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Järjestelmä</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Käyttäjä</translation>
 
-   <translation id="vps_dashboard_upgrade_1">A major update of the infrastructure VPS 2016 and 2018 in area os-sbg1-006, os-sbg1-010, os-sbg1-011, os-sbg1-012 and os-sbg1-013 is scheduled on Wednesday 11th July from 9 AM UTC+2 to 1 PM UTC+2.</translation>
-   <translation id="vps_dashboard_upgrade_2">During this upgrade, your VPS will remain available but you won’t be able to request any task like : stop/launch, backup, adding additional disk, creating new VPS.</translation>
-   <translation id="vps_dashboard_upgrade_3">The VPSes in rescued mode will be un-resced and stop during the upgrade.</translation>
-   <translation id="vps_dashboard_upgrade_4">More details on travaux task</translation>
-   <translation id="vps_dashboard_upgrade_5">Opens a new tab</translation>
-
    <translation id="vps_dashboard_task" qtlid="195633">Käynnissä olevat tehtävät</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Meneillään olevat päättyneet tehtävät</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Uudelleenkäynnistys</translation>
@@ -113,7 +107,7 @@
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Katso ohje</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Käänteisnimipalvelu</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Ei konfiguroitu</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Verkkotunnuksia ei konfiguroitu</translation>
@@ -172,7 +166,7 @@
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">Muutos on välitön, mutta ota huomioon propagaatioaika (muutoksien päivittymisaika) joka on maksimissaan noin 24 tuntia.</translation>
    <translation id="vps_configuration_reversedns_success" qtlid="452475">Virtuaalipalvelimen {{serviceName}} käänteisnimipalvelua muokattiin.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Tapahtui virhe muokattaessa reverseosoitetta.</translation>
-   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Käänteisnimipalvelu</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Reverse-DNS on vastakohta perinteiselle DNS:lle. Se kiinnittää DNS-nimen IP-osoitteeseen.</translation>
    <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">Reverseosoitetta tarvitaan tilanteissa missä virtuaalipalvelin toimii postipalvelimena. Monet postipalvelimet ovat konfiguroitu hylkäämään viesti joka tulee IP-osoitteesta, jolla ei ole reverseosoitetta. Reversen avulla voit näkyä myös ircissä oikein.</translation>
    <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Määrittelemällä reversen, vähennät sitä mahdollisuutta että lähettämäsi postit tulkitaan spämmiksi.</translation>

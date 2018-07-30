@@ -43,12 +43,6 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Système</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utilisateur</translation>
 
-   <translation id="vps_dashboard_upgrade_1">A major update of the infrastructure VPS 2016 and 2018 in area os-sbg1-006, os-sbg1-010, os-sbg1-011, os-sbg1-012 and os-sbg1-013 is scheduled on Wednesday 11th July from 9 AM UTC+2 to 1 PM UTC+2.</translation>
-   <translation id="vps_dashboard_upgrade_2">During this upgrade, your VPS will remain available but you won’t be able to request any task like : stop/launch, backup, adding additional disk, creating new VPS.</translation>
-   <translation id="vps_dashboard_upgrade_3">The VPSes in rescued mode will be un-resced and stop during the upgrade.</translation>
-   <translation id="vps_dashboard_upgrade_4">More details on travaux task</translation>
-   <translation id="vps_dashboard_upgrade_5">Opens a new tab</translation>
-
    <translation id="vps_dashboard_task" qtlid="195633">Tareas en curso</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Tareas en ejecución terminadas</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Redémarrage</translation>
@@ -68,7 +62,7 @@
 
    <translation id="vps_dashboard_action_doing" qtlid="149787">Realizando la operación...</translation>
    <translation id="vps_dashboard_display_name_save" qtlid="222072">Mínimo 2 caracteres.</translation>
-   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Modifier le nom</translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Editar el nombre</translation>
    <translation id="vps_dashboard_display_name_min" qtlid="222085">Operación cancelada. Mínimo 2 caracteres.</translation>
    <translation id="vps_dashboard_display_name_reset" qtlid="37935">Opération annulée</translation>
 
@@ -113,8 +107,8 @@
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Ver la guía</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
-   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Non configuré</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">DNS inversa</translation>
+   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">No configurado</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secundario</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">No hay dominios configurados</translation>
    <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">{{ count }} dominio(s) configurado(s)</translation>
@@ -172,7 +166,7 @@
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">El cambio será inmediato, pero tenga en cuenta que el tiempo de propagación es de aproximadamente 24 horas.</translation>
    <translation id="vps_configuration_reversedns_success" qtlid="452475">El DNS inverso del VPS {{serviceName}} se ha modificado correctamente.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Se ha producido un error al cambiar el registro inverso.</translation>
-   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">DNS inversa</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">La resolución inversa es lo contrario de una resolución DNS clásica: asocia un dominio a una dirección IP.</translation>
    <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">El registro inverso es especialmente útil en caso de que utilice su VPS como servidor de correo privado. Esto se debe a que muchos servidores de correo están configurados para rechazar los mensajes provenientes de direcciones IP que no tengan registro inverso.</translation>
    <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Al indicar un registro inverso incrementa las probabilidades de que su correo no sea considerado spam.</translation>
@@ -337,7 +331,7 @@
    <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Desmontar el backup</translation>
    <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Desmontar el backup</translation>
    <translation id="vps_configuration_veeam_umount_step1_question" qtlid="452787">¿Desea desmontar el backup <span class="normal italic">{{ serviceName }}</span> de su VPS?</translation>
-   <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Date de création</translation>
+   <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Fecha de creación</translation>
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Se ha producido un error al solicitar el desmontaje del backup del VPS.</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">El backup va a desmontarse del VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Montar el backup</translation>
@@ -347,7 +341,7 @@
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Se ha producido un error al solicitar el montaje del backup en el VPS.</translation>
    <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Restaurar mi VPS</translation>
    <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">¿Está seguro(a) de que desea restaurar el VPS <span class="normal italic">{{ serviceName }}</span> utilizando el siguiente backup?</translation>
-   <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Date de création</translation>
+   <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Fecha de creación</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Cambiar la contraseña root al resutarar</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Es imposible restaurar la contraseña del VPS hasta que VMware Tools no esté instalado. No obstante, puede restaurarla utilizando el modo de rescate.</translation>
    <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Atención: la restauración del VPS borrará todos los datos actuales.</translation>
@@ -387,14 +381,14 @@
    <translation id="vps_tab_SECONDARY_DNS_table_empty" qtlid="170421">No hay dominios configurados en un DNS secundario</translation>
    <translation id="vps_tab_SECONDARY_DNS_table_domain" qtlid="170434">Dominio</translation>
    <translation id="vps_tab_SECONDARY_DNS_table_ip" qtlid="167899">Ip</translation>
-   <translation id="vps_tab_SECONDARY_DNS_table_date" qtlid="26419">Date de création</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_date" qtlid="26419">Fecha de creación</translation>
    <translation id="vps_tab_SECONDARY_DNS_table_dns" qtlid="168250">DNS secundario</translation>
    <translation id="vps_tab_veeam" qtlid="170447">Backup automatizado</translation>
    <translation id="vps_tab_VEEAM_dashboard_veeam_unavailable" qtlid="250823">El backup automático no está disponible para esta gama.</translation>
    <translation id="vps_tab_VEEAM_dashboard_not_activated" qtlid="170473">No ha contratado la opción de Backup Automatizado.</translation>
    <translation id="vps_tab_VEEAM_dashboard_not_able_to_order" qtlid="170486">No puede contratar porque su NIC no está autorizado para enviar pedidos relativos a este VPS.</translation>
    <translation id="vps_tab_VEEAM_dashboard_no_current_restore_point" qtlid="170499">No hay ningún punto de restauración montado actualmente</translation>
-   <translation id="vps_tab_VEEAM_dashboard_state" qtlid="26443">Statut</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state" qtlid="26443">Estado</translation>
    <translation id="vps_tab_VEEAM_dashboard_state_enabled" qtlid="170512">Montado</translation>
    <translation id="vps_tab_VEEAM_dashboard_state_disabled" qtlid="170538">Desmontado</translation>
    <translation id="vps_tab_VEEAM_dashboard_state_MOUNTING" qtlid="170525">Montando</translation>
@@ -404,10 +398,10 @@
    <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTING" qtlid="170551">Desmontando</translation>
    <translation id="vps_tab_VEEAM_dashboard_restoring" qtlid="170564">El VPS se está reinstalando o restaurando.<br/>Hasta que finalice la operación no es posible realizar acciones de restauración o montaje.</translation>
    <translation id="vps_tab_VEEAM_dashboard_current_restore_point" qtlid="170577">La información relativa al punto de restauración montado actualmente es la siguiente:</translation>
-   <translation id="vps_tab_VEEAM_dashboard_current_restore_point_creationTime" qtlid="26419">Date de création</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point_creationTime" qtlid="26419">Fecha de creación</translation>
    <translation id="vps_tab_VEEAM_dashboard_access_smb" qtlid="170590">Acceso Samba</translation>
    <translation id="vps_tab_VEEAM_dashboard_access_nfs" qtlid="170603">Acceso NFS</translation>
-   <translation id="vps_tab_VEEAM_dashboard_table_header_date" qtlid="26419">Date de création</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_date" qtlid="26419">Fecha de creación</translation>
    <translation id="vps_tab_VEEAM_dashboard_table_header_mount" qtlid="170616">Montaje</translation>
    <translation id="vps_tab_VEEAM_dashboard_table_header_restore" qtlid="170629">Restauración</translation>
    <translation id="vps_tab_VEEAM_dashboard_table_empty" qtlid="170642">No hay puntos de restauración</translation>
@@ -434,7 +428,7 @@
    <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>
    <translation id="vps_tab_backup_storage_table_ftp" qtlid="50410">FTP</translation>
    <translation id="vps_tab_backup_storage_table_nfs" qtlid="6778">NFS</translation>
-   <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Statut</translation>
+   <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Estado</translation>
    <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">En cours</translation>
    <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Activé</translation>
    <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Editar el acceso</translation>

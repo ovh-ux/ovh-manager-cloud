@@ -1,7 +1,8 @@
 <div class="top-space-m20 bottom-space-m20 nasha-partition nasha-partition-access">
 
-    <oui-back-button data-title="{{::'nasha_partitions_action_change_access' | translate}}"
-        data-on-click="NashaPartitionAccessCtrl.$state.go('paas.nasha.nasha-partitions')"></oui-back-button>
+    <oui-back-button data-heading="{{ ::'nasha_partitions_action_change_access' | translate }}"
+                     data-on-click="NashaPartitionAccessCtrl.$state.go('paas.nasha.nasha-partitions')">
+    </oui-back-button>
 
     <p class="bottom-space-m8" data-translate="nasha_access_partition" data-translate-values="{partitionName: NashaPartitionAccessCtrl.data.partition.partitionName}"></p>
 

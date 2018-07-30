@@ -88,8 +88,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Soporte telefónico</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notificaciones</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">¡Vaya! No se ha podido crear el menú.</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Error</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Ver todas las notificaciones</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">¡Vaya! Hay un problema.</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">No se ha podido cargar el menú.</translation>

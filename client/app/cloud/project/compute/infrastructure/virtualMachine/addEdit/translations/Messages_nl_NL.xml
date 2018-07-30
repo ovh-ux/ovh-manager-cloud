@@ -252,8 +252,8 @@ CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Voer aub een geldig aantal instances in. &#13;
 &#13;
 </translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Met uw huidige <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> kunt u gelijktijdig tot {{max}} instances creëren van het type {{type}} voor de regio {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Met uw huidige <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> kunt u slechts één type {{type}} instance creëren voor de regio {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Toewijzen aan een privénetwerk</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Geen</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Het overzicht van privénetwerken kan momenteel niet worden opgehaald. {{ message }}</translation>

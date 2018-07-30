@@ -1,5 +1,5 @@
 <section class="cui-page__content cui-page__content-narrow">
-    <oui-back-button data-title="{{ 'cpcivm_add_title' | translate }}"></oui-back-button>
+    <oui-back-button data-heading="{{ ::'cpcivm_add_title' | translate }}"></oui-back-button>
     <oui-stepper data-on-init="$ctrl.initProject()"
                  data-on-finish="$ctrl.confirm()">
         <!-- Step 1 : OS or SnapShot -->
@@ -387,7 +387,7 @@
                      data-ng-if="$ctrl.model.flavor.maxInstance > 0">
                     <span data-translate="cpcivm_add_step3_quantity_help"
                           data-translate-values="{ max: $ctrl.model.flavor.maxInstance, type: $ctrl.model.flavor.name, region: $ctrl.model.region.microRegion.text }"></span>
-                    <a ui-sref="iaas.pci-project.billing.quota" target="_blank"
+                    <a ui-sref="iaas.pci-project.compute.quota" target="_blank"
                        data-translate="cpcivm_add_step3_quota_link_text"></a>.
                 </div>
             </oui-field>

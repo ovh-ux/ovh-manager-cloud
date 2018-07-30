@@ -3,7 +3,7 @@
 angular.module("managerApp").controller("CloudProjectDeleteCtrl",
     function ($scope, $uibModalInstance, $translate, CloudMessage, $stateParams, $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
               OvhApiCloudProjectSnapshot, $state, OvhApiCloudProjectStorage, OvhApiCloudProjectIpFailover, OvhApiCloudProjectIpV6, OvhApiCloudProject,
-              OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit, CloudProjectBillingService) {
+              OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit, CloudProjectBillingService, TARGET) {
         "use strict";
 
         var self = this;
@@ -30,19 +30,20 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
         };
 
         this.init = function () {
-            self.loaders.init = true;
-
-            $q.all([
-                getConsumption(),
-                getCredits(),
-                initRemainingResources()
-            ]).then(function () {
-                self.error = false;
-            }, function () {
-                self.error = true;
-            })["finally"](function () {
-                self.loaders.init = false;
-            });
+            if (TARGET !== "US") {
+                self.loaders.init = true;
+                $q.all([
+                    getConsumption(),
+                    getCredits(),
+                    initRemainingResources()
+                ]).then(function () {
+                    self.error = false;
+                }, function () {
+                    self.error = true;
+                })["finally"](function () {
+                    self.loaders.init = false;
+                });
+            }
         };
 
         //---------MODAL---------

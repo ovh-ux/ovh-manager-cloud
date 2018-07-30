@@ -1,5 +1,5 @@
 <div class="cui-page__content">
-    <oui-back-button data-title="{{ :: (ctrl.edition ? 'iplb_frontend_update_title' : 'iplb_frontend_add_title') | translate: { frontendId: ctrl.frontend.frontendId } }}">
+    <oui-back-button data-heading="{{ ::(ctrl.edition ? 'iplb_frontend_update_title' : 'iplb_frontend_add_title') | translate: { frontendId: ctrl.frontend.frontendId } }}">
     </oui-back-button>
 
     <form novalidate name="ctrl.form">
@@ -202,4 +202,3 @@
         </div>
     </form>
 </div>
-

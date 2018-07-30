@@ -5,7 +5,7 @@ class RegionService {
 
     getMacroRegion (region) {
         const macro = /[\D]{2,3}/.exec(region);
-        return macro ? macro[0].toUpperCase() : "";
+        return macro ? macro[0].replace("-", "").toUpperCase() : "";
     }
 
     getMacroRegionLowercase (region) {
@@ -26,6 +26,7 @@ class RegionService {
             WAW: this.$translate.instant("cloud_common_region_WAW"),
             DE: this.$translate.instant("cloud_common_region_DE"),
             UK: this.$translate.instant("cloud_common_region_UK"),
+            US: this.$translate.instant("cloud_common_region_US")
         };
     }
 

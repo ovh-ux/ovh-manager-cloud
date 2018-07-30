@@ -43,12 +43,6 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Système</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utilisateur</translation>
 
-   <translation id="vps_dashboard_upgrade_1">Une mise à jour majeure de l’infrastructure sous-jacente à vos VPS (gammes 2016 et 2018) sur les zones os-sbg1-006, os-sbg1-010, os-sbg1-011, os-sbg1-012 et os-sbg1-013 aura lieu le 11 juillet 2018 à partir de 9 h (UTC+2).</translation>
-   <translation id="vps_dashboard_upgrade_2">Nous prévoyons une opération d’une durée de quatre heures. Pendant cette manipulation, vos VPS resteront fonctionnels. En revanche, il vous sera impossible de réaliser les opérations suivantes : arrêt, démarrage, sauvegarde, création de disques additionnels et de nouvelles machines.</translation>
-   <translation id="vps_dashboard_upgrade_3">Les VPS en mode « rescue » passeront en « un-rescued » et seront arrêtés pendant la mise à jour.</translation>
-   <translation id="vps_dashboard_upgrade_4">Plus de détails sur la tâche travaux correspondante</translation>
-   <translation id="vps_dashboard_upgrade_5">Ouvre un nouvel onglet</translation>
-
    <translation id="vps_dashboard_task" qtlid="195633">Tâches en cours</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Tâches en cours terminées</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Redémarrage</translation>
@@ -322,7 +316,7 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Souscrire aux Backups automatisés</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Pour le premier paiement, vous serez facturé au prorata du nombre de jours restant avant la date de renouvellement de votre VPS.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Ensuite, le service sera facturé mensuellement au prix de <span class="red bold">{{ price }}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Ensuite, le service sera facturé mensuellement au prix de <span class="bold">{{ price }}</span></translation>
    <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Voulez-vous commander l'option Sauvegardes automatisées pour le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Prix:</translation>

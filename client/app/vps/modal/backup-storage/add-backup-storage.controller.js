@@ -1,7 +1,8 @@
 class AddBackupStorageCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService) {
+    constructor ($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
         this.serviceName = serviceName;
         this.CloudMessage = CloudMessage;
         this.VpsService = VpsService;
@@ -33,10 +34,13 @@ class AddBackupStorageCtrl {
     }
 
     loadAvailableIpBlocks () {
-        this.VpsService.getBackupStorageAuthorizableBlocks(this.serviceName)
-            .then(data => { this.available = data })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_add_ip_failure")))
-            .finally(() => { this.loader.init = false });
+        this.ipBlocks = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getBackupStorageAuthorizableBlocks(this.serviceName)
+                .then(data => { this.available = data; })
+                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_add_ip_failure")))
+                .finally(() => { this.loader.init = false; })
+        });
+        return this.ipBlocks.load();
     }
 
     cancel () {
@@ -44,20 +48,23 @@ class AddBackupStorageCtrl {
     }
 
     confirm () {
-        this.loader.save = true;
-        this.VpsService.postBackupStorageAccess(this.serviceName, this.model.ip, this.model.ftp, this.model.nfs, this.model.cifs)
-            .then(data => {
-                if (data.state == "ERROR") {
-                    this.CloudMessage.error(data.messages[0].message || this.$translate.instant("vps_backup_storage_access_add_failure"));
-                } else {
-                    this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_add_success"));
-                }
-            })
-            .catch(err => this.CloudMessage.error(err || this.$translate.instant("vps_backup_storage_access_add_failure")))
-            .finally(() => {
-                this.loader.save = false;
-                this.$uibModalInstance.close();
-            });
+        if (!this.isAvailable()) {
+            return this.cancel();
+        }
+        this.CloudMessage.flushChildMessage();
+        this.addStorage = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.postBackupStorageAccess(this.serviceName, this.model.ip, this.model.ftp, this.model.nfs, this.model.cifs)
+                .then(data => {
+                    if (data.state === "ERROR") {
+                        this.CloudMessage.error(_.get(data, "messages[0].message", false) || this.$translate.instant("vps_backup_storage_access_add_failure"));
+                    } else {
+                        this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_add_success"));
+                    }
+                })
+                .catch(err => this.CloudMessage.error(err || this.$translate.instant("vps_backup_storage_access_add_failure")))
+                .finally(() => this.$uibModalInstance.close())
+        });
+        return this.addStorage.load();
     }
 }
 

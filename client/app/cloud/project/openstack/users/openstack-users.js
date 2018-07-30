@@ -3,7 +3,7 @@
 angular.module("managerApp")
     .config(function ($stateProvider) {
         $stateProvider
-            .state("iaas.pci-project.openstack.users", {
+            .state("iaas.pci-project.compute.openstack.users", {
                 url: "/users",
                 sticky: true,
                 views: {
