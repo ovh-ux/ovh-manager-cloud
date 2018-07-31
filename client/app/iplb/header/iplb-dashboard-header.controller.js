@@ -1,12 +1,12 @@
 class IpLoadBalancerDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, IpLoadBalancerHomeService, ovhDocUrl, SidebarMenu) {
+    constructor ($stateParams, $translate, ControllerHelper, IpLoadBalancerHomeService, ovhDocUrl, SidebarMenu, CloudConstants) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
         this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
-
+        this.CloudConstants = CloudConstants;
         this.serviceName = $stateParams.serviceName;
 
         //  No error handling since we don't want to break anything for a title.
@@ -38,7 +38,7 @@ class IpLoadBalancerDashboardHeaderCtrl {
         }];
         this.guides.footer = {
             name: this.$translate.instant("iplb_guide_footer"),
-            url: "http://docs.ovh.com/",
+            url: this.CloudConstants.OVH_GUIDE_URL,
             external: true
         };
     }

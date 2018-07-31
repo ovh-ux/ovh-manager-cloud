@@ -8,7 +8,6 @@
             this.CloudMessage = CloudMessage;
             this.serviceName = $stateParams.serviceName;
             this.MetricService = MetricService;
-
             this.service = {};
             this.loadingService = false;
             this.messages = [];

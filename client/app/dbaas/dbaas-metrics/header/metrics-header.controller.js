@@ -1,13 +1,13 @@
 (() => {
     class MetricsHeaderCtrl {
-        constructor ($state, $stateParams, $translate, METRICS_ENDPOINTS, ovhDocUrl) {
+        constructor ($state, $stateParams, $translate, METRICS_ENDPOINTS, ovhDocUrl, CloudConstants) {
             this.$state = $state;
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
             this.$translate = $translate;
             this.METRICS_ENDPOINTS = METRICS_ENDPOINTS;
             this.ovhDocUrl = ovhDocUrl;
-
+            this.CloudConstants = CloudConstants;
             this.guides = {};
         }
 
@@ -19,7 +19,7 @@
             this.guides.title = this.$translate.instant("metrics_guides");
             this.guides.footer = {
                 name: this.$translate.instant("metrics_guides_footer"),
-                url: "http://docs.ovh.com/",
+                url: this.CloudConstants.OVH_GUIDE_URL,
                 external: true
             };
             this.guides.sections = [];
