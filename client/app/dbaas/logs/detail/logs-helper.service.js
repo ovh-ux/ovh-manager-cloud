@@ -1,5 +1,5 @@
 class LogsHelperService {
-    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper, LogsConstants, ovhDocUrl, CloudConstants) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper, LogsConstants, ovhDocUrl, URLS) {
         this.$translate = $translate;
         this.$state = $state;
         this.ServiceHelper = ServiceHelper;
@@ -8,7 +8,7 @@ class LogsHelperService {
         this.LogsConstants = LogsConstants;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
         this.ovhDocUrl = ovhDocUrl;
-        this.CloudConstants = CloudConstants;
+        this.URLS = URLS;
         this.initGuides();
     }
 
@@ -98,7 +98,7 @@ class LogsHelperService {
         }];
         this.guides.footer = {
             name: this.$translate.instant("logs_guides_footer"),
-            url: this.CloudConstants.OVH_GUIDE_URL,
+            url: this.URLS.guides.home.FR,
             external: true
         };
     }
