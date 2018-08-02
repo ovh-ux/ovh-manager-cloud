@@ -1,13 +1,16 @@
 (() => {
     class MetricsHeaderCtrl {
-        constructor ($state, $stateParams, $translate, METRICS_ENDPOINTS, ovhDocUrl, URLS) {
+        constructor ($state, $stateParams, $translate, ovhDocUrl, METRICS_ENDPOINTS, URLS) {
             this.$state = $state;
             this.$stateParams = $stateParams;
-            this.serviceName = $stateParams.serviceName;
             this.$translate = $translate;
-            this.METRICS_ENDPOINTS = METRICS_ENDPOINTS;
+
             this.ovhDocUrl = ovhDocUrl;
+
+            this.METRICS_ENDPOINTS = METRICS_ENDPOINTS;
             this.URLS = URLS;
+
+            this.serviceName = $stateParams.serviceName;
             this.guides = {};
         }
 
