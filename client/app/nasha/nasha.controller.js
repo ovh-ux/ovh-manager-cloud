@@ -1,6 +1,6 @@
 class NashaCtrl {
     constructor ($q, $state, $stateParams, $translate, CloudMessage, OvhApiDedicatedNasha,
-                 ovhDocUrl, REDIRECT_URLS) {
+                 ovhDocUrl, REDIRECT_URLS, URLS) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -9,6 +9,7 @@ class NashaCtrl {
         this.OvhApiDedicatedNasha = OvhApiDedicatedNasha;
         this.ovhDocUrl = ovhDocUrl;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.URLS = URLS;
 
         this.loading = false;
         this.urlRenew = null;
@@ -65,11 +66,16 @@ class NashaCtrl {
 
     initGuides () {
         this.guides.title = this.$translate.instant("nasha_guide_title");
-        this.guides.footer = this.$translate.instant("nash_guide_footer");
+        this.guides.footer = {
+            name: this.$translate.instant("nash_guide_footer"),
+            url: this.URLS.guides.home.FR,
+            external: true
+        };
         this.guides.list = [];
         this.guides.list.push({
             name: this.$translate.instant("nash_guide_name"),
-            url: this.ovhDocUrl.getDocUrl("cloud/storage/nas")
+            url: this.ovhDocUrl.getDocUrl("cloud/storage/nas"),
+            external: true
         });
     }
 

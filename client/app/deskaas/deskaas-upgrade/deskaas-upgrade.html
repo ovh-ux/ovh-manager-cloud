@@ -1,7 +1,13 @@
 <div class="cui-page">
-    <cui-page-header data-title-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.alias : DeskaasUpgradeCtrl.details.serviceName"
-                 data-subtitle-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.serviceName :''">
-    </cui-page-header>
+    <header class="oui-page-header">
+        <div class="oui-page-header__container">
+            <div class="oui-page-header__content">
+                <oui-spinner data-size="m" data-ng-if="DeskaasUpgradeCtrl.flags.init"></oui-spinner>
+                <h1 class="oui-page-header__title" data-ng-if="!DeskaasUpgradeCtrl.flags.init" data-ng-bind="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.alias : DeskaasUpgradeCtrl.details.serviceName"></h1>
+                <h2 class="oui-page-header__description" data-ng-if="!DeskaasUpgradeCtrl.flags.init && DeskaasUpgradeCtrl.details.alias !== 'noAlias'" data-ng-bind="DeskaasUpgradeCtrl.details.serviceName"></h2>
+            </div>
+        </div>
+    </header>
     <section class="cui-page__content cui-page__content-narrow">
         <oui-back-button
             data-heading="{{ ::'vdi_upgrade_title' | translate }}"

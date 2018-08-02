@@ -1,5 +1,5 @@
 angular.module("managerApp")
-    .controller("CdaDetailsCtrl", function ($q, $stateParams, $translate, ovhDocUrl, URLS, CdaService, CloudMessage) {
+    .controller("CdaDetailsCtrl", function ($stateParams, $translate, ovhDocUrl, CdaService, CloudMessage, URLS) {
         "use strict";
 
         const self = this;
@@ -14,10 +14,14 @@ angular.module("managerApp")
             title: $translate.instant("cda_guide_title"),
             list: [{
                 name: $translate.instant("cda_guide_name"),
-                url: ovhDocUrl.getDocUrl("cloud/storage/ceph")
+                url: ovhDocUrl.getDocUrl("cloud/storage/ceph"),
+                external: true
             }],
-            footer: $translate.instant("cda_guide_footer")
-
+            footer: {
+                name: $translate.instant("cda_guide_footer"),
+                url: URLS.guides.home.FR,
+                external: true
+            }
         };
 
         self.refreshMessage = function () {

@@ -1,9 +1,21 @@
 <div class="nasha cui-page">
     <div data-ng-if="NashaCtrl.data.nasha.serviceName">
-        <cui-page-header
-            data-title-text="NashaCtrl.data.nasha.serviceName"
-            data-guides="NashaCtrl.guides">
-        </cui-page-header>
+        <oui-page-header data-heading="{{ ::NashaCtrl.data.nasha.serviceName }}">
+            <oui-guide-menu data-text="{{ ::NashaCtrl.guides.title }}">
+                <oui-guide-menu-item
+                    data-ng-repeat="guideItem in NashaCtrl.guides.list track by guideItem.url"
+                    data-text="{{ ::guideItem.name }}"
+                    data-href="{{ ::guideItem.url }}"
+                    data-external="guideItem.external">
+                </oui-guide-menu-item>
+                <oui-guide-menu-divider></oui-guide-menu-divider>
+                <oui-guide-menu-item
+                    data-text="{{ ::NashaCtrl.guides.footer.name }}"
+                    data-href="{{ ::NashaCtrl.guides.footer.url }}"
+                    data-external="NashaCtrl.guides.footer.external">
+                </oui-guide-menu-item>
+            </oui-guide-menu>
+        </oui-page-header>
 
         <!-- init loading... -->
         <oui-spinner data-size="l" data-ng-show="NashaCtrl.loading"></oui-spinner>

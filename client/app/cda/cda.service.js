@@ -4,6 +4,7 @@ angular.module("managerApp")
       var self = this;
 
       self.currentService = {};
+      self.loadingCurrentService = false;
 
       self.initDetails = function (serviceName, forceRefresh) {
           if (!serviceName) {
@@ -13,6 +14,7 @@ angular.module("managerApp")
 
           if (self.currentService.serviceName !== serviceName || forceRefresh === true) {
               OvhApiDedicatedCeph.v6().resetQueryCache();
+              self.loadingCurrentService = true;
               return OvhApiDedicatedCeph.v6().get({
                   serviceName: serviceName
               }).$promise.then(function (cda) {
@@ -20,6 +22,8 @@ angular.module("managerApp")
                   return cda;
               }).catch(function (error) {
                   CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              }).finally(() => {
+                self.loadingCurrentService = false;
               });
           } else {
               return $q.when(self.currentService);
