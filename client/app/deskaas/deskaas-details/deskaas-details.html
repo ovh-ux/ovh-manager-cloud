@@ -4,7 +4,7 @@
             <div class="oui-page-header__content">
                 <oui-spinner data-size="m" data-ng-if="$ctrl.flags.init.details"></oui-spinner>
                 <h1 class="oui-page-header__title" data-ng-if="!$ctrl.flags.init.details" data-ng-bind="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.alias : $ctrl.details.serviceName"></h1>
-                <h2 class="oui-page-header__description" data-ng-if="!$ctrl.flags.init.details" data-ng-bind="$ctrl.details.alias !== 'noAlias' ? $ctrl.details.serviceName :''"></h2>
+                <h2 class="oui-page-header__description" data-ng-if="!$ctrl.flags.init.details && $ctrl.details.alias !== 'noAlias'" data-ng-bind="$ctrl.details.serviceName"></h2>
             </div>
         </div>
     </header>
