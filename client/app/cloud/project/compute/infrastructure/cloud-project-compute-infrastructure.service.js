@@ -141,10 +141,10 @@ class CloudProjectComputeInfrastructureService {
         this.$uibModal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html",
-            controller: "CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl",
+            controller: "cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl",
             controllerAs: "$ctrl",
             resolve: {
-                params: () => vm
+                params: () => ({ vm })
             }
         }).result.then(() => this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
             .catch(this.ServiceHelper.errorHandler("cpci_vm_delete_submit_error"))

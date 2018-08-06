@@ -1,26 +1,35 @@
-class CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl {
-    constructor($uibModalInstance, $stateParams, params, OvhApiCloudProjectNetworkPrivate,
-                CloudProjectComputeInfrastructurePrivateNetworkService) {
-        this.service = CloudProjectComputeInfrastructurePrivateNetworkService;
-        this.serviceName = $stateParams.projectId;
-        this.networkId = params;
-        this.modal = $uibModalInstance;
+{
+    class CloudProjectComputeInfrastructurePrivateNetworkDeleteCtrl {
+        constructor ($stateParams, $uibModalInstance,
+                     CloudProjectComputeInfrastructurePrivateNetworkService, params) {
+            this.$stateParams = $stateParams;
+            this.$uibModalInstance = $uibModalInstance;
 
+            this.CloudProjectComputeInfrastructurePrivateNetworkService = CloudProjectComputeInfrastructurePrivateNetworkService;
+            this.params = params;
+        }
+
+        $onInit () {
+            this.serviceName = this.$stateParams.projectId;
+        }
+
+        deletePrivateNetwork () {
+            this.CloudProjectComputeInfrastructurePrivateNetworkService.deleteProjectNetworkPrivate(this.serviceName, this.params);
+        }
+
+        confirm () {
+            this.$uibModalInstance.close();
+
+            return this.deletePrivateNetwork();
+        }
+
+        cancel () {
+            this.$uibModalInstance.dismiss();
+        }
     }
 
-    deletePrivateNetwork () {
-        this.service.deleteProjectNetworkPrivate(this.serviceName, this.networkId);
-    }
-
-    confirm () {
-        this.modal.close();
-        return this.deletePrivateNetwork();
-    };
-
-    cancel () {
-        this.modal.dismiss();
-    }
+    angular
+        .module("managerApp")
+        .controller("cloudProjectComputeInfrastructurePrivateNetworkDeleteCtrl", CloudProjectComputeInfrastructurePrivateNetworkDeleteCtrl);
 }
 
-angular.module("managerApp").controller("CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl",
-                                        CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl);
