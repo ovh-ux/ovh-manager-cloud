@@ -6,7 +6,7 @@
    <translation id="cpc_ssh_key" qtlid="104326">Chave</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Carregamento das suas chaves SSH...</translation>
-   <translation id="cpc_ssh_error" qtlid="248808">Oops, não foi possível carregar a lista das suas chaves SSH!</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Lamentamos, mas não foi possível carregar a lista das suas chaves SSH!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">A comunicação entre os servidores OVH utiliza o protocolo seguro (SSH) para a encriptação dos dados.</translation>
    <translation id="cpc_ssh_key_explain_2" qtlid="366554">Existem clientes SSH para cada sistema operativo. Consulte-o o <a href="{{ createUrl }}" target="_blank">guia de criação das chaves SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> para saber mais.</translation>
@@ -18,7 +18,7 @@
    <translation id="cpc_ssh_add_submit_success" qtlid="248600">A sua chave está agora disponível!</translation>
    <translation id="cpc_ssh_add_name" qtlid="248626">Atribua-lhe um nome</translation>
    <translation id="cpc_ssh_add_key" qtlid="366580">Introduza a sua chave de 4096 bytes</translation>
-   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Oops, não foi possível adicionar esta chave!</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Lamentamos, mas não foi possível adicionar esta chave!</translation>
    <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Este nome já está a ser usado numa outra chave SSH.</translation>
 
 

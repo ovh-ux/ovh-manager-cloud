@@ -83,5 +83,5 @@
    <translation id="browser_alert_close" qtlid="405396">Fermer cette alerte</translation>
 
    <translation id="voucher_warning_title" qtlid="373441">Avertissement</translation>
-   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un bon d'échange qui permet la création d'un projet cloud temporaire. Votre bon d'échange est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un bon d'échange qui permet la création d'un projet infonuagique temporaire. Votre bon d'échange est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention : au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
 </translations>

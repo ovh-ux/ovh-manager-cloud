@@ -18,7 +18,7 @@
 
    <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Chargement des zones disponibles.</translation>
    <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Choisir sa localisation</translation>
-   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Oups, nous n'arrivons pas à vous trouver les régions !</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Oups, nous n'arrivons pas à vous trouver les régions!</translation>
    <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Actualiser la liste des régions</translation>
    <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Cloud public</translation>
 
@@ -27,7 +27,7 @@
    <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Appliquer</translation>
 
    <translation id="cpci_volume_default_name" qtlid="252685">Nom du disque dur</translation>
-   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Oups, nous n'arrivons pas à vous trouver les images !</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Oups, nous n'arrivons pas à vous trouver les images!</translation>
 
    <translation id="cpci_volume_addedit_post_error" qtlid="252802">Oups, nous n'arrivons pas à ajouter le disque dur.</translation>
    <translation id="cpci_volume_addedit_put_error" qtlid="252815">Oups, nous n'arrivons pas à mettre a jour ce disque dur.</translation>

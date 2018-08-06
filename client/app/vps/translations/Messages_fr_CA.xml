@@ -107,7 +107,7 @@
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Voir le guide</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="vps_dashboard_reverse_dns" qtlid="44284">DNS inverse</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">DNS inversé</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Non configuré</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secondaire</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Aucun domaine configuré</translation>
@@ -166,7 +166,7 @@
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">La modification sera immédiate, mais veuillez prendre en compte le temps de propagation (environ 24h).</translation>
    <translation id="vps_configuration_reversedns_success" qtlid="452475">Le DNS inversé du VPS {{serviceName}} a bien été modifié.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Une erreur est survenue lors de la modification du Reverse DNS.</translation>
-   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">DNS inverse</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">DNS inversé</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Le Reverse DNS est l’opposé d’un enregistrement DNS classique : il associe un nom de domaine à une adresse IP.</translation>
    <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">Le Reverse DNS est particulièrement utile dans le cas où votre VPS est utilisé comme serveur de messagerie privé. En effet, de nombreux serveurs de mails sont configurés pour rejeter les messages provenant d’adresses IP ne comprenant pas de Reverse DNS.</translation>
    <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">En définissant le Reverse, vous optimisez donc les chances pour que vos e-mails ne soient pas considérés comme du spam.</translation>

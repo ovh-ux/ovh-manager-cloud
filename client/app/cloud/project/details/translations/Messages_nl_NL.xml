@@ -2,13 +2,13 @@
 <translations>
    <translation id="cpd_project_redirect" qtlid="245857">Doorsturen...</translation>
 
-   <translation id="cpd_project_suspended" qtlid="497972">Votre projet cloud est suspendu. Pour plus d'informations, merci de contacter <a href="{{ url }}">le support</a>.</translation>
+   <translation id="cpd_project_suspended" qtlid="497972">Uw cloudproject is gedeactiveerd. Voor meer informatie kunt u contact opnemen met onze<a href="{{ url }}">support</a>.</translation>
 
    <translation id="cpd_project_creating_help" qtlid="245896">U wordt doorgestuurd wanneer het project wordt gecreëerd.</translation>
    <translation id="cpd_project_creating_havetopay" qtlid="272014">Rond aub uw betaling af om uw oorspronkelijke bestelling te bevestigen.</translation>
    <translation id="cpd_project_creating_cancel" qtlid="281990">Annuleer projectcreatie</translation>
    <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Rond aub uw betaling af om uw <a href="{{url}}" target="_blank"> oorspronkelijke bestelling te bevestigen</a>.</translation>
-   <translation id="cpd_project_creating_bc_support" qtlid="497985">Si cette page est toujours présente plusieurs minutes après paiement, merci de contacter <a href="{{ url }}">notre service client</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="497985">Als deze pagina enkele minuten na uw betaling nog steeds te zien is, neemt u aub contact op met onze  <a href="{{ url }}">klantenservice</a>.</translation>
 
    <translation id="cpd_project_deleting" qtlid="245909">Het project wordt verwijderd...</translation>
    <translation id="cpd_project_deleting_help" qtlid="245922">U zult automatisch worden doorgestuurd zodra uw project is verwijderd.</translation>
