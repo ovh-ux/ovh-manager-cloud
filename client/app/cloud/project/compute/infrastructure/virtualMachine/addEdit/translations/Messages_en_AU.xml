@@ -216,7 +216,7 @@
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">You do not have an SSH key. </translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">OVH uses SSH to secure encrypted data communications between servers. </translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">There are SSH clients for each operating system. See the <a href="{{ createUrl }}" target="_blank">guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> for more information.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">There are SSH clients for each operating system. Please see the <a href="{{ createUrl }}" target="_blank">guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> for more information.</translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">I have understood!</translation>

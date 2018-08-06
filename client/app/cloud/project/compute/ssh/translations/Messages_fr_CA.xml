@@ -6,7 +6,7 @@
    <translation id="cpc_ssh_key" qtlid="104326">Clé</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Chargement de vos clés SSH...</translation>
-   <translation id="cpc_ssh_error" qtlid="248808">Oups, nous n'arrivons pas à récupérer la liste de vos clés SSH !</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Oups, nous n'arrivons pas à récupérer la liste de vos clés SSH!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">La communication entre les serveurs OVH utilise le protocole sécurisé (SSH) pour l’encryption des données.</translation>
    <translation id="cpc_ssh_key_explain_2" qtlid="366554">Il existe des clients SSH pour chaque système d'exploitation. Consultez le <a href="{{ createUrl }}" target="_blank">guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> pour en savoir plus.</translation>
@@ -15,10 +15,10 @@
    <translation id="cpc_ssh_add_button" qtlid="248561">Ajouter une clé</translation>
    <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Annuler l'ajout</translation>
    <translation id="cpc_ssh_add_button_submit" qtlid="248587">Ajouter cette clé</translation>
-   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Votre clé est maintenant disponible !</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Votre clé est maintenant disponible!</translation>
    <translation id="cpc_ssh_add_name" qtlid="248626">Donnez-lui un nom</translation>
    <translation id="cpc_ssh_add_key" qtlid="366580">Entrez votre clé de 4096 octets</translation>
-   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Oups, nous n'arrivons pas à ajouter cette clé !</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Oups, nous n'arrivons pas à ajouter cette clé!</translation>
    <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Ce nom est déjà utilisé par une autre clé SSH.</translation>
 
 
@@ -31,7 +31,7 @@
    <translation id="cpc_ssh_delete_submit" qtlid="245519">Confirmer cette suppression</translation>
 
    <translation id="cpc_ssh_empty" qtlid="248782">Vous n'avez pas encore ajouté de clé SSH.</translation>
-   <translation id="cpc_ssh_empty_add" qtlid="248795">Cliquez sur "Ajouter une clé" pour y remédier !</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Cliquez sur "Ajouter une clé" pour y remédier!</translation>
 
    <translation id="cpc_ssh_error_max_char" qtlid="248665">Le nom ne peut pas dépasser 255 caractères.</translation>
    <translation id="cpc_ssh_error_required_name" qtlid="248652">Vous devez donner un nom à votre clé.</translation>

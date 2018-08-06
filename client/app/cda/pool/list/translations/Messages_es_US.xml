@@ -11,7 +11,7 @@
    <translation id="cda_pool_table_col_replica" qtlid="354249">Número de réplicas</translation>
    <translation id="cda_pool_table_col_minreplica" qtlid="354262">Número mínimo de réplicas activas</translation>
    <translation id="cda_pool_table_col_backup" qtlid="354275">Backup pool</translation>
-   <translation id="cda_pool_table_col_actions" qtlid="72809">Actions</translation>
+   <translation id="cda_pool_table_col_actions" qtlid="72809">Acciones</translation>
 
    <translation id="cda_pool_add_title" qtlid="354236">Añadir un pool</translation>
    <translation id="cda_pool_add_poolname_label" qtlid="3818">Nombre</translation>
