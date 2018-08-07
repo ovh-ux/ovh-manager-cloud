@@ -81,7 +81,7 @@
    <translation id="cpcivm_add_step3_postscript_info" qtlid="483460">Syötä asennuksen jälkeen ajettava skriptisi</translation>
    <translation id="cpcivm_add_step3_network_label" qtlid="316125">Liitä yksityisverkko</translation>
    <translation id="cpcivm_add_step3_network_info" qtlid="483473">Suojaa tietosi yksityisellä verkolla. Se ei tehosta pelkästään palveluidesi välistä yhteyttä vaan mahdollistaa lisäksi eri palvelinten välisten viestien suojaamisen. <a href="{{url}}" target="_blank">Lue lisää yksityisistä verkoista</a>.</translation>
-   <translation id="cpcivm_add_step3_network_none" qtlid="30646">Ei ole</translation>
+   <translation id="cpcivm_add_step3_network_none" qtlid="30646">Ei mitään</translation>
    <translation id="cpcivm_add_step3_flavor_prices_ERROR" qtlid="483486">Saatavilla olevien tuotteiden hintojen hakeminen ei onnistu: {{message}}</translation>
    <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Saatavilla olevien tuotteiden luettelon haku ei onnistu: {{message}}</translation>
    <translation id="cpcivm_add_step4_title" qtlid="483512">Konfiguroi instanssi</translation>
