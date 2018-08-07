@@ -1,31 +1,28 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <cui-modal-body data-title=":: 'vps_configuration_reboot_title' | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-spinner></oui-spinner>
-        </div>
-        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
-            <div data-ng-if="$ctrl.vps.tools == 'KO'">
-                <cui-modal-text data-text="'vps_configuration_reboot_warning_tools' | translate"></cui-modal-text>
-                <cui-modal-text data-text="'vps_configuration_reboot_warning_tools2' | translate"></cui-modal-text>
-            </div>
-            <cui-modal-text data-text="'vps_configuration_reboot_confirmation' | translate"></cui-modal-text>
-            <p class="oui-modal__body-text italic" data-translate="vps_configuration_reboot_alert"></p>
-            <oui-checkbox
-                data-ng-if="$ctrl.model.netbootMode !== 'RESCUE'"
-                data-text="{{ 'vps_configuration_reboot_rescue' | translate }}"
-                data-description="{{ 'vps_configuration_reboot_rescue_info' | translate }}"
-                id="rescue"
-                name="rescue"
-                data-model="$ctrl.selected.rescue">
-            </oui-checkbox>
+<oui-modal
+    data-title="{{:: 'vps_configuration_reboot_title' | translate}}"
+    data-primary-label="{{ ::'common_confirm' | translate }}"
+    data-primary-action="$ctrl.confirm()"
+    data-secondary-action="$ctrl.cancel()"
+    data-secondary-label="{{ ::'common_cancel' | translate }}"
+    data-on-dismiss="$ctrl.cancel()"
+    data-loading="$ctrl.loader.init || $ctrl.save.loading">
 
-        </div>
-    </cui-modal-body>
-    <cui-modal-footer>
-        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_confirm' | translate"
-            data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
-    </cui-modal-footer>
-</cui-modal>
+    <div data-ng-if="$ctrl.vps.tools === 'KO'">
+        <p class="oui-modal__text"
+            data-translate="vps_configuration_reboot_warning_tools"></p>
+        <p class="oui-modal__text" 
+            data-translate="vps_configuration_reboot_warning_tools2"></p>
+    </div>
+    <p class="oui-modal__text" 
+        data-translate="vps_configuration_reboot_confirmation"></p>
+    <p class="oui-modal__text italic" 
+        data-translate="vps_configuration_reboot_alert"></p>
+    <oui-checkbox
+        data-ng-if="$ctrl.model.netbootMode !== 'RESCUE'"
+        data-text="{{ 'vps_configuration_reboot_rescue' | translate }}"
+        data-description="{{ 'vps_configuration_reboot_rescue_info' | translate }}"
+        id="rescue"
+        name="rescue"
+        data-model="$ctrl.selected.rescue">
+    </oui-checkbox>
+</oui-modal>

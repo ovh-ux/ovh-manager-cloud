@@ -70,8 +70,8 @@
    <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Não disponíveis nessa região</translation>
    <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Carregamento das ofertas disponíveis.</translation>
    <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">O servidor deverá reiniciar durante a operação. Ele ficará disponível durante alguns segundos.</translation>
-   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Oops, não foi possível encontrar todas as ofertas!</translation>
-   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Oops, não foi possível carregar o preço das ofertas!</translation>
+   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Lamentamos, mas não foi possível encontrar todas as ofertas!</translation>
+   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Lamentamos, mas não foi possível carregar o preço das ofertas!</translation>
    <translation id="cpcivm_addedit_flavor_refresh" qtlid="248158">Atualizar a lista das ofertas</translation>
    <translation id="cpcivm_addedit_flavor_choose" qtlid="248171">Escolher o meu modelo</translation>
    <translation id="cpcivm_addedit_flavor_deprecated" qtlid="251499">Esta oferta é obsoleta.</translation>
@@ -101,7 +101,7 @@
    <translation id="cpcivm_addedit_image_template" qtlid="248236">Ambientes pré-instalados</translation>
    <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">As minhas snapshots</translation>
    <translation id="cpcivm_addedit_image_snapshots_empty" qtlid="248262">Nenhuma snapshot disponível</translation>
-   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Oops, não foi possível encontrar as suas snapshots!</translation>
+   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Lamentamos, mas não foi possível encontrar as suas snapshots!</translation>
    <translation id="cpcivm_addedit_image_windows_change" qtlid="250667">Aquando da criação do servidor, poderá escolher entre um sistema Linux, Windows (licença incluída) ou uma cópia existente. Na reinstalação, deverá escolher uma snapshot ou uma distribuição do mesmo tipo.</translation>
    <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Não há espaço em disco suficiente na gama selecionada.</translation>
    <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Esta imagem é obsoleta.</translation>
@@ -121,21 +121,21 @@
 
    <translation id="cpcivm_addedit_image_empty" qtlid="248340">Nenhuma imagem disponível.</translation>
    <translation id="cpcivm_addedit_image_loading" qtlid="248353">Carregamento das imagens disponíveis.</translation>
-   <translation id="cpcivm_addedit_image_error" qtlid="248366">Oops, não foi possível encontrar todas as imagens!</translation>
+   <translation id="cpcivm_addedit_image_error" qtlid="248366">Lamentamos, mas não foi possível encontrar todas as imagens!</translation>
    <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Atualizar a lista das imagens</translation>
    <translation id="cpcivm_addedit_image_choose" qtlid="248392">Escolher a minha imagem</translation>
 
    <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Não pode eliminar uma snapshot se estiver a ser utilizada por, pelo menos, um servidor.</translation>
 
    <translation id="cpcivm_addedit_region_loading" qtlid="248405">Carregamento das zonas disponíveis.</translation>
-   <translation id="cpcivm_addedit_region_error" qtlid="248418">Oops, não foi possível encontrar todas as regiões!</translation>
+   <translation id="cpcivm_addedit_region_error" qtlid="248418">Lamentamos, mas não foi possível encontrar todas as regiões!</translation>
    <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Atualizar a lista das regiões</translation>
    <translation id="cpcivm_addedit_region_choose" qtlid="248444">Escolher a minha localização</translation>
 
    <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Cloud public</translation>
    <translation id="cpcivm_addedit_region_zone_dedicated_new" qtlid="248470">Nova "hardware zone" dedicada</translation>
 
-   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Atenção: a snapshot selecionada atualmente está apenas disponível na sua região e não poderá ser utilizada se a localização for alterada.</translation>
+   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Atenção: a snapshot atualmente selecionada está apenas disponível na sua região e não poderá ser utilizada se a localização for alterada.</translation>
 
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Tipo</translation>
    <translation id="cpcivm_addedit_table_price" qtlid="133292">Preço s/IVA</translation>
@@ -190,7 +190,7 @@
    <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Apagar</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Adicionar esta chave</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">A sua chave está agora disponível!</translation>
-   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Oops, não foi possível adicionar esta chave!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Lamentamos, mas não foi possível adicionar esta chave!</translation>
    <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Atribua-lhe um nome</translation>
    <translation id="cpcivm_addedit_sshkey_add_name_field" qtlid="248639">Introduza a sua chave</translation>
 
@@ -208,11 +208,11 @@
    <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Anular</translation>
    <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Eliminar esta chave</translation>
    <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Esta chave já não está disponível.</translation>
-   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Oops, não foi possível eliminar esta chave!</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Lamentamos, mas não foi possível eliminar esta chave!</translation>
 
    <translation id="cpcivm_addedit_sshkey_empty" qtlid="248782">Ainda não adicionou chaves SSH.</translation>
    <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Clique em "adicionar uma chave"!</translation>
-   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Oops, não foi possível carregar a lista das suas chaves SSH!</translation>
+   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Lamentamos, mas não foi possível carregar a lista das suas chaves SSH!</translation>
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Não dispõe de nenhuma chave SSH.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">A comunicação entre os servidores OVH utiliza o protocolo seguro (SSH) para a encriptação dos dados.</translation>
@@ -248,8 +248,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Criação em massa:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Número de instâncias a criar:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Queira introduzir um número de instâncias válido.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">A sua <a ui-sref="iaas.pci-project.billing.quota">quota</a> atual permite-lhe criar simultaneamente até {{max}} instâncias do tipo {{type}} para a região {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">A sua <a ui-sref="iaas.pci-project.billing.quota">quota</a> atual não lhe permite criar mais do que uma instância do tipo {{type}} para a região {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Associar à rede privada</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Nenhum</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oups, a lista das redes privadas não pôde ser recuperada. {{ message }}</translation>
@@ -261,17 +261,17 @@
    <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Faturação no fim do período de uso</translation>
    <translation id="cpcivm_addedit_payement_month" qtlid="233928">Tarifa mensal</translation>
    <translation id="cpcivm_addedit_payement_month_info" qtlid="249068">Prorata debitado na inicialização</translation>
-   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Este servidor será integrado na faturação mensal dentro de alguns instantes. O cálculo prorata temporis para o mês em curso ser-lhe-á faturado em relação ao que foi já utilizado.</translation>
+   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Este servidor será integrado na faturação mensal dentro de alguns instantes. O valor proporcional para o mês em curso ser-lhe-á faturado em relação ao que já foi utilizado.</translation>
    <translation id="cpcivm_addedit_payement_label" qtlid="272222">Economize 50% no preço dos servidores ao passar para faturação mensal.</translation>
 
    <translation id="cpcivm_addedit_run_now" qtlid="249094">Iniciar agora</translation>
    <translation id="cpcivm_addedit_change_now" qtlid="249107">Aplicar alterações</translation>
 
-   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Oops, não foi possível iniciar a instância!</translation>
-   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Oops, não foi possível atualizar as informações da instância!</translation>
-   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Oops, não foi possível aumentar a capacidade desta instância!</translation>
-   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Oops, não foi possível iniciar a reinstalação desta instância!</translation>
-   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Oops, não foi possível efetuar a reintegração no tarifário mensal!</translation>
+   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Lamentamos, mas não foi possível iniciar a instância!</translation>
+   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Lamentamos, mas não foi possível atualizar as informações da instância!</translation>
+   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Lamentamos, mas não foi possível aumentar a capacidade desta instância!</translation>
+   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Lamentamos, mas não foi possível iniciar a reinstalação desta instância!</translation>
+   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Lamentamos, mas não foi possível efetuar a reintegração no tarifário mensal!</translation>
    <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">A sua quota atual não lhe permite adicionar este tipo de máquina. Poderá contactar a nossa equipa de suporte para aumentar a sua quota.</translation>
    <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">Após a criação da máquina, e para se ligar, abra um terminal SSH e introduza o seguinte comando:<br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
    <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">Após a criação da máquina, e para se ligar, utilize o seu cliente RDP preferido, por exemplo, e através de um computador Linux: <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
@@ -279,7 +279,7 @@
    <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">Tem {{count}} chaves SSH fora da região selecionada ({{region}}).</translation>
    <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">Tem {{count}} chaves SSH fora da região selecionada ({{region}}).</translation>
 
-   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Oups, não conseguimos carregar a sua quota disponível.</translation>
+   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Lamentamos, mas não foi possível carregar a sua quota disponível.</translation>
    <translation id="cpcivm_addedit_save_multiple_success" qtlid="272235">Os seus servidores estão em curso de criação, eles serão acessíveis dentro de alguns instantes.</translation>
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oups, ocorreu um erro aquando da criação dos seus servidores!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Vai criar {{nb}} instâncias.</translation>

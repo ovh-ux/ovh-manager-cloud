@@ -11,10 +11,10 @@
    <translation id="common_cancel" qtlid="37863">Cancelar</translation>
    <translation id="common_activate" qtlid="76734">Activer</translation>
    <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
-   <translation id="common_edit" qtlid="37875">Modifier</translation>
+   <translation id="common_edit" qtlid="37875">Modificar</translation>
    <translation id="common_consult" qtlid="339639">Consultar</translation>
    <translation id="common_see_detail" qtlid="225192">Ver el detalle</translation>
-   <translation id="common_manage" qtlid="16301">Gérer</translation>
+   <translation id="common_manage" qtlid="16301">Gestionar</translation>
    <translation id="common_apply" qtlid="41326">Appliquer</translation>
    <translation id="common_loading" qtlid="58256">Chargement</translation>
    <translation id="common_refresh" qtlid="250030">Actualizar</translation>
@@ -23,7 +23,7 @@
    <translation id="common_search_placeholder" qtlid="98288">Rechercher...</translation>
    <translation id="common_disk_bootable" qtlid="271348">Disco de arranque </translation>
    <translation id="common_renew" qtlid="118962">Renouveler</translation>
-   <translation id="common_actions" qtlid="72809">Actions</translation>
+   <translation id="common_actions" qtlid="72809">Acciones</translation>
    <translation id="common_action_unavailable" qtlid="404061">Acción no disponible</translation>
    <translation id="common_order" qtlid="43558">Contratar</translation>
    <translation id="common_validate" qtlid="26047">Valider</translation>
@@ -45,7 +45,7 @@
    <translation id="common_menu_v3" qtlid="135931">Antiguo panel de control</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Asociados</translation>
-   <translation id="common_menu_billing" qtlid="32950">Facturation</translation>
+   <translation id="common_menu_billing" qtlid="32950">Facturación</translation>
    <translation id="common_menu_billing_history" qtlid="159540">Mis facturas</translation>
    <translation id="common_menu_billing_payments" qtlid="398781">Monitoreo de los pagos</translation>
    <translation id="common_menu_means" qtlid="90049">Moyens de paiement</translation>
@@ -88,8 +88,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Soporte </translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Notifications</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Lo sentimos: no hemos podido inicializar el menú.</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Erreur</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Ver todas las notificaciones</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Lo sentimos: se ha producido un problema.</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Lo sentimos: no se ha podido iniciar el menú.</translation>
@@ -100,14 +98,14 @@
 
    <translation id="changelog_loading_error" qtlid="298014">El historial de actualizaciones no está disponible en estos momentos.</translation>
 
-   <translation id="common_modify" qtlid="37875">Modifier</translation>
+   <translation id="common_modify" qtlid="37875">Modificar</translation>
    <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_add" qtlid="37923">Añadir</translation>
    <translation id="common_save" qtlid="49754">Sauvegarder</translation>
    <translation id="common_delete" qtlid="2414">Eliminar</translation>
    <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_remove" qtlid="323093">Eliminar</translation>
-   <translation id="edit" qtlid="37875">Modifier</translation>
+   <translation id="edit" qtlid="37875">Modificar</translation>
    <translation id="delete" qtlid="2414">Eliminar</translation>
    <translation id="common_back" qtlid="4118">Retour</translation>
    <translation id="common_next" qtlid="17743">Suivant</translation>
@@ -529,18 +527,18 @@
 
    <translation id="common_tile_configuration" qtlid="4406">Configuración</translation>
 
-   <translation id="common_tile_subscription" qtlid="28891">Abonnement</translation>
+   <translation id="common_tile_subscription" qtlid="28891">Pago</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Offre</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renouvellement automatique</translation>
    <translation id="common_tile_subscription_expiration_date" qtlid="33010">Date d'expiration</translation>
-   <translation id="common_tile_subscription_contact" qtlid="32206">Contacts</translation>
-   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrateur</translation>
-   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Facturation</translation>
-   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Technique</translation>
-   <translation id="common_tile_subscription_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrador</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Facturación</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Técnico</translation>
+   <translation id="common_tile_subscription_creation_date" qtlid="26419">Fecha de creación</translation>
 
-   <translation id="common_tile_information_status" qtlid="26443">Statut</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">Modifier le nom</translation>
+   <translation id="common_tile_information_status" qtlid="26443">Estado</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Editar el nombre</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nombre por defecto</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nombre personalizado</translation>
 

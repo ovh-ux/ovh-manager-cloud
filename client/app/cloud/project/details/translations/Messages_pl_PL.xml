@@ -2,13 +2,13 @@
 <translations>
    <translation id="cpd_project_redirect" qtlid="245857">Przekierowywanie...</translation>
 
-   <translation id="cpd_project_suspended" qtlid="263858">Twój projekt cloud jest zawieszony. Aby otrzymać więcej informacji, skontaktuj się z <a href="#/support">pomocą</a>.</translation>
+   <translation id="cpd_project_suspended" qtlid="497972">Twój projekt cloud jest zawieszony. Aby uzyskać więcej informacji, skontaktuj się z <a href="{{ url }}">Pomocą techniczną OVH</a>.</translation>
 
    <translation id="cpd_project_creating_help" qtlid="245896">Po utworzeniu projektu nastąpi automatyczne przekierowanie.</translation>
    <translation id="cpd_project_creating_havetopay" qtlid="272014">Prosimy o dokończenie płatności za początkowe zamówienie.</translation>
    <translation id="cpd_project_creating_cancel" qtlid="281990">Anuluj dodawanie projektu</translation>
    <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Prosimy o dokończenie płatności za <a href="{{url}}" target="_blank">początkowe zamówienie</a>.</translation>
-   <translation id="cpd_project_creating_bc_support" qtlid="286812">Jeśli ta strona wyświetla się nadal kilka minut po płatności, skontaktuj się z <a href="#/support">Biurem Obsługi Klienta</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="497985">Jeśli ta strona wciąż wyświetla się kilka minut po dokonaniu płatności, prosimy o kontakt z <a href="{{ url }}">obsługą klienta OVH</a>.</translation>
 
    <translation id="cpd_project_deleting" qtlid="245909">Trwa usuwanie projektu...</translation>
    <translation id="cpd_project_deleting_help" qtlid="245922">Po usunięciu projektu nastąpi automatyczne przekierowanie.</translation>

@@ -1,112 +1,183 @@
 <section class="container-fluid cui-page__content cui-page__content-flex metrics__dashboard">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-5">
-            <cui-tile class="h-100" data-title="'metrics_tiles_shortcut_title' | translate">
-                <ul class="cui-tile__body cui-tile__body_list cui-tile__top-bordered">
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <a class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsDashboardCtrl.serviceName })">
-                            <span data-translate="metrics_tiles_shortcut_token_add"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+            <oui-tile data-heading="{{ ::'metrics_tiles_shortcut_title' | translate }}" class="h-100 oui-tile-h-100">
+                <oui-tile-definition>
+                    <oui-tile-description>
+                        <a data-ui-sref="dbaas.metrics.detail.token.add({ serviceName: $ctrl.serviceName })"
+                           class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                           rel="noopener">
+                           <span data-translate="metrics_tiles_shortcut_token_add"></span>
                         </a>
-                    </li>
-                </ul>
-                <br />
-                <h5 class="cui-tile__title cui-tile__subtitle" data-translate="metrics_tiles_tools_title"></h5>
-                <ul class="cui-tile__body cui-tile__body_list cui-tile__top-bordered">
-                    <li class="cui-tile__item" data-ng-repeat="graph in MetricsDashboardCtrl.graphs">
-                        <a class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button cui-tile__button_link"
-                            type="button"
-                            href="{{graph.url}}"
-                            target="_blank">
-                            <span class="text-link" data-ng-bind="graph.name"></span>
-                            <i class="fa fa-icon fa-external-link" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </cui-tile>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <oui-tile-definition data-term="{{ ::'metrics_tiles_tools_title' | translate }}">
+                    <oui-tile-description>
+                        <div data-ng-repeat="graph in $ctrl.graphs track by $index">
+                            <a data-ng-href="{{ ::graph.url }}"
+                               class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                               rel="noopener"
+                               target="_blank">
+                               <span data-ng-bind="::graph.name"></span>
+                               <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </oui-tile-description>
+                </oui-tile-definition>
+            </oui-tile>
         </div>
         <div class="col-xm-12 col-md-7">
-            <cui-tile data-title="'metrics_tiles_usage_title' | translate" class="h-100">
-                <div class="chart-pie">
+            <oui-tile data-heading="{{ ::'metrics_tiles_usage_title' | translate }}" class="h-100 oui-tile-h-100">
+                <oui-tile-definition data-ng-if="$ctrl.loading.service && $ctrl.loading.consumption">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div class="chart-pie" data-ng-if="!$ctrl.loading.service && !$ctrl.loading.consumption">
                     <div class="chart-pie-container">
-                        <div data-ng-show="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption" class="chart-pie-loader">
-                            <oui-spinner></oui-spinner>
-                        </div>
-                        <div data-ng-hide="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption">
-                            <metrics-chart-pie
-                                            legend="'metrics_mads' | translate "
-                                            text="MetricsDashboardCtrl.usage.conso.mads | formatSi"
-                                            text-small="MetricsDashboardCtrl.displayUsage(MetricsDashboardCtrl.usage.conso.mads, MetricsDashboardCtrl.usage.quota.mads)"
-                                            value="MetricsDashboardCtrl.computeUsage(MetricsDashboardCtrl.usage.conso.mads, MetricsDashboardCtrl.usage.quota.mads)"
-                                            color="MetricsDashboardCtrl.computeColor(MetricsDashboardCtrl.usage.conso.mads, MetricsDashboardCtrl.usage.quota.mads)">
-                            </metrics-chart-pie>
-                        </div>
+                        <metrics-chart-pie
+                            data-legend="::'metrics_mads' | translate "
+                            data-text="::$ctrl.usage.conso.mads | formatSi"
+                            data-text-small="$ctrl.displayUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
+                            data-value="$ctrl.computeUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
+                            data-color="$ctrl.computeColor($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)">
+                        </metrics-chart-pie>
                     </div>
                     <div class="chart-pie-container">
-                        <div data-ng-show="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption" class="chart-pie-loader">
-                            <oui-spinner></oui-spinner>
-                        </div>
-                        <div data-ng-hide="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption">
-                            <metrics-chart-pie
-                                            legend="'metrics_ddp' | translate "
-                                            text="MetricsDashboardCtrl.usage.conso.ddp | formatSi"
-                                            text-small="MetricsDashboardCtrl.displayUsage(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)"
-                                            value="MetricsDashboardCtrl.computeUsage(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)"
-                                            color="MetricsDashboardCtrl.computeColor(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)">
-                            </metrics-chart-pie>
-                        </div>
+                        <metrics-chart-pie
+                            data-legend="::'metrics_ddp' | translate "
+                            data-text="::$ctrl.usage.conso.ddp | formatSi"
+                            data-text-small="$ctrl.displayUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
+                            data-value="$ctrl.computeUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
+                            data-color="$ctrl.computeColor($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)">
+                        </metrics-chart-pie>
                     </div>
                 </div>
-            </cui-tile>
+            </oui-tile>
         </div>
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-6">
-            <cui-tile data-title="'metrics_tiles_configuration_title' | translate"
-                    data-loading="MetricsDashboardCtrl.loading.service"
-                    class="h-100">
-                <div class="cui-tile__body">
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-actions="MetricsDashboardCtrl.actions.editName">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'metrics_tiles_configuration_name' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description data-description="MetricsDashboardCtrl.configuration.description || MetricsDashboardCtrl.configuration.name"></cui-tile-definition-description>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'metrics_tiles_configuration_retention' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description>
-                                <span data-ng-bind=":: MetricsDashboardCtrl.configuration.retention"></span>
-                                <span data-translate="metrics_tiles_configuration_retention_month"></span>
-                            </cui-tile-definition-description>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'metrics_tiles_configuration_datacenter' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description>
-                                <i class="flag-icon {{ MetricsDashboardCtrl.configuration.datacenter.flag }} flag flag__icon-sm"></i>
-                                <span class="cui-tile__description_vertical-sub">
-                                    <span data-ng-bind=":: MetricsDashboardCtrl.configuration.datacenter.name"></span> -
-                                    <small data-ng-bind=":: MetricsDashboardCtrl.configuration.datacenter.country"></small>
-                                </span>
-                            </cui-tile-definition-description>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-
+            <oui-tile data-heading="{{ ::'metrics_tiles_configuration_title' | translate }}" class="oui-tile-h-100 h-100">
+                <oui-tile-definition data-ng-if="$ctrl.loading.service">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div data-ng-if="!$ctrl.loading.service">
+                    <oui-tile-definition
+                        data-term="{{ ::'metrics_tiles_configuration_name' | translate }}"
+                        data-description="{{ ::($ctrl.configuration.description || $ctrl.configuration.name) }}">
+                        <oui-action-menu
+                            data-compact data-align="end"
+                            data-ng-if="$ctrl.actions.editName.isAvailable()">
+                            <oui-action-menu-item
+                                data-text="{{ ::$ctrl.actions.editName.text }}"
+                                data-on-click="$ctrl.actions.editName.callback()">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'metrics_tiles_configuration_retention' | translate }}">
+                        <oui-tile-description>
+                            <span data-ng-bind=":: $ctrl.configuration.retention"></span>
+                            <span data-translate="metrics_tiles_configuration_retention_month"></span>
+                        </oui-tile-description>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'metrics_tiles_configuration_datacenter' | translate }}">
+                        <oui-tile-description>
+                            <i class="flag-icon {{ ::$ctrl.configuration.datacenter.flag }} flag flag__icon-sm"></i>
+                            <span class="cui-tile__description_vertical-sub">
+                                <span data-ng-bind=":: $ctrl.configuration.datacenter.name"></span> -
+                                <small data-ng-bind=":: $ctrl.configuration.datacenter.country"></small>
+                            </span>
+                        </oui-tile-description>
+                    </oui-tile-definition>
                 </div>
-            </cui-tile>
+            </oui-tile>
         </div>
         <div class="col-xm-12 col-md-6">
-        <cui-tile-subscription data-loading="MetricsDashboardCtrl.loading.plan"
-                data-subscription-info="MetricsDashboardCtrl.plan"
-                data-autorenew-actions="MetricsDashboardCtrl.actions.autorenew"
-                data-contact-actions="MetricsDashboardCtrl.actions.contacts"
-                class="h-100"></cui-tile-subscription>
+            <oui-tile 
+                data-heading="{{ ::'common_tile_subscription' | translate }}"
+                data-loading="$ctrl.loading.plan"
+                class="oui-tile-h-100 h-100">
+                <oui-tile-definition data-ng-if="$ctrl.loading.plan">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div data-ng-if="!$ctrl.loading.plan">
+                    <oui-tile-definition
+                        data-ng-if="$ctrl.plan.offer" 
+                        data-term="{{ ::'common_tile_subscription_offer' | translate }}"
+                        data-description="{{ ::$ctrl.plan.offer }}">
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{($ctrl.plan.renew.forced || $ctrl.plan.renew.automatic) ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate}}"
+                        data-description="{{ ::$ctrl.plan.expiration | momentFormat:'LL' }}">
+                        <oui-action-menu
+                            data-compact
+                            data-align="end"
+                            data-ng-if="$ctrl.actions.autorenew.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::$ctrl.actions.autorenew.text }}"
+                                data-aria-label="{{ ::$ctrl.actions.autorenew.text }}"
+                                data-href="{{ ::$ctrl.actions.autorenew.href }}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{::'common_tile_subscription_contact' | translate}}">
+                        <oui-tile-description>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span data-ng-bind="::$ctrl.plan.contactAdmin"></span>
+                                    <small data-translate="common_tile_subscription_contact_admin"></small>
+                                </li>
+                                <li>
+                                    <span data-ng-bind="::$ctrl.plan.contactBilling"></span>
+                                    <small data-translate="common_tile_subscription_contact_billing"></small>
+                                </li>
+                                <li>
+                                    <span data-ng-bind="::$ctrl.plan.contactTech"></span>
+                                    <small data-translate="common_tile_subscription_contact_technical"></small>
+                                </li>
+                            </ul>
+                        </oui-tile-description>
+                        <oui-action-menu
+                            data-compact
+                            data-align="end"
+                            data-ng-if="$ctrl.actions.contacts.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::$ctrl.actions.contacts.text }}"
+                                data-aria-label="{{ ::$ctrl.actions.contacts.text }}"
+                                data-href="{{ ::$ctrl.actions.contacts.href }}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{ ::'common_tile_subscription_creation_date' | translate }}"
+                        data-description="{{ ::$ctrl.plan.creation | momentFormat:'LL' }}">
+                    </oui-tile-definition>
+                </div>
+            </oui-tile>
         </div>
     </div>
 </section>

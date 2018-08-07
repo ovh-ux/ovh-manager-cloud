@@ -1,5 +1,5 @@
 class CloudProjectComputeInfrastructureOpenstackClientCtrl {
-    constructor ($q, $stateParams, $translate, OvhApiCloudProjectOpenstackClient, CloudProjectComputeInfrastructureOpenstackClientService, OvhApiCloudProjectRegion, CloudMessage, ControllerHelper, hterm) {
+    constructor ($interval, $q, $stateParams, $translate, OvhApiCloudProjectOpenstackClient, CloudProjectComputeInfrastructureOpenstackClientService, OvhApiCloudProjectRegion, CloudMessage, ControllerHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
@@ -9,7 +9,7 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
         this.ControllerHelper = ControllerHelper;
 
         this.serviceName = $stateParams.projectId;
-        this.term = new hterm.Terminal();
+        this.term = new Terminal();
         this.messages = [];
         this.emptyOption = "emptyOption";
         this.region = this.emptyOption;
@@ -25,8 +25,8 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
             network: "openstack network list",
             subnet: "openstack subnet list",
             "create server": "create-server.sh",
+            "bigdata platform": "bigdata-platform-cli"
         };
-
 
         this.initLoaders();
     }

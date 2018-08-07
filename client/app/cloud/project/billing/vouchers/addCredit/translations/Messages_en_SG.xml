@@ -11,5 +11,6 @@
    <translation id="cpb_vouchers_add_credit_cancel" qtlid="37863">Cancel</translation>
    <translation id="cpb_vouchers_add_credit_error" qtlid="255599">Oops... An error has occurred while purchasing Public Cloud credit.</translation>
    <translation id="cpb_vouchers_add_credit_success" qtlid="295907">The purchase order for your {{ amount }} credit, is available <a href="{{ url }}" target="_blank">here</a>.</translation>
+   <translation id="cpb_vouchers_add_credit_load_err" qtlid="497998">Oups, une erreur est survenue lors du chargement de l’achat de crédit cloud.</translation>
 
 </translations>

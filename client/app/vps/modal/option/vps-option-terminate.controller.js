@@ -1,11 +1,11 @@
 class VpsOptionTerminateCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService, vpsOption) {
+    constructor ($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName, VpsService, vpsOption) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.serviceName = serviceName;
         this.VpsService = VpsService;
-
+        this.ControllerHelper = ControllerHelper;
         this.vpsOption = vpsOption;
 
         this.TITLES = {
@@ -16,19 +16,15 @@ class VpsOptionTerminateCtrl {
             veeam: "vps_configuration_cancel_option_title_veeam",
             windows: "vps_configuration_cancel_option_title_windows"
         };
-
-        this.loader = {
-            init: false,
-            save: false
-        };
     }
 
     $onInit () {
-        this.loader.init = true;
-        this.VpsService.getSelectedVps(this.serviceName)
-            .then(vps => this.expirationDate = moment(vps.expiration))
-            .catch(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
-            .finally(() => { this.loader.init = false; });
+        this.selectedVps = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)
+                .then(vps => (this.expirationDate = moment(vps.expiration)))
+                .catch(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
+        });
+        this.selectedVps.load();
     }
 
     cancel () {
@@ -36,14 +32,14 @@ class VpsOptionTerminateCtrl {
     }
 
     confirm () {
-        this.loader.save = true;
-        this.VpsService.cancelOption(this.serviceName, this.vpsOption)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_cancel_option_cancel_success")))
-            .catch(err => this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
-            .finally(() => {
-                this.loader.save = false;
-                this.$uibModalInstance.close();
-            });
+        this.CloudMessage.flushChildMessage();
+        this.terminate = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.cancelOption(this.serviceName, this.vpsOption)
+                .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_cancel_option_cancel_success")))
+                .catch(err => this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
+                .finally(() => this.$uibModalInstance.close())
+        });
+        return this.terminate.load();
     }
 }
 

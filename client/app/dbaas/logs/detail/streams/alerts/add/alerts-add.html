@@ -1,7 +1,7 @@
 <div class="cui-page__content">
     <oui-back-button
         data-on-click="ctrl.cancel()"
-        data-title="{{ (ctrl.editMode ? 'edit_alert_title_' + ctrl.alertType.toLowerCase() : 'add_alert_title_' + ctrl.alertType.toLowerCase()) | translate }}">
+        data-heading="{{ ::(ctrl.editMode ? 'edit_alert_title_' + ctrl.alertType.toLowerCase() : 'add_alert_title_' + ctrl.alertType.toLowerCase()) | translate }}">
     </oui-back-button>
 
     <p class="oui-paragraph" data-translate="{{ 'add_alert_description_' + ctrl.alertType.toLowerCase() }}"></p>

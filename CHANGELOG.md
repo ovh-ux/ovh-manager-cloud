@@ -1,3 +1,133 @@
+<a name="7.4.10"></a>
+## [7.4.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.9...v7.4.10) (2018-07-25)
+
+
+### Features
+
+* **cloud:** add button for BigData platform CLI call ([ade4162](https://github.com/ovh-ux/ovh-manager-cloud/commit/ade4162))
+
+
+
+<a name="7.4.9"></a>
+## [7.4.9](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.8...v7.4.9) (2018-07-12)
+
+
+### Bug Fixes
+
+* **oui-tile:** replace cui-tile with oui-tile ([443b00b](https://github.com/ovh-ux/ovh-manager-cloud/commit/443b00b))
+* fix for modals in dbaas metrics and deskaas ([073bdcb](https://github.com/ovh-ux/ovh-manager-cloud/commit/073bdcb))
+* fix for modals in dbaas metrics and deskaas ([8fa34ed](https://github.com/ovh-ux/ovh-manager-cloud/commit/8fa34ed))
+* fix for modals in dbaas metrics and deskaas ([f88c257](https://github.com/ovh-ux/ovh-manager-cloud/commit/f88c257))
+* fix for modals in dbaas metrics and deskaas ([3f2b6c1](https://github.com/ovh-ux/ovh-manager-cloud/commit/3f2b6c1))
+* fix for modals in dbaas metrics and deskaas ([0bd9024](https://github.com/ovh-ux/ovh-manager-cloud/commit/0bd9024))
+* **oui-tile:** replace cui-tile with oui-tile ([6e2915a](https://github.com/ovh-ux/ovh-manager-cloud/commit/6e2915a))
+* fix for tile in iplb home ([bcf7926](https://github.com/ovh-ux/ovh-manager-cloud/commit/bcf7926))
+* **action-menu:** update following changes to dropdown in ui-angular ([#808](https://github.com/ovh-ux/ovh-manager-cloud/issues/808)) ([3913252](https://github.com/ovh-ux/ovh-manager-cloud/commit/3913252))
+* **iplb:** fix exponential statements ([819aa9c](https://github.com/ovh-ux/ovh-manager-cloud/commit/819aa9c))
+* **iplb:** migrate modals to use oui-modal and oui-field ([4613932](https://github.com/ovh-ux/ovh-manager-cloud/commit/4613932))
+* **iplb:** remove unused call to /ipLoadbalancing/availableZones ([11dcd3a](https://github.com/ovh-ux/ovh-manager-cloud/commit/11dcd3a))
+* **oui-tile:** replace cui-tile with oui-tile ([fce0ebb](https://github.com/ovh-ux/ovh-manager-cloud/commit/fce0ebb))
+* **oui-tile:** replace cui-tile with oui-tile ([3137268](https://github.com/ovh-ux/ovh-manager-cloud/commit/3137268))
+* **oui-tile:** replace cui-tile with oui-tile ([78915ae](https://github.com/ovh-ux/ovh-manager-cloud/commit/78915ae))
+* **oui-tile:** replace cui-tile with oui-tile ([c76ac6c](https://github.com/ovh-ux/ovh-manager-cloud/commit/c76ac6c))
+* **oui-tile:** replace cui-tile with oui-tile ([ddc9410](https://github.com/ovh-ux/ovh-manager-cloud/commit/ddc9410))
+* **oui-tile:** replace cui-tile with oui-tile ([4a9539f](https://github.com/ovh-ux/ovh-manager-cloud/commit/4a9539f))
+* **oui-tile:** replace cui-tile with oui-tile ([485b4f7](https://github.com/ovh-ux/ovh-manager-cloud/commit/485b4f7))
+* **oui-tile:** replace cui-tile with oui-tile ([ee0f979](https://github.com/ovh-ux/ovh-manager-cloud/commit/ee0f979))
+* **oui-tile:** replace cui-tile with oui-tile ([d8cbffd](https://github.com/ovh-ux/ovh-manager-cloud/commit/d8cbffd))
+* **oui-tile:** replace cui-tile with oui-tile ([c1597e3](https://github.com/ovh-ux/ovh-manager-cloud/commit/c1597e3))
+* **veeam:** fix for table in veeam ([#802](https://github.com/ovh-ux/ovh-manager-cloud/issues/802)) ([1b887ff](https://github.com/ovh-ux/ovh-manager-cloud/commit/1b887ff))
+
+
+### Features
+
+* **navbar:** apply translations for navbar placeholder ([738e07f](https://github.com/ovh-ux/ovh-manager-cloud/commit/738e07f))
+
+
+
+<a name="7.4.8"></a>
+## [7.4.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.7...v7.4.8) (2018-07-12)
+
+
+
+<a name="7.4.7"></a>
+## [7.4.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.6...v7.4.7) (2018-07-10)
+
+
+
+<a name="7.4.6"></a>
+## [7.4.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.5...v7.4.6) (2018-07-10)
+
+
+### Bug Fixes
+
+* **vps:** added banner about VPS upgrade until wednesday ([6d95a44](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d95a44))
+
+
+
+<a name="7.4.5"></a>
+## [7.4.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.4...v7.4.5) (2018-07-05)
+
+
+
+<a name="7.4.4"></a>
+## [7.4.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.3...v7.4.4) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** fix otrs component version ([c96ad28](https://github.com/ovh-ux/ovh-manager-cloud/commit/c96ad28))
+
+
+### Features
+
+* **vps.dashboard:** display warning message about upgrade ([d7e8695](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7e8695))
+
+
+
+<a name="7.4.3"></a>
+## [7.4.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.2...v7.4.3) (2018-07-03)
+
+
+### Bug Fixes
+
+* cui-loader removal ([e862c3b](https://github.com/ovh-ux/ovh-manager-cloud/commit/e862c3b))
+* cui-radio-bar removal ([#771](https://github.com/ovh-ux/ovh-manager-cloud/issues/771)) ([2332e65](https://github.com/ovh-ux/ovh-manager-cloud/commit/2332e65))
+* fix for oui-status ([1ef442b](https://github.com/ovh-ux/ovh-manager-cloud/commit/1ef442b))
+* fix for oui-status ([4934529](https://github.com/ovh-ux/ovh-manager-cloud/commit/4934529))
+* fix for oui-status ([a5f64e5](https://github.com/ovh-ux/ovh-manager-cloud/commit/a5f64e5))
+* fix for oui-status ([c2fe014](https://github.com/ovh-ux/ovh-manager-cloud/commit/c2fe014))
+* fix for oui-status ([9d9abd5](https://github.com/ovh-ux/ovh-manager-cloud/commit/9d9abd5))
+* **guides:** update homepage guides urls for ASIA, AU and SG ([0c61aea](https://github.com/ovh-ux/ovh-manager-cloud/commit/0c61aea))
+* **logs:** move logs to new sidebar system ([ef6960a](https://github.com/ovh-ux/ovh-manager-cloud/commit/ef6960a))
+* **openstack:** fix token too long display issues ([9f9eeec](https://github.com/ovh-ux/ovh-manager-cloud/commit/9f9eeec))
+* **order:** set direct ip order url for US ([9fa720c](https://github.com/ovh-ux/ovh-manager-cloud/commit/9fa720c))
+* **oui-stepper:** replace cui-status-icon with oui-status ([#804](https://github.com/ovh-ux/ovh-manager-cloud/issues/804)) ([f2551d8](https://github.com/ovh-ux/ovh-manager-cloud/commit/f2551d8))
+* **pci:** fix vrack loading in infrastructure view ([4546c99](https://github.com/ovh-ux/ovh-manager-cloud/commit/4546c99))
+* **sidebar:** translations ([e0f87ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/e0f87ee))
+
+
+### Features
+
+* **nasha:** updates modals ([6ec9f1c](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ec9f1c))
+* **navbar:** add placeholder translation ([7575ce5](https://github.com/ovh-ux/ovh-manager-cloud/commit/7575ce5))
+* **sidebar:** remove section without products ([e029a0e](https://github.com/ovh-ux/ovh-manager-cloud/commit/e029a0e))
+* **track:** udpate tracking to handle sidebar button order ([bf25310](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf25310))
+
+
+
+<a name="7.4.2"></a>
+## [7.4.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.1...v7.4.2) (2018-06-18)
+
+
+### Bug Fixes
+
+* **vps:upgrade:** Allow to upgrade new models ([02572c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/02572c9))
+* **vrack add:** change copy for us customers ([483dbbf](https://github.com/ovh-ux/ovh-manager-cloud/commit/483dbbf))
+* **vrack add:** display order url for us customers ([5cba48b](https://github.com/ovh-ux/ovh-manager-cloud/commit/5cba48b))
+
+
+
 <a name="7.4.1"></a>
 ## [7.4.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.0...v7.4.1) (2018-06-05)
 

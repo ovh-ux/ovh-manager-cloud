@@ -59,8 +59,8 @@
    <translation id="common_menu_renew" qtlid="229658">Mé služby</translation>
    <translation id="common_menu_renew_management" qtlid="287527">Správa mých služeb</translation>
    <translation id="common_menu_renew_agreements" qtlid="204350">Mé smlouvy</translation>
-   <translation id="common_menu_orders" qtlid="282809">Moje objednávky</translation>
-   <translation id="common_menu_contacts" qtlid="70541">Moje kontakty</translation>
+   <translation id="common_menu_orders" qtlid="282809">Mé objednávky</translation>
+   <translation id="common_menu_contacts" qtlid="70541">Mé kontakty</translation>
    <translation id="common_menu_list_ticket" qtlid="454039">Mé tikety</translation>
    <translation id="common_menu_language" qtlid="30598">Jazyk</translation>
    <translation id="common_menu_account" qtlid="157642">Můj účet</translation>
@@ -89,8 +89,6 @@
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Telefonická podpora</translation>
 
    <translation id="common_navbar_notification_title" qtlid="33250">Oznámení</translation>
-   <translation id="common_navbar_notification_error" qtlid="323434">Nepodařilo se inicializovat menu!</translation>
-   <translation id="common_navbar_notification_error_subject" qtlid="26407">Chyba</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Zobrazit všechna upozornění</translation>
    <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Vyskytla se neočekávaná chyba.</translation>
    <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nepodařilo se načíst nabídku.</translation>

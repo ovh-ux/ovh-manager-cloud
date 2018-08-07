@@ -7,7 +7,8 @@
         "node_modules/@bower_components/messenger/build/css/messenger-theme-future.css",
         "node_modules/@bower_components/messenger/build/css/messenger-theme-flat.css",
         "node_modules/@bower_components/messenger/build/css/messenger-theme-block.css",
-        "node_modules/@bower_components/ovh-angular-toaster/dist/ovh-angular-toaster.min.css"
+        "node_modules/@bower_components/ovh-angular-toaster/dist/ovh-angular-toaster.min.css",
+        "node_modules/xterm/dist/xterm.css"
     ],
     "js": [
         "node_modules/@bower_components/jquery/dist/jquery.js",
@@ -89,6 +90,8 @@
         "node_modules/@bower_components/ovh-angular-list-view/dist/ovh-angular-list-view.min.js",
         "node_modules/@bower_components/jsurl/lib/jsurl.js",
         "node_modules/@bower_components/moment-duration-format/lib/moment-duration-format.js",
+        "node_modules/xterm/dist/xterm.js",
+        "node_modules/xterm/dist/addons/fit/fit.js",
         "node_modules/ovh-ui-angular/dist/oui-angular.min.js",
         "node_modules/popper.js/dist/umd/popper.js"
     ],

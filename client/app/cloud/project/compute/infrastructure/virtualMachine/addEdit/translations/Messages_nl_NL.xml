@@ -58,7 +58,7 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Oudere modellen</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Lokale SSD RAID storage, gedeelde &#13;
 CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedicated HDD disk, gedeelde CPU/RAM/Bandbreedte.</translation>
@@ -217,7 +217,7 @@ CPU/RAM/bandbreedte.</translation>
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">U heeft geen SSH key.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">OVH zet SSH in om versleutelde datacommunicatie tussen servers te verzekeren.  </translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Er zijn SSH clients voor elk operating system. Raadpleeg de <a href="{{ createUrl }}" target="_blank">handleiding over het creëren van SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> voor meer informatie. </translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Er zijn SSH clients voor elk besturingssysteem. Raadpleeg de <a href="{{ createUrl }}" target="_blank">handleiding over het creëren van SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> voor meer informatie. </translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Handleiding over SSH key<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Ik heb het begrepen!</translation>
@@ -252,8 +252,8 @@ CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Voer aub een geldig aantal instances in. &#13;
 &#13;
 </translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Met uw huidige <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> kunt u gelijktijdig tot {{max}} instances creëren van het type {{type}} voor de regio {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Met uw huidige <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">quota</a> kunt u slechts één type {{type}} instance creëren voor de regio {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Toewijzen aan een privénetwerk</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Geen</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Het overzicht van privénetwerken kan momenteel niet worden opgehaald. {{ message }}</translation>

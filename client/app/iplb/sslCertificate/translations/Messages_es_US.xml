@@ -12,7 +12,7 @@
    <translation id="iplb_ssl_no_certificate" qtlid="439000">No hay certificados.</translation>
 
    <translation id="iplb_ssl_see" qtlid="433371">Ver la vista previa</translation>
-   <translation id="iplb_ssl_update" qtlid="37875">Modifier</translation>
+   <translation id="iplb_ssl_update" qtlid="37875">Modificar</translation>
    <translation id="iplb_ssl_delete" qtlid="2414">Eliminar</translation>
 
    <translation id="iplb_ssl_list_error" qtlid="439013">Se ha producido un error al cargar la lista de certificados.</translation>
@@ -30,7 +30,7 @@
    <translation id="iplb_ssl_edit_chain" qtlid="439052">Cadena (opcional)</translation>
 
    <translation id="iplb_ssl_update_title" qtlid="439065">Editar un certificado SSL</translation>
-   <translation id="iplb_ssl_update_confirm" qtlid="37875">Modifier</translation>
+   <translation id="iplb_ssl_update_confirm" qtlid="37875">Modificar</translation>
    <translation id="iplb_ssl_update_cancel" qtlid="37863">Cancelar</translation>
    <translation id="iplb_ssl_update_nom" qtlid="3818">Nombre</translation>
    <translation id="iplb_ssl_update_success" qtlid="439078">El certificado SSL se ha modificado correctamente.</translation>
@@ -68,8 +68,8 @@
    <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Nombre de la organización</translation>
    <translation id="iplb_ssl_order_unit_name" qtlid="439260">Nombre de la empresa</translation>
    <translation id="iplb_ssl_order_address" qtlid="30430">Dirección </translation>
-   <translation id="iplb_ssl_order_postal_code" qtlid="30346">Code postal</translation>
-   <translation id="iplb_ssl_order_city" qtlid="33310">Ville</translation>
+   <translation id="iplb_ssl_order_postal_code" qtlid="30346">Código postal</translation>
+   <translation id="iplb_ssl_order_city" qtlid="33310">Ciudad</translation>
    <translation id="iplb_ssl_order_joi" qtlid="439273">Sede social</translation>
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Contratar</translation>

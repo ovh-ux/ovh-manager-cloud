@@ -20,7 +20,7 @@
         </button>
     </p>
     <br>
-    <p data-translate="cpci_errors_init_help3" data-translate-values="{ url: '#/support' }"></p>
+    <p data-translate="cpci_errors_init_help3" data-translate-values="{ url: ComputeInfrastructureDiagramCtrl.REDIRECT_URLS.support }"></p>
 </div>
 
 <div class="cloud-compute-infra" id="cloud-project-compute-infrastructure"
@@ -62,6 +62,16 @@
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.buyIpFailOver()"
                                 at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
                                 data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
+                        </button>
+                    </li>
+                    <li class="divider"
+                        data-ng-if="ComputeInfrastructureDiagramCtrl.TARGET === 'US'">
+                    </li>
+                    <li data-ng-if="ComputeInfrastructureDiagramCtrl.TARGET === 'US'">
+                        <button type="button"
+                                class="btn fs14"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.orderCredit()"
+                                data-translate="cpb_vouchers_add_credit_title">
                         </button>
                     </li>
                     <li class="divider"></li>

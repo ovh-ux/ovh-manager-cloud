@@ -3,7 +3,7 @@
    <translation id="storage_tab_storage" qtlid="233733">Almacenamiento</translation>
    <translation id="storage_name" qtlid="3818">Nombre</translation>
    <translation id="storage_type" qtlid="2642">Tipo</translation>
-   <translation id="storage_actions" qtlid="72809">Actions</translation>
+   <translation id="storage_actions" qtlid="72809">Acciones</translation>
    <translation id="storage_region" qtlid="32434">Région</translation>
    <translation id="storage_nb_files" qtlid="135853">Número de objetos</translation>
    <translation id="storage_use_type" qtlid="242080">Tipo de contenedor</translation>
@@ -22,7 +22,7 @@
    <translation id="storage_file_name" qtlid="242223">Nombre del archivo</translation>
    <translation id="storage_last_modify" qtlid="92380">Dernière modification</translation>
    <translation id="storage_file_type" qtlid="2642">Tipo</translation>
-   <translation id="storage_file_region" qtlid="30802">Datacentre</translation>
+   <translation id="storage_file_region" qtlid="30802">Centro de datos</translation>
    <translation id="storage_size" qtlid="7726">Taille</translation>
    <translation id="storage_delete_button" qtlid="2414">Eliminar</translation>
    <translation id="storage_delete_pending" qtlid="146645">Eliminando...</translation>

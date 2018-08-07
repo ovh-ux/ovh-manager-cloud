@@ -1263,12 +1263,22 @@
                                translate-compile
                                data-ng-if="VmAddEditCtrl.getMaximumInstanceCreationCount() > 1"
                                data-translate="cpcivm_addedit_advanced_options_multiple_creation_infos"
-                               data-translate-values="{ max : VmAddEditCtrl.getMaximumInstanceCreationCount(), type : VmAddEditCtrl.vmInEdition.flavor.name, region : VmAddEditCtrl.vmInEdition.region }"></p>
+                               data-translate-values="{
+                                   max: VmAddEditCtrl.getMaximumInstanceCreationCount(),
+                                   type: VmAddEditCtrl.vmInEdition.flavor.name,
+                                   region: VmAddEditCtrl.vmInEdition.region,
+                                   sref: 'iaas.pci-project.compute.quota'
+                               }"></p>
                             <p class="no-space text-left top-space-m16"
                                translate-compile
                                data-ng-if="VmAddEditCtrl.getMaximumInstanceCreationCount() <= 1"
                                data-translate="cpcivm_addedit_advanced_options_multiple_creation_infos_error"
-                               data-translate-values="{ max : VmAddEditCtrl.getMaximumInstanceCreationCount(), type : VmAddEditCtrl.vmInEdition.flavor.name, region : VmAddEditCtrl.vmInEdition.region }"></p>
+                               data-translate-values="{
+                                   max : VmAddEditCtrl.getMaximumInstanceCreationCount(),
+                                   type : VmAddEditCtrl.vmInEdition.flavor.name,
+                                   region : VmAddEditCtrl.vmInEdition.region,
+                                   sref: 'iaas.pci-project.compute.quota'
+                               }"></p>
                         </form>
                     </div>
 

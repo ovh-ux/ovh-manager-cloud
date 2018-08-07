@@ -77,37 +77,20 @@ class IpLoadBalancerConfigurationCtrl {
 
     statusTemplate () {
         return `
-            <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
-                <cui-status-icon data-type="success"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes === 1" translate-attr="{ title: 'iplb_configuration_changes_1' }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes > 1" translate-attr="{ title: 'iplb_configuration_changes_count' }"
-                translate-values="{ count: $row.changes }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
+            <span data-ng-if="$row.changes === 0" class="oui-status oui-status_success" data-translate="iplb_configuration_changes_0"></span>
+            <span data-ng-if="$row.changes === 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_1"></span>
+            <span data-ng-if="$row.changes > 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_count" data-translate-values="{ count: $row.changes }"></span>
         `;
     }
 
     actionTemplate () {
         return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_configuration_action_apply' | translate"
-                                data-ng-click="ctrl.applyChanges($row.id)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>`;
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item
+                    data-text="{{'iplb_configuration_action_apply' | translate}}"
+                    data-on-click="ctrl.applyChanges($row.id)">
+                </oui-action-menu-item>
+            </oui-action-menu>`;
     }
 }
 

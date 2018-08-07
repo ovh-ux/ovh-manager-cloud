@@ -79,7 +79,7 @@ angular.module("managerApp", [
             table: "oui-table oui-table_responsive",
             thead: "oui-table__headers",
             tbody: "oui-table__body",
-            tr: "oui-table__row cui-dropdown-menu-container",
+            tr: "oui-table__row",
             th: "oui-table__header",
             td: "oui-table__cell",
             sortable: "oui-table__cell_sortable oui-table__cell_sortable-asc",
@@ -176,8 +176,12 @@ angular.module("managerApp", [
 
             ouiNavbarConfiguration.translations = {
                 notification: {
+                    errorInNotification: $translate.instant("common_navbar_notification_error_in_notification"),
+                    errorInNotificationDescription: $translate.instant("common_navbar_notification_error_in_notification_description"),
                     markRead: $translate.instant("common_navbar_notification_mark_as_read"),
-                    markUnread: $translate.instant("common_navbar_notification_mark_as_unread")
+                    markUnread: $translate.instant("common_navbar_notification_mark_as_unread"),
+                    noNotification: $translate.instant("common_navbar_notification_none"),
+                    noNotificationDescription: $translate.instant("common_navbar_notification_none_description")
                 }
             };
 

@@ -35,7 +35,7 @@ angular.module("managerApp").config($stateProvider => {
                 metricsContent: {
                     templateUrl: "app/dbaas/dbaas-metrics/dashboard/metrics-dashboard.html",
                     controller: "MetricsDashboardCtrl",
-                    controllerAs: "MetricsDashboardCtrl"
+                    controllerAs: "$ctrl"
                 }
             },
             translations: ["common", "dbaas/dbaas-metrics", "dbaas/dbaas-metrics/dashboard", "dbaas/dbaas-metrics/token"]

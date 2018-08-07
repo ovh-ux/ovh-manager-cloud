@@ -107,7 +107,7 @@
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Katso ohje</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
    <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Käänteisnimipalvelu</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Ei konfiguroitu</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Verkkotunnuksia ei konfiguroitu</translation>
@@ -166,7 +166,7 @@
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">Muutos on välitön, mutta ota huomioon propagaatioaika (muutoksien päivittymisaika) joka on maksimissaan noin 24 tuntia.</translation>
    <translation id="vps_configuration_reversedns_success" qtlid="452475">Virtuaalipalvelimen {{serviceName}} käänteisnimipalvelua muokattiin.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Tapahtui virhe muokattaessa reverseosoitetta.</translation>
-   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Käänteisnimipalvelu</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Reverse-DNS on vastakohta perinteiselle DNS:lle. Se kiinnittää DNS-nimen IP-osoitteeseen.</translation>
    <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">Reverseosoitetta tarvitaan tilanteissa missä virtuaalipalvelin toimii postipalvelimena. Monet postipalvelimet ovat konfiguroitu hylkäämään viesti joka tulee IP-osoitteesta, jolla ei ole reverseosoitetta. Reversen avulla voit näkyä myös ircissä oikein.</translation>
    <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Määrittelemällä reversen, vähennät sitä mahdollisuutta että lähettämäsi postit tulkitaan spämmiksi.</translation>

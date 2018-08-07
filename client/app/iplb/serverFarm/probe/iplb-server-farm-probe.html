@@ -1,101 +1,77 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-modal-header>
-    <cui-modal-body data-title=":: 'iplb_farm_edit_probe_title' | translate">
-        <form novalidate name="IpLoadBalancerServerFarmProbeEditCtrl.form">
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
-                <label for="probe_url" class="oui-label" data-translate="iplb_farm_edit_probe_url"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <input type="text" id="probe_url" name="probe_url" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
-                    </div>
-                </div>
-            </div>
+<form id="ServerFarmProbeForm"
+      name="ServerFarmProbeForm"
+      data-ng-submit="ServerFarmProbeForm.$valid && IpLoadBalancerServerFarmProbeEditCtrl.close()"
+      novalidate>
+    <oui-modal
+        data-primary-label="{{ ::'common_modal_ok' | translate }}"
+        data-title="{{ ::'iplb_farm_edit_probe_title' | translate }}"
+        data-secondary-action="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"
+        data-loading="IpLoadBalancerCipherChangeCtrl.isModalLoading()">
 
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('port')">
-                <label for="probe_port" class="oui-label" data-translate="iplb_farm_edit_probe_port"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_1">
-                        <input type="number"
-                            min="1"
-                            max="65535"
-                            id="probe_port"
-                            name="probe_port"
-                            class="oui-input"
-                            data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.port" />
-                    </div>
-                </div>
-            </div>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_url' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
+            <input class="oui-input"
+                type="text"
+                id="probe_url"
+                name="probe_url"
+                data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
+        </oui-field>
 
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('method')">
-                <label for="probe_method" class="oui-label" data-translate="iplb_farm_edit_probe_method"></label>
-                <div class="oui-field__content">
-                    <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
-                        <cui-radio-bar-item data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods"
-                            data-text="('iplb_farm_edit_probe_method_' + method) | translate"
-                            data-value="method"></cui-radio-bar-item>
-                    </cui-radio-bar>
-                </div>
-            </div>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_port' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('port')">
+            <oui-numeric
+                id="probe_port"
+                name="probe_port"
+                data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.port"
+                data-min="1"
+                data-max="65535">
+            </oui-numeric>
+        </oui-field>
 
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('match')">
-                <label for="probe_match" class="oui-label" data-translate="iplb_farm_edit_probe_match"></label>
-                <div class="oui-field__content">
-                    <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
-                        <cui-radio-bar-item data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches()"
-                            data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status'"
-                            data-text="('iplb_farm_edit_probe_match_' + match) | translate"
-                            data-value="match"></cui-radio-bar-item>
-                    </cui-radio-bar>
-                </div>
-            </div>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_method' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('method')">
+            <oui-radio-toggle-group data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
+                <oui-radio
+                    data-text="{{ ::('iplb_farm_edit_probe_method_' + method) | translate }}"
+                    data-value="method"
+                    data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods track by $index">
+                </oui-radio>
+            </oui-radio-toggle-group>
+        </oui-field>
 
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('pattern')">
-                <label for="probe_pattern" class="oui-label" data-translate="iplb_farm_edit_probe_pattern"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <input type="text" id="probe_pattern" name="probe_pattern" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.pattern" />
-                    </div>
-                </div>
-            </div>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_match' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('match')">
+            <oui-radio-toggle-group data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
+                <oui-radio
+                    data-text="{{ ::('iplb_farm_edit_probe_match_' + match) | translate }}"
+                    data-value="match"
+                    data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches() track by $index"
+                    data-ng-if="!(IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status')">
+                </oui-radio>
+            </oui-radio-toggle-group>
+        </oui-field>
 
-            <div class="oui-field" data-ng-class="{ 'oui-field_error': IpLoadBalancerServerFarmProbeEditCtrl.form.probe_interval.$invalid }">
-                <label for="probe_interval" class="oui-label" data-translate="iplb_farm_edit_probe_interval"></label>
-                <div class="oui-field__content oui-field-control_1">
-                    <div class="oui-field-control">
-                        <input type="number"
-                            min="30"
-                            id="probe_interval"
-                            name="probe_interval"
-                            class="oui-input"
-                            data-ng-class="{ 'oui-input_error': IpLoadBalancerServerFarmProbeEditCtrl.form.probe_interval.$invalid }"
-                            data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.interval" />
-                    </div>
-                </div>
-            </div>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_pattern' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('pattern')">
+            <input class="oui-input"
+                type="text"
+                id="probe_pattern"
+                name="probe_pattern"
+                data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.pattern" />
+        </oui-field>
 
-            <div class="oui-field"
-                data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('negate')">
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
-                        <oui-checkbox
-                            text="{{ 'iplb_farm_edit_probe_negate' | translate }}"
-                            name="negate"
-                            model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.negate">
-                        </oui-checkbox>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </cui-modal-body>
-    <cui-modal-footer>
-        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-cancel-button>
-        <cui-button data-text="'common_modal_ok' | translate"
-            data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.close()"
-            data-type="primary"></cui-button>
-    </cui-modal-footer>
-</cui-modal>
+        <oui-field data-label="{{ ::'iplb_farm_edit_probe_interval' | translate }}">
+            <oui-numeric
+                id="probe_interval"
+                name="probe_interval"
+                data-min="30"
+                data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.interval">
+            </oui-numeric>
+        </oui-field>
+
+        <oui-field data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('negate')">
+            <oui-checkbox
+                data-text="{{ ::'iplb_farm_edit_probe_negate' | translate }}"
+                name="negate"
+                data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.negate">
+            </oui-checkbox>
+        </oui-field>
+    </oui-modal>
+</form>

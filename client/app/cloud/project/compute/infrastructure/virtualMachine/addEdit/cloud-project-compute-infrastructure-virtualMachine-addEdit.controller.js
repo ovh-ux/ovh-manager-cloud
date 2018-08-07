@@ -75,7 +75,8 @@ angular.module("managerApp")
               OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhCloudPriceHelper, OvhApiCloudProjectImage,
               OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
               RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_FLAVOR_SPECIFIC_IMAGE,
-              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
+              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl,
+              TARGET) {
 
     var self = this;
     var orderBy = $filter("orderBy");
@@ -316,6 +317,7 @@ angular.module("managerApp")
                         category: category.id,
                         order: category.order,
                         flavors: _.filter(cleanFlavors, {
+                            available: true,
                             type: flavorType,
                             diskType: "ssd",
                             flex: false,
@@ -445,7 +447,7 @@ angular.module("managerApp")
     ===================================================*/
 
     function recalculateFlavor () {
-        var mainAssociatedFlavor = _.find(self.panelsData.flavors, {
+        var mainAssociatedFlavor = _.find(_.flatten(_.map(self.displayData.categories, "flavors")), {
             groupName : self.vmInEdition.flavor && self.vmInEdition.flavor.groupName,
             osType : self.vmInEdition.image ? self.vmInEdition.image.type : 'linux',
             region : self.model.region
@@ -464,7 +466,7 @@ angular.module("managerApp")
     }
 
     function setFallbackFlavor () {
-        var fallbackFlavor = _.find(self.panelsData.flavors, {
+        var fallbackFlavor = _.find(_.flatten(_.map(self.displayData.categories, "flavors")), {
             groupName : CLOUD_INSTANCE_DEFAULT_FALLBACK.flavor,
             osType : self.vmInEdition.image ? self.vmInEdition.image.type : 'linux',
             region : self.model.region
@@ -638,7 +640,12 @@ angular.module("managerApp")
 
     function initURLs() {
         self.urls.vlansApiGuide = ovhDocUrl.getDocUrl("g2162.public_cloud_et_vrack_-_comment_utiliser_le_vrack_et_les_reseaux_prives_avec_les_instances_public_cloud");
-        self.urls.guidesSshkeyURL= ovhDocUrl.getDocUrl("g1769.creating_ssh_keys");
+
+        if (TARGET === "US") {
+            self.urls.guidesSshkeyURL = URLS.guides.ssh.create.US;
+        } else {
+            self.urls.guidesSshkeyURL = ovhDocUrl.getDocUrl("g1769.creating_ssh_keys");
+        }
     }
 
     function getCategoryFromFlavor (flavor, details) {
@@ -676,7 +683,7 @@ angular.module("managerApp")
                 realFlavor = flavor;
             }
 
-            if (realFlavor) {
+            if (realFlavor && !realFlavor.disabled) {
                 var category = getCategoryFromFlavor(realFlavor.type);
                 if (category) {
                     self.toggle.accordions.flavors = {};
@@ -1085,7 +1092,6 @@ angular.module("managerApp")
                 self.getImages(),
                 self.getSnapshots()
             ]).then(function () {
-
                 // Operations on flavors:
                 angular.forEach(self.panelsData.flavors, function (flavor) {
                     //add frequency

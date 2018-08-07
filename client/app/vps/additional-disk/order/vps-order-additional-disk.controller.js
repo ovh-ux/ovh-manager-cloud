@@ -37,7 +37,7 @@ class VpsOrderDiskCtrl {
         this.VpsService.getAdditionalDiskPrices(this.serviceName)
             .then(data => { this.capacityArray = data; })
             .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_additional_disk_fail")))
-            .finally(() => { this.loaders.capacity = false; })
+            .finally(() => { this.loaders.capacity = false; });
     }
 
     getAdditionalDiskFinalPrice () {
@@ -48,7 +48,7 @@ class VpsOrderDiskCtrl {
                 this.VpsService.getAdditionalDiskFinalPrice(this.serviceName, this.model.capacity, this.model.duration)
                     .then(offer => { this.offer = offer; })
                     .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_additional_disk_fail")))
-                    .finally(() => { this.loaders.offer = false; })
+                    .finally(() => { this.loaders.offer = false; });
             })
             .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_additional_disk_fail")));
     }

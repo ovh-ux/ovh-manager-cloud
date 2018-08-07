@@ -9,7 +9,7 @@
    <translation id="cpc_ssh_error" qtlid="248808">Oops! Unable to retrieve the list of your SSH keys.</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH uses SSH to secure encrypted data communications between servers. </translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">There are SSH clients for each operating system. See the <a href="{{ createUrl }}" target="_blank">guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> for more information.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">There are SSH clients for each operating system. Please see the <a href="{{ createUrl }}" target="_blank">guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> for more information.</translation>
    <translation id="cpc_ssh_key_explain_3" qtlid="366567">Please note that you can also <a href="{{ addUrl }}" target="_blank">configure additional SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> on your instance in order to provide access to others <a href="{{ changeUrl }}" target="_blank">replacing your lost SSH key pair<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Add a key</translation>

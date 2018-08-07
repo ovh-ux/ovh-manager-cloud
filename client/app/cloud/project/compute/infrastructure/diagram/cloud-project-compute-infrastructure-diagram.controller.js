@@ -6,7 +6,7 @@
                      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
                      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
                      OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
-                     CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, URLS) {
+                     CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, TARGET, URLS) {
 
             this.$rootScope = $rootScope;
             this.$scope = $scope;
@@ -47,6 +47,7 @@
             this.conversion = CLOUD_UNIT_CONVERSION;
             this.CLOUD_MONITORING = CLOUD_MONITORING;
             this.REDIRECT_URLS = REDIRECT_URLS;
+            this.TARGET = TARGET;
             this.URLS = URLS;
         }
 
@@ -1099,7 +1100,11 @@
                         this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise
                             .then(snapshots => {
                                 if (_.find(snapshots, { volumeId: volume.id })) {
-                                    this.CloudMessage.error(this.$translate.instant("cpci_volume_snapshotted_delete_info", { url: this.$state.href("iaas.pci-project.compute.snapshot") }));
+                                    this.CloudMessage.error({
+                                        textHtml: this.$translate.instant("cpci_volume_snapshotted_delete_info", {
+                                            url: this.$state.href("iaas.pci-project.compute.snapshot")
+                                        })
+                                    });
                                 } else {
                                     this.volumeEdit.action = "remove";
                                     this.volumeEdit.volume = volume;
