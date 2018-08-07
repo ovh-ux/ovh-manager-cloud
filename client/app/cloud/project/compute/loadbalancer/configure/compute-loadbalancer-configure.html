@@ -42,9 +42,9 @@
             </p>
             <oui-field data-label="{{::'cpc_loadbalancer_configure_adresse' | translate}}">
                 <div class="inline-block">
-                    <cui-clipboard data-text="$ctrl.loadbalancer.ipv4"
+                    <oui-clipboard data-model="$ctrl.loadbalancer.ipv4"
                         name="ipv4"
-                        id="ipv4"></cui-clipboard>
+                        id="ipv4"></oui-clipboard>
                 </div>
                 <a class="oui-button oui-button_secondary pull-right"
                     data-translate="cpc_loadbalancer_configure_advanced" data-ui-sref="network.iplb.detail.home({'serviceName': $ctrl.loadbalancerId})">
