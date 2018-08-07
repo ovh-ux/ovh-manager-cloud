@@ -1,3 +1,58 @@
+<a name="7.5.0"></a>
+# [7.5.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.10...v7.5.0) (2018-08-07)
+
+
+### Bug Fixes
+
+* cui-wizard-form removal ([5af5c4c](https://github.com/ovh-ux/ovh-manager-cloud/commit/5af5c4c))
+* fix after review ([a62ed0c](https://github.com/ovh-ux/ovh-manager-cloud/commit/a62ed0c))
+* fix after review ([f7c308b](https://github.com/ovh-ux/ovh-manager-cloud/commit/f7c308b))
+* use heading attribut on oui-back-button ([3bbeb52](https://github.com/ovh-ux/ovh-manager-cloud/commit/3bbeb52))
+* **clipboard:** migrate cui clipboard to oui kit ([29dea19](https://github.com/ovh-ux/ovh-manager-cloud/commit/29dea19))
+* **cloud:** openstack terminal copy/paste on safari ([61be30c](https://github.com/ovh-ux/ovh-manager-cloud/commit/61be30c))
+* **credits:** hide arrows from input number field ([62c1cef](https://github.com/ovh-ux/ovh-manager-cloud/commit/62c1cef))
+* **credits:** minor code review changes ([ff0e469](https://github.com/ovh-ux/ovh-manager-cloud/commit/ff0e469))
+* **credits:** minor code review changes ([99056fa](https://github.com/ovh-ux/ovh-manager-cloud/commit/99056fa))
+* **credits:** use amount instead of quantity for orders ([85b81dc](https://github.com/ovh-ux/ovh-manager-cloud/commit/85b81dc))
+* **flavors:** fix flavors in diagram view ([d02f6e8](https://github.com/ovh-ux/ovh-manager-cloud/commit/d02f6e8))
+* **ipfo:** fix ipfo US order ([#862](https://github.com/ovh-ux/ovh-manager-cloud/issues/862)) ([e44b05c](https://github.com/ovh-ux/ovh-manager-cloud/commit/e44b05c))
+* **oui-stepper:** replace cui-status-icon with oui-status ([3440e4f](https://github.com/ovh-ux/ovh-manager-cloud/commit/3440e4f))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([22d5fc0](https://github.com/ovh-ux/ovh-manager-cloud/commit/22d5fc0))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([760c3f0](https://github.com/ovh-ux/ovh-manager-cloud/commit/760c3f0))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([12f2044](https://github.com/ovh-ux/ovh-manager-cloud/commit/12f2044))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([80a7b02](https://github.com/ovh-ux/ovh-manager-cloud/commit/80a7b02))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([e2f4209](https://github.com/ovh-ux/ovh-manager-cloud/commit/e2f4209))
+* **oui-stepper:** replace cui-wizard-form with oui-stepper ([ecdd7d8](https://github.com/ovh-ux/ovh-manager-cloud/commit/ecdd7d8))
+* **pci:** fix after review ([e87a46b](https://github.com/ovh-ux/ovh-manager-cloud/commit/e87a46b))
+* **pci:** fix auto selected flavor on vm add in diagram view ([b5ba866](https://github.com/ovh-ux/ovh-manager-cloud/commit/b5ba866))
+* **pci:** fix flags display and translations for US region ([16d83d6](https://github.com/ovh-ux/ovh-manager-cloud/commit/16d83d6))
+* **pci:** fix support url ([3843903](https://github.com/ovh-ux/ovh-manager-cloud/commit/3843903))
+* **pci:** flex option activation ([61e0d8a](https://github.com/ovh-ux/ovh-manager-cloud/commit/61e0d8a))
+* **pci:** hide promotion code field and update plan code for US ([6d29bdb](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d29bdb))
+* **pci:** quota increase link for US ([bba279a](https://github.com/ovh-ux/ovh-manager-cloud/commit/bba279a))
+* **pci:** set message to html format when trying to delete snapshot disk ([9fe6df7](https://github.com/ovh-ux/ovh-manager-cloud/commit/9fe6df7))
+* **pci:** set right openstack horizon url for US ([4a19f8c](https://github.com/ovh-ux/ovh-manager-cloud/commit/4a19f8c))
+* **pci:** set tabs at the right place ([aab08c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/aab08c9))
+* **pci:** translations load error in diagram infra view ([3cf6825](https://github.com/ovh-ux/ovh-manager-cloud/commit/3cf6825))
+* **pci:** use paymentMethod API on US ([4f892af](https://github.com/ovh-ux/ovh-manager-cloud/commit/4f892af))
+* **sidebar:** add back project management section in sidebar for EU ([32ab155](https://github.com/ovh-ux/ovh-manager-cloud/commit/32ab155))
+* **sidebar:** add back storage and openstack items ([a92bba8](https://github.com/ovh-ux/ovh-manager-cloud/commit/a92bba8))
+* **ssh:** fix ssh create US guide url ([0115211](https://github.com/ovh-ux/ovh-manager-cloud/commit/0115211))
+* retrieved correct guide url ([e64db5f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e64db5f))
+* set good url in diagram view ([12399a9](https://github.com/ovh-ux/ovh-manager-cloud/commit/12399a9))
+
+
+### Features
+
+* move storage and openstack from sidebar to tabs ([1eed3cd](https://github.com/ovh-ux/ovh-manager-cloud/commit/1eed3cd))
+* **cloud:** add button for BigData platform CLI call ([b4986c2](https://github.com/ovh-ux/ovh-manager-cloud/commit/b4986c2))
+* **credits:** add credit order for US ([f0f8ae3](https://github.com/ovh-ux/ovh-manager-cloud/commit/f0f8ae3))
+* **pci:** manager terminate project for US ([719dbb7](https://github.com/ovh-ux/ovh-manager-cloud/commit/719dbb7))
+* **pci project:** enable order in sidebar action menu ([c826d6d](https://github.com/ovh-ux/ovh-manager-cloud/commit/c826d6d))
+* **quota:** move quota tab ([aab4914](https://github.com/ovh-ux/ovh-manager-cloud/commit/aab4914))
+
+
+
 <a name="7.4.10"></a>
 ## [7.4.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.9...v7.4.10) (2018-07-25)
 
