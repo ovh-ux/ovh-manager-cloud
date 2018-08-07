@@ -96,7 +96,7 @@
     "popper.js": "^1.14.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^6.0.0",
     "babel-core": "^6.6.5",
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.6.0",
@@ -119,7 +119,7 @@
     "eslint-config-ovh": "^0.1.1",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
-    "grunt": "^1.0.3",
+    "grunt": "~1.0.1",
     "grunt-angular-templates": "^1.0.3",
     "grunt-babel": "~6.0.0",
     "grunt-concurrent": "^2.0.1",
@@ -184,7 +184,7 @@
     "serve-favicon": "^2.3.0",
     "spdy": "^3.4.7",
     "supertest": "^2.0.1",
-    "time-grunt": "^1.4.0",
+    "time-grunt": "^1.2.1",
     "winston": "^2.2.0"
   },
   "scripts": {
