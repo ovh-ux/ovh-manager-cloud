@@ -188,7 +188,7 @@
    <translation id="unit_gib" qtlid="180278">GiB</translation>
    <translation id="unit_gb" qtlid="48890">GB</translation>
 
-   <translation id="payment_type_none" qtlid="30646">Ei ole</translation>
+   <translation id="payment_type_none" qtlid="30646">Ei mitään</translation>
    <translation id="payment_type_cash" qtlid="139689">Käteismaksu</translation>
    <translation id="payment_type_chargeback" qtlid="139702">Maksu hylätty</translation>
    <translation id="payment_type_cheque" qtlid="139715">Shekki</translation>
