@@ -59,7 +59,7 @@
    <translation id="cpbc_volume_location" qtlid="168237">Localização</translation>
    <translation id="cpbc_volume_type" qtlid="2642">Tipo</translation>
    <translation id="cpbc_volume_size" qtlid="364472">Espaço de disco atual</translation>
-   <translation id="cpbc_volume_state" qtlid="8230">Status</translation>
+   <translation id="cpbc_volume_state" qtlid="8230">Estado</translation>
 
    <translation id="cpbc_server_details_popover_region" qtlid="168237">Localização</translation>
    <translation id="cpbc_server_details_popover_image_type" qtlid="2642">Tipo</translation>

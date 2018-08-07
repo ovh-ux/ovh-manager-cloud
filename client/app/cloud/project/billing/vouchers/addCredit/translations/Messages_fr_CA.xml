@@ -2,8 +2,8 @@
 <translations>
 
    <translation id="cpb_vouchers_add_credit_title" qtlid="255181">Acheter du crédit cloud</translation>
-   <translation id="cpb_vouchers_add_credit_info" qtlid="264296">Choisissez la somme (hors taxes) à créditer sur ce projet. Une fois le bon de commande réglé, ce crédit sera utilisé pour les forfaits et consommations de ce projet pour les factures éditées au cours des 12 prochains mois.</translation>
-   <translation id="cpb_vouchers_add_credit_amount" qtlid="269981">Somme à créditer ( HT {{ currency }} ) :</translation>
+   <translation id="cpb_vouchers_add_credit_info" qtlid="264296">Choisissez la somme (excluant les taxes) à créditer sur ce projet. Une fois le bon de commande réglé, ce crédit sera utilisé pour les forfaits et consommations de ce projet pour les factures éditées au cours des 12 prochains mois.</translation>
+   <translation id="cpb_vouchers_add_credit_amount" qtlid="269981">Somme à créditer ( excl. les taxes {{ currency }} ) :</translation>
    <translation id="cpb_vouchers_add_credit_required_error" qtlid="255560">Vous devez entrer un montant à créditer.</translation>
    <translation id="cpb_vouchers_add_credit_max_error" qtlid="255573">Ce montant est invalide.</translation>
    <translation id="cpb_vouchers_add_credit_doing" qtlid="255586">Création du bon de commande en cours ...</translation>

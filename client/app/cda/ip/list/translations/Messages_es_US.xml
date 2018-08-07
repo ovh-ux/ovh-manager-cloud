@@ -7,7 +7,7 @@
    <translation id="cda_ip_delete_button_text" qtlid="2414">Eliminar</translation>
 
    <translation id="cda_ip_table_col_network" qtlid="25615">IP</translation>
-   <translation id="cda_ip_table_col_actions" qtlid="72809">Actions</translation>
+   <translation id="cda_ip_table_col_actions" qtlid="72809">Acciones</translation>
 
    <translation id="cda_ip_add_title" qtlid="354808">Añadir un control de acceso</translation>
    <translation id="cda_ip_add_ip_label" qtlid="354821">IP con máscara de subred</translation>
