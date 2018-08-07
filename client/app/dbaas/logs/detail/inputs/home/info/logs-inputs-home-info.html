@@ -3,16 +3,16 @@
     <p data-translate="inputs_info_description"></p>
 
     <oui-field data-label="{{ ::'inputs_info_hostname' | translate}}">
-        <cui-clipboard id="input_hostname" data-text="ctrl.currentInput.info.hostname"></cui-clipboard>
+        <oui-clipboard id="input_hostname" data-model="ctrl.currentInput.info.hostname" name="input_hostname"></oui-clipboard>
     </oui-field>
 
     <oui-field data-label="{{ ::'inputs_info_ipaddress' | translate}}" data-size="m">
-        <cui-clipboard id="input_ipaddress" data-text="ctrl.currentInput.info.publicAddress"></cui-clipboard>
+        <oui-clipboard id="input_ipaddress" data-model="ctrl.currentInput.info.publicAddress" name="input_ipaddress"></oui-clipboard>
     </oui-field>
 
     <oui-field data-label="{{ ::'inputs_info_certificate' | translate}}">
-        <cui-clipboard id="input_certificate"
-                       data-text="ctrl.currentInput.info.sslCertificate"
-                       data-rows="4"></cui-clipboard>
+        <oui-clipboard id="input_certificate"
+                       data-model="ctrl.currentInput.info.sslCertificate"
+                       name="input_certificate"></oui-clipboard>
     </oui-field>
 </oui-modal>

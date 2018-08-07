@@ -5,7 +5,7 @@
         <p class="oui-modal__text" data-translate="iplb_modal_nat_ip_description"></p>
         <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
             <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
-            <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
+            <oui-clipboard data-id="ip-{{nat.zone}}" data-model="nat.ip"></oui-clipboard>
         </div>
     </div>
 </oui-modal>

@@ -4,7 +4,7 @@
         <oui-spinner data-ng-if="IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()"></oui-spinner>
 
         <div data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-            <cui-clipboard data-text="ip" data-ng-repeat="ip in IpLoadBalancerFailoverIpDetailCtrl.ips.data track by $index"></cui-clipboard>
+            <oui-clipboard data-model="ip" data-ng-repeat="ip in IpLoadBalancerFailoverIpDetailCtrl.ips.data track by $index"></oui-clipboard>
         </div>
     </cui-modal-body>
 </cui-modal>
