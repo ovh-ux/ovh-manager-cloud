@@ -308,6 +308,7 @@ angular.module("managerApp")
                     categoryObject.flavors = _(categoryObject.flavors).concat(_.filter(cleanFlavors, {
                         type: flavorType,
                         diskType: "ssd",
+                        flex: false,
                         region: self.model.region,
                         osType: self.vmInEdition.image ? self.vmInEdition.image.type : "linux"     // (display linux flavors by default if no image selected)
                     })).value();
@@ -319,6 +320,7 @@ angular.module("managerApp")
                             available: true,
                             type: flavorType,
                             diskType: "ssd",
+                            flex: false,
                             region: self.model.region,
                             osType: self.vmInEdition.image ? self.vmInEdition.image.type : "linux"     // (display linux flavors by default if no image selected)
                         })

@@ -36,7 +36,7 @@
    <translation id="cloud_common_region_GRA" qtlid="264192">Gravelines</translation>
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
    <translation id="cloud_common_region_LIM" qtlid="414343">Limburgo</translation>
-   <translation id="cloud_common_region_LIM_micro" qtlid="453666">Limburg ({{ micro }})</translation>
+   <translation id="cloud_common_region_LIM_micro" qtlid="453666">Limburgo ({{ micro }})</translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Varsovie</translation>
@@ -73,7 +73,7 @@
    <translation id="cloud_common_region_continent_RBX" qtlid="468859">Europa Occidental</translation>
    <translation id="cloud_common_region_continent_DE" qtlid="468885">Europa Central</translation>
    <translation id="cloud_common_region_continent_UK" qtlid="468859">Europa Occidental</translation>
-   <translation id="cloud_common_region_continent_SGP" qtlid="483603">Asie du Sud-Est</translation>
+   <translation id="cloud_common_region_continent_SGP" qtlid="483603">Sudeste Asiático</translation>
    <translation id="cloud_common_region_continent_SYD" qtlid="440366">Oceanía</translation>
    <translation id="cloud_common_region_continent_US" qtlid="108396">États-Unis</translation>
 

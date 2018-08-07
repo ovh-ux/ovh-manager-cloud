@@ -9,7 +9,7 @@
    <translation id="cpc_ssh_error" qtlid="248808">We kunnen de lijst met uw SSH-keys niet oproepen!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH zet SSH in om versleutelde datacommunicatie tussen servers te verzekeren.  </translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Er zijn SSH clients voor elk operating system. Raadpleeg de <a href="{{ createUrl }}" target="_blank">handleiding over het creëren van SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> voor meer informatie. </translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Er zijn SSH clients voor elk besturingssysteem. Raadpleeg de <a href="{{ createUrl }}" target="_blank">handleiding over het creëren van SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> voor meer informatie. </translation>
    <translation id="cpc_ssh_key_explain_3" qtlid="366567">Let op: u kunt ook <a href="{{ addUrl }}" target="_blank">extra SSH keys configureren<i class="fa fa-external-link" aria-hidden="true"></i></a> op uw instance om anderen toegang te verlenen <a href="{{ changeUrl }}" target="_blank">wijzigen van uw SSH key in geval van verlies<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Een key toevoegen</translation>

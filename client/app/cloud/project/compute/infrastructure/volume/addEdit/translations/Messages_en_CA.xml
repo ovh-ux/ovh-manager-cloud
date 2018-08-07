@@ -19,11 +19,11 @@
    <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Loading available zones.</translation>
    <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Select location</translation>
    <translation id="cpci_volume_addedit_region_error" qtlid="248418">Oops! We were unable to find your regions.</translation>
-   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Update my regions</translation>
+   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Update my list of regions</translation>
    <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
 
    <translation id="cpci_volume_addedit_build" qtlid="37923">Add</translation>
-   <translation id="cpci_volume_addedit_change_now" qtlid="249107">Apply the changes</translation>
+   <translation id="cpci_volume_addedit_change_now" qtlid="249107">Apply changes</translation>
    <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Apply</translation>
 
    <translation id="cpci_volume_default_name" qtlid="252685">Name of the hard disk</translation>

@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpd_project_redirect" qtlid="245857">Redirection...</translation>
 
-   <translation id="cpd_project_suspended" qtlid="497972">Votre projet cloud est suspendu. Pour plus d'informations, merci de contacter <a href="{{ url }}">le support</a>.</translation>
+   <translation id="cpd_project_suspended" qtlid="497972">Votre projet infonuagique est suspendu. Pour plus d'informations, merci de contacter <a href="{{ url }}">le support</a>.</translation>
 
    <translation id="cpd_project_creating_help" qtlid="245896">Vous serez automatiquement redirigé lorsque le projet sera créé.</translation>
    <translation id="cpd_project_creating_havetopay" qtlid="272014">Veuillez finaliser le paiement de votre bon de commande initial.</translation>
@@ -13,7 +13,7 @@
    <translation id="cpd_project_deleting" qtlid="245909">Suppression du projet en cours...</translation>
    <translation id="cpd_project_deleting_help" qtlid="245922">Vous serez automatiquement redirigé lorsque le projet sera supprimé.</translation>
 
-   <translation id="cpd_project_created" qtlid="245935">Votre projet est prêt !</translation>
+   <translation id="cpd_project_created" qtlid="245935">Votre projet est prêt!</translation>
 
    <translation id="cpd_project_cancel_success" qtlid="282003">La création de votre projet a été annulée avec succès.</translation>
    <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Votre projet est expiré.</translation>

@@ -68,8 +68,8 @@
    <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Nombre de la organización</translation>
    <translation id="iplb_ssl_order_unit_name" qtlid="439260">Nombre de la empresa</translation>
    <translation id="iplb_ssl_order_address" qtlid="30430">Dirección </translation>
-   <translation id="iplb_ssl_order_postal_code" qtlid="30346">Code postal</translation>
-   <translation id="iplb_ssl_order_city" qtlid="33310">Ville</translation>
+   <translation id="iplb_ssl_order_postal_code" qtlid="30346">Código postal</translation>
+   <translation id="iplb_ssl_order_city" qtlid="33310">Ciudad</translation>
    <translation id="iplb_ssl_order_joi" qtlid="439273">Sede social</translation>
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Contratar</translation>

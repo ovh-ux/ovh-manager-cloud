@@ -330,7 +330,7 @@
    <translation id="logs_streams_col_title" qtlid="3818">Nombre</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Archivos</translation>
-   <translation id="logs_streams_col_actions" qtlid="72809">Actions</translation>
+   <translation id="logs_streams_col_actions" qtlid="72809">Acciones</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Alertes</translation>
    <translation id="logs_streams_col_linked_option" qtlid="426768">Opción asociada</translation>
    <translation id="logs_streams_no_streams" qtlid="476014">Ningún flujo de datos</translation>

@@ -9,4 +9,5 @@
    <translation id="cda_guide_name" qtlid="406918">Cloud Disk Array (CDA)</translation>
    <translation id="cda_guide_footer" qtlid="406905">Alle OVH-handleidingen</translation>
    <translation id="cda_new_window" qtlid="222176">Nieuw scherm</translation>
+   <translation id="cda_guide_retrieval_error">Une erreur est survenue au moment de la récupération du guide pour Cloud Disk Array (CDA).</translation>
 </translations>
