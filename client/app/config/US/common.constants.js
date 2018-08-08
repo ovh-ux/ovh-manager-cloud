@@ -125,7 +125,7 @@ angular.module("managerApp")
             vmResize: {
             },
             cloud: {
-                US: "https://docs.ovhcloud.com/cloud/"
+                US: "https://support.ovhcloud.com/hc/en-us"
             },
             vlans: {
             },
