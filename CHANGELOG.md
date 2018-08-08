@@ -1,3 +1,13 @@
+<a name="7.5.3"></a>
+## [7.5.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.2...v7.5.3) (2018-08-08)
+
+
+### Bug Fixes
+
+* **config.us.constants:** update guide cloud url ([38928c4](https://github.com/ovh-ux/ovh-manager-cloud/commit/38928c4))
+
+
+
 <a name="7.5.2"></a>
 ## [7.5.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.1...v7.5.2) (2018-08-07)
 
