@@ -1,3 +1,14 @@
+<a name="7.5.4"></a>
+## [7.5.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.3...v7.5.4) (2018-08-09)
+
+
+### Bug Fixes
+
+* **cloud.instance:** fix collapse button position ([004e05a](https://github.com/ovh-ux/ovh-manager-cloud/commit/004e05a))
+* **home:** display an information about bhs3 maintenance ([0b7c1f7](https://github.com/ovh-ux/ovh-manager-cloud/commit/0b7c1f7))
+
+
+
 <a name="7.5.3"></a>
 ## [7.5.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.2...v7.5.3) (2018-08-08)
 
