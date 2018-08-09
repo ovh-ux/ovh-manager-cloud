@@ -5,4 +5,6 @@
    <translation id="homepage_top_guides_header" qtlid="468499">Pour obtenir de l'information plus détaillée, veuillez consulter <a class="oui-link" href="{{ url }}" target="_blank">nos guides</a>.</translation>
    <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
    <translation id="homepage_type_of_guide_pci" qtlid="251655">Public Cloud</translation>
+   <translation id="homepage_scheduled_maintenance_operation_bhs3_info">Une opération de maintenance est programmée pour la région BHS3 le 22 août 2018 entre 3:00 et 8:00 UTC-4. Aucune perturbation n'est à prévoir sur vos instances, seules certaines APIs de cette région seront injoignables pendant la durée de l'opération</translation>
+   <translation id="homepage_scheduled_maintenance_operation_bhs3_more_detail">Plus de détail sur la tâche travaux correspondante:</translation>
 </translations>
