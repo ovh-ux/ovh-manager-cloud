@@ -1,3 +1,13 @@
+<a name="7.5.5"></a>
+## [7.5.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.4...v7.5.5) (2018-08-10)
+
+
+### Bug Fixes
+
+* **cloud.instance:** expand arrow position ([ed5599a](https://github.com/ovh-ux/ovh-manager-cloud/commit/ed5599a))
+
+
+
 <a name="7.5.4"></a>
 ## [7.5.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.3...v7.5.4) (2018-08-09)
 
