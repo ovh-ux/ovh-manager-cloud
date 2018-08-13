@@ -50,7 +50,7 @@
    <translation id="cloud_common_region_SYD" qtlid="414330">Sídney</translation>
    <translation id="cloud_common_region_SYD_micro" qtlid="449167">Sídney ({{ micro }})</translation>
    <translation id="cloud_common_region_US" qtlid="108396">Estados Unidos</translation>
-   <translation id="cloud_common_region_US_micro" qtlid="497933">États-Unis ({{ micro }})</translation>
+   <translation id="cloud_common_region_US_micro" qtlid="497933">Estados Unidos ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizar</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Central (Francia)</translation>

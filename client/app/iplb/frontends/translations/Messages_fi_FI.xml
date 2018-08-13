@@ -43,7 +43,7 @@
    <translation id="iplb_frontend_add_farm" qtlid="437726">Lisää palvelinfarmi</translation>
    <translation id="iplb_frontend_add_farm_text" qtlid="438688">Kun nykyinen frontend on luotu, voit lisätä siihen suoraan oletuspalvelinfarmin.</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="438701">SSL-varmenne oletuksena</translation>
-   <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Ei ole</translation>
+   <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Ei mitään</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Lisää/Tilaa</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="448699">Oletuksena käytetyt varmenteet</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Uutta varmennetta ei voida lisätä suoraan. Voit lisätä sen kun frontend on luotu.</translation>
