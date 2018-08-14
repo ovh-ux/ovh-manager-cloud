@@ -5,7 +5,7 @@
            data-translate-values="{guidesUrl: MetricsTokenCtrl.getGuides()}"></p>
     </div>
     <div class="metrics__row">
-        <oui-datagrid rows="MetricsTokenCtrl.tokens">
+        <oui-datagrid data-rows="MetricsTokenCtrl.tokens">
             <extra-top>
                 <button data-ng-if="!MetricsTokenCtrl.loading"
                     class="oui-button oui-button_secondary" type="button"
@@ -18,18 +18,17 @@
                     <span data-ng-bind="$row.description || '-'"></span>
             </oui-column>
             <oui-column data-title=":: 'metrics_token_labels' | translate" data-type="string" data-property="labels">
-                <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index < 2">
+                <span class="oui-chip oui-chip-labels" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index < 2">
                     <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
                 </span>
-                <oui-dropdown data-ng-if="$row.labels.length > 2">
-                    <button type="button"
-                        class="token-labels token-labels__button"
+                <oui-dropdown data-ng-if="$row.labels.length > 2" arrow>
+                    <span class="oui-chip oui-chip-labels__button"
                         data-ng-bind="MetricsTokenCtrl.displayRemainingLabels($row.labels.length - 2)"
                         oui-dropdown-trigger>
-                    </button>
+                    </span>
                     <oui-dropdown-content>
-                        <div class="token-labels-container">
-                            <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index >= 2">
+                        <div class="oui-chip__container">
+                            <span class="oui-chip" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index >= 2">
                                 <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
                             </span>
                         </div>
