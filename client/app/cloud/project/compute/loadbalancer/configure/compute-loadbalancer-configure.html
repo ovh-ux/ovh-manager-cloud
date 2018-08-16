@@ -18,7 +18,10 @@
     <div data-ng-if="$ctrl.tasks.data.length" class="oui-box">
         <h4 data-translate="cpc_loadbalancer_configure_task_waiting"></h4>
         <div data-ng-repeat="task in $ctrl.tasks.data track by $index" class="compute-loadbalancer-configure-tasks">
-            {{task.action}} : <cui-task-progress data-task="task"></cui-task-progress>
+            {{task.action}} :
+            <oui-progress>
+                <oui-progress-bar data-type="{{ $ctrl.ServiceHelper.getTaskProgressType(task.status) }}" data-value="task.progress"></oui-progress-bar>
+            </oui-progress>
         </div>
     </div>
 
