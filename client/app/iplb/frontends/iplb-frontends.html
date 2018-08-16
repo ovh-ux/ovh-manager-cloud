@@ -24,12 +24,16 @@
             {{ $row.defaultFarm.displayName || $row.defaultFarm.farmId || "-" }}
         </oui-column>
         <oui-column data-title="'iplb_frontend_active' | translate" data-property="disabled" data-sortable class="oui-table__cell_action">
-            <label class="oui-switch">
-                <input type="checkbox" class="oui-switch__checkbox" data-ng-checked="!$row.disabled" data-ng-click="ctrl.toggle($row)">
-                <div class="oui-switch__slider"></div>
-                <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
-                <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
-            </label>
+            <span class="oui-switch">
+                <label class="oui-switch__label-container">
+                    <input
+                        type="checkbox"
+                        class="oui-switch__checkbox"
+                        data-ng-checked="!$row.disabled"
+                        data-ng-click="ctrl.toggle($row)">
+                    <span class="oui-switch__slider" aria-hidden="true"></span>
+                </label>
+            </span>
         </oui-column>
         <oui-action-menu data-align="end" data-compact>
             <oui-action-menu-item data-text="{{'common_preview_see' | translate}}"

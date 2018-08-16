@@ -1,10 +1,11 @@
 class IpLoadBalancerTaskCtrl {
-    constructor ($scope, $stateParams, ControllerHelper, CloudPoll, IpLoadBalancerTaskService) {
+    constructor ($scope, $stateParams, ControllerHelper, CloudPoll, IpLoadBalancerTaskService, ServiceHelper) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.ControllerHelper = ControllerHelper;
         this.CloudPoll = CloudPoll;
         this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
+        this.ServiceHelper = ServiceHelper;
 
         this.serviceName = this.$stateParams.serviceName;
 

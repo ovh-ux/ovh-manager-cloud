@@ -64,8 +64,8 @@
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">High-availability storage, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_cpu_info" qtlid="290394">Guaranteed resources, high availability storage, high frequency/core. </translation>
    <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Guaranteed resources, high availability storage, high frequency/core. </translation>
-   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Guaranteed resources, low latency SSD storage, optimised RAM/price ratio.</translation>
-   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Guaranteed resources, low latency SSD storage, optimised RAM/price ratio.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Guaranteed resources, low latency SSD storage, optimized RAM/price ratio.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Guaranteed resources, low latency SSD storage, optimized RAM/price ratio.</translation>
    <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">There are no offers for this series.</translation>
    <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Not available in this region </translation>
    <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Loading available offers.</translation>
@@ -86,10 +86,10 @@
    <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">If you change the instance type, you have to resize the disk space.</translation>
    <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">How?</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">To get more RAM please switch to the {{offer}} offer.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">To get more RAM, please switch to the {{offer}} offer.</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">To get more CPU please switch to the {{offer}} offer.</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">To get more resources please switch to the {{offer}} offer.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">To get more CPU, please switch to the {{offer}} offer.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">To get more resources, please switch to the {{offer}} offer.</translation>
 
    <translation id="cpcivm_addedit_flavor_soldout_title" qtlid="91957">Unavailable</translation>
    <translation id="cpcivm_addedit_flavor_soldout_info" qtlid="281264">Victim of its own success, this type of instance is currently unavailable. </translation>
@@ -109,10 +109,10 @@
    <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Important information: OVH only makes sure that the application has been installed. Any management or maintenance must be done by you.</translation>
 
    <translation id="cpcivm_addedit_image_apps" qtlid="401432">Pre-installed applications</translation>
-   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. VAT/hour. or {{monthly}} excl. VAT/month</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. taxes/hour. or {{monthly}} excl. taxes/month</translation>
    <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/hour</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/month</translation>
-   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} excl. VAT/hour)</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} excl. taxes/hour)</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}}/month)</translation>
    <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} /hour. or + {{monthly}} /month</translation>
    <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Show all distributions </translation>
@@ -129,7 +129,7 @@
 
    <translation id="cpcivm_addedit_region_loading" qtlid="248405">Loading available zones.</translation>
    <translation id="cpcivm_addedit_region_error" qtlid="248418">Oops! We were unable to find your regions.</translation>
-   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Update my regions</translation>
+   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Update my list of regions</translation>
    <translation id="cpcivm_addedit_region_choose" qtlid="248444">Choose my location</translation>
 
    <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
@@ -138,7 +138,7 @@
    <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Please note that the currently selected snapshot may only be used in its current location. It may therefore not be used if its location changes.</translation>
 
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Type</translation>
-   <translation id="cpcivm_addedit_table_price" qtlid="133292">Price ex. VAT</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Price excl. taxes</translation>
    <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUs</translation>
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disks</translation>
@@ -161,7 +161,7 @@
    <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores <span class="text-nowrap"> x {{ frequency }} Ghz</span></translation>
    <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
    <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Select according to the number of vCores </translation>
-   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Choose according to the RAM</translation>
+   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Choose based on the RAM</translation>
    <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
    <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} RAM</translation>
    <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Allowing flexible size change</translation>
@@ -252,10 +252,10 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Link to the private network </translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">None</translation>
-   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oops, unable to retrieve list of private networks. {{ message }}</translation>
-   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Oops, unable to retrieve list of sub-nets. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oops, unable to retrieve the list of private networks. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Oops, unable to retrieve the list of sub-nets. {{ message }}</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_api_guide" qtlid="316164">More info on <a href="{{ url }}" target="_blank">private networks</a>.</translation>
-   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Oops, public networks could not be retrieved. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Oops, the list of public networks could not be retrieved. {{ message }}</translation>
 
    <translation id="cpcivm_addedit_payement_hour" qtlid="249042">Hourly usage</translation>
    <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Billed at the end of the period</translation>
@@ -265,7 +265,7 @@
    <translation id="cpcivm_addedit_payement_label" qtlid="272222">Switch to a subscription and save 50% on the price of servers. </translation>
 
    <translation id="cpcivm_addedit_run_now" qtlid="249094">Launch now</translation>
-   <translation id="cpcivm_addedit_change_now" qtlid="249107">Apply the changes</translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Apply changes</translation>
 
    <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Oops! We were unable to create the instance.</translation>
    <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Oops! We were unable to update this instance's details.</translation>
@@ -273,8 +273,8 @@
    <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Oops! We were unable to reinstall this instance.</translation>
    <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Oops. We were unable to change this server's payment model to a fixed monthly rate.</translation>
    <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">Your current quota is preventing you from adding this type of machine. Contact your local support team to increase the quota.</translation>
-   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">After creating the machine, to connect, open an SSH terminal and enter the following command: <br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
-   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">After creating the machine, connect to it via your preferred RDP client, for example via a Linux terminal: <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">After creating the machine, open an SSH terminal connect to it and enter the following command: <br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">After creating the machine, connect to it using your preferred RDP client, for example via a Linux terminal: <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
 
    <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">You have {{count}} SSH key outside of the selected region ({{region}}).</translation>
    <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">You have {{count}} SSH keys outside of the selected ({{region}}) region.</translation>

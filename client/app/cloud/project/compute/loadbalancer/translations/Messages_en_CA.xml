@@ -39,7 +39,7 @@
    <translation id="cpc_loadbalancer_configure_openstack" qtlid="241586">OpenStack</translation>
    <translation id="cpc_loadbalancer_configure_openstack_explanation" qtlid="447482">You can configure your Load Balancer directly with the OpenStack API.<br />To do this, you must create an OpenStack user by following <a href="{{guideHorizon}}">this guide</a> on configuring user access to the Horizon interface.<br />After you have validated this option, you will be redirected to a new authentication page for authorising the OpenStack application to use the OVH API.</translation>
    <translation id="cpc_loadbalancer_configure_openstack_activation" qtlid="447495">Authorise my OpenStack users to modify this Load Balancer.</translation>
-   <translation id="cpc_loadbalancer_configure_modify" qtlid="249107">Apply the changes</translation>
+   <translation id="cpc_loadbalancer_configure_modify" qtlid="249107">Apply changes</translation>
    <translation id="cpc_loadbalancer_configure_cancel" qtlid="37863">Cancel</translation>
 
    <translation id="cpc_loadbalancer_error" qtlid="447508">Load Balancer error</translation>

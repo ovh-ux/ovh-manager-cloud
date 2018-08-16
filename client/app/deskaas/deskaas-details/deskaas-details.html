@@ -16,7 +16,7 @@
             <div class="col-xm-12 col-md-4">
                 <oui-tile data-heading="{{::'common_tile_shortcut' | translate}}" class="h-100 oui-tile-h-100">
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.restart.isAvailable()"
                             data-ng-click="$ctrl.actions.restart.callback()">
@@ -25,7 +25,7 @@
                         </button>
                     </div>
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.changePassword.isAvailable()"
                             data-ng-click="$ctrl.actions.changePassword.callback()">
@@ -34,7 +34,7 @@
                         </button>
                     </div>
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.accessConsole.isAvailable()"
                             data-ng-click="$ctrl.actions.accessConsole.callback()">
@@ -43,7 +43,7 @@
                         </button>
                     </div>
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.reinit.isAvailable()"
                             data-ng-click="$ctrl.actions.reinit.callback()">
@@ -52,7 +52,7 @@
                         </button>
                     </div>
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.changeOffer.isAvailable()"
                             data-ng-click="$ctrl.actions.changeOffer.callback()">
@@ -61,7 +61,7 @@
                         </button>
                     </div>
                     <div class="oui-tile__item oui-tile__item_button">
-                        <button type="button" 
+                        <button type="button"
                             class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
                             data-ng-disabled="!$ctrl.actions.remove.isAvailable()"
                             data-ng-click="$ctrl.actions.remove.callback()">
@@ -72,7 +72,7 @@
                 </oui-tile>
             </div>
             <div class="col-xm-12 col-md-4">
-                <oui-tile 
+                <oui-tile
                     data-heading="{{::'common_tile_subscription' | translate}}"
                     data-loading="$ctrl.flags.init.serviceInfos || $ctrl.flags.init.details"
                     class="h-100 oui-tile-h-100">
@@ -89,7 +89,7 @@
                     </oui-tile-definition>
                     <div data-ng-if="!($ctrl.flags.init.serviceInfos || $ctrl.flags.init.details)">
                         <oui-tile-definition
-                            data-ng-if="$ctrl.services.offer" 
+                            data-ng-if="$ctrl.services.offer"
                             data-term="{{::'common_tile_subscription_offer' | translate}}"
                             data-description="{{$ctrl.services.offer}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.changeOffer.isAvailable()">
@@ -144,7 +144,7 @@
                 </oui-tile>
             </div>
             <div class="col-xm-12 col-md-4">
-                <oui-tile 
+                <oui-tile
                     data-heading="{{::'common_tile_infos' | translate}}"
                     data-loading="$ctrl.flags.initializing()"
                     class="h-100 oui-tile-h-100">
@@ -182,7 +182,7 @@
                             data-term="{{::'vdi_label_connection' | translate}}">
                             <oui-tile-description>
                                 <a data-ng-href="{{ $ctrl.details.url }}" data-ng-bind="$ctrl.details.url" target="_blank" rel="noopener"></a>
-                            </cui-clipboard></oui-tile-description>
+                            </oui-tile-description>
                         </oui-tile-definition>
                     </div>
                 </oui-tile>
@@ -190,7 +190,7 @@
         </div>
         <div class="row d-lg-flex">
             <div class="col-xm-12 col-md-4">
-                <oui-tile 
+                <oui-tile
                     data-heading="{{::'common_tile_configuration' | translate}}"
                     data-loading="$ctrl.flags.initializing()"
                     class="h-100 oui-tile-h-100">
@@ -236,7 +236,7 @@
                 </oui-tile>
             </div>
             <div class="col-xm-12 col-md-8">
-                <oui-tile 
+                <oui-tile
                     data-heading="{{::'vdi_task_current' | translate}}"
                     class="h-100 oui-tile-h-100">
                     <oui-datagrid data-rows="$ctrl.tasksHandler.cleanTasks">
@@ -247,7 +247,10 @@
                             {{ $row.lastModificationDate | momentFormat:'LLL' }}
                         </oui-column>
                         <oui-column data-title="'common_progress' | translate" data-property="progress" data-sortable class="oui-table__cell_component">
-                            <cui-task-progress data-task="$row"></cui-task-progress>
+                            <oui-progress data-compact>
+                                <oui-progress-bar data-type="{{ $ctrl.ServiceHelper.getTaskProgressType($row.status) }}" data-value="$row.progress">
+                                </oui-progress-bar>
+                            </oui-progress>
                         </oui-column>
                     </oui-datagrid>
                 </oui-tile>

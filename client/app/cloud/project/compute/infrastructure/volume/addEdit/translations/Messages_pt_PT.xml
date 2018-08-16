@@ -18,7 +18,7 @@
 
    <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Carregamento das zonas disponíveis.</translation>
    <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Escolher a sua localização</translation>
-   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Oops, não foi possível encontrar todas as regiões!</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Lamentamos, mas não foi possível encontrar todas as regiões!</translation>
    <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Atualizar a lista das regiões</translation>
    <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Cloud public</translation>
 
@@ -27,12 +27,12 @@
    <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Aplicar</translation>
 
    <translation id="cpci_volume_default_name" qtlid="252685">Nome do disco rígido</translation>
-   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Oops, não foi possível encontrar todas as imagens!</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Lamentamos, mas não foi possível encontrar todas as imagens!</translation>
 
    <translation id="cpci_volume_addedit_post_error" qtlid="252802">Oups, não conseguimos adicionar o disco rígido.</translation>
    <translation id="cpci_volume_addedit_put_error" qtlid="252815">Oups, não conseguimos atualizar este disco rígido.</translation>
 
-   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">Oups, não conseguimos carregar a sua quota disponível.</translation>
+   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">Lamentamos, mas não foi possível carregar a sua quota disponível.</translation>
    <translation id="cpci_volume_addedit_over_quota" qtlid="255391">Quota insuficiente.</translation>
    <translation id="cpci_volume_addedit_over_quota2" qtlid="255404">Aumentar o meu limite.</translation>
 
