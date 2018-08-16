@@ -20,7 +20,7 @@
         <dl class="mr-auto iplb-vrack__box-dl">
             <dt data-translate="iplb_vrack_box_title"></dt>
             <dd>
-                <cui-skeleton data-ng-if="$ctrl.creationRules.loading" loading="true" data-width="100%"></cui-skeleton>
+                <oui-skeleton data-ng-if="$ctrl.creationRules.loading"></oui-skeleton>
                 <span data-ng-if="!$ctrl.creationRules.loading">
                     <span data-translate="{{ 'iplb_vrack_box_status_' + $ctrl.creationRules.data.status }}"></span>
                     <small data-ng-if="$ctrl.creationRules.data.status === 'active'">({{ $ctrl.creationRules.data.displayName }})</small>
