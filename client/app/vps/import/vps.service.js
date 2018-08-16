@@ -688,7 +688,7 @@ angular.module("managerApp").service("VpsService", [
         };
 
         this.getOptionSnapshotFormated = function (serviceName, vps) {
-            if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
+            if (_.includes(["_2015_V_1", "_2018_V_1"], vps.version) && vps.offerType === "SSD") {
                 return this.getOptionSnapshot(vps)
                     .then(d => this.getOptionDetails2("snapshot", vps, d.data[0]))
                     .then(data => {
