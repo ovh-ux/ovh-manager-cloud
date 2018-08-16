@@ -1,11 +1,8 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, LogsHelperService) {
+    constructor ($stateParams, ControllerHelper, LogsDetailService, SidebarMenu, LogsHelperService) {
         this.$stateParams = $stateParams;
-        this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
-        this.LogsConstants = LogsConstants;
         this.LogsDetailService = LogsDetailService;
-        this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
         this.serviceName = $stateParams.serviceName;
         this.disableTabs = true;
@@ -15,14 +12,13 @@ class LogsDashboardHeaderCtrl {
     }
 
     $onInit () {
-        this.title = this.serviceName;
         this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
         //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
         if (!this.menuItem) {
             this.menuItem = { title: this.serviceName };
         }
         this.runLoaders();
-        this.initGuides();
+        this.guides = this.LogsHelperService.getGuides();
     }
 
     _initLoaders () {
@@ -38,16 +34,6 @@ class LogsDashboardHeaderCtrl {
 
     runLoaders () {
         this.configuration.load();
-    }
-
-    initGuides () {
-        this.guides = {};
-        this.guides.title = this.$translate.instant("logs_guides");
-        this.guides.list = [{
-            name: this.$translate.instant("logs_guides_title"),
-            url: this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME)
-        }];
-        this.guides.footer = this.$translate.instant("logs_guides_footer");
     }
 }
 
