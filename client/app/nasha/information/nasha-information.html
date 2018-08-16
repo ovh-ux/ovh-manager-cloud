@@ -43,13 +43,17 @@
                 <dd class="bottom-space-m8">
                     <div>
                         <label class="oui-switch pull-left">
-                            <input type="checkbox" class="oui-switch__checkbox"
-                                data-ng-disabled="NashaCtrl.monitoring.loading"
-                                data-ng-model="NashaCtrl.monitoring.enabled"
-                                data-ng-click="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
-                            <div class="oui-switch__slider"></div>
-                            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+                            <span class="oui-switch">
+                                <label class="oui-switch__label-container">
+                                    <input type="checkbox" class="oui-switch__checkbox"
+                                        data-ng-disabled="NashaCtrl.monitoring.loading"
+                                        data-ng-model="NashaCtrl.monitoring.enabled"
+                                        data-ng-click="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
+                                    <span class="oui-switch__slider" aria-hidden="true"></span>
+                                    <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+                                </label>
+                            </span>
                         </label>
                     </div>
                     <span>&nbsp;</span>
