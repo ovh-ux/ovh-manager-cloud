@@ -158,6 +158,21 @@
                 })
                 .catch(this.orderErrorHandler(newWindow));
         }
+
+        getTaskProgressType (taskType) {
+            switch (taskType) {
+                case "done":
+                    return "success";
+                case "error":
+                    return "error";
+                case "doing":
+                case "todo":
+                case "paused":
+                    return "info";
+                default:
+                    return "warning";
+            }
+        }
     }
 
     angular.module("managerApp").service("ServiceHelper", ServiceHelper);

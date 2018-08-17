@@ -1,5 +1,5 @@
 class IpLoadBalancerConfigurationCtrl {
-    constructor ($q, $scope, $stateParams, CloudMessage, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
+    constructor ($q, $scope, $stateParams, CloudMessage, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService, ServiceHelper) {
         this.$q = $q;
         this.$scope = $scope;
         this.$stateParams = $stateParams;
@@ -7,6 +7,7 @@ class IpLoadBalancerConfigurationCtrl {
         this.CloudPoll = CloudPoll;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
+        this.ServiceHelper = ServiceHelper;
 
         this.initLoaders();
 
