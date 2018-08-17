@@ -50,7 +50,7 @@
         <oui-column data-title="'iplb_vrack_list_col_subnet' | translate" data-property="subnet" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_farms' | translate">
-            <span class="oui-chip" data-ng-repeat="farm in $row.farmId">{{ farm.displayName || farm.farmId }}</span>
+            <span class="oui-chip" data-ng-repeat="farm in $row.farmId" data-ng-bind="farm.displayName || farm.farmId"></span>
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
