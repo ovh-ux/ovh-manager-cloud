@@ -48,10 +48,8 @@
                                     <input type="checkbox" class="oui-switch__checkbox"
                                         data-ng-disabled="NashaCtrl.monitoring.loading"
                                         data-ng-model="NashaCtrl.monitoring.enabled"
-                                        data-ng-click="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
+                                        data-ng-change="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
                                     <span class="oui-switch__slider" aria-hidden="true"></span>
-                                    <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
                                 </label>
                             </span>
                         </label>
