@@ -1,3 +1,19 @@
+<a name="7.5.8"></a>
+## [7.5.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.7...v7.5.8) (2018-08-17)
+
+
+### Bug Fixes
+
+* **metrics:** change table to datagrid in metrics token ([#778](https://github.com/ovh-ux/ovh-manager-cloud/issues/778)) ([bbc28e8](https://github.com/ovh-ux/ovh-manager-cloud/commit/bbc28e8))
+
+
+### Features
+
+* **nasha:** create unavailable page ([fc5a913](https://github.com/ovh-ux/ovh-manager-cloud/commit/fc5a913))
+* **nasha:** remove less file using bootstrap ([fb2181b](https://github.com/ovh-ux/ovh-manager-cloud/commit/fb2181b))
+
+
+
 <a name="7.5.7"></a>
 ## [7.5.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.6...v7.5.7) (2018-08-10)
 
