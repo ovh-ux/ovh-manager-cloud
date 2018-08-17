@@ -258,8 +258,8 @@
     less-plugin-remcalc "^0.0.1"
 
 "@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1":
-  version "6.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/8a49021ab3ec36e0a7f5ecc288bbbc0cc5c10da9"
+  version "6.1.3"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/41940a11121a6686c2c70e1ecce29de90b34bc9c"
 
 "@bower_components/ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0":
   version "5.0.0"
