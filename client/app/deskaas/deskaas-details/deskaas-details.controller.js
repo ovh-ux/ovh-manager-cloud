@@ -2,7 +2,7 @@
 
 angular.module("managerApp").controller("DeskaasDetailsCtrl",
     function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, CloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
-              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService) {
+              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService, ServiceHelper) {
 
     var self = this;
 
@@ -13,6 +13,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
     self.upgradeOptions = [];
     self.selectedUpgrade = "";
     self.tasksHandler = null;
+    self.ServiceHelper = ServiceHelper;
 
     self.references = DESKAAS_REFERENCES;
 

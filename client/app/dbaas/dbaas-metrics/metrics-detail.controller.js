@@ -8,9 +8,8 @@
             this.CloudMessage = CloudMessage;
             this.serviceName = $stateParams.serviceName;
             this.MetricService = MetricService;
-
             this.service = {};
-
+            this.loadingService = false;
             this.messages = [];
         }
 
@@ -23,10 +22,12 @@
         }
 
         loadData () {
+            this.loadingService = true;
             this.MetricService.getService(this.serviceName)
                 .then(service => {
                     this.service = service.data;
-                });
+                })
+                .finally(() => { this.loadingService = false; });
         }
 
         loadMessage () {

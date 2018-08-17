@@ -1,7 +1,7 @@
 class CloudProjectComputeLoadbalancerConfigureCtrl {
     constructor ($anchorScroll, $scope, $state, $stateParams, $q, $location, $window, $translate, CloudProjectComputeLoadbalancerService,
                  OvhApiIpLoadBalancing, OvhApiCloudProjectIplb, OvhApiCloudProject, ovhDocUrl, CloudMessage, IpLoadBalancerTaskService,
-                 ControllerHelper, CloudPoll) {
+                 ControllerHelper, CloudPoll, ServiceHelper) {
         this.$anchorScroll = $anchorScroll;
         this.$scope = $scope;
         this.$state = $state;
@@ -18,6 +18,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
         this.ControllerHelper = ControllerHelper;
         this.CloudPoll = CloudPoll;
+        this.ServiceHelper = ServiceHelper;
 
         this.serviceName = $stateParams.projectId;
         this.loadbalancerId = $stateParams.loadbalancerId;

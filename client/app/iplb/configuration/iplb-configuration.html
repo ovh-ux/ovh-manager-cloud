@@ -16,7 +16,10 @@
         <column title="'iplb_configuration_progress' | translate"
             sortable
             class="oui-table__cell_component">
-            <cui-task-progress data-ng-show="$row.task" data-task="$row.task"></cui-task-progress>
+            <oui-progress data-compact data-ng-show="$row.task">
+                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.getTaskProgressType($row.task.status) }}" data-value="$row.task.progress">
+                </oui-progress-bar>
+            </oui-progress>
         </column>
         <column title="'iplb_configuration_status' | translate" template="ctrl.statusTemplate()" class="oui-table__cell_action"></column>
         <column title="'iplb_configuration_action' | translate"
