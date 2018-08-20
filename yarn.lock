@@ -257,9 +257,9 @@
     angular-mock "^1.0.0"
     less-plugin-remcalc "^0.0.1"
 
-"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.0.1":
-  version "6.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/0184a7c8c57d0fac614ec7d54d3464e2512febe9"
+"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1":
+  version "6.1.3"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/41940a11121a6686c2c70e1ecce29de90b34bc9c"
 
 "@bower_components/ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0":
   version "5.0.0"
