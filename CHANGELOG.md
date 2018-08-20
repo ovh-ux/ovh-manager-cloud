@@ -1,3 +1,13 @@
+<a name="7.5.10"></a>
+## [7.5.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.9...v7.5.10) (2018-08-20)
+
+
+### Bug Fixes
+
+* **vps.upgrade:** Remove wrong price information ([dc83936](https://github.com/ovh-ux/ovh-manager-cloud/commit/dc83936))
+
+
+
 <a name="7.5.9"></a>
 ## [7.5.9](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.8...v7.5.9) (2018-08-20)
 
