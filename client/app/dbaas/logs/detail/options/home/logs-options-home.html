@@ -71,6 +71,7 @@
                 data-ng-attr-id="{{ $row.planCode }}"
                 class="numeric_without_bottom_margin"
                 model="$row.quantity"
+                on-change="ctrl.updateOptionToOrder(modelValue, $row)"
                 min="0">
             </oui-numeric>
         </oui-column>
