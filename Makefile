@@ -99,7 +99,6 @@ build-eu:
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
 build-ca:
-	$(MAKE) uninstall-smarttags
 	if [ -n "$(SMARTTAG_REPO_CA)" ]; then $(YARN) add "$(SMARTTAG_REPO_CA)" --no-lockfile; fi
 	if [ -n "$(SMARTTAG_REPO_CA)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --zone=CA
@@ -107,7 +106,6 @@ build-ca:
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
 build-us:
-	$(MAKE) uninstall-smarttags
 	if [ -n "$(SMARTTAG_REPO_US)" ]; then $(YARN) add "$(SMARTTAG_REPO_US)" --no-lockfile; fi
 	if [ -n "$(SMARTTAG_REPO_US)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager-us\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --zone=US
