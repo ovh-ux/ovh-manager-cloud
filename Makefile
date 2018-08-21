@@ -82,11 +82,6 @@ gen-certificate:
 install:
 	$(YARN) install
 
-uninstall-smarttags:
-	if [ -n "$(SMARTTAG_PACKAGE_NAME_EU)" ]; then $(YARN) remove "$(SMARTTAG_PACKAGE_NAME_EU)"; fi
-	if [ -n "$(SMARTTAG_PACKAGE_NAME_CA)" ]; then $(YARN) remove "$(SMARTTAG_PACKAGE_NAME_CA)"; fi
-	if [ -n "$(SMARTTAG_PACKAGE_NAME_US)" ]; then $(YARN) remove "$(SMARTTAG_PACKAGE_NAME_US)"; fi
-
 dev: deps
 	$(GRUNT) serve
 
@@ -97,25 +92,24 @@ build: build-eu build-ca build-us
 	$(TAR) $(DIST_TAR) $(DIST_EU_TAR) $(DIST_CA_TAR) $(DIST_US_TAR)
 
 build-eu:
-	$(MAKE) uninstall-smarttags
-	if [ -n "$(SMARTTAG_REPO_EU)" ]; then $(YARN) add "$(SMARTTAG_REPO_EU)"; fi
-	if [ -n "$(SMARTTAG_REPO_EU)" ]; then sed -i 's/at\-internet\-smarttag\-manager[\-eu\-ca\-us]*\/dist/at\-internet\-smarttag\-manager-eu\/dist/' $(DEPENDENCIES_FILES_LIST); fi
+	if [ -n "$(SMARTTAG_REPO_EU)" ]; then $(YARN) add "$(SMARTTAG_REPO_EU)" --no-lockfile; fi
+	if [ -n "$(SMARTTAG_REPO_EU)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager-eu\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --zone=EU
 	$(MV) $(DIST_DIR) $(DIST_EU_DIR)
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
 build-ca:
 	$(MAKE) uninstall-smarttags
-	if [ -n "$(SMARTTAG_REPO_CA)" ]; then $(YARN) add "$(SMARTTAG_REPO_CA)"; fi
-	if [ -n "$(SMARTTAG_REPO_CA)" ]; then sed -i 's/at\-internet\-smarttag\-manager[\-eu\-ca\-us]*\/dist/at\-internet\-smarttag\-manager\/dist/' $(DEPENDENCIES_FILES_LIST); fi
+	if [ -n "$(SMARTTAG_REPO_CA)" ]; then $(YARN) add "$(SMARTTAG_REPO_CA)" --no-lockfile; fi
+	if [ -n "$(SMARTTAG_REPO_CA)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --zone=CA
 	$(MV) $(DIST_DIR) $(DIST_CA_DIR)
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
 build-us:
 	$(MAKE) uninstall-smarttags
-	if [ -n "$(SMARTTAG_REPO_US)" ]; then $(YARN) add "$(SMARTTAG_REPO_US)"; fi
-	if [ -n "$(SMARTTAG_REPO_US)" ]; then sed -i 's/at\-internet\-smarttag\-manager[\-eu\-ca\-us]*\/dist/at\-internet\-smarttag\-manager-us\/dist/' $(DEPENDENCIES_FILES_LIST); fi
+	if [ -n "$(SMARTTAG_REPO_US)" ]; then $(YARN) add "$(SMARTTAG_REPO_US)" --no-lockfile; fi
+	if [ -n "$(SMARTTAG_REPO_US)" ]; then sed -i -r 's/at\-internet\-smarttag\-manager(-eu|-ca|-us)?\/dist/at-internet-smarttag-manager-us\/dist/' $(DEPENDENCIES_FILES_LIST); fi
 	$(GRUNT) build --mode=prod --zone=US
 	$(MV) $(DIST_DIR) $(DIST_US_DIR)
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
