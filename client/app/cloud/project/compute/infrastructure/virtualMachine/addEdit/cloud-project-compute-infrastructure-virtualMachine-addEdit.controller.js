@@ -453,6 +453,15 @@ angular.module("managerApp")
             region : self.model.region
         });
 
+        if (!mainAssociatedFlavor) {
+            // Try in old flavor panel
+            mainAssociatedFlavor = _.find(self.panelsData.flavors, {
+                groupName : self.vmInEdition.flavor && self.vmInEdition.flavor.groupName,
+                osType : self.vmInEdition.image ? self.vmInEdition.image.type : 'linux',
+                region : self.model.region
+            });
+        }
+
         if (!mainAssociatedFlavor || mainAssociatedFlavor.disabled) {
             setFallbackFlavor();
         } else {
