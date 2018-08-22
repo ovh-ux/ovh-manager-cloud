@@ -1,3 +1,8 @@
+<a name="7.5.14"></a>
+## [7.5.14](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.13...v7.5.14) (2018-08-22)
+
+
+
 <a name="7.5.13"></a>
 ## [7.5.13](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.12...v7.5.13) (2018-08-22)
 
