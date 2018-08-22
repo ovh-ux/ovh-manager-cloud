@@ -1,3 +1,13 @@
+<a name="7.5.13"></a>
+## [7.5.13](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.12...v7.5.13) (2018-08-22)
+
+
+### Bug Fixes
+
+* **vm:** launch vm without ssd ([68966a9](https://github.com/ovh-ux/ovh-manager-cloud/commit/68966a9))
+
+
+
 <a name="7.5.12"></a>
 ## [7.5.12](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.11...v7.5.12) (2018-08-22)
 
