@@ -1,48 +1,32 @@
-<cui-modal>
-    <form novalidate name="$ctrl.form">
-        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-        <cui-modal-body data-title=":: 'cpou_rclone_modal_title' | translate">
-            <oui-spinner data-ng-if="$ctrl.isModalLoading()"></oui-spinner>
-            <div data-ng-if="!$ctrl.isModalLoading()">
-                <cui-modal-text>
-                    <span data-translate="cpou_rclone_modal_explanation"></span>
-                    <a target="_blank"
-                        href="{{ $ctrl.rCloneFileGuide.data }}">
-                        <span data-translate="cpou_rclone_modal_explanation_more_info_link_text"></span>
-                        <i class="fa fa-external-link"></i>
-                    </a>
-                </cui-modal-text>
-                <div class="oui-field">
-                    <label for="region"
-                        class="oui-field__label oui-label"
-                        data-translate="cpou_rclone_modal_input_region_label"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control">
-                            <label class="oui-select">
-                                <select id="region"
-                                    data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.region.$invalid }"
-                                    name="region"
-                                    class="oui-select__input"
-                                    data-ng-model="$ctrl.model.region.value"
-                                    ng-options="region.microRegion.code as region.microRegion.text for region in $ctrl.regions.data"
-                                    data-ng-required="$ctrl.model.region.required">
-                                    <option value="" data-translate="common_select"></option>
-                                </select>
-                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <cui-modal-text>
-                    <small data-translate="cpou_rclone_modal_security_note"></small>
-                </cui-modal-text>
+<form name="form"
+      data-ng-submit="form.$valid && $ctrl.confirm()"
+      novalidate>
+    <oui-modal
+        data-title="{{::'cpou_rclone_modal_title' | translate }}"
+        data-primary-label="{{ ::'common_confirm' | translate }}"
+        data-secondary-action="$ctrl.cancel()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="$ctrl.cancel()"
+        data-loading="$ctrl.isModalLoading()">
+
+        <span data-translate="cpou_rclone_modal_explanation"></span>
+        <a target="_blank" data-ng-href="{{ ::$ctrl.rCloneFileGuide.data }}" class="oui-link_icon">
+            <span data-translate="cpou_rclone_modal_explanation_more_info_link_text"></span>
+            <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+        </a>
+        <oui-field data-label="{{ ::'cpou_rclone_modal_input_region_label' | translate }}">
+            <div class="oui-select">
+                <select class="oui-select__input"
+                    id="region"
+                    name="region"
+                    data-ng-model="$ctrl.model.region.value"
+                    data-required="$ctrl.model.region.required"
+                    data-ng-options="region.microRegion.code as region.microRegion.text for region in $ctrl.regions.data">
+                    <option data-translate="common_select"></option>
+                </select>
+                <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
             </div>
-        </cui-modal-body>
-        <cui-modal-footer>
-            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-            <cui-submit-button data-text="'common_confirm' | translate"
-                data-on-click="$ctrl.confirm()"
-                data-disabled="$ctrl.isModalLoading()"></cui-submit-button>
-        </cui-modal-footer>
-    </form>
-</cui-modal>
+        </oui-field>
+        <small data-translate="cpou_rclone_modal_security_note"></small>
+    </oui-modal>
+</form>
