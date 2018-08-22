@@ -97,11 +97,9 @@
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{ ::'metrics_tiles_configuration_datacenter' | translate }}">
                         <oui-tile-description>
-                            <i class="flag-icon {{ ::$ctrl.configuration.datacenter.flag }} flag flag__icon-sm"></i>
-                            <span class="cui-tile__description_vertical-sub">
-                                <span data-ng-bind=":: $ctrl.configuration.datacenter.name"></span> -
-                                <small data-ng-bind=":: $ctrl.configuration.datacenter.country"></small>
-                            </span>
+                            <span class="flag-icon {{ ::$ctrl.configuration.datacenter.flag }} flag flag__icon-sm"></span>
+                            <span data-ng-bind=":: $ctrl.configuration.datacenter.name"></span> -
+                            <small data-ng-bind=":: $ctrl.configuration.datacenter.country"></small>
                         </oui-tile-description>
                     </oui-tile-definition>
                 </div>

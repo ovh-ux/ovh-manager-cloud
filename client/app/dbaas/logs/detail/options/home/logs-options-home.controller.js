@@ -67,6 +67,13 @@ class LogsOptionsCtrl {
         return this.LogsOptionsService.getOptionsToOrder(this.options.data);
     }
 
+    updateOptionToOrder (newValue, selectedOption) {
+        let option = _.find(this.options.data, {"planCode": selectedOption.planCode});
+        if (!_.isEmpty(option)) {
+            _.set(option, "quantity", newValue);
+        }
+    }
+
     /**
      * returns the current currency symbol being used
      *
