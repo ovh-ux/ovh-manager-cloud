@@ -1,3 +1,14 @@
+<a name="7.5.12"></a>
+## [7.5.12](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.11...v7.5.12) (2018-08-22)
+
+
+### Bug Fixes
+
+* **build:** smarttag integration ([00c6ea2](https://github.com/ovh-ux/ovh-manager-cloud/commit/00c6ea2))
+* **build:** smarttage integration ([780de38](https://github.com/ovh-ux/ovh-manager-cloud/commit/780de38))
+
+
+
 <a name="7.5.11"></a>
 ## [7.5.11](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.10...v7.5.11) (2018-08-20)
 
