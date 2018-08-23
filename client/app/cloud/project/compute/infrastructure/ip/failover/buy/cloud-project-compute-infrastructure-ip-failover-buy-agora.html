@@ -11,7 +11,7 @@
     </div>
 
     <div class="oui-modal__body"
-         data-ng-class="{ 'oui-modal__body_no-icon': !$ctrl.loading && $ctrl.instances.length }">
+         data-ng-class="{ 'oui-modal__body_no-icon': $ctrl.loading || $ctrl.instances.length }">
         <span class="oui-icon oui-icon-warning_circle oui-icon_bicolor"
               aria-hidden="true"
               data-ng-if="!$ctrl.loading && !$ctrl.instances.length">
