@@ -38,4 +38,8 @@
    <translation id="nasha_order_new_window" qtlid="222176">New window</translation>
 
    <translation id="nasha_order_select_placeholder" qtlid="159046">Selecting...</translation>
+
+   <translation id="nasha_order_unavailable_subtitle" qtlid="500255">Ce produit est momentanément en rupture de stock</translation>
+   <translation id="nasha_order_unavailable_explain" qtlid="500268">Contactez nos experts Serveurs Dédiés pour de plus amples informations.</translation>
+
 </translations>

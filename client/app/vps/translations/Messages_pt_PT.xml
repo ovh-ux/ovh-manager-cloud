@@ -420,7 +420,7 @@
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Erro ao processar renovação da palavra-passe.</translation>
    <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Quer mesmo repor a palavra-passe para o Backup Storage?</translation>
 
-   <translation id="vps_tab_backup_storage_login" qtlid="46792">ID utilizador</translation>
+   <translation id="vps_tab_backup_storage_login" qtlid="46792">ID de utilizador</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Apelido</translation>
    <translation id="vps_tab_backup_storage_usage" qtlid="30382">Utilização</translation>
    <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Nenhum acesso configurado</translation>

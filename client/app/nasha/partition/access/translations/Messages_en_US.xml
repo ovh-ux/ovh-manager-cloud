@@ -17,7 +17,7 @@
    <translation id="nasha_access_action_delete_success" qtlid="344727">Access {{accessIp}} will be removed shortly. </translation>
    <translation id="nasha_access_action_delete_failure" qtlid="344740">An error occurred when removing access {{accessIp}}.</translation>
    <translation id="nasha_access_action_failure" qtlid="344753">An error occurred on changing access.</translation>
-   <translation id="nasha_partitions_access_readonly" qtlid="17333">Read only</translation>
+   <translation id="nasha_partitions_access_readonly" qtlid="17333">Read-only</translation>
    <translation id="nasha_partitions_access_readwrite" qtlid="215754">Reading/writing</translation>
    <translation id="nasha_partitions_access_permissions" qtlid="6946">Permissions</translation>
    <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">The read-only mode is only available in NFS.</translation>

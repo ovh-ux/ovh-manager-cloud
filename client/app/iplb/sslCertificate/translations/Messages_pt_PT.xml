@@ -42,7 +42,7 @@
    <translation id="iplb_ssl_preview_subject" qtlid="22639">Assunto</translation>
    <translation id="iplb_ssl_preview_fingerprint" qtlid="192344">Chave</translation>
    <translation id="iplb_ssl_preview_type" qtlid="2642">Tipo</translation>
-   <translation id="iplb_ssl_preview_id" qtlid="46792">ID utilizador</translation>
+   <translation id="iplb_ssl_preview_id" qtlid="46792">ID de utilizador</translation>
 
    <translation id="iplb_ssl_delete_title" qtlid="439117">Eliminar um certificado</translation>
    <translation id="iplb_ssl_delete_question" qtlid="439130">Quer mesmo eliminar o certificado {{name}}?</translation>

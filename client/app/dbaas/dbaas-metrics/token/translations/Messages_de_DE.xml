@@ -8,7 +8,7 @@
    <translation id="metrics_table_expiry_date" qtlid="33010">Ablaufdatum</translation>
    <translation id="metrics_table_name" qtlid="3818">Name</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
-   <translation id="metrics_table_state" qtlid="33790">Zustand</translation>
+   <translation id="metrics_table_state" qtlid="33790">Status</translation>
    <translation id="metrics_table_action" qtlid="56105">Aktion</translation>
 
    <translation id="metrics_token_state_active" qtlid="55133">Aktiv</translation>

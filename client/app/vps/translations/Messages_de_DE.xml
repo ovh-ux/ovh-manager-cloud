@@ -477,7 +477,7 @@
    <translation id="vps_tab_additional_disk_count_1" qtlid="281563">Sie haben eine zusätzliche Festplatte.</translation>
    <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
    <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Größe (in GB)</translation>
-   <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Zustand</translation>
+   <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Status</translation>
    <translation id="vps_tab_additional_disk_state_connected" qtlid="99944">Online</translation>
    <translation id="vps_tab_additional_disk_state_disconnected" qtlid="77154">Offline</translation>
    <translation id="vps_tab_additional_disk_state_pending" qtlid="29467">Pausiert</translation>

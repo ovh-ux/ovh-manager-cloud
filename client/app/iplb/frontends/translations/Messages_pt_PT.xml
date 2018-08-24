@@ -82,7 +82,7 @@
    <translation id="iplb_frontend_preview_http_header" qtlid="430122">Cabeçalho HTTP</translation>
    <translation id="iplb_frontend_preview_hsts" qtlid="429537">HSTS</translation>
    <translation id="iplb_frontend_preview_active" qtlid="55133">Ativado</translation>
-   <translation id="iplb_frontend_preview_id" qtlid="46792">ID utilizador</translation>
+   <translation id="iplb_frontend_preview_id" qtlid="46792">ID de utilizador</translation>
 
    <translation id="iplb_frontend_toggle_success" qtlid="438623">O Frontend foi alterado corretamente</translation>
    <translation id="iplb_frontend_toggle_error" qtlid="438883">Ocorreu um erro durante a alteração ao frontent: {{message}}</translation>

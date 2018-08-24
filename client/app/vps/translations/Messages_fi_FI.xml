@@ -408,7 +408,7 @@
    <translation id="vps_tab_VEEAM_dashboard_table_tooltip_mount" qtlid="170655">Ota palautuspiste käyttöön</translation>
    <translation id="vps_tab_VEEAM_dashboard_table_tooltip_restore" qtlid="170668">Palauta VPS palautuspisteeseen</translation>
 
-   <translation id="vps_tab_backup_storage" qtlid="180460">Varmuuskopiotila</translation>
+   <translation id="vps_tab_backup_storage" qtlid="180460">Backup Storage</translation>
    <translation id="vps_tab_backup_not_activated" qtlid="209983">Olet tilannut varmuuskopiolisäpalvelun.</translation>
    <translation id="vps_tab_backup_not_able_to_order" qtlid="170486">Et voi asettaa tilausta koska asiakastunnuksellasi ei ole riittäviä oikeuksia lisäpalveluiden tekemiseen tälle VPS:lle.</translation>
 
@@ -431,7 +431,7 @@
    <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Tila</translation>
    <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">Käynnissä</translation>
    <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Aktivoitu</translation>
-   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Muokkaa pääsyoikeutta</translation>
    <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">Poista pääsyoikeus</translation>
    <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">Vahvista muutos</translation>
    <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Peruuta muutos</translation>
@@ -453,9 +453,9 @@
    <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Hylkää</translation>
    <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Osoite/osoitteet:</translation>
    <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Valtuutettu:</translation>
-   <translation id="vps_backup_storage_access_add_success" qtlid="184438">Pääsyoikeuden lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
-   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">Pyyntö varmuuskopiotilan pääsyoikeuksien lisäykselle on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joitakin oikeuksia lisättäessä tuli virhe.</translation>
-   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä varmuuskopiotilan pääsyoikeuden lisäystä</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">Pääsyoikeuden säännön lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">Säännön lisäyspyyntö backup storagen pääsyoikeuksiin on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joidenkin sääntöjen lisäyksessä tapahtui virhe.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä säännön lisäämistä backup storagen pääsyoikeuteen</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Pääsyoikeus on sallittu kaikille mahdollisille osoitteille</translation>
 
    <translation id="vps_tab_backup_storage_set_success" qtlid="452904">Pääsyoikeuden {{access}} muokkaus rekisteröitiin mutta voi kestää joitakin minuutteja</translation>

@@ -19,7 +19,7 @@
    <translation id="cpb_rights_remove_error" qtlid="261205">Oops! Unable to delete the right.</translation>
    <translation id="cpb_contact_error_invalid" qtlid="261218">Oops! The contact is invalid.</translation>
    <translation id="cpb_contact_error_other" qtlid="261231">Oups! We are unable to update the contact</translation>
-   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Read only</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Read-only</translation>
    <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Read/Write</translation>
    <translation id="cpb_rights_table_rights_add_success" qtlid="261244">The right has been added.</translation>
    <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">The right has been deleted.</translation>

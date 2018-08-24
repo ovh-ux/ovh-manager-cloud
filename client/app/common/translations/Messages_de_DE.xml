@@ -207,7 +207,7 @@
    <translation id="payment_type_refund" qtlid="139845">Guthaben</translation>
    <translation id="payment_type_transfer" qtlid="89833">Überweisung</translation>
    <translation id="payment_type_withdrawal" qtlid="139858">Lastschrift</translation>
-   <translation id="payment_type_bankAccount" qtlid="176911">Bankkonto</translation>
+   <translation id="payment_type_bankAccount" qtlid="176911">Lastschrift</translation>
 
    <translation id="contract_next" qtlid="17743">Weiter</translation>
    <translation id="contract_previous" qtlid="17431">Zurück</translation>

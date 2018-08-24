@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="dtpdq_quota_protect_explain" qtlid="301227">Para o ajudar a controlar o consumo do seu PaaS Time Series, o seu projeto tem recursos limitados.</translation>
-   <translation id="dtpdq_quota_protect_more" qtlid="301240">Se necessita de mais recursos poderá pedir à nossa equipa ao clicar no botão em baixo.</translation>
+   <translation id="dtpdq_quota_protect_more" qtlid="301240">Se necessitar de mais recursos, poderá pedir à nossa equipa ao clicar no botão em baixo.</translation>
    <translation id="dtpdq_quota_protect_more_btn" qtlid="251291">Aumentar os meus limites</translation>
 
-   <translation id="dtpdq_quota_loading_error" qtlid="301253">Oups, ocorreu um erro aquando do carregamento das quotas.</translation>
+   <translation id="dtpdq_quota_loading_error" qtlid="301253">Lamentamos, mas ocorreu um erro ao carregar as quotas.</translation>
 
    <translation id="dtpdq_table_title" qtlid="297202">Limites</translation>
 

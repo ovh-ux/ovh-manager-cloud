@@ -62,7 +62,7 @@
    <translation id="cpci_vm_status_ERROR" qtlid="45508">Com erro</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Reiniciar</translation>
    <translation id="cpci_vm_status_REBUILD" qtlid="34740">Reinstalação</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Mode Rescue</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Modo Rescue</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
    <translation id="cpci_vm_status_UPDATING" qtlid="26863">Actualizar</translation>
 
@@ -394,7 +394,7 @@
 
    <translation id="cpci_volume_add" qtlid="181175">Adicionar um disco</translation>
    <translation id="cpci_volume_attach" qtlid="255729">Associar a um servidor</translation>
-   <translation id="cpci_volume_attach_error" qtlid="271335">Atualmente não tem nenhuma instância compatível para associar este volume.</translation>
+   <translation id="cpci_volume_attach_error" qtlid="271335">Atualmente não tem nenhuma instância compatível para associar a este volume.</translation>
    <translation id="cpci_volume_move" qtlid="247144">Modificar o servidor associado</translation>
    <translation id="cpci_volume_detach" qtlid="255742">Desconectar este disco</translation>
    <translation id="cpci_volume_delete" qtlid="255755">Eliminar este disco</translation>

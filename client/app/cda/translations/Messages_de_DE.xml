@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="ceph_common_error" qtlid="354925">Uups! Ein Fehler ist aufgetreten: </translation>
+   <translation id="ceph_common_error" qtlid="354925">Es ist ein Fehler aufgetreten: </translation>
    <translation id="cda_tab_home" qtlid="354561">Übersicht </translation>
    <translation id="cda_tab_user" qtlid="7738">Benutzer</translation>
    <translation id="cda_tab_ip" qtlid="354574">IP-Zugriffskontrolle </translation>
@@ -9,5 +9,5 @@
    <translation id="cda_guide_name" qtlid="406918">Cloud Disk Array (CDA)</translation>
    <translation id="cda_guide_footer" qtlid="406905">Alle Anleitungen von OVH</translation>
    <translation id="cda_new_window" qtlid="222176">Neues Fenster</translation>
-   <translation id="cda_guide_retrieval_error" qtlid="499177">Une erreur est survenue au moment de la récupération du guide pour Cloud Disk Array (CDA).</translation>
+   <translation id="cda_guide_retrieval_error" qtlid="499177">Beim Laden der Anleitung für Cloud Disk Array (CDA) ist ein Fehler aufgetreten.</translation>
 </translations>
