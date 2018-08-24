@@ -11,7 +11,7 @@
    <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Klicken Sie auf den Button oben, um einen Benutzer hinzuzufügen.</translation>
    <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Kennung</translation>
    <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Beschreibung</translation>
-   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Zustand</translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Status</translation>
    <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Passwort</translation>
    <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Das Passwort zurücksetzen</translation>
    <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Die Löschung abbrechen</translation>

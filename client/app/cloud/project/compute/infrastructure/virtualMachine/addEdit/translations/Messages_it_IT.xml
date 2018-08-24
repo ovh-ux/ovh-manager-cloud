@@ -58,7 +58,7 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Modelli precedenti</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Storage raid SSD locale, CPU/RAM/BP condivise</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Disco HDD dedicato, CPU/RAM/BP condivise</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Storage high availability, CPU/RAM/BP condivise</translation>
@@ -144,7 +144,7 @@
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Dischi</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
-   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6 GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8 GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11 GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>il Public Cloud più competitivo&#13;
@@ -250,8 +250,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Creazioni simultanee:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Numero di istanze da creare:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Inserisci un nomero di istanze valido</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">La tua <a ui-sref="{{sref}}">quota</a> attuale ti permette di creare simultaneamente fino a {{max}} istanze di tipo {{type}} per la Region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">La tua <a ui-sref="{{sref}}">quota</a> attuale non ti permette di creare più di un'istanza di tipo {{type}} per la Region {{region}}.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Associa alla rete privata</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Nessuno</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Ops! Impossibile recuperare la lista delle reti private. {{ message }}</translation>

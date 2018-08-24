@@ -50,7 +50,7 @@
    <translation id="cloud_common_region_SYD" qtlid="414330">Sydney</translation>
    <translation id="cloud_common_region_SYD_micro" qtlid="449167">Sydney ({{ micro }})</translation>
    <translation id="cloud_common_region_US" qtlid="108396">Stati uniti</translation>
-   <translation id="cloud_common_region_US_micro" qtlid="497933">États-Unis ({{ micro }})</translation>
+   <translation id="cloud_common_region_US_micro" qtlid="497933">Stati Uniti ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizza</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Centrale (Francia)</translation>

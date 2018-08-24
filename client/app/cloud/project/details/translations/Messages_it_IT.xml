@@ -2,13 +2,13 @@
 <translations>
    <translation id="cpd_project_redirect" qtlid="245857">Reindirizzamento...</translation>
 
-   <translation id="cpd_project_suspended" qtlid="497972">Votre projet cloud est suspendu. Pour plus d'informations, merci de contacter <a href="{{ url }}">le support</a>.</translation>
+   <translation id="cpd_project_suspended" qtlid="497972">Il tuo progetto Cloud è stato sospeso. Per maggiori informazioni contatta il <a href="{{ url }}">supporto</a>.</translation>
 
    <translation id="cpd_project_creating_help" qtlid="245896">Il reindirizzamento automatico avviene dopo che il progetto è stato creato.</translation>
    <translation id="cpd_project_creating_havetopay" qtlid="272014">Completa il pagamento del tuo buono d'ordine iniziale.</translation>
    <translation id="cpd_project_creating_cancel" qtlid="281990">Annulla la creazione del tuo progetto</translation>
    <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Completa il pagamento del tuo <a href="{{url}}" target="_blank">buono d'ordine iniziale</a>.</translation>
-   <translation id="cpd_project_creating_bc_support" qtlid="497985">Si cette page est toujours présente plusieurs minutes après paiement, merci de contacter <a href="{{ url }}">notre service client</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="497985">Se visualizzi ancora questa pagina qualche minuto dopo aver effettuato il pagamento, contatta il <a href="{{ url }}">supporto</a>.</translation>
 
    <translation id="cpd_project_deleting" qtlid="245909">Eliminazione del progetto in corso...</translation>
    <translation id="cpd_project_deleting_help" qtlid="245922">Il reindirizzamento automatico avviene dopo che il progetto è stato eliminato.</translation>
