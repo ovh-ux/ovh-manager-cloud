@@ -1,3 +1,13 @@
+<a name="7.5.15"></a>
+## [7.5.15](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.14...v7.5.15) (2018-08-24)
+
+
+### Features
+
+* **home:** added banner about BHS1 maintenance ([525e0c8](https://github.com/ovh-ux/ovh-manager-cloud/commit/525e0c8))
+
+
+
 <a name="7.5.14"></a>
 ## [7.5.14](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.13...v7.5.14) (2018-08-22)
 
