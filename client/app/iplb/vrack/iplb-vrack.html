@@ -28,18 +28,18 @@
             </dd>
         </dl>
         <oui-button data-ng-if="$ctrl.actions.activateVrack.isAvailable()"
-            data-text="{{::$ctrl.actions.activateVrack.text}}" 
+            data-text="{{::$ctrl.actions.activateVrack.text}}"
             data-on-click="$ctrl.actions.activateVrack.callback()"
             data-variant="secondary">
         </oui-button>
         <oui-button data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()"
-            data-text="{{::$ctrl.actions.deActivateVrack.text}}" 
+            data-text="{{::$ctrl.actions.deActivateVrack.text}}"
             data-on-click="$ctrl.actions.deActivateVrack.callback()"
             data-variant="secondary">
         </oui-button>
     </div>
     <oui-button
-        data-text="{{::$ctrl.actions.addPrivateNetwork.text}}" 
+        data-text="{{::$ctrl.actions.addPrivateNetwork.text}}"
         data-on-click="$ctrl.actions.addPrivateNetwork.callback()"
         data-disabled="$ctrl.actions.addPrivateNetwork.isAvailable && !$ctrl.actions.addPrivateNetwork.isAvailable()"
         data-variant="secondary">
@@ -50,7 +50,7 @@
         <oui-column data-title="'iplb_vrack_list_col_subnet' | translate" data-property="subnet" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_farms' | translate">
-            <cui-labels data-items="$row.farmId">{{ $item.displayName || $item.farmId }}</cui-labels>
+            <span class="oui-chip" data-ng-repeat="farm in $row.farmId track by $index" data-ng-bind="farm.displayName || farm.farmId"></span>
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
