@@ -55,9 +55,6 @@ class SelectVrackCtrl {
      */
     activate () {
         if (this.selectedActivateOption === this.activateOptions.EXISTING) {
-            if (this.form.$invalid) {
-                return this.$q.reject();
-            }
             return this.selectVrack();
         }
         return this.orderNewVrack();
