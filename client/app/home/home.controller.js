@@ -39,7 +39,7 @@ class HomeCtrl {
                     .catch(() => [])))
                 .then(allRegions => _(allRegions).flatten().uniq().value()))
             .then(regions => {
-                this.hasAScheduledMaintenanceOperation = _.indexOf(regions, "BHS3") > -1 && moment().isBefore("2018-08-23");
+                this.hasAScheduledMaintenanceOperation = _.indexOf(regions, "BHS1") > -1 && moment().isBefore("2018-09-20");
                 return regions;
             });
     }
