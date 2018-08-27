@@ -17,4 +17,6 @@
    <translation id="cpciif_buy_services" qtlid="269565">El servicio incluye:</translation>
    <translation id="cpciif_buy_no_instance" qtlid="301935">No hay ningún servidor.</translation>
    <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} + IVA)</translation>
+
+   <translation id="cpciif_buy_no_instance_warning">L'achat d'IPs Failover Cloud requiert au moins un serveur attaché à votre projet.</translation>
 </translations>
