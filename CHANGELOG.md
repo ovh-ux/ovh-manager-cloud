@@ -1,3 +1,13 @@
+<a name="7.5.16"></a>
+## [7.5.16](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.15...v7.5.16) (2018-08-30)
+
+
+### Features
+
+* **ldp.index:** Add url for kibana webui ([3947389](https://github.com/ovh-ux/ovh-manager-cloud/commit/3947389))
+
+
+
 <a name="7.5.15"></a>
 ## [7.5.15](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.14...v7.5.15) (2018-08-24)
 
