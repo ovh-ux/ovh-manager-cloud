@@ -638,6 +638,8 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_index_col_free_space" qtlid="196608">Espaço disponível</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Índice partilhado</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Acesso Elasticsearch</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Acesso Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Eliminar índice</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Tem a certeza de que quer eliminar o índice <strong>{{name}}</strong>?</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Ocorreu um erro durante o carregamento das opções</translation>

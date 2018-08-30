@@ -18,5 +18,5 @@
    <translation id="cpciif_buy_no_instance" qtlid="301935">No hay ningún servidor.</translation>
    <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} + IVA)</translation>
 
-   <translation id="cpciif_buy_no_instance_warning">L'achat d'IPs Failover Cloud requiert au moins un serveur attaché à votre projet.</translation>
+   <translation id="cpciif_buy_no_instance_warning" qtlid="500307">Para poder comprar IP Failover Cloud debe tener al menos un servidor asociado a su proyecto.</translation>
 </translations>
