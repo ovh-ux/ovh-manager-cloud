@@ -636,6 +636,8 @@
    <translation id="logs_index_col_free_space" qtlid="196608">Neišnaudota vieta</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Bendras indeksas</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Elasticsearch prieiga</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Elasticsearch prieiga</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Pašalinti indeksą</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Ar iš tiesų norite pašalinti indeksą <strong>{{name}}</strong>?</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Įkeliant parinktį įvyko klaida</translation>
