@@ -1,7 +1,7 @@
 angular.module("managerApp")
     .constant("DOCS_ALL_GUIDES", {
-        FR: "https://www.ovh.com/fr/support/knowledge/",
-        EN: "https://www.ovh.co.uk/community/knowledge/",
+        FR: "https://docs.ovh.com/fr/",
+        EN: "https://docs.ovh.com/gb/en/",
         US: "https://support.ovhcloud.com/hc/en-us",
         EN_ASIA: "https://docs.ovh.com/asia/en",
         EN_AU: "https://docs.ovh.com/au/en",
