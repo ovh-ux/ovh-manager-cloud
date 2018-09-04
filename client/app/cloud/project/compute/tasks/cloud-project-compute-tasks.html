@@ -1,0 +1,23 @@
+<section class="cui-page__content">
+    <div class="text-center" data-ng-if="$ctrl.loading">
+        <oui-spinner data-size="m"></oui-spinner>
+    </div>
+    <oui-datagrid data-rows="$ctrl.backups" data-row-loader="$ctrl.getInstanceName($row)" data-ng-if="!$ctrl.loading">
+        <oui-column data-title=":: 'cpc_tasks_name' | translate" data-property="backupName"></oui-column>
+        <oui-column data-title=":: 'cpc_tasks_action' | translate" data-property="action"></oui-column>
+        <oui-column data-title=":: 'cpc_tasks_resource' | translate" data-property="instanceName"></oui-column>
+        <oui-column data-title=":: 'cpc_tasks_schedule' | translate" data-property="cron"></oui-column>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{:: 'common_delete' | translate }}"
+                                  data-on-click="$ctrl.deleteTask($row)">
+            </oui-action-menu-item>
+        </oui-action-menu>
+        <extra-top>
+            <oui-action-menu data-text="{{:: 'common_actions' | translate }}">
+                <oui-action-menu-item data-text="{{:: 'common_add' | translate }}"
+                                      data-href="{{:: $ctrl.$state.href('iaas.pci-project.compute.task.create') }}">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </extra-top>
+    </oui-datagrid>
+</section>

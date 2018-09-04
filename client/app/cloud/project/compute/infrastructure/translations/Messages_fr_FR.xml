@@ -13,6 +13,7 @@
 
    <translation id="cpci_add_btn" qtlid="37923">Ajouter</translation>
    <translation id="cpci_add_server" qtlid="19315">Ajouter un serveur</translation>
+   <translation id="cpci_add_task" qtlid="19315">Ajouter une tâche</translation>
    <translation id="cpci_add_ip" qtlid="25615">IP</translation>
    <translation id="cpci_view_iac" qtlid="506349">Déployer une infrastructure pas-à-pas</translation>
    <translation id="cpci_import_ip_failover" qtlid="275869">Importer des IPs Failover OVH</translation>
@@ -358,6 +359,7 @@
    <translation id="cpci_vm_action_delete" qtlid="2414">Supprimer</translation>
    <translation id="cpci_vm_action_reinstall" qtlid="26503">Réinstaller</translation>
    <translation id="cpci_vm_action_create_snapshot" qtlid="247820">Créer un snapshot</translation>
+   <translation id="cpci_vm_action_create_task" qtlid="247820">Créer une tâche automatisée</translation>
    <translation id="cpci_vm_action_reboot" qtlid="247833">Redémarrer à chaud (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Réactiver</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Redémarrer à froid (hard)</translation>

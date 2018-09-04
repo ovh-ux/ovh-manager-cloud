@@ -7,7 +7,7 @@
  * ```
  * and then easily use ng-messages (```data-ng-message="isIpValid"```).
  */
-angular.module('managerApp').run((validator) => {
+angular.module('managerApp').run((CrontabExpression, validator) => {
   // -- Put your validator-js extends here
 
   // Validate an IPv4Block or IPv6Block
@@ -20,5 +20,17 @@ angular.module('managerApp').run((validator) => {
         && parseInt(split[1], 10) <= (version === 4 ? 32 : 128);
     }
     return validator.isIPBlock(str, 4) || validator.isIPBlock(str, 6);
+  });
+
+  validator.extend('isCron', (value) => {
+    if (_.isString(value)) {
+      const [minutes, hours, dayOfMonth, month, dayOfWeek] = value.split(' ');
+      return CrontabExpression.minutesExpr.test(minutes)
+        && CrontabExpression.hourExpr.test(hours)
+        && CrontabExpression.dayOfMonthExpr.test(dayOfMonth)
+        && CrontabExpression.monthExpr.test(month)
+        && CrontabExpression.dayOfWeekExpr.test(dayOfWeek);
+    }
+    return false;
   });
 });

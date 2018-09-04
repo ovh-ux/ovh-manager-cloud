@@ -1,7 +1,7 @@
 /**
  * Special rules for redirections
  */
-angular.module('managerApp').run(($transitions, $state, $stateParams) => {
+angular.module('managerApp').run(($transitions, $state, $stateParams, CloudUserPref, CPC_TASKS) => {
   $transitions.onSuccess({}, (transition) => {
     const state = transition.to();
     if (state && state.url === '/compute') {
@@ -11,7 +11,14 @@ angular.module('managerApp').run(($transitions, $state, $stateParams) => {
             createNewVm: true,
           });
         } else {
-          $state.go('iaas.pci-project.compute.infrastructure');
+          CloudUserPref.get(CPC_TASKS.onboardingKey)
+            .then((taskOnBoardingPref) => {
+              if (_.isEmpty(taskOnBoardingPref) || !_.get(taskOnBoardingPref, 'done')) {
+                $state.go('iaas.pci-project.compute.taskOnboarding');
+              } else {
+                $state.go('iaas.pci-project.compute.infrastructure');
+              }
+            });
         }
       }
     } else if (state && state.url === '/billing') {

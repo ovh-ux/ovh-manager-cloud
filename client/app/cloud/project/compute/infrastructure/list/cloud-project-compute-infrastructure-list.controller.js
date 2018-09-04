@@ -136,6 +136,17 @@ class CloudProjectComputeInfrastructureListCtrl {
       }
     }
   }
+
+  getRegionsWithWorkflowServices() {
+    return this.CloudProjectCompute.getRegionsWithWorkflowService(this.serviceName)
+      .then((regions) => {
+        this.taskAvailableRegions = regions;
+      });
+  }
+
+  isAutomatedBackupAvailable(region) {
+    return _.includes(this.taskAvailableRegions, region);
+  }
 }
 
 angular.module('managerApp').controller('CloudProjectComputeInfrastructureListCtrl', CloudProjectComputeInfrastructureListCtrl);
