@@ -1,3 +1,13 @@
+<a name="7.5.17"></a>
+## [7.5.17](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.16...v7.5.17) (2018-09-04)
+
+
+### Bug Fixes
+
+* **constants:** redirect to guide homepage ([b3447b7](https://github.com/ovh-ux/ovh-manager-cloud/commit/b3447b7))
+
+
+
 <a name="7.5.16"></a>
 ## [7.5.16](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.15...v7.5.16) (2018-08-30)
 
