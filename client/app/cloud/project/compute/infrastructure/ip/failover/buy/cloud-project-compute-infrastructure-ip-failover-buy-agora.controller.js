@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFailoverBuyAgoraCtrl", function ($http, $q, $stateParams, $translate, $uibModalInstance, $window, CloudMessage) {
+angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFailoverBuyAgoraCtrl", function ($http, $q, $stateParams, $translate, $uibModalInstance, $window, CloudMessage, OvhApiCloudProjectInstance) {
 
     var self = this;
 
@@ -9,10 +9,19 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFail
         self.product = null;
         self.quantity = 1;
         self.country = null;
-        return getIpfoCatalog().then((catalog) => {
+        self.instance = null;
+        return $q.all({
+            catalog: getIpfoCatalog(),
+            instances: OvhApiCloudProjectInstance.v6().query({
+                serviceName : $stateParams.projectId
+            })
+        }).then(({ catalog, instances }) => {
+            self.instances = instances;
+
             self.catalog = catalog;
             self.product = _.first(catalog);
             self.country = _.first(self.getCountries(self.product));
+            self.instance = _.first(self.instances);
         }).catch((err) => {
             CloudMessage.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || ""].join(" "));
             $uibModalInstance.dismiss();
@@ -76,6 +85,9 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFail
             }, {
                 label: "destination",
                 value: $stateParams.projectId
+            }, {
+                label: "nexthop",
+                value: self.instance.id
             }]
         };
         $window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank");

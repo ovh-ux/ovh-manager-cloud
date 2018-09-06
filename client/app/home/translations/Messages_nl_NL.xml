@@ -2,10 +2,10 @@
 <translations>
    <translation id="homepage_welcome_to_your_manager_1" qtlid="282393">Welkom op uw </translation>
    <translation id="homepage_welcome_to_your_manager_2" qtlid="282406">OVH control panel</translation>
-   <translation id="homepage_top_guides_header" qtlid="468499">Meer informatie kunt u vinden in <a class="oui-link" href="{{ url }}" target="_blank">onze handleidingen</a>.</translation>
+   <translation id="homepage_top_guides_header" qtlid="468499">U kunt meer informatie vinden in onze <a class="oui-link" href="{{ url }}" target="_blank">handleidingen</a>.</translation>
    <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
    <translation id="homepage_type_of_guide_pci" qtlid="251655">Public Cloud</translation>
 
-   <translation id="homepage_scheduled_maintenance_operation" qtlid="500242">A maintenance operation is scheduled for the BHS1 region on the 19th of September 2018 between 3:00 and 8:00 UTC-4. No disturbance is to be expected on your instances, only some APIs of this region will be unreachable during the duration of the operation</translation>
-   <translation id="homepage_scheduled_maintenance_operation_more_detail" qtlid="499205">More detail on travaux task:</translation>
+   <translation id="homepage_scheduled_maintenance_operation" qtlid="500242">Er is onderhoud gepland voor de BHS1-regio op 19 september 2018 tussen 3:00 en 8:00 UTC-4. Er is geen storing te verwachten op uw instances, slechts enkele API's van deze regio zijn tijdens de duur van de bewerking onbereikbaar</translation>
+   <translation id="homepage_scheduled_maintenance_operation_more_detail" qtlid="499205">Meer informatie over travaux task:</translation>
 </translations>

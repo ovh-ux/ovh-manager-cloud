@@ -51,7 +51,7 @@
 <!-- Header and guides -->
    <translation id="logs_guides" qtlid="300370">Guides</translation>
    <translation id="logs_guides_title" qtlid="366385">Logs Data Platform</translation>
-   <translation id="logs_guides_footer" qtlid="406905">All the OVH guides </translation>
+   <translation id="logs_guides_footer" qtlid="406905">All OVH guides </translation>
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Home</translation>
    <translation id="logs_tab_streams" qtlid="422452">Data stream</translation>
@@ -812,7 +812,7 @@
 
    <translation id="logs_guides" qtlid="300370">Guides</translation>
    <translation id="logs_guides_title" qtlid="366385">Logs Data Platform</translation>
-   <translation id="logs_guides_footer" qtlid="406905">All the OVH guides </translation>
+   <translation id="logs_guides_footer" qtlid="406905">All OVH guides </translation>
 
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Home</translation>

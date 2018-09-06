@@ -413,7 +413,7 @@
    <translation id="vps_tab_backup_not_able_to_order" qtlid="170486">Nie możesz zamówić tej usługi, ponieważ twój identyfikator klienta nie ma upoważnienia do składania zamówień dla tego serwera VPS.</translation>
 
 
-   <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Zapomniałeś hasła?</translation>
+   <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Nie pamiętasz hasła?</translation>
    <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Zlecenie odzyskania hasła</translation>
    <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Nowe hasło zostanie wysłane na adres e-mail kontaktu administracyjnego serwera.</translation>
    <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Nowe hasło zostało wysłane na adres e-mail kontaktu administracyjnego serwera.</translation>

@@ -12,9 +12,11 @@
    <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Bestellschein erstellen</translation>
    <translation id="cpciif_buy_button_infos" qtlid="269513">Aktivierungsgebühr - Keine monatlichen Kosten</translation>
    <translation id="cpciif_buy_error" qtlid="275999">Bei der Bestellung von Cloud Failover-IPs ist ein Fehler aufgetreten.</translation>
-   <translation id="cpciif_buy_success" qtlid="296011">Der Bestellschein für Ihre Cloud Failover-IP ist <a href="{{ url }}" target="_blank">hier <i class="fa fa-external-link"></i></a> verfügbar</translation>
+   <translation id="cpciif_buy_success" qtlid="296011">Der Bestellschein für Ihre Cloud Failover-IP ist <a href="{{ url }}" target="_blank">hier <i class="fa fa-external-link"></i></a> verfügbar.</translation>
    <translation id="cpciif_buy_ip_na_soon" qtlid="269552">Nordamerikanische IP-Adressen demnächst verfügbar</translation>
    <translation id="cpciif_buy_services" qtlid="269565">Bei dieser Dienstleistung inklusive:</translation>
    <translation id="cpciif_buy_no_instance" qtlid="301935">Sie verfügen über keinen Server.</translation>
    <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} ohne MwSt)</translation>
+
+   <translation id="cpciif_buy_no_instance_warning" qtlid="500307">Um Cloud Failover-IPs zu bestellen, muss mindestens ein Server mit Ihrem Projekt verbunden sein.</translation>
 </translations>

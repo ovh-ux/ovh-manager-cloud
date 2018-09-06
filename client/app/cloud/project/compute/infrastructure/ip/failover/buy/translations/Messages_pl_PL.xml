@@ -17,4 +17,6 @@
    <translation id="cpciif_buy_services" qtlid="269565">Ta usługa zawiera:</translation>
    <translation id="cpciif_buy_no_instance" qtlid="301935">Nie dysponujesz żadnym serwerem.</translation>
    <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} netto)</translation>
+
+   <translation id="cpciif_buy_no_instance_warning" qtlid="500307">Abyś mógł zamówić adresy IP Failover Cloud, co najmniej jeden serwer powinien być powiązany z Twoim projektem.</translation>
 </translations>
