@@ -80,10 +80,10 @@ angular.module("managerApp")
                 US: "https://ovhcloud.com/solutions/ip-load-balancing/"
             },
             pcs: {
-                US: "https://ovhcloud.com/public-cloud/storage/object-storage/"
+                US: "https://support.ovhcloud.com/hc/en-us/sections/115000624590-Storage"
             },
             pca: {
-                US: "https://ovhcloud.com/public-cloud/storage/cloud-archive/"
+                US: "https://support.ovhcloud.com/hc/en-us/sections/115000624590-Storage"
             },
             vrack: {
                 US: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
