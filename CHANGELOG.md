@@ -1,3 +1,21 @@
+<a name="7.6.0"></a>
+# [7.6.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.17...v7.6.0) (2018-09-06)
+
+
+### Bug Fixes
+
+* **ipfo:** add instance to express order ([ee92b76](https://github.com/ovh-ux/ovh-manager-cloud/commit/ee92b76))
+* fix test in html ([6ffdfe8](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ffdfe8))
+* fix typo ([c045518](https://github.com/ovh-ux/ovh-manager-cloud/commit/c045518))
+* **pci storage:** set good links for us storage links ([b4ec7d4](https://github.com/ovh-ux/ovh-manager-cloud/commit/b4ec7d4))
+
+
+### Features
+
+* **cloud.project:** Add open stack term in list view ([bda454f](https://github.com/ovh-ux/ovh-manager-cloud/commit/bda454f))
+
+
+
 <a name="7.5.17"></a>
 ## [7.5.17](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.5.16...v7.5.17) (2018-09-04)
 
