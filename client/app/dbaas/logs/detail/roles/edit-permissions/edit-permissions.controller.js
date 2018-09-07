@@ -38,7 +38,7 @@ class LogsRolesPermissionsCtrl {
         this.allAliases = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getAllAliases(this.serviceName)
                 .then(result => {
-                    const diff = _.map(_.filter(result, alias => alias.info.isEditable && !_.find(permissionList, permission => permission.aliasId === alias.info.aliasId)), "info");
+                    const diff = _.map(_.filter(result, alias => alias.info.isShareable && !_.find(permissionList, permission => permission.aliasId === alias.info.aliasId)), "info");
                     this.availableAliases.resolve(diff);
                 })
         });
@@ -49,7 +49,7 @@ class LogsRolesPermissionsCtrl {
         this.allIndices = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getAllIndices(this.serviceName)
                 .then(result => {
-                    const diff = _.map(_.filter(result, index => index.info.isEditable && !_.find(permissionList, permission => permission.indexId === index.info.indexId)), "info");
+                    const diff = _.map(_.filter(result, index => index.info.isShareable && !_.find(permissionList, permission => permission.indexId === index.info.indexId)), "info");
                     this.availableIndices.resolve(diff);
                 })
         });
@@ -60,7 +60,7 @@ class LogsRolesPermissionsCtrl {
         this.allDashboards = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getAllDashboards(this.serviceName)
                 .then(result => {
-                    const diff = _.map(_.filter(result, dashboard => dashboard.info.isEditable && !_.find(permissionList, permission => permission.dashboardId === dashboard.info.dashboardId)), "info");
+                    const diff = _.map(_.filter(result, dashboard => dashboard.info.isShareable && !_.find(permissionList, permission => permission.dashboardId === dashboard.info.dashboardId)), "info");
                     this.availableDashboards.resolve(diff);
                 })
         });
@@ -71,7 +71,7 @@ class LogsRolesPermissionsCtrl {
         this.allStreams = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getAllStreams(this.serviceName)
                 .then(result => {
-                    const diff = _.map(_.filter(result, stream => !_.find(permissionList, permission => permission.streamId === stream.info.streamId)), "info");
+                    const diff = _.map(_.filter(result, stream => stream.info.isShareable && !_.find(permissionList, permission => permission.streamId === stream.info.streamId)), "info");
                     this.availableStreams.resolve(diff);
                 })
         });
