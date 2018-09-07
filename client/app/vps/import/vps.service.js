@@ -674,34 +674,35 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        // HOT FIX remove this fukin shit
-        this.getOptionDetails2 = function (option, vps, duration) {
+        // HOT FIX
+        this.getSnapshotDetails = function (vps, duration) {
+            const version = vps.version.replace(/_/g, "").toLowerCase();
             return $q.all([
-                $http.get(["apiv6/price/vps/2015v1/ssd/option/", option].join("")),
-                $http.get(["apiv6/order/vps/", vps.name, "/snapshot/", duration].join(""))
+                $http.get(`/price/vps/${version}/ssd/option/snapshot`),
+                $http.get(`/order/vps/${vps.name}/snapshot/${duration}`),
+                duration
             ]);
         };
 
-        // HOT FIX remove this fukin shit
+        // HOT FIX
         this.getOptionSnapshot = function (vps) {
-            return $http.get(["apiv6/order/vps/", vps.name, "/snapshot"].join(""));
+            return $http.get(`/order/vps/${vps.name}/snapshot`);
         };
 
         this.getOptionSnapshotFormated = function (serviceName, vps) {
             if (_.includes(["_2015_V_1", "_2018_V_1"], vps.version) && vps.offerType === "SSD") {
                 return this.getOptionSnapshot(vps)
-                    .then(d => this.getOptionDetails2("snapshot", vps, d.data[0]))
-                    .then(data => {
-                            return {
-                                unitaryPrice: data[0].data.text,
-                                withoutTax: data[1].data.prices.withoutTax.text,
-                                withTax: data[1].data.prices.withTax.text,
-                                duration: {duration: d.data[0]}
-                            }
-                        });
-            } else {
-                return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
+                    .then(snapshotOption => this.getSnapshotDetails(vps, snapshotOption.data[0]))
+                    .then(([price, snapshotOrderDetails, duration]) => ({
+                        unitaryPrice: price.data.text,
+                        withoutTax: snapshotOrderDetails.data.prices.withoutTax.text,
+                        withTax: snapshotOrderDetails.data.prices.withTax.text,
+                        duration: { duration }
+                    })
+                    );
             }
+            return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
+
         };
 
         // HOT FIX remove this fukin shit
