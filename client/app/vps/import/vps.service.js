@@ -668,44 +668,18 @@ angular.module("managerApp").service("VpsService", [
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
                     return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
                 }
+                return $q.reject(reason);
+
             });
         };
 
-        // HOT FIX
-        this.getSnapshotDetails = function (vps, duration) {
-            const version = vps.version.replace(/_/g, "").toLowerCase();
-            return $q.all([
-                $http.get(`/price/vps/${version}/ssd/option/snapshot`),
-                $http.get(`/order/vps/${vps.name}/snapshot/${duration}`),
-                duration
-            ]);
-        };
-
-        // HOT FIX
-        this.getOptionSnapshot = function (vps) {
-            return $http.get(`/order/vps/${vps.name}/snapshot`);
-        };
-
-        this.getOptionSnapshotFormated = function (serviceName, vps) {
-            if (_.includes(["_2015_V_1", "_2018_V_1"], vps.version) && vps.offerType === "SSD") {
-                return this.getOptionSnapshot(vps)
-                    .then(snapshotOption => this.getSnapshotDetails(vps, snapshotOption.data[0]))
-                    .then(([price, snapshotOrderDetails, duration]) => ({
-                        unitaryPrice: price.data.text,
-                        withoutTax: snapshotOrderDetails.data.prices.withoutTax.text,
-                        withTax: snapshotOrderDetails.data.prices.withTax.text,
-                        duration: { duration }
-                    })
-                    );
-            }
+        this.getOptionSnapshotFormated = function (serviceName) {
             return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
 
         };
 
-        // HOT FIX remove this fukin shit
+        // HOT FIX
         this.getPriceOptions = function (vps) {
             return $http.get(["/price/vps", vps.version.toLowerCase().replace(/_/g, ""), vps.offerType.toLowerCase(), "option/automatedBackup"].join("/"));
         };
