@@ -1,3 +1,13 @@
+<a name="7.6.2"></a>
+## [7.6.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.1...v7.6.2) (2018-09-11)
+
+
+### Bug Fixes
+
+* **openstack:** download rclone config ([2e319b5](https://github.com/ovh-ux/ovh-manager-cloud/commit/2e319b5))
+
+
+
 <a name="7.6.1"></a>
 ## [7.6.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.0...v7.6.1) (2018-09-10)
 
