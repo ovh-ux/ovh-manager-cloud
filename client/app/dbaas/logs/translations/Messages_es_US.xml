@@ -235,7 +235,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activar esta opción</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Debe ponerse en contacto con el equipo de soporte para reactivar la opción «{{optionType}}».</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Desactivar esta opción</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">¿Está seguro(a) de que desea desactivar la opción «{{optionType}}»? Recuerde que deberá ponerse en contacto con el equipo de soporte para reactivar esta opción. </translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">¿Está seguro(a) de que desea desactivar la opción <strong>{{optionType}}</strong>? Recuerde que deberá contactar con el soporte para reactivar esta opción.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Se ha producido un error al desactivar la opción «{{optionType}}»: {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">La opción «{{optionType}}» se ha desactivado correctamente.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Para gestionar sus opciones visite la página</translation>
@@ -637,7 +637,7 @@
    <translation id="logs_index_col_free_space" qtlid="196608">Espacio disponible</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Índice compartido</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Acceso Elasticsearch</translation>
-   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Acceso a su instancia Kibana</translation>
    <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Acceso Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Eliminar el índice</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">¿Está seguro(a) de que desea eliminar el índice <strong>{{name}}</strong>?</translation>

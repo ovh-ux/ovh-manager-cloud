@@ -235,7 +235,7 @@
    <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Bei der Aktivierung des Snapshots ist ein Fehler aufgetreten.</translation>
    <translation id="vps_configuration_desactivate_option" qtlid="48646">Kündigen</translation>
    <translation id="vps_configuration_option_released" qtlid="284893">Nicht verlängert</translation>
-   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Das Storage-Backup aktivieren</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Storage-Backup aktivieren</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Die Storage-Backup Option aktivieren</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Möchten Sie die Storage-Backup Option für den VPS <span class="normal italic">{{ serviceName }}</span>&#160;bestellen?</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Diese Option kostet monatlich <span class="red bold">{{ price }} zzgl. MwSt.</span></translation>
