@@ -675,11 +675,10 @@ angular.module("managerApp").service("VpsService", [
         };
 
         this.getOptionSnapshotFormated = function (serviceName) {
-            return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
+            return this.getOptionDetails(serviceName, "snapshot").then(optionDetails => _.first(optionDetails.results));
 
         };
 
-        // HOT FIX
         this.getPriceOptions = function (vps) {
             return $http.get(["/price/vps", vps.version.toLowerCase().replace(/_/g, ""), vps.offerType.toLowerCase(), "option/automatedBackup"].join("/"));
         };
