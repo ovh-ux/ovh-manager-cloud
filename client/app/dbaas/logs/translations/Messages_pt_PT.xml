@@ -180,9 +180,9 @@
    <translation id="log_options_details" qtlid="37527">Detalhes</translation>
    <translation id="log_options_add" qtlid="37923">Adicionar</translation>
    <translation id="log_options_price" qtlid="252854">Preço/mês</translation>
-   <translation id="logs-input-2-type" qtlid="474883">Instrumento de coleta</translation>
-   <translation id="logs-input-4-type" qtlid="474883">Instrumento de coleta</translation>
-   <translation id="logs-input-8-type" qtlid="474883">Instrumento de coleta</translation>
+   <translation id="logs-input-2-type" qtlid="474883">Ferramenta de recolha</translation>
+   <translation id="logs-input-4-type" qtlid="474883">Ferramenta de recolha</translation>
+   <translation id="logs-input-8-type" qtlid="474883">Ferramenta de recolha</translation>
    <translation id="logs-dashboard-5-type" qtlid="45376">Painel de controlo</translation>
    <translation id="logs-stream-5-type" qtlid="422452">Fluxo de dados</translation>
    <translation id="logs-kibana-1-type" qtlid="469335">Pack Kibana</translation>
@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Ativar esta opção</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Deve contactar o Apoio ao Cliente para reativar esta opção '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Desativar esta opção</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Tem a certeza de que deseja desativar <strong>{{optionType}}</strong>? Caso o fizer, tenha em atenção que terá de contactar o Apoio ao Cliente para reativar esta opção.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Tem a certeza de que pretende desativar <strong>{{optionType}}</strong>? Tenha em atenção que terá de contactar o Apoio ao Cliente para reativar esta opção.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Ocorreu um erro durante a desativação de '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">A opção {{optionType}} foi desativada com êxito.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Para gerir as suas opções, vá à página</translation>
@@ -248,7 +248,7 @@
    <translation id="logs_offer_title" qtlid="25783">Mudar de oferta</translation>
    <translation id="logs_offer_streams" qtlid="475338">fluxo</translation>
    <translation id="logs_offer_tables" qtlid="475351">painéis</translation>
-   <translation id="logs_offer_collection_tools" qtlid="475364">instrumentos de coleta</translation>
+   <translation id="logs_offer_collection_tools" qtlid="475364">ferramenta(s) de recolha</translation>
    <translation id="logs_offer_limit" qtlid="33562">Limite</translation>
    <translation id="logs_offer_month" qtlid="40222">mês</translation>
    <translation id="logs_offer_day" qtlid="44248">dia</translation>
@@ -292,8 +292,8 @@
    <translation id="logs-pro-1500_limit" qtlid="475767">Média de 50 GB/dia</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Média de 100 GB/dia</translation>
    <translation id="logs-pro-10240_limit" qtlid="487574">Média de 341 GB/dia</translation>
-   <translation id="logs-pro-51200_limit" qtlid="487587">Média de 1.6 TB/dia</translation>
-   <translation id="logs-pro-102400_limit" qtlid="487600">Média de 3.3 TB/dia</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Média de 1,6 TB/dia</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Média de 3,3 TB/dia</translation>
    <translation id="logs-pro-307200_limit" qtlid="487613">Média de 10 TB/dia</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Conflito de ofertas</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Você escolheu uma oferta de que já dispõe. Por favor, escolha outra oferta.</translation>
@@ -435,26 +435,26 @@
    <translation id="streams_alerts_condition" qtlid="425806">Regra</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Período de tolerância</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Repetir notificações</translation>
-   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Eliminar o alerta (alarme)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Tem a certeza de que quer eliminar o alerta <strong>{{alert}}</strong>?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Ocorreu um erro durante a eliminação do alerta {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">O alerta {{alertName}} foi eliminado com êxito.</translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">O alerta é suspenso quando há <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> mensagem/ns durante <strong>{{time}}</strong> os últimos minutos. Incluir <strong>{{backlog}}</strong> mensagens na notificação.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">O alerta é suspenso quando o campo <strong>{{field}}</strong> tem um valor <strong>{{thresholdType}} {{constraintType}}</strong> de <strong>{{threshold}}</strong> durante <strong>{{time}}</strong> os últimos minutos. Incluir <strong>{{backlog}}</strong> mensagens na notificação.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">O alerta é suspenso quando é recebida uma mensagem contendo o campo <strong>{{field}}:"{{value}}"</strong>. Incluir <strong>{{backlog}}</strong> mensagens na notificação.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">O alerta é suspenso quando é recebida uma mensagem com o campo <strong>{{field}}</strong> com o valor <strong>"{{value}}"</strong>. Incluir <strong>{{backlog}}</strong> mensagens na notificação.</translation>
    <translation id="create_alert" qtlid="469569">Definir notificações</translation>
    <translation id="counter_alert" qtlid="425494">Contador</translation>
    <translation id="numeric_alert" qtlid="425481">Valor numérico</translation>
    <translation id="textual_alert" qtlid="425468">Conteúdo textual</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Definir uma regra do tipo «contador»</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Adicionar uma condição de campo de agregação</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Adicionar uma condição de campo de conteúdo</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Adicionar uma condição baseada na agregação do campo</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Adicionar uma condição baseada no conteúdo do campo</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Modificar a condição de tipo contador</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar a condição de campo de agregação</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modificar a condição de campo de conteúdo</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar a condição baseada na agregação do campo</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modificar a condição baseada no conteúdo do campo</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Regra ativada quando o número de mensagens é superior ou inferior ao limite definido para um determinado período.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">A notificação é acionada quando o valor agregado de um campo é mais alto ou mais baixo do que o limite definido para um determinado período.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Regra que aciona notificação quando o conteúdo das mensagens é igual a um valor definido.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Esta condição é ativada quando o conteúdo de um campo é igual a um valor definido.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Apelido</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Título da regra da notificação</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Período (minutos)</translation>
@@ -491,31 +491,31 @@
    <translation id="streams_alerts_update_error" qtlid="476963">Ocorreu um erro durante a modificação do alerta {{alertName}}: {{message}}</translation>
 
 <!-- Inputs -->
-   <translation id="logs_inputs_quota_get_error" qtlid="476976">Ocorreu um erro durante o carregamento da quota de instrumentos de coleta: {{message}}</translation>
+   <translation id="logs_inputs_quota_get_error" qtlid="476976">Ocorreu um erro durante o carregamento da quota de ferramentas de recolha: {{message}}</translation>
    <translation id="logs_inputs_details_get_error" qtlid="476989">Ocorreu um erro durante o carregamento dos pormenores do programa: {{message}}</translation>
    <translation id="logs_inputs_main_offer_get_error" qtlid="477002">Ocorreu um erro durante o carregamento dos pormenores da oferta: {{message}}</translation>
-   <translation id="logs_inputs_get_error" qtlid="477015">Ocorreu um erro durante o carregamento do instrumento de coleta '{{inputId}}': {{message}}</translation>
-   <translation id="logs_inputs_delete_success" qtlid="477028">O instrumento de coleta '{{inputTitle}}' foi eliminado com êxito</translation>
-   <translation id="logs_inputs_delete_error" qtlid="477041">Ocorreu um erro durante a eliminação do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_add_success" qtlid="477054">O instrumento de coleta '{{inputTitle}}' foi adicionado com êxito</translation>
-   <translation id="logs_inputs_add_error" qtlid="477067">Ocorreu um erro ao adicionar o instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_update_success" qtlid="477080">O instrumento de coleta '{{inputTitle}}' foi modificado com êxito</translation>
-   <translation id="logs_inputs_update_error" qtlid="477093">Ocorreu um erro durante a modificação do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_start_success" qtlid="477106">O instrumento de coleta '{{inputTitle}}' foi iniciado com êxito</translation>
-   <translation id="logs_inputs_start_error" qtlid="477119">Ocorreu um erro durante o arranque do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_restart_success" qtlid="477132">O instrumento de coleta '{{inputTitle}}' foi reiniciado com êxito</translation>
-   <translation id="logs_inputs_restart_error" qtlid="477145">Ocorreu um erro durante o novo arranque do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_stop_success" qtlid="477158">O instrumento de coleta '{{inputTitle}}' foi interrompido com êxito</translation>
-   <translation id="logs_inputs_stop_error" qtlid="477171">Ocorreu um erro durante a paragem do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_logurl_error" qtlid="477184">Ocorreu um erro durante o carregamento do URL do instrumento de coleta: {{message}}</translation>
-   <translation id="logs_inputs_test_error" qtlid="477197">Ocorreu um erro durante o teste do instrumento de coleta '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_get_error" qtlid="477015">Ocorreu um erro durante o carregamento da ferramenta de recolha '{{inputId}}': {{message}}</translation>
+   <translation id="logs_inputs_delete_success" qtlid="477028">A ferramenta de recolha '{{inputTitle}}' foi eliminada com êxito</translation>
+   <translation id="logs_inputs_delete_error" qtlid="477041">Ocorreu um erro durante a eliminação da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_add_success" qtlid="477054">A ferramenta de recolha '{{inputTitle}}' foi adicionada com êxito</translation>
+   <translation id="logs_inputs_add_error" qtlid="477067">Ocorreu um erro ao adicionar a ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_update_success" qtlid="477080">A ferramenta de recolha '{{inputTitle}}' foi modificado com êxito</translation>
+   <translation id="logs_inputs_update_error" qtlid="477093">Ocorreu um erro durante a modificação da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_start_success" qtlid="477106">A ferramenta de recolha '{{inputTitle}}' foi executada com êxito</translation>
+   <translation id="logs_inputs_start_error" qtlid="477119">Ocorreu um erro durante a execução da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_restart_success" qtlid="477132">A ferramenta de recolha '{{inputTitle}}' foi reiniciada com êxito</translation>
+   <translation id="logs_inputs_restart_error" qtlid="477145">Ocorreu um erro durante a reiniciação da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_stop_success" qtlid="477158">A ferramenta de recolha '{{inputTitle}}' foi interrompida com êxito</translation>
+   <translation id="logs_inputs_stop_error" qtlid="477171">Ocorreu um erro durante a interrupção da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_logurl_error" qtlid="477184">Ocorreu um erro durante o carregamento do URL da ferramenta de recolha: {{message}}</translation>
+   <translation id="logs_inputs_test_error" qtlid="477197">Ocorreu um erro durante o teste da ferramenta de recolha '{{inputTitle}}': {{message}}</translation>
    <translation id="inputs_title" qtlid="421217">Ferramentas de recolha de dados</translation>
    <translation id="inputs_intro_text" qtlid="470167">Ferramentas de recolha: software que permite aceder aos logs (registos) dos servidores ou das aplicações, e converter a informação para o formato GELF, compatível com a Logs Data Platform. Esta plataforma permite associar as ferramentas aos diferentes fluxos de dados, através de uma configuração simples e segura (protegida por regras de firewall).</translation>
-   <translation id="inputs_total_used" qtlid="477210">instrumentos de coleta utilizados</translation>
+   <translation id="inputs_total_used" qtlid="477210">ferramentas de recolha utilizadas</translation>
    <translation id="inputs_increase_quota" qtlid="474753">aumentar a quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Adicionar ferramenta de recolha</translation>
-   <translation id="inputs_name" qtlid="477223">instrumento de coleta</translation>
-   <translation id="inputs_tool" qtlid="477236">Instrumento</translation>
+   <translation id="inputs_add_input" qtlid="423193">Adicionar uma ferramenta de recolha</translation>
+   <translation id="inputs_name" qtlid="477223">ferramenta de recolha</translation>
+   <translation id="inputs_tool" qtlid="477236">Ferramenta</translation>
    <translation id="inputs_col_name" qtlid="3818">Apelido</translation>
    <translation id="inputs_description" qtlid="9238">Descrição </translation>
    <translation id="inputs_software" qtlid="423973">Software</translation>
@@ -532,13 +532,13 @@
    <translation id="inputs_restart" qtlid="33538">Reiniciar </translation>
    <translation id="inputs_stop" qtlid="108480">Parar</translation>
    <translation id="inputs_standard_output" qtlid="424350">Resposta da consola</translation>
-   <translation id="inputs_starting" qtlid="477262">Arranque do instrumento de coleta {{inputTitle}}</translation>
-   <translation id="inputs_stopping" qtlid="477275">Paragem do instrumento de coleta {{inputTitle}}</translation>
-   <translation id="inputs_restarting" qtlid="477288">Reinício do instrumento de coleta {{inputTitle}}</translation>
+   <translation id="inputs_starting" qtlid="477262">Execução da ferramenta de recolha {{inputTitle}}</translation>
+   <translation id="inputs_stopping" qtlid="477275">Interrupção da ferramenta de recolha {{inputTitle}}</translation>
+   <translation id="inputs_restarting" qtlid="477288">Reiniciação da ferramenta de recolha {{inputTitle}}</translation>
    <translation id="inputs_delete" qtlid="470232">Eliminar ferramenta de recolha</translation>
-   <translation id="inputs_delete_message" qtlid="477301">Tem a certeza de que quer eliminar o instrumento de coleta <strong>{{input}}</strong>?</translation>
-   <translation id="inputs_delete_error" qtlid="477314">Ocorreu um erro durante a eliminação do instrumento de coleta: {{message}}</translation>
-   <translation id="inputs_delete_success" qtlid="477327">O instrumento de coleta foi eliminado com êxito</translation>
+   <translation id="inputs_delete_message" qtlid="477301">Tem a certeza de que quer eliminar a ferramenta de recolha <strong>{{input}}</strong>?</translation>
+   <translation id="inputs_delete_error" qtlid="477314">Ocorreu um erro durante a eliminação da ferramenta de recolha: {{message}}</translation>
+   <translation id="inputs_delete_success" qtlid="477327">A ferramenta de recolha foi eliminada com êxito</translation>
    <translation id="inputs_info_title" qtlid="470180">Informações úteis</translation>
    <translation id="inputs_info_description" qtlid="470193">Clique nas opções disponíveis para copiá-las para a área de transferência.</translation>
    <translation id="inputs_info_hostname" qtlid="470206">Nome do host</translation>
@@ -546,9 +546,9 @@
    <translation id="inputs_info_certificate" qtlid="439169">Tipo de certificado</translation>
    <translation id="inputs_logs_title" qtlid="477340">Saída consola de {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs" qtlid="477353">Nenhuma mensagem recebida durante a última hora.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Adicionar ferramenta de recolha</translation>
-   <translation id="inputs_logs_title_edit" qtlid="477366">Modificar o instrumento de coleta</translation>
-   <translation id="inputs_logs_edit_description" qtlid="477379">Para o instrumento de coleta <strong>{{ name }}</strong></translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Adicionar uma ferramenta de recolha</translation>
+   <translation id="inputs_logs_title_edit" qtlid="477366">Modificar a ferramenta de recolha</translation>
+   <translation id="inputs_logs_edit_description" qtlid="477379">Para a ferramenta de recolha <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Alterar</translation>
    <translation id="inputs_logs_step1_add" qtlid="37923">Adicionar</translation>
    <translation id="inputs_logs_step2" qtlid="4010">Configurar</translation>
@@ -558,10 +558,10 @@
    <translation id="inputs_logs_networks_ip_address" qtlid="477405">Endereço IP da rede de confiança</translation>
    <translation id="inputs_logs_networks_ip_address_example" qtlid="423687">Por exemplo: 5.196.85.154 ou 5.196.2.0/26</translation>
    <translation id="inputs_logs_networks_allow_tooltip" qtlid="470362">Enquanto não autorizar uma rede, o serviço ficará vulnerável a acessos indevidos.</translation>
-   <translation id="logs_inputs_network_add_success" qtlid="477418">A rede {{network}} foi adicionada ao instrumento de coleta {{inputTitle}} com êxito</translation>
-   <translation id="logs_inputs_network_remove_success" qtlid="477431">A rede {{network}} foi removida do instrumento de coleta {{inputTitle}} com êxito</translation>
-   <translation id="logs_inputs_network_add_error" qtlid="477444">Ocorreu um erro ao adicionar a rede {{network}} ao instrumento de coleta {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_network_remove_error" qtlid="477457">Ocorreu um erro durante a supressão da rede {{network}} ao instrumento de coleta {{inputTitle}}: {{message}}</translation>
+   <translation id="logs_inputs_network_add_success" qtlid="477418">A rede {{network}} foi adicionada à ferramenta de recolha {{inputTitle}} com êxito</translation>
+   <translation id="logs_inputs_network_remove_success" qtlid="477431">A rede {{network}} foi removida da ferramenta de recolha {{inputTitle}} com êxito</translation>
+   <translation id="logs_inputs_network_add_error" qtlid="477444">Ocorreu um erro ao adicionar a rede {{network}} à ferramenta de recolha {{inputTitle}}: {{message}}</translation>
+   <translation id="logs_inputs_network_remove_error" qtlid="477457">Ocorreu um erro durante a remoção da rede {{network}} da ferramenta de recolha {{inputTitle}}: {{message}}</translation>
    <translation id="inputs_logs_edit_title_field" qtlid="3818">Apelido</translation>
    <translation id="inputs_logs_edit_description_field" qtlid="9238">Descrição </translation>
    <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
@@ -575,7 +575,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Formato dos logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimitador entre cada mensagem</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Linha</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nulo</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
@@ -612,18 +612,18 @@
    <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Caráter Nulo, tipicamente utilizado por GELF / TCP: 0:</translation>
    <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Prefixo de dimensão de mensagem tal como especificado no RFC 5425. No entanto, as quebras de linha agem também como delimitadores, de modo a recuperar entradas corrompidas ou inválidas.</translation>
    <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">Este delimitador só deve ser utilizado para o protocolo Cap’n Proto</translation>
-   <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Número de mensagens guardadas na memória RAM por Flowgger 
+   <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Número de mensagens guardadas na memória RAM por Flowgger &#13;
 antes de serem enviadas a Kafka. A seleção de um valor mais elevado permite aumentar a performance, mas o envio de poucas mensagens pode implicar um aumento da latência da indexação.</translation>
-   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">A configuração flowgger foi modificada com sucesso para o instrumento de coleta {{inputTitle}}</translation>
+   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">A configuração Flowgger foi modificada com sucesso para a ferramenta de recolha {{inputTitle}}</translation>
    <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Ocorreu um erro durante a modificação da configuração Flowgger de {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_logstash_update_success" qtlid="477795">A configuração Logstash foi modificada com sucesso para o instrumento de coleta {{inputTitle}}</translation>
+   <translation id="logs_inputs_logstash_update_success" qtlid="477795">A configuração Logstash foi modificada com sucesso para a ferramenta de recolha {{inputTitle}}</translation>
    <translation id="logs_inputs_logstash_update_error" qtlid="477808">Ocorreu um erro durante a modificação da configuração Logstash de {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Nenhum teste de configuração foi bem-sucedido</translation>
    <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">Nenhum teste foi efetuado para a configuração atual. Queira executar o teste de configuração para prosseguir.</translation>
    <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">O último teste de configuração falhou. Certifique-se de que a configuração está correta e repita o teste de configuração.</translation>
 
 <!-- Elasticsearch Indices -->
-   <translation id="logs_index_description" qtlid="470414">A Logs Data PLatform permite criar e alojar índices Elasticsearch. 
+   <translation id="logs_index_description" qtlid="470414">A Logs Data PLatform permite criar e alojar índices Elasticsearch. &#13;
 Estes podem ser usados para configurar uma instância Kibana, indexar dados estatísticos e melhorar ou correlacionar os Logs. Os índices Elasticsearch também podem ser usados com a maioria das ferramentas e aplicações compatíveis com a API REST do Elasticsearch.</translation>
    <translation id="logs_index_total_used" qtlid="477860">índices utilizados</translation>
    <translation id="logs_index_increase_quota" qtlid="474753">aumentar a quota</translation>
@@ -638,14 +638,14 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_index_col_free_space" qtlid="196608">Espaço disponível</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Índice partilhado</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Acesso Elasticsearch</translation>
-   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Acesso à sua instância Kibana</translation>
    <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Acesso Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Eliminar índice</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Tem a certeza de que quer eliminar o índice <strong>{{name}}</strong>?</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Ocorreu um erro durante o carregamento das opções</translation>
-   <translation id="logs-input-2" qtlid="477977">1 instrumento de coleta com 2 instâncias</translation>
-   <translation id="logs-input-4" qtlid="477990">1 instrumento de coleta com 4 instâncias</translation>
-   <translation id="logs-input-8" qtlid="478003">1 instrumento de coleta com 8 instâncias</translation>
+   <translation id="logs-input-2" qtlid="477977">1 ferramenta de recolha com 2 instâncias</translation>
+   <translation id="logs-input-4" qtlid="477990">1 ferramenta de recolha com 4 instâncias</translation>
+   <translation id="logs-input-8" qtlid="478003">1 ferramenta de recolha com 8 instâncias</translation>
    <translation id="logs-dashboard-5" qtlid="426937">5 painéis de controlo Graylog</translation>
    <translation id="logs-stream-5" qtlid="426950">5 fluxos de dados Graylog</translation>
    <translation id="logs-kibana-1" qtlid="478016">Kibana Pack: 1 alias e 1 índice de 500 MiB</translation>
@@ -717,8 +717,8 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_aliases_attach_index_fail" qtlid="478510">Falha da conexão ao índice '{{index}}': {{message}}</translation>
    <translation id="logs_aliases_detach_index_error" qtlid="478523">Ocorreu um erro durante a desconexão do índice '{{indexName}}': {{message}}</translation>
    <translation id="logs_aliases_detach_index_fail" qtlid="478536">Falha da desconexão do índice '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Fluxos de dados estão ligados a este alias. Apenas fluxos de dados ou índices Elasticsearch podem ser ligados. Desconecte todos os fluxos de dados para poder adicionar um índice.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Há índices Elasticsearch ligados a este alias. Apenas fluxos de dados ou índices Elasticsearch podem ser ligados. Desconecte todos os índices para poder adicionar um fluxo de dados.</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Existem fluxos de dados associados a este alias. Apenas fluxos de dados ou índices Elasticsearch podem ser associados. Desassocie todos os fluxos de dados para poder adicionar um índice.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Existem índices Elasticsearch associados a este alias. Apenas fluxos de dados ou índices Elasticsearch podem ser associados. Desassocie todos os índices para poder adicionar um fluxo de dados.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Funções</translation>
