@@ -29,10 +29,6 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
     }
 
     confirm () {
-        if (this.form.$invalid) {
-            return this.$q.reject();
-        }
-
         return this.CloudProjectOpenstackUsersRcloneService.getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
             .then(response => this.ControllerHelper.downloadContent({
                 content: response.content,
