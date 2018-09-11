@@ -676,7 +676,6 @@ angular.module("managerApp").service("VpsService", [
 
         this.getOptionSnapshotFormated = function (serviceName) {
             return this.getOptionDetails(serviceName, "snapshot").then(optionDetails => _.first(optionDetails.results));
-
         };
 
         this.getPriceOptions = function (vps) {
