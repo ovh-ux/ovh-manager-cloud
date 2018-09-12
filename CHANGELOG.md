@@ -1,3 +1,13 @@
+<a name="7.6.3"></a>
+## [7.6.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.2...v7.6.3) (2018-09-12)
+
+
+### Bug Fixes
+
+* **vps.monitoring:** improve monitoring errors ([5ced13e](https://github.com/ovh-ux/ovh-manager-cloud/commit/5ced13e))
+
+
+
 <a name="7.6.2"></a>
 ## [7.6.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.1...v7.6.2) (2018-09-11)
 
