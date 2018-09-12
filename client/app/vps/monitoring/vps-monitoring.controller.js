@@ -31,9 +31,12 @@ class VpsMonitoringCtrl {
                 this.humanizeData(data.netRx.values[0].points, this.monitoring.net[0]);
                 this.humanizeData(data.netTx.values[0].points, this.monitoring.net[1]);
                 this.generateLabels(data.cpu.values[0].points, data.cpu.pointInterval, data.cpu.pointStart, this.monitoring.labels);
+                this.noCpuData = _.find(_.get(this.data, "messages"), (type) => _.get(type, "params.type").indexOf("cpu") !== -1);
+                this.noRamData = _.find(_.get(this.data, "messages"), (type) => _.get(type, "params.type").indexOf("mem") !== -1);
+                this.noNetData = _.find(_.get(this.data, "messages"), (type) => _.get(type, "params.type").indexOf("net") !== -1);
             })
             .catch(() => { this.error = true; })
-            .finally(() => { this.loaders.init = false });
+            .finally(() => { this.loaders.init = false; });
     }
 
     reset () {
@@ -56,7 +59,7 @@ class VpsMonitoringCtrl {
     }
 
     generateLabels (data, interval, start, tab) {
-        const unitInterval = "minutes"
+        const unitInterval = "minutes";
         const pointInterval = interval.standardMinutes;
         let date = moment(start);
         _.forEach(data, element => {
