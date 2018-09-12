@@ -44,19 +44,19 @@ class LogsRolesService {
     }
 
     getAllStreams (serviceName) {
-        return this.LogsStreamsService.getOwnStreams(serviceName);
+        return this.LogsStreamsService.getShareableStreams(serviceName);
     }
 
     getAllAliases (serviceName) {
-        return this.LogsAliasesService.getOwnAliases(serviceName);
+        return this.LogsAliasesService.getShareableAliases(serviceName);
     }
 
     getAllDashboards (serviceName) {
-        return this.LogsDashboardsService.getOwnDashboards(serviceName);
+        return this.LogsDashboardsService.getShareableDashboards(serviceName);
     }
 
     getAllIndices (serviceName) {
-        return this.LogsIndexService.getOwnIndices(serviceName);
+        return this.LogsIndexService.getShareableIndices(serviceName);
     }
 
     addAlias (serviceName, roleId, alias) {
