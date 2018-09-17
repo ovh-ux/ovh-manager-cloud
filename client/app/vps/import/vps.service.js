@@ -668,43 +668,16 @@ angular.module("managerApp").service("VpsService", [
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
                     return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
                 }
+                return $q.reject(reason);
+
             });
         };
 
-        // HOT FIX remove this fukin shit
-        this.getOptionDetails2 = function (option, vps, duration) {
-            return $q.all([
-                $http.get(["apiv6/price/vps/2015v1/ssd/option/", option].join("")),
-                $http.get(["apiv6/order/vps/", vps.name, "/snapshot/", duration].join(""))
-            ]);
+        this.getOptionSnapshotFormated = function (serviceName) {
+            return this.getOptionDetails(serviceName, "snapshot").then(optionDetails => _.first(optionDetails.results));
         };
 
-        // HOT FIX remove this fukin shit
-        this.getOptionSnapshot = function (vps) {
-            return $http.get(["apiv6/order/vps/", vps.name, "/snapshot"].join(""));
-        };
-
-        this.getOptionSnapshotFormated = function (serviceName, vps) {
-            if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
-                return this.getOptionSnapshot(vps)
-                    .then(d => this.getOptionDetails2("snapshot", vps, d.data[0]))
-                    .then(data => {
-                            return {
-                                unitaryPrice: data[0].data.text,
-                                withoutTax: data[1].data.prices.withoutTax.text,
-                                withTax: data[1].data.prices.withTax.text,
-                                duration: {duration: d.data[0]}
-                            }
-                        });
-            } else {
-                return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
-            }
-        };
-
-        // HOT FIX remove this fukin shit
         this.getPriceOptions = function (vps) {
             return $http.get(["/price/vps", vps.version.toLowerCase().replace(/_/g, ""), vps.offerType.toLowerCase(), "option/automatedBackup"].join("/"));
         };
