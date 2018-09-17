@@ -1,3 +1,15 @@
+<a name="7.6.5"></a>
+## [7.6.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.4...v7.6.5) (2018-09-17)
+
+
+### Bug Fixes
+
+* **vps:** fix snapshot option api calls ([577a497](https://github.com/ovh-ux/ovh-manager-cloud/commit/577a497))
+* **vps:** remove special cases for snapshot option ([24697fa](https://github.com/ovh-ux/ovh-manager-cloud/commit/24697fa))
+* **vps:** retrieve right price of snapshot option ([20f1d11](https://github.com/ovh-ux/ovh-manager-cloud/commit/20f1d11))
+
+
+
 <a name="7.6.4"></a>
 ## [7.6.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.3...v7.6.4) (2018-09-17)
 
