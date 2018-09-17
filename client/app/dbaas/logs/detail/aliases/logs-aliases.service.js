@@ -40,7 +40,6 @@ class LogsAliasesService {
             .catch(err => this.LogsHelperService.handleError("logs_aliases_get_error", err, {}));
     }
 
-
     /**
      * returns array of owned aliases with details of logged in user
      *
@@ -51,6 +50,19 @@ class LogsAliasesService {
     getOwnAliases (serviceName) {
         return this.getAliasesDetails(serviceName)
             .then(aliases => aliases.filter(alias => alias.info.isEditable))
+            .catch(err => this.LogsHelperService.handleError("logs_aliases_get_error", err, {}));
+    }
+
+    /**
+     * returns array of shareable aliases with details of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of aliases. each stream will have all details populated.
+     * @memberof LogsStreamsService
+     */
+    getShareableAliases (serviceName) {
+        return this.getAliasesDetails(serviceName)
+            .then(aliases => aliases.filter(alias => alias.info.isShareable))
             .catch(err => this.LogsHelperService.handleError("logs_aliases_get_error", err, {}));
     }
 
