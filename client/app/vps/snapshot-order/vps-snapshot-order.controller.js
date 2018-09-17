@@ -29,18 +29,18 @@ class VpsOrderSnapshotCtrl {
         this.VpsService.getSelectedVps(this.serviceName)
             .then(data => {
                 this.model.vps = data;
-                this.loadOptionDetails(data);
+                this.loadOptionDetails();
             })
             .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_activate_snapshot_fail")))
-            .finally(() => {this.loaders.init = false;})
+            .finally(() => { this.loaders.init = false; });
     }
 
-    loadOptionDetails (vps) {
+    loadOptionDetails () {
         this.loaders.options = true;
-        this.VpsService.getOptionSnapshotFormated(this.serviceName, vps)
-            .then(data => {this.model.optionDetails = data})
+        this.VpsService.getOptionSnapshotFormated(this.serviceName)
+            .then(data => { this.model.optionDetails = data; })
             .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_activate_snapshot_fail")))
-            .finally(() => {this.loaders.options = false})
+            .finally(() => { this.loaders.options = false; });
     }
 
     orderOption () {

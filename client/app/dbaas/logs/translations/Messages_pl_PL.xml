@@ -637,7 +637,7 @@
    <translation id="logs_index_col_free_space" qtlid="196608">Dostępna przestrzeń</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Współdzielony indeks</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Dostęp do Elasticsearch</translation>
-   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Dostęp do Twojej instancji Kibana</translation>
    <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Dostęp do Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Usuń indeks</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Czy na pewno chcesz usunąć indeks <strong>{{name}}</strong>?</translation>

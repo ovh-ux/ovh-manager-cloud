@@ -12,11 +12,11 @@
    <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Generovat objednávku</translation>
    <translation id="cpciif_buy_button_infos" qtlid="269513">Instalační poplatek - bez měsíčních poplatků</translation>
    <translation id="cpciif_buy_error" qtlid="275999">Během nákupu IP Failover Cloud došlo k chybě.</translation>
-   <translation id="cpciif_buy_success" qtlid="296011">Objednávka IP Failover Cloud je <a href="{{ url }}" target="_blank">k dispozici zde<i class="fa fa-external-link"></i></a></translation>
+   <translation id="cpciif_buy_success" qtlid="296011">Objednávka IP Failover Cloud je k dispozici<a href="{{ url }}" target="_blank">zde<i class="fa fa-external-link"></i></a></translation>
    <translation id="cpciif_buy_ip_na_soon" qtlid="269552">Severoamerické IP budou k dispozici v krátké době</translation>
    <translation id="cpciif_buy_services" qtlid="269565">Služba zahrnuje:</translation>
    <translation id="cpciif_buy_no_instance" qtlid="301935">Nedisponujete žádným serverem.</translation>
    <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} bez DPH)</translation>
 
-   <translation id="cpciif_buy_no_instance_warning" qtlid="500307">L'achat d'IPs Failover Cloud requiert au moins un serveur attaché à votre projet.</translation>
+   <translation id="cpciif_buy_no_instance_warning" qtlid="500307">Pro nákup Failover Cloud IP adres musíte disponovat alespoň jedním serverem připojeným k Vašemu projektu.</translation>
 </translations>

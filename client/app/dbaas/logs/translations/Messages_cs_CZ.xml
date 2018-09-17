@@ -636,7 +636,7 @@
    <translation id="logs_index_col_free_space" qtlid="196608">Dostupný prostor</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Sdílený index</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Elasticsearch přístup</translation>
-   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Accès à votre instance Kibana</translation>
+   <translation id="logs_index_access_KIBANA_WEBUI" qtlid="500352">Přístup k instanci Kibana</translation>
    <translation id="logs_index_access_ELASTICSEARCH_API" qtlid="477938">Elasticsearch přístup</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Odstranit index</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Opravdu si přejete odstranit následující index: <strong>{{name}}</strong>?</translation>
