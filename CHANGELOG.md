@@ -1,3 +1,14 @@
+<a name="7.6.4"></a>
+## [7.6.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.3...v7.6.4) (2018-09-17)
+
+
+### Bug Fixes
+
+* **ldp:** get the list of shareable objects ([3215df3](https://github.com/ovh-ux/ovh-manager-cloud/commit/3215df3))
+* lint some html files ([6f1f436](https://github.com/ovh-ux/ovh-manager-cloud/commit/6f1f436))
+
+
+
 <a name="7.6.3"></a>
 ## [7.6.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.2...v7.6.3) (2018-09-12)
 
