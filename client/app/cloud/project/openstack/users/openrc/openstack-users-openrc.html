@@ -25,16 +25,15 @@
                 <div class="oui-field">
                     <label class="oui-field__label oui-label" for="region" data-translate="cpou_openrc_form_select_region"></label>
                     <div class="oui-field__content"></div>
-                        <label class="oui-select">
-                                <select class="oui-select__input"
-                                id="region" name="region"
-                                placeholder="{{ ::'cpou_openrc_form_select_region_placeholder' | translate}}"
-                                data-ng-options="OpenstackUsersOpenrcCtrl.regionService.getTranslatedMicroRegion(region) for region in OpenstackUsersOpenrcCtrl.form.regions"
-                                data-ng-model="OpenstackUsersOpenrcCtrl.data.region">
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </label>
-                    </div>
+                    <label class="oui-select">
+                            <select class="oui-select__input"
+                            id="region" name="region"
+                            placeholder="{{ ::'cpou_openrc_form_select_region_placeholder' | translate}}"
+                            data-ng-options="OpenstackUsersOpenrcCtrl.regionService.getTranslatedMicroRegion(region) for region in OpenstackUsersOpenrcCtrl.form.regions"
+                            data-ng-model="OpenstackUsersOpenrcCtrl.data.region">
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </label>
                 </div>
             </div>
         </div>

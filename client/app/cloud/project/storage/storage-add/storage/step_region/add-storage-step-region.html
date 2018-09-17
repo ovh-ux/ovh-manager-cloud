@@ -1,24 +1,27 @@
 <div data-ng-controller="RA.add.storage.stepRegionCtrl"
-data-scroll-here="">
+     data-scroll-here="">
 
-<h3 id="step_region"
-class="counter-step"
-data-translate="add_storage_region_step_title"></h3>
+    <h3 id="step_region"
+        class="counter-step"
+        data-translate="add_storage_region_step_title">
+    </h3>
 
-<div class="row step_panel">
-    <ul class="row option-list list-unstyled list-inline">
-        <li class="storage-region"
-            data-ng-repeat="region in regions"
-            data-ng-click="clickOnRegion(region)"
-            data-ng-class="{ 'selected': model.region === region}">
-            <flat-radio>
-                <input type="radio" data-ng-model="model.region" data-ng-value="region">
-            </flat-radio>
-            <div class="storage-region-summary">
-                <i class="storage-region-flag flag-icon {{:: regionService.getRegionIconFlag(region) }} flag"></i>
-                <p class="storage-region-title" data-ng-bind="::regionService.getTranslatedMicroRegion(region)"></p>
-                <p class="storage-region-description" data-ng-bind="::regionService.getTranslatedMicroRegionLocation(region)"></p>
-            </div>
-        </li>
-    </ul>
+    <div class="row step_panel">
+        <ul class="row option-list list-unstyled list-inline">
+            <li class="storage-region"
+                data-ng-repeat="region in regions track by $index"
+                data-ng-click="clickOnRegion(region)"
+                data-ng-class="{ 'selected': model.region === region}">
+                <flat-radio>
+                    <input type="radio" data-ng-model="model.region" data-ng-value="region">
+                </flat-radio>
+                <div class="storage-region-summary">
+                    <i class="storage-region-flag flag-icon {{:: regionService.getRegionIconFlag(region) }} flag"></i>
+                    <p class="storage-region-title" data-ng-bind="::regionService.getTranslatedMicroRegion(region)"></p>
+                    <p class="storage-region-description" data-ng-bind="::regionService.getTranslatedMicroRegionLocation(region)"></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
 </div>

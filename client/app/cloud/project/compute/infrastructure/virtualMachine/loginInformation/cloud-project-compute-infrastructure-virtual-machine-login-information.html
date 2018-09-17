@@ -12,8 +12,8 @@
         <div class="oui-modal__body-text" data-ng-if="!VmLoginInformationCtrl.loading">
             <h2 class="oui-modal__title" data-translate="cpcivm_login_information_title"></h2>
             <p class="oui-modal__text" data-translate="cpcivm_login_information_instance_title"></p>
-            <p class="oui-modal__text" 
-                data-ng-if="VmLoginInformationCtrl.data.isWindows" 
+            <p class="oui-modal__text"
+                data-ng-if="VmLoginInformationCtrl.data.isWindows"
                 data-translate="cpcivm_login_information_instance_info_windows"></p>
 
             <oui-clipboard data-model="VmLoginInformationCtrl.displayLoginInfo()"></oui-clipboard>
@@ -62,9 +62,7 @@
         <button type="button" class="oui-button oui-button_primary"
                 data-ng-if="VmLoginInformationCtrl.data.isWindows"
                 data-ng-click="VmLoginInformationCtrl.goToConsole()">
-            <span data-translate="cpcivm_login_information_go_to_console">
+            <span data-translate="cpcivm_login_information_go_to_console"></span>
         </button>
     </div>
 </div>
-
-

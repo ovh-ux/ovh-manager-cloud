@@ -80,17 +80,19 @@
                                 data-ng-class="{'top-space-m8': $index > 0}"
                                 data-ng-repeat="tag in DBaasTsProjectDetailsKeyAddOrEditCtrl.model.tags">
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control"
-                                        placeHolder="{{::'dtpdt_tag_key' | translate}}"
-                                        id="tag-{{$index}}"
-                                        data-ng-maxlength="255"
-                                        data-ng-model="DBaasTsProjectDetailsKeyAddOrEditCtrl.model.tags[$index].key" />
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="{{::'dtpdt_tag_key' | translate}}"
+                                           id="tag-{{$index}}"
+                                           data-ng-maxlength="255"
+                                           data-ng-model="DBaasTsProjectDetailsKeyAddOrEditCtrl.model.tags[$index].key" />
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control"
-                                        placeHolder="{{::'dtpdt_tag_value' | translate}}"
-                                        data-ng-maxlength="255"
-                                        data-ng-model="DBaasTsProjectDetailsKeyAddOrEditCtrl.model.tags[$index].value" />
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="{{::'dtpdt_tag_value' | translate}}"
+                                           data-ng-maxlength="255"
+                                           data-ng-model="DBaasTsProjectDetailsKeyAddOrEditCtrl.model.tags[$index].value" />
                                 </div>
                                 <!-- Remove tag button -->
                                 <div class="col-sm-4">
