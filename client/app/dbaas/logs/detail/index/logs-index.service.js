@@ -52,6 +52,12 @@ class LogsIndexService {
             .catch(err => this.LogsHelperService.handleError("logs_index_get_error", err, {}));
     }
 
+    getShareableIndices (serviceName) {
+        return this.getIndices(serviceName)
+            .then(indices => indices.filter(index => index.info.isShareable))
+            .catch(err => this.LogsHelperService.handleError("logs_index_get_error", err, {}));
+    }
+
     getIndexDetails (serviceName, indexId) {
         return this.IndexAapiService.get({ serviceName, indexId })
             .$promise
