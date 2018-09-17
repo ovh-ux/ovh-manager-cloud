@@ -27,7 +27,6 @@
                             data-ng-model="BillingRightsCtrl.contactFormData.owner"
                             data-ng-keyup="BillingRightsCtrl.watchOwnerInput($event)"
                             data-ng-maxlength="255">
-                        </input>
                         <span
                             class="input-group-addon">
                         <button type="reset" class="no-style" data-ng-click="BillingRightsCtrl.toggleEditOwner()">
@@ -74,7 +73,6 @@
                             data-ng-model="BillingRightsCtrl.contactFormData.billing"
                             data-ng-keyup="BillingRightsCtrl.watchBillingInput($event)"
                             data-ng-maxlength="255">
-                        </input>
                         <div class="input-group-addon">
                             <button type="reset" class="no-style" data-ng-click="BillingRightsCtrl.toggleEditBilling()">
                                 <i class="fa fa-times"></i>
@@ -133,8 +131,10 @@
             </oui-action-menu>
         </oui-datagrid>
 
-    <div class="col-xs-12" data-ng-if="!BillingRightsCtrl.loader.rights">
-        <p class="fs10">{{ :: 'cpb_rights_note' | translate }}</p>
-    </div>
+        <p class="fs10"
+           data-ng-if="!BillingRightsCtrl.loader.rights"
+           data-ng-bind=":: 'cpb_rights_note' | translate">
+        </p>
 
+    </div>
 </div>
