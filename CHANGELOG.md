@@ -1,3 +1,13 @@
+<a name="7.6.6"></a>
+## [7.6.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.5...v7.6.6) (2018-09-18)
+
+
+### Bug Fixes
+
+* **us:** switch ovhcloud.com to us.ovhcloud.com ([b028ba0](https://github.com/ovh-ux/ovh-manager-cloud/commit/b028ba0))
+
+
+
 <a name="7.6.5"></a>
 ## [7.6.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.4...v7.6.5) (2018-09-17)
 
