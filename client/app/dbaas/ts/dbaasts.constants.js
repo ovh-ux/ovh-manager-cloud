@@ -20,7 +20,7 @@ angular.module("managerApp")
        urls: {
            order: {
                "FR": "https://www.ovh.com/fr/dbaas/timeseries/",
-               "US": "https://ovhcloud.com/dbaas/timeseries/"
+               "US": "https://us.ovhcloud.com/dbaas/timeseries/"
            }
        }
    });
