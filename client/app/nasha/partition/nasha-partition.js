@@ -22,6 +22,6 @@ angular.module("managerApp")
                     "nasha/partition/snapshot",
                     "nasha/partition/custom-snapshot",
                     "nasha/partition/zfs-options"
-                ]
+                ],
             });
     });

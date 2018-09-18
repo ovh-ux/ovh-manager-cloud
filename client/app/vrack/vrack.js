@@ -14,6 +14,6 @@ angular.module("managerApp").config(function ($stateProvider) {
             templateUrl: "app/vrack/vrack.html",
             controller: "VrackCtrl",
             controllerAs: "VrackCtrl",
-            translations: ["common", "vrack", "vrack/selectVrack"],
+            translations: ["common", "vrack"],
         });
 });
