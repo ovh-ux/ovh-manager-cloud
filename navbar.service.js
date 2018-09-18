@@ -1,7 +1,6 @@
 class ManagerNavbarService {
     constructor ($q,
                  $translate,
-                 $translatePartialLoader,
                  atInternet,
                  FeatureAvailabilityService,
                  LANGUAGES,
@@ -17,7 +16,6 @@ class ManagerNavbarService {
                  URLS) {
         this.$q = $q;
         this.$translate = $translate;
-        this.$translatePartialLoader = $translatePartialLoader;
         this.atInternet = atInternet;
         this.featureAvailabilityService = FeatureAvailabilityService;
         this.LANGUAGES = LANGUAGES;
@@ -532,8 +530,6 @@ class ManagerNavbarService {
     }
 
     loadTranslations () {
-        this.$translatePartialLoader.addPart("common");
-        this.$translatePartialLoader.addPart("module-otrs");
         return this.$translate.refresh();
     }
 
