@@ -28,6 +28,7 @@ angular.module("managerApp")
                     "common",
                     "cloud/project/compute/snapshot/add",
                     "cloud/project/compute/volume/snapshot",
+                    "cloud/project/compute/infrastructure",
                     "cloud/project/compute/infrastructure/ip/failover/import",
                     "cloud/project/compute/infrastructure/ip/failover/buy",
                     "cloud/project/compute/infrastructure/volume",
@@ -46,6 +47,6 @@ angular.module("managerApp")
                     "cloud/project/rename",
                     "cloud/project/compute/infrastructure/openstackClient",
                     "vrack/modals"
-                ]
+                ],
             });
     });

@@ -13,7 +13,7 @@ angular.module("managerApp")
                     controllerAs: "CloudProjectComputeCtrl"
                 }
             },
-            translations: ["common"],
+            translations: ["common", "cloud/project/compute"],
             atInternet: { ignore: true },
             params: {
                 // Force the small display for large projects
