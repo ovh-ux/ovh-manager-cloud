@@ -17,6 +17,6 @@ angular.module("managerApp").config(function ($stateProvider) {
             },
             createNewVm: false
         },
-        translations: ["common", "cloud/project/details"]
+        translations: ["common", "cloud/project/details"],
     });
 });

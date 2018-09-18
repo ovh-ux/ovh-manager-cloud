@@ -17,7 +17,7 @@ angular.module("managerApp")
                     controllerAs: "DBaasTsProjectAddCtrl"
                 }
             },
-            translations: ["common", "dbaas/ts", "dbaas/ts/project", "dbaas/ts/project/add"]
+            translations: ["common", "dbaas/ts", "dbaas/ts/project", "dbaas/ts/project/add"],
         });
 });
 

@@ -10,6 +10,6 @@ angular.module("managerApp").config(function ($stateProvider) {
                 controllerAs: "BillingConsumptionCurrentCtrl"
             }
         },
-        translations: ["common", "cloud/project/billing", "../components/cloud/project/billing", "cloud/project/billing/consumption/current"]
+        translations: ["common", "cloud/project/billing", "../components/cloud/project/billing", "cloud/project/billing/consumption/current"],
     });
 });

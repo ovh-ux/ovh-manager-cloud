@@ -16,7 +16,7 @@
                         template: '<div ui-view="iplbFrontend"><div>'
                     }
                 },
-                translations: ["common", "iplb", "iplb/frontends"]
+                translations: ["common", "iplb", "iplb/frontends"],
             })
             .state("network.iplb.detail.frontends.home", {
                 url: "/",
@@ -27,7 +27,7 @@
                         controllerAs: "ctrl"
                     }
                 },
-                translations: ["common", "iplb", "iplb/frontends"]
+                translations: ["common", "iplb", "iplb/frontends"],
             })
             .state("network.iplb.detail.frontends.add", {
                 url: "/add",
@@ -38,7 +38,7 @@
                         controllerAs: "ctrl"
                     }
                 },
-                translations: ["common", "iplb", "iplb/frontends"]
+                translations: ["common", "iplb", "iplb/frontends"],
             })
             .state("network.iplb.detail.frontends.update", {
                 url: "/:frontendId",
@@ -49,7 +49,7 @@
                         controllerAs: "ctrl"
                     }
                 },
-                translations: ["common", "iplb", "iplb/frontends"]
+                translations: ["common", "iplb", "iplb/frontends"],
             });
     });
 })();

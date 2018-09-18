@@ -17,7 +17,7 @@ angular.module("managerApp")
                 squash: true
             }
         },
-        translations: ["common", "dbaas/ts/project/details", "cloud/project/delete"]
+        translations: ["common", "dbaas/ts/project/details", "cloud/project/delete"],
     });
 });
 

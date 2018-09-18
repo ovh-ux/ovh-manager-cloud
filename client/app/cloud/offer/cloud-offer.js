@@ -13,6 +13,6 @@ angular.module("managerApp")
                 templateUrl: "app/cloud/offer/cloud-offer.html",
                 controller: "CloudOfferCtrl",
                 controllerAs: "CloudOfferCtrl",
-                translations: ["common", "cloud/project/add"]
+                translations: ["common", "cloud/project/add"],
             });
     });

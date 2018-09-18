@@ -14,6 +14,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/home", "iplb/zone", "iplb/vrack"]
+            translations: ["common", "iplb", "iplb/home", "iplb/zone", "iplb/vrack"],
         });
 });

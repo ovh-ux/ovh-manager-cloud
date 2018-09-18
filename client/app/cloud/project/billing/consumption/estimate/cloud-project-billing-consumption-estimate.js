@@ -10,6 +10,6 @@ angular.module("managerApp").config(function ($stateProvider) {
                 controllerAs: "BillingConsumptionEstimateCtrl"
             }
         },
-        translations: ["common", "cloud/project/billing/consumption/estimate", "cloud/project/billing/consumption/estimate/alert/add"]
+        translations: ["common", "cloud/project/billing/consumption/estimate", "cloud/project/billing/consumption/estimate/alert/add"],
     });
 });

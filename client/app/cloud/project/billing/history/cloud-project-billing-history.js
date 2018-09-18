@@ -46,6 +46,6 @@ angular.module("managerApp").config($stateProvider => {
                 };
             }
         },
-        translations: ["common", "cloud/project/billing", "cloud/project/billing/history", "../components/cloud/project/billing"]
+        translations: ["common", "cloud/project/billing", "cloud/project/billing/history", "../components/cloud/project/billing"],
     });
 });

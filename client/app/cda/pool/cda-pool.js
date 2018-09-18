@@ -11,6 +11,6 @@ angular.module("managerApp")
                         abstract: true
                     }
                 },
-                translations: ["common"]
+                translations: ["common"],
             });
     });

@@ -16,6 +16,6 @@ angular.module("managerApp").config(function ($stateProvider) {
                 return DBaasTsProjectService.ensureProjectIsActive($stateParams);
             }
         },
-        translations: ["common", "dbaas/ts/project/details", "dbaas/ts/project/details/quota"]
+        translations: ["common", "dbaas/ts/project/details", "dbaas/ts/project/details/quota"],
     });
 });

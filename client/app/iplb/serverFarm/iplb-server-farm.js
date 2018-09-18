@@ -13,7 +13,7 @@ angular.module("managerApp").config($stateProvider => {
                     template: '<div ui-view="iplbFarms"><div>'
                 }
             },
-            translations: ["common", "iplb", "iplb/serverFarm", "iplb/server"]
+            translations: ["common", "iplb", "iplb/serverFarm", "iplb/server"],
         })
         .state("network.iplb.detail.server-farm.home", {
             url: "/",

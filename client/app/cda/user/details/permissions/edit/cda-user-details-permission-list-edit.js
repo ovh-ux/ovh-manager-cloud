@@ -12,6 +12,6 @@ angular.module("managerApp")
                         controllerAs: "CdaUserDetailsPermissionListEditCtrl"
                     }
                 },
-                translations: ["common", "cda/user/details/permissions/edit"]
+                translations: ["common", "cda/user/details/permissions/edit"],
             });
     });

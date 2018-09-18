@@ -11,7 +11,7 @@ angular.module("managerApp").config($stateProvider => {
             url: "/vps",
             templateUrl: "app/vps/vps.html",
             "abstract": true,
-            translations: ["common", "vps"]
+            translations: ["common", "vps"],
         })
         .state("iaas.vps.detail", {
             url: "/{serviceName}",

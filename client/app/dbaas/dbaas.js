@@ -10,6 +10,6 @@ angular.module("managerApp")
                 template: `
                     <div ui-view="dbaasContainer"></div>
                 `,
-                translations: ["common", "cloud"]
+                translations: ["common", "cloud"],
             });
     });

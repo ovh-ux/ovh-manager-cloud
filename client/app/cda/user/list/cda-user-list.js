@@ -12,6 +12,6 @@ angular.module("managerApp")
                         controllerAs: "CdaUserListCtrl"
                     }
                 },
-                translations: ["common", "cda/user/list"]
+                translations: ["common", "cda/user/list"],
             });
     });

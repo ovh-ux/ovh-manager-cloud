@@ -11,7 +11,7 @@ angular.module("managerApp").config(function ($stateProvider) {
                 controllerAs: "DBaasTsProjectDetailsKeyAddOrEditCtrl"
             }
         },
-        translations: ["common", "dbaas/ts/project/details/key"]
+        translations: ["common", "dbaas/ts/project/details/key"],
     });
 
     $stateProvider.state("dbaas.dbaasts-project.dbaasts-project-details.dbaasts-project-details-key-edit", {
@@ -23,7 +23,7 @@ angular.module("managerApp").config(function ($stateProvider) {
                 controllerAs: "DBaasTsProjectDetailsKeyAddOrEditCtrl"
             }
         },
-        translations: ["common", "dbaas/ts/project/details/key", "dbaas/ts/project/details/key/addOrEdit"]
+        translations: ["common", "dbaas/ts/project/details/key", "dbaas/ts/project/details/key/addOrEdit"],
     });
 
 });

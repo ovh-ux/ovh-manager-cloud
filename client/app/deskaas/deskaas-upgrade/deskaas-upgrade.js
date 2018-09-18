@@ -7,6 +7,6 @@ angular.module("managerApp")
             templateUrl  : "app/deskaas/deskaas-upgrade/deskaas-upgrade.html",
             controller   : "DeskaasUpgradeCtrl",
             controllerAs : "DeskaasUpgradeCtrl",
-            translations : ["common", "deskaas"]
+            translations : ["common", "deskaas"],
         });
     });

@@ -4,7 +4,7 @@ angular.module("managerApp").config($stateProvider => {
             url: "/veeam",
             templateUrl: "app/veeam/veeam.html",
             "abstract": true,
-            translations: ["common", "veeam"]
+            translations: ["common", "veeam"],
         })
         .state("paas.veeam.detail", {
             url: "/{serviceName}",
@@ -15,7 +15,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "VeeamDetailCtrl"
                 }
             },
-            translations: ["common", "veeam"]
+            translations: ["common", "veeam"],
         })
         .state("paas.veeam.detail.dashboard", {
             url: "/dashboard",
@@ -31,7 +31,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "veeam", "veeam/dashboard", "veeam/storage/add", "veeam/dashboard/update-offer"]
+            translations: ["common", "veeam", "veeam/dashboard", "veeam/storage/add", "veeam/dashboard/update-offer"],
         })
         .state("paas.veeam.detail.storage", {
             url: "/storage",
@@ -47,6 +47,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "VeeamStorageCtrl"
                 }
             },
-            translations: ["common", "veeam", "veeam/storage", "veeam/storage/add"]
+            translations: ["common", "veeam", "veeam/storage", "veeam/storage/add"],
         });
 });

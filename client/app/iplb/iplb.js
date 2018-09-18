@@ -14,7 +14,7 @@ angular.module("managerApp").config($stateProvider => {
                     templateUrl: "app/iplb/iplb.html"
                 }
             },
-            translations: ["common", "iplb"]
+            translations: ["common", "iplb"],
         })
         .state("network.iplb.detail", {
             url: "/{serviceName}",
@@ -25,6 +25,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "cloud", "iplb", "iplb/configuration", "vrack/modals"]
+            translations: ["common", "cloud", "iplb", "iplb/configuration", "vrack/modals"],
         });
 });

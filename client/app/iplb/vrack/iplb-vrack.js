@@ -13,7 +13,7 @@ angular.module("managerApp").config($stateProvider => {
                     template: '<div ui-view="iplbVrack"><div>'
                 }
             },
-            translations: ["common", "iplb", "iplb/frontends"]
+            translations: ["common", "iplb", "iplb/frontends"],
         })
         .state("network.iplb.detail.vrack.home", {
             url: "/",
@@ -24,7 +24,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/vrack"]
+            translations: ["common", "iplb", "iplb/vrack"],
         })
         .state("network.iplb.detail.vrack.add", {
             url: "/add",
@@ -35,7 +35,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/frontends"]
+            translations: ["common", "iplb", "iplb/frontends"],
         })
         .state("network.iplb.detail.vrack.edit", {
             url: "/:networkId",
@@ -46,6 +46,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/frontends"]
+            translations: ["common", "iplb", "iplb/frontends"],
         });
 });

@@ -11,6 +11,6 @@ angular.module("managerApp")
                 controllerAs: "BillingRightsCtrl"
             }
         },
-        translations: ["common", "cloud/project/billing", "cloud/project/billing/rights"]
+        translations: ["common", "cloud/project/billing", "cloud/project/billing/rights"],
     });
 });

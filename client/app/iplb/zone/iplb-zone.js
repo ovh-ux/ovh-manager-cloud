@@ -15,7 +15,7 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             "abstract": true,
-            translations: ["common", "iplb", "iplb/zone"]
+            translations: ["common", "iplb", "iplb/zone"],
         })
         .state("network.iplb.detail.zone.add", {
             url: "/add",
@@ -26,7 +26,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/zone"]
+            translations: ["common", "iplb", "iplb/zone"],
         })
         .state("network.iplb.detail.zone.delete", {
             url: "/delete",
@@ -37,6 +37,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             },
-            translations: ["common", "iplb", "iplb/zone"]
+            translations: ["common", "iplb", "iplb/zone"],
         });
 });

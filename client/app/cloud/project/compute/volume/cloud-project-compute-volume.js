@@ -12,7 +12,7 @@ angular.module("managerApp").config(function ($stateProvider) {
                 controllerAs : "CloudProjectComputeVolumeCtrl"
             }
         },
-        translations : ["common", "cloud/project/compute/volume"]
+        translations : ["common", "cloud/project/compute/volume"],
     });
 
 });
