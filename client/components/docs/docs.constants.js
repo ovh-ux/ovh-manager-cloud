@@ -2,7 +2,7 @@ angular.module("managerApp")
     .constant("DOCS_ALL_GUIDES", {
         FR: "https://docs.ovh.com/fr/",
         EN: "https://docs.ovh.com/gb/en/",
-        US: "https://support.ovhcloud.com/hc/en-us",
+        US: "https://support.us.ovhcloud.com/hc/en-us",
         EN_ASIA: "https://docs.ovh.com/asia/en",
         EN_AU: "https://docs.ovh.com/au/en",
         EN_SG: "https://docs.ovh.com/sg/en"
@@ -388,7 +388,7 @@ angular.module("managerApp")
                     text: "guide_project_all",
                     atInternetClickTag: "TopGuide-PublicCloud-all",
                     isExternal: true,
-                    href: "https://support.ovhcloud.com/hc/en-us"
+                    href: "https://support.us.ovhcloud.com/hc/en-us"
                 }]
             }
         }
