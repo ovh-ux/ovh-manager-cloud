@@ -1,3 +1,5 @@
+import asyncLoaderFactory from './async-loader.factory';
+
 angular.module("managerApp", [
     "ngCookies",
     "ngResource",
@@ -52,14 +54,40 @@ angular.module("managerApp", [
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
     "ovhBrowserAlert",
-    "angular-websocket"
+    "angular-websocket",
+    "angular-translate-loader-pluggable",
 ])
-    .config(($transitionsProvider, $stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) => {
+    .factory('asyncLoader', asyncLoaderFactory)
+    .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider, TranslateServiceProvider, LANGUAGES) => {
         // Config current locale
         TranslateServiceProvider.setUserLocale();
 
-        // Add translations decorator (need to be added before routes definitions)
-        TranslateDecoratorServiceProvider.add($transitionsProvider, $stateProvider);
+        $translateProvider.useLoader('asyncLoader');
+        $translateProvider.useLoaderCache(true);
+        $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
+        $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
+        $translateProvider.preferredLanguage(TranslateServiceProvider.getUserLocale());
+        $translateProvider.use(TranslateServiceProvider.getUserLocale());
+        $translateProvider.fallbackLanguage(LANGUAGES.fallback);
+
+        tmhDynamicLocaleProvider.localeLocationPattern('angular-i18n/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.defaultLocale(_.kebabCase(TranslateServiceProvider.getUserLocale()));
+    })
+    /*= =========  INTERCEPT ERROR IF NO TRANSLATION FOUND  ========== */
+    .factory('translateInterceptor', ($q) => {
+      const regexp = new RegExp(/Messages\w+\.json$/i);
+      return {
+        responseError(rejection) {
+          if (regexp.test(rejection.config.url)) {
+            return {};
+          }
+          return $q.reject(rejection);
+        },
+      };
+    })
+    .factory('translateMissingTranslationHandler', $sanitize => function (translationId) {
+      // Fix security issue: https://github.com/angular-translate/angular-translate/issues/1418
+      return $sanitize(translationId);
     })
     .config(function ($urlRouterProvider, $locationProvider) {
         "use strict";
@@ -114,14 +142,12 @@ angular.module("managerApp", [
     })
     .run(($transitions,
           $translate,
-          $translatePartialLoader,
           ouiCriteriaAdderConfiguration,
           ouiDatagridConfiguration,
           ouiFieldConfiguration,
           ouiNavbarConfiguration,
           ouiPaginationConfiguration,
           ouiStepperConfiguration) => {
-        $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {
 

@@ -1,5 +1,5 @@
 import "script-loader!jquery/dist/jquery.js";
-import "script-loader!angular/angular.js";
+import "angular";
 import "script-loader!angular-animate/angular-animate.js";
 import "script-loader!angular-aria/angular-aria.js";
 import "script-loader!angular-bootstrap/ui-bootstrap-tpls.js";
@@ -17,8 +17,8 @@ import "script-loader!angular-strap/dist/modules/tooltip.min.js";
 import "script-loader!angular-strap/dist/modules/tooltip.tpl.min.js";
 import "script-loader!angular-strap/dist/modules/popover.min.js";
 import "script-loader!angular-strap/dist/modules/popover.tpl.min.js";
-import "script-loader!angular-translate/angular-translate.js";
-import "script-loader!angular-translate-loader-partial/angular-translate-loader-partial.js";
+import "angular-translate";
+import "angular-translate-loader-partial";
 import "script-loader!angular-ui-router/release/angular-ui-router.js";
 import "script-loader!angular-websocket/dist/angular-websocket.js";
 import "script-loader!jquery-ui/ui/minified/core.min.js";
@@ -81,6 +81,7 @@ import "script-loader!xterm/dist/xterm.js";
 import "script-loader!xterm/dist/addons/fit/fit.js";
 import "script-loader!ovh-ui-angular/dist/oui-angular.min.js";
 import "script-loader!popper.js/dist/umd/popper.js";
+import "angular-translate-loader-pluggable";
 
 import './app.scss';
 import './app.less';

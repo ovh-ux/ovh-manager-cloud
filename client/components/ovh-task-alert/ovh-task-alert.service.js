@@ -1,6 +1,5 @@
 class OvhTaskAlertsService {
-    constructor ($translate, $translatePartialLoader, ControllerHelper, CloudMessage, OvhApiMeAlertsAapi, $http, TranslateService) {
-        this.$translatePartialLoader = $translatePartialLoader.addPart("../components/ovh-task-alert");
+    constructor ($translate, ControllerHelper, CloudMessage, OvhApiMeAlertsAapi, $http, TranslateService) {
         this.$translate = $translate;
         this.$http = $http;
         this.ControllerHelper = ControllerHelper;
