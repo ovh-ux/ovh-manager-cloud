@@ -600,353 +600,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@bower_components/angular-animate@angular/bower-angular-animate#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-animate/tar.gz/531f49c338d8eb95e87e8a369684d8a5069a4aba"
-
-"@bower_components/angular-aria@angular/bower-angular-aria#^1.6.x":
-  version "1.7.4"
-  resolved "https://codeload.github.com/angular/bower-angular-aria/tar.gz/d639c44f14910337d28f933a140c490c415808ae"
-
-"@bower_components/angular-bootstrap@angular-ui/bootstrap-bower#1.3.x":
-  version "1.3.3"
-  resolved "https://codeload.github.com/angular-ui/bootstrap-bower/tar.gz/5d53287668135dbc1acfc3a0d453cd94b5311c3c"
-
-"@bower_components/angular-chart.js@jtblin/angular-chart.js#^1.1.1":
-  version "1.1.1"
-  resolved "https://codeload.github.com/jtblin/angular-chart.js/tar.gz/74c95397d39fb7424aa245badebe92bc6f9248f5"
-  dependencies:
-    angular "1.x"
-    chart.js "2.3.x"
-
-"@bower_components/angular-cookies@angular/bower-angular-cookies#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-cookies/tar.gz/a2675d6a6f5176fe7252cbbba3fb1fbbf5e5f757"
-
-"@bower_components/angular-dynamic-locale@lgalfaso/angular-dynamic-locale#0.1.x":
-  version "0.1.37"
-  resolved "https://codeload.github.com/lgalfaso/angular-dynamic-locale/tar.gz/dbefe31b9cc5134952b93583354b1037a1fe2193"
-  dependencies:
-    "@types/angular" "^1.6.25"
-
-"@bower_components/angular-i18n@angular/bower-angular-i18n#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-i18n/tar.gz/2cab511b6d4ec6f137ee27dcea06289560b760e7"
-
-"@bower_components/angular-messages@angular/bower-angular-messages#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-messages/tar.gz/f598436ddf089b97a47e2626b5f0a41cc7035746"
-
-"@bower_components/angular-mocks@angular/bower-angular-mocks#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-mocks/tar.gz/ca366bd8f81416e73641340b8e06cf19b1942e6b"
-
-"@bower_components/angular-moment@urish/angular-moment#^1.0.1":
-  version "1.3.0"
-  resolved "https://codeload.github.com/urish/angular-moment/tar.gz/aa3e39f77214da5a718755a3582aac517a53a04f"
-  dependencies:
-    moment ">=2.8.0 <3.0.0"
-
-"@bower_components/angular-resource@angular/bower-angular-resource#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-resource/tar.gz/9c2935a6ea0d54540f7f8411185197e354768236"
-
-"@bower_components/angular-sanitize@angular/bower-angular-sanitize#1.6.x":
-  version "1.6.10"
-  resolved "https://codeload.github.com/angular/bower-angular-sanitize/tar.gz/4edf1d245f0f3453d2766a16283ba5a70c82d55f"
-
-"@bower_components/angular-scroll-glue@luegg/angularjs-scroll-glue#2.2.x":
-  version "2.2.0"
-  resolved "https://codeload.github.com/luegg/angularjs-scroll-glue/tar.gz/5990d90cbf84efdf837edcbf26cefe9adb676f5b"
-
-"@bower_components/angular-strap@mgcrea/angular-strap#~2.3.6":
-  version "2.3.12"
-  resolved "https://codeload.github.com/mgcrea/angular-strap/tar.gz/bc1cb5cc10f253a0cce16ecda360879d77f10768"
-
-"@bower_components/angular-translate-loader-partial@PascalPrecht/bower-angular-translate-loader-partial#2.16.x":
-  version "2.16.0"
-  resolved "https://codeload.github.com/PascalPrecht/bower-angular-translate-loader-partial/tar.gz/f5b90b99239b8757aa83cdd7f16de378cfa629bb"
-  dependencies:
-    angular-translate "~2.16.0"
-
-"@bower_components/angular-translate@PascalPrecht/bower-angular-translate#2.16.x":
-  version "0.0.0"
-  resolved "https://codeload.github.com/PascalPrecht/bower-angular-translate/tar.gz/4e6c7fdcef6362e95a9faa615e72822a4290a03e"
-
-"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#^1.0.0":
-  version "1.0.20"
-  resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/9df2d5baa8e2ace23700d031cd5cd7b029f6ca35"
-  dependencies:
-    "@uirouter/core" "5.0.21"
-
-"@bower_components/angular-ui-sortable@angular-ui/ui-sortable#0.14.x":
-  version "0.0.0"
-  resolved "https://codeload.github.com/angular-ui/ui-sortable/tar.gz/3068e2ffc169e47c2816cd09515a51c87357757d"
-
-"@bower_components/angular-ui-validate@angular-ui/ui-validate#1.2.x":
-  version "1.2.3"
-  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
-
-"@bower_components/angular-websocket@gdi2290/angular-websocket#^2.0.0":
-  version "2.0.0"
-  resolved "https://codeload.github.com/gdi2290/angular-websocket/tar.gz/f3b33c1a88a8e334d2cc23dad7afbd79cece044e"
-  dependencies:
-    angular "*"
-    ws "^1.0.0"
-
-"@bower_components/angular@angular/bower-angular#1.6.9":
-  version "1.6.9"
-  resolved "https://codeload.github.com/angular/bower-angular/tar.gz/2d507370407cecd2aa5c339ba3140966bce6006b"
-
-"@bower_components/animate.css@daneden/animate.css#~3.1.0":
-  version "3.1.1"
-  resolved "https://codeload.github.com/daneden/animate.css/tar.gz/1d0401008b73494fcde9d606140625ac38753e5c"
-
-"@bower_components/at-internet-ui-router-plugin@ovh-ux/at-internet-ui-router-plugin#~1.0.0":
-  version "1.0.0"
-  resolved "https://codeload.github.com/ovh-ux/at-internet-ui-router-plugin/tar.gz/2de4ec8b476de10f816fcbbea5fdeceaa9f93cdc"
-
-"@bower_components/bootstrap-additions@mgcrea/bootstrap-additions#~0.3.1":
-  version "0.3.1"
-  resolved "https://codeload.github.com/mgcrea/bootstrap-additions/tar.gz/e0ce1871fe1c88f7d395ba4849ef77c8bd80d1fb"
-
-"@bower_components/bootstrap@twbs/bootstrap#~3.3.0":
-  version "3.3.7"
-  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/0b9c4a4007c44201dce9a6cc1a38407005c26c86"
-
-"@bower_components/bs4@twbs/bootstrap#v4.0.0-beta":
-  version "4.0.0-beta"
-  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
-
-"@bower_components/chart.js@chartjs/Chart.js#2.x":
-  version "2.7.2"
-  resolved "https://codeload.github.com/chartjs/Chart.js/tar.gz/98f104cdd03617f1300b417b3d60c23d4e3e3403"
-  dependencies:
-    chartjs-color "^2.1.0"
-    moment "^2.10.2"
-
-"@bower_components/d3@mbostock-bower/d3-bower#~3.5.13":
-  version "0.0.0"
-  resolved "https://codeload.github.com/mbostock-bower/d3-bower/tar.gz/7a826d211d5067867debf9ce24a9987e0cb02b6e"
-
-"@bower_components/es5-shim@es-shims/es5-shim#~3.0.1":
-  version "3.0.2"
-  resolved "https://codeload.github.com/es-shims/es5-shim/tar.gz/e77568917008c0e69301582345b541b848a25e8c"
-
-"@bower_components/flag-icon-css@lipis/flag-icon-css#~0.8.5":
-  version "0.8.6"
-  resolved "https://codeload.github.com/lipis/flag-icon-css/tar.gz/615237eb3ff120bc0a5331a526eb69153096994b"
-
-"@bower_components/font-awesome@FortAwesome/Font-Awesome#4.x.x":
-  version "4.7.0"
-  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/a8386aae19e200ddb0f6845b5feeee5eb7013687"
-
-"@bower_components/jasmine-expect@errok/Jasmine-Matchers#master":
-  version "2.0.0-beta1"
-  resolved "https://codeload.github.com/errok/Jasmine-Matchers/tar.gz/cf07fb15d26af6c4788642131ff776c803c574a9"
-
-"@bower_components/jquery-ui@components/jqueryui#~1.11.2":
-  version "1.11.4"
-  resolved "https://codeload.github.com/components/jqueryui/tar.gz/c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
-
-"@bower_components/jquery.cookie@carhartl/jquery-cookie#~1.4.0":
-  version "1.4.1"
-  resolved "https://codeload.github.com/carhartl/jquery-cookie/tar.gz/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
-
-"@bower_components/jquery.scrollTo@flesler/jquery.scrollTo#~1.4.14":
-  version "1.4.14"
-  resolved "https://codeload.github.com/flesler/jquery.scrollTo/tar.gz/025405d6bc60e810130ba33a63acc37fe32cdadc"
-  dependencies:
-    jquery ">=1.4"
-
-"@bower_components/jquery@jquery/jquery-dist#2.1.x":
-  version "2.1.4"
-  resolved "https://codeload.github.com/jquery/jquery-dist/tar.gz/7751e69b615c6eca6f783a81e292a55725af6b85"
-
-"@bower_components/json3@bestiejs/json3#~3.3.1":
-  version "3.3.2"
-  resolved "https://codeload.github.com/bestiejs/json3/tar.gz/dec5c2a5dc723ff867caa32a81ed93ab814f7426"
-
-"@bower_components/jsplumb@sporritt/jsPlumb#1.7.4":
-  version "1.7.4"
-  resolved "https://codeload.github.com/sporritt/jsPlumb/tar.gz/43f6931055fb6eea3a368a7dd677bb6e9903b27b"
-
-"@bower_components/jsurl@Sage/jsurl#v0.1.5":
-  version "0.1.5"
-  resolved "https://codeload.github.com/Sage/jsurl/tar.gz/b4f891f0fd1a63f4ada1cf5226260bb0345bd080"
-
-"@bower_components/karma-read-json@pizzapanther/Karma-Read-JSON#~1.0.2":
-  version "0.0.0"
-  resolved "https://codeload.github.com/pizzapanther/Karma-Read-JSON/tar.gz/6b493ce9468e61cf77d258f965e0404682aa7f61"
-
-"@bower_components/lodash@lodash/lodash#~3.10.1":
-  version "3.10.1"
-  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
-
-"@bower_components/matchmedia-ng@AnalogJ/matchmedia-ng#1.0.x":
-  version "1.0.8"
-  resolved "https://codeload.github.com/AnalogJ/matchmedia-ng/tar.gz/0ec0c21a1c7be8991dc7ecd8a825d95b183355db"
-
-"@bower_components/matchmedia@paulirish/matchMedia.js#~0.2.0":
-  version "0.0.0"
-  resolved "https://codeload.github.com/paulirish/matchMedia.js/tar.gz/3c67d9bfb525b1b0549448aa27769a289ba5be98"
-
-"@bower_components/messenger@HubSpot/messenger#~1.4.1":
-  version "1.4.2"
-  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
-
-"@bower_components/moment-duration-format@jsmreese/moment-duration-format#^1.3.0":
-  version "1.3.0"
-  resolved "https://codeload.github.com/jsmreese/moment-duration-format/tar.gz/8d0bf29a1eab180cb83d0f13f93f6974faedeafd"
-
-"@bower_components/moment@moment/moment#>=2.19.3 <3.0.0":
-  version "2.22.2"
-  resolved "https://codeload.github.com/moment/moment/tar.gz/2e2a5b35439665d4b0200143d808a7c26d6cd30f"
-
-"@bower_components/ng-at-internet@ovh-ux/ng-at-internet#^3.0.0":
-  version "3.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ng-at-internet/tar.gz/066b669c81c00f120bbffe00f74a245ac35dc3d5"
-
-"@bower_components/ng-slide-down@TheRusskiy/ng-slide-down#1.2.x":
-  version "1.2.0"
-  resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
-
-"@bower_components/ovh-angular-a-disabled@ovh-ux/ovh-angular-a-disabled#^0.1.1":
-  version "0.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-a-disabled/tar.gz/8d8b104dbeb12cde43e643409d2cc0d484409422"
-
-"@bower_components/ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0":
-  version "3.2.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/b63ed0d2dbefc915b0bb18dc426ea7b83cc00c50"
-
-"@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0":
-  version "1.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
-
-"@bower_components/ovh-angular-checkbox-table@ovh-ux/ovh-angular-checkbox-table#^0.1.2":
-  version "0.1.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-checkbox-table/tar.gz/93ccadcaf75ce66a76f71e1c083edd9e95d56cc4"
-  dependencies:
-    angular "1.3.x"
-    angular-sanitize "1.3.x"
-    jquery "~2.1.3"
-    lodash "~3.3.0"
-
-"@bower_components/ovh-angular-doc-url@ovh-ux/ovh-angular-doc-url#^0.0.7":
-  version "0.0.7"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-doc-url/tar.gz/7bb91949aaa9ab7b671f72033fb83648f6197352"
-
-"@bower_components/ovh-angular-form-flat@ovh-ux/ovh-angular-form-flat#^3.2.2":
-  version "3.2.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-form-flat/tar.gz/485e48349cf43202c45fb16fde933d025a7e3414"
-
-"@bower_components/ovh-angular-jquery-ui-droppable@ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1":
-  version "0.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-jquery-ui-droppable/tar.gz/698cd378ccd376458c4d4eafa6925d3fb9ecadf2"
-
-"@bower_components/ovh-angular-jsplumb@ovh-ux/ovh-angular-jsplumb#^3.0.5":
-  version "3.0.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-jsplumb/tar.gz/f63fae6bb7a2750f64a2938eb148dd0088891cec"
-
-"@bower_components/ovh-angular-list-view@ovh-ux/ovh-angular-list-view#^0.1.5":
-  version "0.1.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-list-view/tar.gz/e0b8ed735bc2431f10f32f73d665d78da93dd77a"
-  dependencies:
-    angular-mock "^1.0.0"
-    less-plugin-remcalc "^0.0.1"
-
-"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1":
-  version "6.1.3"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/41940a11121a6686c2c70e1ecce29de90b34bc9c"
-
-"@bower_components/ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0":
-  version "5.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-pagination-front/tar.gz/7b21072dfd25a8b1a5aece207a8e2f27e756b86c"
-
-"@bower_components/ovh-angular-proxy-request@ovh-ux/ovh-angular-proxy-request#^0.1.0":
-  version "0.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-proxy-request/tar.gz/d68592b23ad4a8cea323cf0a2ce8158f997efb34"
-
-"@bower_components/ovh-angular-q-allsettled@ovh-ux/ovh-angular-q-allSettled#^0.3.1":
-  version "0.3.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-q-allSettled/tar.gz/8019e225db83fa3b1d01650c6583b20d81d392c9"
-
-"@bower_components/ovh-angular-responsive-page-switcher@ovh-ux/ovh-angular-responsive-page-switcher#^1.1.0":
-  version "1.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-page-switcher/tar.gz/6ee43608412234313ff9c8adb39db63b1965fb8b"
-  dependencies:
-    grunt-injector "^0.6.0"
-
-"@bower_components/ovh-angular-responsive-popover@ovh-ux/ovh-angular-responsive-popover#^4.0.1":
-  version "4.0.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-popover/tar.gz/8645df39fae851071dac3b9286d55ce522ab1d59"
-
-"@bower_components/ovh-angular-responsive-tabs@ovh-ux/ovh-angular-responsive-tabs#^4.0.0":
-  version "4.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-tabs/tar.gz/0aa90a9a3b281fc0422b33ba2ba121ab3a69b693"
-
-"@bower_components/ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.2.0":
-  version "7.2.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/4e8dbb3dd95292d5b38e0c5bd546543d10974b81"
-
-"@bower_components/ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2":
-  version "0.2.3"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-slider/tar.gz/eeb148ccf526848c5d60c10dcba9e79a14d5fa91"
-
-"@bower_components/ovh-angular-sso-auth-modal-plugin@ovh-ux/ovh-angular-sso-auth-modal-plugin#^1.0.15":
-  version "1.0.16"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth-modal-plugin/tar.gz/30c7d85fc98367c5b5ee0442e0f9b88a07ea14d7"
-
-"@bower_components/ovh-angular-sso-auth@ovh-ux/ovh-angular-sso-auth#^3.1.2":
-  version "3.1.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth/tar.gz/f6034d10a1539c0658d60506720d3c1218b3231f"
-
-"@bower_components/ovh-angular-stop-event@ovh-ux/ovh-angular-stop-event#^0.1.0":
-  version "0.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-stop-event/tar.gz/c7c5eae2e4941a2c48722df3c77b49558775291e"
-
-"@bower_components/ovh-angular-swimming-poll@ovh-ux/ovh-angular-swimming-poll#^3.0.1":
-  version "3.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-swimming-poll/tar.gz/dfb6d59e8748084171fc34b169401e6183e2fe38"
-
-"@bower_components/ovh-angular-tail-logs@ovh-ux/ovh-angular-tail-logs#^1.1.2":
-  version "1.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-tail-logs/tar.gz/46b1735714dbf22c6d90fd2b469fd42904f9a5ff"
-
-"@bower_components/ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0":
-  version "0.8.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-toaster/tar.gz/06d24889e94b8d816afee8e94185697cf68f2338"
-
-"@bower_components/ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1":
-  version "0.3.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
-
-"@bower_components/ovh-api-services@ovh-ux/ovh-api-services#^3.9.0":
-  version "3.14.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/e63c186f8fb39aaa4ca082fd9488f185dd85844c"
-  dependencies:
-    grunt-injector "^0.6.0"
-
-"@bower_components/ovh-common-style@ovh-ux/ovh-common-style#^3.2.2":
-  version "3.2.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-common-style/tar.gz/cd9f7bea9240b7e2334ae5cd7e74529478b271d4"
-
-"@bower_components/ovh-jquery-ui-draggable-ng@ovh-ux/ovh-jquery-ui-draggable-ng#^0.0.5":
-  version "0.0.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-jquery-ui-draggable-ng/tar.gz/1534d99081af3e8533049c20d940a50595bdc916"
-
-"@bower_components/ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1":
-  version "1.0.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
-
-"@bower_components/uri.js@medialize/URI.js#~1.15.0":
-  version "1.15.2"
-  resolved "https://codeload.github.com/medialize/URI.js/tar.gz/c51da7e8c0bdf46ae926d2388d3032e2347c61db"
-
-"@bower_components/validator-js@chriso/validator.js#~3.37.0":
-  version "3.37.0"
-  resolved "https://codeload.github.com/chriso/validator.js/tar.gz/415a54e82d4aef157b8926e77aabb70b342a4eb5"
-
 "@commitlint/cli@^6.1.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.2.0.tgz#b2f8190eb08ccd78eea65114b864f3c65eca466a"
@@ -1402,13 +1055,76 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-animate@angular/bower-angular-animate#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-animate/tar.gz/531f49c338d8eb95e87e8a369684d8a5069a4aba"
+
+angular-aria@angular/bower-angular-aria#^1.6.x:
+  version "1.7.4"
+  resolved "https://codeload.github.com/angular/bower-angular-aria/tar.gz/d639c44f14910337d28f933a140c490c415808ae"
+
+angular-bootstrap@angular-ui/bootstrap-bower#1.3.x:
+  version "1.3.3"
+  resolved "https://codeload.github.com/angular-ui/bootstrap-bower/tar.gz/5d53287668135dbc1acfc3a0d453cd94b5311c3c"
+
+angular-chart.js@jtblin/angular-chart.js#^1.1.1:
+  version "1.1.1"
+  resolved "https://codeload.github.com/jtblin/angular-chart.js/tar.gz/74c95397d39fb7424aa245badebe92bc6f9248f5"
+  dependencies:
+    angular "1.x"
+    chart.js "2.3.x"
+
+angular-cookies@angular/bower-angular-cookies#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-cookies/tar.gz/a2675d6a6f5176fe7252cbbba3fb1fbbf5e5f757"
+
+angular-dynamic-locale@lgalfaso/angular-dynamic-locale#0.1.x:
+  version "0.1.37"
+  resolved "https://codeload.github.com/lgalfaso/angular-dynamic-locale/tar.gz/dbefe31b9cc5134952b93583354b1037a1fe2193"
+  dependencies:
+    "@types/angular" "^1.6.25"
+
+angular-i18n@angular/bower-angular-i18n#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-i18n/tar.gz/2cab511b6d4ec6f137ee27dcea06289560b760e7"
+
+angular-messages@angular/bower-angular-messages#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-messages/tar.gz/f598436ddf089b97a47e2626b5f0a41cc7035746"
+
 angular-mock@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/angular-mock/-/angular-mock-1.0.0.tgz#67431849bf0add225b1d49e0a771659a4b360ba5"
 
+angular-mocks@angular/bower-angular-mocks#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-mocks/tar.gz/ca366bd8f81416e73641340b8e06cf19b1942e6b"
+
+angular-moment@urish/angular-moment#^1.0.1:
+  version "1.3.0"
+  resolved "https://codeload.github.com/urish/angular-moment/tar.gz/aa3e39f77214da5a718755a3582aac517a53a04f"
+  dependencies:
+    moment ">=2.8.0 <3.0.0"
+
+angular-resource@angular/bower-angular-resource#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-resource/tar.gz/9c2935a6ea0d54540f7f8411185197e354768236"
+
 angular-sanitize@1.3.x:
   version "1.3.20"
   resolved "http://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
+
+angular-sanitize@angular/bower-angular-sanitize#1.6.x:
+  version "1.6.10"
+  resolved "https://codeload.github.com/angular/bower-angular-sanitize/tar.gz/4edf1d245f0f3453d2766a16283ba5a70c82d55f"
+
+angular-scroll-glue@luegg/angularjs-scroll-glue#2.2.x:
+  version "2.2.0"
+  resolved "https://codeload.github.com/luegg/angularjs-scroll-glue/tar.gz/5990d90cbf84efdf837edcbf26cefe9adb676f5b"
+
+angular-strap@mgcrea/angular-strap#~2.3.6:
+  version "2.3.12"
+  resolved "https://codeload.github.com/mgcrea/angular-strap/tar.gz/bc1cb5cc10f253a0cce16ecda360879d77f10768"
 
 angular-template-url-loader@^1.0.2:
   version "1.0.2"
@@ -1416,11 +1132,42 @@ angular-template-url-loader@^1.0.2:
   dependencies:
     loader-utils "^0.2.16"
 
+angular-translate-loader-partial@PascalPrecht/bower-angular-translate-loader-partial#2.16.x:
+  version "2.16.0"
+  resolved "https://codeload.github.com/PascalPrecht/bower-angular-translate-loader-partial/tar.gz/f5b90b99239b8757aa83cdd7f16de378cfa629bb"
+  dependencies:
+    angular-translate "~2.16.0"
+
+angular-translate@PascalPrecht/bower-angular-translate#2.16.x:
+  version "0.0.0"
+  resolved "https://codeload.github.com/PascalPrecht/bower-angular-translate/tar.gz/4e6c7fdcef6362e95a9faa615e72822a4290a03e"
+
 angular-translate@~2.16.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.16.0.tgz#6b7f84657d6534d25878cc55e6a2a06f7607299f"
   dependencies:
     angular ">=1.2.26 <=1.6"
+
+angular-ui-router@angular-ui/angular-ui-router-bower#^1.0.0:
+  version "1.0.20"
+  resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/9df2d5baa8e2ace23700d031cd5cd7b029f6ca35"
+  dependencies:
+    "@uirouter/core" "5.0.21"
+
+angular-ui-sortable@angular-ui/ui-sortable#0.14.x:
+  version "0.0.0"
+  resolved "https://codeload.github.com/angular-ui/ui-sortable/tar.gz/3068e2ffc169e47c2816cd09515a51c87357757d"
+
+angular-ui-validate@angular-ui/ui-validate#1.2.x:
+  version "1.2.3"
+  resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
+
+angular-websocket@gdi2290/angular-websocket#^2.0.0:
+  version "2.0.0"
+  resolved "https://codeload.github.com/gdi2290/angular-websocket/tar.gz/f3b33c1a88a8e334d2cc23dad7afbd79cece044e"
+  dependencies:
+    angular "*"
+    ws "^1.0.0"
 
 angular@*, angular@1.x:
   version "1.7.4"
@@ -1433,6 +1180,14 @@ angular@1.3.x:
 "angular@>=1.2.26 <=1.6":
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.10.tgz#eed3080a34d29d0f681ff119b18ce294e3f74826"
+
+angular@angular/bower-angular#1.6.9:
+  version "1.6.9"
+  resolved "https://codeload.github.com/angular/bower-angular/tar.gz/2d507370407cecd2aa5c339ba3140966bce6006b"
+
+animate.css@daneden/animate.css#~3.1.0:
+  version "3.1.1"
+  resolved "https://codeload.github.com/daneden/animate.css/tar.gz/1d0401008b73494fcde9d606140625ac38753e5c"
 
 ansi-align@^2.0.0:
   version "2.0.0"
@@ -1458,7 +1213,7 @@ ansi-html@0.0.7:
 
 ansi-regex@^0.2.0, ansi-regex@^0.2.1:
   version "0.2.1"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-0.2.1.tgz#0d8e946967a3d8143f93e24e298525fc1b2235f9"
+  resolved "http://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz#0d8e946967a3d8143f93e24e298525fc1b2235f9"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -1628,6 +1383,10 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
+at-internet-ui-router-plugin@ovh-ux/at-internet-ui-router-plugin#~1.0.0:
+  version "1.0.0"
+  resolved "https://codeload.github.com/ovh-ux/at-internet-ui-router-plugin/tar.gz/2de4ec8b476de10f816fcbbea5fdeceaa9f93cdc"
+
 atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
@@ -1759,6 +1518,19 @@ babel-plugin-check-es2015-constants@^6.22.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
   dependencies:
     babel-runtime "^6.22.0"
+
+babel-plugin-syntax-class-properties@^6.8.0:
+  version "6.13.0"
+  resolved "http://registry.npmjs.org/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de"
+
+babel-plugin-transform-class-properties@^6.24.1:
+  version "6.24.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac"
+  dependencies:
+    babel-helper-function-name "^6.24.1"
+    babel-plugin-syntax-class-properties "^6.8.0"
+    babel-runtime "^6.22.0"
+    babel-template "^6.24.1"
 
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
@@ -2123,6 +1895,14 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap-additions@mgcrea/bootstrap-additions#~0.3.1:
+  version "0.3.1"
+  resolved "https://codeload.github.com/mgcrea/bootstrap-additions/tar.gz/e0ce1871fe1c88f7d395ba4849ef77c8bd80d1fb"
+
+bootstrap@twbs/bootstrap#~3.3.0:
+  version "3.3.7"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+
 bower-config@^0.5.0:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/bower-config/-/bower-config-0.5.3.tgz#98fc5b41a87870ef9cbb9297635cf81f5505fdb1"
@@ -2238,6 +2018,10 @@ browserslist@^4.1.0:
     caniuse-lite "^1.0.30000884"
     electron-to-chromium "^1.3.62"
     node-releases "^1.0.0-alpha.11"
+
+bs4@twbs/bootstrap#v4.0.0-beta:
+  version "4.0.0-beta"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/35f80bb12e4e71fd777ee60ffa43711d8f84b1a6"
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -2426,6 +2210,13 @@ chart.js@2.3.x:
   dependencies:
     chartjs-color "^2.0.0"
     moment "^2.10.6"
+
+chart.js@chartjs/Chart.js#2.x:
+  version "2.7.2"
+  resolved "https://codeload.github.com/chartjs/Chart.js/tar.gz/98f104cdd03617f1300b417b3d60c23d4e3e3403"
+  dependencies:
+    chartjs-color "^2.1.0"
+    moment "^2.10.2"
 
 chartjs-color-string@^0.5.0:
   version "0.5.0"
@@ -3088,6 +2879,10 @@ cz-conventional-changelog@^2.1.0:
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
 
+d3@mbostock-bower/d3-bower#~3.5.13:
+  version "0.0.0"
+  resolved "https://codeload.github.com/mbostock-bower/d3-bower/tar.gz/7a826d211d5067867debf9ce24a9987e0cb02b6e"
+
 d@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f"
@@ -3444,6 +3239,10 @@ es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
     es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
     next-tick "1"
+
+es5-shim@es-shims/es5-shim#~3.0.1:
+  version "3.0.2"
+  resolved "https://codeload.github.com/es-shims/es5-shim/tar.gz/e77568917008c0e69301582345b541b848a25e8c"
 
 es6-iterator@~2.0.3:
   version "2.0.3"
@@ -3840,6 +3639,10 @@ findup-sync@0.4.2:
     micromatch "^2.3.7"
     resolve-dir "^0.1.0"
 
+flag-icon-css@lipis/flag-icon-css#~0.8.5:
+  version "0.8.6"
+  resolved "https://codeload.github.com/lipis/flag-icon-css/tar.gz/615237eb3ff120bc0a5331a526eb69153096994b"
+
 flatpickr@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.0.tgz#f72c7164a1c24e3ad419e3b2209d1a2d3604724a"
@@ -3856,6 +3659,10 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.8.tgz#1dbfe13e45ad969f813e86c00e5296f525c885a1"
   dependencies:
     debug "=3.1.0"
+
+font-awesome@FortAwesome/Font-Awesome#4.x.x:
+  version "4.7.0"
+  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/a8386aae19e200ddb0f6845b5feeee5eb7013687"
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -4956,13 +4763,31 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
+jasmine-expect@errok/Jasmine-Matchers#master:
+  version "2.0.0-beta1"
+  resolved "https://codeload.github.com/errok/Jasmine-Matchers/tar.gz/cf07fb15d26af6c4788642131ff776c803c574a9"
+
+jquery-ui@components/jqueryui#~1.11.2:
+  version "1.11.4"
+  resolved "https://codeload.github.com/components/jqueryui/tar.gz/c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+
+jquery.cookie@carhartl/jquery-cookie#~1.4.0:
+  version "1.4.1"
+  resolved "https://codeload.github.com/carhartl/jquery-cookie/tar.gz/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
+
+jquery.scrollTo@flesler/jquery.scrollTo#~1.4.14:
+  version "1.4.14"
+  resolved "https://codeload.github.com/flesler/jquery.scrollTo/tar.gz/025405d6bc60e810130ba33a63acc37fe32cdadc"
+  dependencies:
+    jquery ">=1.4"
+
 jquery@>=1.4:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
-jquery@~2.1.3:
+jquery@jquery/jquery-dist#2.1.x, jquery@~2.1.3:
   version "2.1.4"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.1.4.tgz#228bde698a0c61431dc2630a6a154f15890d2317"
+  resolved "https://codeload.github.com/jquery/jquery-dist/tar.gz/7751e69b615c6eca6f783a81e292a55725af6b85"
 
 js-base64@^2.1.8:
   version "2.4.9"
@@ -5025,6 +4850,10 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
+json3@bestiejs/json3#~3.3.1:
+  version "3.3.2"
+  resolved "https://codeload.github.com/bestiejs/json3/tar.gz/dec5c2a5dc723ff867caa32a81ed93ab814f7426"
+
 json5@^0.5.0:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
@@ -5049,6 +4878,10 @@ jsonparse@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
 
+jsplumb@sporritt/jsPlumb#1.7.4:
+  version "1.7.4"
+  resolved "https://codeload.github.com/sporritt/jsPlumb/tar.gz/43f6931055fb6eea3a368a7dd677bb6e9903b27b"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -5057,6 +4890,14 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
+
+jsurl@Sage/jsurl#v0.1.5:
+  version "0.1.5"
+  resolved "https://codeload.github.com/Sage/jsurl/tar.gz/b4f891f0fd1a63f4ada1cf5226260bb0345bd080"
+
+karma-read-json@pizzapanther/Karma-Read-JSON#~1.0.2:
+  version "0.0.0"
+  resolved "https://codeload.github.com/pizzapanther/Karma-Read-JSON/tar.gz/6b493ce9468e61cf77d258f965e0404682aa7f61"
 
 keygrip@~1.0.2:
   version "1.0.3"
@@ -5425,6 +5266,10 @@ lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, 
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
+lodash@lodash/lodash#~3.10.1:
+  version "3.10.1"
+  resolved "https://codeload.github.com/lodash/lodash/tar.gz/dfbd78f71de0550068fc82ce6e013d443e5037d7"
+
 lodash@~3.3.0:
   version "3.3.1"
   resolved "http://registry.npmjs.org/lodash/-/lodash-3.3.1.tgz#3b914d4a1bb27efcee076e0dfa58152018e2042e"
@@ -5515,6 +5360,14 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+matchmedia-ng@AnalogJ/matchmedia-ng#1.0.x:
+  version "1.0.8"
+  resolved "https://codeload.github.com/AnalogJ/matchmedia-ng/tar.gz/0ec0c21a1c7be8991dc7ecd8a825d95b183355db"
+
+matchmedia@paulirish/matchMedia.js#~0.2.0:
+  version "0.0.0"
+  resolved "https://codeload.github.com/paulirish/matchMedia.js/tar.gz/3c67d9bfb525b1b0549448aa27769a289ba5be98"
 
 math-random@^1.0.1:
   version "1.0.1"
@@ -5627,6 +5480,10 @@ merge-options@^1.0.0, merge-options@^1.0.1:
 merge@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
+
+messenger@HubSpot/messenger#~1.4.1:
+  version "1.4.2"
+  resolved "https://codeload.github.com/HubSpot/messenger/tar.gz/a3df9a62a1677af45fb130e226a6cbf98c0cecf0"
 
 methods@^1.0.1, methods@~1.1.2:
   version "1.1.2"
@@ -5800,9 +5657,17 @@ modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
 
+moment-duration-format@jsmreese/moment-duration-format#^1.3.0:
+  version "1.3.0"
+  resolved "https://codeload.github.com/jsmreese/moment-duration-format/tar.gz/8d0bf29a1eab180cb83d0f13f93f6974faedeafd"
+
 "moment@>=2.8.0 <3.0.0", moment@^2.10.2, moment@^2.10.6:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
+"moment@moment/moment#>=2.19.3 <3.0.0":
+  version "2.22.2"
+  resolved "https://codeload.github.com/moment/moment/tar.gz/2e2a5b35439665d4b0200143d808a7c26d6cd30f"
 
 mout@~0.9.0:
   version "0.9.1"
@@ -5907,6 +5772,14 @@ neo-async@^2.5.0:
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
+
+ng-at-internet@ovh-ux/ng-at-internet#^3.0.0:
+  version "3.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ng-at-internet/tar.gz/066b669c81c00f120bbffe00f74a245ac35dc3d5"
+
+ng-slide-down@TheRusskiy/ng-slide-down#1.2.x:
+  version "1.2.0"
+  resolved "https://codeload.github.com/TheRusskiy/ng-slide-down/tar.gz/efdb323572486b7922ae46a638f153c8d5ee9a2e"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -6278,6 +6151,134 @@ osenv@0, osenv@^0.1.4:
 osenv@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/osenv/-/osenv-0.0.3.tgz#cd6ad8ddb290915ad9e22765576025d411f29cb6"
+
+ovh-angular-a-disabled@ovh-ux/ovh-angular-a-disabled#^0.1.1:
+  version "0.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-a-disabled/tar.gz/8d8b104dbeb12cde43e643409d2cc0d484409422"
+
+ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0:
+  version "3.2.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/b63ed0d2dbefc915b0bb18dc426ea7b83cc00c50"
+
+ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
+  version "1.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
+
+ovh-angular-checkbox-table@ovh-ux/ovh-angular-checkbox-table#^0.1.2:
+  version "0.1.2"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-checkbox-table/tar.gz/93ccadcaf75ce66a76f71e1c083edd9e95d56cc4"
+  dependencies:
+    angular "1.3.x"
+    angular-sanitize "1.3.x"
+    jquery "~2.1.3"
+    lodash "~3.3.0"
+
+ovh-angular-doc-url@ovh-ux/ovh-angular-doc-url#^0.0.7:
+  version "0.0.7"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-doc-url/tar.gz/7bb91949aaa9ab7b671f72033fb83648f6197352"
+
+ovh-angular-form-flat@ovh-ux/ovh-angular-form-flat#^3.2.2:
+  version "3.2.2"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-form-flat/tar.gz/485e48349cf43202c45fb16fde933d025a7e3414"
+
+ovh-angular-jquery-ui-droppable@ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1:
+  version "0.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-jquery-ui-droppable/tar.gz/698cd378ccd376458c4d4eafa6925d3fb9ecadf2"
+
+ovh-angular-jsplumb@ovh-ux/ovh-angular-jsplumb#^3.0.5:
+  version "3.0.5"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-jsplumb/tar.gz/f63fae6bb7a2750f64a2938eb148dd0088891cec"
+
+ovh-angular-list-view@ovh-ux/ovh-angular-list-view#^0.1.5:
+  version "0.1.5"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-list-view/tar.gz/e0b8ed735bc2431f10f32f73d665d78da93dd77a"
+  dependencies:
+    angular-mock "^1.0.0"
+    less-plugin-remcalc "^0.0.1"
+
+ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1:
+  version "6.1.3"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/41940a11121a6686c2c70e1ecce29de90b34bc9c"
+
+ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0:
+  version "5.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-pagination-front/tar.gz/7b21072dfd25a8b1a5aece207a8e2f27e756b86c"
+
+ovh-angular-proxy-request@ovh-ux/ovh-angular-proxy-request#^0.1.0:
+  version "0.1.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-proxy-request/tar.gz/d68592b23ad4a8cea323cf0a2ce8158f997efb34"
+
+ovh-angular-q-allsettled@ovh-ux/ovh-angular-q-allSettled#^0.3.1:
+  version "0.3.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-q-allSettled/tar.gz/8019e225db83fa3b1d01650c6583b20d81d392c9"
+
+ovh-angular-responsive-page-switcher@ovh-ux/ovh-angular-responsive-page-switcher#^1.1.0:
+  version "1.1.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-page-switcher/tar.gz/6ee43608412234313ff9c8adb39db63b1965fb8b"
+  dependencies:
+    grunt-injector "^0.6.0"
+
+ovh-angular-responsive-popover@ovh-ux/ovh-angular-responsive-popover#^4.0.1:
+  version "4.0.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-popover/tar.gz/8645df39fae851071dac3b9286d55ce522ab1d59"
+
+ovh-angular-responsive-tabs@ovh-ux/ovh-angular-responsive-tabs#^4.0.0:
+  version "4.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-tabs/tar.gz/0aa90a9a3b281fc0422b33ba2ba121ab3a69b693"
+
+ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.2.0:
+  version "7.2.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/4e8dbb3dd95292d5b38e0c5bd546543d10974b81"
+
+ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2:
+  version "0.2.3"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-slider/tar.gz/eeb148ccf526848c5d60c10dcba9e79a14d5fa91"
+
+ovh-angular-sso-auth-modal-plugin@ovh-ux/ovh-angular-sso-auth-modal-plugin#^1.0.15:
+  version "1.0.16"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth-modal-plugin/tar.gz/30c7d85fc98367c5b5ee0442e0f9b88a07ea14d7"
+
+ovh-angular-sso-auth@ovh-ux/ovh-angular-sso-auth#^3.1.2:
+  version "3.1.5"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth/tar.gz/f6034d10a1539c0658d60506720d3c1218b3231f"
+
+ovh-angular-stop-event@ovh-ux/ovh-angular-stop-event#^0.1.0:
+  version "0.1.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-stop-event/tar.gz/c7c5eae2e4941a2c48722df3c77b49558775291e"
+
+ovh-angular-swimming-poll@ovh-ux/ovh-angular-swimming-poll#^3.0.1:
+  version "3.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-swimming-poll/tar.gz/dfb6d59e8748084171fc34b169401e6183e2fe38"
+
+ovh-angular-tail-logs@ovh-ux/ovh-angular-tail-logs#^1.1.2:
+  version "1.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-tail-logs/tar.gz/46b1735714dbf22c6d90fd2b469fd42904f9a5ff"
+
+ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0:
+  version "0.8.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-toaster/tar.gz/06d24889e94b8d816afee8e94185697cf68f2338"
+
+ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
+  version "0.3.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
+
+ovh-api-services@ovh-ux/ovh-api-services#^3.9.0:
+  version "3.14.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/e63c186f8fb39aaa4ca082fd9488f185dd85844c"
+  dependencies:
+    grunt-injector "^0.6.0"
+
+ovh-common-style@ovh-ux/ovh-common-style#^3.2.2:
+  version "3.2.2"
+  resolved "https://codeload.github.com/ovh-ux/ovh-common-style/tar.gz/cd9f7bea9240b7e2334ae5cd7e74529478b271d4"
+
+ovh-jquery-ui-draggable-ng@ovh-ux/ovh-jquery-ui-draggable-ng#^0.0.5:
+  version "0.0.5"
+  resolved "https://codeload.github.com/ovh-ux/ovh-jquery-ui-draggable-ng/tar.gz/1534d99081af3e8533049c20d940a50595bdc916"
+
+ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
+  version "1.0.2"
+  resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
 ovh-ui-angular@~2.17.1:
   version "2.17.2"
@@ -8098,6 +8099,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+uri.js@medialize/URI.js#~1.15.0:
+  version "1.15.2"
+  resolved "https://codeload.github.com/medialize/URI.js/tar.gz/c51da7e8c0bdf46ae926d2388d3032e2347c61db"
+
 urijs@^1.19.0:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.1.tgz#5b0ff530c0cbde8386f6342235ba5ca6e995d25a"
@@ -8188,6 +8193,10 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator-js@chriso/validator.js#~3.37.0:
+  version "3.37.0"
+  resolved "https://codeload.github.com/chriso/validator.js/tar.gz/415a54e82d4aef157b8926e77aabb70b342a4eb5"
 
 vary@^1.1.2, vary@~1.1.2:
   version "1.1.2"
@@ -8345,8 +8354,8 @@ webpack-sources@^1.1.0, webpack-sources@^1.2.0:
     source-map "~0.6.1"
 
 webpack@^4.17.1, webpack@^4.5.0:
-  version "4.19.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.19.0.tgz#252296c8af2d21c0994911007defdb3913a7bc66"
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.19.1.tgz#096674bc3b573f8756c762754366e5b333d6576f"
   dependencies:
     "@webassemblyjs/ast" "1.7.6"
     "@webassemblyjs/helper-module-context" "1.7.6"

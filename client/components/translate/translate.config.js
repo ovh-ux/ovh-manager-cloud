@@ -57,23 +57,6 @@ class TranslateDecoratorService {
         return ancestors;
     }
 
-    /**
-     * (ui-router) Automatically load translations on state change
-     *
-     * @example:
-     * $stateProvider
-     *    .state("foo-bar", {
-     *        url          : "/foo/bar",
-     *        templateUrl  : "app/foo/bar/bar.html",
-     *        controller   : "FooBarCtrl",
-     *        controllerAs : "FooBarCtrl"
-     *        translations : [
-     *            "app/common",
-     *            "app/foo",
-     *            "app/foo/bar"
-     *        ]
-     *    });
-     */
     add ($transitionsProvider, $stateProvider) {
 
         $stateProvider.decorator("translations", state => {

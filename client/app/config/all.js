@@ -1,5 +1,3 @@
-"use strict";
-
 angular.module("managerApp")
     .constant("TARGET", "EU")
     .constant("UNIVERSE", "CLOUD")

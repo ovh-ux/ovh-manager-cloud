@@ -1,7 +1,5 @@
-"use strict";
-
 angular.module("managerApp").constant("CONFIG", {
-    env: "production"
+    env: "development"
 })
 .constant("CONFIG_API", {
     apis : [
@@ -18,5 +16,6 @@ angular.module("managerApp").constant("CONFIG", {
             urlPrefix   : "/engine/apiv7"
         }
     ],
-    loginUrl : "https://www.ovh.com/auth"
+    loginUrl: "/auth",
+    userUrl: "engine/apiv6/me"
 });

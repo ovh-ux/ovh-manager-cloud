@@ -7,5 +7,5 @@ angular.module("managerApp")
         bindings: {
             snapshots: "<"
         },
-        translations: ["common", "cloud/project/billing/component/snapshot-list"]
+        translations: ["common"]
     });

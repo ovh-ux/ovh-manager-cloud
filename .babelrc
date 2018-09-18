@@ -1,6 +1,6 @@
 {
-    "presets": ["es2015"],
     "plugins": [
-        "transform-class-properties"
+        "babel-plugin-transform-class-properties",
+        "@babel/plugin-syntax-dynamic-import"
     ]
 }

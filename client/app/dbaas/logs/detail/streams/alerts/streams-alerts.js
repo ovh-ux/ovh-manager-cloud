@@ -10,7 +10,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            translations: ["common", "dbaas/logs"]
         })
         .state("dbaas.logs.detail.streams.alerts.home", {
             url: "/",
@@ -21,7 +21,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            translations: ["common", "dbaas/logs"]
         })
         .state("dbaas.logs.detail.streams.alerts.add", {
             url: "/add/:type",
@@ -32,7 +32,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            translations: ["common", "dbaas/logs"]
         })
         .state("dbaas.logs.detail.streams.alerts.edit", {
             url: "/:alertId",
@@ -43,6 +43,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            translations: ["common", "dbaas/logs"]
         });
 });
