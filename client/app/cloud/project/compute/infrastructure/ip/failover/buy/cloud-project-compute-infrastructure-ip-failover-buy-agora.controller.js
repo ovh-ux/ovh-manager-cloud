@@ -90,7 +90,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFail
                 value: self.instance.id
             }]
         };
-        $window.open(`https://ovh.us/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank");
+        $window.open(`https://us.ovhcloud.com/order/express/#/express/review?products=${JSURL.stringify([order])}`, "_blank");
         $uibModalInstance.dismiss();
     };
 
