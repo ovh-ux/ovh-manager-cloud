@@ -12,7 +12,7 @@
                     data-ng-disabled="MetricsTokenCtrl.actions.loading"
                     data-translate="metrics_token_add_token"
                     data-ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsTokenCtrl.serviceName })"></button>
-                <oui-spinner data-ng-if="MetricsTokenCtrl.loading"></oui-spinner>                
+                <oui-spinner data-ng-if="MetricsTokenCtrl.loading"></oui-spinner>
             </extra-top>
             <oui-column data-title=":: 'metrics_table_name' | translate" data-sortable="asc" data-searchable data-property="description" data-type="string">
                     <span data-ng-bind="$row.description || '-'"></span>
@@ -23,7 +23,7 @@
                 </span>
                 <oui-dropdown data-ng-if="$row.labels.length > 2" arrow>
                     <span class="oui-chip oui-chip-labels__button"
-                        data-ng-bind="MetricsTokenCtrl.displayRemainingLabels($row.labels.length - 2)"
+                        data-ng-bind="MetricsTokenCtrl.constructor.displayRemainingLabels($row.labels.length - 2)"
                         oui-dropdown-trigger>
                     </span>
                     <oui-dropdown-content>
