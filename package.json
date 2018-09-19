@@ -142,7 +142,7 @@
   },
   "scripts": {
     "start": "webpack-serve",
-    "build": "webpack",
+    "build": "webpack --env.region=EU",
     "test": "eslint ./client",
     "lint": "eslint --fix --quiet ./client"
   },

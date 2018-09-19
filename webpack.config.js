@@ -28,6 +28,10 @@ const folder = './client/app';
 const bundles = {};
 
 fs.readdirSync(folder).forEach((file) => {
+  // skip config folder, it'll be added later depending on current environment
+  if (file === 'config') {
+    return;
+  }
   const stats = fs.lstatSync(`${folder}/${file}`);
   if (stats.isDirectory()) {
     const jsFiles = glob.sync(`${folder}/${file}/**/!(*.spec|*.mock).js`);
@@ -37,21 +41,24 @@ fs.readdirSync(folder).forEach((file) => {
   }
 });
 
-module.exports = merge(config, {
-  entry: _.assign({
-    main: './client/app/index.js',
-    components: glob.sync('./client/components/**/!(*.spec|*.mock).js'),
-    config: ['./client/app/config/all.js', `./client/app/config/${process.env.WEBPACK_SERVE ? 'dev' : 'prod'}.js`],
-  }, bundles),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-  },
-  /*
-  resolve: {
-    alias: {
-      jquery: path.resolve(__dirname, 'node_modules/jquery'),
+module.exports = env => {
+  env.region = env.region || "EU";
+  bundles.config = [
+    `./client/app/config/all.${env.region}.js`,
+    `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`,
+  ];
+  return merge(config, {
+    entry: _.assign({
+      main: './client/app/index.js',
+      components: glob.sync('./client/components/**/!(*.spec|*.mock).js'),
+      config: [
+        `./client/app/config/all.${env.region}.js`,
+        `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`
+      ],
+    }, bundles),
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: '[name].bundle.js',
     },
-  },
-  */
-});
+  });
+};
