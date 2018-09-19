@@ -137,11 +137,11 @@
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-merge": "^4.1.4",
-    "webpack-serve": "^2.0.2",
+    "webpack-dev-server": "^3.1.8",
     "webpackbar": "^2.6.3"
   },
   "scripts": {
-    "start": "webpack-serve",
+    "start": "webpack-dev-server --env.region=EU",
     "build": "webpack --env.region=EU",
     "test": "eslint ./client",
     "lint": "eslint --fix --quiet ./client"

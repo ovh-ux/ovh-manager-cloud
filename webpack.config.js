@@ -3,26 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const _ = require('lodash');
-
-/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
-const { config } = require('@ovh-ux/manager-webpack-config')({
-  template: './client/index.html',
-  basePath: './client',
-  lessPath: [
-    './client/app',
-    './client/components',
-    './node_modules',
-  ],
-  root: path.resolve(__dirname, './client/app'),
-  assets: {
-    files: [
-      { from: path.resolve(__dirname, './client/assets'), to: 'assets' },
-      { from: path.resolve(__dirname, './node_modules/angular-i18n'), to: 'angular-i18n' },
-      { from: path.resolve(__dirname, './client/**/*.html'), context: 'client' },
-    ],
-  },
-});
-/* eslint-enable */
+const webpackConfig = require('@ovh-ux/manager-webpack-config');
 
 const folder = './client/app';
 const bundles = {};
@@ -41,12 +22,32 @@ fs.readdirSync(folder).forEach((file) => {
   }
 });
 
-module.exports = env => {
-  env.region = env.region || "EU";
+module.exports = (env = {}) => {
   bundles.config = [
     `./client/app/config/all.${env.region}.js`,
     `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`,
   ];
+
+  /* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
+  const { config } = webpackConfig({
+    template: './client/index.html',
+    basePath: './client',
+    lessPath: [
+      './client/app',
+      './client/components',
+      './node_modules',
+    ],
+    root: path.resolve(__dirname, './client/app'),
+    assets: {
+      files: [
+        { from: path.resolve(__dirname, './client/assets'), to: 'assets' },
+        { from: path.resolve(__dirname, './node_modules/angular-i18n'), to: 'angular-i18n' },
+        { from: path.resolve(__dirname, './client/**/*.html'), context: 'client' },
+      ],
+    },
+  }, env);
+  /* eslint-enable */
+
   return merge(config, {
     entry: _.assign({
       main: './client/app/index.js',
