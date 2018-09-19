@@ -67,16 +67,22 @@ build: build-eu build-ca build-us
 
 build-eu:
 	$(YARN) build:eu
+	mkdir dist/client
+	cd dist && ls -1 | grep -v ^client$ | xargs -I{} mv {} client && cd ..
 	$(MV) $(DIST_DIR) $(DIST_EU_DIR)
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
 build-ca:
 	$(YARN) build:ca
+	mkdir dist/client
+	cd dist && ls -1 | grep -v ^client$ | xargs -I{} mv {} client && cd ..
 	$(MV) $(DIST_DIR) $(DIST_CA_DIR)
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
 build-us:
 	$(YARN) build:us
+	mkdir dist/client
+	cd dist && ls -1 | grep -v ^client$ | xargs -I{} mv {} client && cd ..
 	$(MV) $(DIST_DIR) $(DIST_US_DIR)
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
 
