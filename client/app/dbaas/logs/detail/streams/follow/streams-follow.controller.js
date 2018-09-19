@@ -33,9 +33,12 @@ class LogsStreamsFollowCtrl {
       loaderFunction: () => this.LogsStreamsFollowService
         .getTestClientUrls(this.$stateParams.serviceName)
         .then((serviceInfo) => {
-          this.rfc5424Url = this.UrlHelper.findUrl(serviceInfo, this.LogsConstants.RFC_URL, false);
-          this.ltsvUrl = this.UrlHelper.findUrl(serviceInfo, this.LogsConstants.LTSV_URL, false);
-          this.gelfUrl = this.UrlHelper.findUrl(serviceInfo, this.LogsConstants.GELF_URL, false);
+          this.rfc5424Url = this.UrlHelper.constructor
+            .findUrl(serviceInfo, this.LogsConstants.RFC_URL, false);
+          this.ltsvUrl = this.UrlHelper.constructor
+            .findUrl(serviceInfo, this.LogsConstants.LTSV_URL, false);
+          this.gelfUrl = this.UrlHelper.constructor
+            .findUrl(serviceInfo, this.LogsConstants.GELF_URL, false);
         }),
     });
     this.testClientUrls.load();

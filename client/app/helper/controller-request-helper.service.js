@@ -1,71 +1,72 @@
 class ControllerRequestHelper {
-    constructor ($q) {
-        this.$q = $q;
+  constructor($q) {
+    this.$q = $q;
+  }
+
+  getHashLoader(config) {
+    const loader = {
+      loading: false,
+      data: {},
+      hasErrors: false,
+    };
+
+    return this.getLoader(loader, config);
+  }
+
+  getArrayLoader(config) {
+    const loader = {
+      loading: false,
+      data: undefined,
+      promise: undefined,
+      hasErrors: false,
+    };
+
+    return this.getLoader(loader, config);
+  }
+
+  getLoader(initialData = {}, configParam) {
+    const loader = initialData;
+    let config = configParam;
+
+    if (_.isFunction(config)) {
+      config = {
+        loaderFunction: config,
+      };
     }
 
-    getHashLoader (config) {
-        const loader = {
-            loading: false,
-            data: {},
-            hasErrors: false
-        };
+    loader.load = () => {
+      if (_.isArray(initialData.data) || _.keys(initialData.data).length === 0) {
+        loader.loading = true;
+      }
+      const promise = this.$q.when(config.loaderFunction())
+        .then((response) => {
+          loader.data = response.data || response;
+          loader.hasErrors = false;
 
-        return this.getLoader(loader, config);
-    }
+          if (config.successHandler) {
+            config.successHandler(response);
+          }
 
-    getArrayLoader (config) {
-        const loader = {
-            loading: false,
-            data: undefined,
-            promise: undefined,
-            hasErrors: false
-        };
+          return response;
+        })
+        .catch((response) => {
+          loader.hasErrors = true;
 
-        return this.getLoader(loader, config);
-    }
+          if (config.errorHandler) {
+            config.errorHandler(response);
+          }
 
-    getLoader (initialData = {}, config) {
-        const loader = initialData;
+          return this.$q.reject(response);
+        })
+        .finally(() => {
+          loader.loading = false;
+        });
+      loader.promise = promise;
+      return promise;
+    };
 
-        if (_.isFunction(config)) {
-            config = {
-                loaderFunction: config
-            };
-        }
-
-        loader.load = () => {
-            if (_.isArray(initialData.data) || _.keys(initialData.data).length === 0) {
-                loader.loading = true;
-            }
-            const promise = this.$q.when(config.loaderFunction())
-                .then(response => {
-                    loader.data = response.data || response;
-                    loader.hasErrors = false;
-
-                    if (config.successHandler) {
-                        config.successHandler(response);
-                    }
-
-                    return response;
-                })
-                .catch(response => {
-                    loader.hasErrors = true;
-
-                    if (config.errorHandler) {
-                        config.errorHandler(response);
-                    }
-
-                    return this.$q.reject(response);
-                })
-                .finally(() => {
-                    loader.loading = false;
-                });
-            loader.promise = promise;
-            return promise;
-        };
-
-        return loader;
-    }
+    return loader;
+  }
 }
 
-angular.module("managerApp").service("ControllerRequestHelper", ControllerRequestHelper);
+angular.module('managerApp').service('ControllerRequestHelper', ControllerRequestHelper);

@@ -248,7 +248,7 @@ class LogsDashboardsService {
    * @memberof LogsDashboardsService
    */
   getDashboardGraylogUrl(aapiDashboard) {
-    const url = this.UrlHelper.findUrl(aapiDashboard, this.LogsConstants.GRAYLOG_WEBUI);
+    const url = this.UrlHelper.constructor.findUrl(aapiDashboard, this.LogsConstants.GRAYLOG_WEBUI);
     if (!url) {
       this.LogsHelperService.handleError('logs_dashboards_get_graylog_url_error', {}, { dashboardName: aapiDashboard.info.title });
     }

@@ -284,7 +284,7 @@ class LogsStreamsService {
    * @memberof LogsStreamsService
    */
   getStreamGraylogUrl(stream) {
-    const url = this.UrlHelper.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
+    const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
     if (!url) {
       this.CloudMessage.error(this.$translate.instant('logs_streams_get_graylog_url_error', { stream: stream.info.title }));
     }
@@ -301,7 +301,7 @@ class LogsStreamsService {
   copyStreamToken(stream) {
     const token = this.getStreamToken(stream);
     if (token) {
-      const error = this.ControllerHelper.copyToClipboard(token);
+      const error = this.ControllerHelper.constructor.copyToClipboard(token);
       if (error) {
         this.CloudMessage.error(this.$translate.instant('logs_streams_copy_token_error', {
           stream: stream.info.title,

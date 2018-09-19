@@ -20,7 +20,7 @@
         <div data-ng-repeat="task in $ctrl.tasks.data track by $index" class="compute-loadbalancer-configure-tasks">
             {{task.action}} :
             <oui-progress>
-                <oui-progress-bar data-type="{{ $ctrl.ServiceHelper.getTaskProgressType(task.status) }}" data-value="task.progress"></oui-progress-bar>
+                <oui-progress-bar data-type="{{ $ctrl.ServiceHelper.constructor.getTaskProgressType(task.status) }}" data-value="task.progress"></oui-progress-bar>
             </oui-progress>
         </div>
     </div>

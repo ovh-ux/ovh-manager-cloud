@@ -10,7 +10,7 @@
         <oui-column data-title="'iplb_task_list_col_progress' | translate" data-property="progress" data-sortable
             class="oui-table__cell_component">
             <oui-progress data-compact>
-                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.getTaskProgressType($row.status) }}" data-value="$row.progress">
+                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.constructor.getTaskProgressType($row.status) }}" data-value="$row.progress">
                 </oui-progress-bar>
             </oui-progress>
         </oui-column>

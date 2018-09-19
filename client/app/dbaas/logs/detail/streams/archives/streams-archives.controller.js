@@ -201,7 +201,7 @@ class LogsStreamsArchivesCtrl {
     this.archiveDownload.load()
       .then((urlInfo) => {
         this.removeNotification(archive);
-        this.ControllerHelper.downloadUrl(urlInfo.url);
+        this.ControllerHelper.constructor.downloadUrl(urlInfo.url);
       });
   }
 

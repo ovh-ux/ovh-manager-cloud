@@ -291,7 +291,7 @@ class LogsAliasesService {
   }
 
   getElasticSearchUrl(alias) {
-    const url = this.UrlHelper.findUrl(alias, this.LogsConstants.ELASTICSEARCH_API_URL);
+    const url = this.UrlHelper.constructor.findUrl(alias, this.LogsConstants.ELASTICSEARCH_API_URL);
     if (!url) {
       this.CloudMessage.error(this.$translate.instant('logs_aliases_get_elasticsearch_url_error', { alias: alias.info.name }));
     }
