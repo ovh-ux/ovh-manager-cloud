@@ -1,92 +1,80 @@
-angular.module("managerApp").service("deskaasSidebar", function ($rootScope, OvhApiDeskaasService, $q, SidebarMenu) {
-    "use strict";
+angular.module('managerApp').service('deskaasSidebar', function ($rootScope, OvhApiDeskaasService, $q, SidebarMenu) {
+  const self = this;
 
-    var self = this;
-
-    /*====================================
+  /*= ===================================
       =            SECTION LOAD            =
-      ====================================*/
+      ==================================== */
 
-    /*----------  API CALL  ----------*/
+  /* ----------  API CALL  ----------*/
 
-    self.getServices = function () {
+  self.getServices = function () {
+    return $q((resolve) => {
+      OvhApiDeskaasService.v6().query()
+        .$promise
+        .then((serviceNames) => {
+          const requests = [];
 
-        return $q(function (resolve) {
+          angular.forEach(
+            serviceNames,
+            (serviceName) => {
+              requests
+                .push(
+                  OvhApiDeskaasService.v6()
+                    .get({ serviceName })
+                    .$promise
+                    .then(service => service, () => ({ serviceName, alias: '', error: true })),
+                );
+            },
+          );
 
-            OvhApiDeskaasService.v6().query()
-                .$promise
-                .then(function (serviceNames) {
-
-                    var requests = [];
-
-                    angular.forEach(
-                        serviceNames,
-                        function (serviceName) {
-
-                            requests
-                                .push(
-                                    OvhApiDeskaasService.v6()
-                                        .get({ serviceName: serviceName })
-                                        .$promise
-                                        .then(function (service) {
-                                            return service;
-                                        }, function () {
-                                            // Quick fix for prod. Plz handle 404 and 460
-                                            return { serviceName: serviceName, alias: "", error: true };
-                                        })
-                                );
-                        });
-
-                    $q.all(requests).then(function (elements) {
-                        resolve(elements);
-                    });
-
-                })
-                .catch(function () {
-                    resolve();
-                });
+          $q.all(requests).then((elements) => {
+            resolve(elements);
+          });
+        })
+        .catch(() => {
+          resolve();
         });
-    };
+    });
+  };
 
-    self.getEntryMenu = function (service) {
-        var id = "deskaas_" + service.serviceName;
-        var title = service.alias === "noAlias" || service.alias === "" ? service.serviceName : service.alias + " (" + service.serviceName + ")";
-        return { id: id, title: title };
-    };
+  self.getEntryMenu = function (service) {
+    const id = `deskaas_${service.serviceName}`;
+    const title = service.alias === 'noAlias' || service.alias === '' ? service.serviceName : `${service.alias} (${service.serviceName})`;
+    return { id, title };
+  };
 
-    /* */
-    self.updateItem = function (service) {
-        var entry = self.getEntryMenu(service);
-        if (self.section) {
-            SidebarMenu.updateItemDisplay({
-                title: entry.title
-            }, entry.id, self.section.id);
-        }
-    };
+  /* */
+  self.updateItem = function (service) {
+    const entry = self.getEntryMenu(service);
+    if (self.section) {
+      SidebarMenu.updateItemDisplay({
+        title: entry.title,
+      }, entry.id, self.section.id);
+    }
+  };
 
-    /*----------  FILL  ----------*/
+  /* ----------  FILL  ----------*/
 
-    self.loadIntoSection = function (section, services) {
-        self.section = section;
-        services = services.sort();
-        //For each project, add an item
-        angular.forEach(services, function (service) {
-            if (!service.error) {
-                var entry = self.getEntryMenu(service);
-                SidebarMenu.addMenuItem({
-                    id: entry.id,
-                    title: entry.title,
-                    // icon: "dedicated-cloud2",
-                    state: "deskaas.details",
-                    stateParams: {
-                        serviceName: service.serviceName
-                    }
-                }, section);
-            }
-        });
-    };
+  self.loadIntoSection = function (section, servicesParams) {
+    let services = servicesParams;
+    self.section = section;
+    services = services.sort();
+    // For each project, add an item
+    angular.forEach(services, (service) => {
+      if (!service.error) {
+        const entry = self.getEntryMenu(service);
+        SidebarMenu.addMenuItem({
+          id: entry.id,
+          title: entry.title,
+          // icon: "dedicated-cloud2",
+          state: 'deskaas.details',
+          stateParams: {
+            serviceName: service.serviceName,
+          },
+        }, section);
+      }
+    });
+  };
 
-    /*-----  End of SECTION LOAD  ------*/
-
+  /* -----  End of SECTION LOAD  ------*/
 });
-
