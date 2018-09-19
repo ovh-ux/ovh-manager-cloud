@@ -3,8 +3,6 @@ client/app/config/*/custom.constants.js
 tools/keys/*
 Messages_*_*.json
 .tmp
-client/app/app.less
-client/index.html
 karma.conf.js
 test-reports/
 test-reports.tar.gz
