@@ -140,7 +140,12 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env.region=EU",
-    "build": "webpack --env.region=EU",
+    "start:eu": "webpack-dev-server --env.region=EU",
+    "start:ca": "webpack-dev-server --env.region=CA",
+    "start:us": "webpack-dev-server --env.region=US",
+    "build:eu": "webpack --env.region=EU --env.production",
+    "build:ca": "webpack --env.region=CA --env.production",
+    "build:us": "webpack --env.region=US --env.production",
     "test": "eslint ./client",
     "lint": "eslint --fix --quiet ./client"
   },
