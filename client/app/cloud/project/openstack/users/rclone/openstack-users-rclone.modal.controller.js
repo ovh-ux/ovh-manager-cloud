@@ -30,7 +30,7 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
 
     confirm () {
         return this.CloudProjectOpenstackUsersRcloneService.getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
-            .then(response => this.ControllerHelper.downloadContent({
+            .then(response => this.ControllerHelper.constructor.downloadContent({
                 content: response.content,
                 fileName: "rclone.sh"
             }))

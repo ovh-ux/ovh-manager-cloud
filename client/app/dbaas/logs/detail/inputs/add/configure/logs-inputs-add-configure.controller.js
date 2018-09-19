@@ -63,11 +63,11 @@ class LogsInputsAddConfigureCtrl {
   }
 
   initLogstash(configuration) {
-    this.configuration.logstash.inputSection = this.ControllerHelper
+    this.configuration.logstash.inputSection = this.ControllerHelper.constructor
       .htmlDecode(configuration.inputSection);
-    this.configuration.logstash.filterSection = this.ControllerHelper
+    this.configuration.logstash.filterSection = this.ControllerHelper.constructor
       .htmlDecode(configuration.filterSection);
-    this.configuration.logstash.patternSection = this.ControllerHelper
+    this.configuration.logstash.patternSection = this.ControllerHelper.constructor
       .htmlDecode(configuration.patternSection);
   }
 

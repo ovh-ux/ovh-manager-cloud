@@ -1,55 +1,50 @@
-"use strict";
-
-angular.module("managerApp")
-    .controller("DeskaasConfirmTerminateCtrl",
+angular.module('managerApp')
+  .controller('DeskaasConfirmTerminateCtrl',
     function ($scope, $location, $uibModalInstance, token) {
+      const self = this;
 
-        var self = this;
+      self.values = {
+        token,
+        reason: '',
+        commentary: '',
+      };
 
-        self.values = {
-            token: token,
-            reason: "",
-            commentary: "",
-        };
+      self.flags = {
+        init: false,
+      };
 
-        self.flags = {
-            init : false
-        };
+      function removeConfirmationParams() {
+        if ($location.$$search.action) {
+          delete $location.$$search.action; // eslint-disable-line
+        }
+        if ($location.$$search.token) {
+          delete $location.$$search.token; // eslint-disable-line
+        }
+        // Do not reload url
+        $location.$$compose();
+      }
 
-        function removeConfirmationParams () {
-            if ($location.$$search.action) {
-                delete $location.$$search.action;
-            }
-            if ($location.$$search.token) {
-                delete $location.$$search.token;
-            }
-            // Do not reload url
-            $location.$$compose();
+      self.cancel = function () {
+        // clear params needed to display confirmation
+        removeConfirmationParams();
+        // Remove popup
+        $uibModalInstance.dismiss('cancel');
+      };
+
+      self.ok = function () {
+        // clear params needed to display confirmation
+        removeConfirmationParams();
+        if (!self.values.token && !self.values.reason) {
+          $uibModalInstance.dismiss('cancel');
+          return;
         }
 
-        self.cancel = function () {
-            // clear params needed to display confirmation
-            removeConfirmationParams();
-            // Remove popup
-            $uibModalInstance.dismiss("cancel");
-        };
+        $uibModalInstance.close(self.values);
+      };
 
-        self.ok = function () {
-            // clear params needed to display confirmation
-            removeConfirmationParams();
-            if (!self.values.token && !self.values.reason) {
-                $uibModalInstance.dismiss("cancel");
-                return;
-            }
+      function init() {
+        self.flags.init = false;
+      }
 
-            $uibModalInstance.close(self.values);
-        };
-
-        function init () {
-            self.flags.init = false;
-
-        }
-
-        init();
-
+      init();
     });

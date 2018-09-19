@@ -1,11 +1,15 @@
 {
     "extends": "airbnb-base",
+    "plugins": ["angular"],
     "env": {
-        "browser": true
+        "browser": true,
+        "jasmine": true
     },
     "globals": {
         "_": true,
         "angular": true,
-        "moment": true
+        "inject": true,
+        "moment": true,
+        "JSURL": true
     }
 }
