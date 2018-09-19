@@ -2,6 +2,7 @@
     "extends": "airbnb-base",
     "globals": {
         "_": true,
-        "angular": true
+        "angular": true,
+        "moment": true
     }
 }
