@@ -1,11 +1,11 @@
 class LogsListHeaderCtrl {
-    constructor (LogsHelperService) {
-        this.LogsHelperService = LogsHelperService;
-    }
+  constructor(LogsHelperService) {
+    this.LogsHelperService = LogsHelperService;
+  }
 
-    $onInit () {
-        this.guides = this.LogsHelperService.getGuides();
-    }
+  $onInit() {
+    this.guides = this.LogsHelperService.getGuides();
+  }
 }
 
-angular.module("managerApp").controller("LogsListHeaderCtrl", LogsListHeaderCtrl);
+angular.module('managerApp').controller('LogsListHeaderCtrl', LogsListHeaderCtrl);

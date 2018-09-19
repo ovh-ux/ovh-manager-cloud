@@ -1,7 +1,7 @@
 class LogsStreamsCtrl {
-    constructor ($stateParams) {
-        this.$stateParams = $stateParams;
-    }
+  constructor($stateParams) {
+    this.$stateParams = $stateParams;
+  }
 }
 
-angular.module("managerApp").controller("LogsStreamsCtrl", LogsStreamsCtrl);
+angular.module('managerApp').controller('LogsStreamsCtrl', LogsStreamsCtrl);
