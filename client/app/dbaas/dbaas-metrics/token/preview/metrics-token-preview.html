@@ -3,7 +3,7 @@
     data-on-dismiss="$ctrl.close()">
     <dl class="preview-list preview-list_no-margin">
         <dt class="preview-list__term" data-translate="metrics_table_create_date"></dt>
-        <dd class="preview-list__definition" data-ng-bind="::$ctrl.displayDate($ctrl.token.createdAt)"></dd>
+        <dd class="preview-list__definition" data-ng-bind="::$ctrl.constructor.displayDate($ctrl.token.createdAt)"></dd>
         <dt class="preview-list__term" data-translate="metrics_table_token"></dt>
         <dd class="preview-list__definition">
             <textarea class="oui-input oui-input_m" data-ng-bind="::$ctrl.token.access"></textarea>
@@ -23,6 +23,6 @@
         <dt class="preview-list__term" data-translate="metrics_token_id"></dt>
         <dd class="preview-list__definition" data-ng-bind="::$ctrl.token.id"></dd>
         <dt class="preview-list__term" data-translate="metrics_table_expiry_date"></dt>
-        <dd class="preview-list__definition" data-ng-bind="::$ctrl.displayDate($ctrl.token.expiryAt)"></dd>
+        <dd class="preview-list__definition" data-ng-bind="::$ctrl.constructor.displayDate($ctrl.token.expiryAt)"></dd>
     </dl>
 </oui-modal>
