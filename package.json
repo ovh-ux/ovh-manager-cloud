@@ -144,7 +144,7 @@
     "start": "webpack-serve",
     "build": "webpack",
     "test": "eslint ./client",
-    "lint": "eslint --fix ./client"
+    "lint": "eslint --fix --quiet ./client"
   },
   "config": {
     "commitizen": {

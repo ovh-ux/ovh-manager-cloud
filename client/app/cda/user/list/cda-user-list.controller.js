@@ -1,82 +1,81 @@
-angular.module("managerApp")
-    .controller("CdaUserListCtrl", function ($q, $state, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
-        "use strict";
+angular.module('managerApp')
+  .controller('CdaUserListCtrl', function ($q, $state, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
+    const self = this;
 
-        const self = this;
+    self.datas = {
+      users: undefined,
+    };
 
-        self.datas = {
-            users: undefined
-        };
+    self.options = {
+      maxPoolDisplay: 4,
+    };
 
-        self.options = {
-            maxPoolDisplay: 4
-        };
+    self.modals = {
+      add: {
+        templateUrl: 'app/cda/user/add/cda-user-add.html',
+        controller: 'CdaUserAddCtrl',
+      },
+      remove: {
+        templateUrl: 'app/cda/user/delete/cda-user-delete.html',
+        controller: 'CdaUserDeleteCtrl',
+      },
+    };
 
-        self.modals = {
-            add: {
-                templateUrl: "app/cda/user/add/cda-user-add.html",
-                controller: "CdaUserAddCtrl"
-            },
-            remove: {
-                templateUrl: "app/cda/user/delete/cda-user-delete.html",
-                controller: "CdaUserDeleteCtrl"
-            }
-        };
+    self.loading = true;
 
-        self.loading = true;
+    function initUsers() {
+      return CdaService.getUsers($stateParams).then((users) => {
+        self.datas.users = users;
+        return users;
+      });
+    }
 
-        function init () {
-            initUsers()
-                .catch(error => {
-                    displayError(error);
-                })
-                .finally(() => {
-                    self.loading = false;
-                });
-        }
+    function displayError(error) {
+      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+    }
 
-        function initUsers () {
-            return CdaService.getUsers($stateParams).then(users => {
-                self.datas.users = users;
-                return users;
-            });
-        }
+    function init() {
+      initUsers()
+        .catch((error) => {
+          displayError(error);
+        })
+        .finally(() => {
+          self.loading = false;
+        });
+    }
 
-        self.openAddModal = function () {
-            self.openModal(self.modals.add.templateUrl, self.modals.add.controller);
-        };
 
-        self.openDeleteModal = function (user) {
-            self.openModal(self.modals.remove.templateUrl, self.modals.remove.controller, user);
-        };
+    self.openAddModal = function () {
+      self.openModal(self.modals.add.templateUrl, self.modals.add.controller);
+    };
 
-        self.openModal = function (template, controller, params) {
-            const modal = $uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: template,
-                controller,
-                controllerAs: controller,
-                resolve: {
-                    items: () => params
-                }
-            });
+    self.openDeleteModal = function (user) {
+      self.openModal(self.modals.remove.templateUrl, self.modals.remove.controller, user);
+    };
 
-            modal.result.then(() => {
-                initUsers();
-            });
-        };
+    self.openModal = function (template, controller, params) {
+      const modal = $uibModal.open({
+        windowTopClass: 'cui-modal',
+        templateUrl: template,
+        controller,
+        controllerAs: controller,
+        resolve: {
+          items: () => params,
+        },
+      });
 
-        self.viewPermissions = function (name) {
-            return $state.go("paas.cda.cda-details.cda-user.cda-user-details.cda-user-details-permission-list", { userName: name });
-        };
+      modal.result.then(() => {
+        initUsers();
+      });
+    };
 
-        self.isTruncatedPoolArray = function (poolArray, index) {
-            return poolArray.length - 1 > index;
-        };
+    self.viewPermissions = function (name) {
+      return $state.go('paas.cda.cda-details.cda-user.cda-user-details.cda-user-details-permission-list', { userName: name });
+    };
 
-        init();
+    self.isTruncatedPoolArray = function (poolArray, index) {
+      return poolArray.length - 1 > index;
+    };
 
-        function displayError (error) {
-            CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
-        }
-    });
+    init();
+  });
