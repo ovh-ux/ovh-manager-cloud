@@ -41,8 +41,8 @@ class LogsOptionsService {
       .then((response) => {
         _.each(response, option => this.transformOption(option));
         return response.sort((optionA, optionB) => (optionA.type === optionB.type
-          ? this.ControllerHelper.naturalCompare(optionA.detail, optionB.detail)
-          : this.ControllerHelper.naturalCompare(optionA.type, optionB.type)));
+          ? this.ControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
+          : this.ControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
       })
       .catch(err => this.LogsHelperService.handleError('logs_options_options_loading_error', err, {}));
   }
@@ -152,8 +152,8 @@ class LogsOptionsService {
           option => this.transformSubscribedOption(option, optionsCountMap),
         )
           .sort((optionA, optionB) => (optionA.type === optionB.type
-            ? this.ControllerHelper.naturalCompare(optionA.detail, optionB.detail)
-            : this.ControllerHelper.naturalCompare(optionA.type, optionB.type)));
+            ? this.ControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
+            : this.ControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
       });
   }
 
@@ -178,7 +178,7 @@ class LogsOptionsService {
         }, {});
         return Object.keys(groupedOptionsMap)
           .map(groupedOptionsName => groupedOptionsMap[groupedOptionsName])
-          .sort((optionA, optionB) => this.ControllerHelper.naturalCompare(
+          .sort((optionA, optionB) => this.ControllerHelper.constructor.naturalCompare(
             optionA.type,
             optionB.type,
           ));

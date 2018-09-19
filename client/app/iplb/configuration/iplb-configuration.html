@@ -17,7 +17,7 @@
             sortable
             class="oui-table__cell_component">
             <oui-progress data-compact data-ng-show="$row.task">
-                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.getTaskProgressType($row.task.status) }}" data-value="$row.task.progress">
+                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.constructor.getTaskProgressType($row.task.status) }}" data-value="$row.task.progress">
                 </oui-progress-bar>
             </oui-progress>
         </column>

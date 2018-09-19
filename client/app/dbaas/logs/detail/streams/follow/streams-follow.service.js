@@ -87,11 +87,11 @@ class LogsStreamsFollowService {
    * @param {object} stream
    */
   copyWebSocketAddress(stream) {
-    const url = this.UrlHelper.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
+    const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
     if (!url) {
       this.CloudMessage.error(this.$translate.instant('logs_streams_follow_get_websocket_error', { stream: stream.info.title }));
     } else {
-      const error = this.ControllerHelper.copyToClipboard(url);
+      const error = this.ControllerHelper.constructor.copyToClipboard(url);
       if (error) {
         this.CloudMessage.error(this.$translate.instant('logs_streams_follow_copy_websocket_error', {
           stream: stream.info.title,
@@ -162,7 +162,7 @@ class LogsStreamsFollowService {
       const now = new Date();
       const dateFormatted = now.toISOString();
       const command = `echo -e '<6>1 ${dateFormatted} 149.202.165.20 example.org - - [exampleSDID@8485 user_id="9001"  some_info="foo" some_metric_num="42.0" X-OVH-TOKEN="${token}"] A short RFC 5424 message that helps you identify what is going on'\\n | openssl s_client -quiet -no_ign_eof  -connect ${rfc5424Url}`;
-      const error = this.ControllerHelper.copyToClipboard(command);
+      const error = this.ControllerHelper.constructor.copyToClipboard(command);
       this.handleCommandCopyStatus(error, stream, command, this.testTypeEnum.RFC5424);
     }
   }
@@ -179,7 +179,7 @@ class LogsStreamsFollowService {
       const now = new Date();
       const dateFormatted = now.toISOString();
       const command = `echo -e 'X-OVH-TOKEN:${token}\\thost:example.org\\ttime:${dateFormatted}\\tmessage:A short LTSV message that helps you identify what is going on\\tfull_message:Backtrace here more stuff\\tlevel:1\\tuser_id:9001\\tsome_info:foo\\tsome_metric_num:42.0\\0' | openssl s_client -quiet -no_ign_eof  -connect ${ltsvUrl}`;
-      const error = this.ControllerHelper.copyToClipboard(command);
+      const error = this.ControllerHelper.constructor.copyToClipboard(command);
       this.handleCommandCopyStatus(error, stream, command, this.testTypeEnum.LTSV);
     }
   }
@@ -196,7 +196,7 @@ class LogsStreamsFollowService {
       const now = new Date();
       const timestamp = Math.round(now.getTime() / 1000);
       const command = `echo -e '{"version":"1.1", "host": "example.org", "short_message": "A short GELF message that helps you identify what is going on", "full_message": "Backtrace here more stuff", "timestamp": ${timestamp}, "level": 1, "_user_id": 9001, "_some_info": "foo", "some_metric_num": 42.0, "_X-OVH-TOKEN":"${token}"}\\0' | openssl s_client -quiet -no_ign_eof  -connect ${gelfUrl}`;
-      const error = this.ControllerHelper.copyToClipboard(command);
+      const error = this.ControllerHelper.constructor.copyToClipboard(command);
       this.handleCommandCopyStatus(error, stream, command, this.testTypeEnum.GELF);
     }
   }
@@ -218,7 +218,7 @@ class LogsStreamsFollowService {
      * @param {object} stream
      */
   connectToWebSocket(stream) {
-    const url = this.UrlHelper.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
+    const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
     if (url) {
       this.webSocket = this.$websocket(url);
       let response;
