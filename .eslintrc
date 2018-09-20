@@ -7,9 +7,13 @@
     },
     "globals": {
         "_": true,
+        "$", true,
         "angular": true,
         "inject": true,
+        "JSURL": true,
         "moment": true,
-        "JSURL": true
+        "RFB": "true",
+        "Util": true,
+        "WebUtil": true
     }
 }
