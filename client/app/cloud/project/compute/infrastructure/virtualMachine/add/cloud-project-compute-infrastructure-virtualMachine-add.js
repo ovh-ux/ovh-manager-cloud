@@ -10,6 +10,6 @@ angular.module("managerApp").config($stateProvider => {
                 controllerAs: "$ctrl"
             }
         },
-        translations: ["common"],
+        translations: ["cloud/project/compute/infrastructure/virtualMachine/add"],
     });
 });
