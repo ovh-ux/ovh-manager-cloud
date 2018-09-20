@@ -1,217 +1,225 @@
-angular.module("managerApp").controller("PartitionCtrl", function ($state, $rootScope, $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, CloudMessage) {
-    "use strict";
+angular.module('managerApp').controller('PartitionCtrl', function PartitionCtrl($state, $rootScope,
+  $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, CloudMessage) {
+  const self = this;
 
-    var self = this;
+  self.trackedTaskStatus = ['todo', 'doing'];
+  self.trackedTaskOperations = [
+    'clusterLeclercPartitionAdd',
+    'clusterLeclercPartitionDelete',
+    'clusterLeclercPartitionUpdate',
+    'clusterLeclercSnapshotUpdate',
+    'clusterLeclercCustomSnapCreate',
+    'clusterLeclercZfsOptions',
+  ];
 
-    self.trackedTaskStatus = ["todo", "doing"];
-    self.trackedTaskOperations = [
-        "clusterLeclercPartitionAdd",
-        "clusterLeclercPartitionDelete",
-        "clusterLeclercPartitionUpdate",
-        "clusterLeclercSnapshotUpdate",
-        "clusterLeclercCustomSnapCreate",
-        "clusterLeclercZfsOptions"
-    ];
+  // object that contain tasks for each partition
+  // e.g. [
+  //   {
+  //     partitionName: "partition123",
+  //     tasks: [65564, 78329]
+  //   }, {
+  //     partitionName: "partitionABC",
+  //     tasks: [9998,9999]
+  //   },
+  // ]
+  self.data = {
+    partitionsTasks: {},
+    nasha: null,
+    table: {
+      partitionIds: [],
+      partitionsInCreation: [],
+      currentPartitions: [],
+      refresh: false,
+    },
+  };
 
-    self.data = {
-        partitionsTasks: {}, // object that contain tasks for each partition e.g. [{partitionName : "partition123" , tasks: [65564,78329]}, {partitionName : "partitionABC" , tasks: [9998,9999]}]
-        nasha: null,
-        table: {
-            partitionIds: [],
-            partitionsInCreation: [],
-            currentPartitions: [],
-            refresh: false
-        }
-    };
+  self.loaders = {
+    table: false,
+  };
 
-    self.loaders = {
-        table: false
-    };
+  function getTasksPromise(status) {
+    return OvhApiDedicatedNasha.Task().v6()
+      .query({ serviceName: $stateParams.nashaId, status }).$promise;
+  }
 
-    self.openModal = function (template, controller, params) {
-        var modal = $uibModal.open({
-            windowTopClass: "cui-modal",
-            templateUrl: template,
-            controller: controller,
-            controllerAs: controller,
-            resolve: {
-                items: function () {
-                    return params;
-                }
-            }
-        });
+  function buildPartitionsInCreation(task, accumulator) {
+    if (task.operation === 'clusterLeclercPartitionAdd') {
+      const partition = _.find(
+        self.data.table.partitionIds,
+        partitionId => task.partitionName === partitionId,
+      );
 
-        modal.result.then(function () {
-            initTasks();
-        });
-    };
+      if (!partition) {
+        self.data.table.partitionIds.unshift(task.partitionName);
+        self.data.table.partitions.unshift({ partitionName: task.partitionName });
+      }
 
-    self.load = function (resetCache) {
-        self.loaders.table = true;
-        $q.all([
-            initNasha(),
-            initPartitions()
-        ]).then(function () {
-            return initTasks();
-        }).then(function () {
-            if (resetCache) {
-                self.data.table.refresh = !self.data.table.refresh;
-            }
-        }).catch(function (err) {
-            CloudMessage.error($translate.instant("nasha_partitions_no_data_error"));
-            return $q.reject(err);
-        }).finally(function () {
-            self.loaders.table = false;
-        });
-    };
+      accumulator.push({ partitionName: task.partitionName });
+    }
+  }
 
-    self.hasTaskInProgress = function (partition) {
-        return _.any(self.data.partitionsTasks[partition.partitionName]);
-    };
+  function buildPartitionsTasks(task, accumulator) {
+    if (_.includes(self.trackedTaskOperations, task.operation)) {
+      if (accumulator[task.partitionName] === undefined) {
+        accumulator[task.partitionName] = [task];
+      }
+    }
+  }
 
-    self.updatePartition = function (partition) {
-        return self.getPartition(partition.partitionName)
-            .then(function (updatedPartition) {
-                partition.size = updatedPartition.size;
-            }).catch(function (data) {
-                // partition is not found, probably deleted
-                if (data.status === 404) {
-                    _.remove(self.data.table.partitionIds, function (item) {
-                        return item ===  partition.partitionName;
-                    });
-                } else {
-                    return $q.reject(data);
-                }
-            });
-    };
+  function launchPolling(taskId) {
+    return Poller.poll(`/dedicated/nasha/${self.data.nasha.serviceName}/task/${taskId}`,
+      null,
+      {
 
-    self.goToNashaPartitionAccess = function (partitionName) {
-        $state.go("paas.nasha.nasha-partition-access", {
-            partitionName
-        });
-    };
+        successRule(task) {
+          return task.status === 'done';
+        },
+        errorRule(task) {
+          return ['doing', 'todo', 'done'].indexOf(task.status) === -1;
+        },
+        namespace: 'nasha.partition',
+      });
+  }
 
-    function initNasha () {
-        return OvhApiDedicatedNasha.Aapi().get({ serviceName: $stateParams.nashaId }).$promise.then(function (nasha) {
-            self.data.nasha = nasha;
-        });
+  function initPartitions(resetCache) {
+    self.data.table.partitionsInCreation = [];
+    if (resetCache) {
+      OvhApiDedicatedNasha.Aapi().resetAllCache();
     }
 
-    function initPartitions (resetCache) {
-        self.data.table.partitionsInCreation = [];
-        if (resetCache) {
-            OvhApiDedicatedNasha.Aapi().resetAllCache();
-        }
+    return OvhApiDedicatedNasha.Aapi()
+      .partitions({ serviceName: $stateParams.nashaId }).$promise
+      .then((partitions) => {
+        self.data.table.partitions = _.map(partitions, partition => partition.partitionName);
+        self.data.table.partitionIds = self.data.table.partitions;
 
-        return OvhApiDedicatedNasha.Aapi().partitions({ serviceName: $stateParams.nashaId }).$promise.then(function (partitions) {
-            self.data.table.partitionIds = self.data.table.partitions = _.map(partitions, function (partition) {
-                return partition.partitionName;
-            });
-
-            self.data.table.partitions = _.map(partitions, function (partition) {
-                _.forEach(partition.use, function (part, key) {
-                    part.name = $translate.instant("nasha_storage_usage_type_" + key);
-                });
-                return partition;
-            });
+        self.data.table.partitions = _.map(partitions, (partition) => {
+          _.forEach(partition.use, (part, key) => {
+            _.set(part, 'name', $translate.instant(`nasha_storage_usage_type_${key}`));
+          });
+          return partition;
         });
-    }
+      });
+  }
 
-    function initTasks () {
-        OvhApiDedicatedNasha.Task().v6().resetCache();
+  function pollPartitionTask(task) {
+    launchPolling(task.taskId)
+      .finally(() => {
+        initPartitions(true).then(() => {
+          const taskIndex = _.findIndex(
+            self.data.partitionsTasks[task.partitionName],
+            partitionTask => task.taskId === partitionTask.taskId,
+          );
 
-        var tasksPromises = _.map(self.trackedTaskStatus, function (status) {
-            return getTasksPromise(status);
+          if (taskIndex > -1) {
+            self.data.partitionsTasks[task.partitionName].splice(taskIndex, 1);
+          }
+        }).catch((err) => {
+          CloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
+          return $q.reject(err);
         });
+      });
+  }
 
-        return $q.allSettled(tasksPromises).then(function (data) {
-            return _.flatten(data);
-        }).then(function (taskIds) {
-            var taskPromises = _.map(taskIds, function (taskId) {
-                return OvhApiDedicatedNasha.Task().v6().get({ serviceName: $stateParams.nashaId, taskId: taskId }).$promise;
-            });
+  function initTasks() {
+    OvhApiDedicatedNasha.Task().v6().resetCache();
 
-            return $q.allSettled(taskPromises);
-        }).then(function (taskObjects) {
-            //We don't wipe self.data.partitionsTasks right away because we don't want the spinners to disapear while we reload.
-            var partitionsTasksAccumulator = {};
-            self.data.table.partitionsInCreation = [];
+    const tasksPromises = _.map(self.trackedTaskStatus, status => getTasksPromise(status));
 
-            _.forEach(taskObjects, function (taskObject) {
-                buildPartitionsInCreation(taskObject, self.data.table.partitionsInCreation);
-                buildPartitionsTasks(taskObject, partitionsTasksAccumulator);
-                pollPartitionTask(taskObject);
-            });
+    return $q.allSettled(tasksPromises).then(data => _.flatten(data)).then((taskIds) => {
+      const taskPromises = _.map(taskIds, taskId => OvhApiDedicatedNasha.Task().v6()
+        .get({ serviceName: $stateParams.nashaId, taskId }).$promise);
 
-            self.data.partitionsTasks = partitionsTasksAccumulator;
-            return $q.when(taskObjects);
-        });
-    }
+      return $q.allSettled(taskPromises);
+    }).then((taskObjects) => {
+      // We don't wipe self.data.partitionsTasks right away because we don't want the spinners
+      // to disapear while we reload.
+      const partitionsTasksAccumulator = {};
+      self.data.table.partitionsInCreation = [];
 
-    function buildPartitionsInCreation (task, accumulator) {
-        if (task.operation === "clusterLeclercPartitionAdd") {
-            var partition = _.find(self.data.table.partitionIds, function (partitionId) {
-                return task.partitionName === partitionId;
-            });
+      _.forEach(taskObjects, (taskObject) => {
+        buildPartitionsInCreation(taskObject, self.data.table.partitionsInCreation);
+        buildPartitionsTasks(taskObject, partitionsTasksAccumulator);
+        pollPartitionTask(taskObject);
+      });
 
-            if (!partition) {
-                self.data.table.partitionIds.unshift(task.partitionName);
-                self.data.table.partitions.unshift({ partitionName: task.partitionName });
-            }
+      self.data.partitionsTasks = partitionsTasksAccumulator;
+      return $q.when(taskObjects);
+    });
+  }
 
-            accumulator.push({ partitionName: task.partitionName });
-        }
-    }
-
-    function buildPartitionsTasks (task, accumulator) {
-        if (_.includes(self.trackedTaskOperations, task.operation)) {
-            if (accumulator[task.partitionName] === undefined) {
-                accumulator[task.partitionName] = [task];
-            }
-        }
-    }
-
-    function pollPartitionTask (task) {
-        launchPolling(task.taskId)
-            .finally(function () {
-                initPartitions(true).then(function () {
-                    var taskIndex = _.findIndex(self.data.partitionsTasks[task.partitionName], function (partitionTask) {
-                        return task.taskId === partitionTask.taskId;
-                    });
-
-                    if (taskIndex > -1) {
-                        self.data.partitionsTasks[task.partitionName].splice(taskIndex, 1);
-                    }
-                }).catch(function (err) {
-                    CloudMessage.error($translate.instant("nasha_partitions_no_data_error"));
-                    return $q.reject(err);
-                });
-            });
-    }
-
-    function getTasksPromise (status) {
-        return OvhApiDedicatedNasha.Task().v6().query({ serviceName: $stateParams.nashaId, status: status }).$promise;
-    }
-
-    function launchPolling (taskId) {
-        return Poller.poll("/dedicated/nasha/" + self.data.nasha.serviceName + "/task/" + taskId,
-            null,
-            {
-
-                successRule: function (task) {
-                    return task.status === "done";
-                },
-                errorRule: function (task) {
-                    return ["doing", "todo", "done"].indexOf(task.status) === -1;
-                },
-                namespace: "nasha.partition"
-            }
-        );
-    }
-
-    $scope.$on("$destroy", function () {
-        Poller.kill({ namespace: "nasha.partition" });
+  self.openModal = function (template, controller, params) {
+    const modal = $uibModal.open({
+      windowTopClass: 'cui-modal',
+      templateUrl: template,
+      controller,
+      controllerAs: controller,
+      resolve: {
+        items() {
+          return params;
+        },
+      },
     });
 
-    self.load();
+    modal.result.then(() => {
+      initTasks();
+    });
+  };
+
+  function initNasha() {
+    return OvhApiDedicatedNasha.Aapi()
+      .get({ serviceName: $stateParams.nashaId }).$promise
+      .then((nasha) => {
+        self.data.nasha = nasha;
+      });
+  }
+
+  self.load = function (resetCache) {
+    self.loaders.table = true;
+    $q.all([
+      initNasha(),
+      initPartitions(),
+    ]).then(() => initTasks()).then(() => {
+      if (resetCache) {
+        self.data.table.refresh = !self.data.table.refresh;
+      }
+    }).catch((err) => {
+      CloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
+      return $q.reject(err);
+    })
+      .finally(() => {
+        self.loaders.table = false;
+      });
+  };
+
+  self.hasTaskInProgress = function (partition) {
+    return _.any(self.data.partitionsTasks[partition.partitionName]);
+  };
+
+  self.updatePartition = function (partition) {
+    return self.getPartition(partition.partitionName)
+      .then((updatedPartition) => {
+        _.set(partition, 'size', updatedPartition.size);
+      }).catch((data) => {
+        // partition is not found, probably deleted
+        if (data.status === 404) {
+          _.remove(self.data.table.partitionIds, item => item === partition.partitionName);
+        } else {
+          return $q.reject(data);
+        }
+        return null;
+      });
+  };
+
+  self.goToNashaPartitionAccess = function (partitionName) {
+    $state.go('paas.nasha.nasha-partition-access', {
+      partitionName,
+    });
+  };
+
+  $scope.$on('$destroy', () => {
+    Poller.kill({ namespace: 'nasha.partition' });
+  });
+
+  self.load();
 });
