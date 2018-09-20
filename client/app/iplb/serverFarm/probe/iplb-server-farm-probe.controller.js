@@ -1,88 +1,88 @@
 class IpLoadBalancerServerFarmProbeEditCtrl {
-    constructor ($uibModalInstance, IpLoadBalancerConstant, availableProbes, edition, farm) {
-        this.$uibModalInstance = $uibModalInstance;
-        this.IpLoadBalancerConstant = IpLoadBalancerConstant;
-        this.availableProbes = availableProbes;
-        this.edition = edition;
-        this.farm = farm;
-        this.farmProbe = this.farm.probe ? angular.copy(this.farm.probe) : {
-            match: "default"
-        };
+  constructor($uibModalInstance, IpLoadBalancerConstant, availableProbes, edition, farm) {
+    this.$uibModalInstance = $uibModalInstance;
+    this.IpLoadBalancerConstant = IpLoadBalancerConstant;
+    this.availableProbes = availableProbes;
+    this.edition = edition;
+    this.farm = farm;
+    this.farmProbe = this.farm.probe ? angular.copy(this.farm.probe) : {
+      match: 'default',
+    };
 
-        this.methods = IpLoadBalancerConstant.probeMethods;
-        this.matches = IpLoadBalancerConstant.probeMatches;
-        this.rules = this.getRules();
+    this.methods = IpLoadBalancerConstant.probeMethods;
+    this.matches = IpLoadBalancerConstant.probeMatches;
+    this.rules = this.getRules();
 
-        if (!_.includes(this.getMatches(), this.farm.probe.match)) {
-            this.farmProbe.match = null;
-            this.farmProbe.pattern = null;
-            this.farmProbe.negate = null;
-        }
-
-        if (!this.edition) {
-            this.farmProbe.port = this.farm.port;
-            this.farmProbe.interval = 30;
-
-            switch (this.farmProbe.type) {
-                case "http":
-                    this.farmProbe.method = "GET";
-                    this.farmProbe.url = "/";
-                    break;
-                default: break;
-            }
-
-            this.farmProbe.match = "default";
-
-            if (this.farmProbe.type === "oco") {
-                delete this.farmProbe.port;
-            }
-        } else if (this.farmProbe.negate === null) {
-            this.farmProbe.negate = false;
-        }
+    if (!_.includes(this.getMatches(), this.farm.probe.match)) {
+      this.farmProbe.match = null;
+      this.farmProbe.pattern = null;
+      this.farmProbe.negate = null;
     }
 
-    isFieldVisible (field) {
-        if (field === "pattern") {
-            return this.farmProbe.match !== "default";
-        }
+    if (!this.edition) {
+      this.farmProbe.port = this.farm.port;
+      this.farmProbe.interval = 30;
 
-        if (field === "match" && _.isArray(this.rules.matches) &&
-            this.rules.matches.length === 1) {
-            return false;
-        }
+      switch (this.farmProbe.type) {
+        case 'http':
+          this.farmProbe.method = 'GET';
+          this.farmProbe.url = '/';
+          break;
+        default: break;
+      }
 
-        return !Object.prototype.hasOwnProperty.call(this.rules, field) ||
-            !!this.rules[field];
+      this.farmProbe.match = 'default';
+
+      if (this.farmProbe.type === 'oco') {
+        delete this.farmProbe.port;
+      }
+    } else if (this.farmProbe.negate === null) {
+      this.farmProbe.negate = false;
+    }
+  }
+
+  isFieldVisible(field) {
+    if (field === 'pattern') {
+      return this.farmProbe.match !== 'default';
     }
 
-    getMatches () {
-        return this.rules.matches;
+    if (field === 'match' && _.isArray(this.rules.matches)
+            && this.rules.matches.length === 1) {
+      return false;
     }
 
-    getRules () {
-        return _.find(this.availableProbes, {
-            type: this.farmProbe.type
-        });
-    }
+    return !Object.prototype.hasOwnProperty.call(this.rules, field)
+            || !!this.rules[field];
+  }
 
-    cleanProbe () {
-        if (this.farmProbe.match === "default") {
-            this.farmProbe.pattern = null;
-        }
-        if (!this.farmProbe.negate) {
-            this.farmProbe.negate = null;
-        }
-    }
+  getMatches() {
+    return this.rules.matches;
+  }
 
-    close () {
-        this.cleanProbe();
-        this.$uibModalInstance.close(this.farmProbe);
-    }
+  getRules() {
+    return _.find(this.availableProbes, {
+      type: this.farmProbe.type,
+    });
+  }
 
-    dismiss () {
-        this.$uibModalInstance.dismiss();
+  cleanProbe() {
+    if (this.farmProbe.match === 'default') {
+      this.farmProbe.pattern = null;
     }
+    if (!this.farmProbe.negate) {
+      this.farmProbe.negate = null;
+    }
+  }
+
+  close() {
+    this.cleanProbe();
+    this.$uibModalInstance.close(this.farmProbe);
+  }
+
+  dismiss() {
+    this.$uibModalInstance.dismiss();
+  }
 }
 
-angular.module("managerApp")
-    .controller("IpLoadBalancerServerFarmProbeEditCtrl", IpLoadBalancerServerFarmProbeEditCtrl);
+angular.module('managerApp')
+  .controller('IpLoadBalancerServerFarmProbeEditCtrl', IpLoadBalancerServerFarmProbeEditCtrl);
