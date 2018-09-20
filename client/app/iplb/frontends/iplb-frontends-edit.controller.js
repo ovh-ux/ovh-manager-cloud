@@ -180,7 +180,7 @@ class IpLoadBalancerFrontendsEditCtrl {
    * Parse frontend object from API and send it to form.
    * @return parsed frontend object
    */
-   parseFrontend(frontend) {
+  parseFrontend(frontend) {
     this.type = frontend.protocol;
     switch (frontend.protocol) {
       case 'http':
