@@ -1,30 +1,30 @@
 class IpblServerStatusService {
-    hasIssue (server) {
-        return server.probe &&
-            server.serverState &&
-            server.serverState.length &&
-            _.get(_.last(_.sortBy(server.serverState), "checkTime"), "status") === "DOWN";
+  static hasIssue(server) {
+    return server.probe
+      && server.serverState
+      && server.serverState.length
+      && _.get(_.last(_.sortBy(server.serverState), 'checkTime'), 'status') === 'DOWN';
+  }
+
+  static hasNoInfo(server) {
+    return !server.probe
+      || !server.serverState
+      || server.serverState.length === 0
+      || _.get(_.last(_.sortBy(server.serverState), 'checkTime'), 'status') === 'no check';
+  }
+
+  getStatusIcon(server) {
+    if (this.constructor.hasIssue(server)) {
+      return 'error';
     }
 
-    hasNoInfo (server) {
-        return !server.probe ||
-            !server.serverState ||
-            server.serverState.length === 0 ||
-            _.get(_.last(_.sortBy(server.serverState), "checkTime"), "status") === "no check";
+    if (this.constructor.hasNoInfo(server)) {
+      return 'help';
     }
 
-    getStatusIcon (server) {
-        if (this.hasIssue(server)) {
-            return "error";
-        }
-
-        if (this.hasNoInfo(server)) {
-            return "help";
-        }
-
-        return "success";
-    }
+    return 'success';
+  }
 }
 
-angular.module("managerApp")
-    .service("IpblServerStatusService", IpblServerStatusService);
+angular.module('managerApp')
+  .service('IpblServerStatusService', IpblServerStatusService);
