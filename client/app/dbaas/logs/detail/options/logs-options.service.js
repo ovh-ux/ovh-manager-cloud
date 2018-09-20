@@ -67,7 +67,7 @@ class LogsOptionsService {
    * @memberof LogsOptionsService
    */
   getOrderConfiguration(options, serviceName) {
-    const optionsToOrder = this.getOptionsToOrder(options);
+    const optionsToOrder = LogsOptionsService.getOptionsToOrder(options);
     return _.map(optionsToOrder, option => this.transformOptionForOrder(option, serviceName));
   }
 
