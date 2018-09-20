@@ -1,12 +1,12 @@
 class IpLoadBalancerTaskPreviewCtrl {
-    constructor ($uibModalInstance, task) {
-        this.$uibModalInstance = $uibModalInstance;
-        this.task = task;
-    }
+  constructor($uibModalInstance, task) {
+    this.$uibModalInstance = $uibModalInstance;
+    this.task = task;
+  }
 
-    dismiss () {
-        this.$uibModalInstance.dismiss();
-    }
+  dismiss() {
+    this.$uibModalInstance.dismiss();
+  }
 }
 
-angular.module("managerApp").controller("IpLoadBalancerTaskPreviewCtrl", IpLoadBalancerTaskPreviewCtrl);
+angular.module('managerApp').controller('IpLoadBalancerTaskPreviewCtrl', IpLoadBalancerTaskPreviewCtrl);
