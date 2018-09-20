@@ -1,30 +1,28 @@
-angular.module("managerApp").controller("NashaPartitionDeleteCtrl", function (OvhApiDedicatedNasha, $stateParams, $scope, $uibModalInstance, $translate, CloudMessage) {
-    "use strict";
+angular.module('managerApp').controller('NashaPartitionDeleteCtrl', function (OvhApiDedicatedNasha, $stateParams, $scope, $uibModalInstance, $translate, CloudMessage) {
+  const self = this;
+  self.loading = false;
+  self.data = {
+    nashaId: $stateParams.nashaId,
+    partition: $scope.$resolve.items,
+  };
 
-    var self = this;
-    self.loading = false;
-    self.data = {
-        nashaId: $stateParams.nashaId,
-        partition: $scope.$resolve.items
-    };
+  self.deletePartition = function () {
+    self.loading = true;
+    OvhApiDedicatedNasha.Partition().v6().delete({
+      serviceName: self.data.nashaId,
+      partitionName: self.data.partition.partitionName,
+    }).$promise.then((result) => {
+      $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
+      CloudMessage.success($translate.instant('nasha_partitions_action_delete_success', { partitionName: self.data.partition.partitionName }));
+    }).catch(() => {
+      $uibModalInstance.dismiss();
+      CloudMessage.error($translate.instant('nasha_partitions_action_delete_failure', { partitionName: self.data.partition.partitionName }));
+    }).finally(() => {
+      self.loading = false;
+    });
+  };
 
-    self.deletePartition = function () {
-        self.loading = true;
-        OvhApiDedicatedNasha.Partition().v6().delete({
-            serviceName: self.data.nashaId,
-            partitionName: self.data.partition.partitionName
-        }).$promise.then(function (result) {
-            $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
-            CloudMessage.success($translate.instant("nasha_partitions_action_delete_success", { partitionName: self.data.partition.partitionName }));
-        }).catch(function () {
-            $uibModalInstance.dismiss();
-            CloudMessage.error($translate.instant("nasha_partitions_action_delete_failure", { partitionName: self.data.partition.partitionName }));
-        }).finally(function () {
-            self.loading = false;
-        });
-    };
-
-    self.dismiss = function () {
-        $uibModalInstance.dismiss();
-    };
+  self.dismiss = function () {
+    $uibModalInstance.dismiss();
+  };
 });
