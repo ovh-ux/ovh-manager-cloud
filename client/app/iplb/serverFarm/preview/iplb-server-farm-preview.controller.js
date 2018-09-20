@@ -1,26 +1,26 @@
 class IpLoadBalancerServerFarmPreviewCtrl {
-    constructor ($uibModalInstance, IpLoadBalancerServerFarmService, IpLoadBalancerZoneService, farm) {
-        this.$uibModalInstance = $uibModalInstance;
-        this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
-        this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
-        this.farm = farm;
-    }
+  constructor($uibModalInstance, IpLoadBalancerServerFarmService, IpLoadBalancerZoneService, farm) {
+    this.$uibModalInstance = $uibModalInstance;
+    this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
+    this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
+    this.farm = farm;
+  }
 
-    getZone () {
-        return this.IpLoadBalancerZoneService.humanizeZone(this.farm.zone);
-    }
+  getZone() {
+    return this.IpLoadBalancerZoneService.humanizeZone(this.farm.zone);
+  }
 
-    getBalance () {
-        return this.IpLoadBalancerServerFarmService.humanizeBalance(this.farm.balance);
-    }
+  getBalance() {
+    return this.IpLoadBalancerServerFarmService.humanizeBalance(this.farm.balance);
+  }
 
-    getStickiness () {
-        return this.IpLoadBalancerServerFarmService.humanizeStickiness(this.farm.stickiness);
-    }
+  getStickiness() {
+    return this.IpLoadBalancerServerFarmService.humanizeStickiness(this.farm.stickiness);
+  }
 
-    dismiss () {
-        this.$uibModalInstance.dismiss();
-    }
+  dismiss() {
+    this.$uibModalInstance.dismiss();
+  }
 }
 
-angular.module("managerApp").controller("IpLoadBalancerServerFarmPreviewCtrl", IpLoadBalancerServerFarmPreviewCtrl);
+angular.module('managerApp').controller('IpLoadBalancerServerFarmPreviewCtrl', IpLoadBalancerServerFarmPreviewCtrl);

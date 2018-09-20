@@ -60,7 +60,7 @@
                             data-ng-hide="ctrl.zones.loading"
                             data-ng-model="ctrl.farm.zone"
                             data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
-                            ui-validate="{ selection: 'ctrl.validateSelection($value)' }"
+                            ui-validate="{ selection: 'ctrl.constructor.validateSelection($value)' }"
                             data-ng-disabled="ctrl.edition">
                             <option data-translate="iplb_zone_select_placeholder"></option>
                         </select>
