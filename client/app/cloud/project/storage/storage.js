@@ -38,7 +38,11 @@ angular.module("managerApp")
                         controllerAs: "RA.storageDetailsCtrl"
                     }
                 },
-                translations: ["common", "cloud/project/storage", "cloud/project/compute"],
+                translations: [
+                  "cloud/project/storage",
+                  "cloud/project/storage/storage-details",
+                  "cloud/project/compute"
+                ],
             });
 
     });
