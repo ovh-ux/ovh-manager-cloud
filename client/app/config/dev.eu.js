@@ -17,5 +17,5 @@ angular.module('managerApp').constant('CONFIG', {
     },
   ],
   loginUrl: '/auth',
-  userUrl: 'engine/apiv6/me',
+  userUrl: '/engine/apiv6/me',
 });

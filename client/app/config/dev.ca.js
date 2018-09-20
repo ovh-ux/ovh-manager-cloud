@@ -16,6 +16,6 @@ angular.module("managerApp").constant("CONFIG", {
             urlPrefix   : "/engine/apiv7"
         }
     ],
-    loginUrl : "https://ca.ovh.com/auth",
+    loginUrl : "/auth",
     userUrl: "/engine/apiv6/me",
 });
