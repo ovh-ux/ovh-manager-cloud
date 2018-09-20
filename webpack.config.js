@@ -61,5 +61,10 @@ module.exports = (env = {}) => {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].bundle.js',
     },
+    resolve: {
+      alias: {
+        jquery: path.resolve(__dirname, "node_modules/jquery")
+      }
+    }
   });
 };
