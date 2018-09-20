@@ -1,14 +1,14 @@
 class OrderHelperService {
-  constructor($httpParamSerializerJQLike, $location, OvhApiMe) {
+  constructor($httpParamSerializerJQLike, $window, OvhApiMe) {
     this.$httpParamSerializerJQLike = $httpParamSerializerJQLike;
-    this.$location = $location;
+    this.$window = $window;
     this.User = OvhApiMe;
   }
 
   openExpressOrderUrl(config, urlParams = {}) {
     this.getExpressOrderUrl(config, urlParams)
       .then((href) => {
-        this.$location.href = href;
+        this.$window.location.href = href;
       });
   }
 
