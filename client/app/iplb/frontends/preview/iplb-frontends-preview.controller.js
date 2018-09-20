@@ -1,12 +1,12 @@
 class IpLoadBalancerFrontendPreviewCtrl {
-    constructor ($uibModalInstance, frontend) {
-        this.$uibModalInstance = $uibModalInstance;
-        this.frontend = frontend;
-    }
+  constructor($uibModalInstance, frontend) {
+    this.$uibModalInstance = $uibModalInstance;
+    this.frontend = frontend;
+  }
 
-    dismiss () {
-        this.$uibModalInstance.dismiss();
-    }
+  dismiss() {
+    this.$uibModalInstance.dismiss();
+  }
 }
 
-angular.module("managerApp").controller("IpLoadBalancerFrontendPreviewCtrl", IpLoadBalancerFrontendPreviewCtrl);
+angular.module('managerApp').controller('IpLoadBalancerFrontendPreviewCtrl', IpLoadBalancerFrontendPreviewCtrl);
