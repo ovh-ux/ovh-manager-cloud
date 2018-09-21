@@ -1,325 +1,317 @@
-angular.module("managerApp").service("CloudStorageContainer", [
-    "$cacheFactory",
-    "$http",
-    "$q",
-    "OvhApiCloudProjectStorage",
-    "CloudStorageContainersConfiguration",
-    "CLOUD_PCA_FILE_STATE",
-    function ($cacheFactory, $http, $q,
-            OvhApiCloudProjectStorage, storageContainerConfig, CLOUD_PCA_FILE_STATE) {
-        "use strict";
+angular.module('managerApp').service('CloudStorageContainer', [
+  '$cacheFactory',
+  '$http',
+  '$q',
+  'OvhApiCloudProjectStorage',
+  'CloudStorageContainersConfiguration',
+  'CLOUD_PCA_FILE_STATE',
+  function ($cacheFactory, $http, $q,
+    OvhApiCloudProjectStorage, storageContainerConfig, CLOUD_PCA_FILE_STATE) {
+    const self = this;
 
-        var self = this;
+    // Openstack headers
+    const xStoragePolicy = 'x-storage-policy';
+    const xContainerRead = 'x-container-read';
+    const xContainerMetaWebListings = 'x-container-meta-web-listings';
+    const xContainerReadPublicValue = '.r:*,.rlistings';
 
-        // Openstack headers
-        var xStoragePolicy = "x-storage-policy";
-        var xContainerRead = "x-container-read";
-        var xContainerMetaWebListings = "x-container-meta-web-listings";
-        var xContainerReadPublicValue = ".r:*,.rlistings";
+    // Cache management
+    const { accessCache } = storageContainerConfig;
 
-        // Cache management
-        var accessCache = storageContainerConfig.accessCache;
+    function getAccessAndToken(projectId) {
+      const cacheValue = accessCache.get(projectId);
 
-        /**
-         * Get meta data of this container.
-         * @param  {string} projectId     project id
-         * @param  {string} containerId   container id
-         * @return {Promise<Object>}      container metadata
-         */
-        self.getMetaData = function (projectId, containerId) {
-            return ensureAccess(projectId)
-                .then(function () {
-                    return getContainerMeta(projectId, containerId);
-                })
-                .then(function (containerMeta) {
-                    return requestContainer(self.endpoints[containerMeta.region.toLowerCase()], containerMeta.name, {
-                        method: "HEAD"
-                    });
-                })
-                .then(function (data) {
-                    return _.pick(data.headers(), function (value, key) {
-                        return /^(X\-Container|X\-Storage)/i.test(key);
-                    });
-                })
-                .then(function (data) {
-                    // Guess storage type
-                    if (data[xStoragePolicy] === "PCS") {
-                        if (data[xContainerMetaWebListings]) {
-                            data.shortcut = "swift_cname";
-                        } else if (data[xContainerRead] === xContainerReadPublicValue) {
-                            data.shortcut = "swift_public";
-                        } else {
-                            data.shortcut = "swift_private";
-                        }
-                    } else {
-                        data.shortcut = "pca";
-                    }
-                    return data;
-                });
-        };
+      const getAccessAndTokenPromise = cacheValue
+        ? $q.resolve(cacheValue)
+        : OvhApiCloudProjectStorage.v6().access({
+          projectId,
+        }, {}).$promise;
 
-        /**
-         * List container objects.
-         * @param  {string} projectId     project id
-         * @param  {string} containerId   container id
-         * @return {Promise<Object>}      object containing the list of objects
-         */
-        self.list = function (projectId, containerId) {
-            return OvhApiCloudProjectStorage.v6().get({
-                projectId: projectId,
-                containerId: containerId
-            }).$promise
-                .then(function (containerData) {
-                    storageContainerConfig.containerMetaCache.set(projectId, containerId, _.pick(containerData, ["name", "region"]));
-                    return containerData;
-                });
-        };
+      return getAccessAndTokenPromise
+        .then((accessResult) => {
+          if (!cacheValue) {
+            accessCache.put(projectId, accessResult);
+          }
+          self.token = accessResult.token;
+          self.endpoints = accessResult.endpoints.reduce((resultParam, endpoint) => {
+            const result = resultParam;
+            result[endpoint.region.toLowerCase()] = endpoint.url;
+            return result;
+          }, {});
+          return accessResult;
+        });
+    }
 
-        /**
-         * Download file.
-         * @param  {string} projectId   project id
-         * @param  {string} containerId container id
-         * @param  {Object} object      object to download
-         * @return {Promise}
-         */
-        self.download = function (projectId, containerId, file) {
-            var weekDurationInMilliseconds = 6.048e+8;
-            var expiration = new Date(Date.now() + weekDurationInMilliseconds);
+    function ensureAccess(projectId) {
+      return getAccessAndToken(projectId);
+    }
 
-            return OvhApiCloudProjectStorage.v6().getURL({
-                    projectId: projectId,
-                    containerId: containerId
-                }, {
-                    expirationDate: expiration.toISOString(),
-                    objectName: file.name
-                }).$promise
-                .then(function (resp) {
-                    if (file.retrievalState === CLOUD_PCA_FILE_STATE.SEALED) {
-                        return unseal(resp.getURL);
-                    } else {
-                        return resp.getURL;
-                    }
-                });
+    // Improvement:
+    // Avoid listing all containers to get metadata.
+    function getContainerMeta(projectId, containerId) {
+      const containerMeta = storageContainerConfig.containerMetaCache.get(projectId, containerId);
+      return containerMeta
+        ? $q.resolve(containerMeta)
+        : self.list(projectId, containerId)
+          .then(() => storageContainerConfig.containerMetaCache.get(projectId, containerId));
+    }
 
-            function unseal (url) {
-                return $http.get(url)
-                    .catch(function (err) {
-                        // This call make a CORS error, but still initiate the process, swallow status -1 which is what we get when cors fail.
-                        if (err.status !== -1) {
-                            throw err;
-                        }
-                    });
-            }
-        };
+    function getContainerUrl(baseUrl, containerName, file) {
+      let urlTpl = `${baseUrl}/{container}`;
+      let url;
+      if (file) {
+        urlTpl += '/{file}';
+        url = URI.expand(urlTpl, {
+          container: containerName,
+          file,
+        }).toString();
+      } else {
+        url = URI.expand(urlTpl, {
+          container: containerName,
+        }).toString();
+      }
+      return url;
+    }
 
-        /**
-         * Add object to container.
-         * @param  {string} projectId     project id
-         * @param  {string} containerId   container id
-         * @param  {Object} opts          upload opts
-         * @return {Promise}
-         */
-        self.upload = function (projectId, containerId, opts) {
-            if (!opts.file) {
-                return $q.reject({
-                    errorCode: "BAD_PARAMETERS",
-                    config: opts
-                });
-            }
-            return ensureAccess(projectId)
-                .then(function () {
-                    return getContainerMeta(projectId, containerId);
-                })
-                .then(function (containerMeta) {
-                    var config = {
-                        headers: {
-                            "Content-Type": opts.file.type
-                        },
-                        data: opts.file
-                    };
-                    var filename = opts.file.name;
-                    if (opts.prefix) {
-                        filename = opts.prefix + filename;
-                    }
-                    var url = getContainerUrl(self.endpoints[containerMeta.region.toLowerCase()], containerMeta.name, filename);
-                    return upload(url, config);
-                });
-        };
+    function requestContainer(baseUrl, containerName, optsParam) {
+      const opts = optsParam || {};
+      const url = getContainerUrl(baseUrl, containerName, opts.file);
+      delete opts.file; // eslint-disable-line
 
-        /**
-         * Delete an object.
-         * @param  {string} projectId   project id
-         * @param  {string} containerId container id
-         * @param  {string} file        file name
-         * @return {Promise}
-         */
-        self.delete = function (projectId, containerId, file) {
-            return ensureAccess(projectId)
-                .then(function () {
-                    return getContainerMeta(projectId, containerId);
-                })
-                .then(function (containerMeta) {
-                    return requestContainer(self.endpoints[containerMeta.region.toLowerCase()], containerMeta.name, {
-                        method: "DELETE",
-                        file: file
-                    });
-                });
-        };
+      return $http(angular.merge({
+        method: 'GET',
+        url,
+        headers: {
+          'X-Auth-Token': self.token,
+        },
+      }, opts));
+    }
 
-        /**
-         * Set container as public.
-         * @param {string} projectId   project id
-         * @param {string} containerId container id
-         * @return {Promise}
-         */
-        self.setAsPublic = function (projectId, containerId) {
-            return ensureAccess(projectId)
-                .then(function () {
-                    return getContainerMeta(projectId, containerId);
-                })
-                .then(function (containerMeta) {
-                    if (containerMeta[xContainerRead] !== xContainerReadPublicValue) {
-                        return requestContainer(self.endpoints[containerMeta.region.toLowerCase()], containerMeta.name, {
-                            method: "PUT",
-                            headers: {
-                                "X-Container-Read": xContainerReadPublicValue
-                            }
-                        });
-                    }
-                    return $.resolve();
-                });
-        };
-
-        self.getAccessAndToken = getAccessAndToken;
-
-        function upload (url, config) {
-            var deferred = $q.defer();
-            var xhr = new XMLHttpRequest();
-            var uploadProgress;
-            var uploadComplete;
-            var uploadFailed;
-            var uploadCanceled;
-
-            uploadProgress = function (e) {
-                var res;
-                if (e.lengthComputable) {
-                    res = Math.round(e.loaded * 100 / e.total);
-                } else {
-                    res = undefined;
-                }
-
-                if (typeof deferred.notify === "function") {
-                    deferred.notify(res);
-                }
-            };
-
-            uploadComplete = function (e) {
-                var xhr = e.srcElement || e.target;
-                if (xhr.status >= 200 && xhr.status < 300) { // successful upload
-                    deferred.resolve(xhr);
-                } else {
-                    deferred.reject(xhr);
-                }
-            };
-
-            uploadFailed = function (e) {
-                var xhr = e.srcElement || e.target;
-                deferred.reject(xhr);
-            };
-
-            uploadCanceled = function (e) {
-                var xhr = e.srcElement || e.target;
-                deferred.reject(xhr);
-            };
-
-            xhr.upload.addEventListener("progress", uploadProgress, false);
-            xhr.addEventListener("load", uploadComplete, false);
-            xhr.addEventListener("error", uploadFailed, false);
-            xhr.addEventListener("abort", uploadCanceled, false);
-
-            // Send the file
-            xhr.open("PUT", url, true);
-
-            var headers = config.headers || {};
-            headers = angular.extend({
-                "X-Auth-Token": self.token
-            }, headers);
-
-            angular.forEach(headers, function (header, id) {
-                xhr.setRequestHeader(id, header);
-            });
-            xhr.send(config.data);
-            return deferred.promise;
-        }
-
-        // Improvement:
-        // Avoid listing all containers to get metadata.
-        function getContainerMeta (projectId, containerId) {
-            var containerMeta = storageContainerConfig.containerMetaCache.get(projectId, containerId);
-            return containerMeta ?
-                $q.resolve(containerMeta) :
-                self.list(projectId, containerId)
-                    .then(function () {
-                        return storageContainerConfig.containerMetaCache.get(projectId, containerId);
-                    });
-        }
-
-        function requestContainer (baseUrl, containerName, opts) {
-            opts = opts || {};
-
-            var url = getContainerUrl(baseUrl, containerName, opts.file);
-            delete opts.file;
-
-            return $http(angular.merge({
-                method: "GET",
-                url: url,
-                headers: {
-                    "X-Auth-Token": self.token
-                }
-            }, opts));
-        }
-
-        function getContainerUrl (baseUrl, containerName, file) {
-            var urlTpl = baseUrl + "/{container}";
-            var url;
-            if (file) {
-                urlTpl += "/{file}";
-                url = URI.expand(urlTpl, { // jshint ignore:line
-                    container: containerName,
-                    file: file
-                }).toString();
+    /**
+     * Get meta data of this container.
+     * @param  {string} projectId     project id
+     * @param  {string} containerId   container id
+     * @return {Promise<Object>}      container metadata
+     */
+    self.getMetaData = function (projectId, containerId) {
+      return ensureAccess(projectId)
+        .then(() => getContainerMeta(projectId, containerId))
+        .then(containerMeta => requestContainer(
+          self.endpoints[containerMeta.region.toLowerCase()],
+          containerMeta.name,
+          { method: 'HEAD' },
+        ))
+        .then(data => _.pick(data.headers(), (value, key) => /^(X-Container|X-Storage)/i.test(key)))
+        .then((data) => {
+          // Guess storage type
+          if (data[xStoragePolicy] === 'PCS') {
+            if (data[xContainerMetaWebListings]) {
+              _.set(data, 'shortcut', 'swift_cname');
+            } else if (data[xContainerRead] === xContainerReadPublicValue) {
+              _.set(data, 'shortcut', 'swift_public');
             } else {
-                url = URI.expand(urlTpl, { // jshint ignore:line
-                    container: containerName
-                }).toString();
+              _.set(data, 'shortcut', 'swift_private');
             }
-            return url;
+          } else {
+            _.set(data, 'shortcut', 'pca');
+          }
+          return data;
+        });
+    };
+
+    /**
+     * List container objects.
+     * @param  {string} projectId     project id
+     * @param  {string} containerId   container id
+     * @return {Promise<Object>}      object containing the list of objects
+     */
+    self.list = function (projectId, containerId) {
+      return OvhApiCloudProjectStorage.v6().get({
+        projectId,
+        containerId,
+      }).$promise
+        .then((containerData) => {
+          storageContainerConfig.containerMetaCache.set(projectId, containerId, _.pick(containerData, ['name', 'region']));
+          return containerData;
+        });
+    };
+
+    /* eslint-disable no-shadow */
+    function upload(url, config) {
+      const deferred = $q.defer();
+      const xhr = new XMLHttpRequest();
+
+      const uploadProgress = function (e) {
+        let res;
+        if (e.lengthComputable) {
+          res = Math.round(e.loaded * 100 / e.total);
+        } else {
+          res = undefined;
         }
 
-        function ensureAccess (projectId) {
-            return getAccessAndToken(projectId);
+        if (typeof deferred.notify === 'function') {
+          deferred.notify(res);
         }
+      };
 
-        function getAccessAndToken (projectId) {
-            var cacheValue = accessCache.get(projectId);
-
-            var getAccessAndTokenPromise = cacheValue ?
-                $q.resolve(cacheValue) :
-                OvhApiCloudProjectStorage.v6().access({
-                    projectId: projectId
-                }, {}).$promise;
-
-            return getAccessAndTokenPromise
-                .then(function (accessResult) {
-                    if (!cacheValue) {
-                        accessCache.put(projectId, accessResult);
-                    }
-                    self.token = accessResult.token;
-                    self.endpoints = accessResult.endpoints.reduce(function (result, endpoint) {
-                        result[endpoint.region.toLowerCase()] = endpoint.url;
-                        return result;
-                    }, {});
-                    return accessResult;
-                });
+      const uploadComplete = function (e) {
+        const xhr = e.srcElement || e.target;
+        if (xhr.status >= 200 && xhr.status < 300) { // successful upload
+          deferred.resolve(xhr);
+        } else {
+          deferred.reject(xhr);
         }
-    }]);
+      };
+
+      const uploadFailed = function (e) {
+        const xhr = e.srcElement || e.target;
+        deferred.reject(xhr);
+      };
+
+      const uploadCanceled = function (e) {
+        const xhr = e.srcElement || e.target;
+        deferred.reject(xhr);
+      };
+
+      xhr.upload.addEventListener('progress', uploadProgress, false);
+      xhr.addEventListener('load', uploadComplete, false);
+      xhr.addEventListener('error', uploadFailed, false);
+      xhr.addEventListener('abort', uploadCanceled, false);
+
+      // Send the file
+      xhr.open('PUT', url, true);
+
+      let headers = config.headers || {};
+      headers = angular.extend({
+        'X-Auth-Token': self.token,
+      }, headers);
+
+      angular.forEach(headers, (header, id) => {
+        xhr.setRequestHeader(id, header);
+      });
+      xhr.send(config.data);
+      return deferred.promise;
+    }
+    /* eslint-enable no-shadow */
+
+    /**
+     * Download file.
+     * @param  {string} projectId   project id
+     * @param  {string} containerId container id
+     * @param  {Object} object      object to download
+     * @return {Promise}
+     */
+    self.download = function (projectId, containerId, file) {
+      const weekDurationInMilliseconds = 6.048e+8;
+      const expiration = new Date(Date.now() + weekDurationInMilliseconds);
+
+      function unseal(url) {
+        return $http.get(url)
+          .catch((err) => {
+            // This call make a CORS error, but still initiate the process,
+            // swallow status -1 which is what we get when cors fail.
+            if (err.status !== -1) {
+              throw err;
+            }
+          });
+      }
+
+      return OvhApiCloudProjectStorage.v6().getURL({
+        projectId,
+        containerId,
+      }, {
+        expirationDate: expiration.toISOString(),
+        objectName: file.name,
+      }).$promise
+        .then((resp) => {
+          if (file.retrievalState === CLOUD_PCA_FILE_STATE.SEALED) {
+            return unseal(resp.getURL);
+          }
+          return resp.getURL;
+        });
+    };
+
+    /**
+     * Add object to container.
+     * @param  {string} projectId     project id
+     * @param  {string} containerId   container id
+     * @param  {Object} opts          upload opts
+     * @return {Promise}
+     */
+    self.upload = function (projectId, containerId, opts) {
+      if (!opts.file) {
+        return $q.reject({
+          errorCode: 'BAD_PARAMETERS',
+          config: opts,
+        });
+      }
+      return ensureAccess(projectId)
+        .then(() => getContainerMeta(projectId, containerId))
+        .then((containerMeta) => {
+          const config = {
+            headers: {
+              'Content-Type': opts.file.type,
+            },
+            data: opts.file,
+          };
+          let filename = opts.file.name;
+          if (opts.prefix) {
+            filename = opts.prefix + filename;
+          }
+          const url = getContainerUrl(
+            self.endpoints[containerMeta.region.toLowerCase()],
+            containerMeta.name,
+            filename,
+          );
+          return upload(url, config);
+        });
+    };
+
+    /**
+     * Delete an object.
+     * @param  {string} projectId   project id
+     * @param  {string} containerId container id
+     * @param  {string} file        file name
+     * @return {Promise}
+     */
+    self.delete = function (projectId, containerId, file) {
+      return ensureAccess(projectId)
+        .then(() => getContainerMeta(projectId, containerId))
+        .then(containerMeta => requestContainer(
+          self.endpoints[containerMeta.region.toLowerCase()],
+          containerMeta.name,
+          {
+            method: 'DELETE',
+            file,
+          },
+        ));
+    };
+
+    /**
+     * Set container as public.
+     * @param {string} projectId   project id
+     * @param {string} containerId container id
+     * @return {Promise}
+     */
+    self.setAsPublic = function (projectId, containerId) {
+      return ensureAccess(projectId)
+        .then(() => getContainerMeta(projectId, containerId))
+        .then((containerMeta) => {
+          if (containerMeta[xContainerRead] !== xContainerReadPublicValue) {
+            return requestContainer(
+              self.endpoints[containerMeta.region.toLowerCase()],
+              containerMeta.name,
+              {
+                method: 'PUT',
+                headers: {
+                  'X-Container-Read': xContainerReadPublicValue,
+                },
+              },
+            );
+          }
+          return $.resolve();
+        });
+    };
+
+    self.getAccessAndToken = getAccessAndToken;
+  }]);

@@ -13,6 +13,7 @@
         "JSURL": true,
         "moment": true,
         "RFB": "true",
+        "URI": true,
         "Util": true,
         "WebUtil": true
     }
