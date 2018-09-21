@@ -1,60 +1,58 @@
-angular.module("managerApp")
-    .controller("CloudProjectRenameController", function ($rootScope, $q, $translate, $uibModal, CloudMessage, OvhApiCloudProject, SidebarMenu) {
-        "use strict";
+angular.module('managerApp')
+  .controller('CloudProjectRenameController', function CloudProjectRenameController($rootScope, $q, $translate, $uibModal, CloudMessage, OvhApiCloudProject, SidebarMenu) {
+    const self = this;
 
-        var self = this;
+    self.loader = {
+      save: false,
+    };
 
-        self.loader = {
-            save: false
-        };
+    self.editing = {
+      description: null,
+    };
 
-        self.editing = {
-            description: null
-        };
+    self.model = {
+      description: null,
+    };
 
-        self.model = {
-            description: null
-        };
+    function getProjectDescription() {
+      OvhApiCloudProject.v6().get({
+        serviceName: self.projectId,
+      }).$promise.then((data) => {
+        self.model.description = data.description;
+      }).catch((err) => {
+        CloudMessage.error([$translate.instant('cloud_project_rename_loading_error'), (err.data && err.data.message) || ''].join(' '));
+      });
+    }
 
-        self.$onInit = function () {
-            self.editing.description = null;
-            getProjectDescription();
-        };
+    self.$onInit = function $onInit() {
+      self.editing.description = null;
+      getProjectDescription();
+    };
 
-        function getProjectDescription () {
-            OvhApiCloudProject.v6().get({
-                serviceName: self.projectId
-            }).$promise.then(function (data) {
-                self.model.description = data.description;
-            }).catch(function (err) {
-                CloudMessage.error([$translate.instant("cloud_project_rename_loading_error"), err.data && err.data.message || ""].join(" "));
-            });
+    self.saveDescription = function saveDescription() {
+      self.loader.save = true;
+
+      OvhApiCloudProject.v6().put({
+        serviceName: self.projectId,
+      }, {
+        description: self.editing.description || '',
+      }).$promise.then(() => {
+        self.model.description = self.editing.description;
+        const menuItem = SidebarMenu.getItemById(self.projectId);
+        if (menuItem) {
+          menuItem.title = self.editing.description;
         }
+      }).catch((err) => {
+        CloudMessage.error([$translate.instant('cloud_project_rename_error'), (err.data && err.data.message) || ''].join(' '));
+      }).finally(() => {
+        self.loader.save = false;
+        self.editing.description = null;
+      });
+    };
 
-        self.saveDescription = function () {
-            self.loader.save = true;
-
-            OvhApiCloudProject.v6().put({
-                serviceName: self.projectId
-            }, {
-                description: self.editing.description || ""
-            }).$promise.then(function () {
-                self.model.description = self.editing.description;
-                var menuItem = SidebarMenu.getItemById(self.projectId);
-                if (menuItem) {
-                    menuItem.title = self.editing.description;
-                }
-            }).catch(function (err) {
-                CloudMessage.error([$translate.instant("cloud_project_rename_error"), err.data && err.data.message || ""].join(" "));
-            }).finally(function () {
-                self.loader.save = false;
-                self.editing.description = null;
-            });
-        };
-
-        self.watchForEscapeKey = function ($event) {
-            if ($event.keyCode === 27) { // escape key code
-                self.editing.description = null;
-            }
-        };
-    });
+    self.watchForEscapeKey = function watchForEscapeKey($event) {
+      if ($event.keyCode === 27) { // escape key code
+        self.editing.description = null;
+      }
+    };
+  });
