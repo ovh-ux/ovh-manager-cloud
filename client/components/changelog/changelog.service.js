@@ -1,13 +1,10 @@
-angular.module("managerApp")
-.service("ChangelogService", function ($uibModal) {
-    "use strict";
-
+angular.module('managerApp')
+  .service('ChangelogService', function ($uibModal) {
     this.show = function () {
-        $uibModal.open({
-            templateUrl: "components/changelog/changelog.html",
-            controller: "ChangelogCtrl",
-            controllerAs: "ChangelogCtrl"
-        });
+      $uibModal.open({
+        templateUrl: 'components/changelog/changelog.html',
+        controller: 'ChangelogCtrl',
+        controllerAs: 'ChangelogCtrl',
+      });
     };
-
-});
+  });
