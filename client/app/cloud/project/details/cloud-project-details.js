@@ -1,22 +1,22 @@
-"use strict";
 
-angular.module("managerApp").config(function ($stateProvider) {
-    $stateProvider.state("iaas.pci-project.details", {
-        url: "",
-        views: {
-            cloudProject: {
-                templateUrl: "app/cloud/project/details/cloud-project-details.html",
-                controller: "CloudProjectDetailsCtrl",
-                controllerAs: "CloudProjectDetailsCtrl"
-            }
-        },
-        params: {
-            fromProjectAdd: {     // used in CloudProjectAddCtrl
-                value: false,
-                squash: true
-            },
-            createNewVm: false
-        },
-        translations: ["common", "cloud/project/details"],
-    });
+
+angular.module('managerApp').config(($stateProvider) => {
+  $stateProvider.state('iaas.pci-project.details', {
+    url: '',
+    views: {
+      cloudProject: {
+        templateUrl: 'app/cloud/project/details/cloud-project-details.html',
+        controller: 'CloudProjectDetailsCtrl',
+        controllerAs: 'CloudProjectDetailsCtrl',
+      },
+    },
+    params: {
+      fromProjectAdd: { // used in CloudProjectAddCtrl
+        value: false,
+        squash: true,
+      },
+      createNewVm: false,
+    },
+    translations: ['common', 'cloud/project/details'],
+  });
 });
