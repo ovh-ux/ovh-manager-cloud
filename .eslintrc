@@ -14,6 +14,7 @@
         "JSURL": true,
         "moment": true,
         "RFB": "true",
+        "Terminal": true,
         "URI": true,
         "Util": true,
         "WebUtil": true
