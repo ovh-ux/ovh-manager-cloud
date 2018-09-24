@@ -17,5 +17,8 @@
         "URI": true,
         "Util": true,
         "WebUtil": true
+    },
+    "rules": {
+        "no-bitwise": ["error", { "allow": ["~"] }]
     }
 }
