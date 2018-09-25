@@ -145,7 +145,7 @@
     "build:eu": "webpack --env.region=eu --env.production",
     "build:ca": "webpack --env.region=ca --env.production",
     "build:us": "webpack --env.region=us --env.production",
-    "test": "eslint ./client",
+    "test": "eslint --quiet ./client",
     "lint": "eslint --fix --quiet ./client"
   },
   "config": {
