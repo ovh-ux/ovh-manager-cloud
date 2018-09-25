@@ -498,6 +498,8 @@
 
    <translation id="vps_additional_disk_info_fail" qtlid="281706">Erreur lors du chargement d'informations sur les disques additionnels</translation>
 
+   <translation id="vps_tab_cloud_database">Base de données</translation>
+
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Une erreur est survenue lors de la demande de ne plus déranger pour le renouvellement automatique.</translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Simplifiez-vous la vie et optez pour le renouvellement automatique de votre VPS ! Finies les relances et les suppressions inopportunes.</translation>
    <translation id="vps_autorenew_guide" qtlid="290615">Accéder au guide</translation>
