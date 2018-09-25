@@ -1,20 +1,16 @@
 class HomeCtrl {
-    constructor ($q, DocsService, FeatureAvailabilityService, OvhApiCloudProject, OvhApiCloudProjectRegion) {
+    constructor ($q, DocsService, FeatureAvailabilityService) {
         this.$q = $q;
         this.DocsService = DocsService;
         this.FeatureAvailabilityService = FeatureAvailabilityService;
-        this.OvhApiCloudProject = OvhApiCloudProject;
-        this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
     }
 
     $onInit () {
         this.defaultSections = ["PROJECT", "VPS"];
         this.guides = {};
         this.guides.all = this.DocsService.getAllGuidesLink();
-        this.hasAScheduledMaintenanceOperation = null;
 
-        return this.setSections()
-            .then(() => this.getAllRegions());
+        return this.setSections();
     }
 
     setSections () {
@@ -27,20 +23,6 @@ class HomeCtrl {
                     .map(section => this.DocsService.getGuidesOfSection(section))
                     .value();
                 return this.guides.sections;
-            });
-    }
-
-    getAllRegions () {
-        return this.OvhApiCloudProject.v6()
-            .query().$promise
-            .then(cloudProjects => this.$q
-                .all(_.map(cloudProjects, cloudProject => this.OvhApiCloudProjectRegion.v6()
-                    .query({ serviceName: cloudProject }).$promise
-                    .catch(() => [])))
-                .then(allRegions => _(allRegions).flatten().uniq().value()))
-            .then(regions => {
-                this.hasAScheduledMaintenanceOperation = _.indexOf(regions, "BHS1") > -1 && moment().isBefore("2018-09-20");
-                return regions;
             });
     }
 }
