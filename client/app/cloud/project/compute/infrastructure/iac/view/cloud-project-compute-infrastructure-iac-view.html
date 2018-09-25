@@ -1,23 +1,28 @@
 <section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
-  <oui-back-button data-title="{{ 'cpciiac_view_title' | translate }}"></oui-back-button>
-  <p data-translate="cpciiac_view_intro"></p>
-  <oui-radio-group data-model="ViewCtl.model.stack"
-  data-name="stack">
-  <div class="cui-grid-list">
-    <div class="cui-grid-list-item cui-grid-cell"
-    data-ng-repeat="stack in ViewCtl.stacks track by stack.uuid">
-    <img class="img-circle img-circle-bordered" width="75" height="75"
-      data-ng-src="assets/images/cloud/apps/{{ stack.name }}.png"
-      alt="kubernetes" />
-    <oui-button data-text="{{ 'cpciiac_view_stack_' + stack.name | translate }}"
-    data-id="stack_{{ stack.uuid }}"
-    data-model="ViewCtl.model.stack"
-    data-value="stack"
-    data-ng-click="ViewCtl.viewStack(stack)"
-    data-required
-    data-thumbnail>
-  </oui-button>
-</div>
-</div>
-</oui-radio-group>
+    <oui-back-button data-title="{{ 'cpciiac_view_title' | translate }}"></oui-back-button>
+    <p data-translate="cpciiac_view_intro"></p>
+    <oui-radio-group data-model="ViewCtl.model.stack"
+                     data-name="stack">
+        <div class="cui-grid-list">
+            <div class="cui-grid-list-item cui-grid-cell"
+                 data-ng-repeat="stack in ViewCtl.stacks track by stack.uuid">
+                <img class="img-circle img-circle-bordered"
+                     width="75"
+                     height="75"
+                     alt="kubernetes"
+                     data-ng-src="assets/images/cloud/apps/{{ stack.name }}.png">
+                <oui-button data-text="{{ 'cpciiac_view_stack_' + stack.name | translate }}"
+                            data-id="stack_{{ stack.uuid }}"
+                            data-model="ViewCtl.model.stack"
+                            data-value="stack"
+                            data-ng-click="ViewCtl.viewStack(stack)"
+                            data-required
+                            data-thumbnail>
+                </oui-button>
+            </div>
+            <!-- /.cui-grid-list-item -->
+        </div>
+        <!-- /.cui-grid-list -->
+    </oui-radio-group>
 </section>
+<!-- /.cui-page__content -->

@@ -3,27 +3,28 @@ class CloudProjectComputeInfrastructureIacViewCtrl {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-
-    this.ServiceHelper = ServiceHelper;
     this.OvhApiCloudProjectStack = OvhApiCloudProjectStack;
+    this.ServiceHelper = ServiceHelper;
   }
 
   $onInit() {
     this.serviceName = this.$stateParams.projectId;
-    this.getStacks();
+    return this.getStacks();
   }
 
   cancel() {
     this.$state.go('iaas.pci-project.compute.infrastructure.list');
   }
 
-  /* Get stacks from API */
   getStacks() {
-    return this.$q.all({
-      stacks: this.OvhApiCloudProjectStack.v6().query({ serviceName: this.serviceName }).$promise,
-    })
+    return this.$q
+      .all({
+        stacks: this.OvhApiCloudProjectStack.v6()
+          .query({ serviceName: this.serviceName }).$promise,
+      })
       .then(({ stacks }) => {
         this.stacks = stacks;
+        return stacks;
       })
       .catch(this.ServiceHelper.errorHandler('cpciiac_view_general_ERROR'));
   }

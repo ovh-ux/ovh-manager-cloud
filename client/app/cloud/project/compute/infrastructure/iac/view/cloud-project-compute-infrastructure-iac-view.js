@@ -1,5 +1,3 @@
-
-
 angular.module('managerApp').config(($stateProvider) => {
   $stateProvider.state('iaas.pci-project.compute.infrastructure.iac-view', {
     url: '/iac/view',
@@ -7,9 +5,8 @@ angular.module('managerApp').config(($stateProvider) => {
       cloudProjectComputeInfrastructure: {
         templateUrl: 'app/cloud/project/compute/infrastructure/iac/view/cloud-project-compute-infrastructure-iac-view.html',
         controller: 'CloudProjectComputeInfrastructureIacViewCtrl',
-        controllerAs: 'ViewCtl',
+        controllerAs: '$ctrl',
       },
     },
-    translations: ['common'],
   });
 });

@@ -4,37 +4,48 @@ class CloudProjectComputeInfrastructureIacDeployCtrl {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-
     this.Service = CloudProjectComputeInfrastructureOpenstackClientService;
     this.OvhApiCloudProjectStack = OvhApiCloudProjectStack;
-    this.User = OvhApiMe;
+    this.OvhApiMe = OvhApiMe;
     this.ServiceHelper = ServiceHelper;
-
-    this.StackID = this.$stateParams.stackId;
   }
 
   $onInit() {
+    this.StackID = this.$stateParams.stackId;
     this.serviceName = this.$stateParams.projectId;
-    this.getMe();
-    // Get guides
-    this.OvhApiCloudProjectStack.v6()
-      .get({ serviceName: this.serviceName, stackId: this.StackID }).$promise
-      .then((stack) => {
-        this.stack = stack;
-        this.guides = stack.instructions;
-        this.guide = _.find(this.guides, guide => guide.language === this.me.language);
+
+    return this.$q
+      .all({
+        user: this.getUser(),
+        stack: this.OvhApiCloudProjectStack.v6()
+          .get({
+            serviceName: this.serviceName,
+            stackId: this.StackID,
+          }).$promise,
+      })
+      .then((results) => {
+        this.stack = results.stack;
+        this.guides = results.stack.instructions;
+        this.guide = _.find(this.guides, guide => guide.language === this.user.language);
+
         // Default is en_US
         if (!this.guide) {
           this.guide = _.find(this.guides, guide => guide.language === 'en_US');
         }
+
         if (!this.guide) {
           this.guide = this.defaultGuide;
         }
+
         if (this.$stateParams.hTerm.session) {
           return this.$q.when();
         }
+
         return this.OvhApiCloudProjectStack.v6()
-          .client({ serviceName: this.serviceName, stackId: stack.uuid }).$promise
+          .client({
+            serviceName: this.serviceName,
+            stackId: this.stack.uuid,
+          }).$promise
           .then(session => this.$state.go('.', {
             hTerm: {
               session,
@@ -44,10 +55,13 @@ class CloudProjectComputeInfrastructureIacDeployCtrl {
       .catch(this.ServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
   }
 
-  getMe() {
-    this.User.v6().get().$promise.then((me) => {
-      this.me = me;
-    })
+  getUser() {
+    return this.OvhApiMe.v6()
+      .get().$promise
+      .then((user) => {
+        this.user = user;
+        return user;
+      })
       .catch(this.ServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
   }
 
