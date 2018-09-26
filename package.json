@@ -4,6 +4,7 @@
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
   "license": "BSD-3-Clause",
+  "private": true,
   "keywords": [
     "ovh",
     "control",
