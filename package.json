@@ -1,14 +1,55 @@
 {
   "name": "cloud",
   "version": "7.6.5",
-  "license": "BSD-3-Clause",
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
-  "main": "server/app.js",
-  "repository": "ovh-ux/ovh-manager-cloud",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "ovh",
+    "control",
+    "panel",
+    "cloud",
+    "cda",
+    "dbaas",
+    "deskaas",
+    "iplb",
+    "nasha",
+    "veeam",
+    "vps",
+    "vrack"
+  ],
   "engines": {
     "node": ">=8",
     "yarn": ">= 1.0.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --env.region=eu",
+    "start:eu": "webpack-dev-server --env.region=eu",
+    "start:ca": "webpack-dev-server --env.region=ca",
+    "start:us": "webpack-dev-server --env.region=us",
+    "build:eu": "webpack --env.region=eu --env.production",
+    "build:ca": "webpack --env.region=ca --env.production",
+    "build:us": "webpack --env.region=us --env.production",
+    "test": "eslint --quiet ./client",
+    "lint": "run-p lint:js",
+    "lint:css": "stylelint 'client/**/*.less' --fix",
+    "lint:js": "eslint --quiet --fix ./client"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.less": [
+      "stylelint 'client/**/*.less' --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "angular": "~1.6",
@@ -100,6 +141,8 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^7.1.2",
     "@ovh-ux/manager-webpack-config": "^1.0.0",
     "angular-template-url-loader": "^1.0.2",
     "babel-eslint": "^8.2.6",
@@ -118,10 +161,13 @@
     "glob": "^7.1.3",
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.19.0",
+    "husky": "^1.0.0",
     "less": "^2.3.1",
     "less-loader": "^4.1.0",
     "less-plugin-remcalc": "^0.0.1",
+    "lint-staged": "^7.3.0",
     "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.3",
     "npm-scripts-config": "^0.0.2",
     "npm-scripts-conventional-changelog": "^0.1.0",
     "raw-loader": "^0.5.1",
@@ -129,6 +175,8 @@
     "sass-loader": "^7.1.0",
     "script-loader": "^0.7.2",
     "style-loader": "^0.23.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.17.1",
     "webpack-bundle-analyzer": "^2.13.1",
@@ -136,17 +184,6 @@
     "webpack-dev-server": "^3.1.8",
     "webpack-merge": "^4.1.4",
     "webpackbar": "^2.6.3"
-  },
-  "scripts": {
-    "start": "webpack-dev-server --env.region=eu",
-    "start:eu": "webpack-dev-server --env.region=eu",
-    "start:ca": "webpack-dev-server --env.region=ca",
-    "start:us": "webpack-dev-server --env.region=us",
-    "build:eu": "webpack --env.region=eu --env.production",
-    "build:ca": "webpack --env.region=ca --env.production",
-    "build:us": "webpack --env.region=us --env.production",
-    "test": "eslint --quiet ./client",
-    "lint": "eslint --fix --quiet ./client"
   },
   "config": {
     "commitizen": {
