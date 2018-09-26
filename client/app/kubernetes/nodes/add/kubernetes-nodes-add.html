@@ -1,0 +1,46 @@
+<form id="kubeNodesAdd"
+      name="kubeNodesAdd"
+      data-ng-submit="kubeNodesAdd.$valid && $ctrl.addNode()"
+      novalidate>
+    <oui-modal data-heading="{{:: 'kube_nodes_add' | translate }}"
+               data-primary-label="{{:: 'common_add' | translate }}"
+               data-secondary-label="{{:: 'common_cancel' | translate }}"
+               data-secondary-action="$ctrl.dismiss()"
+               data-on-dismiss="$ctrl.dismiss()"
+               data-loading="$ctrl.loading">
+        <p data-translate="kube_nodes_add_region"></p>
+        <div class="oui-field"
+             data-ng-class="{ 'oui-field_error':  kubeNodesAdd.$submitted && !$ctrl.flavorFamily }">
+            <label for="oui-select" class="oui-label" data-translate="kube_nodes_add_flavor_family"></label>
+            <div class="oui-field__control oui-field__control_auto">
+                <oui-select
+                    name="flavorFamily"
+                    data-model="$ctrl.flavorFamily"
+                    data-title="{{:: 'kube_nodes_add_flavor_family' | translate }}"
+                    data-placeholder="{{:: 'kube_nodes_add_flavor_family' | translate }}"
+                    data-items="$ctrl.flavorFamilies"
+                    data-match="familyName"
+                    data-on-change="$ctrl.onFlavorFamilyChange(modelValue)"
+                    required>
+                    <span data-ng-bind="$item.familyName"></span>
+                </oui-select>
+            </div>
+            <div class="oui-field__error">
+                <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                <span data-translate="common_field_error_required"></span>
+            </div>
+        </div>
+        <oui-field data-label="{{:: 'kube_nodes_add_flavor' | translate }}">
+            <oui-select name="flavorFamily"
+                        data-model="$ctrl.flavor"
+                        data-title="{{:: 'kube_nodes_add_flavor_family' | translate }}"
+                        data-placeholder="{{:: 'kube_nodes_add_flavor_family' | translate }}"
+                        data-items="$ctrl.flavors"
+                        data-match="displayedName"
+                        data-disabled="!$ctrl.flavorFamily"
+                        required>
+                <span data-ng-bind="$item.displayedName"></span>
+            </oui-select>
+        </oui-field>
+    </oui-modal>
+</form>

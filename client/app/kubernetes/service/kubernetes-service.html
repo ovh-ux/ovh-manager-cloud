@@ -1,0 +1,81 @@
+<div data-ng-if="$ctrl.loaders.cluster || $ctrl.loaders.billing" class="text-center">
+    <oui-spinner data-size="m"></oui-spinner>
+</div>
+<div data-ng-if="!$ctrl.loaders.cluster && !$ctrl.loaders.billing">
+    <oui-message data-ng-if="$ctrl.displayError" data-type="error">
+        <span data-translate="kube_service_error"></span>
+    </oui-message>
+    <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
+    <div>
+        <p class="oui-paragraph">
+            <span data-translate="kube_service_description_information"></span>
+            <a class="oui-link"
+               data-translate="kube_service_description_tool"
+               href="{{:: $ctrl.KUBERNETES.urls.kubectl }}"
+               target="_blank" rel="noopener"></a>
+        </p>
+        <p class="oui-paragraph" data-translate="kube_service_description_reset"></p>
+    </div>
+    <div class="row d-lg-flex">
+        <!--Cluster Information-->
+        <div class="col-md-4 col-xm-12" data-ng-if="$ctrl.cluster">
+            <oui-tile class="h-100" data-heading="{{:: 'kube_service_cluster_information' | translate }}">
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_status' | translate }}">
+                    <oui-tile-description>
+                        <span class="oui-status"
+                              data-ng-class="{
+                                        'oui-status_success' : $ctrl.cluster.status === 'READY',
+                                        'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING',
+                                        'oui-status_error' : $ctrl.cluster.status === 'ERROR'
+                                        }"
+                              data-translate="{{:: 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
+                        </span>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_version' | translate }}" data-description="{{:: $ctrl.cluster.version }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_region' | translate }}" data-description="{{:: $ctrl.cluster.region }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_api_url' | translate }}">
+                    <oui-tile-description>
+                        <oui-clipboard data-model="$ctrl.cluster.url"></oui-clipboard>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div class="oui-tile__item">
+                    <dl class="oui-tile__definition">
+                        <dt class="oui-tile__term">
+                            <span data-translate="kube_service_file"></span>
+                            <oui-popover>
+                                <button type="button" class="oui-popover-button" oui-popover-trigger></button>
+                                <oui-popover-content>
+                                    <span data-translate="kube_service_file_help"></span>
+                                    <a class="oui-link"
+                                       data-translate="kube_service_file_more_information"
+                                       href="{{:: $ctrl.KUBERNETES.urls.kubeconfig }}"
+                                       target="_blank" rel="noopener"></a>
+                                </oui-popover-content>
+                            </oui-popover>
+                        </dt>
+                        <dd class="oui-tile__description">
+                            <oui-skeleton data-randomized data-ng-if="$ctrl.loaders.config"></oui-skeleton>
+                            <oui-button data-ng-if="$ctrl.kubernetesConfig" data-variant="link" data-ng-click="$ctrl.downloadConfigFile()" data-text="{{:: $ctrl.kubernetesConfig.fileName }}"></oui-button>
+                        </dd>
+                    </dl>
+                </div>
+            </oui-tile>
+        </div>
+        <!--Billing-->
+        <div class="col-md-4 col-xm-12" data-ng-if="$ctrl.serviceInfos">
+            <oui-tile class="h-100" data-heading="{{ 'kube_service_billing' | translate }}">
+                <oui-tile-definition data-term="{{:: 'kube_service_billing_plan' | translate }}" data-description="{{:: $ctrl.serviceInfos.offer }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_billing_contact' | translate }}" data-description="{{:: $ctrl.serviceInfos.contactBilling }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_billing_renewal' | translate }}">
+                    <oui-tile-description data-ng-if="$ctrl.serviceInfos.renew === 'forced' || $ctrl.serviceInfos.renew === 'automatic'">
+                        <span data-translate="kube_service_billing_renewal_automatic"></span>
+                    </oui-tile-description>
+                    <oui-tile-description>
+                        <span data-ng-bind=":: $ctrl.serviceInfos.expiration | date"></span>
+                    </oui-tile-description>
+                </oui-tile-definition>
+            </oui-tile>
+        </div>
+    </div>
+</div>

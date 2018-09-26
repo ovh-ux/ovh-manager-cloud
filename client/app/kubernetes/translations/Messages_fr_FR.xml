@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="kube_guides">Guides</translation>
+    <translation id="kube_guides_dashboard">Dashboard Kubernetes</translation>
+
+    <translation id="kube_service">Service</translation>
+    <translation id="kube_service_error">Une erreur s'est produite lors du chargement des informations</translation>
+    <translation id="kube_service_description_information">Vous trouverez ci-dessous les informations de votre service Kubernetes, vous permettant d'y accéder à l'aide de l'</translation>
+    <translation id="kube_service_description_tool">outil kubetcl.</translation>
+    <translation id="kube_service_description_reset">Vous pouvez réinitialiser la configuration de votre cluster Kubernetes à tout moment.</translation>
+    <translation id="kube_service_offer_beta">Service managé Kubernetes Beta (gratuit)</translation>
+
+    <translation id="kube_service_file">Fichier kubeconfig</translation>
+    <translation id="kube_service_file_error">Une erreur est survenue lors du chargement du fichier de configuration</translation>
+    <translation id="kube_service_file_help">Le fichier kubeconfig contient les données permettant à l'outil en ligne de commande kubectl de communiquer avec l'API de votre cluster.</translation>
+    <translation id="kube_service_file_more_information">Plus d'information disponible ici</translation>
+
+    <translation id="kube_service_cluster_information">Informations sur le cluster</translation>
+    <translation id="kube_service_cluster_status">Statut</translation>
+    <translation id="kube_service_cluster_status_READY">Ok</translation>
+    <translation id="kube_service_cluster_status_ERROR">Erreur</translation>
+    <translation id="kube_service_cluster_status_INSTALLING">En cours d'installation</translation>
+    <translation id="kube_service_cluster_status_DELETING">En cours de suppression</translation>
+    <translation id="kube_service_cluster_version">Version de Kubernetes installée</translation>
+    <translation id="kube_service_cluster_region">Région</translation>
+    <translation id="kube_service_cluster_api_url">URL de l'API Kubernetes de votre cluster</translation>
+
+    <translation id="kube_service_billing">Facturation</translation>
+    <translation id="kube_service_billing_plan">Offre</translation>
+    <translation id="kube_service_billing_contact">Nic Billing</translation>
+    <translation id="kube_service_billing_renewal">Renouvellement</translation>
+
+    <translation id="kube_nodes">Noeuds</translation>
+    <translation id="kube_nodes_add">Ajouter un noeud</translation>
+    <translation id="kube_nodes_add_region">Durant la bêta, vos nœuds seront tous dans la région GRA5. Nous permettrons ultérieurement de choisir cette région.</translation>
+    <translation id="kube_nodes_add_success">Le noeud a bien été ajouté</translation>
+    <translation id="kube_nodes_add_flavor_family">Choisir un modèle d'instance</translation>
+    <translation id="kube_nodes_add_flavor_family_balanced">General purpose</translation>
+    <translation id="kube_nodes_add_flavor_family_cpu">CPU</translation>
+    <translation id="kube_nodes_add_flavor_family_ram">RAM</translation>
+    <translation id="kube_nodes_add_flavor_family_accelerated">GPU</translation>
+    <translation id="kube_nodes_add_flavor_family_vps">SANDBOX</translation>
+    <translation id="kube_nodes_add_flavor">Choisissez un modèle d'instance dans le catalogue OVH public cloud</translation>
+    <translation id="kube_nodes_add_pick_flavor">Choisir un modèle</translation>
+    <translation id="kube_nodes_add_error">Une erreur est survenue lors de l'ajout du noeud : {{ message }}</translation>
+    <translation id="kube_nodes_add">Ajouter un noeud</translation>
+
+    <translation id="kube_nodes_delete">Supprimer le noeud</translation>
+    <translation id="kube_nodes_delete_confirmation">Êtes-vous sûr de supprimer {{ node }} ?</translation>
+    <translation id="kube_nodes_delete_warning">Cette action est irréversible.</translation>
+    <translation id="kube_nodes_delete_enter">Entrez "DELETE" dans le champ ci-dessous pour confirmer</translation>
+    <translation id="kube_nodes_delete_success">Le noeud a bien été supprimé</translation>
+    <translation id="kube_nodes_delete_error">Une erreur est survenue lors de la suppression du noeud : {{ message }}</translation>
+
+    <translation id="kube_nodes_node">Noeud</translation>
+    <translation id="kube_nodes_flavor">Modèle d'instance</translation>
+    <translation id="kube_nodes_flavor_error">Une erreur est survenue lors du chargement du type d'instance associé</translation>
+    <translation id="kube_nodes_project_error">Une erreur s'est produite lors du chargement du projet associé</translation>
+    <translation id="kube_nodes_description_project_1">Votre cluster Kubernetes utilise des nœuds pour héberger vos conteneurs et services. Tous vos nœuds seront lancés dans le projet public cloud</translation>
+    <translation id="kube_nodes_description_project_2">(nous permettrons de changer cela dans le futur). Ces instances vous seront facturées normalement dans votre projet public cloud.</translation>
+
+    <translation id="kube_flavor">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}Go RAM {{ diskCapacity }}Go Disque)</translation>
+
+    <translation id="kube_containers_and_services">Conteneurs et services</translation>
+    <translation id="kube_containers_coming_soon">Bientôt disponible</translation>
+    <translation id="kube_containers_description">Vous pourrez bientôt retrouver ici tous les conteneurs et services hébergés par votre cluster Kubernetes.</translation>
+    <translation id="kube_containers_description_dashboard">Nous vous invitons à utiliser l'outil en ligne de commande "kubectl" ou installer le Daskboard Kubernetes. Il s'agit d'une interface utilisateur web maintenue par la communauté Kubernetes, elle-même exposée en tant que service au sein de votre cluster.</translation>
+    <translation id="kube_containers_description_dashboard_link">Suivez ce tutoriel pour installer le dashboard Kubernetes.</translation>
+    <translation id="kube_containers_description_documentation">Pendant la phase bêta, vous trouverez de la documentation (comment orchestrer et exposer vos services sur Internet...) dans la</translation>
+    <translation id="kube_containers_description_documentation_link">section "Kubernetes" du site labs.ovh.com</translation>
+
+</translations>

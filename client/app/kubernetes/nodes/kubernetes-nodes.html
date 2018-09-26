@@ -1,0 +1,40 @@
+<div data-ng-if="$ctrl.loading" class="text-center">
+    <oui-spinner data-size="m"></oui-spinner>
+</div>
+<div data-ng-if="!$ctrl.loading">
+    <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
+    <div data-ng-if="$ctrl.nodes">
+        <div class="mb-3">
+            <span data-translate="kube_nodes_description_project_1"></span>
+            <a class="oui-link"
+               data-ng-bind=":: $ctrl.project.description"
+               data-ui-sref="iaas.pci-project.compute"
+               data-ui-sref-opts="{ projectId: $ctrl.project.project_id }"></a>
+            <span data-translate="kube_nodes_description_project_2"></span>
+        </div>
+        <oui-datagrid data-rows="$ctrl.nodes" data-row-loader="$ctrl.getAssociatedFlavor($row)">
+            <oui-column data-title=":: 'kube_nodes_node' | translate"
+                        data-property="id"
+                        data-type="string"
+                        data-searchable
+                        data-filterable></oui-column>
+            <oui-column data-title=":: 'kube_nodes_flavor' | translate"
+                        data-property="formattedFlavor"
+                        data-type="string"
+                        data-searchable
+                        data-filterable>
+            </oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{:: 'common_delete' | translate }}" data-on-click="$ctrl.confirmNodeDeletion($row.id)"></oui-action-menu-item>
+            </oui-action-menu>
+            <extra-top>
+                <oui-button data-ng-if="$ctrl.project"
+                            data-aria-label="{{:: 'kube_nodes_add' | translate }}"
+                            data-text="{{:: 'kube_nodes_add' | translate }}"
+                            data-on-click="$ctrl.openAddNodeForm($ctrl.project.project_id)"
+                            class="mb-1">
+                </oui-button>
+            </extra-top>
+        </oui-datagrid>
+    </div>
+</div>
