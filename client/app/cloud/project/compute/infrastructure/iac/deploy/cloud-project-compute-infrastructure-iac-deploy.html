@@ -2,7 +2,7 @@
     <oui-back-button data-title="{{:: 'cpciiac_deploy_title' | translate }}"></oui-back-button>
     <oui-collapsible class="mb-4"
                      data-ng-repeat="section in $ctrl.guide.sections track by $index"
-                     data-heading="{{ section.title }}"
+                     data-heading="{{ ::section.title }}"
                      data-expanded="$first">
         <div data-ng-repeat="content in section.content track by $index">
             <div data-ng-switch="content.type">
