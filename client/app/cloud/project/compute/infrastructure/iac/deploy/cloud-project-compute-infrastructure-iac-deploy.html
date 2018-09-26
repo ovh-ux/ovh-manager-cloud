@@ -1,49 +1,38 @@
 <section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
     <oui-back-button data-title="{{:: 'cpciiac_deploy_title' | translate }}"></oui-back-button>
-    <oui-collapsible data-ng-repeat="section in DeployCtl.guide.sections"
+    <oui-collapsible class="mb-4"
+                     data-ng-repeat="section in $ctrl.guide.sections track by $index"
                      data-heading="{{ section.title }}"
                      data-expanded="$first">
-        <div data-ng-repeat="content in section.content">
+        <div data-ng-repeat="content in section.content track by $index">
             <div data-ng-switch="content.type">
                 <p data-ng-switch-when="p"
                    data-ng-bind="content.content">
                 </p>
-                <div class="d-md-flex"
-                     data-ng-switch-when="code">
-                    <div class="pr-4">
-                        <pre class="mb-0" data-ng-bind="content.content"></pre>
-                    </div>
-                    <div class="pr-2">
-                        <button type="button"
-                                class="btn btn-primary mb-0"
-                                data-ng-click="DeployCtl.Service.pasteAction(content.content)"
-                                data-translate="cpciiac_deploy_copy_paste">
-                        </button>
-                    </div>
+                <div data-ng-switch-when="code">
+                    <pre data-ng-bind="content.content"></pre>
+                    <button type="button"
+                            class="oui-button oui-button_secondary"
+                            data-ng-click="$ctrl.Service.pasteAction(content.content)"
+                            data-translate="cpciiac_deploy_copy_paste">
+                    </button>
                 </div>
             </div>
         </div>
-        <div data-ng-repeat="step in section.steps">
+        <div data-ng-repeat="step in section.steps track by $index">
             <h3 data-ng-bind="step.title"></h3>
-            <div data-ng-repeat="content in step.content">
+            <div data-ng-repeat="content in step.content track by $index">
                 <div data-ng-switch="content.type">
                     <p data-ng-switch-when="p"
                        data-ng-bind="content.content">
                     </p>
-                    <div class="d-md-flex"
-                         data-ng-switch-when="code">
-                        <div class="pr-4">
-                            <pre class="mb-0"
-                                 data-ng-bind="content.content">
-                            </pre>
-                        </div>
-                        <div class="pr-2">
-                            <button type="button"
-                                    class="btn btn-primary mb-0"
-                                    data-ng-click="DeployCtl.Service.pasteAction(content.content)"
-                                    data-translate="cpciiac_deploy_copy_paste">
-                            </button>
-                        </div>
+                    <div data-ng-switch-when="code">
+                        <pre data-ng-bind="content.content"></pre>
+                        <button type="button"
+                                class="oui-button oui-button_secondary"
+                                data-ng-click="$ctrl.Service.pasteAction(content.content)"
+                                data-translate="cpciiac_deploy_copy_paste">
+                        </button>
                     </div>
                 </div>
             </div>
