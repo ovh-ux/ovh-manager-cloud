@@ -1,28 +1,28 @@
-"use strict";
 
-angular.module("managerApp")
-  .service("DetailsPopoverService", function () {
-      var self = this;
 
-      self.reset = function () {
-          self.setCurrentDetails(undefined);
-      };
+angular.module('managerApp')
+  .service('DetailsPopoverService', function () {
+    const self = this;
 
-      self.getCurrentDetails = function () {
-          return self.currentDetails;
-      };
+    self.reset = function () {
+      self.setCurrentDetails(undefined);
+    };
 
-      self.setCurrentDetails = function (details) {
-          self.currentDetails = details;
-      };
+    self.getCurrentDetails = function () {
+      return self.currentDetails;
+    };
 
-      self.isCurrentDetails = function (details) {
-          return self.currentDetails === details;
-      };
+    self.setCurrentDetails = function (details) {
+      self.currentDetails = details;
+    };
 
-      function init () {
-          self.reset();
-      }
+    self.isCurrentDetails = function (details) {
+      return self.currentDetails === details;
+    };
 
-      init();
+    function init() {
+      self.reset();
+    }
+
+    init();
   });
