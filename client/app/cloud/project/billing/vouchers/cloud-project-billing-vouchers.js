@@ -10,6 +10,6 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'VouchersCtrl',
       },
     },
-    translations: ['common', 'cloud/project/billing/vouchers', 'cloud/project/billing/vouchers/addCredit'],
+    translations: ['.', './addCredit'],
   });
 });

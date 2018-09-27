@@ -12,9 +12,6 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectOpenstackCtrl',
           },
         },
-        translations: [
-          'common',
-          'cloud/project/openstack',
-        ],
+        translations: ['.'],
       });
   });

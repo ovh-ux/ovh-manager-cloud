@@ -13,7 +13,7 @@ class IpLoadBalancerZoneAddService {
 
   getOrderableZones(serviceName) {
     return this.$q.all({
-      orderableZones: this.this.OvhApiIpLoadBalancing.v6()
+      orderableZones: this.OvhApiIpLoadBalancing.v6()
         .get({ serviceName })
         .$promise
         .then(response => response.orderableZone),

@@ -10,6 +10,5 @@ angular.module('managerApp')
             controllerAs: 'CdaDetailsCtrl',
           },
         },
-        translations: ['common'],
       });
   });

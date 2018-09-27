@@ -10,6 +10,6 @@ angular.module('managerApp')
             controllerAs: 'CdaUserDetailsCtrl',
           },
         },
-        translations: ['common', 'cda/user/details'],
+        translations: ['.'],
       });
   });

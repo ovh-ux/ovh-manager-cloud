@@ -10,7 +10,7 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'CloudProjectBillingCtrl',
       },
     },
-    translations: ['common', 'cloud/project/billing', 'cloud/project/delete'],
+    translations: ['.', '../delete'],
     atInternet: { ignore: true },
   });
 });
