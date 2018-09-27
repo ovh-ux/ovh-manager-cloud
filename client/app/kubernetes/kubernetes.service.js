@@ -63,7 +63,7 @@ angular.module("managerApp").service("Kubernetes", class Kubernetes {
         return this.$translate.instant("kube_flavor", {
             name: flavor.name.toUpperCase(),
             cpuNumber: flavor.vcpus,
-            ramCapacity: flavor.ram,
+            ramCapacity: flavor.ram / 1000,
             diskCapacity: flavor.disk
         });
     }
