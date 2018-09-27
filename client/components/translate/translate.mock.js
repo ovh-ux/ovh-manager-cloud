@@ -1,9 +1,7 @@
-"use strict";
 
-angular.module("translateMock", []);
 
-angular.module("translateMock").run(function ($httpBackend) {
+angular.module('translateMock', []);
 
-    $httpBackend.whenGET(/translations\/Messages\w+\.json$/).respond(200, {});
-
+angular.module('translateMock').run(($httpBackend) => {
+  $httpBackend.whenGET(/translations\/Messages\w+\.json$/).respond(200, {});
 });
