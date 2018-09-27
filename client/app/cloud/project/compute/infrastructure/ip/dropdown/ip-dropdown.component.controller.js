@@ -1,78 +1,74 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("IpDropdownComponentCtrl", function ($translate, $window, REDIRECT_URLS, OvhApiIp, CloudMessage, CLOUD_GEOLOCALISATION) {
-      var self = this;
 
-      self.failoverAttach = function (ip) {
-          self.onFailoverAttach({ ip: ip });
-      };
+angular.module('managerApp')
+  .controller('IpDropdownComponentCtrl', function ($translate, $window, REDIRECT_URLS, OvhApiIp, CloudMessage, CLOUD_GEOLOCALISATION) {
+    const self = this;
 
-      var ipActionUrlWithSession = REDIRECT_URLS.ipAction;
-      self.ipActionRedirections = {
-          firewall:  ipActionUrlWithSession.replace("{action}", "firewall"),
-          mitigation:  ipActionUrlWithSession.replace("{action}", "mitigation"),
-          reverse:  ipActionUrlWithSession.replace("{action}", "reverse")
-      };
+    self.failoverAttach = function (ip) {
+      self.onFailoverAttach({ ip });
+    };
 
-      self.ipActionRedirect = function (action, ip) {
-          var url = null;
-          var ipActionUrlWithSession = REDIRECT_URLS.ipAction;
-          switch (action) {
-              case "reverse":
-                  if (self.isIpUserSameContinent(ip)) {
-                      OvhApiIp.v6().resetCache();
-                      url = ipActionUrlWithSession.replace("{action}", "reverse").replace("{ipBlock}", window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace("{ip}", ip[self.ipAccessKey]);
-                  } else {
-                      CloudMessage.info($translate.instant("cpci_ip_reverse_info_soon"));
-                  }
-                  break;
-              default:
-                  url = ipActionUrlWithSession.replace("{action}", action).replace("{ipBlock}", window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace("{ip}", ip[self.ipAccessKey]);
+    const ipActionUrlWithSession = REDIRECT_URLS.ipAction;
+    self.ipActionRedirections = {
+      firewall: ipActionUrlWithSession.replace('{action}', 'firewall'),
+      mitigation: ipActionUrlWithSession.replace('{action}', 'mitigation'),
+      reverse: ipActionUrlWithSession.replace('{action}', 'reverse'),
+    };
+
+    self.ipActionRedirect = function (action, ip) {
+      let url = null;
+      const ipActionUrlWithSession = REDIRECT_URLS.ipAction;
+      switch (action) {
+        case 'reverse':
+          if (self.isIpUserSameContinent(ip)) {
+            OvhApiIp.v6().resetCache();
+            url = ipActionUrlWithSession.replace('{action}', 'reverse').replace('{ipBlock}', window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace('{ip}', ip[self.ipAccessKey]);
+          } else {
+            CloudMessage.info($translate.instant('cpci_ip_reverse_info_soon'));
           }
-          if (url) {
-              $window.open(url);
-          }
-      };
+          break;
+        default:
+          url = ipActionUrlWithSession.replace('{action}', action).replace('{ipBlock}', window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace('{ip}', ip[self.ipAccessKey]);
+      }
+      if (url) {
+        $window.open(url);
+      }
+    };
 
-      self.isIpUserSameContinent = function (ip) {
-          var userContinent = self.getUserContinent();
-          var ipContinent = self.getIpContinent(ip);
-          return userContinent && ipContinent && userContinent === ipContinent;
-      };
+    self.isIpUserSameContinent = function (ip) {
+      const userContinent = self.getUserContinent();
+      const ipContinent = self.getIpContinent(ip);
+      return userContinent && ipContinent && userContinent === ipContinent;
+    };
 
-      self.getUserContinent = function () {
-          var continent = null;
-          if (self.user) {
-              continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.user, function (region) {
-                  return _.indexOf(region, self.user.ovhSubsidiary) >= 0;
-              })));
-          }
-          return continent;
-      };
+    self.getUserContinent = function () {
+      let continent = null;
+      if (self.user) {
+        continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.user, region => _.indexOf(region, self.user.ovhSubsidiary) >= 0)));
+      }
+      return continent;
+    };
 
-      self.getIpContinent = function (ip) {
-          var continent = null;
-          switch (ip.type) {
-              case "failover":
-                  continent = ip.continentCode;
-                  break;
-              case "public":
-                  // in case of public IP we get the location from the linked vm
-                  var linkedVmId = _.first(ip.routedTo);
-                  if (linkedVmId) {
-                      var linkedVm = self.infra.vrack.publicCloud.get(linkedVmId);
-                      if (linkedVm) {
-                          continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.instance, function (region) {
-                              return _.indexOf(region, linkedVm.region) >= 0;
-                          })));
-                      }
-                  }
-                  break;
-              default:
-                  // unknown type of IP
-                  break;
+    self.getIpContinent = function (ip) {
+      let continent = null;
+      switch (ip.type) {
+        case 'failover':
+          continent = ip.continentCode;
+          break;
+        case 'public':
+          // in case of public IP we get the location from the linked vm
+          var linkedVmId = _.first(ip.routedTo);
+          if (linkedVmId) {
+            const linkedVm = self.infra.vrack.publicCloud.get(linkedVmId);
+            if (linkedVm) {
+              continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.instance, region => _.indexOf(region, linkedVm.region) >= 0)));
+            }
           }
-          return continent;
-      };
+          break;
+        default:
+          // unknown type of IP
+          break;
+      }
+      return continent;
+    };
   });

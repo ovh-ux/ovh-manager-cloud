@@ -1,419 +1,459 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("CloudProjectComputeSnapshotCtrl",
-    function ($uibModal, OvhCloudPriceHelper, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-              OvhApiCloudProjectImage, $translate, CloudMessage, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
-              $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
-    var self = this,
-        serviceName = $stateParams.projectId,
-        instances = [],
-        images = [],
-        orderBy = $filter('orderBy');
+angular.module('managerApp')
+  .controller('CloudProjectComputeSnapshotCtrl',
+    function CloudProjectComputeSnapshotCtrl($uibModal, OvhCloudPriceHelper,
+      OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
+      OvhApiCloudProjectVolumeSnapshot, OvhApiCloudProjectImage, $translate, CloudMessage, $scope,
+      $filter, $q, $timeout, CloudProjectOrchestrator, $state,
+      $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
+      const self = this;
+      const serviceName = $stateParams.projectId;
 
-    self.regionService = RegionService;
-    //Datas
-    self.table = {
-        snapshot       : [],
-        snapshotFilter : [],
-        snapshotFilterCheckbox : [],
-        snapshotFilterCheckboxPage : [],
-        selected       : {},
-        autoSelected   : []
-    };
+      let instances = [];
+      let images = [];
 
-    self.toggle = {
-        snapshotDeleteId     : null,   //Curent snapshot to delete
-        openDeleteMultiConfirm : false
-    };
+      const orderBy = $filter('orderBy');
 
-    //Loader during Datas requests
-    self.loaders = {
-        table : {
-            snapshot : false
+      self.regionService = RegionService;
+      // Datas
+      self.table = {
+        snapshot: [],
+        snapshotFilter: [],
+        snapshotFilterCheckbox: [],
+        snapshotFilterCheckboxPage: [],
+        selected: {},
+        autoSelected: [],
+      };
+
+      self.toggle = {
+        snapshotDeleteId: null, // Curent snapshot to delete
+        openDeleteMultiConfirm: false,
+      };
+
+      // Loader during Datas requests
+      self.loaders = {
+        table: {
+          snapshot: false,
         },
-        remove : {
-            snapshot : false,
-            snapshotMulti : false
-        }
-    };
+        remove: {
+          snapshot: false,
+          snapshotMulti: false,
+        },
+      };
 
-    self.order = {
-        by      : 'creationDate',
-        reverse : true
-    };
+      self.order = {
+        by: 'creationDate',
+        reverse: true,
+      };
 
-    self.GIBIBYTE_TO_BYTE = CLOUD_UNIT_CONVERSION.GIBIBYTE_TO_BYTE;
+      self.GIBIBYTE_TO_BYTE = CLOUD_UNIT_CONVERSION.GIBIBYTE_TO_BYTE;
 
-    function init () {
+      function initSearchBar() {
+        self.search = {
+          name: null,
+          size: null,
+          creationStart: null,
+          creationEnd: null,
+        };
+      }
+
+      function init() {
         self.getSnapshot(true); // set clear cache to true because we need fresh data
         initSearchBar();
-    }
+      }
 
-    function initSearchBar () {
-        self.search = {
-            name: null,
-            size: null,
-            creationStart: null,
-            creationEnd: null
-        };
-    }
-    self.snapshotPriceStruct = {
-        prices:null,
-        size:0,
-        total:{}
-    };
+      self.snapshotPriceStruct = {
+        prices: null,
+        size: 0,
+        total: {},
+      };
 
-
-    function setPrice(){
-        let totalSize = 0;
-        let totalPrice = 0;
-        if (!self.table.snapshot.length) {
-            return;
-        }
-        angular.forEach(self.table.snapshot, function(snapshot){
-            totalSize += snapshot.size;
-            snapshot.price = getMonthlyPrice(snapshot.size, snapshot.planCode);
-            if (snapshot.price) {
-                totalPrice += snapshot.price.value;
-            }
-        });
-        self.snapshotPriceStruct.size = totalSize;
-        // Copy from formatted price to keep currencyCode
-        self.snapshotPriceStruct.total = angular.copy(self.table.snapshot[0].price)
-        self.snapshotPriceStruct.total.value = totalPrice;
-        self.snapshotPriceStruct.total.text = self.snapshotPriceStruct.total.text.replace(/\d+(?:[.,]\d+)?/, "" + totalPrice.toFixed(2))
-    }
-
-    function getMonthlyPrice(size, planCode){
+      function getMonthlyPrice(size, planCode) {
         // get the price for first location comming
         const price = self.snapshotPriceStruct.prices[planCode];
         if (!price) {
-            return { value: 0, text: "?" };
+          return { value: 0, text: '?' };
         }
         const priceStruct = angular.copy(price.price);
         // price for all size
-        priceStruct.value = price.priceInUcents*moment.duration(1, "months").asHours()*size/100000000;
+        priceStruct.value = price.priceInUcents * moment.duration(1, 'months').asHours() * size / 100000000;
 
-        priceStruct.text = priceStruct.text.replace(/\d+(?:[.,]\d+)?/, "" + priceStruct.value.toFixed(2));
+        priceStruct.text = priceStruct.text.replace(/\d+(?:[.,]\d+)?/, `${priceStruct.value.toFixed(2)}`);
 
         return priceStruct;
-    }
+      }
 
-    //---------TOOLS---------
-
-    self.getSelectedCount = function () {
-        return Object.keys(self.table.selected).length;
-    };
-
-    $scope.$watch('CloudProjectComputeSnapshotCtrl.table.snapshotFilterPage', function (pageSnapshots) {
-        self.table.snapshotFilterCheckboxPage = _.filter(pageSnapshots, function (snapshot) {
-            return (snapshot.status === 'active' || snapshot.status === 'available') && !snapshot.isInstalledOnVm;
+      function setPrice() {
+        let totalSize = 0;
+        let totalPrice = 0;
+        if (!self.table.snapshot.length) {
+          return;
+        }
+        angular.forEach(self.table.snapshot, (snapshot) => {
+          totalSize += snapshot.size;
+          _.set(snapshot, 'price', getMonthlyPrice(snapshot.size, snapshot.planCode));
+          if (snapshot.price) {
+            totalPrice += snapshot.price.value;
+          }
         });
-    });
+        self.snapshotPriceStruct.size = totalSize;
+        // Copy from formatted price to keep currencyCode
+        self.snapshotPriceStruct.total = angular.copy(self.table.snapshot[0].price);
+        self.snapshotPriceStruct.total.value = totalPrice;
+        self.snapshotPriceStruct.total.text = self.snapshotPriceStruct
+          .total
+          .text
+          .replace(/\d+(?:[.,]\d+)?/, `${totalPrice.toFixed(2)}`);
+      }
 
-    $scope.$watch('CloudProjectComputeSnapshotCtrl.table.selected', function () {
-        //if some line were not removed => recheck
+      // ---------TOOLS---------
+
+      self.getSelectedCount = function () {
+        return Object.keys(self.table.selected).length;
+      };
+
+      $scope.$watch('CloudProjectComputeSnapshotCtrl.table.snapshotFilterPage', (pageSnapshots) => {
+        self.table.snapshotFilterCheckboxPage = _.filter(pageSnapshots, snapshot => (snapshot.status === 'active' || snapshot.status === 'available') && !snapshot.isInstalledOnVm);
+      });
+
+      $scope.$watch('CloudProjectComputeSnapshotCtrl.table.selected', () => {
+        // if some line were not removed => recheck
         self.toggle.openDeleteMultiConfirm = false;
         if (self.table.autoSelected.length) {
-            angular.forEach(self.table.autoSelected, function (snapshotId) {
-                var isInSnapshotTable = _.findIndex(self.table.snapshot, function (snapshot) {
-                    return snapshot.id === snapshotId;
-                });
-                if (isInSnapshotTable >= 0){
-                    self.table.selected[snapshotId] = true;
-                }
-            });
-            self.table.autoSelected = [];
+          angular.forEach(self.table.autoSelected, (snapshotId) => {
+            const isInSnapshotTable = _.findIndex(
+              self.table.snapshot,
+              snapshot => snapshot.id === snapshotId,
+            );
+            if (isInSnapshotTable >= 0) {
+              self.table.selected[snapshotId] = true;
+            }
+          });
+          self.table.autoSelected = [];
         } else {
-            self.toggle.openDeleteMultiConfirm = false;
+          self.toggle.openDeleteMultiConfirm = false;
         }
-    }, true);
+      }, true);
 
-    self.toggleDeleteMultiConfirm = function(){
+      self.toggleDeleteMultiConfirm = function () {
         if (self.toggle.openDeleteMultiConfirm) {
-            self.table.selected = {};
+          self.table.selected = {};
         }
         self.toggle.snapshotDeleteId = null;
         self.toggle.openDeleteMultiConfirm = !self.toggle.openDeleteMultiConfirm;
-    };
+      };
 
-    //---------SEARCH BAR---------
+      // ---------SEARCH BAR---------
 
-    $scope.$watch('CloudProjectComputeSnapshotCtrl.search', function () {
-        //otherwise filterSnapshot launched before form validation
-        $timeout(function(){
-            filterSnapshot();
-        }, 0);
-    }, true);
-
-    function filterSnapshot () {
+      function filterSnapshot() {
         if ($scope.searchSnapshotForm && $scope.searchSnapshotForm.$valid) {
-            var tab = self.table.snapshot;
-            tab = _.filter(self.table.snapshot, function (snapshot) {
-                var result = true;
+          let tab = self.table.snapshot;
+          tab = _.filter(self.table.snapshot, (snapshot) => {
+            let result = true;
 
-                if (self.search.name && snapshot.name) {
-                    result = result && snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-                }
-                if (self.search.size) {
-                    result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
-                }
-                if (self.search.creationStart) {
-                    result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
-                }
-                if (self.search.creationEnd) {
-                    result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
-                }
-
-                return result;
-            });
-
-            self.table.snapshotFilter = tab;
-            self.table.snapshotFilterCheckbox = _.filter(tab, function (snapshot) {
-                return (snapshot.status === 'active' || snapshot.status === 'available') && !snapshot.isInstalledOnVm;
-            });
-
-
-            if (self.table.snapshotFilter.length){
-                self.orderBy();
+            if (self.search.name && snapshot.name) {
+              const index = snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase());
+              result = result && index !== -1;
             }
+            if (self.search.size) {
+              result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
+            }
+            if (self.search.creationStart) {
+              result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
+            }
+            if (self.search.creationEnd) {
+              result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
+            }
+
+            return result;
+          });
+
+          self.table.snapshotFilter = tab;
+          self.table.snapshotFilterCheckbox = _.filter(
+            tab,
+            snapshot => (
+              snapshot.status === 'active' || snapshot.status === 'available'
+            )
+            && !snapshot.isInstalledOnVm,
+          );
+
+
+          if (self.table.snapshotFilter.length) {
+            self.orderBy();
+          }
         }
-    }
+      }
 
-    //---------ORDER---------
+      $scope.$watch('CloudProjectComputeSnapshotCtrl.search', () => {
+        // otherwise filterSnapshot launched before form validation
+        $timeout(() => {
+          filterSnapshot();
+        }, 0);
+      }, true);
 
-    self.orderBy = function (by) {
+      // ---------ORDER---------
+
+      self.orderBy = function (by) {
         if (by) {
-            if (self.order.by === by) {
-                self.order.reverse = !self.order.reverse;
-            } else {
-                self.order.by = by;
-            }
+          if (self.order.by === by) {
+            self.order.reverse = !self.order.reverse;
+          } else {
+            self.order.by = by;
+          }
         }
-        self.table.snapshotFilter = orderBy(self.table.snapshotFilter, self.order.by, self.order.reverse);
-        self.table.snapshotFilterCheckbox = orderBy(self.table.snapshotFilterCheckbox, self.order.by, self.order.reverse);
-    };
+        self.table.snapshotFilter = orderBy(
+          self.table.snapshotFilter,
+          self.order.by,
+          self.order.reverse,
+        );
+        self.table.snapshotFilterCheckbox = orderBy(
+          self.table.snapshotFilterCheckbox,
+          self.order.by,
+          self.order.reverse,
+        );
+      };
 
-    function pollSnapshots () {
-        Poller.poll('/cloud/project/' + serviceName + '/snapshot',
-            null,
-            {
-                successRule: function (snapshots) {
-                    return _.every(snapshots, function (snapshots) {return snapshots.status === 'active';});
-                },
-                namespace: 'cloud.snapshots',
-                notifyOnError : false
-            }
-        ).then(function (snapshotList) {
-            OvhApiCloudProjectSnapshot.v6().resetQueryCache();
-            // get volume snapshots and concat new state instance snapshots
-            var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
-            self.table.snapshot = snapshotList.concat(volumeSnapshots);
-            checkImageInstalled();
-            filterSnapshot(); //orderBy is call by filterSnapshot();
-            setPrice();
-        }, function (err) {
-            if (err && err.status) {
-                self.table.snapshot = _.filter(self.table.snapshot, { type : "volume" } );
-                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
-            }
-        }, function(snapshotList){
-            var currentImageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-            if (currentImageSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                OvhApiCloudProjectSnapshot.v6().resetQueryCache();
-                var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
-                self.table.snapshot = snapshotList.concat(volumeSnapshots);
-                checkImageInstalled();
-                filterSnapshot(); //orderBy is call by filterSnapshot();
-                setPrice();
-            }
-        });
-    }
-
-    function pollVolumeSnapshots () {
-        Poller.poll('/cloud/project/' + serviceName + '/volume/snapshot',
-            null,
-            {
-                successRule: function (snapshots) {
-                    return _.every(snapshots, function (snapshots) {return snapshots.status === 'available';});
-                },
-                namespace: 'cloud.snapshots',
-                notifyOnError : false
-            }
-        ).then(function (snapshotList) {
-            OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
-            // get instance snapshots and concat new state volume snapshots
-            var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-            var snapshots = checkImagesCustom (snapshotList);
-            self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
-            filterSnapshot(); //orderBy is call by filterSnapshot();
-            setPrice();
-        }, function (err) {
-            if (err && err.status) {
-                self.table.snapshot = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
-            }
-        }, function(snapshotList){
-            var currentVolumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
-            if (currentVolumeSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
-                var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-                var snapshots = checkImagesCustom (snapshotList);
-                self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
-                filterSnapshot(); //orderBy is call by filterSnapshot();
-                setPrice();
-            }
-        });
-    }
-
-    $scope.$on('$destroy', function () {
-        Poller.kill({ namespace: 'cloud.snapshots' });
-    });
-
-    function snapshotStateChange(oldSnapshots, newSnapshots){
-        var stateChanged = false;
-        _.forEach(newSnapshots, function (snapshot) {
-            var old = _.find(oldSnapshots, {'id':snapshot.id});
-            stateChanged = stateChanged || !old || old.status !== snapshot.status;
+      function snapshotStateChange(oldSnapshots, newSnapshots) {
+        let stateChanged = false;
+        _.forEach(newSnapshots, (snapshot) => {
+          const old = _.find(oldSnapshots, { id: snapshot.id });
+          stateChanged = stateChanged || !old || old.status !== snapshot.status;
         });
         return stateChanged;
-    }
+      }
 
-    // transform snapshot type > snapshot is an image custom if this present in image as private
-    function checkImagesCustom (snapshots) {
-        return _.map(snapshots, function(snapshot) {
-            return _.assign(snapshot, {
-                type: (_.find(images, {id : snapshot.id, visibility : 'private'}) ? "image" : "" ) + snapshot.type
-            });
+      // transform snapshot type > snapshot is an image custom if this present in image as private
+      function checkImagesCustom(snapshots) {
+        return _.map(snapshots, snapshot => _.assign(snapshot, {
+          type: (_.find(images, { id: snapshot.id, visibility: 'private' }) ? 'image' : '') + snapshot.type,
+        }));
+      }
+
+      function checkImageInstalled() {
+        angular.forEach(self.table.snapshot, (snapshot) => {
+          _.set(snapshot, 'isInstalledOnVm', !!_.find(instances, { imageId: snapshot.id }));
+          _.set(snapshot, 'installedVm', _.filter(instances, { imageId: snapshot.id }));
+          _.set(snapshot, 'installedVmNames', _.pluck(snapshot.installedVm, 'name'));
         });
-    }
+      }
 
-    //---------SNAPSHOT---------
+      function pollSnapshots() {
+        Poller.poll(`/cloud/project/${serviceName}/snapshot`,
+          null,
+          {
+            successRule(snapshots) {
+              return _.every(snapshots, snapshot => snapshot.status === 'active');
+            },
+            namespace: 'cloud.snapshots',
+            notifyOnError: false,
+          }).then((snapshotList) => {
+          OvhApiCloudProjectSnapshot.v6().resetQueryCache();
+          // get volume snapshots and concat new state instance snapshots
+          const volumeSnapshots = _.filter(self.table.snapshot, { type: 'volume' });
+          self.table.snapshot = snapshotList.concat(volumeSnapshots);
+          checkImageInstalled();
+          filterSnapshot(); // orderBy is call by filterSnapshot();
+          setPrice();
+        }, (err) => {
+          if (err && err.status) {
+            self.table.snapshot = _.filter(self.table.snapshot, { type: 'volume' });
+            CloudMessage.error([
+              $translate.instant('cpc_snapshot_error'),
+              (err.data && err.data.message) || '',
+            ].join(' '));
+          }
+        }, (snapshotList) => {
+          const currentImageSnapshots = _.filter(self.table.snapshot, snapshot => snapshot.type !== 'volume');
+          if (currentImageSnapshots.length !== snapshotList.length || snapshotStateChange(
+            self.table.snapshot,
+            snapshotList,
+          )) {
+            OvhApiCloudProjectSnapshot.v6().resetQueryCache();
+            const volumeSnapshots = _.filter(self.table.snapshot, { type: 'volume' });
+            self.table.snapshot = snapshotList.concat(volumeSnapshots);
+            checkImageInstalled();
+            filterSnapshot(); // orderBy is call by filterSnapshot();
+            setPrice();
+          }
+        });
+      }
 
-    self.getSnapshot = function (clearCache) {
-        if (!self.loaders.table.snapshot) {
-            self.table.snapshot = [];
-            self.toggle.snapshotDeleteId = null;
-            self.loaders.table.snapshot = true;
-            if (clearCache){
-                OvhApiCloudProjectSnapshot.v6().resetQueryCache();
-                OvhApiCloudProjectInstance.v6().resetQueryCache(); // because with check if snapshot is installed on instances
-                OvhApiCloudProjectVolume.v6().resetAllCache();
-            }
+      function mapVolumeSnapshots(snapshots) {
+        return _.map(snapshots, volumeSnapshot => _.assign(volumeSnapshot, {
+          visibility: 'private',
+          size: volumeSnapshot.size,
+          type: 'volume',
+        }));
+      }
 
-            $q.all([getInstancePromise(), getSnapshotPromise(), getPricesPromise(), getVolumeSnapshotPromise(), getImagePromise()]).then(function (result) {
-                instances = result[0];
-                images = result[4];
-                var snapshots = checkImagesCustom (result[1]);
-                self.table.snapshot = snapshots.concat(result[3]);
-                checkImageInstalled();
-                filterSnapshot(); //orderBy is call by filterSnapshot();
-                var instanceSnapshotsToPoll = _.filter(self.table.snapshot, function (snapshots) {return  snapshots.type !== 'volume' && snapshots.status !== 'active';}),
-                    volumeSnapshotsToPoll = _.filter(self.table.snapshot, function (snapshots) {return snapshots.type === 'volume' && snapshots.status !== 'available';});
-                if (instanceSnapshotsToPoll) {
-                    pollSnapshots();
-                }
-                if (volumeSnapshotsToPoll) {
-                    pollVolumeSnapshots();
-                }
-                self.snapshotPriceStruct.prices = result[2];
-                setPrice();
-            }, function (err) {
-                self.table.snapshot = null;
-                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.table.snapshot = false;
-            });
-        }
-    };
+      function pollVolumeSnapshots() {
+        Poller.poll(`/cloud/project/${serviceName}/volume/snapshot`,
+          null,
+          {
+            successRule(snapshots) {
+              return _.every(snapshots, snapshot => snapshot.status === 'available');
+            },
+            namespace: 'cloud.snapshots',
+            notifyOnError: false,
+          }).then((snapshotList) => {
+          OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
+          // get instance snapshots and concat new state volume snapshots
+          const imageSnapshots = _.filter(self.table.snapshot, snapshot => snapshot.type !== 'volume');
+          const snapshots = checkImagesCustom(snapshotList);
+          self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
+          filterSnapshot(); // orderBy is call by filterSnapshot();
+          setPrice();
+        }, (err) => {
+          if (err && err.status) {
+            self.table.snapshot = _.filter(self.table.snapshot, snapshot => snapshot.type !== 'volume');
+            CloudMessage.error([$translate.instant('cpc_snapshot_error'), (err.data && err.data.message) || ''].join(' '));
+          }
+        }, (snapshotList) => {
+          const currentVolumeSnapshots = _.filter(self.table.snapshot, { type: 'volume' });
+          if (
+            currentVolumeSnapshots.length !== snapshotList.length
+            || snapshotStateChange(self.table.snapshot, snapshotList)
+          ) {
+            OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
+            const imageSnapshots = _.filter(self.table.snapshot, snapshot => snapshot.type !== 'volume');
+            const snapshots = checkImagesCustom(snapshotList);
+            self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
+            filterSnapshot(); // orderBy is call by filterSnapshot();
+            setPrice();
+          }
+        });
+      }
 
-    function getInstancePromise(){
+      $scope.$on('$destroy', () => {
+        Poller.kill({ namespace: 'cloud.snapshots' });
+      });
+
+      // ---------SNAPSHOT---------
+
+      function getInstancePromise() {
         return OvhApiCloudProjectInstance.v6().query({
-                serviceName : serviceName
-            }).$promise;
-    }
+          serviceName,
+        }).$promise;
+      }
 
-    function getSnapshotPromise(){
+      function getSnapshotPromise() {
         return OvhApiCloudProjectSnapshot.v6().query({
-                serviceName : serviceName
-            }).$promise;
-    }
+          serviceName,
+        }).$promise;
+      }
 
-    function getImagePromise(){
+      function getImagePromise() {
         return OvhApiCloudProjectImage.v6().query({
-                serviceName : serviceName
-            }).$promise;
-    }
+          serviceName,
+        }).$promise;
+      }
 
-    function getPricesPromise(){
+      function getPricesPromise() {
         return OvhCloudPriceHelper.getPrices(serviceName);
-    }
+      }
 
-    function getVolumeSnapshotPromise(){
+      function getVolumeSnapshotPromise() {
         return OvhApiCloudProjectVolumeSnapshot.v6().query({
-            serviceName : serviceName
-        }).$promise.then(function (result) {
-            return mapVolumeSnapshots(result);  //transform
-        });
-    }
+          serviceName,
+        }).$promise.then(result => mapVolumeSnapshots(result)); // transform
+      }
 
-    function mapVolumeSnapshots (snapshots) {
-        return _.map(snapshots, function(volumeSnapshot) {
-            return _.assign(volumeSnapshot, {
-                visibility: "private",
-                size: volumeSnapshot.size,
-                type: "volume"
-            });
-        });
-    }
+      self.getSnapshot = function getSnapshot(clearCache) {
+        if (!self.loaders.table.snapshot) {
+          self.table.snapshot = [];
+          self.toggle.snapshotDeleteId = null;
+          self.loaders.table.snapshot = true;
+          if (clearCache) {
+            OvhApiCloudProjectSnapshot.v6().resetQueryCache();
+            OvhApiCloudProjectInstance.v6().resetQueryCache();
+            // because with check if snapshot is installed on instances
+            OvhApiCloudProjectVolume.v6().resetAllCache();
+          }
 
-    function checkImageInstalled(){
-        angular.forEach(self.table.snapshot, function(snapshot){
-            snapshot.isInstalledOnVm = !!_.find(instances, {imageId:snapshot.id});
-            snapshot.installedVm = _.filter(instances, { imageId : snapshot.id });
-            snapshot.installedVmNames = _.pluck(snapshot.installedVm, 'name');
-        });
-    }
+          $q.all([
+            getInstancePromise(),
+            getSnapshotPromise(),
+            getPricesPromise(),
+            getVolumeSnapshotPromise(),
+            getImagePromise(),
+          ]).then(([instancesParam, snapShots, prices, volumes, imagesParam]) => {
+            instances = instancesParam;
+            images = imagesParam;
 
-    self.createVmBySnapshot = function(snapshot){
+            const snapshots = checkImagesCustom(snapShots);
+            self.table.snapshot = snapshots.concat(volumes);
+            checkImageInstalled();
+            filterSnapshot(); // orderBy is call by filterSnapshot();
+            const instanceSnapshotsToPoll = _.filter(
+              self.table.snapshot,
+              snapshot => snapshot.type !== 'volume' && snapshot.status !== 'active',
+            );
+
+
+            const volumeSnapshotsToPoll = _.filter(
+              self.table.snapshot,
+              snapshot => snapshot.type === 'volume' && snapshot.status !== 'available',
+            );
+            if (instanceSnapshotsToPoll) {
+              pollSnapshots();
+            }
+            if (volumeSnapshotsToPoll) {
+              pollVolumeSnapshots();
+            }
+            self.snapshotPriceStruct.prices = prices;
+            setPrice();
+          }, (err) => {
+            self.table.snapshot = null;
+            CloudMessage.error([
+              $translate.instant('cpc_snapshot_error'),
+              (err.data && err.data.message) || '',
+            ].join(' '));
+          }).finally(() => {
+            self.loaders.table.snapshot = false;
+          });
+        }
+      };
+
+      self.createVmBySnapshot = function (snapshot) {
         CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
         $state.go('iaas.pci-project.compute.infrastructure.diagram');
-    };
+      };
 
-    self.createVolumeBySnapshot = function (snapshot) {
-        CloudMessage.info($translate.instant("cpc_snapshot_create_volume_button_info"));
-        $timeout(function() {
-            $state.go("iaas.pci-project.compute.infrastructure.diagram", {
-                createNewVolumeFromSnapshot: {
-                    snapshot: snapshot
-                }
-            });
+      self.createVolumeBySnapshot = function (snapshot) {
+        CloudMessage.info($translate.instant('cpc_snapshot_create_volume_button_info'));
+        $timeout(() => {
+          $state.go('iaas.pci-project.compute.infrastructure.diagram', {
+            createNewVolumeFromSnapshot: {
+              snapshot,
+            },
+          });
         }, 99);
-    };
+      };
 
-    self.openDeleteSnapshot = function (snapshot) {
+      self.openDeleteSnapshot = function (snapshot) {
         $uibModal.open({
-            windowTopClass: "cui-modal",
-            templateUrl: "app/cloud/project/compute/snapshot/delete/compute-snapshot-delete.html",
-            controller: "CloudProjectComputeSnapshotDeleteCtrl",
-            controllerAs: "CloudProjectComputeSnapshotDeleteCtrl",
-            resolve: {
-                serviceName: () => serviceName,
-                snapshot: () => snapshot
-            },
-            successHandler: () => {
-                self.getSnapshot(true);
-                CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
-                pollSnapshots();
-                pollVolumeSnapshots();
-            },
-            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '))
+          windowTopClass: 'cui-modal',
+          templateUrl: 'app/cloud/project/compute/snapshot/delete/compute-snapshot-delete.html',
+          controller: 'CloudProjectComputeSnapshotDeleteCtrl',
+          controllerAs: 'CloudProjectComputeSnapshotDeleteCtrl',
+          resolve: {
+            serviceName: () => serviceName,
+            snapshot: () => snapshot,
+          },
+          successHandler: () => {
+            self.getSnapshot(true);
+            CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
+            pollSnapshots();
+            pollVolumeSnapshots();
+          },
+          errorHandler: err => CloudMessage.error([
+            $translate.instant('cpc_snapshot_delete_error'),
+            (err.data && err.data.message) || '',
+          ].join(' ')),
         });
-    }
+      };
 
-    init();
-
-  });
+      init();
+    });
