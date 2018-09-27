@@ -1,8 +1,7 @@
 angular.module("managerApp").controller("KubernetesNodesAddCtrl", class KubernetesNodesAddCtrl {
 
-    constructor ($scope, $q, $stateParams, $translate, $uibModalInstance, Kubernetes, projectId, CLOUD_FLAVORTYPE_CATEGORY) {
+    constructor ($q, $stateParams, $translate, $uibModalInstance, Kubernetes, projectId, CLOUD_FLAVORTYPE_CATEGORY) {
         this.$q = $q;
-        this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
@@ -35,7 +34,6 @@ angular.module("managerApp").controller("KubernetesNodesAddCtrl", class Kubernet
             })
             .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant("kube_nodes_add_flavor_error", { message: error })))
             .finally(() => { this.loading = false; });
-
     }
 
     onFlavorFamilyChange (selectedFamily) {

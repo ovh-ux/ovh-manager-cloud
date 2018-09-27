@@ -47,7 +47,6 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
         return this.Kubernetes.getAssociatedPublicCloudProjects(this.serviceName)
             .then(projects => this.Kubernetes.getProject(_.first(projects).projectId))
             .then(project => {
-                console.log(project);
                 this.project = project;
             })
             .catch(() => {
