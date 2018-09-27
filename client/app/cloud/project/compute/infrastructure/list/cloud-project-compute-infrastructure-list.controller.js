@@ -95,7 +95,7 @@ class CloudProjectComputeInfrastructureListCtrl {
         instance.ipv4 = instance.getPublicIpv4();
         instance.ipv6 = instance.getPublicIpv6();
         instance.statusToTranslate = this.getStatusToTranslate(instance);
-        instance.macroRegion = this.RegionService.getMacroRegion(instance.region);
+        instance.macroRegion = this.RegionService.constructor.getMacroRegion(instance.region);
         // patch for some translations that have &#160; html entities
         instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace("&#160;", " ");
         return instance;

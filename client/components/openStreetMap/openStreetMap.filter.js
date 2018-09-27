@@ -9,7 +9,7 @@ angular.module('managerApp').filter('openStreetMap', (RegionService) => {
   };
 
   return function (region) {
-    const macroRegion = RegionService.getMacroRegion(region);
+    const macroRegion = RegionService.constructor.getMacroRegion(region);
     return regionMap[macroRegion];
   };
 });
