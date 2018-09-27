@@ -1,26 +1,19 @@
-angular.module('managerApp').filter('RAUnitsBits', function () {
-    "use strict";
+angular.module('managerApp').filter('RAUnitsBits', () => {
+  const tabUnits = ['B', 'KB', 'MB', 'GB', 'TB'];
 
-    var tabUnits = ['B', 'KB', 'MB', 'GB', 'TB'];
+  return function (size) {
+    let rest = +size;
+    let idx = 0;
 
-    return function (size) {
+    if (angular.isNumber(rest)) {
+      while (((rest / 1024) >= 1) && idx !== 4) {
+        rest /= 1024;
+        idx += 1;
+      }
 
-        var rest = +size;
-        var idx = 0;
+      return `${Math.ceil(rest * 100) / 100} ${tabUnits[idx]}`;
+    }
 
-        if (angular.isNumber(rest)) {
-
-            while (((rest/1024) >= 1) && idx !== 4) {
-
-
-                rest = rest / 1024;
-                idx = idx + 1;
-            }
-
-            return Math.ceil(rest * 100)/100 + ' '  + tabUnits[idx];
-
-        }
-
-        return size;
-    };
+    return size;
+  };
 });
