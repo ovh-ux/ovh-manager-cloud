@@ -36,40 +36,44 @@
       const instanceQuota = _.get(quotaByRegion, 'instance', false);
       if (instanceQuota) {
         // set over quota reason
-        if (instanceQuota.maxInstances !== -1 && instanceQuota.usedInstances >= instanceQuota.maxInstances) {
-          flavor.disabled = 'QUOTA_INSTANCE';
-        } else if (flavor.ram && instanceQuota.maxRam !== -1 && flavor.ram > instanceQuota.maxRam - instanceQuota.usedRAM) {
-          flavor.disabled = 'QUOTA_RAM';
-        } else if (flavor.vcpus && instanceQuota.maxCores !== -1 && flavor.vcpus > instanceQuota.maxCores - instanceQuota.usedCores) {
-          flavor.disabled = 'QUOTA_VCPUS';
+        if (instanceQuota.maxInstances !== -1
+          && instanceQuota.usedInstances >= instanceQuota.maxInstances) {
+          _.set(flavor, 'disabled', 'QUOTA_INSTANCE');
+        } else if (flavor.ram && instanceQuota.maxRam !== -1
+            && flavor.ram > instanceQuota.maxRam - instanceQuota.usedRAM) {
+          _.set(flavor, 'disabled', 'QUOTA_RAM');
+        } else if (flavor.vcpus
+            && instanceQuota.maxCores !== -1
+            && flavor.vcpus > instanceQuota.maxCores - instanceQuota.usedCores) {
+          _.set(flavor, 'disabled', 'QUOTA_VCPUS');
         }
 
         // set max instances (-1 : unlimited)
         if (instanceQuota.maxInstances === -1) {
-          flavor.maxInstance = -1;
+          _.set(flavor, 'maxInstance', -1);
         } else {
-          flavor.maxInstance = instanceQuota.maxInstances - instanceQuota.usedInstances;
+          _.set(flavor, 'maxInstance', instanceQuota.maxInstances - instanceQuota.usedInstances);
         }
 
         if (instanceQuota.maxRam === -1) {
-          flavor.maxInstance = Math.max(flavor.maxInstance, -1);
+          _.set(flavor, 'maxInstance', Math.max(flavor.maxInstance, -1));
         } else {
-          flavor.maxInstance = Math.min(flavor.maxInstance > -1 ? flavor.maxInstance : 1000, Math.floor((instanceQuota.maxRam - instanceQuota.usedRAM) / flavor.ram));
+          _.set(flavor, 'maxInstance', Math.min(flavor.maxInstance > -1 ? flavor.maxInstance : 1000, Math.floor((instanceQuota.maxRam - instanceQuota.usedRAM) / flavor.ram)));
         }
 
         if (instanceQuota.maxCores === -1) {
-          flavor.maxInstance = Math.max(flavor.maxInstance, -1);
+          _.set(flavor, 'maxInstance', Math.max(flavor.maxInstance, -1));
         } else {
-          flavor.maxInstance = Math.min(flavor.maxInstance > -1 ? flavor.maxInstance : 1000, Math.floor((instanceQuota.maxCores - instanceQuota.usedCores) / flavor.vcpus));
+          _.set(flavor, 'maxInstance', Math.min(flavor.maxInstance > -1 ? flavor.maxInstance : 1000, Math.floor((instanceQuota.maxCores - instanceQuota.usedCores) / flavor.vcpus)));
         }
       }
 
       if (minDisk > flavor.disk && !flavor.disabled) {
-        flavor.disabled = 'QUOTA_MINDISK';
+        _.set(flavor, 'disabled', 'QUOTA_MINDISK');
       }
 
       if (minRam > flavor.ram && !flavor.disabled) {
-        flavor.disabled = 'QUOTA_MINRAM';
+        _.set(flavor, 'disabled', 'QUOTA_MINRAM');
       }
     }
 
@@ -87,7 +91,7 @@
       return null;
     }
 
-    getQuotaCore(flavor, quota) {
+    static getQuotaCore(flavor, quota) {
       const quotaByRegion = _.find(quota, { region: flavor.region });
       const instanceQuota = _.get(quotaByRegion, 'instance', false);
       if (instanceQuota) {
@@ -164,12 +168,14 @@
 
     getCategory(flavorType, withDetails = false) {
       let category = null;
+      /* eslint-disable no-restricted-syntax */
       for (const c of this.CLOUD_FLAVORTYPE_CATEGORY) {
         if (_.includes(c.types, flavorType)) {
           category = withDetails ? c : _.get(c, 'id');
           break;
         }
       }
+      /* eslint-enable no-restricted-syntax */
       return category;
     }
   }

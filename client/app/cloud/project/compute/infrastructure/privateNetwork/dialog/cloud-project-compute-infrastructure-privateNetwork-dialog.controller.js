@@ -1,5 +1,6 @@
 angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivateNetworkDialogCtrl',
-  function ($rootScope, $scope, $q, $timeout, $translate, $stateParams, CloudProjectComputeInfrastructurePrivateNetworkDialogService, RegionService) {
+  function ($rootScope, $scope, $q, $timeout, $translate, $stateParams,
+    CloudProjectComputeInfrastructurePrivateNetworkDialogService, RegionService) {
     const self = this;
 
     self.projectId = $stateParams.projectId;
@@ -64,7 +65,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
 
     self.fetchPrivateNetworks = function () {
       if (self.service.arePrivateNetworksLoading()) {
-        return;
+        return $q.when();
       }
 
       return self.service.fetchPrivateNetworks(self.projectId).then((networks) => {
@@ -102,13 +103,13 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
 
     self.fetchRegions = function () {
       if (self.service.areRegionsLoading()) {
-        return;
+        return $q.when();
       }
 
       return self.service.fetchRegions(self.projectId).then((regions) => {
         self.collections.regions = regions;
         self.models.privateNetwork.regions = _.filter(regions, _.isString);
-      }).catch((err) => {
+      }).catch(() => {
         self.collections.regions = [];
       });
     };
@@ -207,7 +208,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
     };
 
     self.submit = function () {
-      if (!self.form.$valid || self.service.isSavePending()) {
+      if (!self.form.$valid || self.service.isSavePending()) {
         return;
       }
 
@@ -226,13 +227,6 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
       return self.service.getUrls().api || '';
     };
 
-    self.presetNetwork = function (id) {
-      if (id) {
-        resetSubnetAddress(id);
-      }
-      resetIpRanges();
-    };
-
     function resetSubnetAddress() {
       self.models.subnet.address = '192.168.0.0';
     }
@@ -243,10 +237,10 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
 
       if (split.isValid) {
         const subnets = _.zipWith(regions, split.ipBlocks, (region, ipBlock) => {
-          ipBlock.region = region;
+          _.set(ipBlock, 'region', region);
           // API needs noGateway but it is more logical to match with checkbox value first
-          ipBlock.gateway = false;
-          ipBlock.noGateway = !ipBlock.gateway;
+          _.set(ipBlock, 'gateway', false);
+          _.set(ipBlock, 'noGateway', !ipBlock.gateway);
           return ipBlock;
         });
         self.models.subnets = _.zipObject(regions, subnets);
@@ -255,10 +249,18 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
       }
     }
 
+    self.presetNetwork = function (id) {
+      if (id) {
+        resetSubnetAddress(id);
+      }
+      resetIpRanges();
+    };
+
+
     self.hasPendingLoaders = function () {
       return self.service.areRegionsLoading()
-            || self.service.arePrivateNetworksLoading()
-            || self.service.isSavePending();
+        || self.service.arePrivateNetworksLoading()
+        || self.service.isSavePending();
     };
 
     self.hasUntaggedVlan = function (networks) {
@@ -266,7 +268,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
     };
 
     self.getNextId = function (networks) {
-      for (let i = self.constraints.vlanId.min; i < self.constraints.vlanId.max; i++) {
+      for (let i = self.constraints.vlanId.min; i < self.constraints.vlanId.max; i += 1) {
         const vlanExists = self.findVlanWithID(networks, i);
         if (!vlanExists) {
           return i;

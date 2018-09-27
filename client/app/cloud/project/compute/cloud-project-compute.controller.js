@@ -129,7 +129,7 @@ class CloudProjectComputeCtrl {
 
   isInfoMessageDismissed(message) {
     return this.CloudUserPref.get(message.messageId).then((value) => {
-      message.dismissed = !!(!_.isEmpty(value) && value.markedAsRead);
+      _.set(message, 'dismissed', !!(!_.isEmpty(value) && value.markedAsRead));
       return message;
     });
   }

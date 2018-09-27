@@ -75,12 +75,21 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.loaders.infra = true;
     return this.$q.all({
       infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
-      volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, 'volumes'))),
+      volumes: this.CloudProjectOrchestrator
+        .initVolumes({ serviceName: this.serviceName })
+        .then((volumes) => {
+          this.volumes = _.get(volumes, 'volumes');
+        }),
     }).then(({ infra }) => {
       this.infra = infra;
-      return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.v6().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
-        .then(flavor => this.updateInstance(instance, flavor)),))
-        .then(instances => (this.table.items = instances));
+      return this.$q
+        .all(_.map(
+          this.infra.vrack.publicCloud.items,
+          instance => this.OvhApiCloudProjectFlavor.v6()
+            .get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
+            .then(flavor => this.updateInstance(instance, flavor)),
+        ))
+        .then((instances) => { this.table.items = instances; });
     }).catch((err) => {
       this.table.items = [];
       this.CloudMessage.error(`${this.$translate.instant('cpci_errors_init_title')} : ${_.get(err, 'data.message', '')}`);
@@ -91,25 +100,25 @@ class CloudProjectComputeInfrastructureListCtrl {
   }
 
   updateInstance(instance, flavor) {
-    instance.volumes = _.get(this.volumes, instance.id, []);
-    instance.ipv4 = instance.getPublicIpv4();
-    instance.ipv6 = instance.getPublicIpv6();
-    instance.statusToTranslate = this.getStatusToTranslate(instance);
-    instance.macroRegion = this.RegionService.constructor.getMacroRegion(instance.region);
+    _.set(instance, 'volumes', _.get(this.volumes, instance.id, []));
+    _.set(instance, 'ipv4', instance.getPublicIpv4());
+    _.set(instance, 'ipv6', instance.getPublicIpv6());
+    _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));
+    _.set(instance, 'macroRegion', this.RegionService.constructor.getMacroRegion(instance.region));
     // patch for some translations that have &#160; html entities
-    instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace('&#160;', ' ');
+    _.set(instance, 'flavorTranslated', this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace('&#160;', ' '));
     return instance;
   }
 
-  getStatusToTranslate(instance) {
-      if (instance.status === "ACTIVE" && instance.monthlyBilling && instance.monthlyBilling.status === "activationPending") {
-          return "UPDATING";
-      } if (instance.status === "ACTIVE") {
-          return "OK";
-      } else if (instance.status === "REBOOT" || instance.status === "HARD_REBOOT" || instance.status === "RESCUING" || instance.status === "UNRESCUING") {
-          return "REBOOT";
-      }
-      return instance.status;
+  static getStatusToTranslate(instance) {
+    if (instance.status === 'ACTIVE' && instance.monthlyBilling && instance.monthlyBilling.status === 'activationPending') {
+      return 'UPDATING';
+    } if (instance.status === 'ACTIVE') {
+      return 'OK';
+    } if (instance.status === 'REBOOT' || instance.status === 'HARD_REBOOT' || instance.status === 'RESCUING' || instance.status === 'UNRESCUING') {
+      return 'REBOOT';
+    }
+    return instance.status;
   }
 
   addOrRemoveInstance(newIds, oldIds) {

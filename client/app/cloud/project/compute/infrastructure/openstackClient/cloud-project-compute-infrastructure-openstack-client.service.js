@@ -1,5 +1,6 @@
 class CloudProjectComputeInfrastructureOpenstackClientService {
-  constructor($q, $stateParams, $interval, OvhApiCloudProjectOpenstackClient, OvhApiCloudProjectRegion, ServiceHelper) {
+  constructor($q, $stateParams, $interval, OvhApiCloudProjectOpenstackClient,
+    OvhApiCloudProjectRegion, ServiceHelper) {
     this.$q = $q;
     this.$interval = $interval;
     this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;

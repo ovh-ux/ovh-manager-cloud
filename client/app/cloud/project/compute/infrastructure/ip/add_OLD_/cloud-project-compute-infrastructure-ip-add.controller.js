@@ -1,10 +1,7 @@
-
-
 //     THIS IS CODE IS OBSOLETE
-
-
 angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpAddCtrl',
-  function ($rootScope, $scope, $timeout, $translate, $q, OvhApiCloud, CloudProjectComputeInfrastructureOrchestrator, RegionService) {
+  function ($rootScope, $scope, $timeout, $translate, $q, OvhApiCloud,
+    CloudProjectComputeInfrastructureOrchestrator, RegionService) {
     const self = this;
     self.regionService = RegionService;
 
@@ -12,13 +9,13 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpAddC
 
     self.decrementQuantity = function () {
       if (self.model.quantity > self.minQuantity) {
-        self.model.quantity--;
+        self.model.quantity -= 1;
       }
     };
 
     self.incrementQuantity = function () {
       if (self.model.quantity < self.maxQuantity) {
-        self.model.quantity++;
+        self.model.quantity += 1;
       }
     };
 

@@ -1,5 +1,6 @@
 class CloudProjectVirtualMachineAddService {
-  constructor($q, $translate, CloudFlavorService, CloudImageService, ControllerModalHelper, OvhApiCloudProject, OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivateSubnet) {
+  constructor($q, $translate, CloudFlavorService, CloudImageService, ControllerModalHelper,
+    OvhApiCloudProject, OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivateSubnet) {
     this.$q = $q;
     this.$translate = $translate;
     this.CloudFlavorService = CloudFlavorService;
@@ -11,7 +12,7 @@ class CloudProjectVirtualMachineAddService {
   }
 
   getAugmentedImages(images) {
-    return _.map(_.uniq(images, 'id'), this.CloudImageService.augmentImage);
+    return _.map(_.uniq(images, 'id'), this.CloudImageService.constructor.augmentImage);
   }
 
   getAugmentedFlavorsFilteredByType(flavors, type) {
@@ -24,22 +25,25 @@ class CloudProjectVirtualMachineAddService {
     });
   }
 
-  getFilteredFlavorsByRegion(flavors, regionCode) {
+  static getFilteredFlavorsByRegion(flavors, regionCode) {
     const filteredFlavors = _.uniq(_.remove(flavors, { region: regionCode }), 'name');
     const usedFlavorNames = _.uniq(_.map(filteredFlavors, flavor => flavor.name));
-    const notAvailableFlavors = _.filter(flavors, flavor => !_.include(usedFlavorNames, flavor.name));
+    const notAvailableFlavors = _.filter(
+      flavors,
+      flavor => !_.include(usedFlavorNames, flavor.name),
+    );
     const outOfRegionFlavors = _.map(_.uniq(notAvailableFlavors, 'name'), (flavor) => {
-      flavor.regions = _.map(_.filter(notAvailableFlavors, f => f.name === flavor.name), 'region');
-      flavor.disabled = 'NOT_AVAILABLE';
-      delete flavor.region;
-      delete flavor.price;
+      _.set(flavor, 'regions', _.map(_.filter(notAvailableFlavors, f => f.name === flavor.name), 'region'));
+      _.set(flavor, 'disabled', 'NOT_AVAILABLE');
+      delete flavor.region; // eslint-disable-line
+      delete flavor.price; // eslint-disable-line
       return flavor;
     });
 
     return filteredFlavors.concat(outOfRegionFlavors);
   }
 
-  getFilteredPrivateNetworksByRegion(privateNetworks, regionCode, subNets = []) {
+  static getFilteredPrivateNetworksByRegion(privateNetworks, regionCode, subNets = []) {
     return _.chain(privateNetworks)
       .filter((network) => {
         if (!_.has(subNets, network.id)) {
@@ -57,17 +61,19 @@ class CloudProjectVirtualMachineAddService {
       .value();
   }
 
+  /* eslint-disable no-nested-ternary */
   getImageApps(images) {
-    return _.uniq(_.forEach(this.CloudImageService.getApps(images), (app) => {
-      app.appName = _.get(app, 'name', '')
-        .replace(/^[a-z0-9\s]+\ -\ /ig, '')
-        .replace(' - deprecated', '');
-      delete app.region;
-      delete app.id;
+    return _.uniq(_.forEach(this.CloudImageService.constructor.getApps(images), (app) => {
+      _.set(app, 'appName', _.get(app, 'name', '')
+        .replace(/^[a-z0-9\s]+ - /ig, '')
+        .replace(' - deprecated', ''));
+      delete app.region; // eslint-disable-line
+      delete app.id; // eslint-disable-line
     }), 'name').sort((image1, image2) => (image1.appName < image2.appName ? -1 : image1.appName > image2.appName ? 1 : 0));
   }
+  /* eslint-enable no-nested-ternary */
 
-  getMostRecentVm(vms) {
+  static getMostRecentVm(vms) {
     return _.filter(vms, { status: 'ACTIVE' }).sort((vm1, vm2) => new Date(vm2.created) - new Date(vm1.created))[0] || null;
   }
 
@@ -75,8 +81,9 @@ class CloudProjectVirtualMachineAddService {
     let networkIds = [];
     return _.chain(privateNetworks)
       .map(_.property('id'))
-      .tap(ids => (networkIds = ids))
-      .map(networkId => this.OvhApiCloudProjectNetworkPrivateSubnet.v6().query({ serviceName, networkId }).$promise)
+      .tap((ids) => { networkIds = ids; })
+      .map(networkId => this.OvhApiCloudProjectNetworkPrivateSubnet.v6()
+        .query({ serviceName, networkId }).$promise)
       .thru((promises) => { // .mapKeys on a more recent lodash.
         const collection = {};
         _.forEach(promises, (promise, key) => {
@@ -90,7 +97,7 @@ class CloudProjectVirtualMachineAddService {
   }
 
   getRegionsByImageType(regions, allImages, imageType) {
-    if (this.CloudImageService.isSnapshot(imageType)) {
+    if (this.CloudImageService.constructor.isSnapshot(imageType)) {
       return _.filter(regions, region => _.get(imageType, 'region', '') === region.microRegion.code);
     }
 
@@ -103,7 +110,7 @@ class CloudProjectVirtualMachineAddService {
     return _.filter(regions, region => _.indexOf(filteredRegions, region.microRegion.code) > -1);
   }
 
-  groupRegionsByDatacenter(regions) {
+  static groupRegionsByDatacenter(regions) {
     const groupedByMacroRegions = _.groupBy(regions, 'macroRegion.code');
     const groupedRegions = _.map(groupedByMacroRegions, (microRegions) => {
       const region = _.cloneDeep(microRegions[0]);
@@ -123,7 +130,8 @@ class CloudProjectVirtualMachineAddService {
       if (filteredFlavor.length > 0) {
         const categoryObject = _.find(categorizedFlavors, { category: category.id });
         if (categoryObject) {
-          categoryObject.flavors = _(categoryObject.flavors).concat(_.filter(flavors, { type: flavorType })).value();
+          categoryObject.flavors = _(categoryObject.flavors)
+            .concat(_.filter(flavors, { type: flavorType })).value();
         } else {
           categorizedFlavors.push({
             category: category.id,

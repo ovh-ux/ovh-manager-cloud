@@ -1,12 +1,13 @@
 class CloudProjectComputeInfrastructureService {
-  constructor($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper, TARGET) {
+  constructor($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref,
+    CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper, TARGET) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.CloudMessage = CloudMessage;
     this.CloudUserPref = CloudUserPref;
-    this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+    this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
     this.ControllerHelper = ControllerHelper;
     this.ServiceHelper = ServiceHelper;
     this.TARGET = TARGET;
@@ -50,6 +51,7 @@ class CloudProjectComputeInfrastructureService {
         controllerAs: '$ctrl',
       }).result;
     }
+    return null;
   }
 
   openLoginInformations(vm) {
@@ -166,7 +168,7 @@ class CloudProjectComputeInfrastructureService {
     return this.CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm)
       .catch((err) => {
         this.CloudMessage.error(`${this.$translate.instant('cpci_vm_resume_submit_error')} ${_.get(err, 'data.message', '')}`);
-        vm.status = oldStatus;
+        _.set(vm, 'status', oldStatus);
       });
   }
 
@@ -178,7 +180,7 @@ class CloudProjectComputeInfrastructureService {
       })
       .catch(this.ServiceHelper.errorHandler('cpci_vm_rescue_end_error'))
       .finally(() => {
-        vm.confirmLoading = false;
+        _.set(vm, 'confirmLoading', false);
       });
   }
 

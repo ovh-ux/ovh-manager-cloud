@@ -1,5 +1,3 @@
-
-
 /**
  *  Add Edit VM Controller - Controls the vm creation popover
  *  =========================================================
@@ -1481,7 +1479,7 @@ angular.module('managerApp')
             self.panelsData.images = imagesList; // filter on public is already done
 
             self.panelsData.images = _.uniq(self.panelsData.images, 'id');
-            self.panelsData.images = _.map(self.panelsData.images, CloudImageService.augmentImage);
+            self.panelsData.images = _.map(self.panelsData.images, CloudImageService.constructor.augmentImage);
           }).catch((err) => {
             self.panelsData.images = null;
             CloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));

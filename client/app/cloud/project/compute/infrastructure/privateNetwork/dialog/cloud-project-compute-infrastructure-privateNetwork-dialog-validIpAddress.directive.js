@@ -6,7 +6,8 @@ angular.module('managerApp').directive('validIpAddress',
       _.set(
         ngModel,
         '$validators.validIpAddress',
-        value => CloudProjectComputeInfrastructurePrivateNetworkDialogService.isIPv4(value),
+        value => CloudProjectComputeInfrastructurePrivateNetworkDialogService
+          .constructor.isIPv4(value),
       );
     },
   }));

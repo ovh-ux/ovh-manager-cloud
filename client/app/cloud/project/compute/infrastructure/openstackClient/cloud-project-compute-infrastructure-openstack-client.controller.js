@@ -1,5 +1,7 @@
 class CloudProjectComputeInfrastructureOpenstackClientCtrl {
-  constructor($interval, $q, $stateParams, $translate, OvhApiCloudProjectOpenstackClient, CloudProjectComputeInfrastructureOpenstackClientService, OvhApiCloudProjectRegion, CloudMessage, ControllerHelper) {
+  constructor($interval, $q, $stateParams, $translate, OvhApiCloudProjectOpenstackClient,
+    CloudProjectComputeInfrastructureOpenstackClientService, OvhApiCloudProjectRegion,
+    CloudMessage, ControllerHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
@@ -33,7 +35,10 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
 
   initLoaders() {
     this.session = this.ControllerHelper.request.getHashLoader({
-      loaderFunction: () => this.Service.getSession({ serviceName: this.serviceName, term: this.term }),
+      loaderFunction: () => this.Service.getSession({
+        serviceName: this.serviceName,
+        term: this.term,
+      }),
     });
     this.regions = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.Service.getRegions(this.serviceName),
@@ -62,7 +67,7 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
     this.minimized = !this.minimized;
     this.maximized = false;
     this.savePrefs();
-    $event && $event.stopPropagation();
+    $event.stopPropagation();
   }
 
   maximize($event) {
@@ -70,7 +75,7 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
     this.minimized = false;
     this.load();
     this.savePrefs();
-    $event && $event.stopPropagation();
+    $event.stopPropagation();
   }
 
   $onDestroy() {

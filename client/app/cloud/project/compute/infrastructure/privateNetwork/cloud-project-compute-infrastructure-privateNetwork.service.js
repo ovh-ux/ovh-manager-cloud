@@ -1,5 +1,6 @@
 class CloudProjectComputeInfrastructurePrivateNetworkService {
-  constructor($q, $timeout, $translate, CloudMessage, URLS, OvhApiMe, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
+  constructor($q, $timeout, $translate, CloudMessage, URLS, OvhApiMe, OvhApiCloudProjectRegion,
+    OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
     this.$q = $q;
     this.$timeout = $timeout;
     this.$translate = $translate;
@@ -76,7 +77,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     return this.OvhApiCloudProjectNetworkPrivate.v6().query({
       serviceName,
     }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_networks_error')))
-      .finally(() => this.loaders.privateNetwork.query = false);
+      .finally(() => { this.loaders.privateNetwork.query = false; });
   }
 
   arePrivateNetworksLoading() {
@@ -91,7 +92,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
       serviceName,
       networkId: id,
     }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_network_error')))
-      .finally(() => this.loaders.privateNetwork.get = false);
+      .finally(() => { this.loaders.privateNetwork.get = false; });
   }
 
   isPrivateNetworkLoading() {
@@ -105,7 +106,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
       serviceName,
     }).$promise
       .catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_regions_error')))
-      .finally(() => this.loaders.region.query = false);
+      .finally(() => { this.loaders.region.query = false; });
   }
 
   areRegionsLoading() {
@@ -116,9 +117,15 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     this.loaders.url = true;
 
     return this.User.v6().get().$promise
-      .then(me => this.urls.api = this.URLS.guides.vlans[me.ovhSubsidiary].api)
-      .catch(() => this.urls.api = this.URLS.guides.vlans.FR.api)
-      .finally(() => this.loaders.url = false);
+      .then((me) => {
+        this.urls.api = this.URLS.guides.vlans[me.ovhSubsidiary].api;
+      })
+      .catch(() => {
+        this.urls.api = this.URLS.guides.vlans.FR.api;
+      })
+      .finally(() => {
+        this.loaders.url = false;
+      });
   }
 
   areUrlsLoading() {
@@ -172,7 +179,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         options.serviceName,
         options.privateNetworkId,
       ).then((network) => {
-        if (this.areAllRegionsActive(network)) {
+        if (this.constructor.areAllRegionsActive(network)) {
           onSuccess(network, options);
         } else {
           this.pollPrivateNetworkStatus(options, onSuccess, onFailure);
@@ -192,7 +199,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         this.CloudMessage.error(this.$translate.instant('cpcipnd_save_error', {
           message: error.data.message || JSON.stringify(error),
         }));
-      }).finally(() => this.loaders.save = false);
+      }).finally(() => {
+        this.loaders.save = false;
+      });
   }
 
   isSavePending() {
@@ -203,24 +212,28 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     return this.constraints;
   }
 
-  areAllRegionsActive(network) {
+  static areAllRegionsActive(network) {
     return (network.status === 'ACTIVE')
-                && network.regions
-                && _.every(network.regions, region => region.status === 'ACTIVE');
+      && network.regions
+      && _.every(network.regions, region => region.status === 'ACTIVE');
   }
 
   deleteProjectNetworkPrivate(serviceName, networkId) {
     this.loaders.delete = true;
-    return this.OvhApiCloudProjectNetworkPrivate.v6().delete({
-      serviceName,
-      networkId,
-    }).$promise.catch(error => this.$q.reject(error)).finally(() => this.loaders.delete = false);
+    return this.OvhApiCloudProjectNetworkPrivate.v6()
+      .delete({
+        serviceName,
+        networkId,
+      }).$promise
+      .catch(error => this.$q.reject(error))
+      .finally(() => {
+        this.loaders.delete = false;
+      });
   }
 
   isDeletePending() {
     return this.loaders.delete === true;
   }
 }
-
 
 angular.module('managerApp').service('CloudProjectComputeInfrastructurePrivateNetworkService', CloudProjectComputeInfrastructurePrivateNetworkService);

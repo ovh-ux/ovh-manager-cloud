@@ -58,7 +58,7 @@
     getLoginInfo() {
       if (_.has(this.data.vm.ipAddresses, 'length') && this.data.vm.image) {
         this.data.ip = this.constructor.getIp(this.data.vm.ipAddresses);
-        this.data.image = this.CloudImageService.augmentImage(this.data.vm.image);
+        this.data.image = this.CloudImageService.constructor.augmentImage(this.data.vm.image);
         return this.$q.resolve({});
       }
       return this.OvhApiCloudProjectInstance.v6().get({
@@ -70,7 +70,7 @@
             return this.$q.reject({});
           }
           this.data.ip = this.constructor.getIp(instance.ipAddresses);
-          this.data.image = this.CloudImageService.augmentImage(instance.image);
+          this.data.image = this.CloudImageService.constructor.augmentImage(instance.image);
           return null;
         });
     }

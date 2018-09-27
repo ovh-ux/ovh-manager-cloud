@@ -1,5 +1,3 @@
-
-
 angular.module('managerApp')
   .controller('IpDropdownComponentCtrl', function ($translate, $window, REDIRECT_URLS, OvhApiIp, CloudMessage, CLOUD_GEOLOCALISATION) {
     const self = this;
@@ -17,7 +15,7 @@ angular.module('managerApp')
 
     self.ipActionRedirect = function (action, ip) {
       let url = null;
-      const ipActionUrlWithSession = REDIRECT_URLS.ipAction;
+      const ipActionUrlWithSession = REDIRECT_URLS.ipAction; // eslint-disable-line
       switch (action) {
         case 'reverse':
           if (self.isIpUserSameContinent(ip)) {
@@ -44,24 +42,31 @@ angular.module('managerApp')
     self.getUserContinent = function () {
       let continent = null;
       if (self.user) {
-        continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.user, region => _.indexOf(region, self.user.ovhSubsidiary) >= 0)));
+        continent = _.first(_.keys(_.pick(
+          CLOUD_GEOLOCALISATION.user,
+          region => _.indexOf(region, self.user.ovhSubsidiary) >= 0,
+        )));
       }
       return continent;
     };
 
     self.getIpContinent = function (ip) {
       let continent = null;
+      let linkedVmId;
       switch (ip.type) {
         case 'failover':
           continent = ip.continentCode;
           break;
         case 'public':
           // in case of public IP we get the location from the linked vm
-          var linkedVmId = _.first(ip.routedTo);
+          linkedVmId = _.first(ip.routedTo);
           if (linkedVmId) {
             const linkedVm = self.infra.vrack.publicCloud.get(linkedVmId);
             if (linkedVm) {
-              continent = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.instance, region => _.indexOf(region, linkedVm.region) >= 0)));
+              continent = _.first(_.keys(_.pick(
+                CLOUD_GEOLOCALISATION.instance,
+                region => _.indexOf(region, linkedVm.region) >= 0,
+              )));
             }
           }
           break;

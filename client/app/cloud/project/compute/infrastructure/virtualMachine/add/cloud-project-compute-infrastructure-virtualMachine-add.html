@@ -74,7 +74,7 @@
             <div class="cui-grid-list"
                  data-ng-if="$ctrl.submitted.step1 && $ctrl.model.imageType">
                 <div class="cui-grid-cell">
-                    <oui-select-picker data-ng-if="!$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
+                    <oui-select-picker data-ng-if="!$ctrl.CloudImageService.constructor.isSnapshot($ctrl.model.imageType)"
                                        data-match="name"
                                        data-model="$ctrl.model.imageType"
                                        data-name="imageTypeSelected"
@@ -82,7 +82,7 @@
                                        data-text="{{:: $ctrl.model.imageType.apps ? $ctrl.model.imageType.appName : 'cpcivm_add_distribution_' + $ctrl.model.imageType.distribution | translate }}"
                                        data-values="[$ctrl.model.imageType]">
                     </oui-select-picker>
-                    <oui-select-picker data-ng-if="$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
+                    <oui-select-picker data-ng-if="$ctrl.CloudImageService.constructor.isSnapshot($ctrl.model.imageType)"
                                        data-match="name"
                                        data-model="$ctrl.model.imageType"
                                        data-name="snapshotSelected"
@@ -304,7 +304,7 @@
                                         </oui-button>
                                         <oui-button data-variant="link"
                                                     data-text="{{'cpcivm_add_step3_disabled_QUOTA_VCPUS' | translate}}"
-                                                    data-on-click="$ctrl.VirtualMachineAddService.openQuotaModal('QUOTA_VCPUS', { quota: $ctrl.CloudFlavorService.getQuotaCore(flavor, $ctrl.quota) })"
+                                                    data-on-click="$ctrl.VirtualMachineAddService.openQuotaModal('QUOTA_VCPUS', { quota: $ctrl.CloudFlavorService.constructor.getQuotaCore(flavor, $ctrl.quota) })"
                                                     data-ng-if="flavor.disabled === 'QUOTA_VCPUS'">
                                         </oui-button>
                                         <oui-button data-variant="link"

@@ -1,5 +1,7 @@
+/* eslint-disable no-bitwise */
 class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
-  constructor($timeout, OvhApiCloudProjectNetworkPrivate, CloudProjectComputeInfrastructurePrivateNetworkService) {
+  constructor($timeout, OvhApiCloudProjectNetworkPrivate,
+    CloudProjectComputeInfrastructurePrivateNetworkService) {
     this.$timeout = $timeout;
     this.OvhApiCloudProjectNetworkPrivate = OvhApiCloudProjectNetworkPrivate;
     this.Service = CloudProjectComputeInfrastructurePrivateNetworkService;
@@ -41,7 +43,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
       return this.Service.getUrls;
     }
 
-    isIPv4(address) {
+    static isIPv4(address) {
       return /^(\d{1,3}\.){3,3}\d{1,3}$/.test(address);
     }
 
@@ -96,22 +98,23 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
 
       const chunks = [];
 
-      // When incrementing the initialIp we always skip 1 IP that will act as the network address for the IPs block.
+      // When incrementing the initialIp we always skip 1 IP that will act as the network address
+      // for the IPs block.
       const ipBlockIncrement = 2;
       let initialIp = splitData.hostAddressInteger + ipBlockIncrement;
-      for (let i = 0; i < numberOfChunk; i++) {
+      for (let i = 0; i < numberOfChunk; i += 1) {
         const start = initialIp;
         let end = start + splitData.chunkSize - 1;
 
         // If i is an uneven number, and if we have extras, we distribute one extra.
         if (splitData.extras && i % 2 !== 1) {
-          end++;
-          splitData.extras--;
+          end += 1;
+          splitData.extras -= 1;
         }
 
         chunks.push({
-          start: this.convertIpIntToIpString(start),
-          end: this.convertIpIntToIpString(end),
+          start: this.constructor.convertIpIntToIpString(start),
+          end: this.constructor.convertIpIntToIpString(end),
           total: end - start + 1,
         });
 
@@ -133,12 +136,15 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
 
       const hostBitNumber = this.getNumberOfBitAllocatedToHost(networkMask);
       const shift = hostBitNumber;
-      const shiftedHostAdressInteger = parseInt(this.convertIpToByteString(networkAddress), 2) >>> shift;
+      const shiftedHostAdressInteger = parseInt(
+        this.constructor.convertIpToByteString(networkAddress),
+        2,
+      ) >>> shift;
 
       return {
         isValid: true,
         message: '',
-        address: this.convertIpIntToIpString((shiftedHostAdressInteger + n) << shift),
+        address: this.constructor.convertIpIntToIpString((shiftedHostAdressInteger + n) << shift),
       };
     }
 
@@ -161,13 +167,17 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
     }
 
     getIpSplitData(networkMask, networkAddress, numberOfChunk) {
-      const hostAddressInteger = parseInt(this.convertIpToByteString(networkAddress), 2);
-      const networkMaskInteger = parseInt(this.convertIpToByteString(networkMask), 2);
+      const hostAddressInteger = parseInt(
+        this.constructor.convertIpToByteString(networkAddress),
+        2,
+      );
+      const networkMaskInteger = parseInt(this.constructor.convertIpToByteString(networkMask), 2);
 
       const lastHostBit = this.getNumberOfBitAllocatedToHost(networkMask, networkAddress);
 
-      // Number of total IPs for number of bit available - 1 IP for network address - 1 IP for broadcast address - numberOfChunk.
-      const numberOfUsableIps = Math.pow(2, lastHostBit) - 2 - numberOfChunk;
+      // Number of total IPs for number of bit available - 1 IP for network address - 1 IP
+      // for broadcast address - numberOfChunk.
+      const numberOfUsableIps = Math.pow(2, lastHostBit) - 2 - numberOfChunk; // eslint-disable-line
       const chunkSize = Math.floor(numberOfUsableIps / numberOfChunk);
       const extras = numberOfUsableIps % numberOfChunk;
 
@@ -207,21 +217,26 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
 
     isAdressPartOfSubnet(networkMask, networkAddress) {
       const hostBitNumber = this.getNumberOfBitAllocatedToHost(networkMask);
-      const hostAddressInteger = parseInt(this.convertIpToByteString(networkAddress), 2);
-      const networkMaskInteger = parseInt(this.convertIpToByteString(networkMask), 2);
+      const hostAddressInteger = parseInt(
+        this.constructor.convertIpToByteString(networkAddress),
+        2,
+      );
+      const networkMaskInteger = parseInt(this.constructor.convertIpToByteString(networkMask), 2);
 
 
       const shiftedHostAdressInteger = hostAddressInteger >>> hostBitNumber;
       const shiftedNoetworkMaskInteger = networkMaskInteger >>> hostBitNumber;
 
-      // Common way to see if an IP is part of a submask.  submask & (bitwise and) ipAddress should equal ipAddress if the IP is part of the submask.
+      // Common way to see if an IP is part of a submask.
+      // submask & (bitwise and) ipAddress should equal ipAddress if the IP is part of the submask.
       let bitWiseComparison = shiftedHostAdressInteger & shiftedNoetworkMaskInteger;
-      bitWiseComparison = bitWiseComparison > 0 ? bitWiseComparison : bitWiseComparison >>> 0; // If the result is a negative integer, we shift it to unsigned int.
+      // If the result is a negative integer, we shift it to unsigned int.
+      bitWiseComparison = bitWiseComparison > 0 ? bitWiseComparison : bitWiseComparison >>> 0;
 
       return bitWiseComparison !== shiftedHostAdressInteger;
     }
 
-    convertIpIntToIpString(int) {
+    static convertIpIntToIpString(int) {
       const part1 = int & 255;
       const part2 = ((int >> 8) & 255);
       const part3 = ((int >> 16) & 255);
@@ -231,12 +246,12 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
     }
 
     getNumberOfBitAllocatedToHost(networkMask, networkAddress) {
-      const lastHostMaskBit = this.convertIpToByteString(networkMask, true).indexOf(1);
+      const lastHostMaskBit = this.constructor.convertIpToByteString(networkMask, true).indexOf(1);
       if (!networkAddress) {
         return lastHostMaskBit;
       }
 
-      const hostAddressBytes = this.convertIpToByteString(networkAddress, true);
+      const hostAddressBytes = this.constructor.convertIpToByteString(networkAddress, true);
       const lastHostAddressBit = hostAddressBytes.indexOf(1);
 
       let lastHostBit = 0;
@@ -249,11 +264,11 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
       return lastHostBit;
     }
 
-    convertIpToByteString(ip, reverse) {
+    static convertIpToByteString(ip, reverse) {
       const ipParts = ip.split('.');
       let byteString = '';
-      for (let i = 0; i < ipParts.length; i++) {
-        byteString += _.padLeft(parseInt(ipParts[i]).toString(2), 8, '0');
+      for (let i = 0; i < ipParts.length; i += 1) {
+        byteString += _.padLeft(parseInt(ipParts[i], 10).toString(2), 8, '0');
       }
 
       if (reverse) {
@@ -265,3 +280,4 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
 
 angular.module('managerApp').service('CloudProjectComputeInfrastructurePrivateNetworkDialogService',
   CloudProjectComputeInfrastructurePrivateNetworkDialogService);
+/* eslint-enable no-bitwise */

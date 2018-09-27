@@ -41,7 +41,7 @@
   ];
 
   class CloudImageService {
-    augmentImage(image) {
+    static augmentImage(image) {
       if (!image) {
         return null;
       }
@@ -63,7 +63,7 @@
       return _.uniq(_.map(images, 'type'));
     }
 
-    getImagesByType(images, imagesTypes, region = null) {
+    static getImagesByType(images, imagesTypes, region = null) {
       const filteredImages = {};
       const filter = { apps: false, status: 'active' };
 
@@ -79,7 +79,7 @@
       return filteredImages;
     }
 
-    getApps(images, region = null) {
+    static getApps(images, region = null) {
       const filter = { apps: true, status: 'active' };
 
       if (_.isString(region)) {
@@ -89,24 +89,26 @@
       return _.filter(_.cloneDeep(images), filter);
     }
 
+    /* eslint-disable no-nested-ternary */
     groupImagesByType(images, imagesTypes, region = null) {
-      const filteredImages = this.getImagesByType(images, imagesTypes, region);
+      const filteredImages = this.constructor.getImagesByType(images, imagesTypes, region);
       const groupedImages = {};
 
       _.forEach(filteredImages, (list, type) => {
         groupedImages[type] = _.groupBy(list, 'distribution');
         _.forEach(groupedImages[type], (version, distribution) => {
           groupedImages[type][distribution] = _.uniq(_.forEach(version, (image) => {
-            delete image.region;
-            delete image.id;
+            delete image.region; // eslint-disable-line
+            delete image.id; // eslint-disable-line
           }), 'name').sort((image1, image2) => (image1.name > image2.name ? -1 : image1.name < image2.name ? 1 : 0));
         });
       });
 
       return groupedImages;
     }
+    /* eslint-enable no-nested-ternary */
 
-    isSnapshot(image) {
+    static isSnapshot(image) {
       return _.get(image, 'visibility', '') === 'private';
     }
   }

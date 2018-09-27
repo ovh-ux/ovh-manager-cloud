@@ -1,11 +1,13 @@
 (() => {
   class CloudProjectComputeInfrastructureDiagramCtrl {
-    constructor($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $transitions, $translate, $uibModal, $window,
-      CloudMessage, CloudNavigation, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
+    constructor($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout,
+      $transitions, $translate, $uibModal, $window, CloudMessage, CloudNavigation,
+      CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
       CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
-      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
-      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
-      OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
+      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
+      OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
+      OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot, OvhApiIp, OvhApiMe,
+      jsPlumbService, Poller, RegionService,
       CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, TARGET, URLS) {
       this.$rootScope = $rootScope;
       this.$scope = $scope;
@@ -22,7 +24,7 @@
 
       this.CloudMessage = CloudMessage;
       this.CloudNavigation = CloudNavigation;
-      this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+      this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
       this.InfrastructureService = CloudProjectComputeInfrastructureService;
       this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
       this.CloudProjectOrchestrator = CloudProjectOrchestrator;
@@ -157,7 +159,10 @@
         }
 
         // Set connection style
-        connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(connectedIp.type), lineWidth: 4 });
+        connection.setPaintStyle({
+          strokeStyle: this.constructor.getLinkColor(connectedIp.type),
+          lineWidth: 4,
+        });
         connection.addClass(`_jsPlumb_connector_ip_${connectedIp.type || ''}`);
         connection.addClass('fade-transition');
 
@@ -283,12 +288,14 @@
         const targetVmId = obj.droppable.droppableId;
 
         if (srcVmId === 'unlinked') { // No Confirmation
-          this.volumeEdit.volume = this.dragDropHelper.currentDraggedVolume.draggableInfo.volume; // Is not Volume factory !
+          // Is not Volume factory !
+          this.volumeEdit.volume = this.dragDropHelper.currentDraggedVolume.draggableInfo.volume;
           this.volumeEdit.targetVm = this.infra.vrack.getVmById(targetVmId);
           this.volumeEdit.move.confirm();
         } else {
           this.volumeEdit.move.launchConfirm( // Confirmation
-            this.dragDropHelper.currentDraggedVolume.draggableInfo.volume, // Is not Volume factory !
+            // Is not Volume factory !
+            this.dragDropHelper.currentDraggedVolume.draggableInfo.volume,
             this.infra.vrack.getVmById(srcVmId),
             targetVmId !== 'unlinked' ? this.infra.vrack.getVmById(targetVmId) : null,
           );
@@ -315,7 +322,8 @@
         this.OvhApiCloudProjectSnapshot.v6().query({ serviceName: this.serviceName }).$promise,
         this.OvhApiCloudProjectFlavor.v6().query({ serviceName: this.serviceName }).$promise,
         this.OvhApiCloudProjectSshKey.v6().query({ serviceName: this.serviceName }).$promise,
-        this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise,
+        this.OvhApiCloudProjectVolumeSnapshot.v6()
+          .query({ serviceName: this.serviceName }).$promise,
         this.initRegions(this.serviceName),
       ])
         .then(() => this.initInfra())
@@ -361,7 +369,10 @@
          * @param {array} regionIds
          */
     initRegionFromIds(serviceName, regionIds) {
-      const getRegions = _.map(regionIds, regionId => this.OvhApiCloudProjectRegion.v6().get({ serviceName, id: regionId }).$promise);
+      const getRegions = _.map(
+        regionIds,
+        regionId => this.OvhApiCloudProjectRegion.v6().get({ serviceName, id: regionId }).$promise,
+      );
       return this.$q.all(getRegions)
         .then((result) => {
           this.regions = result;
@@ -370,7 +381,7 @@
 
     initInfra() {
       const initInfraQueue = [];
-      const serviceName = this.serviceName;
+      const { serviceName } = this;
 
       this.loaders.vRack = true;
       this.loaders.ips = true;
@@ -430,14 +441,17 @@
 
           if (this.$stateParams.createNewVm) {
             this.addVirtualMachine();
-          } else if (this.$stateParams.createNewVolume) { // check if we need to display the volume creation popup
+          } else if (this.$stateParams.createNewVolume) {
+            // check if we need to display the volume creation popup
             this.addVolume();
           } else if (this.$stateParams.createNewVolumeFromSnapshot.snapshot) {
             this.addVolumeFromSnapshot(this.$stateParams.createNewVolumeFromSnapshot.snapshot);
           } else if (_.isString(this.$stateParams.editVm) && !_.isEmpty(this.$stateParams.editVm)) {
             this.toggleVmEditionState(this.infra.vrack.publicCloud.items[this.$stateParams.editVm]);
-          } else if (_.isString(this.$stateParams.monitorVm) && !_.isEmpty(this.$stateParams.monitorVm)) {
-            this.openVmMonitoringPanel(this.infra.vrack.publicCloud.items[this.$stateParams.monitorVm]);
+          } else if (_.isString(this.$stateParams.monitorVm)
+            && !_.isEmpty(this.$stateParams.monitorVm)) {
+            this.openVmMonitoringPanel(this.infra.vrack.publicCloud
+              .items[this.$stateParams.monitorVm]);
           }
 
           if (this.CLOUD_MONITORING.alertingEnabled) {
@@ -466,7 +480,8 @@
     checkPendingImportIpFailOver(serviceName) {
       // On page refresh, get pending IPFO import
       return this.CloudUserPref.get(`cloud_project_${serviceName}_infra_ipfo_import`)
-        .then((ipfoToImport) => {
+        .then((ipfoToImportParam) => {
+          let ipfoToImport = ipfoToImportParam;
           ipfoToImport = _.get(ipfoToImport, 'ips', []);
           if (_.isArray(ipfoToImport) && ipfoToImport.length > 0) {
             _.forEach(ipfoToImport, (ipfo) => {
@@ -532,7 +547,8 @@
         .then((ipAutoSort) => {
           if (ipAutoSort) {
             this.sort.ipAutoSort = ipAutoSort.enabled;
-            this.sort.ipNaturalSort = ipAutoSort.enabled; // activate naturalSort if autoSort is enabled
+            // activate naturalSort if autoSort is enabled
+            this.sort.ipNaturalSort = ipAutoSort.enabled;
             this.refreshLinks();
           }
         });
@@ -542,11 +558,14 @@
          * Updates reverse dns of given ips.
          */
     updateReverseDns(ips) {
-      const reverseQueue = _.map(ips, ip => this.OvhApiIp.Reverse().v6().getReverseDns(ip.ip, ip.block)
-        .then((dns) => {
-          ip.reverse = dns;
-        })
-        .catch(() => this.$q.when(null)),
+      const reverseQueue = _.map(
+        ips,
+        ip => this.OvhApiIp.Reverse().v6()
+          .getReverseDns(ip.ip, ip.block)
+          .then((dns) => {
+            _.set(ip, 'reverse', dns);
+          })
+          .catch(() => this.$q.when(null)),
         // ok we choose to ignore errors here, so the application can still be used,
         // instead of displaying an ugly error message just because one reverse dns call failed
         // let's assume the reverse dns is just null);
@@ -556,7 +575,8 @@
 
     shouldDisplayInstancesRetracted() {
       return this.$q.all({
-        hasTooManyInstances: this.CloudProjectOrchestrator.hasTooManyInstances(this.$stateParams.projectId),
+        hasTooManyInstances: this.CloudProjectOrchestrator
+          .hasTooManyInstances(this.$stateParams.projectId),
         hasTooManyIps: this.CloudProjectOrchestrator.hasTooManyIps(this.$stateParams.projectId),
       }).then(result => result.hasTooManyInstances || result.hasTooManyIps);
     }
@@ -643,7 +663,7 @@
           this.CloudMessage.error(`${this.$translate.instant('cpci_vm_delete_submit_error')} ${_.get(err, 'data.message', '')}`);
         })
         .finally(() => {
-          vm.confirmLoading = false;
+          _.set(vm, 'confirmLoading', false);
         });
     }
 
@@ -715,13 +735,15 @@
     // ------- IPS ACTIONS -------
 
     importIpFailover() {
-      this.InfrastructureService.importIpFailOver(this.importedIpFailoverPending).then((listTasksListIpsWithTasks) => {
-        // Launch polling
-        _.forEach(listTasksListIpsWithTasks, (ipWithTask) => {
-          this.pollImportIpFailOver(this.$stateParams.projectId, ipWithTask.ip, ipWithTask.task);
+      this.InfrastructureService
+        .importIpFailOver(this.importedIpFailoverPending)
+        .then((listTasksListIpsWithTasks) => {
+          // Launch polling
+          _.forEach(listTasksListIpsWithTasks, (ipWithTask) => {
+            this.pollImportIpFailOver(this.$stateParams.projectId, ipWithTask.ip, ipWithTask.task);
+          });
+          this.refreshLinks();
         });
-        this.refreshLinks();
-      });
     }
 
     /**
@@ -929,7 +951,8 @@
 
               this.loaders.linkActionConfirm = true;
 
-              return this.CloudProjectComputeInfrastructureOrchestrator.attachIptoVm(connectedIp, connectedVm)
+              return this.CloudProjectComputeInfrastructureOrchestrator
+                .attachIptoVm(connectedIp, connectedVm)
                 .then(() => {
                   this.$rootScope.$broadcast('highlighed-element.hide');
                   this.model.currentLinkEdit = null;
@@ -937,7 +960,8 @@
                     text: this.$translate.instant('cpci_ip_attach_success', { ip: connectedIp.ip, instance: connectedVm.name }),
                   };
                   if (connectedIp.type === 'failover' && connectedVm.image) {
-                    const distribution = connectedVm.image.distribution || this.URLS.guides.ip_failover.defaultDistribution;
+                    const distribution = connectedVm.image.distribution
+                      || this.URLS.guides.ip_failover.defaultDistribution;
                     successMessage = {
                       textHtml: `${successMessage.text} ${this.$translate.instant('cpci_ip_attach_failover_help', {
                         link: this.URLS.guides.ip_failover[this.user.ovhSubsidiary][distribution],
@@ -965,7 +989,8 @@
 
               // for manual attach
               if (this.model.currentLinkEdit.connectionCurrent) {
-                // this.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth : 8 });
+                // this.model.currentLinkEdit.connectionCurrent
+                //   .setHoverPaintStyle({ lineWidth : 8 });
                 this.model.currentLinkEdit.connectionCurrent.removeClass('highlighed-element highlighed-element-active');
               }
 
@@ -977,7 +1002,10 @@
             // input radio
             if (ip.type === 'failover') {
               // list of compatible(s) vm(s) to attach the ip
-              const compatibleVms = _.filter(this.infra.vrack.publicCloud.items, vm => this.ipEdit.attach.canAttachIpToVm(ip, vm));
+              const compatibleVms = _.filter(
+                this.infra.vrack.publicCloud.items,
+                vm => this.ipEdit.attach.canAttachIpToVm(ip, vm),
+              );
 
               // do we have at least one compatible vm?
               if (_.isArray(compatibleVms) && compatibleVms.length > 0) {
@@ -985,11 +1013,18 @@
                   connectionCurrentVmId: ip.routedTo.length > 0 ? ip.routedTo[0] : null,
                   connectionVmId: ip.routedTo.length > 0 ? ip.routedTo[0] : null,
 
-                  connectionCurrent: ip.routedTo.length > 0 ? this.jsplumbInstance.getConnectionBySourceIdAndTargetId(ip.id, ip.routedTo[0]) : null,
+                  connectionCurrent: ip.routedTo.length > 0
+                    ? this.jsplumbInstance.getConnectionBySourceIdAndTargetId(
+                      ip.id,
+                      ip.routedTo[0],
+                    )
+                    : null,
                   connection: null,
 
                   connectedIp: ip,
-                  connectedVmCurrent: ip.routedTo.length > 0 ? this.infra.vrack.getVmById(ip.routedTo[0]) : null,
+                  connectedVmCurrent: ip.routedTo.length > 0
+                    ? this.infra.vrack.getVmById(ip.routedTo[0])
+                    : null,
                   action: 'attach',
                   isManual: true,
                 });
@@ -1014,16 +1049,26 @@
               this.model.currentLinkEdit.connectedVm = null;
             }
 
-            if (this.model.currentLinkEdit.connectionCurrentVmId !== this.model.currentLinkEdit.connectionVmId) {
+            if (this.model.currentLinkEdit.connectionCurrentVmId !== this.model
+              .currentLinkEdit.connectionVmId) {
               // create connection
-              this.model.currentLinkEdit.connection = this.jsplumbInstance.connectEndpoints(this.model.currentLinkEdit.connectedIp.id, this.model.currentLinkEdit.connectionVmId);
-              this.model.currentLinkEdit.connectedVm = this.infra.vrack.getVmById(this.model.currentLinkEdit.connectionVmId);
+              this.model.currentLinkEdit.connection = this.jsplumbInstance
+                .connectEndpoints(
+                  this.model.currentLinkEdit.connectedIp.id,
+                  this.model.currentLinkEdit.connectionVmId,
+                );
+              this.model.currentLinkEdit.connectedVm = this.infra.vrack
+                .getVmById(this.model.currentLinkEdit.connectionVmId);
 
               // set connection style
               this.model.currentLinkEdit.connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(this.model.currentLinkEdit.connectedIp.type), lineWidth: 8, dashstyle: '2 1' });
               this.model.currentLinkEdit.connection.addClass('highlighed-element highlighed-element-active');
             } else if (this.model.currentLinkEdit.connectionCurrent) {
-              this.model.currentLinkEdit.connectionCurrent.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(this.model.currentLinkEdit.connectedIp.type), lineWidth: 4 });
+              this.model.currentLinkEdit.connectionCurrent.setPaintStyle({
+                strokeStyle: this.constructor
+                  .getLinkColor(this.model.currentLinkEdit.connectedIp.type),
+                lineWidth: 4,
+              });
             }
           },
           canAttachIpToVm: (ipSource, vmDest) => {
@@ -1031,7 +1076,9 @@
             let attachable = true;
             attachable = attachable && ipSource && vmDest;
             attachable = attachable && vmDest.status === 'ACTIVE';
-            attachable = attachable && continentCode && continentCode === this.getVmContinent(vmDest);
+            attachable = attachable
+              && continentCode
+              && continentCode === this.getVmContinent(vmDest);
             return attachable;
           },
         },
@@ -1089,7 +1136,8 @@
         targetVmId: null, // use for checkbox vm
         remove: {
           launchConfirm: (volume) => {
-            this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise
+            this.OvhApiCloudProjectVolumeSnapshot.v6()
+              .query({ serviceName: this.serviceName }).$promise
               .then((snapshots) => {
                 if (_.find(snapshots, { volumeId: volume.id })) {
                   this.CloudMessage.error({
@@ -1146,7 +1194,8 @@
           confirm: () => {
             // Open volumes of VM target
             if (this.volumeEdit.targetVm && !this.volumeEdit.targetVm.collapsedVolumes) {
-              this.CloudProjectComputeInfrastructureOrchestrator.toggleCollapsedVolumes(this.volumeEdit.targetVm);
+              this.CloudProjectComputeInfrastructureOrchestrator
+                .toggleCollapsedVolumes(this.volumeEdit.targetVm);
               this.refreshLinks();
             }
 
@@ -1171,7 +1220,10 @@
         moveCheckbox: {
           launchConfirm: (volume, srcVm) => {
             // list of compatible(s) vm(s) to attach the volume
-            const compatibleVms = _.filter(this.infra.vrack.publicCloud.items, vm => this.volumeEdit.canAttachVolumeToVm(volume, vm));
+            const compatibleVms = _.filter(
+              this.infra.vrack.publicCloud.items,
+              vm => this.volumeEdit.canAttachVolumeToVm(volume, vm),
+            );
 
             // do we have at least one compatible vm?
             if (_.isArray(compatibleVms) && compatibleVms.length > 0) {
@@ -1367,16 +1419,20 @@
       const plumbLink = this.jsplumbInstance.select({ target: currentInstanceId });
 
       // instanceBox is the currently highlighted instance
-      const instanceBox = _.find(instancesBox, box => _.includes(currentInstanceId, $(box).data().instanceId));
+      const instanceBox = _.find(
+        instancesBox,
+        box => _.includes(currentInstanceId, $(box).data().instanceId),
+      );
 
       // ips linked to the currently highlighted instance
       const currentIps = _.filter(publicIPs, (ip) => {
-        const instanceId = $(ip).data().instanceId;
+        const { instanceId } = $(ip).data();
         return _.any(_.intersection(instanceId, currentInstanceId));
       });
 
       // fade everything
-      // put fade on vm-infos, does not work directly on .public-cloud-vm, because of css conflicts I guess...
+      // put fade on vm-infos, does not work directly on .public-cloud-vm
+      // because of css conflicts I guess...
       instancesBox.find('.vm-infos').addClass('faded-out');
       publicIPs.addClass('faded-out');
       this.jsplumbInstance.select().addClass('faded-path');

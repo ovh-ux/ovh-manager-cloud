@@ -1,7 +1,8 @@
 class PrivateNetworkListCtrl {
-  constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
-    OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS,
-    OvhApiVrack, VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
+  constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal,
+    CloudProjectComputeInfrastructurePrivateNetworkService, OvhApiCloudProjectNetworkPrivate,
+    OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
+    VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
     this.resources = {
       privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
       project: OvhApiCloudProject.v6(),
@@ -73,7 +74,8 @@ class PrivateNetworkListCtrl {
     this.$rootScope.$on('private-network-dialog:hide', this.hideDialog.bind(this));
     this.$rootScope.$on('private-networks:create', this.createPrivateNetworks.bind(this));
 
-    // Loading privateNetwork first because vrack can fallback to privateNetworkList to find it's ID.
+    // Loading privateNetwork first because vrack can fallback to privateNetworkList
+    // to find it's ID.
     this.fetchPrivateNetworks().then(() => this.fetchVrack());
 
     this.User.v6().get().$promise.then((user) => {
@@ -83,16 +85,17 @@ class PrivateNetworkListCtrl {
 
   fetchVrack() {
     if (this.loaders.vrack.get) {
-      return;
+      return this.$q.when();
     }
     this.loaders.vrack.get = true;
 
-    return this.resources.project.vrack({ serviceName: this.serviceName }).$promise
-      .then(vrack => this.models.vrack = vrack)
-      .then(() => this.getVrackId())
-      .then(id => this.models.vrack.id = id)
-      .catch(() => this.models.vrack = null)
-      .finally(() => this.loaders.vrack.get = false);
+    return this.resources.project
+      .vrack({ serviceName: this.serviceName }).$promise
+      .then((vrack) => { this.models.vrack = vrack; })
+      .then(() => this.getVrackId())
+      .then((id) => { this.models.vrack.id = id; })
+      .catch(() => { this.models.vrack = null; })
+      .finally(() => { this.loaders.vrack.get = false; });
   }
 
 
@@ -109,7 +112,10 @@ class PrivateNetworkListCtrl {
           id: selectedVrack.serviceName,
           name: selectedVrack.name,
         };
-        return this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
+        return this.VrackService.linkCloudProjectToVrack(
+          selectedVrack.serviceName,
+          this.serviceName,
+        );
       })
       .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
       .then(() => {
@@ -134,7 +140,10 @@ class PrivateNetworkListCtrl {
     this.VrackService.unlinkVrackModal(hasVlansText)
       .then(() => {
         this.loaders.vrack.unlink = true;
-        return this.VrackService.unlinkCloudProjectFromVrack(this.models.vrack.id, this.serviceName);
+        return this.VrackService.unlinkCloudProjectFromVrack(
+          this.models.vrack.id,
+          this.serviceName,
+        );
       })
       .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
       .then(() => {
@@ -186,7 +195,7 @@ class PrivateNetworkListCtrl {
       },
     });
     modal.result
-      .then(() => this.loaders.privateNetworks.delete = true)
+      .then(() => { this.loaders.privateNetworks.delete = true; })
       .finally(() => {
         this.loaders.privateNetworks.delete = false;
         this.deletePrivateNetworkFromList(privateNetwork);
@@ -194,7 +203,8 @@ class PrivateNetworkListCtrl {
   }
 
   deletePrivateNetworkFromList(privateNetwork) {
-    const newPrivateNetworks = this.collections.privateNetworks.filter(el => el.id !== privateNetwork);
+    const newPrivateNetworks = this.collections.privateNetworks
+      .filter(el => el.id !== privateNetwork);
     this.collections.privateNetworks = newPrivateNetworks;
     return this.collections;
   }
@@ -208,7 +218,8 @@ class PrivateNetworkListCtrl {
       .value();
 
     const onNetworkCreated = function (network) {
-      const promises = _.map(subnets, subnet => this.service.saveSubnet(args.projectId, network.id, subnet).$promise, this);
+      const promises = _.map(subnets, subnet => this.service
+        .saveSubnet(args.projectId, network.id, subnet).$promise, this);
       return this.$q.all(promises).then(() => this.fetchPrivateNetworks());
     }.bind(this);
 
@@ -228,13 +239,13 @@ class PrivateNetworkListCtrl {
         this.collections.privateNetworks = networks;
         _.forEach(this.collections.privateNetworks, (network) => {
           if (network.id) {
-            network.shortVlanId = _.last(network.id.split('_'));
+            _.set(network, 'shortVlanId', _.last(network.id.split('_')));
           }
         });
       }).catch(() => {
         this.collections.privateNetworks = [];
         this.CloudMessage.error(this.$translate.instant('cpci_private_network_list_private_network_query_error'));
-      }).finally(() => this.loaders.privateNetworks.query = false);
+      }).finally(() => { this.loaders.privateNetworks.query = false; });
   }
 
   getPrivateNetworks() {
@@ -314,10 +325,13 @@ class PrivateNetworkListCtrl {
   onKeyDown($event) {
     switch ($event.which) {
       case 27:
-        // Important not to put $event.preventDefault(); before the switch statement since it will catch and prevent default
+        // Important not to put $event.preventDefault(); before the switch statement
+        // since it will catch and prevent default
         // behavior on keyDown everywhere in the directive, inputs included.
         $event.preventDefault();
         this.hideDialog();
+        break;
+      default:
         break;
     }
   }
