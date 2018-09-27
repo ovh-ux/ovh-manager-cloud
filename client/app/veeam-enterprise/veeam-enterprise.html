@@ -1,0 +1,15 @@
+<div class="cui-page">
+    <oui-page-header data-heading="{{:: VeeamEnterpriseCtrl.serviceName }}">
+        <oui-header-tabs>
+            <oui-header-tabs-item
+                data-text="{{:: 'veeam_enterprise_tab_dashboard' | translate}}"
+                data-state="paas.veeam-enterprise.dashboard"
+                data-state-params="{ serviceName: VeeamEnterpriseCtrl.serviceName }">>
+            </oui-header-tabs-item>
+        </oui-header-tabs>
+    </oui-page-header>
+    <cui-message-container
+        data-messages="VeeamEnterpriseCtrl.VeeamEnterpriseService.unitOfWork.messages">
+    </cui-message-container>
+    <div ui-view="veeamEnterpriseContent"></div>
+</div>

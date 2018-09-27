@@ -83,7 +83,6 @@
         "node_modules/@bower_components/ovh-angular-sso-auth-modal-plugin/dist/ovh-angular-sso-auth-modal-plugin.min.js",
         "node_modules/@bower_components/ovh-angular-swimming-poll/dist/ovh-angular-swimming-poll.min.js",
         "node_modules/@bower_components/ovh-angular-doc-url/dist/ovh-angular-doc-url.min.js",
-        "node_modules/@bower_components/ovh-api-services/dist/ovh-api-services.min.js",
         "node_modules/@bower_components/ovh-angular-otrs/dist/ovh-angular-otrs.min.js",
         "node_modules/@bower_components/chart.js/dist/Chart.js",
         "node_modules/@bower_components/angular-chart.js/dist/angular-chart.js",
@@ -92,6 +91,7 @@
         "node_modules/@bower_components/moment-duration-format/lib/moment-duration-format.js",
         "node_modules/xterm/dist/xterm.js",
         "node_modules/xterm/dist/addons/fit/fit.js",
+        "node_modules/ovh-api-services/dist/ovh-api-services.min.js",
         "node_modules/ovh-ui-angular/dist/oui-angular.min.js",
         "node_modules/popper.js/dist/umd/popper.js"
     ],

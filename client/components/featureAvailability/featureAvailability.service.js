@@ -138,6 +138,14 @@
                 EU: ["FR"]
             }
         },
+        VEEAM_ENTERPRISE: {
+            sidebarMenu: {
+                EU: ["FR"]
+            },
+            sidebarOrder: {
+                EU: ["FR"]
+            }
+        },
         CLOUD_DESKTOP: {
             sidebarMenu: {
                 EU: allEuropeanSubsidiaries,

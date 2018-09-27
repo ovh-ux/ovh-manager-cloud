@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Accueil</translation>
+   <translation id="veeam_enterprise_infos_general_load_error" qtlid="403801">Erreur lors du chargement des informations générale.</translation>
+   <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Erreur lors du chargement des informations de configuration.</translation>
+   <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Erreur lors du chargement des informations d'abonnement.</translation>
+</translations>
