@@ -1,3 +1,3 @@
-"use strict";
 
-angular.module("managerApp").constant("validator", validator);
+
+angular.module('managerApp').constant('validator', validator);
