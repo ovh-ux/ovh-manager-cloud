@@ -3,8 +3,9 @@
     <translation id="kube_guides">Guides</translation>
     <translation id="kube_guides_dashboard">Dashboard Kubernetes</translation>
 
+    <translation id="kube_error">Une erreur s'est produite lors du chargement des informations: {{ message }}</translation>
+
     <translation id="kube_service">Service</translation>
-    <translation id="kube_service_error">Une erreur s'est produite lors du chargement des informations</translation>
     <translation id="kube_service_description_information">Vous trouverez ci-dessous les informations de votre service Kubernetes, vous permettant d'y accéder à l'aide de l'</translation>
     <translation id="kube_service_description_tool">outil kubetcl.</translation>
     <translation id="kube_service_description_reset">Vous pouvez réinitialiser la configuration de votre cluster Kubernetes à tout moment.</translation>

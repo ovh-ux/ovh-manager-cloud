@@ -3,9 +3,11 @@ angular.module("managerApp")
         $stateProvider
             .state("paas.kube", {
                 url: "/kube/:serviceName",
-                templateUrl: "app/kubernetes/kubernetes.html",
-                controller: "KubernetesCtrl",
-                controllerAs: "$ctrl",
+                component: "kubernetes",
+                params: { serviceName: null },
+                resolve: {
+                    serviceName: $transition$ => $transition$.params().serviceName
+                },
                 redirectTo: "paas.kube.service",
                 translations: ["common", "kubernetes"]
             });

@@ -5,10 +5,11 @@ angular.module("managerApp")
                 url: "/service",
                 views: {
                     kubernetesView: {
-                        templateUrl: "app/kubernetes/service/kubernetes-service.html",
-                        controller: "KubernetesServiceCtrl",
-                        controllerAs: "$ctrl"
+                        component: "kubernetesService"
                     }
+                },
+                resolve: {
+                    serviceName: $transition$ => $transition$.params().serviceName
                 },
                 translations: ["common", "kubernetes"]
             });

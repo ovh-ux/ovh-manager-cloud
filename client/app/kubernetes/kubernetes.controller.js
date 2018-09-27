@@ -6,7 +6,6 @@ angular.module("managerApp").controller("KubernetesCtrl", class KubernetesCtrl {
 
     $onInit () {
         this.loading = true;
-        this.serviceName = this.$stateParams.serviceName;
 
         this.getCluster();
     }
@@ -14,7 +13,10 @@ angular.module("managerApp").controller("KubernetesCtrl", class KubernetesCtrl {
     getCluster () {
         return this.Kubernetes.getKubernetesCluster(this.serviceName)
             .then(cluster => { this.cluster = cluster; })
-            .catch(() => (this.cluster = { id: this.serviceName, name: this.serviceName }))
+            .catch(error => {
+                this.cluster = { id: this.serviceName, name: this.serviceName };
+                this.errorMessage = _.get(error, "data.message");
+            })
             .finally(() => { this.loading = false; });
     }
 });

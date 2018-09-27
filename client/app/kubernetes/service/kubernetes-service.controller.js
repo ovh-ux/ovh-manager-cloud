@@ -14,7 +14,6 @@ angular.module("managerApp").controller("KubernetesServiceCtrl", class Kubernete
             cluster: false,
             billing: false
         };
-        this.serviceName = this.$stateParams.serviceName;
 
         this.getClusterInfos();
         this.getBillingInfos();

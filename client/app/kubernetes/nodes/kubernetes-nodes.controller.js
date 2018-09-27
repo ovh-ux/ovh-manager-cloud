@@ -11,7 +11,6 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
     }
 
     $onInit () {
-        this.serviceName = this.$stateParams.serviceName;
         this.loading = false;
 
         this.loadMessages();

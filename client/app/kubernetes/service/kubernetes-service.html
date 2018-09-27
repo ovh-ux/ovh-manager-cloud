@@ -6,16 +6,14 @@
         <span data-translate="kube_service_error"></span>
     </oui-message>
     <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
-    <div>
-        <p class="oui-paragraph">
-            <span data-translate="kube_service_description_information"></span>
-            <a class="oui-link"
-               data-translate="kube_service_description_tool"
-               href="{{:: $ctrl.KUBERNETES.urls.kubectl }}"
-               target="_blank" rel="noopener"></a>
-        </p>
-        <p class="oui-paragraph" data-translate="kube_service_description_reset"></p>
-    </div>
+    <p class="oui-paragraph">
+        <span data-translate="kube_service_description_information"></span>
+        <a class="oui-link"
+           data-translate="kube_service_description_tool"
+           href="{{:: $ctrl.KUBERNETES.urls.kubectl }}"
+           target="_blank" rel="noopener"></a>
+    </p>
+    <p class="oui-paragraph" data-translate="kube_service_description_reset"></p>
     <div class="row d-lg-flex">
         <!--Cluster Information-->
         <div class="col-md-4 col-xm-12" data-ng-if="$ctrl.cluster">

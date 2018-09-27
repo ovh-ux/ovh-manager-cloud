@@ -5,8 +5,11 @@ angular.module("managerApp")
                 url: "/containers",
                 views: {
                     kubernetesView: {
-                        templateUrl: "app/kubernetes/containers/kubernetes-containers.html"
+                        component: "kubernetesContainer"
                     }
+                },
+                resolve: {
+                    serviceName: $transition$ => $transition$.params().serviceName
                 },
                 translations: ["common", "kubernetes"]
             });
