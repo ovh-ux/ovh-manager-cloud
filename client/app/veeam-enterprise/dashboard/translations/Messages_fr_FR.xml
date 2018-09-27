@@ -2,7 +2,7 @@
 <translations>
    <translation id="veeam_enterprise_tiles_shortcut_title" qtlid="403658">Raccourcis</translation>
    <translation id="veeam_enterprise_tiles_shortcut_label_activate_license">Activer la licence</translation>
-   <translation id="veeam_enterprise_tiles_shortcut_label_update_informations">Mettre à jour les informations</translation>
+   <translation id="veeam_enterprise_tiles_shortcut_label_update_informations">Mettre à jour mes informations</translation>
    <translation id="veeam_enterprise_tiles_shortcut_label_cancel_license">Résilier la licence</translation>
 
    <translation id="veeam_enterprise_tiles_configuration_title" qtlid="4406">Configuration</translation>
