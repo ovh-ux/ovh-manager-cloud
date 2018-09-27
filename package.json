@@ -34,7 +34,7 @@
     "test": "eslint --quiet ./client",
     "lint": "run-p lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
-    "lint:js": "eslint --quiet --fix ./client/components"
+    "lint:js": "eslint --quiet --fix ./client"
   },
   "lint-staged": {
     "*.js": [
