@@ -323,12 +323,6 @@
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-"@bower_components/ovh-api-services@ovh-ux/ovh-api-services#^3.9.0":
-  version "3.12.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/236a89b50a61a27db1d6f798215f52729d270fd2"
-  dependencies:
-    grunt-injector "^0.6.0"
-
 "@bower_components/ovh-common-style@ovh-ux/ovh-common-style#^3.2.2":
   version "3.2.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-common-style/tar.gz/cd9f7bea9240b7e2334ae5cd7e74529478b271d4"
@@ -6251,6 +6245,12 @@ osenv@0, osenv@^0.1.3, osenv@^0.1.4:
 osenv@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/osenv/-/osenv-0.0.3.tgz#cd6ad8ddb290915ad9e22765576025d411f29cb6"
+
+ovh-api-services@^3.9.0:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.15.0.tgz#270c0762db607196ea517305abccb86ee69e992a"
+  dependencies:
+    grunt-injector "^0.6.0"
 
 ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   version "0.0.1"
