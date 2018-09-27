@@ -1,7 +1,6 @@
 angular.module("managerApp").controller("KubernetesNodesAddCtrl", class KubernetesNodesAddCtrl {
 
-    constructor ($q, $stateParams, $translate, $uibModalInstance, Kubernetes, projectId, CLOUD_FLAVORTYPE_CATEGORY) {
-        this.$q = $q;
+    constructor ($stateParams, $translate, $uibModalInstance, Kubernetes, projectId, CLOUD_FLAVORTYPE_CATEGORY) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;

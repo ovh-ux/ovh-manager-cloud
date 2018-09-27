@@ -11,14 +11,15 @@ angular.module("managerApp").controller("KubernetesServiceCtrl", class Kubernete
 
     $onInit () {
         this.loaders = {
-            cluster: false,
-            billing: false
+            cluster: true,
+            billing: true,
+            config: true
         };
 
-        this.getClusterInfos();
-        this.getBillingInfos();
-        this.getConfigFile();
-        this.loadMessages();
+        this.getClusterInfos()
+            .then(() => this.getConfigFile())
+            .then(() => this.getBillingInfos())
+            .then(() => this.loadMessages());
     }
 
 
@@ -32,7 +33,6 @@ angular.module("managerApp").controller("KubernetesServiceCtrl", class Kubernete
     }
 
     getClusterInfos () {
-        this.loaders.cluster = true;
         return this.Kubernetes.getKubernetesCluster(this.serviceName)
             .then(cluster => {
                 this.cluster = cluster;
@@ -43,7 +43,6 @@ angular.module("managerApp").controller("KubernetesServiceCtrl", class Kubernete
     }
 
     getBillingInfos () {
-        this.loaders.billing = true;
         return this.Kubernetes.getKubernetesServiceInfos(this.serviceName)
             .then(serviceInfos => {
                 this.serviceInfos = serviceInfos;
@@ -55,7 +54,6 @@ angular.module("managerApp").controller("KubernetesServiceCtrl", class Kubernete
     }
 
     getConfigFile () {
-        this.loaders.config = true;
         return this.Kubernetes.getKubernetesConfig(this.serviceName)
             .then(fileConfig => {
                 this.kubernetesConfig = {

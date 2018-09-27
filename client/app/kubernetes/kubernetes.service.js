@@ -46,7 +46,8 @@ angular.module("managerApp").service("Kubernetes", class Kubernetes {
     }
 
     resetNodesCache () {
-        return this.OvhApiKube.PublicCloud().Node().v6().resetQueryCache();
+        this.OvhApiKube.PublicCloud().Node().v6().resetCache();
+        this.OvhApiKube.PublicCloud().Node().v6().resetQueryCache();
     }
 
     getFlavors (serviceName) {

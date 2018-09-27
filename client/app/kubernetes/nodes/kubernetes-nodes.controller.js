@@ -1,6 +1,7 @@
 angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesNodesCtrl {
 
-    constructor ($stateParams, $timeout, $translate, $uibModal, CloudMessage, Kubernetes, KUBERNETES) {
+    constructor ($q, $stateParams, $timeout, $translate, $uibModal, CloudMessage, Kubernetes, KUBERNETES) {
+        this.$q = $q;
         this.$stateParams = $stateParams;
         this.$timeout = $timeout;
         this.$translate = $translate;
@@ -14,8 +15,8 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
         this.loading = false;
 
         this.getPublicCloudProject()
-            .then(() => this.getNodes());
-        this.loadMessages();
+            .then(() => this.getNodes())
+            .then(() => this.loadMessages());
     }
 
     loadMessages () {
@@ -36,11 +37,15 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
     }
 
     getAssociatedFlavor (node) {
-        return this.Kubernetes.getAssociatedInstance(node.projectId, node.instanceId)
-            .then(instance => _.set(node, "formattedFlavor", this.Kubernetes.formatFlavor(instance.flavor)))
-            .catch(() => {
-                _.set(node, "formattedFlavor", this.$translate.instant("kube_nodes_flavor_error"));
-            });
+        if (node.instanceId) {
+            return this.Kubernetes.getAssociatedInstance(node.projectId, node.instanceId)
+                .then(instance => _.set(node, "formattedFlavor", this.Kubernetes.formatFlavor(instance.flavor)))
+                .catch(() => {
+                    _.set(node, "formattedFlavor", this.$translate.instant("kube_nodes_flavor_error"));
+                });
+        }
+
+        return this.$q.when(_.set(node, "formattedFlavor", node.flavor));
     }
 
     getPublicCloudProject () {
@@ -68,8 +73,7 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
         }).result
             .then(() => {
                 this.displaySuccessMessage("kube_nodes_delete_success");
-                this.Kubernetes.resetNodesCache();
-                return this.getNodes();
+                return this.refreshNodes();
             })
             .catch(error => {
                 if (error) {
@@ -92,8 +96,7 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
         }).result
             .then(() => {
                 this.displaySuccessMessage("kube_nodes_add_success");
-                this.Kubernetes.resetNodesCache();
-                return this.getNodes();
+                return this.refreshNodes();
 
             })
             .catch(error => {
@@ -106,5 +109,10 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
     displaySuccessMessage (message) {
         this.CloudMessage.success(this.$translate.instant(message));
         this.$timeout(() => this.CloudMessage.flushMessages(), 3000);
+    }
+
+    refreshNodes () {
+        this.Kubernetes.resetNodesCache();
+        return this.getNodes();
     }
 });

@@ -1,9 +1,9 @@
-<div data-ng-if="$ctrl.loaders.cluster || $ctrl.loaders.billing" class="text-center">
+<div data-ng-if="$ctrl.loaders.cluster" class="text-center">
     <oui-spinner data-size="m"></oui-spinner>
 </div>
-<div data-ng-if="!$ctrl.loaders.cluster && !$ctrl.loaders.billing">
+<div data-ng-if="!$ctrl.loaders.cluster">
     <oui-message data-ng-if="$ctrl.displayError" data-type="error">
-        <span data-translate="kube_service_error"></span>
+        <span data-translate="kube_error"></span>
     </oui-message>
     <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
     <p class="oui-paragraph">
@@ -61,18 +61,27 @@
             </oui-tile>
         </div>
         <!--Billing-->
-        <div class="col-md-4 col-xm-12" data-ng-if="$ctrl.serviceInfos">
+        <div class="col-md-4 col-xm-12">
             <oui-tile class="h-100" data-heading="{{ 'kube_service_billing' | translate }}">
-                <oui-tile-definition data-term="{{:: 'kube_service_billing_plan' | translate }}" data-description="{{:: $ctrl.serviceInfos.offer }}"></oui-tile-definition>
-                <oui-tile-definition data-term="{{:: 'kube_service_billing_contact' | translate }}" data-description="{{:: $ctrl.serviceInfos.contactBilling }}"></oui-tile-definition>
-                <oui-tile-definition data-term="{{:: 'kube_service_billing_renewal' | translate }}">
-                    <oui-tile-description data-ng-if="$ctrl.serviceInfos.renew === 'forced' || $ctrl.serviceInfos.renew === 'automatic'">
-                        <span data-translate="kube_service_billing_renewal_automatic"></span>
-                    </oui-tile-description>
+                <oui-tile-definition data-ng-if="$ctrl.loaders.billing">
                     <oui-tile-description>
-                        <span data-ng-bind=":: $ctrl.serviceInfos.expiration | date"></span>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
+                <div data-ng-if="!$ctrl.loaders.billing">
+                    <oui-tile-definition data-term="{{:: 'kube_service_billing_plan' | translate }}" data-description="{{:: $ctrl.serviceInfos.offer }}"></oui-tile-definition>
+                    <oui-tile-definition data-term="{{:: 'kube_service_billing_contact' | translate }}" data-description="{{:: $ctrl.serviceInfos.contactBilling }}"></oui-tile-definition>
+                    <oui-tile-definition data-term="{{:: 'kube_service_billing_renewal' | translate }}">
+                        <oui-tile-description data-ng-if="$ctrl.serviceInfos.renew === 'forced' || $ctrl.serviceInfos.renew === 'automatic'">
+                            <span data-translate="kube_service_billing_renewal_automatic"></span>
+                        </oui-tile-description>
+                        <oui-tile-description>
+                            <span data-ng-bind=":: $ctrl.serviceInfos.expiration | date"></span>
+                        </oui-tile-description>
+                    </oui-tile-definition>
+                </div>
             </oui-tile>
         </div>
     </div>

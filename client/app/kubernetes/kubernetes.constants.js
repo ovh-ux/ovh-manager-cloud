@@ -4,6 +4,7 @@ angular.module("managerApp")
         region: "GRA5",
         deleteConfirmationInput: /^DELETE$/,
         kubeconfigFileName: "kubeconfig",
+        loadingStatus: ["INSTALLING", "DELETING"],
 
         urls: {
             kubectl: "https://kubernetes.io/docs/reference/kubectl/overview/",
