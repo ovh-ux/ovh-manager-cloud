@@ -1,7 +1,8 @@
 angular.module("managerApp").controller("KubernetesCtrl", class KubernetesCtrl {
-    constructor ($stateParams, Kubernetes) {
+    constructor ($stateParams, Kubernetes, KUBERNETES) {
         this.$stateParams = $stateParams;
         this.Kubernetes = Kubernetes;
+        this.KUBERNETES = KUBERNETES;
     }
 
     $onInit () {

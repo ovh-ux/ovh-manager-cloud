@@ -15,34 +15,39 @@ angular.module("managerApp").controller("KubernetesNodesAddCtrl", class Kubernet
         this.loading = true;
         this.serviceName = this.$stateParams.serviceName;
 
-        this.flavors = [];
-        this.flavorIds = _.map(this.CLOUD_FLAVORTYPE_CATEGORY, "id");
-        this.flavorFamilies = _.map(this.flavorIds, flavorId => ({ id: flavorId, familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${flavorId}`) }));
-        this.flavorsByFamily = _.zipObject(this.flavorIds, _.times(this.flavorFamilies.length, () => []));
-
         this.getFlavors();
     }
 
     getFlavors () {
         return this.Kubernetes.getFlavors(this.projectId)
-            .then(flavors => _.forEach(flavors, flavor => {
-                const family = _.find(this.CLOUD_FLAVORTYPE_CATEGORY, flavorType => _.includes(flavorType.types, flavor.type));
-                this.flavorsByFamily[family.id].push({ name: flavor.name, displayedName: this.Kubernetes.formatFlavor(flavor) });
-            }))
+            .then(flavors => {
+                /**
+                * @type {{id: string, familyName: string, flavors: Object[]}}
+                */
+                this.flavorFamilies = _.map(this.CLOUD_FLAVORTYPE_CATEGORY, category => (
+                    {
+                        id: category.id,
+                        familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
+                        flavors: _.chain(flavors).filter(flavor => _.includes(category.types, flavor.type)).map(flavor => ({ name: flavor.name, displayedName: this.Kubernetes.formatFlavor(flavor) })).value()
+                    })
+                );
+                return flavors;
+            })
+            .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant("kube_nodes_add_flavor_error", { message: error })))
             .finally(() => { this.loading = false; });
 
     }
 
     onFlavorFamilyChange (selectedFamily) {
-        this.flavor = null;
-        this.flavors = this.flavorsByFamily[selectedFamily.id];
+        this.selectedFlavor = null;
+        this.flavors = _.find(this.flavorFamilies, family => family.id === selectedFamily.id).flavors;
     }
 
     addNode () {
         this.loading = true;
-        return this.Kubernetes.addNode(this.serviceName, this.flavor.name)
+        return this.Kubernetes.addNode(this.serviceName, this.selectedFlavor.name)
             .then(() => this.$uibModalInstance.close())
-            .catch(error => this.$uibModalInstance.dismiss(_.get(error, "data.message")))
+            .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant("kube_nodes_add_error", { message: error })))
             .finally(() => { this.loading = false; });
     }
 

@@ -5,7 +5,7 @@ angular.module("managerApp")
                 url: "/containers",
                 views: {
                     kubernetesView: {
-                        component: "kubernetesContainer"
+                        component: "kubernetesContainers"
                     }
                 },
                 resolve: {

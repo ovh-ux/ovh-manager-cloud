@@ -8,8 +8,7 @@
             <span data-translate="kube_nodes_description_project_1"></span>
             <a class="oui-link"
                data-ng-bind=":: $ctrl.project.description"
-               data-ui-sref="iaas.pci-project.compute"
-               data-ui-sref-opts="{ projectId: $ctrl.project.project_id }"></a>
+               data-ui-sref="iaas.pci-project.compute({ projectId: $ctrl.project.project_id })"></a>
             <span data-translate="kube_nodes_description_project_2"></span>
         </div>
         <oui-datagrid data-rows="$ctrl.nodes" data-row-loader="$ctrl.getAssociatedFlavor($row)">

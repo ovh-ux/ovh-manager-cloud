@@ -35,6 +35,7 @@
     <translation id="kube_nodes_add">Ajouter un noeud</translation>
     <translation id="kube_nodes_add_region">Durant la bêta, vos nœuds seront tous dans la région GRA5. Nous permettrons ultérieurement de choisir cette région.</translation>
     <translation id="kube_nodes_add_success">Le noeud a bien été ajouté</translation>
+    <translation id="kube_nodes_add_flavor_error">Une erreur est survenue lors du chargement des modèles d'instance: {{ message }}</translation>
     <translation id="kube_nodes_add_flavor_family">Choisir un modèle d'instance</translation>
     <translation id="kube_nodes_add_flavor_family_balanced">General purpose</translation>
     <translation id="kube_nodes_add_flavor_family_cpu">CPU</translation>

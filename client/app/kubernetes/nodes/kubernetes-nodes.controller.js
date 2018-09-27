@@ -13,9 +13,9 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
     $onInit () {
         this.loading = false;
 
+        this.getPublicCloudProject()
+            .then(() => this.getNodes());
         this.loadMessages();
-        this.getNodes();
-        this.getPublicCloudProject();
     }
 
     loadMessages () {
@@ -47,6 +47,7 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
         return this.Kubernetes.getAssociatedPublicCloudProjects(this.serviceName)
             .then(projects => this.Kubernetes.getProject(_.first(projects).projectId))
             .then(project => {
+                console.log(project);
                 this.project = project;
             })
             .catch(() => {
@@ -69,7 +70,7 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
             .then(() => {
                 this.displaySuccessMessage("kube_nodes_delete_success");
                 this.Kubernetes.resetNodesCache();
-                this.getNodes();
+                return this.getNodes();
             })
             .catch(error => {
                 if (error) {
@@ -93,12 +94,12 @@ angular.module("managerApp").controller("KubernetesNodesCtrl", class KubernetesN
             .then(() => {
                 this.displaySuccessMessage("kube_nodes_add_success");
                 this.Kubernetes.resetNodesCache();
-                this.getNodes();
+                return this.getNodes();
 
             })
             .catch(error => {
                 if (error) {
-                    this.CloudMessage.error(this.$translate.instant("kube_nodes_add_error", { message: error }));
+                    this.CloudMessage.error(error);
                 }
             });
     }

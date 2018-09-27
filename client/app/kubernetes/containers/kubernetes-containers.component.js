@@ -3,5 +3,6 @@ angular.module("managerApp")
         bindings: {
             serviceName: "@"
         },
-        templateUrl: "app/kubernetes/containers/kubernetes-containers.html"
+        templateUrl: "app/kubernetes/containers/kubernetes-containers.html",
+        controller: "KubernetesContainersCtrl"
     });

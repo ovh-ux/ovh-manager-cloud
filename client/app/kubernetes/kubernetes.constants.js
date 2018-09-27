@@ -11,7 +11,7 @@ angular.module("managerApp")
             kubernetesDoc: "https://labs.ovh.com/kubernetes-k8s/documentation",
 
             guides: {
-                dashboard: "https://labs.ovh.com/kubernetes-k8s/documentation/dashboard-installation"
+                kubernetesDashboard: "https://labs.ovh.com/kubernetes-k8s/documentation/dashboard-installation"
             }
         }
     });

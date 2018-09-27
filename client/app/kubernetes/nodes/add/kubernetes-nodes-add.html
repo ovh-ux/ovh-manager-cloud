@@ -32,7 +32,7 @@
         </div>
         <oui-field data-label="{{:: 'kube_nodes_add_flavor' | translate }}">
             <oui-select name="flavorFamily"
-                        data-model="$ctrl.flavor"
+                        data-model="$ctrl.selectedFlavor"
                         data-title="{{:: 'kube_nodes_add_flavor_family' | translate }}"
                         data-placeholder="{{:: 'kube_nodes_add_flavor_family' | translate }}"
                         data-items="$ctrl.flavors"
