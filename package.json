@@ -34,7 +34,7 @@
     "test": "eslint --quiet ./client",
     "lint": "run-p lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
-    "lint:js": "eslint --quiet --fix ./client"
+    "lint:js": "eslint --quiet --fix ./client/components"
   },
   "lint-staged": {
     "*.js": [
@@ -92,7 +92,6 @@
     "json3": "bestiejs/json3#~3.3.1",
     "jsplumb": "sporritt/jsPlumb#1.7.4",
     "jsurl": "0.1.5",
-    "karma-read-json": "pizzapanther/Karma-Read-JSON#~1.0.2",
     "lodash": "~3.10.1",
     "matchmedia": "paulirish/matchMedia.js#~0.2.0",
     "matchmedia-ng": "~1.0",

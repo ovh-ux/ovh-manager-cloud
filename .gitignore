@@ -1,12 +1,8 @@
 node_modules
 tools/keys/*
 .tmp
-karma.conf.js
-test-reports/
-test-reports.tar.gz
 .idea
 dist
-phantomjsdriver.log
 *.orig
 dist.tar.gz
 tools/
