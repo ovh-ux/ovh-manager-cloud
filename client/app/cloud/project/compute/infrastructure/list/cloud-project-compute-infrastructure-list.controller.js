@@ -1,6 +1,7 @@
 class CloudProjectComputeInfrastructureListCtrl {
   constructor($scope, $q, $stateParams, $translate, $timeout,
-    CloudMessage, CloudNavigation, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
+    CloudMessage, CloudNavigation, CloudProjectOrchestrator,
+    CloudProjectComputeInfrastructureService,
     OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
     this.$scope = $scope;
     this.$q = $q;
@@ -78,7 +79,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     }).then(({ infra }) => {
       this.infra = infra;
       return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.v6().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
-        .then(flavor => this.updateInstance(instance, flavor))))
+        .then(flavor => this.updateInstance(instance, flavor)),))
         .then(instances => (this.table.items = instances));
     }).catch((err) => {
       this.table.items = [];
@@ -94,21 +95,21 @@ class CloudProjectComputeInfrastructureListCtrl {
     instance.ipv4 = instance.getPublicIpv4();
     instance.ipv6 = instance.getPublicIpv6();
     instance.statusToTranslate = this.getStatusToTranslate(instance);
-    instance.macroRegion = this.RegionService.getMacroRegion(instance.region);
+    instance.macroRegion = this.RegionService.constructor.getMacroRegion(instance.region);
     // patch for some translations that have &#160; html entities
     instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace('&#160;', ' ');
     return instance;
   }
 
   getStatusToTranslate(instance) {
-    if (instance.status === 'ACTIVE' && instance.monthlyBilling && instance.monthlyBilling.status === 'activationPending') {
-      return 'UPDATING';
-    } if (instance.status === 'ACTIVE') {
-      return 'OK';
-    } if (instance.status === 'REBOOT' || instance.status === 'HARD_REBOOT' || instance.status === 'RESCUING' || instance.status === 'UNRESCUING') {
-      return 'REBOOT';
-    }
-    return instance.status;
+      if (instance.status === "ACTIVE" && instance.monthlyBilling && instance.monthlyBilling.status === "activationPending") {
+          return "UPDATING";
+      } if (instance.status === "ACTIVE") {
+          return "OK";
+      } else if (instance.status === "REBOOT" || instance.status === "HARD_REBOOT" || instance.status === "RESCUING" || instance.status === "UNRESCUING") {
+          return "REBOOT";
+      }
+      return instance.status;
   }
 
   addOrRemoveInstance(newIds, oldIds) {
