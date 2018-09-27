@@ -1,37 +1,37 @@
-angular.module("managerApp").filter("pluralize", ($translate, $log) => {
-    const exist = translateId => $translate.instant(translateId) !== translateId;
+angular.module('managerApp').filter('pluralize', ($translate, $log) => {
+  const exist = translateId => $translate.instant(translateId) !== translateId;
 
-    const validateId = id => exist(id) ? id : undefined;
+  const validateId = id => (exist(id) ? id : undefined);
 
-    return (translateId, counter, vars) => {
-        let key;
+  return (translateId, counterParam, vars) => {
+    let key;
+    let counter = counterParam;
 
-        counter = parseFloat(counter);
+    counter = parseFloat(counter);
 
-        if (angular.isNumber(counter)) {
+    if (angular.isNumber(counter)) {
+      key = validateId([translateId, counter].join('_'));
 
-            key = validateId([translateId, counter].join("_"));
+      if (!key) {
+        switch (counter) {
+          case 0:
+            key = validateId([translateId, 'zero'].join('_'));
+            break;
 
-            if (!key) {
-                switch (counter) {
-                    case 0:
-                        key = validateId([translateId, "zero"].join("_"));
-                        break;
+          case 1:
+            key = validateId([translateId, 'one'].join('_'));
+            break;
 
-                    case 1:
-                        key = validateId([translateId, "one"].join("_"));
-                        break;
-
-                    default:
-                        key = validateId([translateId, "other"].join("_"));
-                }
-            }
-        } else {
-            $log.warn("[pluralize] counter must be a number! (%o)", counter);
+          default:
+            key = validateId([translateId, 'other'].join('_'));
         }
+      }
+    } else {
+      $log.warn('[pluralize] counter must be a number! (%o)', counter);
+    }
 
-        _.defaults(vars, { count: counter });
+    _.defaults(vars, { count: counter });
 
-        return $translate.instant(key || translateId, vars || {});
-    };
+    return $translate.instant(key || translateId, vars || {});
+  };
 });
