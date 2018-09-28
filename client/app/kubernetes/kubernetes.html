@@ -4,6 +4,8 @@
 <div data-ng-if="!$ctrl.loading">
     <oui-page-header data-heading="{{:: $ctrl.cluster.name }}" data-description="{{:: $ctrl.cluster.id }}">
         <oui-guide-menu data-text="{{:: 'kube_guides' | translate }}">
+            <oui-guide-menu-item data-text="{{:: 'kube_guides_quickstart' | translate }}" data-href="{{:: $ctrl.KUBERNETES.urls.guides.quickstart }}" data-external></oui-guide-menu-item>
+            <oui-guide-menu-item data-text="{{:: 'kube_guides_api_quickstart' | translate }}" data-href="{{:: $ctrl.KUBERNETES.urls.guides.apiQuickstart }}" data-external></oui-guide-menu-item>
             <oui-guide-menu-item data-text="{{:: 'kube_guides_dashboard' | translate }}" data-href="{{:: $ctrl.KUBERNETES.urls.guides.kubernetesDashboard }}" data-external></oui-guide-menu-item>
         </oui-guide-menu>
         <oui-header-tabs>

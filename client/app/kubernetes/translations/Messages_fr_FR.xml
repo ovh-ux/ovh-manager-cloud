@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="kube_guides">Guides</translation>
+    <translation id="kube_guides_quickstart">Débuter avec Kubernetes</translation>
+    <translation id="kube_guides_api_quickstart">Débuter Kubernetes avec l'API</translation>
     <translation id="kube_guides_dashboard">Dashboard Kubernetes</translation>
 
     <translation id="kube_error">Une erreur s'est produite lors du chargement des informations: {{ message }}</translation>
@@ -68,9 +70,9 @@
     <translation id="kube_containers_and_services">Conteneurs et services</translation>
     <translation id="kube_containers_coming_soon">Bientôt disponible</translation>
     <translation id="kube_containers_description">Vous pourrez bientôt retrouver ici tous les conteneurs et services hébergés par votre cluster Kubernetes.</translation>
-    <translation id="kube_containers_description_dashboard">Nous vous invitons à utiliser l'outil en ligne de commande "kubectl" ou installer le Daskboard Kubernetes. Il s'agit d'une interface utilisateur web maintenue par la communauté Kubernetes, elle-même exposée en tant que service au sein de votre cluster.</translation>
-    <translation id="kube_containers_description_dashboard_link">Suivez ce tutoriel pour installer le dashboard Kubernetes.</translation>
+    <translation id="kube_containers_description_dashboard">Nous vous invitons à utiliser l'outil en ligne de commande "kubectl" ou installer le Daskboard Kubernetes. Il s'agit d'une interface utilisateur web maintenue par la communauté Kubernetes, elle-même exposée en tant que service au sein de votre cluster. Suivez</translation>
+    <translation id="kube_containers_description_dashboard_link">ce tutoriel</translation>
+    <translation id="kube_containers_description_dashboard_2">pour installer le dashboard Kubernetes.</translation>
     <translation id="kube_containers_description_documentation">Pendant la phase bêta, vous trouverez de la documentation (comment orchestrer et exposer vos services sur Internet…) dans la</translation>
-    <translation id="kube_containers_description_documentation_link">section "Kubernetes" du site labs.ovh.com</translation>
-
+    <translation id="kube_containers_description_documentation_link">section Kubernetes du site labs.ovh.com</translation>
 </translations>

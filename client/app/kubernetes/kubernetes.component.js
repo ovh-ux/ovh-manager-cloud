@@ -1,8 +1,8 @@
-angular.module("managerApp")
-    .component("kubernetes", {
-        bindings: {
-            serviceName: "@"
-        },
-        templateUrl: "app/kubernetes/kubernetes.html",
-        controller: "KubernetesCtrl"
-    });
+angular.module('managerApp')
+  .component('kubernetes', {
+    bindings: {
+      serviceName: '@',
+    },
+    templateUrl: 'app/kubernetes/kubernetes.html',
+    controller: 'KubernetesCtrl',
+  });
