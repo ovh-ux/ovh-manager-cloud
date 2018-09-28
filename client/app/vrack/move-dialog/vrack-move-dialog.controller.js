@@ -1,117 +1,115 @@
-angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope, $q, $translate, $uibModalInstance, Toast, OvhApiVrack, OvhApiVrackDedicatedCloudDatacenter) {
-    "use strict";
+angular.module('managerApp').controller('VrackMoveDialogCtrl', function VrackMoveDialogCtrl($scope, $q, $translate, $uibModalInstance, Toast, OvhApiVrack, OvhApiVrackDedicatedCloudDatacenter) {
+  const self = this;
 
-    var self = this;
+  self.form = null;
 
-    self.form = null;
+  self.service = $scope.$resolve.service;
 
-    self.service = $scope.$resolve.service;
+  self.models = {
+    vrack: null,
+  };
 
-    self.models = {
-        vrack: null
-    };
+  self.collections = {
+    allowedVracks: [],
+    vracks: [],
+  };
 
-    self.collections = {
-        allowedVracks: [],
-        vracks: []
-    };
+  self.loaders = {
+    allowedVrack: false,
+    vrack: false,
+    move: false,
+  };
 
-    self.loaders = {
-        allowedVrack: false,
-        vrack: false,
-        move: false
-    };
+  function init() {
+    self.fetchAllowedVracks();
+  }
 
-    function init () {
-        self.fetchAllowedVracks();
+  self.fetchAllowedVracks = function () {
+    if (self.loaders.allowedVrack) {
+      return $q.when();
     }
 
-    self.fetchAllowedVracks = function () {
-        if (self.loaders.allowedVrack) {
-            return;
-        }
+    self.loaders.allowedVrack = true;
 
-        self.loaders.allowedVrack = true;
+    return OvhApiVrackDedicatedCloudDatacenter.v6().allowedVrack({
+      serviceName: self.service.vrack,
+      datacenter: self.service.id,
+    }).$promise.then((allowedVracks) => {
+      if (!allowedVracks.length) {
+        return $q.when();
+      }
+      self.collections.allowedVracks = allowedVracks;
+      return self.fetchVracks();
+    }).catch(() => {
+      self.collections.allowedVracks = [];
+    }).finally(() => {
+      self.loaders.allowedVrack = false;
+    });
+  };
 
-        return OvhApiVrackDedicatedCloudDatacenter.v6().allowedVrack({
-            serviceName: self.service.vrack,
-            datacenter: self.service.id
-        }).$promise.then(function (allowedVracks) {
-            if (!allowedVracks.length) {
-                return;
-            }
-            self.collections.allowedVracks = allowedVracks;
-            return self.fetchVracks();
-        }).catch(function () {
-            self.collections.allowedVracks = [];
-        }).finally(function () {
-            self.loaders.allowedVrack = false;
-        });
-    };
+  self.fetchVracks = function () {
+    if (self.loaders.vracks) {
+      return;
+    }
 
-    self.fetchVracks = function () {
-        if (self.loaders.vracks) {
-            return;
-        }
+    self.loaders.vracks = true;
 
-        self.loaders.vracks = true;
+    OvhApiVrack.Aapi().query().$promise.then((vracks) => {
+      self.collections.vracks = vracks;
+    }).catch(() => {
+      self.collections.vracks = [];
+    }).finally(() => {
+      self.loaders.vracks = false;
+    });
+  };
 
-        OvhApiVrack.Aapi().query().$promise.then(function (vracks) {
-            self.collections.vracks = vracks;
-        }).catch(function () {
-            self.collections.vracks = [];
-        }).finally(function () {
-            self.loaders.vracks = false;
-        });
-    };
+  self.getDisplayName = function (vrackId) {
+    const vrack = _.find(self.getVracks(), { id: vrackId });
 
-    self.getDisplayName = function (vrackId) {
-        var vrack = _.find(self.getVracks(), { id: vrackId });
+    if (vrack && !_.isEmpty(vrack.name)) {
+      return vrack.name;
+    }
 
-        if (vrack && !_.isEmpty(vrack.name)) {
-            return vrack.name;
-        }
+    return vrackId;
+  };
 
-        return vrackId;
-    };
+  self.dismiss = function () {
+    $uibModalInstance.dismiss();
+  };
 
-    self.dismiss = function () {
-        $uibModalInstance.dismiss();
-    };
+  self.getAllowedVracks = function () {
+    return self.collections.allowedVracks;
+  };
 
-    self.getAllowedVracks = function () {
-        return self.collections.allowedVracks;
-    };
+  self.getVracks = function () {
+    return self.collections.vracks;
+  };
 
-    self.getVracks = function () {
-        return self.collections.vracks;
-    };
+  self.submit = function () {
+    if (!self.form.$valid || self.loaders.move) {
+      return $q.when();
+    }
 
-    self.submit = function () {
-        if (!self.form.$valid || self.loaders.move) {
-            return;
-        }
+    self.loaders.move = true;
 
-        self.loaders.move = true;
+    return OvhApiVrackDedicatedCloudDatacenter.v6().move({
+      serviceName: self.service.vrack,
+      datacenter: self.service.id,
+    }, {
+      targetServiceName: self.models.vrack,
+    }).$promise.then((task) => {
+      $scope.$emit('vrack:refresh-data');
+      $uibModalInstance.close({ task });
+    }).catch(() => {
+      Toast.error($translate.instant('vrack_move_dialog_request_error'));
+    }).finally(() => {
+      self.loaders.move = false;
+    });
+  };
 
-        OvhApiVrackDedicatedCloudDatacenter.v6().move({
-            serviceName: self.service.vrack,
-            datacenter: self.service.id
-        }, {
-            targetServiceName: self.models.vrack
-        }).$promise.then(function (task) {
-            $scope.$emit("vrack:refresh-data");
-            $uibModalInstance.close({ task: task });
-        }).catch(function () {
-            Toast.error($translate.instant("vrack_move_dialog_request_error"));
-        }).finally(function () {
-            self.loaders.move = false;
-        });
-    };
+  self.hasPendingRequests = function () {
+    return self.loaders.move;
+  };
 
-    self.hasPendingRequests = function () {
-        return self.loaders.move;
-    };
-
-    init();
+  init();
 });

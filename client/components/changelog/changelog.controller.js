@@ -1,39 +1,36 @@
-angular.module("managerApp")
-  .controller("ChangelogCtrl", function ($uibModalInstance, OvhApiMe, OvhApiChangelog, TARGET) {
-    "use strict";
-    var self = this;
+angular.module('managerApp')
+  .controller('ChangelogCtrl', function ($uibModalInstance, OvhApiMe, OvhApiChangelog, TARGET) {
+    const self = this;
 
-    self.loading   = false;
-    self.error     = false;
+    self.loading = false;
+    self.error = false;
     self.content = [];
 
-    function getUser () {
-        return OvhApiMe.v6().get().$promise;
+    function getUser() {
+      return OvhApiMe.v6().get().$promise;
     }
 
-    function getChangelog (country, zone) {
-        return OvhApiChangelog.Aapi().query({
-            subsidiary: country,
-            where: zone
-        }).$promise;
+    function getChangelog(country, zone) {
+      return OvhApiChangelog.Aapi().query({
+        subsidiary: country,
+        where: zone,
+      }).$promise;
     }
 
-    function init () {
-        self.loading = true;
-        return getUser().then(function (user) {
-            return getChangelog(user.ovhSubsidiary, TARGET).then(function (changelog) {
-                self.content = changelog;
-            });
-        })["catch"](function (err) {
-            self.error = err;
-        })["finally"](function () {
-            self.loading = false;
-        });
+    function init() {
+      self.loading = true;
+      return getUser().then(user => getChangelog(user.ovhSubsidiary, TARGET).then((changelog) => {
+        self.content = changelog;
+      })).catch((err) => {
+        self.error = err;
+      }).finally(() => {
+        self.loading = false;
+      });
     }
 
     self.closeModal = function () {
-        $uibModalInstance.dismiss();
+      $uibModalInstance.dismiss();
     };
 
     init();
-});
+  });

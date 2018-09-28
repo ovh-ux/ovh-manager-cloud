@@ -181,7 +181,7 @@
                         <div data-ng-class="{'opacity2-leave' : $ctrl.toggle.sshDeleteId === ssh.id,
                                             'opacity2-enter' : $ctrl.toggle.sshDeleteId !== ssh.id}">
 
-                            <button class="no-style" data-ng-click="sshkeyDeploy = !sshkeyDeploy; $ctrl.selectSshKey(ssh.id, sshkeyDeploy);">
+                            <button class="no-style" data-ng-click="sshkeyDeploy = !sshkeyDeploy; $ctrl.constructor.selectSshKey(ssh.id, sshkeyDeploy);">
                                 <i class="fa fa-caret-right rotate" data-ng-class="{'rotate90' : sshkeyDeploy}"></i>
                             </button>
 

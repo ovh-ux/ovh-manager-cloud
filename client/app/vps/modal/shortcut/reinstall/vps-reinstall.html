@@ -1,12 +1,12 @@
 <form novalidate name="form" data-ng-submit="form.$valid && $ctrl.confirm()" class="vps-reinstall">
-    <oui-modal 
+    <oui-modal
         data-title="{{:: 'vps_configuration_reinstall_title' | translate}}"
         data-primary-label="{{ ::'common_confirm' | translate }}"
         data-secondary-action="$ctrl.cancel()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
         data-on-dismiss="$ctrl.cancel()"
         data-loading="$ctrl.loaders.init || $ctrl.loaders.template || $ctrl.loaders.save">
-        
+
         <!-- distribution -->
         <oui-field data-label="{{ ::'vps_configuration_reinstall_step1_question' | translate }}"
             data-help-text="{{(!$ctrl.summary.windowsActivated ? 'vps_configuration_reinstall_windows_option' : '') | translate}}">
@@ -58,7 +58,7 @@
         </div>
 
         <!-- ssh keys -->
-        <div data-ng-if="$ctrl.template.value && ($ctrl.template.language || $ctrl.template.value.availableLanguage.length === 0) && !$ctrl.isWindows($ctrl.template.value)">
+        <div data-ng-if="$ctrl.template.value && ($ctrl.template.language || $ctrl.template.value.availableLanguage.length === 0) && !$ctrl.constructor.isWindows($ctrl.template.value)">
             <label for="sshKey" class="oui-label"
                     data-translate="vps_configuration_reinstall_step1_select_ssh_key"
                     data-oui-tooltip="{{::'vps_configuration_reinstall_step1_select_ssh_key_help' | translate}}"></label>
@@ -78,7 +78,7 @@
 
         <!-- send password -->
         <oui-checkbox
-            data-ng-if="$ctrl.template.sshKeys && $ctrl.template.sshKeys.length > 0 && !$ctrl.isWindows($ctrl.template.value)"
+            data-ng-if="$ctrl.template.sshKeys && $ctrl.template.sshKeys.length > 0 && !$ctrl.constructor.isWindows($ctrl.template.value)"
             data-text="{{ 'vps_configuration_reinstall_step1_sendPassword' | translate }}"
             data-description="{{ 'vps_configuration_reinstall_step2_alert2' | translate }}"
             id="sendPassword"

@@ -1,10 +1,9 @@
-angular.module("managerApp").controller("NashaOrderCompleteCtrl", function ($stateParams) {
-    "use strict";
-    var self = this;
+angular.module('managerApp').controller('NashaOrderCompleteCtrl', function ($stateParams) {
+  const self = this;
 
-    function init () {
-        self.orderUrl = $stateParams.orderUrl;
-    }
+  function init() {
+    self.orderUrl = $stateParams.orderUrl;
+  }
 
-    init();
+  init();
 });

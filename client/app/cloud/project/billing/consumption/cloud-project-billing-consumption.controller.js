@@ -1,21 +1,20 @@
-"use strict";
 
-angular.module("managerApp").controller("CloudProjectBillingConsumptionCtrl",
-    function ($state) {
-        var self = this;
 
-        function init () {
-            self.currentDate = moment();
+angular.module('managerApp').controller('CloudProjectBillingConsumptionCtrl',
+  function ($state) {
+    const self = this;
 
-            $state.go("iaas.pci-project.billing.consumption.current");
-        }
+    function init() {
+      self.currentDate = moment();
 
-        self.getBillingDateInfo = function () {
-            return {
-                date: self.currentDate.format("LL")
-            };
-        };
-
-        init();
+      $state.go('iaas.pci-project.billing.consumption.current');
     }
-);
+
+    self.getBillingDateInfo = function () {
+      return {
+        date: self.currentDate.format('LL'),
+      };
+    };
+
+    init();
+  });

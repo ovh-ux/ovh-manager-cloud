@@ -1,56 +1,57 @@
-angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", function ($scope, $stateParams, $translate, $uibModalInstance, OvhApiDedicatedNashaPartition, CloudMessage) {
-    "use strict";
-    var self = this;
+angular.module('managerApp').controller('NashaPartitionCustomSnapshotAddCtrl', function ($scope, $stateParams, $translate, $uibModalInstance, OvhApiDedicatedNashaPartition, CloudMessage) {
+  const self = this;
 
-    self.saving = false;
+  self.saving = false;
 
-    self.data = {
-        partition: $scope.$resolve.items,
-        customSnapshot: {
-            prefix: "snap-"
-        }
-    };
+  self.data = {
+    partition: $scope.$resolve.items,
+    customSnapshot: {
+      prefix: 'snap-',
+    },
+  };
 
-    self.options = {
-        snapshotName: {
-            maxLength: 70
-        }
-    }
+  self.options = {
+    snapshotName: {
+      maxLength: 70,
+    },
+  };
 
-    self.snapshotName = "";
+  self.snapshotName = '';
 
-    function init () {
-        computeDefaultSnapshotName();
-    }
+  function computeDefaultSnapshotName() {
+    const currentDate = new Date();
+    const timeZonedDate = new Date(currentDate.getTime()
+      - (currentDate.getTimezoneOffset() * 60000));
+    const dateString = timeZonedDate.toISOString();
+    self.snapshotName = `${self.data.partition.partitionName}-${dateString}`;
+  }
 
-    self.addCustomSnapshot = function () {
-        self.saving = true;
-        OvhApiDedicatedNashaPartition.CustomSnapshot().v6().add({
-            serviceName: $stateParams.nashaId,
-            partitionName: self.data.partition.partitionName
-        }, {
-            name: self.snapshotName
-        }).$promise.then(function (result) {
-            $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
-            CloudMessage.success($translate.instant("nasha_custom_snapshot_modal_success"));
-        }).catch(function () {
-            $uibModalInstance.dismiss();
-            CloudMessage.error($translate.instant("nasha_custom_snapshot_modal_fail"));
-        }).finally(function () {
-            self.saving = false;
-        });
-    };
+  function init() {
+    computeDefaultSnapshotName();
+  }
 
-    self.dismiss = function () {
-        $uibModalInstance.dismiss();
-    };
+  self.addCustomSnapshot = function () {
+    self.saving = true;
+    OvhApiDedicatedNashaPartition.CustomSnapshot().v6().add({
+      serviceName: $stateParams.nashaId,
+      partitionName: self.data.partition.partitionName,
+    }, {
+      name: self.snapshotName,
+    }).$promise.then((result) => {
+      $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
+      CloudMessage.success($translate.instant('nasha_custom_snapshot_modal_success'));
+    }).catch(() => {
+      $uibModalInstance.dismiss();
+      CloudMessage.error($translate.instant('nasha_custom_snapshot_modal_fail'));
+    }).finally(() => {
+      self.saving = false;
+    });
+  };
 
-    function computeDefaultSnapshotName () {
-        var currentDate = new Date();
-        var timeZonedDate = new Date(currentDate.getTime() - (currentDate.getTimezoneOffset() * 60000));
-        var dateString = timeZonedDate.toISOString();
-        self.snapshotName = self.data.partition.partitionName + "-" + dateString;
-    }
+  self.dismiss = function () {
+    $uibModalInstance.dismiss();
+  };
 
-    init();
+
+  init();
 });
