@@ -15,7 +15,7 @@ angular.module('managerApp')
         templateUrl: 'app/dbaas/ts/project/dbaasts-project.html',
         controller: 'DBaasTsProjectCtrl',
         controllerAs: 'DBaasTsProjectCtrl',
-        translations: ['common', 'dbaas/ts', 'dbaas/ts/project'],
+        translations: ['.', '..'],
         atInternet: { ignore: true },
       });
   });

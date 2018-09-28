@@ -11,6 +11,6 @@ angular.module('managerApp')
             controllerAs: '$ctrl',
           },
         },
-        translations: ['cloud/project/compute/ssh'],
+        translations: ['.'],
       });
   });

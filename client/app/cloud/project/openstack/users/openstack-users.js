@@ -14,10 +14,10 @@ angular.module('managerApp')
           },
         },
         translations: [
-          'cloud/project/openstack/users',
-          'cloud/project/openstack/users/token',
-          'cloud/project/openstack/users/openrc',
-          'cloud/project/openstack/users/rclone',
+          '.',
+          './token',
+          './openrc',
+          './rclone',
         ],
       });
   });

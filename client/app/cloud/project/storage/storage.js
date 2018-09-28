@@ -12,7 +12,7 @@ angular.module('managerApp')
             controllerAs: 'RA.storageCtrl',
           },
         },
-        translations: ['common', 'cloud/project/storage', 'cloud/project/compute'],
+        translations: ['.'],
       });
 
     $stateProvider
@@ -25,7 +25,7 @@ angular.module('managerApp')
             controllerAs: 'RA.storageAddCtrl',
           },
         },
-        translations: ['common', 'cloud/project/storage', 'cloud/project/compute'],
+        translations: ['.'],
       });
 
     $stateProvider
@@ -38,10 +38,6 @@ angular.module('managerApp')
             controllerAs: 'RA.storageDetailsCtrl',
           },
         },
-        translations: [
-          'cloud/project/storage',
-          'cloud/project/storage/storage-details',
-          'cloud/project/compute',
-        ],
+        translations: ['.', './storage-details'],
       });
   });

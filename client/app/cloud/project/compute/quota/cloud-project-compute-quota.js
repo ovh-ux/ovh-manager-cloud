@@ -10,6 +10,6 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'CloudProjectComputeQuotaCtrl',
       },
     },
-    translations: ['common', 'cloud/project/compute/quota'],
+    translations: ['.'],
   });
 });

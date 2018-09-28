@@ -7,6 +7,6 @@ angular.module('managerApp')
       templateUrl: 'app/deskaas/deskaas.html',
       controller: 'DeskaasCtrl',
       controllerAs: 'DeskaasCtrl',
-      translations: ['common', 'deskaas'],
+      translations: ['../common', '.'],
     });
   });

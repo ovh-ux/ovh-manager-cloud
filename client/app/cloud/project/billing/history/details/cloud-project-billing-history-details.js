@@ -10,6 +10,6 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'BillingHistoryDetailsCtrl',
       },
     },
-    translations: ['common', 'cloud/project/billing/history/details'],
+    translations: ['.'],
   });
 });

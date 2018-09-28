@@ -4,7 +4,7 @@ angular.module('managerApp')
       .state('paas.cda', {
         url: '/cda',
         template: '<div ui-view="cdaDetails"></div>',
-        translations: ['common', 'cda'],
+        translations: ['.'],
         abstract: true,
       });
   })

@@ -10,6 +10,6 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'DBaasTsProjectDetailsSettingsCtrl',
       },
     },
-    translations: ['common', 'dbaas/ts/project/add', 'dbaas/ts/project/details', 'dbaas/ts/project/details/settings'],
+    translations: ['../../add', '..', '.'],
   });
 });

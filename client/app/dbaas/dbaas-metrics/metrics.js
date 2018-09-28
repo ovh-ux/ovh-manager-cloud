@@ -14,7 +14,7 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
       abstract: true,
-      translations: ['common', 'dbaas/dbaas-metrics'],
+      translations: ['.'],
     })
     .state('dbaas.metrics.detail', {
       url: '/{serviceName}',
@@ -25,7 +25,7 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsDetailCtrl',
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics'],
+      translations: ['.'],
     })
     .state('dbaas.metrics.detail.dashboard', {
       url: '/dashboard',
@@ -37,7 +37,7 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics', 'dbaas/dbaas-metrics/dashboard', 'dbaas/dbaas-metrics/token'],
+      translations: ['.', './dashboard', './token'],
     })
     .state('dbaas.metrics.detail.token', {
       url: '/token',
@@ -50,7 +50,7 @@ angular.module('managerApp').config(($stateProvider) => {
                     `,
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics', 'dbaas/dbaas-metrics/token'],
+      translations: ['.', './token'],
     })
     .state('dbaas.metrics.detail.token.home', {
       url: '/',
@@ -61,7 +61,7 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsTokenCtrl',
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics', 'dbaas/dbaas-metrics/token'],
+      translations: ['.', './token'],
     })
     .state('dbaas.metrics.detail.token.add', {
       url: '/add',
@@ -72,7 +72,7 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics', 'dbaas/dbaas-metrics/token', 'dbaas/dbaas-metrics/token/add'],
+      translations: ['.', './token', './token/add'],
     })
     .state('dbaas.metrics.detail.platform', {
       url: '/platform',
@@ -84,6 +84,6 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsPlatformCtrl',
         },
       },
-      translations: ['common', 'dbaas/dbaas-metrics', 'dbaas/dbaas-metrics/platform'],
+      translations: ['.', './platform'],
     });
 });

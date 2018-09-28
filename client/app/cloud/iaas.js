@@ -8,6 +8,6 @@ angular.module('managerApp')
         url: '/iaas',
         abstract: true,
         template: '<ui-view/>',
-        translations: ['common', 'cloud'],
+        translations: ['../common', '.'],
       });
   });

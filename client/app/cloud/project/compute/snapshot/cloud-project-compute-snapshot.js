@@ -13,6 +13,6 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectComputeSnapshotCtrl',
           },
         },
-        translations: ['cloud/project/compute/snapshot'],
+        translations: ['.'],
       });
   });

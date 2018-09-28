@@ -14,14 +14,14 @@ angular.module('managerApp')
         },
         onEnter: CloudMessage => CloudMessage.flushMessages(),
         translations: [
-          'common',
-          'nasha/partition',
-          'nasha/partition/add',
-          'nasha/partition/delete',
-          'nasha/partition/update',
-          'nasha/partition/snapshot',
-          'nasha/partition/custom-snapshot',
-          'nasha/partition/zfs-options',
+          '../../common',
+          '.',
+          './add',
+          './delete',
+          './update',
+          './snapshot',
+          './custom-snapshot',
+          './zfs-options',
         ],
       });
   });

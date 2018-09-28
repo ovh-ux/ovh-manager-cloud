@@ -997,10 +997,9 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz#54c5a964462be3d4d78af631363c18d6fa91ac26"
   integrity sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==
 
-"@ovh-ux/manager-webpack-config@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-1.1.0.tgz#5e5d0a20a47e9b20bd5872078f64fb37fbdd091d"
-  integrity sha512-cM8Gw0BC4Yn7t0/Qfxvf1agADRef85RAiU2UXk5TvCRof5hU7zPDWTqXqmJUP5XPDyD+nGGC0H60/LeKAfkavA==
+"@ovh-ux/manager-webpack-config@^2.0.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-2.1.0.tgz#d78f298965e18f9e08ed8e251298db3c92914c5e"
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/generator" "^7.0.0"
@@ -1017,7 +1016,7 @@
     friendly-errors-webpack-plugin "^1.7.0"
     html-webpack-plugin "^3.2.0"
     http-proxy-middleware "^0.18.0"
-    husky "^1.0.0-rc.13"
+    husky "^1.0.0"
     less "^2.3.1"
     less-loader "^4.1.0"
     less-plugin-remcalc "^0.0.1"
@@ -5046,22 +5045,6 @@ husky@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/husky/-/husky-1.0.0.tgz#308980544f20edb1b3e80680b29ae02f87dfa94c"
   integrity sha512-BCJmbzfauxXwfxIZYETNS95zNxnwQgzTbVPs4DL0CbMmSDvuMEAcfEjGDFEb+mmPslvywKlXZroYAdNLRDLayQ==
-  dependencies:
-    cosmiconfig "^5.0.6"
-    execa "^0.9.0"
-    find-up "^3.0.0"
-    get-stdin "^6.0.0"
-    is-ci "^1.2.1"
-    pkg-dir "^3.0.0"
-    please-upgrade-node "^3.1.1"
-    read-pkg "^4.0.1"
-    run-node "^1.0.0"
-    slash "^2.0.0"
-
-husky@^1.0.0-rc.13:
-  version "1.0.0-rc.14"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-1.0.0-rc.14.tgz#e1380575fe4cf17e1ca98791395c1baafa8064c7"
-  integrity sha512-lxdl0+FrKhRXvhOW978oCHCiaXQAtwoR0hdaPY1CwKd+dgbtktepEvk/3DXwQ7L1YriuG/9HDc4AHlzQ0T6cNw==
   dependencies:
     cosmiconfig "^5.0.6"
     execa "^0.9.0"

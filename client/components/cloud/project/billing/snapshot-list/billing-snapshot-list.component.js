@@ -7,5 +7,4 @@ angular.module('managerApp')
     bindings: {
       snapshots: '<',
     },
-    translations: ['common'],
   });

@@ -11,6 +11,6 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectComputeLoadbalancerCtrl',
           },
         },
-        translations: ['common'],
+        translations: ['.'],
       });
   });

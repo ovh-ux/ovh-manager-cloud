@@ -15,7 +15,7 @@ angular.module('managerApp')
         templateUrl: 'app/cloud/project/cloud-project.html',
         controller: 'CloudProjectCtrl',
         controllerAs: 'CloudProjectCtrl',
-        translations: ['common', 'cloud', 'cloud/project'],
+        translations: ['.'],
         atInternet: { ignore: true },
       });
   });
