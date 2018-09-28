@@ -1,3 +1,5 @@
+/* eslint-disable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */
+
 import 'script-loader!jquery';
 import 'angular';
 import 'angular-animate';
@@ -87,3 +89,4 @@ import './app.scss';
 import './app.less';
 
 import './app.js';
+/* eslint-enable import/no-webpack-loader-syntax, import/no-unresolved, import/extensions */

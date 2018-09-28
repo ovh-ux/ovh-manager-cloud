@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define, consistent-return */
 /**
  *  Add Edit VM Controller - Controls the vm creation popover
  *  =========================================================
@@ -335,9 +336,15 @@ angular.module('managerApp')
           }
 
           if (category && originalCategory) {
-            const originalCategoryObject = _.find(self.displayData.categories, { category: category.id });
+            const originalCategoryObject = _.find(
+              self.displayData.categories,
+              { category: category.id },
+            );
             originalCategoryObject.flavors.forEach((flavor) => {
-              flavor.migrationNotAllowed = _.includes(originalCategory.migrationNotAllowed, category.id);
+              _.set(flavor, 'migrationNotAllowed', _.includes(
+                originalCategory.migrationNotAllowed,
+                category.id,
+              ));
             });
           }
         });
@@ -380,13 +387,16 @@ angular.module('managerApp')
           if (flavorType === 'g1' || flavorType === 'g2' || flavorType === 'g3') {
             self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => image.type === 'linux' || (flavorType ? _.includes(image.flavorType, flavorType) : true));
           } else {
-            self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => !image.flavorType);
+            self.displayData.images[imageType] = _.filter(
+              self.displayData.images[imageType],
+              image => !image.flavorType,
+            );
           }
 
 
           if (self.vmInEdition.flavor) {
             angular.forEach(self.displayData.images[imageType], (image) => {
-              image.disabled = self.vmInEdition.flavor.disk < image.minDisk ? 'NOT_ENOUGH_SPACE' : false;
+              _.set(image, 'disabled', self.vmInEdition.flavor.disk < image.minDisk ? 'NOT_ENOUGH_SPACE' : false);
             });
           }
         });
@@ -404,7 +414,7 @@ angular.module('managerApp')
 
         if (self.vmInEdition.flavor) {
           angular.forEach(self.displayData.snapshots, (image) => {
-            image.disabled = self.vmInEdition.flavor.disk < image.minDisk ? 'NOT_ENOUGH_SPACE' : false;
+            _.set(image, 'disabled', self.vmInEdition.flavor.disk < image.minDisk ? 'NOT_ENOUGH_SPACE' : false);
           });
         }
       }
@@ -417,12 +427,15 @@ angular.module('managerApp')
       function getDisplaySshKeys() {
         // Add boolean to know if sshKey is available on the selected region
         self.displayData.sshKeys = _.map(self.panelsData.sshKeys, (sshKey) => {
-          sshKey.availableOnRegion = sshKey.regions && sshKey.regions.length && sshKey.regions.indexOf(self.model.region) > -1;
+          _.set(sshKey, 'availableOnRegion', sshKey.regions
+            && sshKey.regions.length
+            && sshKey.regions.indexOf(self.model.region) > -1);
           return sshKey;
         });
 
         self.displayData.sshKeyAvailables = _.countBy(self.displayData.sshKeys, 'availableOnRegion').true || 0;
-        self.displayData.sshKeyUnavailables = self.displayData.sshKeys.length - self.displayData.sshKeyAvailables;
+        self.displayData.sshKeyUnavailables = self.displayData.sshKeys.length
+          - self.displayData.sshKeyAvailables;
       }
 
       self.projectHasNoSshKeys = function () {
@@ -435,6 +448,8 @@ angular.module('managerApp')
             return !self.vmInEdition.hasChange('images');
           case 'images':
             return !self.vmInEdition.hasChange('flavors');
+          default:
+            return null;
         }
       };
 
@@ -468,7 +483,10 @@ angular.module('managerApp')
         }
 
         angular.forEach(CLOUD_FLAVORTYPE_CATEGORY, (category) => {
-          self.categoriesVmInEditionFlavor[category.id] = self.getRealFlavor(self.categoriesVmInEditionFlavor[category.id], category.id);
+          self.categoriesVmInEditionFlavor[category.id] = self.getRealFlavor(
+            self.categoriesVmInEditionFlavor[category.id],
+            category.id,
+          );
         });
       }
 
@@ -528,7 +546,10 @@ angular.module('managerApp')
       }
 
       function recalculateSshKey() {
-        const associatedSshKey = _.find(self.panelsData.sshKeys, sshKey => sshKey.id === self.model.sshKeyId && ~sshKey.regions.indexOf(self.model.region));
+        const associatedSshKey = _.find(
+          self.panelsData.sshKeys,
+          sshKey => sshKey.id === self.model.sshKeyId && ~sshKey.regions.indexOf(self.model.region),
+        );
 
         if (!associatedSshKey) {
           self.model.sshKeyId = null;
@@ -541,10 +562,13 @@ angular.module('managerApp')
 
       function recalculateVmCount() {
         if (self.vmInEdition.status === 'DRAFT') {
-          if (isNaN(self.model.vmCount)) {
+          if (Number.isNaN(self.model.vmCount)) {
             self.model.vmCount = 1;
           } else {
-            self.model.vmCount = Math.min(self.getMaximumInstanceCreationCount(), self.model.vmCount);
+            self.model.vmCount = Math.min(
+              self.getMaximumInstanceCreationCount(),
+              self.model.vmCount,
+            );
           }
         }
       }
@@ -559,7 +583,8 @@ angular.module('managerApp')
         self.vmInEditionParam = CloudProjectComputeInfrastructureOrchestrator.getEditVmParam();
         CloudProjectComputeInfrastructureOrchestrator.setEditVmParam(null);
 
-        // When it's a new vm, keep changes in sync and when it's a vm in edit, don't sync changes until apply changes
+        // When it's a new vm, keep changes in sync and when it's a vm in edit
+        // don't sync changes until apply changes
         const editedVm = CloudProjectComputeInfrastructureOrchestrator.getEditedVm();
         if (editedVm.status === 'DRAFT') {
           self.vmInEdition = editedVm;
@@ -570,7 +595,8 @@ angular.module('managerApp')
 
         initURLs();
         $q.all({
-          flavors: self.getFlavors(), // get flavors, gets the images (for windows image price calculation), get the quotas
+          // get flavors, gets the images (for windows image price calculation), get the quotas
+          flavors: self.getFlavors(),
           regions: self.getRegions(),
           sshKeys: self.getSshKeys(),
           hasVrack: CloudProjectComputeInfrastructureOrchestrator.hasVrack(),
@@ -581,7 +607,8 @@ angular.module('managerApp')
           self.model.imageId = self.vmInEdition.image ? self.vmInEdition.image.id : null;
           self.model.region = self.vmInEdition.region;
           self.model.sshKeyId = self.vmInEdition.sshKey ? self.vmInEdition.sshKey.id : null;
-          // dirty hack has new catalog does not support ceph, but changing default to ssd break old code.
+          // dirty hack has new catalog does not support ceph
+          // but changing default to ssd break old code.
           self.model.diskType = self.catalogVersion() === 'new' ? 'ssd' : self.model.diskType;
           self.states.hasVrack = data.hasVrack;
 
@@ -610,7 +637,7 @@ angular.module('managerApp')
                   e.preventDefault();
                 }
               } else { // tab
-                if ($(e.target).is($popover.find(':tabbable:last'))) {
+                if ($(e.target).is($popover.find(':tabbable:last'))) { // eslint-disable-line
                   $popover.find(':tabbable:first').focus();
                   e.preventDefault();
                 }
@@ -674,9 +701,11 @@ angular.module('managerApp')
       function firstTimeSetFlavor(isFlavorSuggested, flavorId) {
         if (!self.states.hasSetFlavor) {
           let realFlavor;
-          let flavor;
 
-          flavor = _.find(self.panelsData.flavors, { id: flavorId || self.vmInEdition.flavor.id });
+          const flavor = _.find(
+            self.panelsData.flavors,
+            { id: flavorId || self.vmInEdition.flavor.id },
+          );
 
           if (isFlavorSuggested) {
             realFlavor = self.getFlavorOfType(flavor, 'ssd', flavor.flex, flavor.region, flavor.osType);
@@ -703,7 +732,7 @@ angular.module('managerApp')
       }
 
       // Open panel if toggle.editDetail is different of editDetail otherwise close this panel
-      self.openEditDetail = function (editDetail, modelKeyId, resourceAttr) {
+      self.openEditDetail = function (editDetail) {
         // reset accordion value to show focus on selected input
         if (editDetail === 'flavors') {
           if (self.model.flavorId) {
@@ -783,7 +812,13 @@ angular.module('managerApp')
           validImageId = true;
         }
         self.sshKeyRequired = vm.status !== 'ACTIVE' && !(vm.image && vm.image.type !== 'linux'); // TODO C SAAAALE
-        return !!(vm.name && vm.flavor && vm.flavor.price && self.model.flavorId && validImageId && self.model.region && (self.model.sshKeyId || !self.sshKeyRequired));
+        return !!(vm.name
+          && vm.flavor
+          && vm.flavor.price
+          && self.model.flavorId
+          && validImageId
+          && self.model.region
+          && (self.model.sshKeyId || !self.sshKeyRequired));
       };
 
       self.putPostVM = function () {
@@ -809,28 +844,36 @@ angular.module('managerApp')
              * Create multiple VMs at once
              */
           if (self.model.vmCount > 1) {
-            CloudProjectComputeInfrastructureOrchestrator.saveMultipleNewVms(self.vmInEdition, self.model.vmCount).then(() => {
-              $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
-              CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
-              CloudMessage.success($translate.instant('cpcivm_addedit_save_multiple_success'));
-              atInternet.trackOrder({
-                name: `[INSTANCE]::${self.vmInEdition.flavor.name.replace(/[\W_]+/g, '')}[${self.vmInEdition.flavor.name}]`,
-                page: 'iaas::pci-project::compute::infrastructure::order',
-                priceTaxFree: self.vmInEdition.flavor.price.monthlyPrice.value,
-                quantity: self.model.vmCount,
-                orderId: self.vmInEdition.id,
+            CloudProjectComputeInfrastructureOrchestrator
+              .saveMultipleNewVms(self.vmInEdition, self.model.vmCount)
+              .then(() => {
+                $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+                CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
+                  false,
+                  self.vmInEdition,
+                );
+                CloudMessage.success($translate.instant('cpcivm_addedit_save_multiple_success'));
+                atInternet.trackOrder({
+                  name: `[INSTANCE]::${self.vmInEdition.flavor.name.replace(/[\W_]+/g, '')}[${self.vmInEdition.flavor.name}]`,
+                  page: 'iaas::pci-project::compute::infrastructure::order',
+                  priceTaxFree: self.vmInEdition.flavor.price.monthlyPrice.value,
+                  quantity: self.model.vmCount,
+                  orderId: self.vmInEdition.id,
+                });
+              }, (err) => {
+                CloudMessage.error([$translate.instant('cpcivm_addedit_save_multiple_error'), (err.data && err.data.message) || ''].join(' '));
+                self.loaders.launch = false;
               });
-            }, (err) => {
-              CloudMessage.error([$translate.instant('cpcivm_addedit_save_multiple_error'), (err.data && err.data.message) || ''].join(' '));
-              self.loaders.launch = false;
-            });
             /**
              * Create just one VM
              */
           } else {
             CloudProjectComputeInfrastructureOrchestrator.saveNewVm(self.vmInEdition).then(() => {
               $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
-              CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
+              CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
+                false,
+                self.vmInEdition,
+              );
               atInternet.trackOrder({
                 name: `[INSTANCE]::${self.vmInEdition.flavor.name.replace(/[\W_]+/g, '')}[${self.vmInEdition.flavor.name}]`,
                 page: 'iaas::pci-project::compute::infrastructure::order',
@@ -855,7 +898,7 @@ angular.module('managerApp')
             if (err && err.status === 409) {
               CloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
             } else {
-              angular.forEach(err.errors, (err) => {
+              angular.forEach(err.errors, (err) => { // eslint-disable-line
                 CloudMessage.error([$translate.instant(`cpcivm_edit_vm_${err.requestName}_error`), err.error.message || ''].join(' '));
               });
             }
@@ -953,7 +996,10 @@ angular.module('managerApp')
           // if changing the region after a vlan has been picked
           // keep it selected if also available in the new region
           // select none if not available in the new region (silently and that ok...)
-          const network = _.find(self.panelsData.privateNetworks, network => network.id === self.vmInEdition.networkId);
+          const network = _.find(
+            self.panelsData.privateNetworks,
+            network => network.id === self.vmInEdition.networkId, // eslint-disable-line
+          );
 
           if (angular.isDefined(network)) {
             if (!_.includes(_.map(network.regions, 'region'), value)) {
@@ -1040,7 +1086,10 @@ angular.module('managerApp')
               // Flavor types (ovh.ram, ovh.cpu, ...)
               self.enums.flavorsTypes = _.uniq(_.pluck(modifiedFlavorsList, 'type'));
 
-              const flavorInList = _.find(modifiedFlavorsList, { id: self.vmInEdition.flavor && self.vmInEdition.flavor.id });
+              const flavorInList = _.find(
+                modifiedFlavorsList,
+                { id: self.vmInEdition.flavor && self.vmInEdition.flavor.id },
+              );
 
               // if not in the list: it's a deprecated flavor: directly get it!
               if (!flavorInList && self.vmInEdition.flavor && self.vmInEdition.flavor.id) {
@@ -1048,7 +1097,7 @@ angular.module('managerApp')
                   serviceName,
                   flavorId: self.vmInEdition.flavor.id,
                 }).$promise.then((flavorDeprecated) => {
-                  flavorDeprecated.deprecated = true;
+                  _.set(flavorDeprecated, 'deprecated', true);
                   flavorsList.push(flavorDeprecated);
                   self.panelsData.flavors = modifiedFlavorsList;
                 });
@@ -1089,7 +1138,7 @@ angular.module('managerApp')
             // Operations on flavors:
             angular.forEach(self.panelsData.flavors, (flavor) => {
               // add frequency
-              flavor.frequency = CLOUD_INSTANCE_CPU_FREQUENCY[flavor.type];
+              _.set(flavor, 'frequency', CLOUD_INSTANCE_CPU_FREQUENCY[flavor.type]);
 
               // add price infos
               const price = { price: { value: 0 }, monthlyPrice: { value: 0 } };
@@ -1104,7 +1153,7 @@ angular.module('managerApp')
                 price.monthlyPrice = planMonthly.price;
               }
 
-              flavor.price = price;
+              _.set(flavor, 'price', price);
               const currentFlavorUsage = {
                 vcpus: 0,
                 ram: 0,
@@ -1120,15 +1169,16 @@ angular.module('managerApp')
                 if (self.currentFlavor.diskType === 'ssd' && flavor.diskType === 'ceph') {
                   const ssdEquivalentFlavor = self.getFlavorOfType(flavor, 'ssd', false, flavor.region, flavor.osType);
                   if (ssdEquivalentFlavor && ssdEquivalentFlavor.disk < self.currentFlavor.disk) {
-                    flavor.disabled = 'NOT_ENOUGH_SPACE';
+                    _.set(flavor, 'disabled', 'NOT_ENOUGH_SPACE');
                   }
                 } else if (self.currentFlavor.diskType === 'ceph' && flavor.diskType === 'ssd') {
                   const cephEquivalentFlavor = self.getFlavorOfType(flavor, 'ceph', false, flavor.region, flavor.osType);
                   if (cephEquivalentFlavor && cephEquivalentFlavor.disk < self.currentFlavor.disk) {
-                    flavor.disabled = 'NOT_ENOUGH_SPACE';
+                    _.set(flavor, 'disabled', 'NOT_ENOUGH_SPACE');
                   }
-                } else if (flavor.disk && flavor.disk < self.vmInEdition.saveForEdition.flavor.disk) {
-                  flavor.disabled = 'NOT_ENOUGH_SPACE';
+                } else if (flavor.disk
+                  && flavor.disk < self.vmInEdition.saveForEdition.flavor.disk) {
+                  _.set(flavor, 'disabled', 'NOT_ENOUGH_SPACE');
                 }
               }
 
@@ -1136,24 +1186,31 @@ angular.module('managerApp')
               const quotaOfFlavorRegion = _.find(self.panelsData.quota, { region: flavor.region });
               if (quotaOfFlavorRegion && quotaOfFlavorRegion.instance) {
                 // Quota: Cores
-                if (flavor.vcpus && quotaOfFlavorRegion.instance.maxCores !== -1 && (flavor.vcpus > (quotaOfFlavorRegion.instance.maxCores - (quotaOfFlavorRegion.instance.usedCores - currentFlavorUsage.vcpus)))) {
-                  flavor.disabled = 'QUOTA_VCPUS';
+                if (flavor.vcpus
+                  && quotaOfFlavorRegion.instance.maxCores !== -1
+                  && (flavor.vcpus > (quotaOfFlavorRegion.instance.maxCores
+                    - (quotaOfFlavorRegion.instance.usedCores - currentFlavorUsage.vcpus)))) {
+                  _.set(flavor, 'disabled', 'QUOTA_VCPUS');
                 }
                 // Quota: RAM
-                if (flavor.ram && quotaOfFlavorRegion.instance.maxRam !== -1 && (flavor.ram > (quotaOfFlavorRegion.instance.maxRam - (quotaOfFlavorRegion.instance.usedRAM - currentFlavorUsage.ram)))) {
-                  flavor.disabled = 'QUOTA_RAM';
+                if (flavor.ram
+                  && quotaOfFlavorRegion.instance.maxRam !== -1
+                  && (flavor.ram > (quotaOfFlavorRegion.instance.maxRam
+                    - (quotaOfFlavorRegion.instance.usedRAM - currentFlavorUsage.ram)))) {
+                  _.set(flavor, 'disabled', 'QUOTA_RAM');
                 }
                 // Quota: Instances
-                // We only check DRAFT status (creation) because editing an existing VM doest not create new instances
+                // We only check DRAFT status (creation) because editing an existing VM
+                // doest not create new instances
                 if (self.vmInEdition.status === 'DRAFT' && self.getRemainingInstanceQuota(flavor.region) <= 0) {
-                  flavor.disabled = 'QUOTA_INSTANCE';
+                  _.set(flavor, 'disabled', 'QUOTA_INSTANCE');
                 }
               }
 
               // Edition only : check compatible flavors that can be selected
               if (self.vmInEdition.status === 'ACTIVE' && self.vmInEdition.flavor && self.vmInEdition.flavor.type) {
                 if (!checkFlavorCompatibility(flavor, self.currentFlavor)) {
-                  flavor.incompatible = true;
+                  _.set(flavor, 'incompatible', true);
                 }
               }
             });
@@ -1177,22 +1234,24 @@ angular.module('managerApp')
 
               if (associatedLinuxFlavor) {
                 // Put associated Linux Flavor into this Windows Flavor
-                windowsFlavor.associatedLinuxFlavor = associatedLinuxFlavor;
+                _.set(windowsFlavor, 'associatedLinuxFlavor', associatedLinuxFlavor);
 
                 // For each Windows Image, add price diff for each flavor type
                 angular.forEach(windowsLicences, (windowsLicence) => {
                   if (!windowsLicence.price) {
-                    windowsLicence.price = {};
+                    _.set(windowsLicence, 'price', {});
                   }
                   if (!windowsFlavor.price || !associatedLinuxFlavor.price) {
                     return;
                   }
 
                   // calculate licence additionnal price
-                  calculatedPriceValue = parseFloat((windowsFlavor.price.price.value - associatedLinuxFlavor.price.price.value).toFixed(3));
-                  calculatedMonthlyPriceValue = parseFloat((windowsFlavor.price.monthlyPrice.value - associatedLinuxFlavor.price.monthlyPrice.value).toFixed(2));
+                  calculatedPriceValue = parseFloat((windowsFlavor.price.price.value
+                    - associatedLinuxFlavor.price.price.value).toFixed(3));
+                  calculatedMonthlyPriceValue = parseFloat((windowsFlavor.price.monthlyPrice.value
+                    - associatedLinuxFlavor.price.monthlyPrice.value).toFixed(2));
                   // set windows licence additionnal price
-                  windowsLicence.price[windowsFlavor.groupName] = {
+                  windowsLicence.price[windowsFlavor.groupName] = { // eslint-disable-line
                     price: {
                       currencyCode: associatedLinuxFlavor.price.price.currencyCode,
                       text: `${calculatedPriceValue} ${associatedLinuxFlavor.price.price.currencyCode}`,
@@ -1222,7 +1281,7 @@ angular.module('managerApp')
         }
       };
 
-      self.viewFlavorsList = function (orderBy, category) {
+      self.viewFlavorsList = function (orderBy, category) { // eslint-disable-line
         self.toggle.editFlavor = 'flavors';
         self.orderBy(orderBy, category, self.order.reverse);
       };
@@ -1266,13 +1325,15 @@ angular.module('managerApp')
 
         const changedDiskType = flavor.diskType !== realFlavor.diskType;
 
-        // If we're switching from ceph to ssd or ssd to ceph.. we have to make sure the user is not downscaling.
+        // If we're switching from ceph to ssd or ssd to ceph..
+        // we have to make sure the user is not downscaling.
         let isDownscaling = false;
         if (self.vmInEdition.status !== 'DRAFT' && realFlavor.disk < self.originalVm.flavor.disk) {
           if (changedDiskType) {
             isDownscaling = true;
           } else {
-            // If it seems we are downscaling, we check the other disk type first to see if another option is available.
+            // If it seems we are downscaling, we check the other disk type first
+            // to see if another option is available.
             const otherDiskEquivalentFlavor = self.getFlavorOfType(flavor, realFlavor.diskType === 'ssd' ? 'ceph' : 'ssd', false, realFlavor.region, realFlavor.osType);
             if (otherDiskEquivalentFlavor.disk >= self.originalVm.flavor.disk) {
               self.model.diskType = otherDiskEquivalentFlavor.diskType;
@@ -1299,14 +1360,19 @@ angular.module('managerApp')
         if (diskType) {
           if (self.vmInEdition.status === 'ACTIVE') {
             const augmentedFlavor = addDetailsToFlavor(self.originalVm.flavor);
-            // It should always be impossible to switch from an existing SSD instance to a ceph instance.
+            // It should always be impossible to switch from an existing SSD instance
+            // to a ceph instance.
             if (augmentedFlavor.diskType === 'ssd' && diskType === 'ceph') {
               return true;
             }
 
             return augmentedFlavor.flex && augmentedFlavor.diskType === 'ceph';
           }
-          const realFlavor = self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], diskType, self.model.flex);
+          const realFlavor = self.getFlavorOfCurrentRegionAndOSType(
+            self.categoriesVmInEditionFlavor[category],
+            diskType,
+            self.model.flex,
+          );
           return !flavorIsValid(realFlavor);
         }
         // check if flex exists
@@ -1317,19 +1383,22 @@ angular.module('managerApp')
         if (self.vmInEdition.status === 'ACTIVE') {
           if (self.model.diskType === 'ssd') {
             if (flavorIsValid(flexSsd)) {
-              return self.currentFlavor && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
+              return self.currentFlavor
+                && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
             }
             self.model.flex = false;
             return true;
           }
           if (flavorIsValid(flexCeph)) {
-            return self.currentFlavor && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
+            return self.currentFlavor
+              && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
           }
           self.model.flex = false;
           return true;
         }
         if ((flavorIsValid(flexSsd)) && flavorIsValid(flexCeph)) {
-          return self.currentFlavor && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
+          return self.currentFlavor
+            && (self.currentFlavor.flex === false && !self.currentFlavor.vps);
         }
         self.model.flex = false;
         return true;
@@ -1360,7 +1429,13 @@ angular.module('managerApp')
           if (flavor.vps) {
             return flavor;
           }
-          return _.find(flavor.similarFlavors, similarFlavor => similarFlavor.diskType === diskType && similarFlavor.flex === flex && similarFlavor.region === region && similarFlavor.osType === osType);
+          return _.find(
+            flavor.similarFlavors,
+            similarFlavor => similarFlavor.diskType === diskType
+              && similarFlavor.flex === flex
+              && similarFlavor.region === region
+              && similarFlavor.osType === osType,
+          );
         }
         return undefined;
       };
@@ -1373,7 +1448,7 @@ angular.module('managerApp')
         const flavorList = self.panelsData.flavors;
         angular.forEach(self.panelsData.flavors, (flavor) => {
           if (_.isUndefined(flavor.vps)) {
-            flavor.similarFlavors = _.filter(flavorList, flavorToCompare => flavor.shortGroupName === flavorToCompare.shortGroupName);
+            _.set(flavor, 'similarFlavors', _.filter(flavorList, flavorToCompare => flavor.shortGroupName === flavorToCompare.shortGroupName));
           }
         });
       }
@@ -1458,20 +1533,24 @@ angular.module('managerApp')
           }).$promise.then((imagesList) => {
             // Image types (linux, windows, ...)
             self.enums.imagesTypes = _.uniq(_.pluck(imagesList, 'type'));
-            // [EDITION] only: restrict os type choice to current edited vm os type (windows if windows, linux if linux)
+            // [EDITION] only: restrict os type choice to current edited vm os type
+            // (windows if windows, linux if linux)
             if (self.vmInEdition.status === 'ACTIVE' && self.vmInEdition.image) {
               self.enums.imagesTypes = [self.vmInEdition.image.type];
             }
 
             // check if vm in edition image is in list. If not, push it in imagesList
-            const imageInList = _.find(imagesList, { id: self.vmInEdition.image && self.vmInEdition.image.id });
+            const imageInList = _.find(
+              imagesList,
+              { id: self.vmInEdition.image && self.vmInEdition.image.id },
+            );
 
             if (!imageInList && self.vmInEdition.image && self.vmInEdition.image.id && self.vmInEdition.image.visibility === 'public') {
               return OvhApiCloudProjectImage.v6().get({
                 serviceName,
                 imageId: self.vmInEdition.image.id,
               }).$promise.then((imageDeprecated) => {
-                imageDeprecated.deprecated = true;
+                _.set(imageDeprecated, 'deprecated', true);
                 imagesList.push(imageDeprecated);
                 self.panelsData.images = imagesList; // filter on public is already done
               });
@@ -1479,7 +1558,10 @@ angular.module('managerApp')
             self.panelsData.images = imagesList; // filter on public is already done
 
             self.panelsData.images = _.uniq(self.panelsData.images, 'id');
-            self.panelsData.images = _.map(self.panelsData.images, CloudImageService.constructor.augmentImage);
+            self.panelsData.images = _.map(
+              self.panelsData.images,
+              CloudImageService.constructor.augmentImage,
+            );
           }).catch((err) => {
             self.panelsData.images = null;
             CloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));
@@ -1497,9 +1579,13 @@ angular.module('managerApp')
           }).$promise.then((snapshotList) => {
             self.panelsData.snapshots = _.filter(snapshotList, { status: 'active' });
 
-            // [EDITION] only: restrict snapshots type choice to current edited vm snapshot type (windows if windows, linux if linux)
+            // [EDITION] only: restrict snapshots type choice to current edited vm snapshot type
+            // (windows if windows, linux if linux)
             if (self.vmInEdition.status === 'ACTIVE' && self.vmInEdition.image) {
-              self.panelsData.snapshots = _.filter(self.panelsData.snapshots, { type: self.vmInEdition.image.type });
+              self.panelsData.snapshots = _.filter(
+                self.panelsData.snapshots,
+                { type: self.vmInEdition.image.type },
+              );
             }
           }, (err) => {
             self.panelsData.snapshots = null;
@@ -1573,7 +1659,10 @@ angular.module('managerApp')
 
       self.postSshKey = function () {
         if (!self.loaders.sshKey.add) {
-          const uniq = _.find(self.panelsData.sshKeys, sshKey => sshKey.name === self.sshKeyAdd.name);
+          const uniq = _.find(
+            self.panelsData.sshKeys,
+            sshKey => sshKey.name === self.sshKeyAdd.name,
+          );
 
           if (uniq) {
             CloudMessage.info($translate.instant('cpcivm_addedit_sshkey_add_submit_name_error'));
@@ -1652,8 +1741,10 @@ angular.module('managerApp')
         let max = 0;
         if (flavor && quota) {
           max = quota.instance.maxInstances - quota.instance.usedInstances;
-          max = Math.min(max, Math.floor((quota.instance.maxCores - quota.instance.usedCores) / flavor.vcpus));
-          max = Math.min(max, Math.floor((quota.instance.maxRam - quota.instance.usedRAM) / flavor.ram));
+          max = Math.min(max, Math.floor((quota.instance.maxCores - quota.instance.usedCores)
+            / flavor.vcpus));
+          max = Math.min(max, Math.floor((quota.instance.maxRam - quota.instance.usedRAM)
+            / flavor.ram));
         }
         return max;
       };
@@ -1756,7 +1847,8 @@ angular.module('managerApp')
           })
           .sortBy('vlanId')
           .map(network => _.assign(network, {
-            vlanId: pad.substring(0, pad.length - network.vlanId.toString().length) + network.vlanId,
+            vlanId: pad.substring(0, pad.length - network.vlanId.toString().length)
+              + network.vlanId,
           }))
           .value();
       };
@@ -1792,10 +1884,11 @@ angular.module('managerApp')
       };
 
       /**
-     * Check migration compatibility with Windows.
-     * @param  {String}   VPS category.
-     * @return {Boolean}  true if migration to this category of VPS is not possible because of Windows.
-     */
+       * Check migration compatibility with Windows.
+       * @param  {String}   VPS category.
+       * @return {Boolean}  true if migration to this category of VPS is not possible
+       *                    because of Windows.
+       */
       self.hasWindowsCompatibilityIssue = function (category) {
         return self.vmInEdition.image && self.vmInEdition.image.type === 'windows' && category === 'vps';
       };
@@ -1808,3 +1901,4 @@ angular.module('managerApp')
         return _.includes(['balanced', 'cpu', 'ram'], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], 'ceph', false) !== undefined;
       };
     });
+/* eslint-disable no-use-before-define, consistent-return */
