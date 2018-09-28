@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.6.5",
+  "version": "7.6.6",
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
   "license": "BSD-3-Clause",
@@ -34,7 +34,7 @@
     "test": "eslint --quiet ./client",
     "lint": "run-p lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
-    "lint:js": "eslint --quiet --fix ./client/components"
+    "lint:js": "eslint --quiet --fix ./client"
   },
   "lint-staged": {
     "*.js": [

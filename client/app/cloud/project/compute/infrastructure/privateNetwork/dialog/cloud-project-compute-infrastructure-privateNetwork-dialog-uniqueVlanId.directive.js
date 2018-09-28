@@ -1,31 +1,27 @@
-angular.module("managerApp").directive("uniqueVlanId", function ($q, $stateParams, OvhApiCloudProjectNetworkPrivate) {
-    "use strict";
+angular.module('managerApp').directive('uniqueVlanId', ($q, $stateParams, OvhApiCloudProjectNetworkPrivate) => ({
+  require: 'ngModel',
+  restrict: 'A',
+  link(scope, elm, attrs, ngModel) {
+    _.set(ngModel, '$asyncValidators.uniqueVlanId', (value) => {
+      if (ngModel.$isEmpty(value)) {
+        return $q.when();
+      }
 
-    return {
-        require: "ngModel",
-        restrict: "A",
-        link: function (scope, elm, attrs, ngModel) {
-            ngModel.$asyncValidators.uniqueVlanId = function (value) {
-                if (ngModel.$isEmpty(value)) {
-                    return $q.when();
-                }
+      const defer = $q.defer();
 
-                var defer = $q.defer();
-
-                OvhApiCloudProjectNetworkPrivate.v6().query({
-                    serviceName: $stateParams.projectId
-                }).$promise.then(function (networks) {
-                    if (_.find(networks, { vlanId: value })) {
-                        defer.reject();
-                    } else {
-                        defer.resolve();
-                    }
-                }, function () {
-                    defer.resolve();
-                });
-
-                return defer.promise;
-            };
+      OvhApiCloudProjectNetworkPrivate.v6().query({
+        serviceName: $stateParams.projectId,
+      }).$promise.then((networks) => {
+        if (_.find(networks, { vlanId: value })) {
+          defer.reject();
+        } else {
+          defer.resolve();
         }
-    };
-});
+      }, () => {
+        defer.resolve();
+      });
+
+      return defer.promise;
+    });
+  },
+}));

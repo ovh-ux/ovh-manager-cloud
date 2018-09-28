@@ -1,64 +1,65 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps) {
 
-    var self = this;
+angular.module('managerApp')
+  .controller('CloudProjectComputeInfrastructureIpFailoverImportCtrl', function CloudProjectComputeInfrastructureIpFailoverImportCtrl(
+    $scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance,
+    $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps,
+  ) {
+    const self = this;
 
     $scope.projectId = $stateParams.projectId;
 
     self.datas = {
-        autoSelected : [],
-        ipsFo : [],
-        ipsFoDetail : [],
-        ipsFoDetailIds : [],
-        vms : [],
-        user : null,
+      autoSelected: [],
+      ipsFo: [],
+      ipsFoDetail: [],
+      ipsFoDetailIds: [],
+      vms: [],
+      user: null,
 
-        selected : {},
-        selectedvm : null
+      selected: {},
+      selectedvm: null,
     };
 
     self.loaders = {
-        table : {
-            ipsFo : false,
-            importIpsFo : false
-        },
-        vms : false
+      table: {
+        ipsFo: false,
+        importIpsFo: false,
+      },
+      vms: false,
     };
 
-    //---------INIT---------
+    // ---------INIT---------
 
-    function init () {
-        return OvhApiMe.v6().get().$promise.then(function (user) {
-            self.datas.user = user;
-            return getIpsFo(true);
-        }, function (err) {
-            CloudMessage.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
+    function getIpsFo(clearCache) {
+      if (!self.loaders.table.ipsFo) {
+        self.loaders.table.ipsFo = true;
+        if (clearCache) {
+          OvhApiIp.v6().resetQueryCache();
+          OvhApiIp.v6().resetCache();
+        }
+        return OvhApiIp.v6().query({
+          type: 'failover',
+        }).$promise.then((ipsParams) => {
+          const ips = _.filter(ipsParams, ip => _.indexOf(pendingImportIps, ip) < 0);
+          return self.initIps(ips);
+        }, (err) => {
+          CloudMessage.error([$translate.instant('cpciif_import_ips_error'), (err.data && err.data.message) || ''].join(' '));
+          self.datas.ipsFo = null;
+        }).finally(() => {
+          self.loaders.table.ipsFo = false;
         });
+      }
+      return $q.when();
     }
 
-    function getIpsFo (clearCache) {
-        if (!self.loaders.table.ipsFo) {
-            self.loaders.table.ipsFo = true;
-            if (clearCache){
-                OvhApiIp.v6().resetQueryCache();
-                OvhApiIp.v6().resetCache();
-            }
-            return OvhApiIp.v6().query({
-                type: 'failover'
-            }).$promise.then(function (ips) {
-                ips = _.filter(ips, function (ip) {
-                    return _.indexOf(pendingImportIps, ip) < 0;
-                });
-                return self.initIps(ips);
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
-                self.datas.ipsFo = null;
-            })['finally'](function () {
-                self.loaders.table.ipsFo = false;
-            });
-        }
+    function init() {
+      return OvhApiMe.v6().get().$promise.then((user) => {
+        self.datas.user = user;
+        return getIpsFo(true);
+      }, (err) => {
+        CloudMessage.error([$translate.instant('cpciif_import_ips_error'), (err.data && err.data.message) || ''].join(' '));
+      });
     }
 
     /**
@@ -66,117 +67,117 @@ angular.module("managerApp")
      * to current project and if his region is compatible)
      */
     self.initIps = function (ips) {
-        var queries = [];
-        self.datas.ipsFo = [];
+      const queries = [];
+      self.datas.ipsFo = [];
 
-        angular.forEach(ips, function (ip) {
-            queries.push(OvhApiIp.v6().get({
-                ip: ip
-            }).$promise.then(function (ip) {
-                if (!(ip.routedTo && ip.routedTo.serviceName === $scope.projectId)) {
-                    self.datas.ipsFo.push(ip);
-                }
-            }));
-        });
+      angular.forEach(ips, (ip) => {
+        queries.push(OvhApiIp.v6().get({
+          ip,
+        }).$promise.then((ipParam) => {
+          if (!(ipParam.routedTo && ipParam.routedTo.serviceName === $scope.projectId)) {
+            self.datas.ipsFo.push(ipParam);
+          }
+        }));
+      });
 
-        return $q.all(queries);
+      return $q.all(queries);
     };
 
-    //---------TOOLS---------
+    // ---------TOOLS---------
 
-    $scope.$watch('CPCIIpFailoverImportCtrl.datas.selected', function () {
-        //if some line were not move => recheck
-        if (self.datas.autoSelected.length) {
-            angular.forEach(self.datas.autoSelected, function (ip) {
-                self.datas.selected[ip] = true;
-            });
-            self.datas.autoSelected = [];
-        }
+    $scope.$watch('CPCIIpFailoverImportCtrl.datas.selected', () => {
+      // if some line were not move => recheck
+      if (self.datas.autoSelected.length) {
+        angular.forEach(self.datas.autoSelected, (ip) => {
+          self.datas.selected[ip] = true;
+        });
+        self.datas.autoSelected = [];
+      }
     }, true);
 
     self.refreshIpsFo = function () {
-        getIpsFo(true);
+      getIpsFo(true);
     };
 
     self.getSelectedCount = function () {
-        return Object.keys(self.datas.selected).length;
+      return Object.keys(self.datas.selected).length;
     };
 
     self.getInfoSelect = function () {
-        if (Object.keys(self.datas.selected).length === 1) {
-            return Object.keys(self.datas.selected)[0];
-        }
-        if (Object.keys(self.datas.selected).length > 1) {
-            return Object.keys(self.datas.selected).length;
-        }
-        return null;
+      if (Object.keys(self.datas.selected).length === 1) {
+        return Object.keys(self.datas.selected)[0];
+      }
+      if (Object.keys(self.datas.selected).length > 1) {
+        return Object.keys(self.datas.selected).length;
+      }
+      return null;
     };
 
-    //---------MODAL---------
+    // ---------MODAL---------
 
     self.confirm = function () {
-        if (!self.loaders.table.importIpsFo){
-            var listPromise = [],
-                listIpsWithTasks = [],
-                nbSelected  = self.getSelectedCount(),
-                lastIp = "";
+      if (!self.loaders.table.importIpsFo) {
+        const listPromise = [];
 
-            self.loaders.table.importIpsFo = true;
 
-            angular.forEach(self.datas.selected, function (value, ip) {
-                lastIp = ip;
+        const listIpsWithTasks = [];
 
-                listPromise.push(OvhApiIp.v6().move(
-                    { ip : ip },
-                    { to : $scope.projectId }
-                ).$promise.then(function (task) {
-                    listIpsWithTasks.push({            // à revoir
-                        ip   : ip,
-                        task : task
-                    });
-                }, function (error) {
-                    return $q.reject({
-                        ip : ip,
-                        error : error
-                    });
-                }));
+
+        const nbSelected = self.getSelectedCount();
+
+
+        let lastIp = '';
+
+        self.loaders.table.importIpsFo = true;
+
+        angular.forEach(self.datas.selected, (value, ip) => {
+          lastIp = ip;
+
+          listPromise.push(OvhApiIp.v6().move(
+            { ip },
+            { to: $scope.projectId },
+          ).$promise.then((task) => {
+            listIpsWithTasks.push({ // à revoir
+              ip,
+              task,
             });
+          }, error => $q.reject({
+            ip,
+            error,
+          })));
+        });
 
-            $q.allSettled(listPromise).then(function () {
-                if (nbSelected > 1) {
-                    CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success_plural', {nbIps : nbSelected}));
-                }else {
-                    CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success', {ip : lastIp}));
-                }
-                $uibModalInstance.close(listIpsWithTasks);
-            }, function (error) {
-                var tabError = error.filter(function (val) {
-                    return !!val.error;
-                });
+        $q.allSettled(listPromise).then(() => {
+          if (nbSelected > 1) {
+            CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success_plural', { nbIps: nbSelected }));
+          } else {
+            CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success', { ip: lastIp }));
+          }
+          $uibModalInstance.close(listIpsWithTasks);
+        }, (error) => {
+          const tabError = error.filter(val => !!val.error);
 
-                var ipError = _.pluck(tabError, 'ip');
+          const ipError = _.pluck(tabError, 'ip');
 
-                self.datas.autoSelected = angular.copy(ipError);
+          self.datas.autoSelected = angular.copy(ipError);
 
-                if (tabError.length > 1) {
-                    CloudMessage.error($translate.instant('cpciif_import_vms_route_of_error_plural', {ips: ipError.toString()}));
-                } else {
-                    var errorIp  = tabError[0].error;
-                    CloudMessage.error( [$translate.instant('cpciif_import_vms_route_of_error', {ip: tabError[0].ip}), errorIp.data && errorIp.data.message || ''].join(' '));
-                }
+          if (tabError.length > 1) {
+            CloudMessage.error($translate.instant('cpciif_import_vms_route_of_error_plural', { ips: ipError.toString() }));
+          } else {
+            const errorIp = tabError[0].error;
+            CloudMessage.error([$translate.instant('cpciif_import_vms_route_of_error', { ip: tabError[0].ip }), (errorIp.data && errorIp.data.message) || ''].join(' '));
+          }
+        }).finally(() => {
+          self.datas.selected = {};
 
-            })['finally'](function(){
-                self.datas.selected = {};
-
-                self.loaders.table.importIpsFo = false;
-            });
-
-        }
+          self.loaders.table.importIpsFo = false;
+        });
+      }
     };
 
     self.cancel = function () {
-        $uibModalInstance.dismiss();
+      $uibModalInstance.dismiss();
     };
 
     init();
-});
+  });

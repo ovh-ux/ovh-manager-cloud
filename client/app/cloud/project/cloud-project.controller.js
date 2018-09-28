@@ -1,84 +1,83 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("CloudProjectCtrl", function ($scope, $state, $stateParams, $transitions, OvhApiCloud, CloudProjectRightService) {
-    var self = this;
-    var serviceName = $stateParams.projectId;
+
+angular.module('managerApp')
+  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, OvhApiCloud, CloudProjectRightService) {
+    const self = this;
+    const serviceName = $stateParams.projectId;
 
     self.loaders = {
-        project: false
+      project: false,
     };
 
     self.model = {
-        project: null,
-        hasWriteRight: true
+      project: null,
+      hasWriteRight: true,
     };
 
-    self.includes = function (stateName) {
-        return $state.includes(stateName);
+    self.includes = function includes(stateName) {
+      return $state.includes(stateName);
     };
 
     // reference to our rootScope state change listener
-    var _stateChangeListener = null;
+    let stateChangeListener = null;
 
-    function init () {
+    function init() {
+      self.loaders.project = true;
 
-        self.loaders.project = true;
-
-        // get current project
-        if (serviceName) {
-            OvhApiCloud.Project().v6().get({
-                serviceName: serviceName
-            }).$promise
-                .then(function (project) {
-                    self.model.project = project;
-                    // if project is suspended, redirect to error page
-                    if (self.model.project.status === "suspended" || self.model.project.status === "creating") {
-                        $state.go("iaas.pci-project.details");
-                    } else {
-                        CloudProjectRightService.userHaveReadWriteRights(serviceName)
-                            .then(function (hasWriteRight) {
-                                self.model.hasWriteRight = hasWriteRight;
-                            });
-                    }
-                })
-                ["finally"](function () {
-                    self.loaders.project = false;
+      // get current project
+      if (serviceName) {
+        OvhApiCloud.Project().v6().get({
+          serviceName,
+        }).$promise
+          .then((project) => {
+            self.model.project = project;
+            // if project is suspended, redirect to error page
+            if (self.model.project.status === 'suspended' || self.model.project.status === 'creating') {
+              $state.go('iaas.pci-project.details');
+            } else {
+              CloudProjectRightService.userHaveReadWriteRights(serviceName)
+                .then((hasWriteRight) => {
+                  self.model.hasWriteRight = hasWriteRight;
                 });
-        } else {
-            $state.go("iaas.pci-project-new");
-            return;
-        }
+            }
+          })
+          .finally(() => {
+            self.loaders.project = false;
+          });
+      } else {
+        $state.go('iaas.pci-project-new');
+        return;
+      }
 
-        // before a state change, check if the destination project is suspended,
-        // if it's the case just redirect to the error page
-        _stateChangeListener = $transitions.onStart({}, transition => {
-            const toState = transition.to();
-            const toParams = transition.params();
-            // avoid infinite state redirection loop
-            if (toState && toState.name === "iaas.pci-project.details") {
-                return;
-            }
-            // check if project is loaded
-            if (!self.model.project) {
-                return;
-            }
-            // redirection is only for suspended projects
-            if (self.model.project.status !== "suspended" && self.model.project.status !== "creating") {
-                return;
-            }
-            if (self.model.project.project_id === toParams.projectId) {
-                $state.go("iaas.pci-project.details");
-            }
-        });
+      // before a state change, check if the destination project is suspended,
+      // if it's the case just redirect to the error page
+      stateChangeListener = $transitions.onStart({}, (transition) => {
+        const toState = transition.to();
+        const toParams = transition.params();
+        // avoid infinite state redirection loop
+        if (toState && toState.name === 'iaas.pci-project.details') {
+          return;
+        }
+        // check if project is loaded
+        if (!self.model.project) {
+          return;
+        }
+        // redirection is only for suspended projects
+        if (self.model.project.status !== 'suspended' && self.model.project.status !== 'creating') {
+          return;
+        }
+        if (self.model.project.project_id === toParams.projectId) {
+          $state.go('iaas.pci-project.details');
+        }
+      });
     }
 
     // when controller is destroyed we must remove global state change listener
-    $scope.$on("$destroy", function () {
-        if (_stateChangeListener) {
-            _stateChangeListener();
-        }
+    $scope.$on('$destroy', () => {
+      if (stateChangeListener) {
+        stateChangeListener();
+      }
     });
 
     init();
-});
+  });
