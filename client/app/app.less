@@ -21,7 +21,7 @@
 @import 'ovh-angular-form-flat/less/ovh-angular-form-flat.less';
 
 @flat-switch-cursor-color : @UNIVERS_SECONDARY;
-@flat-switch-background-color-active : #DFEEEB;
+@flat-switch-background-color-active : #dfeeeb;
 @flat-switch-cursor-border-color : #53a191;
 
 @import 'ovh-manager-webfont/dist/less/ovh-font.less';
@@ -31,7 +31,7 @@
 @ovh-angular-slider-handle-border-color: darken(@ovh-angular-slider-handle-background, 5%);
 @ovh-angular-slider-handle-hover-background: #009fe3;
 @ovh-angular-slider-handle-hover-border-color: darken(@ovh-angular-slider-handle-background, 5%);
-@ovh-angular-slider-bubble-limit-color: #777777;
+@ovh-angular-slider-bubble-limit-color: #777;
 @import 'ovh-angular-tail-logs/less/ovh-angular-tail-logs.less';
 @import 'flag-icon-css/less/flag-icon.less';
 @import 'ovh-angular-responsive-popover/less/ovh-angular-responsive-popover.less';
@@ -71,8 +71,8 @@
 @TopTabBackground       : #e0e0e0;
 @TopNavBackground       : @TopTabBackground;
 
-@UNIVERS       : #EDC200;
-@UNIVERS_HOVER : #E9D473;
+@UNIVERS       : #edc200;
+@UNIVERS_HOVER : #e9d473;
 @UNIVERS_SECONDARY       : hsl(168, 32%, 54%); //#65afa0;
 @UNIVERS_SECONDARY_HOVER : lighten(@UNIVERS_SECONDARY, 8%);
 
@@ -83,16 +83,17 @@
 @imgPath: '../assets/';
 
 @table-header-background-color : @UNIVERS_SECONDARY;
+
 .table {
-    &.table-pretty {
-        thead {
-            a {
-                color : white;
-                text-decoration: none;
-                cursor:pointer;
-            }
-        }
+  &.table-pretty {
+    thead {
+      a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
+  }
 }
 
 /*
@@ -101,138 +102,136 @@
 html {
   height: 100%;
 }
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 @media (min-width: @v6-min-with) {
-    body {
-        margin-top : @TopNavHeight;
-    }
+  body {
+    margin-top: @TopNavHeight;
+  }
 }
 
 .browsehappy {
-    background : #ccc;
-    color      : #000;
-    padding    : 0 10px;
+  background: #ccc;
+  color: #000;
+  padding: 0 10px;
 }
 
 //BackDrop
 #full-overlay {
-    background : black;
-    opacity    : 0.4;
-    position   : fixed;
-    width      : 100%;
-    height     : 100%;
-    z-index    : @zIndexFullOverlay;
-    display    : none;
+  background: black;
+  opacity: 0.4;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: @zIndexFullOverlay;
+  display: none;
 
-    &.nav-open  {
-        display: none;
-    }
+  &.nav-open {
+    display: none;
+  }
 }
 //Mobile
 @media (max-width: @v6-max-with) {
-    #full-overlay[class*="nav-open"] {
-        display : block;
+  #full-overlay[class*="nav-open"] {
+    display: block;
 
-        // &[class*="sidebar"] {
-        //     z-index : @zIndexFullOverlaySidebar;
-        // }
-    }
+    // &[class*="sidebar"] {
+    //     z-index : @zIndexFullOverlaySidebar;
+    // }
+  }
 }
-
 
 /*
  * content
  */
 
 #content {
-    padding : 0;
+  padding: 0;
 
-    .page-header {
-        margin-top : 0;
-    }
+  .page-header {
+    margin-top: 0;
+  }
 }
+
 @media (max-width: @v6-max-with) {
-    #content {
-        margin-top :  @MobileTopNavHeight - 1;
-    }
+  #content {
+    margin-top: @MobileTopNavHeight - 1;
+  }
 }
-
 
 /*
  * container
  */
 
 .container {
-    width : auto;
+  width: auto;
 }
 
 //App-wide Styles
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: @v6-min-with) {
-    .container {
-        max-width: 730px;
-    }
+  .container {
+    max-width: 730px;
+  }
 }
 //App-wide Styles
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: @v6-min-with) {
-    .container {
-        max-width: 730px;
-    }
+  .container {
+    max-width: 730px;
+  }
 }
-
-
-
-
 
 /*
  * Tabs
  */
 
 .tab-container {
-    background-color: @TopTabBackground;
-    box-shadow: inset 0px -4px 7px -5px #bbb;
-    .nav.nav-tabs {
-        border-bottom: 0;
-        // overflow: hidden;        // Dont put overflow, coz it hide more-dropdown
-        > li {
+  background-color: @TopTabBackground;
+  box-shadow: inset 0 -4px 7px -5px #bbb;
 
-            a {
-                color:@TopNavBackground;
-                display: inline-block;
-                text-align: center;
-                padding: 15px 25px;
-                border: 0;
-                font-size: 12px;
+  .nav.nav-tabs {
+    border-bottom: 0;
+    // overflow: hidden;        // Dont put overflow, coz it hide more-dropdown
+    > li {
+      a {
+        color: @TopNavBackground;
+        display: inline-block;
+        text-align: center;
+        padding: 15px 25px;
+        border: 0;
+        font-size: 12px;
 
-                i {
-                    display: block;
-                    font-size: 30px;
-                }
-            }
-
-            &:not(.disabled) a:hover {
-                background: transparent;
-                color: @UNIVERS_SECONDARY;
-            }
-
-            &.disabled {
-                opacity: .3;
-            }
-
-            &.active {
-                background-color: white;
-                box-shadow: 0px -5px 7px #bbb;
-                a {
-                    border: 0;
-                    background-color: white;
-                    border-radius: 0;
-                    color: @UNIVERS_SECONDARY;
-                }
-            }
-
+        i {
+          display: block;
+          font-size: 30px;
         }
+      }
+
+      &.disabled {
+        opacity: 0.3;
+      }
+
+      &.active {
+        background-color: white;
+        box-shadow: 0 -5px 7px #bbb;
+
+        a {
+          border: 0;
+          background-color: white;
+          border-radius: 0;
+          color: @UNIVERS_SECONDARY;
+        }
+      }
+
+      &:not(.disabled) a:hover {
+        background: transparent;
+        color: @UNIVERS_SECONDARY;
+      }
     }
+  }
 }
 
 // inject:less
@@ -251,19 +250,14 @@ html {
 @import "cloud/project/billing/cloud-project-billing.less";
 @import "cloud/project/billing/consumption/cloud-project-billing-consumption.less";
 @import "cloud/project/billing/consumption/current/cloud-project-billing-consumption-current.less";
-@import "cloud/project/billing/consumption/estimate/alert/add/cloud-project-billing-consumption-estimate-alert-add.less";
 @import "cloud/project/billing/consumption/estimate/cloud-project-billing-consumption-estimate.less";
 @import "cloud/project/billing/history/cloud-project-billing-history.less";
 @import "cloud/project/billing/history/details/cloud-project-billing-history-details.less";
 @import "cloud/project/billing/rights/cloud-project-billing-rights.less";
-@import "cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit.less";
-@import "cloud/project/billing/vouchers/cloud-project-billing-vouchers.less";
 @import "cloud/project/cloud-project.less";
 @import "cloud/project/compute/cloud-project-compute.less";
 @import "cloud/project/compute/infrastructure/cloud-project-compute-infrastructure.less";
 @import "cloud/project/compute/infrastructure/ip/add_OLD_/cloud-project-compute-infrastructure-ip-add.less";
-@import "cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.less";
-@import "cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.less";
 @import "cloud/project/compute/infrastructure/less/cloud-project-compute-infrastructure-ip.less";
 @import "cloud/project/compute/infrastructure/less/cloud-project-compute-infrastructure-vm.less";
 @import "cloud/project/compute/infrastructure/less/cloud-project-compute-infrastructure-volume.less";
@@ -274,23 +268,15 @@ html {
 @import "cloud/project/compute/infrastructure/privateNetwork/dialog/cloud-project-compute-infrastructure-privateNetwork-dialog-menu-item.less";
 @import "cloud/project/compute/infrastructure/privateNetwork/dialog/cloud-project-compute-infrastructure-privateNetwork-dialog-region.less";
 @import "cloud/project/compute/infrastructure/privateNetwork/dialog/cloud-project-compute-infrastructure-privateNetwork-dialog.less";
-@import "cloud/project/compute/infrastructure/virtualMachine/addEdit/cloud-project-compute-infrastructure-virtualMachine-addEdit.less";
-@import "cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.less";
-@import "cloud/project/compute/infrastructure/virtualMachine/loginInformation/cloud-project-compute-infrastructure-virtual-machine-login-information.less";
+@import "cloud/project/compute/infrastructure/virtualMachine/loginInformation/cloud-project-compute-infrastructure-virtual-machine-login-information.less" ;
 @import "cloud/project/compute/infrastructure/virtualMachine/monitoring/cloud-project-compute-infrastructure-virtualMachine-monitoring.less";
-@import "cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.less";
 @import "cloud/project/compute/infrastructure/volume/addEdit/cloud-project-compute-infrastructure-volume-addEdit.less";
 @import "cloud/project/compute/loadbalancer/cloud-project-compute-loadbalancer.less";
-@import "cloud/project/compute/loadbalancer/configure/compute-loadbalancer-configure.less";
 @import "cloud/project/compute/quota/cloud-project-compute-quota.less";
-@import "cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.less";
-@import "cloud/project/compute/snapshot/cloud-project-compute-snapshot.less";
 @import "cloud/project/compute/ssh/cloud-project-compute-ssh.less";
-@import "cloud/project/compute/volume/cloud-project-compute-volume.less";
 @import "cloud/project/details/cloud-project-details.less";
 @import "cloud/project/openstack/openstack.less";
 @import "cloud/project/openstack/users/openrc/openstack-users-openrc.less";
-@import "cloud/project/openstack/users/openstack-users.less";
 @import "cloud/project/storage/storage-add/storage-add.less";
 @import "cloud/project/storage/storage.less";
 @import "common/common.less";
@@ -334,7 +320,6 @@ html {
 @import "iplb/vrack/iplb-vrack.less";
 @import "nasha/add/nasha-add.less";
 @import "nasha/nasha.less";
-@import "nasha/order/nasha-order-complete.less";
 @import "nasha/partition/access/add/nasha-partition-access-add.less";
 @import "nasha/partition/access/nasha-partition-access.less";
 @import "nasha/partition/custom-snapshot/add/nasha-partition-custom-snapshot-add.less";
