@@ -25,7 +25,10 @@ angular.module('managerApp')
             controllerAs: 'RA.storageAddCtrl',
           },
         },
-        translations: ['.'],
+        translations: [
+          '.',
+          '../storage/storage-add',
+        ],
       });
 
     $stateProvider
