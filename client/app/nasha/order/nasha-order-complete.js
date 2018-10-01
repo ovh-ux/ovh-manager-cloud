@@ -1,16 +1,16 @@
-"use strict";
 
-angular.module("managerApp")
-.config(function ($stateProvider) {
+
+angular.module('managerApp')
+  .config(($stateProvider) => {
     $stateProvider
-    .state("paas.nasha-order-complete", {
-        url: "/nasha/order/complete",
-        templateUrl: "app/nasha/order/nasha-order-complete.html",
-        controller: "NashaOrderCompleteCtrl",
-        controllerAs: "NashaOrderCompleteCtrl",
-        translations: ["common", "nasha", "nasha/order"],
+      .state('paas.nasha-order-complete', {
+        url: '/nasha/order/complete',
+        templateUrl: 'app/nasha/order/nasha-order-complete.html',
+        controller: 'NashaOrderCompleteCtrl',
+        controllerAs: 'NashaOrderCompleteCtrl',
+        translations: ['../../common', '.', '..'],
         params: {
-            orderUrl: null
-        }
-    });
-});
+          orderUrl: null,
+        },
+      });
+  });

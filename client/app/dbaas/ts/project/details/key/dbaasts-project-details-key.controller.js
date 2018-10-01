@@ -1,12 +1,11 @@
-"use strict";
-
-angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl",
-function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApiMe, OvhApiDBaasTsProject, DBaasTsProjectKey, OvhApiDBaasTsRegion, DBaasTsConstants) {
-
+angular.module('managerApp').controller('DBaasTsProjectDetailsKeyCtrl',
+  function DBaasTsProjectDetailsKeyCtrl($q, $state, $stateParams, $translate, $uibModal, $scope,
+    Toast, OvhApiMe, OvhApiDBaasTsProject, DBaasTsProjectKey, OvhApiDBaasTsRegion,
+    DBaasTsConstants) {
     // -- Vairables declaration --
-    var self = this;
+    const self = this;
 
-    var serviceName = $stateParams.serviceName;
+    const { serviceName } = $stateParams;
 
     self.loaders = {};
     self.errors = {};
@@ -16,130 +15,127 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApi
     // -- Edit key --
 
     self.edit = function (key) {
-        return $state.go("^.dbaasts-project-details-key-edit", { keyId: key.id });
+      return $state.go('^.dbaasts-project-details-key-edit', { keyId: key.id });
     };
 
     // -- Delete key --
 
     self.delete = function (key) {
-        $uibModal.open({
-            templateUrl: "app/dbaas/ts/project/details/key/delete/modal.html",
-            controllerAs: "ctrl",
-            controller: function ($uibModalInstance) {
-                var modalSelf = this;
-                modalSelf.loaders = { deleting: false };
+      $uibModal.open({
+        templateUrl: 'app/dbaas/ts/project/details/key/delete/modal.html',
+        controllerAs: 'ctrl',
+        controller($uibModalInstance) {
+          const modalSelf = this;
+          modalSelf.loaders = { deleting: false };
 
-                modalSelf.confirm = function () {
-                    modalSelf.loaders.deleting = true;
+          modalSelf.confirm = function () {
+            modalSelf.loaders.deleting = true;
 
-                    DBaasTsProjectKey.v6().remove({
-                        serviceName: serviceName,
-                        keyId: key.id
-                    }).$promise.then(function () {
-                        // Remove deleted key
-                        self.data.keys = _.reject(self.data.keys, { id: key.id });
+            DBaasTsProjectKey.v6().remove({
+              serviceName,
+              keyId: key.id,
+            }).$promise.then(() => {
+              // Remove deleted key
+              self.data.keys = _.reject(self.data.keys, { id: key.id });
 
-                        // and clode modal
-                        $uibModalInstance.close();
-                        Toast.info($translate.instant("dtpdt_key_deletion_successful"));
-
-                    })["catch"](function (err) {
-                        Toast.error([$translate.instant("dtpdt_key_deletion_error"), err.data && err.data.message || ""].join(" "));
-                    })["finally"](function () {
-                        modalSelf.loaders.deleting = false;
-                    });
-                };
-            }
-        });
+              // and clode modal
+              $uibModalInstance.close();
+              Toast.info($translate.instant('dtpdt_key_deletion_successful'));
+            }).catch((err) => {
+              Toast.error([$translate.instant('dtpdt_key_deletion_error'), (err.data && err.data.message) || ''].join(' '));
+            }).finally(() => {
+              modalSelf.loaders.deleting = false;
+            });
+          };
+        },
+      });
     };
 
     // -- Example of using a key --
 
     self.showExample = function (key) {
-        $uibModal.open({
-            templateUrl: "app/dbaas/ts/project/details/key/example/modal.html",
-            controller: "DBaasTsProjectDetailsKeyCtrl.exampleUseToken",
-            controllerAs: "ctrl",
-            resolve: {
-                params: function () {
-                    return {
-                        key: key,
-                        apiURL: self.region.url
-                    };
-                }
-            }
-        });
+      $uibModal.open({
+        templateUrl: 'app/dbaas/ts/project/details/key/example/modal.html',
+        controller: 'DBaasTsProjectDetailsKeyCtrl.exampleUseToken',
+        controllerAs: 'ctrl',
+        resolve: {
+          params() {
+            return {
+              key,
+              apiURL: self.region.url,
+            };
+          },
+        },
+      });
     };
 
     self.showRegionInfo = function () {
-        $uibModal.open({
-            templateUrl: "app/dbaas/ts/project/details/key/region-help/modal.html",
-            controllerAs: "ctrl",
-            controller: function Ctrl () {
-                this.region = self.region;
-                this.guideURL = self.data.guideDBaasTsConceptsURL;
-            }
-        });
+      $uibModal.open({
+        templateUrl: 'app/dbaas/ts/project/details/key/region-help/modal.html',
+        controllerAs: 'ctrl',
+        controller: function Ctrl() {
+          this.region = self.region;
+          this.guideURL = self.data.guideDBaasTsConceptsURL;
+        },
+      });
     };
 
     self.refresh = function () {
-        DBaasTsProjectKey.v6().resetQueryCache();
-        self.init();
+      DBaasTsProjectKey.v6().resetQueryCache();
+      self.init();
     };
 
     this.resetCache = function () {
-        self.loaders.init = true;
-        window.location.reload();
+      self.loaders.init = true;
+      window.location.reload();
     };
 
-    //---------INITIALIZATION---------
+    // ---------INITIALIZATION---------
 
     self.init = function () {
-        self.loaders.init = true;
+      self.loaders.init = true;
 
-        var futureProject = OvhApiDBaasTsProject.v6().get({
-            serviceName: serviceName
-        }).$promise;
+      const futureProject = OvhApiDBaasTsProject.v6().get({
+        serviceName,
+      }).$promise;
 
-        // Load regions to display the project's region name and URL
-        var futureRegions = OvhApiDBaasTsRegion.v6().query().$promise;
+      // Load regions to display the project's region name and URL
+      const futureRegions = OvhApiDBaasTsRegion.v6().query().$promise;
 
-        // Load keys
-        var futureKeys = DBaasTsProjectKey.v6().queryDetails(serviceName);
+      // Load keys
+      const futureKeys = DBaasTsProjectKey.v6().queryDetails(serviceName);
 
-        futureProject.then(function (project) {
-
-            futureKeys.then(function (keys) {
-                self.data.keys = keys;
-            });
-
-            futureRegions.then(function (regions) {
-                // Find the region for the project
-                self.region = _.find(regions, { id: project.regionId });
-            });
-
-            return $q.all(futureRegions, futureKeys);
-
-        })["catch"](function (err) {
-            Toast.error([$translate.instant("dtpdt_key_loading_error"), err.data && err.data.message || ""].join(" "));
-            self.data.keys = null;
-            self.errors.init = true;
-        })["finally"](function () {
-            self.loaders.init = false;
+      futureProject.then((project) => {
+        futureKeys.then((keys) => {
+          self.data.keys = keys;
         });
+
+        futureRegions.then((regions) => {
+          // Find the region for the project
+          self.region = _.find(regions, { id: project.regionId });
+        });
+
+        return $q.all(futureRegions, futureKeys);
+      }).catch((err) => {
+        Toast.error([$translate.instant('dtpdt_key_loading_error'), (err.data && err.data.message) || ''].join(' '));
+        self.data.keys = null;
+        self.errors.init = true;
+      }).finally(() => {
+        self.loaders.init = false;
+      });
     };
 
-    function initGuideURL () {
-        self.loaders.guide = true;
-        OvhApiMe.v6().get().$promise.then(function (me) {
-            var lang = me.ovhSubsidiary;
-            self.data.guideDBaasTsConceptsURL = DBaasTsConstants.guides.concepts[lang] || DBaasTsConstants.guides.concepts.FR;
-        })["finally"](function () {
-            self.loaders.guide = false;
-        });
+    function initGuideURL() {
+      self.loaders.guide = true;
+      OvhApiMe.v6().get().$promise.then((me) => {
+        const lang = me.ovhSubsidiary;
+        self.data.guideDBaasTsConceptsURL = DBaasTsConstants.guides.concepts[lang]
+          || DBaasTsConstants.guides.concepts.FR;
+      }).finally(() => {
+        self.loaders.guide = false;
+      });
     }
 
     self.init();
     initGuideURL();
-
-});
+  });

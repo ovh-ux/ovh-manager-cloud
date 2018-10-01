@@ -1,4 +1,3 @@
-"use strict";
 /**
  *  Cloud Project Orchestrator. Gonna touch the stars!
  *  ==================================================
@@ -10,106 +9,94 @@
  *      - use this service to init a section
  *      - use this service to trigger cross sections actions (e.g.: create a vm from snapshot)
  */
-angular.module("managerApp").service("CloudProjectOrchestrator",
-    function ($q, CloudProjectFactory, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeVolumesOrchestrator,
-              OvhApiCloudProject, OvhApiCloudProjectIpV6, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
+angular.module('managerApp').service('CloudProjectOrchestrator',
+  function ($q, CloudProjectFactory, CloudProjectComputeInfrastructureOrchestrator,
+    CloudProjectComputeVolumesOrchestrator,
+    OvhApiCloudProject, OvhApiCloudProjectIpV6, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
+    const self = this;
 
-        var _self = this;
+    this.project = {}; // by serviceName
 
-        this.project = {};    // by serviceName
-
-        var createInstanceFromSnapshot = null;
+    let createInstanceFromSnapshot = null;
 
 
-        /**
-         *  At next infrastructure init, ask to create a vm via a snapshot.
-         */
-        this.askToCreateInstanceFromSnapshot = function (snapshot) {
-            createInstanceFromSnapshot = snapshot;
-            return $q.when(true);
-        };
+    /**
+     *  At next infrastructure init, ask to create a vm via a snapshot.
+     */
+    this.askToCreateInstanceFromSnapshot = function (snapshot) {
+      createInstanceFromSnapshot = snapshot;
+      return $q.when(true);
+    };
 
-        this.hasTooManyInstances = function(projectId) {
-            return OvhApiCloudProject.Instance().v6().query({
-                serviceName: projectId
-            }).$promise
-                .then(function (instances) {
-                    return instances.length > CLOUD_PROJECT_OVERVIEW_THRESHOLD.instances;
-                });
-        };
+    this.hasTooManyInstances = function (projectId) {
+      return OvhApiCloudProject.Instance().v6().query({
+        serviceName: projectId,
+      }).$promise
+        .then(instances => instances.length > CLOUD_PROJECT_OVERVIEW_THRESHOLD.instances);
+    };
 
-        this.hasTooManyIps = function(projectId) {
-            return OvhApiCloudProjectIpV6.query({
-                serviceName: projectId
-            }).$promise
-                .then(function (ips) {
-                    return ips.length > CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips;
-                });
-        };
+    this.hasTooManyIps = function (projectId) {
+      return OvhApiCloudProjectIpV6.query({
+        serviceName: projectId,
+      }).$promise
+        .then(ips => ips.length > CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips);
+    };
 
-        /*======================================
-        =            INITIALISATION            =
-        ======================================*/
+    /*= =====================================
+    =            INITIALISATION            =
+    ====================================== */
 
-        // Init Project factory, or return it if already created
-        this.init = function (opts) {
-            if (_self.project[opts.serviceName]) {
-                return $q.when(_self.project[opts.serviceName]);
-            } else {
-                return $q.when(new CloudProjectFactory(opts)).then(function (project) {
-                    _self.project[opts.serviceName] = project;
-                    return project;
-                });
-            }
-        };
+    // Init Project factory, or return it if already created
+    this.init = function (opts) {
+      if (self.project[opts.serviceName]) {
+        return $q.when(self.project[opts.serviceName]);
+      }
+      return $q.when(new CloudProjectFactory(opts)).then((project) => {
+        self.project[opts.serviceName] = project;
+        return project;
+      });
+    };
 
-        // Init infrastructure factory only
-        this.initInfrastructure = function (opts) {
-            return this.init(opts).then(function () {
-                return _initInfrastructure(opts);
-            });
-        };
-
-        // Init volumes factory only
-        this.initVolumes = function (opts) {
-            return this.init(opts).then(function () {
-                return _initVolumes(opts);
-            });
-        };
-
-        // -------------------------------------------------------------------------------------------
-
-        /**
-         *  Init infrastructure section
-         */
-        function _initInfrastructure (opts) {
-            return CloudProjectComputeInfrastructureOrchestrator.init(opts).then(function (infra) {
-                _self.project[opts.serviceName].compute.infrastructure = infra;
-                return _self.project[opts.serviceName].compute.infrastructure;
-            }).then(function (infra) {
-                if (createInstanceFromSnapshot) {
-                    return CloudProjectComputeInfrastructureOrchestrator.addNewVmToList({
-                        name   : createInstanceFromSnapshot.name,
-                        imageId: createInstanceFromSnapshot.id,
-                        region : createInstanceFromSnapshot.region
-                    }).then(function (vm) {
-                        CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
-                        createInstanceFromSnapshot = null;
-                        return infra;
-                    });
-                }
-                return infra;
-            });
+    /**
+     *  Init infrastructure section
+     */
+    function initInfrastructure(opts) {
+      return CloudProjectComputeInfrastructureOrchestrator.init(opts).then((infra) => {
+        self.project[opts.serviceName].compute.infrastructure = infra;
+        return self.project[opts.serviceName].compute.infrastructure;
+      }).then((infra) => {
+        if (createInstanceFromSnapshot) {
+          return CloudProjectComputeInfrastructureOrchestrator.addNewVmToList({
+            name: createInstanceFromSnapshot.name,
+            imageId: createInstanceFromSnapshot.id,
+            region: createInstanceFromSnapshot.region,
+          }).then((vm) => {
+            CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
+            createInstanceFromSnapshot = null;
+            return infra;
+          });
         }
-
-        /**
-         *  Init volumes section
-         */
-        function _initVolumes (opts) {
-            return CloudProjectComputeVolumesOrchestrator.init(opts).then(function (volumes) {
-                _self.project[opts.serviceName].compute.volumes = volumes;
-                return _self.project[opts.serviceName].compute.volumes;
-            });
-        }
+        return infra;
+      });
     }
-);
+
+    /**
+     *  Init volumes section
+     */
+    function initVolumes(opts) {
+      return CloudProjectComputeVolumesOrchestrator.init(opts).then((volumes) => {
+        self.project[opts.serviceName].compute.volumes = volumes;
+        return self.project[opts.serviceName].compute.volumes;
+      });
+    }
+
+    // Init infrastructure factory only
+    this.initInfrastructure = function (opts) {
+      return this.init(opts).then(() => initInfrastructure(opts));
+    };
+
+    // Init volumes factory only
+    this.initVolumes = function (opts) {
+      return this.init(opts).then(() => initVolumes(opts));
+    };
+  });

@@ -44,8 +44,8 @@
                         <metrics-chart-pie
                             data-legend="::'metrics_mads' | translate "
                             data-text="::$ctrl.usage.conso.mads | formatSi"
-                            data-text-small="$ctrl.displayUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
-                            data-value="$ctrl.computeUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
+                            data-text-small="$ctrl.constructor.displayUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
+                            data-value="$ctrl.constructor.computeUsage($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)"
                             data-color="$ctrl.computeColor($ctrl.usage.conso.mads, $ctrl.usage.quota.mads)">
                         </metrics-chart-pie>
                     </div>
@@ -53,8 +53,8 @@
                         <metrics-chart-pie
                             data-legend="::'metrics_ddp' | translate "
                             data-text="::$ctrl.usage.conso.ddp | formatSi"
-                            data-text-small="$ctrl.displayUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
-                            data-value="$ctrl.computeUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
+                            data-text-small="$ctrl.constructor.displayUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
+                            data-value="$ctrl.constructor.computeUsage($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)"
                             data-color="$ctrl.computeColor($ctrl.usage.conso.ddp, $ctrl.usage.quota.ddp)">
                         </metrics-chart-pie>
                     </div>
@@ -106,7 +106,7 @@
             </oui-tile>
         </div>
         <div class="col-xm-12 col-md-6">
-            <oui-tile 
+            <oui-tile
                 data-heading="{{ ::'common_tile_subscription' | translate }}"
                 data-loading="$ctrl.loading.plan"
                 class="oui-tile-h-100 h-100">
@@ -123,7 +123,7 @@
                 </oui-tile-definition>
                 <div data-ng-if="!$ctrl.loading.plan">
                     <oui-tile-definition
-                        data-ng-if="$ctrl.plan.offer" 
+                        data-ng-if="$ctrl.plan.offer"
                         data-term="{{ ::'common_tile_subscription_offer' | translate }}"
                         data-description="{{ ::$ctrl.plan.offer }}">
                     </oui-tile-definition>

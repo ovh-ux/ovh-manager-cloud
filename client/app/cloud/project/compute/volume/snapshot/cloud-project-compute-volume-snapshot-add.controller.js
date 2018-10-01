@@ -1,53 +1,53 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
 
-        var self = this;
-        var serviceName = $stateParams.projectId;
+angular.module('managerApp')
+  .controller('CloudProjectComputeVolumeSnapshotAddCtrl', function CloudProjectComputeVolumeSnapshotAddCtrl($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator) {
+    const self = this;
+    const serviceName = $stateParams.projectId;
 
-        self.snapshot = {
-            volume : params,
-            name : null,
-            price : null,
-            priceText : null
-        };
+    self.snapshot = {
+      volume: params,
+      name: null,
+      price: null,
+      priceText: null,
+    };
 
-        self.loaders = {
-            init : false,
-            snapshot : false
-        };
+    self.loaders = {
+      init: false,
+      snapshot: false,
+    };
 
-        function init () {
-            self.loaders.init = true;
-            const volumeSnapshotConsumption = "volume.snapshot.consumption";
-            OvhCloudPriceHelper.getPrices(serviceName).then(function (prices) {
-                var price = prices[`${volumeSnapshotConsumption}.${self.snapshot.volume.region}`] || prices[volumeSnapshotConsumption];
-                if (price) {
-                    self.snapshot.price = price.priceInUcents * self.snapshot.volume.size * moment.duration(1,"months").asHours() / 100000000;
-                    self.snapshot.priceText = price.price.text.replace(/\d+(?:[.,]\d+)?/, _.round(self.snapshot.price.toString(),2));
-                }
-                self.snapshot.name = self.snapshot.volume.name + " " + $filter("date")(new Date(), "short");
-            })["finally"](function () {
-                self.loaders.init = false;
-            });
+    function init() {
+      self.loaders.init = true;
+      const volumeSnapshotConsumption = 'volume.snapshot.consumption';
+      OvhCloudPriceHelper.getPrices(serviceName).then((prices) => {
+        const price = prices[`${volumeSnapshotConsumption}.${self.snapshot.volume.region}`] || prices[volumeSnapshotConsumption];
+        if (price) {
+          self.snapshot.price = price.priceInUcents * self.snapshot.volume.size * moment.duration(1, 'months').asHours() / 100000000;
+          self.snapshot.priceText = price.price.text.replace(/\d+(?:[.,]\d+)?/, _.round(self.snapshot.price.toString(), 2));
         }
+        self.snapshot.name = `${self.snapshot.volume.name} ${$filter('date')(new Date(), 'short')}`;
+      }).finally(() => {
+        self.loaders.init = false;
+      });
+    }
 
-        self.confirmSnapshot = function () {
-            self.loaders.snapshot = true;
-            CloudProjectComputeVolumesOrchestrator.snapshotVolume(self.snapshot.volume, self.snapshot.name).then(function () {
-                $uibModalInstance.close(self.snapshot);
-                CloudMessage.info($translate.instant("cpcv_snapshot_creation_info"), { hideAfter: 3 });
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpcv_snapshot_creation_error"), err.data && err.data.message || ""].join(" "));
-            })["finally"](function () {
-                self.loaders.snapshot = false;
-            });
-        };
+    self.confirmSnapshot = function confirmSnapshot() {
+      self.loaders.snapshot = true;
+      CloudProjectComputeVolumesOrchestrator
+        .snapshotVolume(self.snapshot.volume, self.snapshot.name).then(() => {
+          $uibModalInstance.close(self.snapshot);
+          CloudMessage.info($translate.instant('cpcv_snapshot_creation_info'), { hideAfter: 3 });
+        }, (err) => {
+          CloudMessage.error([$translate.instant('cpcv_snapshot_creation_error'), (err.data && err.data.message) || ''].join(' '));
+        }).finally(() => {
+          self.loaders.snapshot = false;
+        });
+    };
 
-        self.cancel = function () {
-            $uibModalInstance.dismiss(self.snapshot);
-        };
+    self.cancel = function cancel() {
+      $uibModalInstance.dismiss(self.snapshot);
+    };
 
-        init();
+    init();
   });

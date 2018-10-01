@@ -34,7 +34,7 @@
                 </div>
                 <div class="oui-tile__item oui-tile__item_button">
                     <a class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
-                        data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
+                        data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.constructor.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
                         rel="noopener">
                         <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
                     </a>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
-            <oui-tile 
+            <oui-tile
                 data-heading="{{ ::'common_tile_configuration' | translate }}"
                 class=" h-100">
                 <oui-tile-definition data-ng-if="$ctrl.vps.loading">
@@ -131,7 +131,7 @@
                                 data-ng-if="$ctrl.actions.displayIps.isAvailable()"
                                 data-text="{{ ::$ctrl.actions.displayIps.text }}"
                                 data-on-click="$ctrl.actions.displayIps.callback()">
-                            </oui-action-menu-item>                                
+                            </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{ ::'vps_dashboard_tile_ipv6' | translate }}">
@@ -232,7 +232,7 @@
                     <oui-tile-definition data-term="{{ ::'vps_dashboard_monitoring_sla' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.vps.data.slaMonitoring" data-translate="vps_status_enabled"></span>
-                            <span data-ng-if="!$ctrl.vps.data.slaMonitoring" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.vps.data.slaMonitoring" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu
                             data-compact
@@ -253,7 +253,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
-            <oui-tile 
+            <oui-tile
                 data-heading="{{ ::'vps_tab_summary' | translate }}"
                 class="h-100">
                 <oui-tile-definition data-ng-if="$ctrl.loaders.disk || $ctrl.summary.loading || $ctrl.vps.loading">
@@ -271,7 +271,7 @@
                     <oui-tile-definition data-term="{{ ::'vps_tab_backup_storage' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.summary.data.ftpBackup.optionActivated" data-translate="vps_status_enabled"></span>
-                            <span data-ng-if="!$ctrl.summary.data.ftpBackup.optionActivated" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.summary.data.ftpBackup.optionActivated" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.backupStorageActions.manage.text}}"
@@ -288,13 +288,13 @@
                                 data-aria-label="{{::$ctrl.backupStorageActions.order.text}}"
                                 data-on-click="$ctrl.backupStorageActions.order.callback()"
                                 data-ng-if="!$ctrl.summary.data.ftpBackup.optionActivated">
-                            </oui-action-menu-item>  
+                            </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{ ::'vps_tab_snapshot' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.summary.data.snapshot.optionActivated" data-ng-bind="::$ctrl.snapshotDescription"></span>
-                            <span data-ng-if="!$ctrl.summary.data.snapshot.optionActivated" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.summary.data.snapshot.optionActivated" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end" data-ng-if="$ctrl.summary.data.snapshot.optionActivated">
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.delete.text}}"
@@ -316,20 +316,20 @@
                                 data-aria-label="{{::$ctrl.snapshotActions.terminate.text}}"
                                 data-on-click="$ctrl.snapshotActions.terminate.callback()"
                                 data-ng-if="$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.terminate.isAvailable()">
-                            </oui-action-menu-item> 
+                            </oui-action-menu-item>
                         </oui-action-menu>
                         <oui-action-menu data-compact data-align="end" data-ng-if="!$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.order.isAvailable()">
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.order.text}}"
                                 data-aria-label="{{::$ctrl.snapshotActions.order.text}}"
                                 data-on-click="$ctrl.snapshotActions.order.callback()"
                                 data-ng-if="$ctrl.snapshotActions.order.isAvailable()">
-                            </oui-action-menu-item> 
+                            </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{ ::'vps_tab_veeam' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.summary.data.veeamActivated" data-translate="vps_status_enabled"></span>
-                            <span data-ng-if="!$ctrl.summary.data.veeamActivated" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.summary.data.veeamActivated" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.veeamActions.manage.text}}"
@@ -346,13 +346,13 @@
                                 data-aria-label="{{::$ctrl.veeamActions.order.text}}"
                                 data-on-click="$ctrl.veeamActions.order.callback()"
                                 data-ng-if="!$ctrl.summary.data.veeamActivated">
-                            </oui-action-menu-item>  
+                            </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{ ::'vps_tab_SUMMARY_additional_disk' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.hasAdditionalDisk" data-translate="vps_status_enabled"></span>
-                            <span data-ng-if="!$ctrl.hasAdditionalDisk" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.hasAdditionalDisk" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end" data-ng-if="$ctrl.hasAdditionalDisk">
                             <oui-action-menu-item
@@ -372,7 +372,7 @@
                     <oui-tile-definition data-term="{{ ::'vps_order_windows_title' | translate }}">
                         <oui-tile-description>
                             <span data-ng-if="$ctrl.summary.data.windowsActivated" data-translate="vps_status_enabled"></span>
-                            <span data-ng-if="!$ctrl.summary.data.windowsActivated" data-translate="vps_status_disabled"></span>                        
+                            <span data-ng-if="!$ctrl.summary.data.windowsActivated" data-translate="vps_status_disabled"></span>
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.actions.terminateWindows.text}}"
@@ -392,7 +392,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <oui-tile 
+            <oui-tile
                 data-heading="{{ ::'common_tile_subscription' | translate }}"
                 class="h-100">
                 <oui-tile-definition data-ng-if="$ctrl.vps.loading || $ctrl.plan.loading">
@@ -408,7 +408,7 @@
                 </oui-tile-definition>
                 <div data-ng-if="!($ctrl.vps.loading || $ctrl.plan.loading)">
                     <oui-tile-definition
-                        data-ng-if="$ctrl.plan.data.offer" 
+                        data-ng-if="$ctrl.plan.data.offer"
                         data-term="{{ ::'common_tile_subscription_offer' | translate }}"
                         data-description="{{ ::$ctrl.plan.data.offer }}">
                         <oui-action-menu
@@ -417,7 +417,7 @@
                             data-ng-if="$ctrl.actions.upgrade.isAvailable()">
                             <div class="oui-dropdown-menu__item">
                                 <a class="oui-dropdown-option"
-                                    data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
+                                    data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.constructor.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
                                     rel="noopener">
                                     <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
                                 </a>

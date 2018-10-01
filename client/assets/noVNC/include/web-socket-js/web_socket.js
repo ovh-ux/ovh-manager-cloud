@@ -3,8 +3,7 @@
 // Reference: http://dev.w3.org/html5/websockets/
 // Reference: http://tools.ietf.org/html/rfc6455
 
-(function() {
-  
+(function () {
   if (window.WEB_SOCKET_FORCE_FLASH) {
     // Keeps going.
   } else if (window.WebSocket) {
@@ -14,27 +13,28 @@
     window.WebSocket = MozWebSocket;
     return;
   }
-  
-  var logger;
+
+  let logger;
   if (window.WEB_SOCKET_LOGGER) {
     logger = WEB_SOCKET_LOGGER;
   } else if (window.console && window.console.log && window.console.error) {
     // In some environment, console is defined but console.log or console.error is missing.
     logger = window.console;
   } else {
-    logger = {log: function(){ }, error: function(){ }};
+    logger = { log() { }, error() { } };
   }
-  
+
   // swfobject.hasFlashPlayerVersion("10.0.0") doesn't work with Gnash.
   if (swfobject.getFlashPlayerVersion().major < 10) {
-    logger.error("Flash Player >= 10.0.0 is required.");
+    logger.error('Flash Player >= 10.0.0 is required.');
     return;
   }
-  if (location.protocol == "file:") {
+  if (location.protocol == 'file:') {
     logger.error(
-      "WARNING: web-socket-js doesn't work in file:///... URL " +
-      "unless you set Flash Security Settings properly. " +
-      "Open the page via Web server i.e. http://...");
+      "WARNING: web-socket-js doesn't work in file:///... URL "
+      + 'unless you set Flash Security Settings properly. '
+      + 'Open the page via Web server i.e. http://...',
+    );
   }
 
   /**
@@ -45,8 +45,8 @@
    * @param {int} proxyPort
    * @param {string} headers
    */
-  window.WebSocket = function(url, protocols, proxyHost, proxyPort, headers) {
-    var self = this;
+  window.WebSocket = function (url, protocols, proxyHost, proxyPort, headers) {
+    const self = this;
     self.__id = WebSocket.__nextId++;
     WebSocket.__instances[self.__id] = self;
     self.readyState = WebSocket.CONNECTING;
@@ -54,16 +54,17 @@
     self.__events = {};
     if (!protocols) {
       protocols = [];
-    } else if (typeof protocols == "string") {
+    } else if (typeof protocols === 'string') {
       protocols = [protocols];
     }
     // Uses setTimeout() to make sure __createFlash() runs after the caller sets ws.onopen etc.
     // Otherwise, when onopen fires immediately, onopen is called before it is set.
-    self.__createTask = setTimeout(function() {
-      WebSocket.__addTask(function() {
+    self.__createTask = setTimeout(() => {
+      WebSocket.__addTask(() => {
         self.__createTask = null;
         WebSocket.__flash.create(
-            self.__id, url, protocols, proxyHost || null, proxyPort || 0, headers || null);
+          self.__id, url, protocols, proxyHost || null, proxyPort || 0, headers || null,
+        );
       });
     }, 0);
   };
@@ -73,9 +74,9 @@
    * @param {string} data  The data to send to the socket.
    * @return {boolean}  True for success, false for failure.
    */
-  WebSocket.prototype.send = function(data) {
+  WebSocket.prototype.send = function (data) {
     if (this.readyState == WebSocket.CONNECTING) {
-      throw "INVALID_STATE_ERR: Web Socket connection has not been established";
+      throw 'INVALID_STATE_ERR: Web Socket connection has not been established';
     }
     // We use encodeURIComponent() here, because FABridge doesn't work if
     // the argument includes some characters. We don't use escape() here
@@ -85,19 +86,18 @@
     // preserve all Unicode characters either e.g. "\uffff" in Firefox.
     // Note by wtritch: Hopefully this will not be necessary using ExternalInterface.  Will require
     // additional testing.
-    var result = WebSocket.__flash.send(this.__id, encodeURIComponent(data));
+    const result = WebSocket.__flash.send(this.__id, encodeURIComponent(data));
     if (result < 0) { // success
       return true;
-    } else {
-      this.bufferedAmount += result;
-      return false;
     }
+    this.bufferedAmount += result;
+    return false;
   };
 
   /**
    * Close this web socket gracefully.
    */
-  WebSocket.prototype.close = function() {
+  WebSocket.prototype.close = function () {
     if (this.__createTask) {
       clearTimeout(this.__createTask);
       this.__createTask = null;
@@ -119,7 +119,7 @@
    * @param {boolean} useCapture
    * @return void
    */
-  WebSocket.prototype.addEventListener = function(type, listener, useCapture) {
+  WebSocket.prototype.addEventListener = function (type, listener, useCapture) {
     if (!(type in this.__events)) {
       this.__events[type] = [];
     }
@@ -134,10 +134,10 @@
    * @param {boolean} useCapture
    * @return void
    */
-  WebSocket.prototype.removeEventListener = function(type, listener, useCapture) {
+  WebSocket.prototype.removeEventListener = function (type, listener, useCapture) {
     if (!(type in this.__events)) return;
-    var events = this.__events[type];
-    for (var i = events.length - 1; i >= 0; --i) {
+    const events = this.__events[type];
+    for (let i = events.length - 1; i >= 0; --i) {
       if (events[i] === listener) {
         events.splice(i, 1);
         break;
@@ -151,12 +151,12 @@
    * @param {Event} event
    * @return void
    */
-  WebSocket.prototype.dispatchEvent = function(event) {
-    var events = this.__events[event.type] || [];
-    for (var i = 0; i < events.length; ++i) {
+  WebSocket.prototype.dispatchEvent = function (event) {
+    const events = this.__events[event.type] || [];
+    for (let i = 0; i < events.length; ++i) {
       events[i](event);
     }
-    var handler = this["on" + event.type];
+    const handler = this[`on${event.type}`];
     if (handler) handler.apply(this, [event]);
   };
 
@@ -164,55 +164,53 @@
    * Handles an event from Flash.
    * @param {Object} flashEvent
    */
-  WebSocket.prototype.__handleEvent = function(flashEvent) {
-    
-    if ("readyState" in flashEvent) {
+  WebSocket.prototype.__handleEvent = function (flashEvent) {
+    if ('readyState' in flashEvent) {
       this.readyState = flashEvent.readyState;
     }
-    if ("protocol" in flashEvent) {
+    if ('protocol' in flashEvent) {
       this.protocol = flashEvent.protocol;
     }
-    
-    var jsEvent;
-    if (flashEvent.type == "open" || flashEvent.type == "error") {
+
+    let jsEvent;
+    if (flashEvent.type == 'open' || flashEvent.type == 'error') {
       jsEvent = this.__createSimpleEvent(flashEvent.type);
-    } else if (flashEvent.type == "close") {
-      jsEvent = this.__createSimpleEvent("close");
-      jsEvent.wasClean = flashEvent.wasClean ? true : false;
+    } else if (flashEvent.type == 'close') {
+      jsEvent = this.__createSimpleEvent('close');
+      jsEvent.wasClean = !!flashEvent.wasClean;
       jsEvent.code = flashEvent.code;
       jsEvent.reason = flashEvent.reason;
-    } else if (flashEvent.type == "message") {
-      var data = decodeURIComponent(flashEvent.message);
-      jsEvent = this.__createMessageEvent("message", data);
+    } else if (flashEvent.type == 'message') {
+      const data = decodeURIComponent(flashEvent.message);
+      jsEvent = this.__createMessageEvent('message', data);
     } else {
-      throw "unknown event type: " + flashEvent.type;
+      throw `unknown event type: ${flashEvent.type}`;
     }
-    
+
     this.dispatchEvent(jsEvent);
-    
   };
-  
-  WebSocket.prototype.__createSimpleEvent = function(type) {
+
+  WebSocket.prototype.__createSimpleEvent = function (type) {
     if (document.createEvent && window.Event) {
-      var event = document.createEvent("Event");
+      const event = document.createEvent('Event');
       event.initEvent(type, false, false);
       return event;
-    } else {
-      return {type: type, bubbles: false, cancelable: false};
     }
+    return { type, bubbles: false, cancelable: false };
   };
-  
-  WebSocket.prototype.__createMessageEvent = function(type, data) {
+
+  WebSocket.prototype.__createMessageEvent = function (type, data) {
     if (document.createEvent && window.MessageEvent && !window.opera) {
-      var event = document.createEvent("MessageEvent");
-      event.initMessageEvent("message", false, false, data, null, null, window, null);
+      const event = document.createEvent('MessageEvent');
+      event.initMessageEvent('message', false, false, data, null, null, window, null);
       return event;
-    } else {
-      // IE and Opera, the latter one truncates the data parameter after any 0x00 bytes.
-      return {type: type, data: data, bubbles: false, cancelable: false};
     }
+    // IE and Opera, the latter one truncates the data parameter after any 0x00 bytes.
+    return {
+      type, data, bubbles: false, cancelable: false,
+    };
   };
-  
+
   /**
    * Define the WebSocket readyState enumeration.
    */
@@ -228,13 +226,13 @@
   WebSocket.__instances = {};
   WebSocket.__tasks = [];
   WebSocket.__nextId = 0;
-  
+
   /**
    * Load a new flash security policy file.
    * @param {string} url
    */
-  WebSocket.loadFlashPolicyFile = function(url){
-    WebSocket.__addTask(function() {
+  WebSocket.loadFlashPolicyFile = function (url) {
+    WebSocket.__addTask(() => {
       WebSocket.__flash.loadManualPolicyFile(url);
     });
   };
@@ -242,101 +240,100 @@
   /**
    * Loads WebSocketMain.swf and creates WebSocketMain object in Flash.
    */
-  WebSocket.__initialize = function() {
-    
+  WebSocket.__initialize = function () {
     if (WebSocket.__initialized) return;
     WebSocket.__initialized = true;
-    
+
     if (WebSocket.__swfLocation) {
       // For backword compatibility.
       window.WEB_SOCKET_SWF_LOCATION = WebSocket.__swfLocation;
     }
     if (!window.WEB_SOCKET_SWF_LOCATION) {
-      logger.error("[WebSocket] set WEB_SOCKET_SWF_LOCATION to location of WebSocketMain.swf");
+      logger.error('[WebSocket] set WEB_SOCKET_SWF_LOCATION to location of WebSocketMain.swf');
       return;
     }
-    if (!window.WEB_SOCKET_SUPPRESS_CROSS_DOMAIN_SWF_ERROR &&
-        !WEB_SOCKET_SWF_LOCATION.match(/(^|\/)WebSocketMainInsecure\.swf(\?.*)?$/) &&
-        WEB_SOCKET_SWF_LOCATION.match(/^\w+:\/\/([^\/]+)/)) {
-      var swfHost = RegExp.$1;
+    if (!window.WEB_SOCKET_SUPPRESS_CROSS_DOMAIN_SWF_ERROR
+        && !WEB_SOCKET_SWF_LOCATION.match(/(^|\/)WebSocketMainInsecure\.swf(\?.*)?$/)
+        && WEB_SOCKET_SWF_LOCATION.match(/^\w+:\/\/([^\/]+)/)) {
+      const swfHost = RegExp.$1;
       if (location.host != swfHost) {
         logger.error(
-            "[WebSocket] You must host HTML and WebSocketMain.swf in the same host " +
-            "('" + location.host + "' != '" + swfHost + "'). " +
-            "See also 'How to host HTML file and SWF file in different domains' section " +
-            "in README.md. If you use WebSocketMainInsecure.swf, you can suppress this message " +
-            "by WEB_SOCKET_SUPPRESS_CROSS_DOMAIN_SWF_ERROR = true;");
+          `${'[WebSocket] You must host HTML and WebSocketMain.swf in the same host '
+            + "('"}${location.host}' != '${swfHost}'). `
+            + 'See also \'How to host HTML file and SWF file in different domains\' section '
+            + 'in README.md. If you use WebSocketMainInsecure.swf, you can suppress this message '
+            + 'by WEB_SOCKET_SUPPRESS_CROSS_DOMAIN_SWF_ERROR = true;',
+        );
       }
     }
-    var container = document.createElement("div");
-    container.id = "webSocketContainer";
+    const container = document.createElement('div');
+    container.id = 'webSocketContainer';
     // Hides Flash box. We cannot use display: none or visibility: hidden because it prevents
     // Flash from loading at least in IE. So we move it out of the screen at (-100, -100).
     // But this even doesn't work with Flash Lite (e.g. in Droid Incredible). So with Flash
     // Lite, we put it at (0, 0). This shows 1x1 box visible at left-top corner but this is
     // the best we can do as far as we know now.
-    container.style.position = "absolute";
+    container.style.position = 'absolute';
     if (WebSocket.__isFlashLite()) {
-      container.style.left = "0px";
-      container.style.top = "0px";
+      container.style.left = '0px';
+      container.style.top = '0px';
     } else {
-      container.style.left = "-100px";
-      container.style.top = "-100px";
+      container.style.left = '-100px';
+      container.style.top = '-100px';
     }
-    var holder = document.createElement("div");
-    holder.id = "webSocketFlash";
+    const holder = document.createElement('div');
+    holder.id = 'webSocketFlash';
     container.appendChild(holder);
     document.body.appendChild(container);
     // See this article for hasPriority:
     // http://help.adobe.com/en_US/as3/mobile/WS4bebcd66a74275c36cfb8137124318eebc6-7ffd.html
     swfobject.embedSWF(
       WEB_SOCKET_SWF_LOCATION,
-      "webSocketFlash",
-      "1" /* width */,
-      "1" /* height */,
-      "10.0.0" /* SWF version */,
+      'webSocketFlash',
+      '1' /* width */,
+      '1' /* height */,
+      '10.0.0' /* SWF version */,
       null,
       null,
-      {hasPriority: true, swliveconnect : true, allowScriptAccess: "always"},
+      { hasPriority: true, swliveconnect: true, allowScriptAccess: 'always' },
       null,
-      function(e) {
+      (e) => {
         if (!e.success) {
-          logger.error("[WebSocket] swfobject.embedSWF failed");
+          logger.error('[WebSocket] swfobject.embedSWF failed');
         }
-      }
+      },
     );
-    
   };
-  
+
   /**
    * Called by Flash to notify JS that it's fully loaded and ready
    * for communication.
    */
-  WebSocket.__onFlashInitialized = function() {
+  WebSocket.__onFlashInitialized = function () {
     // We need to set a timeout here to avoid round-trip calls
     // to flash during the initialization process.
-    setTimeout(function() {
-      WebSocket.__flash = document.getElementById("webSocketFlash");
+    setTimeout(() => {
+      WebSocket.__flash = document.getElementById('webSocketFlash');
       WebSocket.__flash.setCallerUrl(location.href);
       WebSocket.__flash.setDebug(!!window.WEB_SOCKET_DEBUG);
-      for (var i = 0; i < WebSocket.__tasks.length; ++i) {
+      for (let i = 0; i < WebSocket.__tasks.length; ++i) {
         WebSocket.__tasks[i]();
       }
       WebSocket.__tasks = [];
     }, 0);
   };
-  
+
   /**
    * Called by Flash to notify WebSockets events are fired.
    */
-  WebSocket.__onFlashEvent = function() {
-    setTimeout(function() {
+  WebSocket.__onFlashEvent = function () {
+    setTimeout(() => {
       try {
         // Gets events using receiveEvents() instead of getting it from event object
         // of Flash event. This is to make sure to keep message order.
         // It seems sometimes Flash events don't arrive in the same order as they are sent.
-        var events = WebSocket.__flash.receiveEvents();
-        for (var i = 0; i < events.length; ++i) {
+        const events = WebSocket.__flash.receiveEvents();
+        for (let i = 0; i < events.length; ++i) {
           WebSocket.__instances[events[i].webSocketId].__handleEvent(events[i]);
         }
       } catch (e) {
@@ -345,47 +342,46 @@
     }, 0);
     return true;
   };
-  
+
   // Called by Flash.
-  WebSocket.__log = function(message) {
+  WebSocket.__log = function (message) {
     logger.log(decodeURIComponent(message));
   };
-  
+
   // Called by Flash.
-  WebSocket.__error = function(message) {
+  WebSocket.__error = function (message) {
     logger.error(decodeURIComponent(message));
   };
-  
-  WebSocket.__addTask = function(task) {
+
+  WebSocket.__addTask = function (task) {
     if (WebSocket.__flash) {
       task();
     } else {
       WebSocket.__tasks.push(task);
     }
   };
-  
+
   /**
    * Test if the browser is running flash lite.
    * @return {boolean} True if flash lite is running, false otherwise.
    */
-  WebSocket.__isFlashLite = function() {
+  WebSocket.__isFlashLite = function () {
     if (!window.navigator || !window.navigator.mimeTypes) {
       return false;
     }
-    var mimeType = window.navigator.mimeTypes["application/x-shockwave-flash"];
+    const mimeType = window.navigator.mimeTypes['application/x-shockwave-flash'];
     if (!mimeType || !mimeType.enabledPlugin || !mimeType.enabledPlugin.filename) {
       return false;
     }
-    return mimeType.enabledPlugin.filename.match(/flashlite/i) ? true : false;
+    return !!mimeType.enabledPlugin.filename.match(/flashlite/i);
   };
-  
+
   if (!window.WEB_SOCKET_DISABLE_AUTO_INITIALIZATION) {
     // NOTE:
     //   This fires immediately if web_socket.js is dynamically loaded after
     //   the document is loaded.
-    swfobject.addDomLoadEvent(function() {
+    swfobject.addDomLoadEvent(() => {
       WebSocket.__initialize();
     });
   }
-  
-})();
+}());

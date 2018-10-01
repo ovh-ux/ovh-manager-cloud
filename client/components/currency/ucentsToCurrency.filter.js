@@ -1,13 +1,9 @@
-angular.module("managerApp").filter("ucentsToCurrency", function ($filter, CurrencyService) {
-    "use strict";
+angular.module('managerApp').filter('ucentsToCurrency', ($filter, CurrencyService) => function (value, intervalParam) {
+  let interval = intervalParam;
+  if (!_.isNumber(interval)) {
+    interval = 1;
+  }
 
-    return function (value, interval) {
-
-        if (!_.isNumber(interval)) {
-            interval = 1;
-        }
-
-        const symbol = CurrencyService.getCurrentCurrency();
-        return $filter("currency")((value / interval) / 100000000, symbol);
-    };
+  const symbol = CurrencyService.getCurrentCurrency();
+  return $filter('currency')((value / interval) / 100000000, symbol);
 });

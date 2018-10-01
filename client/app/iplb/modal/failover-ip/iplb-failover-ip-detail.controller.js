@@ -1,28 +1,28 @@
 class IpLoadBalancerFailoverIpDetailCtrl {
-    constructor ($uibModalInstance, serviceName, ControllerHelper, IpLoadBalancerFailoverIpService) {
-        this.$uibModalInstance = $uibModalInstance;
+  constructor($uibModalInstance, serviceName, ControllerHelper, IpLoadBalancerFailoverIpService) {
+    this.$uibModalInstance = $uibModalInstance;
 
-        this.serviceName = serviceName;
-        this.ControllerHelper = ControllerHelper;
+    this.serviceName = serviceName;
+    this.ControllerHelper = ControllerHelper;
 
-        this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
+    this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
 
-        this.ips = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.IpLoadBalancerFailoverIpService.getFailoverIps(this.serviceName)
-        });
-    }
+    this.ips = this.ControllerHelper.request.getArrayLoader({
+      loaderFunction: () => this.IpLoadBalancerFailoverIpService.getFailoverIps(this.serviceName),
+    });
+  }
 
-    $onInit () {
-        this.ips.load();
-    }
+  $onInit() {
+    this.ips.load();
+  }
 
-    dismiss () {
-        this.$uibModalInstance.dismiss();
-    }
+  dismiss() {
+    this.$uibModalInstance.dismiss();
+  }
 
-    isModalLoading () {
-        return this.ips.loading;
-    }
+  isModalLoading() {
+    return this.ips.loading;
+  }
 }
 
-angular.module("managerApp").controller("IpLoadBalancerFailoverIpDetailCtrl", IpLoadBalancerFailoverIpDetailCtrl);
+angular.module('managerApp').controller('IpLoadBalancerFailoverIpDetailCtrl', IpLoadBalancerFailoverIpDetailCtrl);
