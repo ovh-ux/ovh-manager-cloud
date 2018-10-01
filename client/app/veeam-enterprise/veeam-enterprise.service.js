@@ -45,13 +45,21 @@
                         { ip, port, username, password }
                     )
                     .$promise
-                    .then(response => this.acceptResponse(response))
-                    .catch(response =>
-                        this.rejectResponse(
+                    .then(response => this.acceptResponse(
+                        response,
+                        this.$translate.instant("veeam_enterprise_infos_license_register_success")
+                    ))
+                    .catch(response => {
+                        const alreadyRegistered = _.get(response, "data.message") === "This backup server enterprise has already been registered";
+                        const message = alreadyRegistered ?
+                            this.$translate.instant("veeam_enterprise_infos_license_already_registered_error") :
+                            this.$translate.instant("veeam_enterprise_infos_license_register_error");
+
+                        return this.rejectResponse(
                             response.data,
-                            this.$translate.instant("veeam_enterprise_infos_subscription_load_error")
-                        )
-                    );
+                            message
+                        );
+                    });
             }
 
             // If action is "update"
@@ -61,11 +69,14 @@
                     { ip, port, username, password }
                 )
                 .$promise
-                .then(response => this.acceptResponse(response))
+                .then(response => this.acceptResponse(
+                    response,
+                    this.$translate.instant("veeam_enterprise_infos_license_update_success")
+                ))
                 .catch(response =>
                     this.rejectResponse(
                         response.data,
-                        this.$translate.instant("veeam_enterprise_infos_subscription_load_error")
+                        this.$translate.instant("veeam_enterprise_infos_license_update_error")
                     )
                 );
         }

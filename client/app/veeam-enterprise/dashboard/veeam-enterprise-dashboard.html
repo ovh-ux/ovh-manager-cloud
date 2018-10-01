@@ -26,8 +26,12 @@
                     data-description="{{ ::$ctrl.configurationInfos.data.serviceName }}">
                 </oui-tile-definition>
                 <oui-tile-definition
-                    data-term="{{ ::'veeam_enterprise_configuration_label_ip' | translate }}"
+                    data-term="{{ ::'veeam_enterprise_configuration_label_source_ip' | translate }}"
                     data-description="{{ ::$ctrl.configurationInfos.data.sourceIp }}">
+                </oui-tile-definition>
+                <oui-tile-definition
+                    data-term="{{ ::'veeam_enterprise_configuration_label_ip' | translate }}"
+                    data-description="{{ ::$ctrl.configurationInfos.data.ip }}">
                 </oui-tile-definition>
                 <oui-tile-definition
                     data-term="{{ ::'veeam_enterprise_configuration_label_port' | translate }}"

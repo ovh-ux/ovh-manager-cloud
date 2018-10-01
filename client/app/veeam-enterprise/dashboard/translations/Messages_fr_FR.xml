@@ -7,6 +7,7 @@
 
    <translation id="veeam_enterprise_configuration_title" qtlid="4406">Configuration</translation>
    <translation id="veeam_enterprise_configuration_label_name" qtlid="3818">Nom</translation>
+   <translation id="veeam_enterprise_configuration_label_source_ip">Source IP</translation>
    <translation id="veeam_enterprise_configuration_label_ip">IP</translation>
    <translation id="veeam_enterprise_configuration_label_port">Port</translation>
    <translation id="veeam_enterprise_configuration_label_username">Nom d'utilisateur</translation>

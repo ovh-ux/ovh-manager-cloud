@@ -1,10 +1,9 @@
 (() => {
     class VeeamEnterpriseLicenseCtrl {
-        constructor ($uibModalInstance, action, serviceName, ControllerHelper, VeeamEnterpriseService) {
+        constructor ($uibModalInstance, action, serviceName, VeeamEnterpriseService) {
             this.$uibModalInstance = $uibModalInstance;
             this.action = action;
             this.serviceName = serviceName;
-            this.ControllerHelper = ControllerHelper;
             this.VeeamEnterpriseService = VeeamEnterpriseService;
 
             this.form = {};
@@ -26,9 +25,19 @@
                         this.form.username,
                         this.form.password
                     )
-                    .finally(() => {
-                        this.$uibModalInstance.close();
-                    });
+                    .then(response => {
+                        this.VeeamEnterpriseService.unitOfWork.messages.push({
+                            text: response.message,
+                            type: "success"
+                        });
+                    })
+                    .catch(response => {
+                        this.VeeamEnterpriseService.unitOfWork.messages.push({
+                            text: response.message,
+                            type: "error"
+                        });
+                    })
+                    .finally(() => this.$uibModalInstance.close());
             }
         }
     }
