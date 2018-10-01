@@ -54,17 +54,17 @@ module.exports = (env = {}) => {
       components: glob.sync('./client/components/**/!(*.spec|*.mock).js'),
       config: [
         `./client/app/config/all.${env.region}.js`,
-        `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`
+        `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`,
       ],
     }, bundles),
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].bundle.js',
+      filename: '[name].[hash].bundle.js',
     },
     resolve: {
       alias: {
-        jquery: path.resolve(__dirname, "node_modules/jquery")
-      }
-    }
+        jquery: path.resolve(__dirname, 'node_modules/jquery'),
+      },
+    },
   });
 };
