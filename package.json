@@ -34,7 +34,10 @@
     "test": "eslint --quiet ./client",
     "lint": "run-p lint:css lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
-    "lint:js": "eslint --quiet --fix ./client"
+    "lint:js": "eslint --quiet --fix ./client",
+    "version": "npm-scripts-config version",
+    "postversion": "git push && git push --tags",
+    "preview-changelog": "npm-scripts-config preview-changelog"
   },
   "lint-staged": {
     "*.js": [
