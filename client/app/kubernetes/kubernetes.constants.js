@@ -10,11 +10,6 @@ angular.module('managerApp')
       kubectl: 'https://kubernetes.io/docs/reference/kubectl/overview/',
       kubeconfig: 'https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig',
       kubernetesDoc: 'https://labs.ovh.com/kubernetes-k8s/documentation',
-
-      guides: {
-        quickstart: 'https://labs.ovh.com/kubernetes-k8s/documentation/tutorial/quickstart',
-        apiQuickstart: 'https://labs.ovh.com/kubernetes-k8s/documentation/tutorial/quickstart-with-ovh-api',
-        kubernetesDashboard: 'https://labs.ovh.com/kubernetes-k8s/documentation/dashboard-installation',
-      },
+      kubernetesDashboard: 'https://labs.ovh.com/kubernetes-k8s/documentation/dashboard-installation',
     },
   });

@@ -70,6 +70,6 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
 
   downloadConfigFile() {
     // Set yml extension manually as there is no MIME type yet
-    this.ControllerHelper.downloadContent({ content: this.kubernetesConfig.content, fileName: `${this.kubernetesConfig.fileName}.yml` });
+    this.ControllerHelper.constructor.downloadContent({ fileContent: this.kubernetesConfig.content, fileName: `${this.kubernetesConfig.fileName}.yml` });
   }
 });

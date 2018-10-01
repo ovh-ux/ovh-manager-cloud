@@ -8,10 +8,12 @@
     <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
     <p class="oui-paragraph">
         <span data-translate="kube_service_description_information"></span>
-        <a class="oui-link"
-           data-translate="kube_service_description_tool"
+        <a class="oui-link oui-link_icon"
            href="{{:: $ctrl.KUBERNETES.urls.kubectl }}"
-           target="_blank" rel="noopener"></a>
+           target="_blank" rel="noopener">
+            <span data-translate="kube_service_description_tool"></span>
+            <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+        </a>
     </p>
     <p class="oui-paragraph" data-translate="kube_service_description_reset"></p>
     <div class="row d-lg-flex">
@@ -32,6 +34,11 @@
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_version' | translate }}" data-description="{{:: $ctrl.cluster.version }}"></oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_region' | translate }}" data-description="{{:: $ctrl.cluster.region }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_nodes_url' | translate }}">
+                    <oui-tile-description>
+                        <oui-clipboard data-model="$ctrl.cluster.nodesUrl"></oui-clipboard>
+                    </oui-tile-description>
+                </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_api_url' | translate }}">
                     <oui-tile-description>
                         <oui-clipboard data-model="$ctrl.cluster.url"></oui-clipboard>
@@ -45,10 +52,12 @@
                                 <button type="button" class="oui-popover-button" oui-popover-trigger></button>
                                 <oui-popover-content>
                                     <span data-translate="kube_service_file_help"></span>
-                                    <a class="oui-link"
-                                       data-translate="kube_service_file_more_information"
+                                    <a class="oui-link oui-link_icon"
                                        href="{{:: $ctrl.KUBERNETES.urls.kubeconfig }}"
-                                       target="_blank" rel="noopener"></a>
+                                       target="_blank" rel="noopener">
+                                        <span data-translate="kube_service_file_more_information"></span>
+                                        <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                                    </a>
                                 </oui-popover-content>
                             </oui-popover>
                         </dt>

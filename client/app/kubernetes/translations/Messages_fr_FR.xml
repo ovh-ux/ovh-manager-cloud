@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="kube_guides">Guides</translation>
-    <translation id="kube_guides_quickstart">Débuter avec Kubernetes</translation>
-    <translation id="kube_guides_api_quickstart">Débuter Kubernetes avec l'API</translation>
-    <translation id="kube_guides_dashboard">Dashboard Kubernetes</translation>
+    <translation id="kube_guides_kubernetes">Kubernetes</translation>
 
     <translation id="kube_error">Une erreur s'est produite lors du chargement des informations: {{ message }}</translation>
 
@@ -27,6 +25,7 @@
     <translation id="kube_service_cluster_version">Version de Kubernetes installée</translation>
     <translation id="kube_service_cluster_region">Région</translation>
     <translation id="kube_service_cluster_api_url">URL de l'API Kubernetes de votre cluster</translation>
+    <translation id="kube_service_cluster_nodes_url">URL des nœuds Kubernetes de votre cluster</translation>
 
     <translation id="kube_service_billing">Facturation</translation>
     <translation id="kube_service_billing_plan">Offre</translation>
@@ -38,14 +37,14 @@
     <translation id="kube_nodes_add_region">Durant la bêta, vos nœuds seront tous dans la région GRA5. Nous permettrons ultérieurement de choisir cette région.</translation>
     <translation id="kube_nodes_add_success">Le nœud est en cours d'installation</translation>
     <translation id="kube_nodes_add_flavor_error">Une erreur est survenue lors du chargement des modèles d'instance: {{ message }}</translation>
-    <translation id="kube_nodes_add_flavor_family">Choisir un modèle d'instance</translation>
+    <translation id="kube_nodes_add_flavor_family">Choisir une famille d'instance</translation>
     <translation id="kube_nodes_add_flavor_family_balanced">General purpose</translation>
     <translation id="kube_nodes_add_flavor_family_cpu">CPU</translation>
     <translation id="kube_nodes_add_flavor_family_ram">RAM</translation>
     <translation id="kube_nodes_add_flavor_family_accelerated">GPU</translation>
     <translation id="kube_nodes_add_flavor_family_vps">SANDBOX</translation>
     <translation id="kube_nodes_add_flavor">Choisissez un modèle d'instance dans le catalogue OVH public cloud</translation>
-    <translation id="kube_nodes_add_pick_flavor">Choisir un modèle</translation>
+    <translation id="kube_nodes_add_pick_flavor">Choisir un modèle d'instance</translation>
     <translation id="kube_nodes_add_error">Une erreur est survenue lors de l'ajout du nœud : {{ message }}</translation>
     <translation id="kube_nodes_add">Ajouter un nœud</translation>
 
