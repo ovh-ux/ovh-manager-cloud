@@ -517,9 +517,9 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
           }
 
           // Update this datas ONLY if vm is not in edition
-          if ((!currentEditedVm || currentEditedVm)
+          if (!currentEditedVm || (currentEditedVm
               && currentEditedVm.id
-              && currentEditedVm.id !== instanceFromApi.id) {
+              && currentEditedVm.id !== instanceFromApi.id)) {
             // Update image reinstall
             if (instanceFromApi.imageId
                 && instanceFromFactory.image
