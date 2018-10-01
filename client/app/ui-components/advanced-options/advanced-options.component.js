@@ -1,7 +1,7 @@
-angular.module("managerApp")
-    .component("cuiAdvancedOptions", {
-        transclude: true,
-        template: `
+angular.module('managerApp')
+  .component('cuiAdvancedOptions', {
+    transclude: true,
+    template: `
             <div class="cui-advanced-options">
                 <div class="cui-advanced-options__header">
                     <div class="cui-advanced-options__header-text">
@@ -21,10 +21,10 @@ angular.module("managerApp")
                     data-ng-if="$ctrl.expanded"
                     data-ng-transclude></div>
             </div>`,
-        bindings: {
-            title: "<",
-            text: "<",
-            buttonText: "<",
-            expanded: "<"
-        }
-    });
+    bindings: {
+      title: '<',
+      text: '<',
+      buttonText: '<',
+      expanded: '<',
+    },
+  });

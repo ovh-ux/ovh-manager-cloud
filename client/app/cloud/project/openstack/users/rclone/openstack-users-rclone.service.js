@@ -1,46 +1,47 @@
 class CloudProjectOpenstackUsersRcloneService {
-    constructor ($httpParamSerializer, $q, CONFIG_API, OvhApiCloud, RegionService, ServiceHelper) {
-        this.$httpParamSerializer = $httpParamSerializer;
-        this.$q = $q;
-        this.CONFIG_API = CONFIG_API;
-        this.OvhApiCloud = OvhApiCloud;
-        this.RegionService = RegionService;
-        this.ServiceHelper = ServiceHelper;
-    }
+  constructor($httpParamSerializer, $q, CONFIG_API, OvhApiCloud, RegionService, ServiceHelper) {
+    this.$httpParamSerializer = $httpParamSerializer;
+    this.$q = $q;
+    this.CONFIG_API = CONFIG_API;
+    this.OvhApiCloud = OvhApiCloud;
+    this.RegionService = RegionService;
+    this.ServiceHelper = ServiceHelper;
+  }
 
-    getValidRcloneRegions (projectId) {
-        return this.OvhApiCloud.Project().Region().v6().query({ serviceName: projectId })
-            .$promise
-            .then(regions => _.map(regions, region => this.RegionService.getRegion(region)))
-            .catch(this.ServiceHelper.errorHandler("cpou_rclone_modal_loading_error"));
-    }
+  getValidRcloneRegions(projectId) {
+    return this.OvhApiCloud.Project().Region().v6().query({ serviceName: projectId })
+      .$promise
+      .then(regions => _.map(regions, region => this.RegionService.getRegion(region)))
+      .catch(this.ServiceHelper.errorHandler('cpou_rclone_modal_loading_error'));
+  }
 
-    getRcloneFileInfo (projectId, userId, region) {
-        let url = [
-            (_.find(this.CONFIG_API.apis, { serviceType: "apiv6" }) || {}).urlPrefix,
-            this.OvhApiCloud.Project().User().v6().services.rclone.url,
-            "?",
-            this.$httpParamSerializer({
-                region
-            })
-        ].join("");
+  getRcloneFileInfo(projectId, userId, region) {
+    let url = [
+      (_.find(this.CONFIG_API.apis, { serviceType: 'apiv6' }) || {}).urlPrefix,
+      this.OvhApiCloud.Project().User().v6().services.rclone.url,
+      '?',
+      this.$httpParamSerializer({
+        region,
+      }),
+    ].join('');
 
-        const replacements = {
-            serviceName: projectId,
-            userId
-        };
+    const replacements = {
+      serviceName: projectId,
+      userId,
+    };
 
-        Object.keys(replacements).forEach(paramName => {
-            url = url.replace(`:${paramName}`, replacements[paramName]);
-        });
+    Object.keys(replacements).forEach((paramName) => {
+      url = url.replace(`:${paramName}`, replacements[paramName]);
+    });
 
-        return this.OvhApiCloud.Project().User().v6().rclone({ serviceName: projectId, userId, region }, { })
-            .$promise
-            .then(response => {
-                _.assign(response, { url });
-                return response;
-            });
-    }
+    return this.OvhApiCloud.Project().User().v6()
+      .rclone({ serviceName: projectId, userId, region }, { })
+      .$promise
+      .then((response) => {
+        _.assign(response, { url });
+        return response;
+      });
+  }
 }
 
-angular.module("managerApp").service("CloudProjectOpenstackUsersRcloneService", CloudProjectOpenstackUsersRcloneService);
+angular.module('managerApp').service('CloudProjectOpenstackUsersRcloneService', CloudProjectOpenstackUsersRcloneService);

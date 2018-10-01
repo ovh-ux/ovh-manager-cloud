@@ -1,43 +1,40 @@
-"use strict";
-
-angular.module("managerApp").controller("DBaasTsProjectDetailsQuotaCtrl",
-function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, OvhApiDBaasTsProjectQuota, OvhApiDBaasTsProject) {
-
+angular.module('managerApp').controller('DBaasTsProjectDetailsQuotaCtrl',
+  function DBaasTsProjectDetailsQuotaCtrl($q, $uibModal, $state, $scope, $stateParams, $translate,
+    Toast, OvhApiDBaasTsProjectQuota, OvhApiDBaasTsProject) {
     // -- Variables declaration --
 
-    var self = this;
-    var serviceName = $stateParams.serviceName;
+    const self = this;
+    const { serviceName } = $stateParams;
 
     self.loaders = {
-        init: false
+      init: false,
     };
 
     self.data = {
-        quotas: {}
+      quotas: {},
     };
 
     // -- Initialization --
 
-    function init () {
-        self.loaders.init = true;
+    function init() {
+      self.loaders.init = true;
 
-        OvhApiDBaasTsProject.v6().get({
-            serviceName: serviceName
-        }).$promise.then(function (project) {
+      OvhApiDBaasTsProject.v6().get({
+        serviceName,
+      }).$promise.then((project) => {
+        self.project = project;
 
-            self.project = project;
-
-            return OvhApiDBaasTsProjectQuota.v6().query({
-                serviceName: serviceName
-            }).$promise.then(function (quotas) {
-                self.data.quotas = quotas;
-            });
-        })["catch"](function (err) {
-            Toast.error([$translate.instant("dtpdq_quota_loading_error"), err.data && err.data.message || ""].join(" "));
-            self.data.quota = null;
-        })["finally"](function () {
-            self.loaders.init = false;
+        return OvhApiDBaasTsProjectQuota.v6().query({
+          serviceName,
+        }).$promise.then((quotas) => {
+          self.data.quotas = quotas;
         });
+      }).catch((err) => {
+        Toast.error([$translate.instant('dtpdq_quota_loading_error'), (err.data && err.data.message) || ''].join(' '));
+        self.data.quota = null;
+      }).finally(() => {
+        self.loaders.init = false;
+      });
     }
 
     init();
@@ -45,19 +42,18 @@ function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, OvhApi
     // --
 
     self.refresh = function () {
-        OvhApiDBaasTsProjectQuota.v6().resetQueryCache();
-        init();
+      OvhApiDBaasTsProjectQuota.v6().resetQueryCache();
+      init();
     };
 
     self.openIncreaseQuotaPopup = function () {
-        $uibModal.open({
-            templateUrl: "app/dbaas/ts/project/details/quota/dbaasts-project-details-quota-enlarge.html",
-            controller: function ($scope) {
-                // Passed as a variable, since it will later depend from an API call result
-                var message = "dtpdq_increase_support";
-                $scope.message = $translate.instant(message);
-            }
-        });
+      $uibModal.open({
+        templateUrl: 'app/dbaas/ts/project/details/quota/dbaasts-project-details-quota-enlarge.html',
+        controller($scope) { // eslint-disable-line
+          // Passed as a variable, since it will later depend from an API call result
+          const message = 'dtpdq_increase_support';
+          $scope.message = $translate.instant(message);
+        },
+      });
     };
-
-});
+  });

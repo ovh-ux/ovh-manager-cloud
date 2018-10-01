@@ -1,138 +1,131 @@
+angular.module('managerApp').controller('CloudProjectDeleteCtrl',
+  function CloudProjectDeleteCtrl($scope, $uibModalInstance, $translate, CloudMessage, $stateParams,
+    $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectSnapshot, $state,
+    OvhApiCloudProjectStorage, OvhApiCloudProjectIpFailover, OvhApiCloudProjectIpV6,
+    OvhApiCloudProject, OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit,
+    CloudProjectBillingService, TARGET) {
+    const self = this;
+    const { projectId } = $stateParams;
+    const now = moment();
 
+    self.resources = {
+      instance: 0,
+      volume: 0,
+      snapshot: 0,
+      storage: 0,
+      ipFailoverOvh: 0,
+      ipFailoverCloud: 0,
+    };
 
-angular.module("managerApp").controller("CloudProjectDeleteCtrl",
-    function ($scope, $uibModalInstance, $translate, CloudMessage, $stateParams, $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
-              OvhApiCloudProjectSnapshot, $state, OvhApiCloudProjectStorage, OvhApiCloudProjectIpFailover, OvhApiCloudProjectIpV6, OvhApiCloudProject,
-              OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit, CloudProjectBillingService, TARGET) {
-        "use strict";
+    self.bill = undefined;
+    self.hasCredits = false;
 
-        var self = this;
-        var projectId = $stateParams.projectId;
-        var now = moment();
+    self.error = false;
 
-        self.resources = {
-            instance: 0,
-            volume: 0,
-            snapshot: 0,
-            storage: 0,
-            ipFailoverOvh: 0,
-            ipFailoverCloud: 0
-        };
+    self.loaders = {
+      init: false,
+      deleting: false,
+    };
 
-        self.bill = undefined;
-        self.hasCredits = false;
+    function getConsumption() {
+      return OvhApiCloudProjectUsageCurrent.v6()
+        .get({
+          serviceName: projectId,
+        }).$promise
+        .then(response => CloudProjectBillingService.getConsumptionDetails(response, response))
+        .then((data) => {
+          self.bill = `${data.totals.hourly.total.toFixed(2)} ${data.totals.currencySymbol}`;
+        })
+        .catch(err => $q.reject(err));
+    }
 
-        self.error = false;
+    function getCredits() {
+      function isNotExpired(credit) {
+        const { validity } = credit;
+        return (!validity.from || now.isAfter(validity.from))
+          && (!validity.to || now.isBefore(validity.to));
+      }
 
-        self.loaders = {
-            init: false,
-            deleting: false
-        };
+      return OvhApiCloudProjectCredit.Aapi()
+        .query({
+          serviceName: projectId,
+        }).$promise
+        .then((credits) => {
+          self.hasCredits = credits.some(credit => isNotExpired(credit)
+            && credit.available_credit.value > 0);
+        });
+    }
 
-        this.init = function () {
-            if (TARGET !== "US") {
-                self.loaders.init = true;
-                $q.all([
-                    getConsumption(),
-                    getCredits(),
-                    initRemainingResources()
-                ]).then(function () {
-                    self.error = false;
-                }, function () {
-                    self.error = true;
-                })["finally"](function () {
-                    self.loaders.init = false;
-                });
-            }
-        };
+    function initRemainingResources() {
+      return $q.all({
+        instance: OvhApiCloudProjectInstance.v6().query({ serviceName: projectId }).$promise,
+        volume: OvhApiCloudProjectVolume.v6().query({ serviceName: projectId }).$promise,
+        snapshot: OvhApiCloudProjectSnapshot.v6().query({ serviceName: projectId }).$promise,
+        storage: OvhApiCloudProjectStorage.v6().query({ projectId }).$promise,
+        ipFailoverOvh: OvhApiCloudProjectIpFailover.v6().query({ serviceName: projectId }).$promise,
+        ipFailoverCloud: OvhApiCloudProjectIpV6.query({ serviceName: projectId }).$promise,
+      }).then((result) => {
+        self.resources = _.mapValues(result, arr => arr.length);
+      });
+    }
 
-        //---------MODAL---------
+    this.init = function () {
+      if (TARGET !== 'US') {
+        self.loaders.init = true;
+        $q.all([
+          getConsumption(),
+          getCredits(),
+          initRemainingResources(),
+        ]).then(() => {
+          self.error = false;
+        }, () => {
+          self.error = true;
+        }).finally(() => {
+          self.loaders.init = false;
+        });
+      }
+    };
 
-        self.confirm = function () {
-            return deleteProject().then(function () {
-                CloudMessage.success($translate.instant("cloud_project_delete_email_sent"));
-                $uibModalInstance.close();
-            }, function () {
-                CloudMessage.error($translate.instant("cloud_project_delete_error"));
-            });
-        };
+    // ---------MODAL---------
 
-        self.cancel = $uibModalInstance.dismiss;
+    function deleteProject() {
+      self.loaders.deleting = true;
+      return OvhApiCloudProject.v6().delete({
+        serviceName: projectId,
+      }, {}).$promise.then(() => {
+        self.errors = false;
+      }, (err) => {
+        self.errors = true;
+        return $q.reject(err);
+      }).finally(() => {
+        self.loaders.deleting = false;
+      });
+    }
 
-        self.goToSupport = function () {
-            self.cancel();
-            $state.go("otrs-list");
-        };
+    self.confirm = function () {
+      return deleteProject().then(() => {
+        CloudMessage.success($translate.instant('cloud_project_delete_email_sent'));
+        $uibModalInstance.close();
+      }, () => {
+        CloudMessage.error($translate.instant('cloud_project_delete_error'));
+      });
+    };
 
-        self.resetCache = function () {
-            OvhApiCloudProjectInstance.v6().resetQueryCache();
-            OvhApiCloudProjectVolume.v6().resetQueryCache();
-            OvhApiCloudProjectSnapshot.v6().resetQueryCache();
-            OvhApiCloudProjectIpFailover.v6().resetQueryCache();
-            OvhApiCloudProjectIpV6.resetQueryCache();
-            self.init();
-        };
+    self.cancel = $uibModalInstance.dismiss;
 
-        //---------API CALLS---------
+    self.goToSupport = function () {
+      self.cancel();
+      $state.go('otrs-list');
+    };
 
-        function initRemainingResources () {
-            return $q.all({
-                instance: OvhApiCloudProjectInstance.v6().query({ serviceName: projectId }).$promise,
-                volume: OvhApiCloudProjectVolume.v6().query({ serviceName: projectId }).$promise,
-                snapshot: OvhApiCloudProjectSnapshot.v6().query({ serviceName: projectId }).$promise,
-                storage: OvhApiCloudProjectStorage.v6().query({ projectId: projectId }).$promise,
-                ipFailoverOvh: OvhApiCloudProjectIpFailover.v6().query({ serviceName: projectId }).$promise,
-                ipFailoverCloud: OvhApiCloudProjectIpV6.query({ serviceName: projectId }).$promise
-            }).then(function (result) {
-                self.resources = _.mapValues(result, function (arr) {
-                    return arr.length;
-                });
-            });
-        }
+    self.resetCache = function () {
+      OvhApiCloudProjectInstance.v6().resetQueryCache();
+      OvhApiCloudProjectVolume.v6().resetQueryCache();
+      OvhApiCloudProjectSnapshot.v6().resetQueryCache();
+      OvhApiCloudProjectIpFailover.v6().resetQueryCache();
+      OvhApiCloudProjectIpV6.resetQueryCache();
+      self.init();
+    };
 
-        function getConsumption () {
-            return OvhApiCloudProjectUsageCurrent.v6().get({
-                serviceName: projectId,
-            }).$promise.then(function (response) {
-                return CloudProjectBillingService.getConsumptionDetails(response, response);
-            }).then(function (data) {
-                self.bill = data.totals.hourly.total.toFixed(2) + " " + data.totals.currencySymbol;
-            }).catch(function (err) {
-                return $q.reject(err);
-            }
-            );
-        }
-
-        function getCredits () {
-
-            function isNotExpired (credit) {
-                var validity = credit.validity;
-                return (!validity.from || now.isAfter(validity.from)) &&
-                    (!validity.to || now.isBefore(validity.to));
-            }
-
-            return OvhApiCloudProjectCredit.Aapi().query({
-                serviceName: projectId
-            }).$promise.then(function (credits) {
-                self.hasCredits = credits.some(function (credit) {
-                    return isNotExpired(credit) && credit.available_credit.value > 0; // jshint ignore:line
-                });
-            });
-        }
-
-        function deleteProject () {
-            self.loaders.deleting = true;
-            return OvhApiCloudProject.v6().delete({
-                serviceName: projectId
-            }, {}).$promise.then(function () {
-                self.errors = false;
-            }, function (err) {
-                self.errors = true;
-                return $q.reject(err);
-            })["finally"](function () {
-                self.loaders.deleting = false;
-            });
-        }
-
-        self.init();
-    });
+    self.init();
+  });

@@ -1,13 +1,13 @@
-"use strict";
 
-angular.module("managerApp")
-.config(function ($stateProvider) {
+
+angular.module('managerApp')
+  .config(($stateProvider) => {
     $stateProvider
-        .state("vrack-add", {
-            url: "/vrack/new",
-            templateUrl: "app/vrack/add/vrack-add.html",
-            controller: "VrackAddCtrl",
-            controllerAs: "VrackAddCtrl",
-            translations: ["common", "vrack", "vrack/add"]
-        });
-});
+      .state('vrack-add', {
+        url: '/vrack/new',
+        templateUrl: 'app/vrack/add/vrack-add.html',
+        controller: 'VrackAddCtrl',
+        controllerAs: 'VrackAddCtrl',
+        translations: ['../../common', '..', '.'],
+      });
+  });

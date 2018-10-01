@@ -17,14 +17,14 @@
             sortable
             class="oui-table__cell_component">
             <oui-progress data-compact data-ng-show="$row.task">
-                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.getTaskProgressType($row.task.status) }}" data-value="$row.task.progress">
+                <oui-progress-bar data-type="{{ ctrl.ServiceHelper.constructor.getTaskProgressType($row.task.status) }}" data-value="$row.task.progress">
                 </oui-progress-bar>
             </oui-progress>
         </column>
-        <column title="'iplb_configuration_status' | translate" template="ctrl.statusTemplate()" class="oui-table__cell_action"></column>
+        <column title="'iplb_configuration_status' | translate" template="ctrl.constructor.statusTemplate()" class="oui-table__cell_action"></column>
         <column title="'iplb_configuration_action' | translate"
             class="oui-table__cell_action oui-table__cell_action-menu"
-            template="ctrl.actionTemplate()">
+            template="ctrl.constructor.actionTemplate()">
         </column>
     </oui-table>
 </section>

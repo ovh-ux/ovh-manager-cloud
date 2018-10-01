@@ -6,7 +6,7 @@
   <cui-dropdown-menu-body>
       <ul class="cui-guide__container cui-guide__list">
         <!-- simple list guide case -->
-        <li data-ng-if="$ctrl.hasSimpleGuide($ctrl.guides)"
+        <li data-ng-if="$ctrl.constructor.hasSimpleGuide($ctrl.guides)"
             class="cui-guide__item"
             data-ng-repeat="guide in $ctrl.guides.list">
           <a class="cui-guide__item-link" href="{{guide.url}}" target="_blank">
@@ -16,13 +16,13 @@
 
         </li>
         <!-- multiple lists with header guides case -->
-        <li data-ng-if="$ctrl.hasMultipleGuide($ctrl.guides)"
+        <li data-ng-if="$ctrl.constructor.hasMultipleGuide($ctrl.guides)"
             data-ng-repeat="section in $ctrl.guides.sections">
           <ul class="cui-guide__list">
             <li class="cui-guide__item">
               <h2 class="cui-guide__item-title" data-ng-bind="section.title"></h2>
             </li>
-            <li class="cui-guide__item cui-guide__item_border" 
+            <li class="cui-guide__item cui-guide__item_border"
                 data-ng-repeat="guide in section.list">
               <a class="cui-guide__item-link" href="{{guide.url}}" target="_blank">
                 <span data-ng-bind="guide.name"></span>

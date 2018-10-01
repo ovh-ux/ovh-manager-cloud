@@ -1,13 +1,13 @@
-angular.module("managerApp")
-    .component("cuiAccordionList", {
-        transclude: true,
-        template: `
+angular.module('managerApp')
+  .component('cuiAccordionList', {
+    transclude: true,
+    template: `
             <div class="cui-accordion-list" data-ng-transclude></div>
-        `
-    })
-    .directive("cuiAccordion", () => ({
-        transclude: true,
-        template: `
+        `,
+  })
+  .directive('cuiAccordion', () => ({
+    transclude: true,
+    template: `
             <div class="cui-accordion cui-accordion-list__item"
                 data-ng-class="{ 'cui-accordion_open': $ctrl.expanded }">
                 <div class="cui-accordion__header">
@@ -46,34 +46,34 @@ angular.module("managerApp")
                         data-ng-transclude></div>
                 </div
             </div>`,
-        controller: class CuiAccordionCtrl {
-            $onInit () {
-                if (!this.expanded && this.expanded !== false) {
-                    this.expanded = false;
-                }
-
-                if (!this.ariaLabel) {
-                    this.ariaLabel = "Actions";
-                }
-            }
-
-            toggle () {
-                if (this.expanded) {
-                    this.expanded = false;
-                } else {
-                    this.expanded = true;
-                }
-            }
-        },
-        controllerAs: "$ctrl",
-        replace: true,
-        restrict: "E",
-        scope: true,
-        bindToController: {
-            title: "<",
-            text: "<",
-            expanded: "<",
-            actions: "<",
-            ariaLabel: "@"
+    controller: class CuiAccordionCtrl {
+      $onInit() {
+        if (!this.expanded && this.expanded !== false) {
+          this.expanded = false;
         }
-    }));
+
+        if (!this.ariaLabel) {
+          this.ariaLabel = 'Actions';
+        }
+      }
+
+      toggle() {
+        if (this.expanded) {
+          this.expanded = false;
+        } else {
+          this.expanded = true;
+        }
+      }
+    },
+    controllerAs: '$ctrl',
+    replace: true,
+    restrict: 'E',
+    scope: true,
+    bindToController: {
+      title: '<',
+      text: '<',
+      expanded: '<',
+      actions: '<',
+      ariaLabel: '@',
+    },
+  }));

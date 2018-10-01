@@ -24,73 +24,74 @@
 @private-network-dialog-menu-item-description-font-color: #333;
 
 .private-network-dialog__menu-item {
-    font-family: @private-network-dialog-menu-item-font-family;
-    background-color: @private-network-dialog-menu-item-background-color;
-    position: relative;
+  font-family: @private-network-dialog-menu-item-font-family;
+  background-color: @private-network-dialog-menu-item-background-color;
+  position: relative;
 
-    &-button {
-        width: 100%;
-        padding: 0 3rem 0 0;
-        height: @private-network-dialog-menu-item-button-height;
-        background-color: @private-network-dialog-menu-item-button-background-color;
-        border: 0;
-        color: @private-network-dialog-menu-item-button-font-color;
+  &-button {
+    width: 100%;
+    padding: 0 3rem 0 0;
+    height: @private-network-dialog-menu-item-button-height;
+    background-color: @private-network-dialog-menu-item-button-background-color;
+    border: 0;
+    color: @private-network-dialog-menu-item-button-font-color;
 
-        &:focus,
-        &:active {
-            outline: 0;
-        }
+    &:focus,
+    &:active {
+      outline: 0;
     }
+  }
 
-    &-button:hover::after {
-        background-color: @private-network-dialog-menu-item-button-background-color_after-hover;
-        color: @private-network-dialog-menu-item-button-font-color_after-hover;
+  &-button::after {
+    &:extend(.glyphicon);
+
+    content: '\e080'; /* .glyphicon-chevron-right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 3rem;
+    background-color: @private-network-dialog-menu-item-button-background-color_after;
+    color: @private-network-dialog-menu-item-button-font-color_after;
+  }
+
+  &-button:hover::after {
+    background-color: @private-network-dialog-menu-item-button-background-color_after-hover;
+    color: @private-network-dialog-menu-item-button-font-color_after-hover;
+  }
+
+  &-button_active {
+    background-color: @private-network-dialog-menu-item-background-color_active;
+
+    &::after {
+      background-color: @private-network-dialog-menu-item-button-background-color_after-hover;
+      color: @private-network-dialog-menu-item-button-font-color_after-hover;
     }
+  }
 
-    &-button::after {
-        &:extend(.glyphicon);
-        content: '\e080'; /* .glyphicon-chevron-right */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 3rem;
-        background-color: @private-network-dialog-menu-item-button-background-color_after;
-        color: @private-network-dialog-menu-item-button-font-color_after;
-    }
+  &-button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &-button_active {
-        background-color: @private-network-dialog-menu-item-background-color_active;
+  &-icon {
+    font-size: @private-network-dialog-menu-item-icon-font-size;
+    margin-right: 1.6rem;
+  }
 
-        &::after {
-            background-color: @private-network-dialog-menu-item-button-background-color_after-hover;
-            color: @private-network-dialog-menu-item-button-font-color_after-hover;
-        }
-    }
+  &-value {
+    margin: 0;
+    font-size: @private-network-dialog-menu-item-value-font-size;
+  }
 
-    &-button-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &-icon {
-        font-size: @private-network-dialog-menu-item-icon-font-size;
-        margin-right: 1.6rem;
-    }
-
-    &-value {
-        margin: 0;
-        font-size: @private-network-dialog-menu-item-value-font-size;
-    }
-
-    &-description {
-        display: block;
-        margin-top: 0.3rem;
-        font-size: @private-network-dialog-menu-item-description-font-size;
-        color: @private-network-dialog-menu-item-description-font-color;
-    }
+  &-description {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: @private-network-dialog-menu-item-description-font-size;
+    color: @private-network-dialog-menu-item-description-font-color;
+  }
 }

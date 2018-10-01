@@ -1,197 +1,200 @@
-"use strict";
 
-angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
 
-    var self = this;
-    var projectId = $stateParams.projectId;
+angular.module('managerApp')
+  .controller('CloudProjectComputeInfrastructureIpFailoverBuyCtrl', function CloudProjectComputeInfrastructureIpFailoverBuyCtrl($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
+    const self = this;
+    const { projectId } = $stateParams;
+
+    function getBuyIpsInfo() {
+      if (self.form.instance && self.form.country && self.form.quantity) {
+        self.loaders.billingInfo = true;
+        self.form.contractsAccepted = false;
+        OvhApiOrderCloudProjectIp.v6().get({
+          serviceName: projectId,
+        }, {
+          country: self.form.country.toLowerCase(),
+          instanceId: self.form.instance.id,
+          quantity: self.form.quantity,
+        }).$promise.then((result) => {
+          self.datas.billingInfo = result;
+        }, (err) => {
+          self.datas.billingInfo = null;
+          CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || '', self.form.instance.region, self.form.country].join(' '));
+          $uibModalInstance.dismiss();
+        }).finally(() => {
+          self.loaders.billingInfo = false;
+        });
+      }
+    }
 
     self.datas = {
-        me: null,
-        billingInfo: null
+      me: null,
+      billingInfo: null,
     };
 
     self.form = {
-        instances : [],
-        flavors : [],
-        failoverIps : [],
-        instance  : null,
-        maxIp : 0,
-        quantity : 1,
-        quantityChanged : function () {
-            self.datas.billingInfo = null;
-            getBuyIpsInfo();
-        },
-        instanceChanged : function () {
-            var instanceLoc = _.first(_.keys(_.pick(CLOUD_GEOLOCALISATION.instance, function (region) {
-                return _.indexOf(region, self.form.instance.region) >= 0;
-            })));
-            self.form.countryEnum = _.defaults(CLOUD_GEOLOCALISATION.ipfo, {
-                instanceLoc : []
-            })[instanceLoc];
-            self.datas.billingInfo = null;
-            self.form.country = null;
-        },
-        country : null,
-        countryEnum : null,
-        countryChanged : function () {
-            self.datas.billingInfo = null;
-            getBuyIpsInfo();
-        },
-        contractsAccepted : false
+      instances: [],
+      flavors: [],
+      failoverIps: [],
+      instance: null,
+      maxIp: 0,
+      quantity: 1,
+      quantityChanged() {
+        self.datas.billingInfo = null;
+        getBuyIpsInfo();
+      },
+      instanceChanged() {
+        const instanceLoc = _.first(
+          _.keys(
+            _.pick(CLOUD_GEOLOCALISATION.instance,
+              region => _.indexOf(region, self.form.instance.region) >= 0),
+          ),
+        );
+        self.form.countryEnum = _.defaults(CLOUD_GEOLOCALISATION.ipfo, {
+          instanceLoc: [],
+        })[instanceLoc];
+        self.datas.billingInfo = null;
+        self.form.country = null;
+      },
+      country: null,
+      countryEnum: null,
+      countryChanged() {
+        self.datas.billingInfo = null;
+        getBuyIpsInfo();
+      },
+      contractsAccepted: false,
     };
 
     self.loaders = {
-        init: false,
-        billingInfo: false,
-        buying : false
+      init: false,
+      billingInfo: false,
+      buying: false,
     };
 
-    $scope.countryTranslated = function (code) {
-        return $translate.instant("country_" + code.toUpperCase());
+    $scope.countryTranslated = function countryTranslated(code) {
+      return $translate.instant(`country_${code.toUpperCase()}`);
     };
 
-    //---------INIT---------
+    // ---------INIT---------
 
-    function init () {
-        var promises = [initInstance(), initFlavors(), initIp()];
-        self.loaders.init = true;
-        return $q.allSettled(promises).then(function () {
+    function initInstance() {
+      OvhApiCloudProjectInstance.v6().resetQueryCache();
+      return OvhApiCloudProjectInstance.v6().query({
+        serviceName: projectId,
+      }).$promise.then((result) => {
+        self.form.instances = result;
+      }, (err) => {
+        self.form.instances = [];
+        CloudMessage.error([
+          $translate.instant('cpciif_buy_init_error'),
+          (err.data && err.data.message) || '',
+        ].join(' '));
+        $uibModalInstance.dismiss();
+        return $q.reject(err);
+      });
+    }
 
-            // compute the max limit of IP Failovers
-            angular.forEach(self.form.instances, function (instance) {
-                var flavor = _.first(_.filter(self.form.flavors, { id : instance.flavorId }));
-                if (flavor) {
-                    var limit = +CLOUD_IPFO_ORDER_LIMIT[flavor.type];
-                    if (_.isNumber(limit) && !isNaN(limit)) {
-                        self.form.maxIp += limit;
-                    }
-                }
-            });
+    function initFlavors() {
+      return OvhApiCloudProjectFlavor.v6().query({
+        serviceName: projectId,
+      }).$promise.then((result) => {
+        self.form.flavors = result;
+      }, (err) => {
+        self.form.flavors = [];
+        CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
+        $uibModalInstance.dismiss();
+        return $q.reject(err);
+      });
+    }
 
-            // subtract current IP from limit
-            var currentIps = _.filter(self.form.failoverIps, function (ip) {
-                // only count the IP if it's not routed or if it is linked to a compatible instance
-                return !ip.routedTo || _.find(self.form.instances, function (instance) {
-                    return instance.id === ip.routedTo;
-                });
-            });
-            self.form.maxIp -= currentIps.length;
+    function initIp() {
+      OvhApiCloudProjectIpFailover.v6().resetQueryCache();
+      return OvhApiCloudProjectIpFailover.v6().query({
+        serviceName: projectId,
+      }).$promise.then((result) => {
+        self.form.failoverIps = result;
+      }, (err) => {
+        self.form.failoverIps = [];
+        CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
+        $uibModalInstance.dismiss();
+        return $q.reject(err);
+      });
+    }
 
-            // IP Failover must be attached to an ACTIVE instance
-            self.form.instances = _.filter(self.form.instances, { status : "ACTIVE" });
-
-            // If no instance are available, disable buy IP
-            if (self.form.instances.length === 0) {
-                self.form.maxIp = 0;
+    function init() {
+      const promises = [initInstance(), initFlavors(), initIp()];
+      self.loaders.init = true;
+      return $q.allSettled(promises).then(() => {
+        // compute the max limit of IP Failovers
+        angular.forEach(self.form.instances, (instance) => {
+          const flavor = _.first(_.filter(self.form.flavors, { id: instance.flavorId }));
+          if (flavor) {
+            const limit = +CLOUD_IPFO_ORDER_LIMIT[flavor.type];
+            if (_.isNumber(limit) && _.isNumber(limit)) {
+              self.form.maxIp += limit;
             }
-
-        })["finally"](function () {
-            self.loaders.init = false;
+          }
         });
+
+        // subtract current IP from limit
+        const currentIps = _.filter(
+          self.form.failoverIps,
+          ip => !ip.routedTo || _.find(
+            self.form.instances,
+            instance => instance.id === ip.routedTo,
+          ),
+        );
+        self.form.maxIp -= currentIps.length;
+
+        // IP Failover must be attached to an ACTIVE instance
+        self.form.instances = _.filter(self.form.instances, { status: 'ACTIVE' });
+
+        // If no instance are available, disable buy IP
+        if (self.form.instances.length === 0) {
+          self.form.maxIp = 0;
+        }
+      }).finally(() => {
+        self.loaders.init = false;
+      });
     }
 
-    function initInstance(){
-        OvhApiCloudProjectInstance.v6().resetQueryCache();
-        return OvhApiCloudProjectInstance.v6().query({
-            serviceName : projectId
-        }).$promise.then(function (result) {
-            self.form.instances = result;
-        }, function (err) {
-            self.form.instances = [];
-            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
-            $uibModalInstance.dismiss();
-            return $q.reject(err);
+    // ---------MODAL---------
+
+    function buyIps() {
+      self.loaders.buying = true;
+
+      OvhApiOrderCloudProjectIp.v6().buy({
+        serviceName: projectId,
+      }, {
+        country: self.form.country.toLowerCase(),
+        instanceId: self.form.instance.id,
+        quantity: self.form.quantity,
+      }).$promise.then((result) => {
+        $window.open(result.url, '_blank');
+        CloudMessage.success($translate.instant('cpciif_buy_success', { url: result.url }), { hideAfter: false });
+        $uibModalInstance.dismiss();
+        atInternet.trackOrder({
+          name: `[IP]ipfailover[ip-failover-${self.form.country}]`,
+          page: 'iaas::pci-project::compute::infrastructure::order',
+          priceTaxFree: self.datas.billingInfo.prices.withoutTax.value / self.form.quantity,
+          quantity: self.form.quantity,
         });
+      }, (err) => {
+        CloudMessage.error([$translate.instant('cpciif_buy_error'), (err.data && err.data.message) || ''].join(' '));
+        $uibModalInstance.dismiss();
+        return $q.reject(err);
+      }).finally(() => {
+        self.loaders.buying = false;
+      });
     }
 
-    function initFlavors(){
-        return OvhApiCloudProjectFlavor.v6().query({
-            serviceName : projectId
-        }).$promise.then(function (result) {
-            self.form.flavors = result;
-        }, function (err) {
-            self.form.flavors = [];
-            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
-            $uibModalInstance.dismiss();
-            return $q.reject(err);
-        });
-    }
-
-    function initIp () {
-        OvhApiCloudProjectIpFailover.v6().resetQueryCache();
-        return OvhApiCloudProjectIpFailover.v6().query({
-            serviceName : projectId
-        }).$promise.then(function (result) {
-            self.form.failoverIps = result;
-        }, function (err) {
-            self.form.failoverIps = [];
-            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
-            $uibModalInstance.dismiss();
-            return $q.reject(err);
-        });
-    }
-
-    //---------MODAL---------
-
-    self.confirm = function () {
-        buyIps();
+    self.confirm = function confirm() {
+      buyIps();
     };
 
     self.cancel = $uibModalInstance.dismiss;
 
-    //---------API CALLS---------
-
-    function getBuyIpsInfo () {
-        if (self.form.instance && self.form.country && self.form.quantity) {
-            self.loaders.billingInfo = true;
-            self.form.contractsAccepted = false;
-            OvhApiOrderCloudProjectIp.v6().get({
-                serviceName: projectId
-            }, {
-                country : self.form.country.toLowerCase(),
-                instanceId : self.form.instance.id,
-                quantity : self.form.quantity
-            }).$promise.then(function (result) {
-                self.datas.billingInfo = result;
-            }, function (err) {
-                self.datas.billingInfo = null;
-                CloudMessage.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || '', self.form.instance.region, self.form.country].join(' '));
-                $uibModalInstance.dismiss();
-            })['finally'](function () {
-                self.loaders.billingInfo = false;
-            });
-        }
-    }
-
-    function buyIps () {
-        self.loaders.buying = true;
-
-        OvhApiOrderCloudProjectIp.v6().buy({
-            serviceName: projectId
-        }, {
-            country : self.form.country.toLowerCase(),
-            instanceId : self.form.instance.id,
-            quantity : self.form.quantity
-        }).$promise.then(function (result) {
-            $window.open(result.url, "_blank");
-            CloudMessage.success($translate.instant('cpciif_buy_success', {'url': result.url }), { hideAfter : false });
-            $uibModalInstance.dismiss();
-            atInternet.trackOrder({
-                name : "[IP]ipfailover[ip-failover-" + self.form.country + "]",
-                page : "iaas::pci-project::compute::infrastructure::order",
-                priceTaxFree : self.datas.billingInfo.prices.withoutTax.value / self.form.quantity,
-                quantity : self.form.quantity
-            });
-        }, function (err){
-            CloudMessage.error( [$translate.instant('cpciif_buy_error'), err.data && err.data.message || ''].join(' '));
-            $uibModalInstance.dismiss();
-            return $q.reject(err);
-        })['finally'](function () {
-            self.loaders.buying = false;
-        });
-    }
+    // ---------API CALLS---------
 
     init();
-
-});
+  });
