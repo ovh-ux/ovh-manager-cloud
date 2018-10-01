@@ -1,20 +1,19 @@
 .metrics {
-    &__dashboard {
+  &__dashboard {
+    .chart-pie  {
+      display: flex;
+      flex-wrap: no-wrap;
+      justify-content: space-around;
 
-      .chart-pie {
-          display: flex;
-          flex-wrap: no-wrap;
-          justify-content: space-around;
+      &-container {
+        width: 35%;
+      }
 
-          &-container {
-              width: 35%;
-          }
-
-          &-loader {
-              .oui-spinner__container {
-                  margin: 0 auto;
-              }
-          }
+      &-loader {
+        .oui-spinner__container {
+          margin: 0 auto;
+        }
       }
     }
+  }
 }

@@ -3,49 +3,53 @@
 @SIDEBAR_MENU_BG_COLOR_ICON : #8392a4;
 
 #sidebar-menu {
-    ul.sidebar-menu-list.menu-level-1 {
-        > li.item-container {
-            ul.menu-level-2 {
-                > li.item-container.open {
-                    .item-content {
-                        ul.menu-level-3 {
-                            li.item-container {
-                                &:not(.category-action-page) {
-                                    .menu-item > .item-arrow {
-                                        width: 16px;
-                                    }
-                                }
-                                &.category-action-page {
-                                    .menu-item > .item-arrow {
-                                        display: none;
-                                    }
-                                    &:before {
-                                        display: none;
-                                    }
-                                }
-                                &.category-action-page:not(.active) {
-                                    .item-icon {
-                                        i {
-                                            background: @SIDEBAR_MENU_BG_COLOR_ICON;
-                                            padding: 3px;
-                                            &.ovh-font-openstack {
-                                                display:none;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+  ul.sidebar-menu-list.menu-level-1 {
+    > li.item-container {
+      ul.menu-level-2 {
+        > li.item-container.open {
+          .item-content {
+            ul.menu-level-3 {
+              li.item-container {
+                &:not(.category-action-page) {
+                  .menu-item > .item-arrow {
+                    width: 16px;
+                  }
                 }
+
+                &.category-action-page {
+                  .menu-item > .item-arrow {
+                    display: none;
+                  }
+
+                  &::before {
+                    display: none;
+                  }
+                }
+
+                &.category-action-page:not(.active) {
+                  .item-icon {
+                    i {
+                      background: @SIDEBAR_MENU_BG_COLOR_ICON;
+                      padding: 3px;
+
+                      &.ovh-font-openstack {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
             }
+          }
         }
+      }
     }
+  }
 }
 
 // ACTIONS MENU (TO BE MOVED LATER)
 @actions-menu-item-border-color : @table-border-color;
-@actions-menu-item-link-icon-color : #143F6C;
+@actions-menu-item-link-icon-color : #143f6c;
 @actions-menu-item-link-text-color : #17273b;
 @actions-menu-item-link-hover-bg-color : @table-border-color;
 @actions-menu-item-link-icon-hover-bg-color : #00a2bf;

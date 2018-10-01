@@ -1,27 +1,23 @@
 .highlighed-element-overlay {
+  &:not(.highlighed-element-active) {
+    display: none;
+  }
 
-    &:not(.highlighed-element-active) {
-        display: none;
-    }
-
-    &.highlighed-element-active {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: @SIDEBAR_MENU_Z_INDEX - 1;
-        background: rgba(255, 255, 255, 0.8);
-    }
-
+  &.highlighed-element-active {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: @SIDEBAR_MENU_Z_INDEX - 1;
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .highlighed-element {
-
-    &.highlighed-element-active {
-        z-index: @SIDEBAR_MENU_Z_INDEX + 2;
-    }
-
+  &.highlighed-element-active {
+    z-index: @SIDEBAR_MENU_Z_INDEX + 2;
+  }
 }
