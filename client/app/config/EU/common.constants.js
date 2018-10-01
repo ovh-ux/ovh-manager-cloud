@@ -235,8 +235,7 @@ angular.module("managerApp")
                 FR: "https://www.ovh.com/fr/storage-solutions/veeam-cloud-connect/"
             },
             veeam_enterprise: {
-                // TODO: To update when website is prodded
-                FR: "https://www.ovh.com/fr/storage-solutions/veeam-cloud-connect/"
+                FR: "https://www.ovh.com/fr/storage-solutions/veeam-enterprise/"
             },
             cloud_disk_array: {
                 FR: "https://www.ovh.com/fr/cloud/cloud-disk-array/"

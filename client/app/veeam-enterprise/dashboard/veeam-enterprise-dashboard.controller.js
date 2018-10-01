@@ -58,15 +58,31 @@
         }
 
         activateLicense () {
-            console.log("activateLicense");
+            this.ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/veeam-enterprise/dashboard/license/veeam-enterprise-license.html",
+                    controller: "VeeamEnterpriseLicenseCtrl",
+                    controllerAs: "$ctrl",
+                    resolve: {
+                        action: () => "register",
+                        serviceName: () => this.serviceName
+                    }
+                }
+            });
         }
 
-        updateInformations () {
-            console.log("updateInformations");
-        }
-
-        cancelLicense () {
-            console.log("cancelLicense");
+        updateLicense () {
+            this.ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/veeam-enterprise/dashboard/license/veeam-enterprise-license.html",
+                    controller: "VeeamEnterpriseLicenseCtrl",
+                    controllerAs: "$ctrl",
+                    resolve: {
+                        action: () => "update",
+                        serviceName: () => this.serviceName
+                    }
+                }
+            });
         }
     }
 

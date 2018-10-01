@@ -37,6 +37,39 @@
                 );
         }
 
+        postConfiguration (action, serviceName, ip, port, username, password) {
+            if (action === "register") {
+                return this.veeamEnterprise
+                    .register(
+                        { serviceName },
+                        { ip, port, username, password }
+                    )
+                    .$promise
+                    .then(response => this.acceptResponse(response))
+                    .catch(response =>
+                        this.rejectResponse(
+                            response.data,
+                            this.$translate.instant("veeam_enterprise_infos_subscription_load_error")
+                        )
+                    );
+            }
+
+            // If action is "update"
+            return this.veeamEnterprise
+                .update(
+                    { serviceName },
+                    { ip, port, username, password }
+                )
+                .$promise
+                .then(response => this.acceptResponse(response))
+                .catch(response =>
+                    this.rejectResponse(
+                        response.data,
+                        this.$translate.instant("veeam_enterprise_infos_subscription_load_error")
+                    )
+                );
+        }
+
         acceptResponse (data, message) {
             return this.$q.resolve({
                 status: "OK",
