@@ -5,6 +5,7 @@ class VpsCloudDatabaseCtrl {
     }
 
     $onInit () {
+        this.cloudDatabases = [];
         this.refresh();
     }
 

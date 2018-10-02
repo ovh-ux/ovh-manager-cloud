@@ -1,6 +1,6 @@
 <section class="cui-page__content">
-    <h3 data-translate="vps_tab_cloud_database"></h3>
-    <div class="mb-5">
+    <h3 class="h1 mb-5" data-translate="vps_tab_cloud_database"></h3>
+    <div class="mb-5" data-ng-if="!$ctrl.cloudDatabases || $ctrl.cloudDatabases.length === 0">
         <p data-translate="vps_tab_cloud_database_description"></p>
         <oui-button data-variant="primary"
                     data-on-click="">
@@ -8,7 +8,8 @@
         </oui-button>
     </div>
 
-    <oui-datagrid data-rows="$ctrl.cloudDatabases"
+    <oui-datagrid data-ng-if="$ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0"
+                  data-rows="$ctrl.cloudDatabases"
                   data-empty-placeholder="{{:: 'vps_tab_cloud_database_table_empty' | translate }}">
         <oui-column data-title="'vps_tab_cloud_database_header_name' | translate"
                     data-property="name"
@@ -56,5 +57,11 @@
                 data-on-click="$ctrl.goToCloudDatabase($row)">
             </oui-action-menu-item>
         </oui-action-menu>
+        <extra-top>
+            <button class="oui-button oui-button_primary" type="button" data-ng-click="$ctrl.orderDb()">
+              <span aria-hidden="true" class="oui-icon oui-icon_circle oui-icon-add"></span>
+              <span>{{:: 'vps_tab_cloud_database_order' | translate}}</span>
+            </button>
+        </extra-top>
     </oui-datagrid>
 </section>
