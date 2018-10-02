@@ -35,7 +35,7 @@
    <translation id="storage_delete_success" qtlid="242288">Container eliminado com sucesso</translation>
    <translation id="storage_delete_error" qtlid="376323">Oups, não conseguimos eliminar o container.</translation>
    <translation id="storage_add_button" qtlid="242314">Criar um container</translation>
-   <translation id="storage_add_button_return" qtlid="4118">Voltar atrás</translation>
+   <translation id="storage_add_button_return" qtlid="4118">Retroceder</translation>
 
    <translation id="storage_load_error" qtlid="262618">Oups, não conseguimos recuperar a lista dos seus containers.</translation>
    <translation id="storage_search" qtlid="37659">Procurar</translation>
