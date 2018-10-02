@@ -1,3 +1,19 @@
+<a name="7.7.1"></a>
+## [7.7.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.0...v7.7.1) (2018-10-02)
+
+
+### Bug Fixes
+
+* **i18n:** submit / retrieve (submit) ([6562a84](https://github.com/ovh-ux/ovh-manager-cloud/commit/6562a84))
+* **instance modale:** remove strong balise for reboot ([d3a6d41](https://github.com/ovh-ux/ovh-manager-cloud/commit/d3a6d41))
+
+
+### Features
+
+* **home:** add Summer banner ([73905d5](https://github.com/ovh-ux/ovh-manager-cloud/commit/73905d5))
+
+
+
 <a name="7.7.0"></a>
 # [7.7.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.6...v7.7.0) (2018-10-01)
 
