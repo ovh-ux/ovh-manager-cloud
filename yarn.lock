@@ -6527,9 +6527,9 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-ovh-api-services@ovh-ux/ovh-api-services#^3.9.0:
-  version "3.14.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/e63c186f8fb39aaa4ca082fd9488f185dd85844c"
+ovh-api-services@ovh-ux/ovh-api-services#^3.16.0:
+  version "3.16.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/8b6bba07799a657988b1a211d4f956610944a41e"
   dependencies:
     grunt-injector "^0.6.0"
 
