@@ -31,7 +31,7 @@
     "build:eu": "webpack --env.region=eu --env.production",
     "build:ca": "webpack --env.region=ca --env.production",
     "build:us": "webpack --env.region=us --env.production",
-    "test": "eslint --quiet ./client",
+    "test": "yarn run lint",
     "lint": "run-p lint:css lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
     "lint:js": "eslint --quiet --fix ./client",
