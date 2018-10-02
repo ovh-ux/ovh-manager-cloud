@@ -501,9 +501,10 @@
    <translation id="vps_tab_cloud_database">Base de données</translation>
    <translation id="vps_tab_cloud_database_description">Besoin de bases de données fiables, performantes et 100% managées par OVH ?<br/>Commandez notre service Cloud Databases !<br/>Vous disposerez d'une base de données autonome et compatible avec tous vos produits Cloud OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL et Redis disponibles !</translation>
    <translation id="vps_tab_cloud_database_header_name">Nom de l'instance</translation>
-   <translation id="vps_tab_cloud_database_header_type">Type de base de donnée</translation>
+   <translation id="vps_tab_cloud_database_header_version">Version de la base de donnée</translation>
+   <translation id="vps_tab_cloud_database_header_vps_authorized">VPS autorisé</translation>
    <translation id="vps_tab_cloud_database_header_status">Statut</translation>
-   <translation id="vps_tab_cloud_database_table_empty">Vous n'avez pas de base de données associée à votre VPS.</translation>
+   <translation id="vps_tab_cloud_database_table_empty">Aucune base de données trouvée.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip">Autoriser le VPS à accéder à cette base</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Une erreur est survenue lors de la demande de ne plus déranger pour le renouvellement automatique.</translation>

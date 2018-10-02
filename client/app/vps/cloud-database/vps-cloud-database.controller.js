@@ -1,27 +1,32 @@
 class VpsCloudDatabaseCtrl {
-    constructor ($q /* , CloudDatabase */) {
+    constructor ($q, OvhApiHostingPrivateDatabase) {
         this.$q = $q;
-        // this.CloudDatabase = CloudDatabase;
+        this.OvhApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
+    }
+
+    $onInit () {
+        this.refresh();
     }
 
     refresh () {
-        // this.CloudDatabase.getAll().then(databases => {
-        //     this.cloudDatabases = databases;
-        // });
-        return this.$q.when()
-            .then(() => [1, 2, 3])
-            .then(ids => ({
-                data: ids ? _.map(ids, id => ({ id })) : [],
-                meta: { totalCount: ids ? ids.length : 0 }
-            }));
-    }
-
-    transformItem (row) {
-        return this.$q.when().then(() => ({
-            name: `Database ${row.id}`,
-            type: "MariaDb",
-            status: "created"
-        }));
+        this.OvhApiPrivateDb.query().$promise
+            .then(serviceNames => this.$q.all(
+                _.map(
+                    serviceNames,
+                    serviceName => this.OvhApiPrivateDb.get({ serviceName }).$promise
+                )
+            ))
+            .then(databases => _.filter(databases, { offer: "public" }))
+            .then(databases => {
+                this.cloudDatabases = _.map(
+                    databases,
+                    database => ({
+                        name: database.displayName || database.serviceName,
+                        version: database.version,
+                        vpsAuthorized: false,
+                        status: database.state
+                    }));
+            });
     }
 }
 

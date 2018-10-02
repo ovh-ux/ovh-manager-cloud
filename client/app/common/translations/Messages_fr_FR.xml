@@ -552,6 +552,13 @@
    <translation id="common_status_creating">Création en cours</translation>
    <translation id="common_status_deleting">Suppression en cours</translation>
 
+   <translation id="common_database_status_detached">Détachée</translation>
+   <translation id="common_database_status_restartPending">Redémarrage en cours</translation>
+   <translation id="common_database_status_startPending">Démarrage en cours</translation>
+   <translation id="common_database_status_started">Démarrée</translation>
+   <translation id="common_database_status_stopPending">Arrêt en cours</translation>
+   <translation id="common_database_status_stopped">Arrêtée</translation>
+
    <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Condition</translation>
    <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">est</translation>

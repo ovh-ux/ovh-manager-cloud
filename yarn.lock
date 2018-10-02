@@ -632,6 +632,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-aria@>=1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.4.tgz#0774cefa3a3e1bf0bf7aba5253e3bb9ca209f216"
+
 angular-mock@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/angular-mock/-/angular-mock-1.0.0.tgz#67431849bf0add225b1d49e0a771659a4b360ba5"
@@ -639,6 +643,10 @@ angular-mock@^1.0.0:
 angular-sanitize@1.3.x:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
+
+angular-sanitize@>=1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.4.tgz#c7d80176ed31507fd0e08bbb3a6c25bf09db2a61"
 
 angular-translate@~2.16.0:
   version "2.16.0"
@@ -657,6 +665,10 @@ angular@1.3.x:
 "angular@>=1.2.26 <=1.6":
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.10.tgz#eed3080a34d29d0f681ff119b18ce294e3f74826"
+
+angular@>=1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.4.tgz#c1bf4884c2d470c06907737a1bf0835a9f646f31"
 
 ansi-escapes@^1.1.0:
   version "1.4.0"
@@ -1828,7 +1840,7 @@ cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
 
-clipboard@2.0.1:
+clipboard@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
   dependencies:
@@ -3395,9 +3407,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.0.tgz#f72c7164a1c24e3ad419e3b2209d1a2d3604724a"
+flatpickr@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
 
 follow-redirects@^1.0.0:
   version "1.5.0"
@@ -5227,6 +5239,10 @@ less-plugin-remcalc@^0.0.1, less-plugin-remcalc@~0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/less-plugin-remcalc/-/less-plugin-remcalc-0.0.1.tgz#f6a52d0d340964935e07be0e7d6f752210ea53a7"
 
+less-plugin-remcalc@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/less-plugin-remcalc/-/less-plugin-remcalc-0.1.0.tgz#34bce158cd24d2a14efa8984e01b2b9d0420d4cc"
+
 less@~2.7.1:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
@@ -6258,20 +6274,24 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@~2.17.1:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.17.2.tgz#21a6fb5470749e04aa55a7788adc76c343d87e24"
+ovh-ui-angular@^2.17.1:
+  version "2.20.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.2.tgz#d5065055bcb684cb3f4b603376ac936345013acb"
   dependencies:
-    clipboard "2.0.1"
+    angular ">=1.6.x"
+    angular-aria ">=1.6.x"
+    angular-sanitize ">=1.6.x"
+    clipboard "^2.0.1"
     escape-string-regexp "^1.0.5"
-    flatpickr "4.5.0"
-    popper.js "^1.14.3"
+    flatpickr "^4.5.2"
+    ovh-ui-kit "^2.20.0"
+    popper.js "^1.14.4"
 
-ovh-ui-kit@~2.17.1:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.17.2.tgz#7c923f13f8e4f2c98441748c30437f72bb2feee8"
+ovh-ui-kit@^2.17.1, ovh-ui-kit@^2.20.0:
+  version "2.20.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.2.tgz#63715e743e0299cb2c8d2624211d0f8c6cf82e5e"
   dependencies:
-    less-plugin-remcalc "^0.0.1"
+    less-plugin-remcalc "^0.1.0"
 
 p-limit@^1.1.0:
   version "1.2.0"
@@ -6492,7 +6512,7 @@ popper.js@^1.14.1:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
 
-popper.js@^1.14.3:
+popper.js@^1.14.4:
   version "1.14.4"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
 

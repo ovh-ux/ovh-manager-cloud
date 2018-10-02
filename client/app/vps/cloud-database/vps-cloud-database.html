@@ -8,32 +8,51 @@
         </oui-button>
     </div>
 
-    <oui-datagrid data-rows-loader="$ctrl.refresh($config)"
-                  data-row-loader="$ctrl.transformItem($row)"
+    <oui-datagrid data-rows="$ctrl.cloudDatabases"
                   data-empty-placeholder="{{:: 'vps_tab_cloud_database_table_empty' | translate }}">
-        <oui-column data-title="'vps_tab_cloud_database_header_name' | translate" data-property="name">
+        <oui-column data-title="'vps_tab_cloud_database_header_name' | translate"
+                    data-property="name"
+                    data-type="string"
+                    data-sortable
+                    data-searchable
+                    data-filterable>
             <span data-ng-bind="$row.name"></span>
         </oui-column>
-        <oui-column data-title="'vps_tab_cloud_database_header_type' | translate" data-property="type">
-            <span data-ng-bind="$row.type"></span>
+        <oui-column data-title="'vps_tab_cloud_database_header_version' | translate"
+                    data-property="version"
+                    data-type="string"
+                    data-sortable
+                    data-searchable
+                    data-filterable>
+            <span data-ng-bind="$row.version"></span>
         </oui-column>
-        <oui-column data-title="'vps_tab_cloud_database_header_status' | translate" data-property="status">
-            <span class="oui-status"
-                  data-ng-class="{'oui-status_success': $row.status === 'created',
-                                  'oui-status_warning': $row.status === 'creating',
-                                  'oui-status_error': $row.status === 'deleting'}"
-                  data-ng-bind="'common_status_' + $row.status | translate">
+        <oui-column data-title="'vps_tab_cloud_database_header_vps_authorized' | translate"
+                    data-property="vpsAuthorized"
+                    data-type="boolean"
+                    data-sortable="desc"
+                    data-searchable
+                    data-filterable>
+            <span class="oui-icon oui-icon-success_circle"
+                  data-ng-if="$row.vpsAuthorized">
+            </span>
+        </oui-column>
+        <oui-column data-title="'vps_tab_cloud_database_header_status' | translate"
+                    data-property="status"
+                    data-type="string"
+                    data-sortable
+                    data-searchable
+                    data-filterable>
+            <span class="oui-status oui-status_info"
+                  data-ng-bind="'common_database_status_' + $row.status | translate">
             </span>
         </oui-column>
         <oui-action-menu data-align="end" data-compact>
             <oui-action-menu-item
                 data-text="{{:: 'vps_tab_cloud_database_add_authorized_ip' | translate }}"
-                data-disabled="$row.status !== 'created'"
                 data-on-click="$ctrl.addAuthorizedIp($row)">
             </oui-action-menu-item>
             <oui-action-menu-item
                 data-text="{{:: 'common_manage' | translate }}"
-                data-disabled="$row.status !== 'created'"
                 data-on-click="$ctrl.goToCloudDatabase($row)">
             </oui-action-menu-item>
         </oui-action-menu>
