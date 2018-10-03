@@ -58,7 +58,7 @@ class VpsCloudDatabaseCtrl {
             .then(databases => this.$q.all(
                 _.map(
                     databases,
-                    database => this.isVpsAuthorized(database)
+                    database => this.isVpsAuthorized(database.serviceName)
                         .then(vpsAuthorized => {
                             database.vpsAuthorized = vpsAuthorized;
                             return database;
@@ -77,14 +77,22 @@ class VpsCloudDatabaseCtrl {
             });
     }
 
-    isVpsAuthorized (database) {
-        return this.ApiWhitelist.get({ serviceName: database.serviceName }).$promise
-            .then(whitelist => this.isVpsInWhitelist(whitelist));
+    isVpsAuthorized (serviceName) {
+        return this.ApiWhitelist.get({ serviceName }).$promise
+            .then(whitelist => _.filter(whitelist, ip => this.isVpsInIpRange(ip)))
+            // we need to take only IPs allowing db access,
+            // so we get more details about matching IPs
+            .then(whitelist => this.$q.all(
+                _.map(
+                    whitelist,
+                    ip => this.ApiWhitelist.getIp({ serviceName, ip }).$promise
+                )))
+            .then(ipObjects => _.any(ipObjects, { service: true }));
     }
 
-    isVpsInWhitelist (whitelist) {
+    isVpsInIpRange (ip) {
         const ipv4 = ipaddr.parse(_.get(_.first(this.ips, { version: "v4" }), "ipAddress"));
-        return _.any(whitelist, ip => ipv4.match(ipaddr.parseCIDR(ip)));
+        return ipv4.match(ipaddr.parseCIDR(ip));
     }
 }
 
