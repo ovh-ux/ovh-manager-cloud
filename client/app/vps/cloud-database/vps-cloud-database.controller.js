@@ -2,7 +2,7 @@ class VpsCloudDatabaseCtrl {
     constructor ($q, $stateParams, $translate, CloudMessage, OvhApiHostingPrivateDatabase, VpsService) {
         this.$q = $q;
         this.$stateParams = $stateParams;
-        this.OvhApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
+        this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
         this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
@@ -10,6 +10,20 @@ class VpsCloudDatabaseCtrl {
     }
 
     $onInit () {
+        this.serviceName = this.$stateParams.serviceName;
+
+        this.statusFilterOptions = {
+            values: {
+                detached: this.$translate.instant("common_database_status_detached"),
+                restartPending: this.$translate.instant("common_database_status_restartPending"),
+                startPending: this.$translate.instant("common_database_status_startPending"),
+                started: this.$translate.instant("common_database_status_started"),
+                stopPending: this.$translate.instant("common_database_status_stopPending"),
+                stopped: this.$translate.instant("common_database_status_stopped")
+            }
+        };
+
+        this.ips = [];
         this.cloudDatabases = [];
         this.refresh();
     }

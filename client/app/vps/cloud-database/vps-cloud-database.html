@@ -39,10 +39,11 @@
         </oui-column>
         <oui-column data-title="'vps_tab_cloud_database_header_status' | translate"
                     data-property="status"
-                    data-type="string"
                     data-sortable
                     data-searchable
-                    data-filterable>
+                    data-filterable
+                    data-type="options"
+                    data-type-options="$ctrl.statusFilterOptions">
             <span class="oui-status oui-status_info"
                   data-ng-bind="'common_database_status_' + $row.status | translate">
             </span>
