@@ -25,6 +25,8 @@ class VpsCloudDatabaseCtrl {
 
         this.ips = [];
         this.cloudDatabases = [];
+        this.loading = true;
+
         this.refresh();
     }
 
@@ -36,6 +38,7 @@ class VpsCloudDatabaseCtrl {
             .then(() => this.loadDatabases())
             .then(databases => {
                 this.cloudDatabases = databases;
+                this.loading = false;
             });
     }
 
@@ -80,8 +83,8 @@ class VpsCloudDatabaseCtrl {
     }
 
     isVpsInWhitelist (whitelist) {
-        console.log(this.ips, whitelist);
-        return false;
+        const ipv4 = ipaddr.parse(_.get(_.first(this.ips, { version: "v4" }), "ipAddress"));
+        return _.any(whitelist, ip => ipv4.match(ipaddr.parseCIDR(ip)));
     }
 }
 

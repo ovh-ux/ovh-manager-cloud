@@ -1,6 +1,11 @@
 <section class="cui-page__content">
-    <h3 class="h1 mb-5" data-translate="vps_tab_cloud_database"></h3>
-    <div class="mb-5" data-ng-if="!$ctrl.cloudDatabases || $ctrl.cloudDatabases.length === 0">
+
+    <div data-ng-if="$ctrl.loading" class="text-center">
+        <oui-spinner  data-size="l"></oui-spinner>
+    </div>
+
+    <div class="mb-5" data-ng-if="!$ctrl.loading && (!$ctrl.cloudDatabases || $ctrl.cloudDatabases.length === 0)">
+        <h3 class="h1 mb-5" data-translate="vps_tab_cloud_database"></h3>
         <p data-translate="vps_tab_cloud_database_description"></p>
         <oui-button data-variant="primary"
                     data-on-click="">
@@ -8,7 +13,7 @@
         </oui-button>
     </div>
 
-    <oui-datagrid data-ng-if="$ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0"
+    <oui-datagrid data-ng-if="!$ctrl.loading && $ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0"
                   data-rows="$ctrl.cloudDatabases"
                   data-empty-placeholder="{{:: 'vps_tab_cloud_database_table_empty' | translate }}">
         <oui-column data-title="'vps_tab_cloud_database_header_name' | translate"
