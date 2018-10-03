@@ -66,7 +66,7 @@
                             data-align="end"
                             data-ng-if="$ctrl.actions.changeName.isAvailable()">
                             <oui-action-menu-item data-text="{{::$ctrl.actions.changeName.text}}"
-                                data-aria-label="{{::$ctrl.actions.changeName.text}}"
+                                aria-label="{{::$ctrl.actions.changeName.text}}"
                                 data-on-click="$ctrl.actions.changeName.callback()">
                             </oui-action-menu-item>
                         </oui-action-menu>
@@ -275,17 +275,17 @@
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.backupStorageActions.manage.text}}"
-                                data-aria-label="{{::$ctrl.backupStorageActions.manage.text}}"
+                                aria-label="{{::$ctrl.backupStorageActions.manage.text}}"
                                 data-on-click="$ctrl.backupStorageActions.manage.callback()"
                                 data-ng-if="$ctrl.summary.data.ftpBackup.optionActivated">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.backupStorageActions.terminate.text}}"
-                                data-aria-label="{{::$ctrl.backupStorageActions.terminate.text}}"
+                                aria-label="{{::$ctrl.backupStorageActions.terminate.text}}"
                                 data-on-click="$ctrl.backupStorageActions.terminate.callback()"
                                 data-ng-if="$ctrl.summary.data.ftpBackup.optionActivated">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.backupStorageActions.order.text}}"
-                                data-aria-label="{{::$ctrl.backupStorageActions.order.text}}"
+                                aria-label="{{::$ctrl.backupStorageActions.order.text}}"
                                 data-on-click="$ctrl.backupStorageActions.order.callback()"
                                 data-ng-if="!$ctrl.summary.data.ftpBackup.optionActivated">
                             </oui-action-menu-item>
@@ -298,29 +298,29 @@
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end" data-ng-if="$ctrl.summary.data.snapshot.optionActivated">
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.delete.text}}"
-                                data-aria-label="{{::$ctrl.snapshotActions.delete.text}}"
+                                aria-label="{{::$ctrl.snapshotActions.delete.text}}"
                                 data-on-click="$ctrl.snapshotActions.delete.callback()"
                                 data-ng-if="$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.delete.isAvailable()">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.restore.text}}"
-                                data-aria-label="{{::$ctrl.snapshotActions.restore.text}}"
+                                aria-label="{{::$ctrl.snapshotActions.restore.text}}"
                                 data-on-click="$ctrl.snapshotActions.restore.callback()"
                                 data-ng-if="$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.restore.isAvailable()">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.take.text}}"
-                                data-aria-label="{{::$ctrl.snapshotActions.take.text}}"
+                                aria-label="{{::$ctrl.snapshotActions.take.text}}"
                                 data-on-click="$ctrl.snapshotActions.take.callback()"
                                 data-ng-if="$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.take.isAvailable()">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.terminate.text}}"
-                                data-aria-label="{{::$ctrl.snapshotActions.terminate.text}}"
+                                aria-label="{{::$ctrl.snapshotActions.terminate.text}}"
                                 data-on-click="$ctrl.snapshotActions.terminate.callback()"
                                 data-ng-if="$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.terminate.isAvailable()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                         <oui-action-menu data-compact data-align="end" data-ng-if="!$ctrl.summary.data.snapshot.optionActivated && $ctrl.snapshotActions.order.isAvailable()">
                             <oui-action-menu-item data-text="{{::$ctrl.snapshotActions.order.text}}"
-                                data-aria-label="{{::$ctrl.snapshotActions.order.text}}"
+                                aria-label="{{::$ctrl.snapshotActions.order.text}}"
                                 data-on-click="$ctrl.snapshotActions.order.callback()"
                                 data-ng-if="$ctrl.snapshotActions.order.isAvailable()">
                             </oui-action-menu-item>
@@ -333,17 +333,17 @@
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.veeamActions.manage.text}}"
-                                data-aria-label="{{::$ctrl.veeamActions.manage.text}}"
+                                aria-label="{{::$ctrl.veeamActions.manage.text}}"
                                 data-on-click="$ctrl.veeamActions.manage.callback()"
                                 data-ng-if="$ctrl.summary.data.veeamActivated">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.veeamActions.terminate.text}}"
-                                data-aria-label="{{::$ctrl.veeamActions.terminate.text}}"
+                                aria-label="{{::$ctrl.veeamActions.terminate.text}}"
                                 data-on-click="$ctrl.veeamActions.terminate.callback()"
                                 data-ng-if="$ctrl.summary.data.veeamActivated">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.veeamActions.order.text}}"
-                                data-aria-label="{{::$ctrl.veeamActions.order.text}}"
+                                aria-label="{{::$ctrl.veeamActions.order.text}}"
                                 data-on-click="$ctrl.veeamActions.order.callback()"
                                 data-ng-if="!$ctrl.summary.data.veeamActivated">
                             </oui-action-menu-item>
@@ -358,13 +358,13 @@
                             <oui-action-menu-item
                                 data-ng-if="$ctrl.actions.orderAdditionalDiskOption.isAvailable()"
                                 data-text="{{::$ctrl.actions.orderAdditionalDiskOption.text}}"
-                                data-aria-label="{{::$ctrl.actions.orderAdditionalDiskOption.text}}"
+                                aria-label="{{::$ctrl.actions.orderAdditionalDiskOption.text}}"
                                 data-on-click="$ctrl.actions.orderAdditionalDiskOption.callback()">
                             </oui-action-menu-item>
                             <oui-action-menu-item
                                 data-ng-if="$ctrl.actions.terminateAdditionalDiskOption.isAvailable()"
                                 data-text="{{::$ctrl.actions.terminateAdditionalDiskOption.text}}"
-                                data-aria-label="{{::$ctrl.actions.terminateAdditionalDiskOption.text}}"
+                                aria-label="{{::$ctrl.actions.terminateAdditionalDiskOption.text}}"
                                 data-on-click="$ctrl.actions.terminateAdditionalDiskOption.callback()">
                             </oui-action-menu-item>
                         </oui-action-menu>
@@ -376,12 +376,12 @@
                         </oui-tile-description>
                         <oui-action-menu data-compact data-align="end">
                             <oui-action-menu-item data-text="{{::$ctrl.actions.terminateWindows.text}}"
-                                data-aria-label="{{::$ctrl.actions.terminateWindows.text}}"
+                                aria-label="{{::$ctrl.actions.terminateWindows.text}}"
                                 data-ng-if="$ctrl.summary.data.windowsActivated && $ctrl.actions.terminateWindows.isAvailable()"
                                 data-on-click="$ctrl.actions.terminateWindows.callback()">
                             </oui-action-menu-item>
                             <oui-action-menu-item data-text="{{::$ctrl.actions.orderWindows.text}}"
-                                data-aria-label="{{::$ctrl.actions.orderWindows.text}}"
+                                aria-label="{{::$ctrl.actions.orderWindows.text}}"
                                 data-ng-if="!$ctrl.summary.data.windowsActivated && $ctrl.actions.orderWindows.isAvailable()"
                                 data-on-click="$ctrl.actions.orderWindows.callback()">
                             </oui-action-menu-item>
@@ -432,7 +432,7 @@
                             data-align="end"
                             data-ng-if="$ctrl.actions.manageAutorenew.isAvailable()">
                             <oui-action-menu-item data-text="{{ ::$ctrl.actions.manageAutorenew.text }}"
-                                data-aria-label="{{ ::$ctrl.actions.manageAutorenew.text }}"
+                                aria-label="{{ ::$ctrl.actions.manageAutorenew.text }}"
                                 data-href="{{ ::$ctrl.actions.manageAutorenew.href }}"
                                 data-external>
                             </oui-action-menu-item>
@@ -461,7 +461,7 @@
                             data-align="end"
                             data-ng-if="ctrl.actions.manageContact.isAvailable()">
                             <oui-action-menu-item data-text="{{ ::ctrl.actions.manageContact.text }}"
-                                data-aria-label="{{ ::ctrl.actions.manageContact.text }}"
+                                aria-label="{{ ::ctrl.actions.manageContact.text }}"
                                 data-href="{{ ::ctrl.actions.manageContact.href }}"
                                 data-external>
                             </oui-action-menu-item>

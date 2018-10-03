@@ -1,6 +1,5 @@
 class VeeamEnterpriseCtrl {
-  constructor($scope, $stateParams, VeeamEnterpriseService) {
-    this.$scope = $scope;
+  constructor($stateParams, VeeamEnterpriseService) {
     this.serviceName = $stateParams.serviceName;
     this.VeeamEnterpriseService = VeeamEnterpriseService;
   }
