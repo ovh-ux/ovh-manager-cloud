@@ -1,7 +1,12 @@
 class VpsCloudDatabaseCtrl {
-    constructor ($q, OvhApiHostingPrivateDatabase) {
+    constructor ($q, $stateParams, $translate, CloudMessage, OvhApiHostingPrivateDatabase, VpsService) {
         this.$q = $q;
+        this.$stateParams = $stateParams;
         this.OvhApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
+        this.CloudMessage = CloudMessage;
+        this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
+        this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
+        this.VpsService = VpsService;
     }
 
     $onInit () {
@@ -10,24 +15,59 @@ class VpsCloudDatabaseCtrl {
     }
 
     refresh () {
-        this.OvhApiPrivateDb.query().$promise
+        return this.loadIps()
+            .then(response => {
+                this.ips = response.results;
+            })
+            .then(() => this.loadDatabases())
+            .then(databases => {
+                this.cloudDatabases = databases;
+            });
+    }
+
+    loadIps () {
+        return this.VpsService.getIps(this.serviceName);
+    }
+
+    loadDatabases () {
+        return this.ApiPrivateDb.query().$promise
             .then(serviceNames => this.$q.all(
                 _.map(
                     serviceNames,
-                    serviceName => this.OvhApiPrivateDb.get({ serviceName }).$promise
+                    serviceName => this.ApiPrivateDb.get({ serviceName }).$promise
                 )
             ))
             .then(databases => _.filter(databases, { offer: "public" }))
-            .then(databases => {
-                this.cloudDatabases = _.map(
+            .then(databases => this.$q.all(
+                _.map(
                     databases,
-                    database => ({
-                        name: database.displayName || database.serviceName,
-                        version: database.version,
-                        vpsAuthorized: false,
-                        status: database.state
-                    }));
+                    database => this.isVpsAuthorized(database)
+                        .then(vpsAuthorized => {
+                            database.vpsAuthorized = vpsAuthorized;
+                            return database;
+                        })
+                )))
+            .then(databases => _.map(
+                databases,
+                database => ({
+                    name: database.displayName || database.serviceName,
+                    version: database.version,
+                    vpsAuthorized: database.vpsAuthorized,
+                    status: database.state
+                })))
+            .catch(error => {
+                this.CloudMessage.error(error);
             });
+    }
+
+    isVpsAuthorized (database) {
+        return this.ApiWhitelist.get({ serviceName: database.serviceName }).$promise
+            .then(whitelist => this.isVpsInWhitelist(whitelist));
+    }
+
+    isVpsInWhitelist (whitelist) {
+        console.log(this.ips, whitelist);
+        return false;
     }
 }
 
