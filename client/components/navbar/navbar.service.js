@@ -13,7 +13,8 @@ class ManagerNavbarService {
     ssoAuthentication,
     TARGET,
     TranslateService,
-    URLS) {
+    URLS,
+    asyncLoader) {
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
@@ -37,6 +38,7 @@ class ManagerNavbarService {
     this.TARGET = TARGET;
     this.translateService = TranslateService;
     this.URLS = URLS;
+    this.asyncLoader = asyncLoader;
   }
 
   getProducts(products) {
@@ -598,6 +600,12 @@ class ManagerNavbarService {
         managerLinks: this.getManagerLinks(),
       };
     };
+
+    this.asyncLoader.addTranslations(
+      import(`../../app/common/translations/Messages_${this.$translate.use()}.xml`)
+        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.xml`))
+        .then(x => x.default),
+    );
 
     return this.$q.all({
       translate: this.loadTranslations(),

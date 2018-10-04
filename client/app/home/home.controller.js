@@ -1,6 +1,8 @@
 class HomeCtrl {
-  constructor($q, DocsService, FeatureAvailabilityService) {
+  constructor($q, $translate, DocsService, FeatureAvailabilityService) {
     this.$q = $q;
+    this.$translate = $translate;
+
     this.DocsService = DocsService;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
   }
@@ -9,6 +11,8 @@ class HomeCtrl {
     this.defaultSections = ['PROJECT', 'VPS'];
     this.guides = {};
     this.guides.all = this.DocsService.getAllGuidesLink();
+
+    this.buildSummitData();
 
     return this.setSections();
   }
@@ -24,6 +28,10 @@ class HomeCtrl {
           .value();
         return this.guides.sections;
       });
+  }
+
+  buildSummitData() {
+    this.localeForSummitBanner = this.$translate.use().split('_')[0] === 'fr' ? 'fr' : 'en';
   }
 }
 

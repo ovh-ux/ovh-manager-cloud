@@ -911,18 +911,19 @@ angular.module('managerApp').service('VpsService', [
       return $q.reject(additionalDiskHasNoOption);
     });
 
-    this.getAdditionalDiskPrices = function (serviceName) {
+    this.getAdditionalDiskPrices = function getAdditionalDiskPrices(serviceName) {
       return this.getSelectedVps(serviceName).then(vps => $q.all([
         $http.get([swsPriceProxypass, '2015v1', vps.offerType.toLowerCase(), 'option', additionalDiskCapacities[0].option].join('/')),
         $http.get([swsPriceProxypass, '2015v1', vps.offerType.toLowerCase(), 'option', additionalDiskCapacities[1].option].join('/')),
         $http.get([swsPriceProxypass, '2015v1', vps.offerType.toLowerCase(), 'option', additionalDiskCapacities[2].option].join('/')),
         $http.get([swsPriceProxypass, '2015v1', vps.offerType.toLowerCase(), 'option', additionalDiskCapacities[3].option].join('/')),
       ]).then((responses) => {
-        const prices = []; let
-          i = 0;
+        const prices = [];
+        let i = 0;
         angular.forEach(responses, (capacity) => {
           _.set(capacity, 'data.type', additionalDiskCapacities[i].option);
-          _.set(capacity, 'data.size', additionalDiskCapacities[i += 1].size);
+          _.set(capacity, 'data.size', additionalDiskCapacities[i].size);
+          i += 1;
           prices.push(capacity.data);
         });
         return prices;

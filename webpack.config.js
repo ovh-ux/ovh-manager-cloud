@@ -28,7 +28,6 @@ module.exports = (env = {}) => {
     `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`,
   ];
 
-  /* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
   const { config } = webpackConfig({
     template: './client/index.html',
     basePath: './client',
@@ -46,7 +45,9 @@ module.exports = (env = {}) => {
       ],
     },
   }, env);
-  /* eslint-enable */
+
+  // Extra config files
+  const extras = glob.sync('./.extras/**/*.js');
 
   return merge(config, {
     entry: _.assign({
@@ -54,17 +55,17 @@ module.exports = (env = {}) => {
       components: glob.sync('./client/components/**/!(*.spec|*.mock).js'),
       config: [
         `./client/app/config/all.${env.region}.js`,
-        `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`
+        `./client/app/config/${env.production ? 'prod' : 'dev'}.${env.region}.js`,
       ],
-    }, bundles),
+    }, bundles, extras.length > 0 ? { extras } : {}),
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].bundle.js',
+      filename: '[name].[hash].bundle.js',
     },
     resolve: {
       alias: {
-        jquery: path.resolve(__dirname, "node_modules/jquery")
-      }
-    }
+        jquery: path.resolve(__dirname, 'node_modules/jquery'),
+      },
+    },
   });
 };

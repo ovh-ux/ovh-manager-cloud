@@ -7,7 +7,7 @@
 
    <translation id="iplb_frontend_frontend" qtlid="429615">Frontend</translation>
    <translation id="iplb_frontend_protocol" qtlid="9046">Protokoll</translation>
-   <translation id="iplb_frontend_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_frontend_default_farm" qtlid="429563">Standardfarm</translation>
    <translation id="iplb_frontend_active" qtlid="55133">Aktiv</translation>
    <translation id="iplb_frontend_action" qtlid="56105">Aktion</translation>
@@ -36,7 +36,7 @@
    <translation id="iplb_frontend_add_protocol_udp" qtlid="141834">UDP</translation>
    <translation id="iplb_frontend_add_port" qtlid="9034">Port</translation>
    <translation id="iplb_frontend_add_port_tip" qtlid="448686">Eingangsports des Frontends. 1 bis {{portMax}}, Format: einzeln (z. B.: 80), Serie (z. B.: 1000-1200), multi (z. B.: 80,443).</translation>
-   <translation id="iplb_frontend_add_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_add_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_frontend_add_default_farm" qtlid="429563">Standardfarm</translation>
    <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Keine</translation>
    <translation id="iplb_frontend_add_farm_add_another_choice" qtlid="438675">+ Eine Serverfarm hinzufügen</translation>
@@ -73,7 +73,7 @@
    <translation id="iplb_frontend_preview_name" qtlid="3818">Name</translation>
    <translation id="iplb_frontend_preview_protocol" qtlid="19711">Protokoll</translation>
    <translation id="iplb_frontend_preview_port" qtlid="9034">Port</translation>
-   <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_frontend_preview_default_farm" qtlid="429563">Standardfarm</translation>
    <translation id="iplb_frontend_preview_default_certificate" qtlid="438701">Standard SSL Zertifikat</translation>
    <translation id="iplb_frontend_preview_dedicated_ip_failover" qtlid="430096">Dedicated Failover-IP</translation>

@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.6.6",
+  "version": "7.7.1",
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
   "license": "BSD-3-Clause",
@@ -31,10 +31,13 @@
     "build:eu": "webpack --env.region=eu --env.production",
     "build:ca": "webpack --env.region=ca --env.production",
     "build:us": "webpack --env.region=us --env.production",
-    "test": "eslint --quiet ./client",
-    "lint": "run-p lint:js",
+    "test": "yarn run lint",
+    "lint": "run-p lint:css lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
-    "lint:js": "eslint --quiet --fix ./client"
+    "lint:js": "eslint --quiet --fix ./client",
+    "version": "npm-scripts-config version",
+    "postversion": "git push && git push --tags",
+    "preview-changelog": "npm-scripts-config preview-changelog"
   },
   "lint-staged": {
     "*.js": [
