@@ -5,7 +5,7 @@ angular.module('managerApp').config(($stateProvider) => {
       url: '/veeam-enterprise/{serviceName}',
       templateUrl: 'app/veeam-enterprise/veeam-enterprise.html',
       controller: 'VeeamEnterpriseCtrl',
-      controllerAs: 'VeeamEnterpriseCtrl',
+      controllerAs: '$ctrl',
       translations: ['../common', '.'],
     })
     .state('paas.veeam-enterprise.dashboard', {
