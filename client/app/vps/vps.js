@@ -151,6 +151,16 @@ angular.module("managerApp").config($stateProvider => {
                 }
             }
         })
+        .state("iaas.vps.detail.cloud-database.order", {
+            url: "/order",
+            views: {
+                vpsCloudDatabaseContent: {
+                    templateUrl: "app/vps/cloud-database/order/vps-cloud-database-order.html",
+                    controller: "VpsCloudDatabaseOrderCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
         .state("iaas.vps.detail.monitoring", {
             url: "/monitoring",
             views: {

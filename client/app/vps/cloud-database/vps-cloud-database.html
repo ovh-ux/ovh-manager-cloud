@@ -8,7 +8,7 @@
         <h3 class="h1 mb-5" data-translate="vps_tab_cloud_database"></h3>
         <p data-translate="vps_tab_cloud_database_description"></p>
         <oui-button data-variant="primary"
-                    data-on-click="">
+                    data-ui-sref="iaas.vps.detail.cloud-database.order">
             {{:: 'common_order' | translate}}
         </oui-button>
     </div>
@@ -70,7 +70,9 @@
             </oui-action-menu-item>
         </oui-action-menu>
         <extra-top>
-            <button class="oui-button oui-button_primary" type="button" data-ng-click="$ctrl.orderDb()">
+            <button class="oui-button oui-button_primary"
+                    type="button"
+                    data-ui-sref="iaas.vps.detail.cloud-database.order">
               <span aria-hidden="true" class="oui-icon oui-icon_circle oui-icon-add"></span>
               <span>{{:: 'vps_tab_cloud_database_order' | translate}}</span>
             </button>
