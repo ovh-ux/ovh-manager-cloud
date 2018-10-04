@@ -1,9 +1,19 @@
 class VpsCloudDatabaseCtrl {
-    constructor ($q, $stateParams, $translate, CloudMessage, OvhApiHostingPrivateDatabase, VpsService) {
+    constructor (
+        $q,
+        $stateParams,
+        $translate,
+        $window,
+        CloudMessage,
+        ControllerHelper,
+        OvhApiHostingPrivateDatabase,
+        VpsService) {
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
+        this.$window = $window;
         this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
         this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
         this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
         this.VpsService = VpsService;
@@ -97,7 +107,8 @@ class VpsCloudDatabaseCtrl {
                 sftp: false
             }).$promise
             .then(() => {
-                this.CloudMessage.info(this.$translate.instant("vps_tab_cloud_database_whitelist_add_success"));
+                this.CloudMessage.success(this.$translate.instant("vps_tab_cloud_database_whitelist_add_success"));
+                return this.refresh();
             })
             .catch(error => {
                 this.CloudMessage.error([
@@ -111,7 +122,8 @@ class VpsCloudDatabaseCtrl {
         const serviceName = database.serviceName;
         return this.ApiWhitelist.deleteIp({ serviceName }, { ip: this.ipv4 }).$promise
             .then(() => {
-                this.CloudMessage.info(this.$translate.instant("vps_tab_cloud_database_whitelist_remove_success"));
+                this.CloudMessage.success(this.$translate.instant("vps_tab_cloud_database_whitelist_remove_success"));
+                return this.refresh();
             })
             .catch(error => {
                 this.CloudMessage.error([
@@ -119,6 +131,12 @@ class VpsCloudDatabaseCtrl {
                     _(error).get("data.message", "")
                 ].join(" "));
             });
+    }
+
+    goToCloudDatabase (database) {
+        this.$window.location = this.ControllerHelper.navigation.getUrl("privateDatabase", {
+            serviceName: database.serviceName
+        });
     }
 }
 
