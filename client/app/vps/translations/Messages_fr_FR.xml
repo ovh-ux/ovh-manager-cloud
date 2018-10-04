@@ -506,7 +506,14 @@
    <translation id="vps_tab_cloud_database_header_status">Statut</translation>
    <translation id="vps_tab_cloud_database_table_empty">Aucune base de données trouvée.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip">Autoriser le VPS à accéder à cette base</translation>
+   <translation id="vps_tab_cloud_database_remove_authorized_ip">Retirer l'authorisation d'accéder à cette base</translation>
    <translation id="vps_tab_cloud_database_order">Commander une base de données</translation>
+   <translation id="vps_tab_cloud_database_fetch_error">Une erreur est survenue lors du chargement des bases de données.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_ip_name">Accès pour le VPS {{ vps }}</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_success">Le VPS a été authorisé par la base avec succès. Il peut maintenant accéder à celle-ci.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_error">Une erreur est survenue lors de la demande d'authorisation du VPS.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_remove_success">Le VPS a été retiré des accès à la base avec succès. Il ne peut désormais plus accéder à la base.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_remove_error">Une erreur est survenue lors de la demande de suppression d'accès à la base.</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Une erreur est survenue lors de la demande de ne plus déranger pour le renouvellement automatique.</translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Simplifiez-vous la vie et optez pour le renouvellement automatique de votre VPS ! Finies les relances et les suppressions inopportunes.</translation>

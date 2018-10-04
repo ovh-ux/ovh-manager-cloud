@@ -23,7 +23,7 @@ class VpsCloudDatabaseCtrl {
             }
         };
 
-        this.ips = [];
+        this.ipv4 = null;
         this.cloudDatabases = [];
         this.loading = true;
 
@@ -33,7 +33,10 @@ class VpsCloudDatabaseCtrl {
     refresh () {
         return this.loadIps()
             .then(response => {
-                this.ips = response.results;
+                this.ipv4 = _(response.results).chain()
+                    .find({ version: "v4" })
+                    .get("ipAddress")
+                    .value();
             })
             .then(() => this.loadDatabases())
             .then(databases => {
@@ -64,16 +67,15 @@ class VpsCloudDatabaseCtrl {
                             return database;
                         })
                 )))
-            .then(databases => _.map(
-                databases,
-                database => ({
-                    name: database.displayName || database.serviceName,
-                    version: database.version,
-                    vpsAuthorized: database.vpsAuthorized,
-                    status: database.state
-                })))
+            .then(databases => _.map(databases, database => _.defaults(
+                {
+                    name: database.displayName || database.serviceName
+                }, database)))
             .catch(error => {
-                this.CloudMessage.error(error);
+                this.CloudMessage.error([
+                    this.$translate.instant("vps_tab_cloud_database_fetch_error"),
+                    _(error).get("data.message", "")
+                ].join(" "));
             });
     }
 
@@ -91,8 +93,45 @@ class VpsCloudDatabaseCtrl {
     }
 
     isVpsInIpRange (ip) {
-        const ipv4 = ipaddr.parse(_.get(_.first(this.ips, { version: "v4" }), "ipAddress"));
-        return ipv4.match(ipaddr.parseCIDR(ip));
+        const vpsIp = ipaddr.parse(this.ipv4);
+        return vpsIp.match(ipaddr.parseCIDR(ip));
+    }
+
+    addAuthorizedIp (database) {
+        const serviceName = database.serviceName;
+        return this.ApiWhitelist.post(
+            { serviceName },
+            {
+                ip: this.ipv4,
+                name: this.$translate.instant(
+                    "vps_tab_cloud_database_whitelist_ip_name",
+                    { vps: this.serviceName }),
+                service: true,
+                sftp: false
+            }).$promise
+            .then(() => {
+                this.CloudMessage.info(this.$translate.instant("vps_tab_cloud_database_whitelist_add_success"));
+            })
+            .catch(error => {
+                this.CloudMessage.error([
+                    this.$translate.instant("vps_tab_cloud_database_whitelist_add_error"),
+                    _(error).get("data.message", "")
+                ].join(" "));
+            });
+    }
+
+    removeAuthorizedIp (database) {
+        const serviceName = database.serviceName;
+        return this.ApiWhitelist.deleteIp({ serviceName }, { ip: this.ipv4 }).$promise
+            .then(() => {
+                this.CloudMessage.info(this.$translate.instant("vps_tab_cloud_database_whitelist_remove_success"));
+            })
+            .catch(error => {
+                this.CloudMessage.error([
+                    this.$translate.instant("vps_tab_cloud_database_whitelist_remove_error"),
+                    _(error).get("data.message", "")
+                ].join(" "));
+            });
     }
 }
 
