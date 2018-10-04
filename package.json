@@ -147,7 +147,6 @@
     "grunt-sass": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "http-proxy-middleware": "^0.17.3",
-    "ipaddr.js": "^1.8.1",
     "istanbul": "~0.4.1",
     "jasmine-core": "^2.3.4",
     "jasmine-spec-reporter": "^3.2.0",

@@ -80,21 +80,8 @@ class VpsCloudDatabaseCtrl {
     }
 
     isVpsAuthorized (serviceName) {
-        return this.ApiWhitelist.get({ serviceName }).$promise
-            .then(whitelist => _.filter(whitelist, ip => this.isVpsInIpRange(ip)))
-            // we need to take only IPs allowing db access,
-            // so we get more details about matching IPs
-            .then(whitelist => this.$q.all(
-                _.map(
-                    whitelist,
-                    ip => this.ApiWhitelist.getIp({ serviceName, ip }).$promise
-                )))
-            .then(ipObjects => _.any(ipObjects, { service: true }));
-    }
-
-    isVpsInIpRange (ip) {
-        const vpsIp = ipaddr.parse(this.ipv4);
-        return vpsIp.match(ipaddr.parseCIDR(ip));
+        return this.ApiWhitelist.get({ serviceName, ip: this.ipv4, service: true }).$promise
+            .then(whitelist => !_.isEmpty(whitelist));
     }
 
     addAuthorizedIp (database) {
