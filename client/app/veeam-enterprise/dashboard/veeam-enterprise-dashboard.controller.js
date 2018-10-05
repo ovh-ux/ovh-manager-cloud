@@ -42,15 +42,6 @@ class VeeamEnterpriseDashboardCtrl {
         ),
         isAvailable: () => true,
       },
-      manageContact: {
-        text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl(
-          'contacts', {
-            serviceName: this.serviceName,
-          },
-        ),
-        isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
-      },
     };
   }
 
