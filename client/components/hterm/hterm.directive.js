@@ -1,5 +1,3 @@
-
-
 angular.module('managerApp')
   .directive('hterm', $interval => ({
     restrict: 'EA',
@@ -23,13 +21,15 @@ angular.module('managerApp')
         },
       }));
 
-
       term.open(element.context);
+
       const interval = $interval(() => {
         term.fit();
       }, 600);
       scope.$on('$destroy', () => {
-        interval.cancel();
+        if (interval) {
+            interval.cancel();
+        }
       });
     },
   }));
