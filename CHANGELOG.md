@@ -1,3 +1,44 @@
+<a name="7.7.3"></a>
+## [7.7.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.2...v7.7.3) (2018-10-05)
+
+
+### Bug Fixes
+
+* **cloud.project:** redirect on creation ([d21e519](https://github.com/ovh-ux/ovh-manager-cloud/commit/d21e519))
+
+
+
+<a name="7.7.2"></a>
+## [7.7.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.1...v7.7.2) (2018-10-05)
+
+
+### Bug Fixes
+
+* **deskass password:** fix position of pwd requirements informations ([f4ef2f8](https://github.com/ovh-ux/ovh-manager-cloud/commit/f4ef2f8))
+* **home:** display Summit banner in some subsidaries only ([31f84a1](https://github.com/ovh-ux/ovh-manager-cloud/commit/31f84a1))
+* **translations:** add back sso modal translations ([45c8670](https://github.com/ovh-ux/ovh-manager-cloud/commit/45c8670))
+* remove border top of the summit banner ([0294ddb](https://github.com/ovh-ux/ovh-manager-cloud/commit/0294ddb))
+* resolve stylelint errors ([e71a40f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e71a40f))
+* update gitignore file ([c0d6eae](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0d6eae))
+
+
+
+<a name="7.7.1"></a>
+## [7.7.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.0...v7.7.1) (2018-10-02)
+
+
+### Bug Fixes
+
+* **i18n:** submit / retrieve (submit) ([6562a84](https://github.com/ovh-ux/ovh-manager-cloud/commit/6562a84))
+* **instance modale:** remove strong balise for reboot ([d3a6d41](https://github.com/ovh-ux/ovh-manager-cloud/commit/d3a6d41))
+
+
+### Features
+
+* **home:** add Summer banner ([73905d5](https://github.com/ovh-ux/ovh-manager-cloud/commit/73905d5))
+
+
+
 <a name="7.7.0"></a>
 # [7.7.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.6...v7.7.0) (2018-10-01)
 

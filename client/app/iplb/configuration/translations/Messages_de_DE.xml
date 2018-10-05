@@ -3,7 +3,7 @@
    <translation id="iplb_configuration_title" qtlid="284867">Die Konfiguration anwenden</translation>
    <translation id="iplb_configuration_intro" qtlid="438896">Die Konfiguration Ihres Loadbalancers muss für jedes Rechenzentrum einzeln angewandt werden. Erst danach sind die Änderungen sichtbar für Ihre Besucher. Dies ermöglicht es Ihnen, auch komplexere Konfigurationen gleichzeitig auszuführen.</translation>
 
-   <translation id="iplb_configuration_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_configuration_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_configuration_progress" qtlid="354496">Fortschritt </translation>
    <translation id="iplb_configuration_status" qtlid="26443">Status</translation>
    <translation id="iplb_configuration_action" qtlid="56105">Aktion</translation>

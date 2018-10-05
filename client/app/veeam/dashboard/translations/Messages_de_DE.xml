@@ -9,7 +9,7 @@
    <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Angebot</translation>
    <translation id="veeam_tiles_configuration_label_stockage_number" qtlid="403697">Anzahl Storages</translation>
    <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">Anzahl VM</translation>
-   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacenter</translation>
 
    <translation id="veeam_tiles_subscription_title" qtlid="28891">Abo</translation>
    <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Automatische Verlängerung</translation>

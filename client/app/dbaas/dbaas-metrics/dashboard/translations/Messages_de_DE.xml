@@ -11,7 +11,7 @@
    <translation id="metrics_tiles_configuration_name" qtlid="3818">Name</translation>
    <translation id="metrics_tiles_configuration_retention" qtlid="415532">Speicherzeit</translation>
    <translation id="metrics_tiles_configuration_retention_month" qtlid="40222">Monat</translation>
-   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Datacenter</translation>
 
    <translation id="metrics_tiles_subscription_title" qtlid="28891">Abo</translation>
    <translation id="metrics_tiles_subscription_offer" qtlid="38217">Angebot</translation>

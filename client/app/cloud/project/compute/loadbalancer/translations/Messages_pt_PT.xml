@@ -5,7 +5,7 @@
    <translation id="cpc_loadbalancer_discover_body" qtlid="447378">O Load Balancer da OVH é compatível com Public Cloud, Private Cloud, VPS e Servidores Dedicados. Esta solução permite repartir a carga entre os diferentes serviços dos datacenters. O ajustamento da infraestrutura às necessidades de tráfego permite melhorar os tempos de resposta e aumentar a tolerância a falhas. Resultado: mais garantias de Zero Downtime. Para facilitar a gestão, o Load Balancer pode ser configurado a partir da API OVH e Openstack (disponível para regiões de Varsóvia, Frankfurt e Londres).</translation>
 
    <translation id="cpc_loadbalancer_order" qtlid="447391">Contratar um Load Balancer</translation>
-   <translation id="cpc_loadbalancer_back" qtlid="4118">Voltar atrás</translation>
+   <translation id="cpc_loadbalancer_back" qtlid="4118">Retroceder</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">IP Load Balancer</translation>
    <translation id="cpc_loadbalancer_displayname" qtlid="3818">Apelido</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">Openstack</translation>
