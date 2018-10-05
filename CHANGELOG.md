@@ -1,3 +1,13 @@
+<a name="7.7.3"></a>
+## [7.7.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.2...v7.7.3) (2018-10-05)
+
+
+### Bug Fixes
+
+* **cloud.project:** redirect on creation ([d21e519](https://github.com/ovh-ux/ovh-manager-cloud/commit/d21e519))
+
+
+
 <a name="7.7.2"></a>
 ## [7.7.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.1...v7.7.2) (2018-10-05)
 
