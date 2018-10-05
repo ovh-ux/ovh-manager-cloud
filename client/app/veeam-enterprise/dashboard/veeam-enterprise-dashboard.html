@@ -12,7 +12,7 @@
                 </oui-tile-button>
                 <oui-tile-button
                     data-text="{{ ::'veeam_enterprise_shortcut_label_cancel_license' | translate }}"
-                    data-href="{{ $ctrl.uiActions.manageAutorenew.href }}">
+                    data-on-click="$ctrl.terminateLicense()">
                 </oui-tile-button>
             </oui-tile>
         </div>

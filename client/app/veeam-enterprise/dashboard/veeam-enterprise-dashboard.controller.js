@@ -86,6 +86,19 @@ class VeeamEnterpriseDashboardCtrl {
       },
     });
   }
+
+  terminateLicense() {
+    this.ControllerHelper.modal.showModal({
+      modalConfig: {
+        templateUrl: 'app/veeam-enterprise/dashboard/terminate/veeam-enterprise-terminate.html',
+        controller: 'VeeamEnterpriseTerminateCtrl',
+        controllerAs: '$ctrl',
+        resolve: {
+          serviceName: () => this.serviceName,
+        },
+      },
+    });
+  }
 }
 
 angular.module('managerApp').controller('VeeamEnterpriseDashboardCtrl', VeeamEnterpriseDashboardCtrl);

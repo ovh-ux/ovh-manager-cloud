@@ -78,6 +78,20 @@ class VeeamEnterpriseService {
       ));
   }
 
+  terminate(serviceName) {
+    return this.veeamEnterprise
+      .terminate({ serviceName })
+      .$promise
+      .then(response => this.acceptResponse(
+        response,
+        this.$translate.instant('veeam_enterprise_terminate_success'),
+      ))
+      .catch(response => this.rejectResponse(
+        response.data,
+        this.$translate.instant('veeam_enterprise_terminate_error'),
+      ));
+  }
+
   acceptResponse(data, message) {
     return this.$q.resolve({
       status: 'OK',
