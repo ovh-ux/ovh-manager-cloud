@@ -1,3 +1,18 @@
+<a name="7.7.2"></a>
+## [7.7.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.1...v7.7.2) (2018-10-05)
+
+
+### Bug Fixes
+
+* **deskass password:** fix position of pwd requirements informations ([f4ef2f8](https://github.com/ovh-ux/ovh-manager-cloud/commit/f4ef2f8))
+* **home:** display Summit banner in some subsidaries only ([31f84a1](https://github.com/ovh-ux/ovh-manager-cloud/commit/31f84a1))
+* **translations:** add back sso modal translations ([45c8670](https://github.com/ovh-ux/ovh-manager-cloud/commit/45c8670))
+* remove border top of the summit banner ([0294ddb](https://github.com/ovh-ux/ovh-manager-cloud/commit/0294ddb))
+* resolve stylelint errors ([e71a40f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e71a40f))
+* update gitignore file ([c0d6eae](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0d6eae))
+
+
+
 <a name="7.7.1"></a>
 ## [7.7.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.0...v7.7.1) (2018-10-02)
 
