@@ -115,7 +115,9 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
         .catch(() => {
            $state.go('iaas.pci-project-new');
         })
-        .finally(() => self.loaders.init = false);
+        .finally(() => {
+            self.loaders.init = false;
+        });
     }
 
     this.cancelProjectCreation = function () {
