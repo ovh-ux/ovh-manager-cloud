@@ -518,6 +518,19 @@
    <translation id="vps_tab_cloud_database_order_explanation_title">Caractéristiques de CloudDB :</translation>
    <translation id="vps_tab_cloud_database_order_explanation_text">Accessible depuis le réseau public uniquement<br />Nombre de bases illimité<br />Mémoire RAM garantie de 512 Mo à 4Go<br />Disque garanti de 8 Go à 54 Go<br />Sauvegardes automatiques journalières<br />Jusqu'à 200 connexions simultanées</translation>
    <translation id="vps_tab_cloud_database_order_customize">Personnalisation</translation>
+   <translation id="vps_tab_cloud_database_order_version">Version du serveur</translation>
+   <translation id="vps_tab_cloud_database_order_ram">Ram</translation>
+   <translation id="vps_tab_cloud_database_order_datacenter">Datacentre</translation>
+   <translation id="vps_tab_cloud_database_order_period_title">Choisissez la durée</translation>
+   <translation id="vps_tab_cloud_database_order_period_subtitle">Combien de temps désirez-vous l'utiliser ?</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_title">Contrats</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_text">Cliquez sur "Générer le bon de commande" pour commander votre serveur de base de données CloudDB.</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_accept">J'ai lu et j'accepte les contrats suivants :</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order_created">Le bon de commande a été généré.</translation>
+   <translation id="vps_tab_cloud_database_order_redirection">Vous allez être redirigé vers l'interface de paiement OVH.</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order_open">Afficher le bon de commande</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order">Générer le bon de commande</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_duration_failed">Une erreur est survenue lors de la récupération des durées disponible.</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Une erreur est survenue lors de la demande de ne plus déranger pour le renouvellement automatique.</translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Simplifiez-vous la vie et optez pour le renouvellement automatique de votre VPS ! Finies les relances et les suppressions inopportunes.</translation>

@@ -103,7 +103,6 @@
    <translation id="common_add" qtlid="37923">Ajouter</translation>
    <translation id="common_save" qtlid="49754">Sauvegarder</translation>
    <translation id="common_delete" qtlid="2414">Supprimer</translation>
-   <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_remove" qtlid="323093">Retirer</translation>
    <translation id="edit" qtlid="37875">Modifier</translation>
    <translation id="delete" qtlid="2414">Supprimer</translation>
@@ -551,6 +550,26 @@
    <translation id="common_status_created">OK</translation>
    <translation id="common_status_creating">Création en cours</translation>
    <translation id="common_status_deleting">Suppression en cours</translation>
+
+   <translation id="common_datacenter_gra1">Gravelines</translation>
+   <translation id="common_datacenter_p19">Paris</translation>
+
+   <translation id="common_database_version_mariadb_101">MariaDB 10.1</translation>
+   <translation id="common_database_version_mariadb_102">MariaDB 10.2</translation>
+   <translation id="common_database_version_mysql_41">MySQL 4.1</translation>
+   <translation id="common_database_version_mysql_50">MySQL 5.0</translation>
+   <translation id="common_database_version_mysql_51">MySQL 5.1</translation>
+   <translation id="common_database_version_mysql_55">MySQL 5.5</translation>
+   <translation id="common_database_version_mysql_56">MySQL 5.6</translation>
+   <translation id="common_database_version_mysql_57">MySQL 5.7</translation>
+   <translation id="common_database_version_postgresql_94">PostgreSQL 9.4</translation>
+   <translation id="common_database_version_postgresql_95">PostgreSQL 9.5</translation>
+   <translation id="common_database_version_postgresql_96">PostgreSQL 9.6</translation>
+   <translation id="common_database_version_postgresql_10">PostgreSQL 10</translation>
+   <translation id="common_database_version_redis_32">Redis 3.2</translation>
+   <translation id="common_database_version_redis_40">Redis 4.0</translation>
+   <translation id="common_database_version_mongodb_34">MongoDB 3.4</translation>
+   <translation id="common_database_version_mongodb_40">MongoDB 4.0</translation>
 
    <translation id="common_database_status_detached">Détachée</translation>
    <translation id="common_database_status_restartPending">Redémarrage en cours</translation>
