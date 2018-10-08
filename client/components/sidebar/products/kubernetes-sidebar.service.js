@@ -1,9 +1,8 @@
 class KubernetesSidebar {
-  constructor($translate, OvhApiMe, SidebarMenu, URLS) {
+  constructor($translate, OvhApiMe, SidebarMenu) {
     this.$translate = $translate;
     this.User = OvhApiMe;
     this.SidebarMenu = SidebarMenu;
-    this.URLS = URLS;
 
     this.type = 'KUBE';
     this.locale = null;

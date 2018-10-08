@@ -6,15 +6,7 @@
         <span data-translate="kube_error"></span>
     </oui-message>
     <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
-    <p class="oui-paragraph">
-        <span data-translate="kube_service_description_information"></span>
-        <a class="oui-link oui-link_icon"
-           href="{{:: $ctrl.KUBERNETES.urls.kubectl }}"
-           target="_blank" rel="noopener">
-            <span data-translate="kube_service_description_tool"></span>
-            <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
-        </a>
-    </p>
+    <p class="oui-paragraph" data-translate="kube_service_description_information" data-translate-values="{ url: $ctrl.KUBERNETES.urls.kubectl }"></p>
     <p class="oui-paragraph" data-translate="kube_service_description_reset"></p>
     <div class="row d-lg-flex">
         <!--Cluster Information-->

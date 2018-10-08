@@ -9,7 +9,7 @@ angular.module('managerApp')
           },
         },
         resolve: {
-          serviceName: $transition$ => $transition$.params().serviceName,
+          serviceName: $stateParams => $stateParams.serviceName,
         },
         translations: ['..'],
       });

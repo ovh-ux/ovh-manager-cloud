@@ -1,25 +1,9 @@
 <div>
     <h2 class="oui-header_2" data-translate="kube_containers_coming_soon"></h2>
     <span data-translate="kube_containers_description"></span>
-    <div>
+    <p>
         <span data-translate="kube_containers_description_dashboard"></span>
-        <a class="oui-link oui-link_icon"
-           href="{{:: $ctrl.KUBERNETES.urls.kubernetesDashboard }}"
-           target="_blank"
-           rel="noopener">
-            <span data-translate="kube_containers_description_dashboard_link"></span>
-            <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
-        </a>
-        <span data-translate="kube_containers_description_dashboard_2"></span>
-    </div>
-    <div>
-        <span data-translate="kube_containers_description_documentation"></span>
-        <a class="oui-link oui-link_icon"
-           href="{{:: $ctrl.KUBERNETES.urls.kubernetesDoc }}"
-           target="_blank"
-           rel="noopener">
-            <span data-translate="kube_containers_description_documentation_link"></span>
-            <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
-        </a>
-    </div>
+        <span data-translate="kube_containers_description_dashboard_link" data-translate-values="{ url: $ctrl.KUBERNETES.urls.kubernetesDashboard }"></span>
+    </p>
+    <p data-translate="kube_containers_description_documentation" data-translate-values="{ url: $ctrl.KUBERNETES.urls.kubernetesDoc }"></p>
 </div>

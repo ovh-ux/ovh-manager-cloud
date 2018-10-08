@@ -1,10 +1,11 @@
 angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesNodesCtrl {
   constructor(
-    $q, $stateParams, $timeout, $translate, $uibModal,
+    $q, $state, $stateParams, $timeout, $translate, $uibModal,
     CloudMessage, Kubernetes,
     KUBERNETES,
   ) {
     this.$q = $q;
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$timeout = $timeout;
     this.$translate = $translate;

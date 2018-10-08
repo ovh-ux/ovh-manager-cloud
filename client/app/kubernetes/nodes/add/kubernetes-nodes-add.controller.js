@@ -23,8 +23,8 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
     return this.Kubernetes.getFlavors(this.projectId)
       .then((flavors) => {
         /**
-                * @type {{id: string, familyName: string, flavors: Object[]}}
-                */
+        * @type {{id: string, familyName: string, flavors: Object[]}}
+        */
         this.flavorFamilies = _.map(this.CLOUD_FLAVORTYPE_CATEGORY, category => (
           {
             id: category.id,

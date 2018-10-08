@@ -6,7 +6,7 @@ angular.module('managerApp')
         component: 'kubernetes',
         params: { serviceName: null },
         resolve: {
-          serviceName: $transition$ => $transition$.params().serviceName,
+          serviceName: $stateParams => $stateParams.serviceName,
         },
         redirectTo: 'paas.kube.service',
         translations: ['.'],
