@@ -98,7 +98,7 @@
         </div>
 
         <div class="my-5">
-            <div data-ng-if="$ctrl.currentOrder.purchaseOrderUrl">
+            <div data-ng-if="$ctrl.purchaseOrder.url">
                 <strong class="text-success"
                         data-translate="vps_tab_cloud_database_order_purchase_order_created">
                 </strong>
@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div data-ng-if="!$ctrl.currentOrder.purchaseOrderUrl">
+            <div data-ng-if="!$ctrl.purchaseOrder.url">
                 <oui-button data-variant="primary"
                             data-on-click="$ctrl.generatePurchaseOrder()"
                             data-disabled="!$ctrl.canOrder()">

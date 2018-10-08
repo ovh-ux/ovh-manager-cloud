@@ -1,14 +1,20 @@
 class VpsCloudDatabaseOrderCtrl {
     constructor (
         $q,
+        $timeout,
         $translate,
+        $window,
+        atInternet,
         CloudMessage,
         OvhApiHostingPrivateDatabase,
         OvhApiOrderPrivateDatabase,
         OvhApiMe
     ) {
         this.$q = $q;
+        this.$timeout = $timeout;
         this.$translate = $translate;
+        this.$window = $window;
+        this.atInternet = atInternet;
         this.CloudMessage = CloudMessage;
         this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
         this.ApiOrderDb = OvhApiOrderPrivateDatabase.v6();
@@ -34,6 +40,8 @@ class VpsCloudDatabaseOrderCtrl {
             duration: null,
             contractsAccepted: false
         };
+
+        this.purchaseOrder = null;
 
         this.loadSelectValues();
         this.ApiMe.get().$promise.then(user => {
@@ -113,6 +121,45 @@ class VpsCloudDatabaseOrderCtrl {
             this.currentOrder.datacenter &&
             this.currentOrder.duration &&
             this.currentOrder.contractsAccepted;
+    }
+
+    generatePurchaseOrder () {
+        this.loading.purchaseOrder = true;
+        this.loading.redirection = true;
+        this.ApiOrderDb.orderNew(
+            { duration: this.currentOrder.duration.value },
+            {
+                version: this.currentOrder.version.value,
+                ram: this.currentOrder.ram.value,
+                datacenter: this.currentOrder.datacenter.value,
+                offer: "public"
+            }).$promise
+            .then(order => {
+                this.purchaseOrder = order;
+                this.$timeout(() => {
+                    this.loading.redirection = false;
+                    this.openPurchaseOrder();
+                }, 5000);
+            })
+            .catch(error => this.CloudMessage.error([
+                this.$translate.instant("vps_tab_cloud_database_order_failed"),
+                _(error).get("data.message", error)
+            ].join(" ")))
+            .finally(() => {
+                this.loading.purchaseOrder = false;
+            });
+    }
+
+    openPurchaseOrder () {
+        this.atInternet.trackOrder({
+            name: `[sql-public]::${this.currentOrder.version.value}`,
+            page: "web::payment-pending",
+            orderId: this.purchaseOrder.orderId,
+            priceTaxFree: this.purchaseOrder.prices.withoutTax.value,
+            price: this.purchaseOrder.prices.withTax.value,
+            status: 1
+        });
+        this.$window.open(this.purchaseOrder.url);
     }
 }
 

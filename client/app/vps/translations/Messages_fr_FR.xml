@@ -532,6 +532,7 @@
    <translation id="vps_tab_cloud_database_order_purchase_order">Générer le bon de commande</translation>
    <translation id="vps_tab_cloud_database_order_fetch_duration_failed">Une erreur est survenue lors de la récupération des durées disponibles.</translation>
    <translation id="vps_tab_cloud_database_order_fetch_prices_failed">Une erreur est survenue lors de la récupération des prix disponibles.</translation>
+   <translation id="vps_tab_cloud_database_order_failed">Une erreur est survenue lors de la génération du bon de commande.</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Une erreur est survenue lors de la demande de ne plus déranger pour le renouvellement automatique.</translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Simplifiez-vous la vie et optez pour le renouvellement automatique de votre VPS ! Finies les relances et les suppressions inopportunes.</translation>
