@@ -1,3 +1,13 @@
+<a name="7.7.4"></a>
+## [7.7.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.3...v7.7.4) (2018-10-08)
+
+
+### Bug Fixes
+
+* **cloud.infra:** infra tab state ([f223e58](https://github.com/ovh-ux/ovh-manager-cloud/commit/f223e58))
+
+
+
 <a name="7.7.3"></a>
 ## [7.7.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.2...v7.7.3) (2018-10-05)
 
