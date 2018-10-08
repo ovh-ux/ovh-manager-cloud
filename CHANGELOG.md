@@ -1,3 +1,13 @@
+<a name="7.7.5"></a>
+## [7.7.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.4...v7.7.5) (2018-10-08)
+
+
+### Bug Fixes
+
+* set correct relative path to background images ([08ea932](https://github.com/ovh-ux/ovh-manager-cloud/commit/08ea932))
+
+
+
 <a name="7.7.4"></a>
 ## [7.7.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.3...v7.7.4) (2018-10-08)
 
