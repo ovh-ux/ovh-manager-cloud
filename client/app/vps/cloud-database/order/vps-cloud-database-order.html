@@ -69,7 +69,9 @@
                 <oui-radio-group data-model="$ctrl.currentOrder.duration">
                     <oui-radio data-ng-repeat="duration in $ctrl.durations"
                                data-value="duration.value">
-                        {{duration.text}}
+                        <span data-ng-bind="duration.value | duration:'longDate'"></span>&nbsp;:
+                        <span data-ng-bind-html="duration.prices | price:$ctrl.user.ovhSubsidiary"></span>
+                        <oui-spinner data-size="s" data-ng-if="!duration.prices"></oui-spinner>
                     </oui-radio>
                 </oui-radio-group>
             </fieldset>
