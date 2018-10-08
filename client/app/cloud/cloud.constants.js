@@ -32,7 +32,7 @@ angular.module('managerApp')
     },
     {
       id: 'accelerated',
-      types: ['ovh.ssd.gpu', 'ovh.ssd.gpu2', 'ovh.ssd.gpu3', 'ovh.ssd.fpga2'],
+      types: ['ovh.ssd.gpu', 'ovh.ssd.gpu2', 'ovh.ssd.gpu3', 'ovh.ssd.fpga2', 'ovh.raid-nvme.t1'],
       migrationNotAllowed: ['vps'],
       order: 4,
     },
@@ -59,6 +59,13 @@ angular.module('managerApp')
     'ovh.ssd.gpu': 3.1,
     'ovh.ssd.gpu2': 3.1,
     'ovh.ssd.gpu3': 3.1,
+    'ovh.raid-nvme.t1': 2.1,
+  })
+  .constant('CLOUD_INSTANCE_NUMBER_OF_GPUS', {
+    default: 1,
+    120: 3,
+    45: 1,
+    90: 2,
   })
   .constant('CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES', [
     'balanced',

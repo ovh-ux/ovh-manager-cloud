@@ -2,10 +2,13 @@
   const oldFlavorRegex = /eg|sp|hg|vps-ssd/;
 
   class CloudFlavorService {
-    constructor($filter, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY) {
+    constructor($filter,
+      CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_INSTANCE_NUMBER_OF_GPUS) {
       this.$filter = $filter;
+
       this.CLOUD_FLAVORTYPE_CATEGORY = CLOUD_FLAVORTYPE_CATEGORY;
       this.CLOUD_INSTANCE_CPU_FREQUENCY = CLOUD_INSTANCE_CPU_FREQUENCY;
+      this.CLOUD_INSTANCE_NUMBER_OF_GPUS = CLOUD_INSTANCE_NUMBER_OF_GPUS;
     }
 
     static isOldFlavor(flavorName) {
@@ -124,59 +127,58 @@
       augmentedFlavor.frequency = this.CLOUD_INSTANCE_CPU_FREQUENCY[flavor.type];
 
       if (/vps/.test(flavor.type)) {
-        augmentedFlavor.vps = true;
-        augmentedFlavor.diskType = 'ssd';
-        augmentedFlavor.flex = false;
-        augmentedFlavor.shortGroupName = flavor.name;
-      } else {
-        let shortType;
-        let numberType;
-        if (flavor.osType === 'windows') {
-          shortType = _.first(_.rest(flavor.name.split('-')));
-          numberType = _.first(_.rest(_.rest(flavor.name.split('-'))));
-        } else {
-          shortType = _.first(flavor.name.split('-'));
-          numberType = _.first(_.rest(flavor.name.split('-')));
-        }
-        if (shortType) {
-          augmentedFlavor.shortType = shortType;
-        }
-        if (numberType) {
-          augmentedFlavor.numberType = numberType;
-        }
-        if (shortType && numberType) {
-          augmentedFlavor.shortGroupName = `${shortType}-${numberType}`;
-        }
-        augmentedFlavor.flex = /flex$/.test(flavor.name);
-        augmentedFlavor.diskType = /ssd/.test(flavor.type) ? 'ssd' : 'ceph';
-
-        if (_.indexOf(['g1', 'g2', 'g3'], augmentedFlavor.shortType) > -1) {
-          if (flavor.osType === 'windows') {
-            augmentedFlavor.imageType = ['uefi'];
-          }
-          if (numberType === '120') {
-            augmentedFlavor.gpuCardCount = 3;
-          } else {
-            augmentedFlavor.gpuCardCount = 1;
-          }
-        }
-        augmentedFlavor.isOldFlavor = oldFlavorRegex.test(flavor.name);
+        return Object.assign({
+          vps: true,
+          diskType: 'ssd',
+          flex: false,
+          shortGroupName: flavor.name,
+        },
+        augmentedFlavor);
       }
+
+      let shortType;
+      let numberType;
+
+      if (flavor.osType === 'windows') {
+        [, shortType, numberType] = flavor.name.split('-');
+      } else {
+        [shortType, numberType] = flavor.name.split('-');
+      }
+
+      if (shortType) {
+        augmentedFlavor.shortType = shortType;
+      }
+
+      if (numberType) {
+        augmentedFlavor.numberType = numberType;
+      }
+
+      if (shortType && numberType) {
+        augmentedFlavor.shortGroupName = `${shortType}-${numberType}`;
+      }
+
+      augmentedFlavor.flex = /flex$/.test(flavor.name);
+      augmentedFlavor.diskType = [/ssd/, /nvme/].some(regex => regex.test(flavor.type)) ? 'ssd' : 'ceph';
+
+      const flavorContainsGPUs = _(['g1', 'g2', 'g3', 't1']).includes(augmentedFlavor.shortType);
+      if (flavorContainsGPUs) {
+        augmentedFlavor.imageType = flavor.osType === 'windows' ? ['uefi'] : augmentedFlavor.imageType;
+        augmentedFlavor.gpuCardCount = _(this.CLOUD_INSTANCE_NUMBER_OF_GPUS).get(
+          numberType,
+          this.CLOUD_INSTANCE_NUMBER_OF_GPUS.default,
+        );
+      }
+
+      augmentedFlavor.isOldFlavor = CloudFlavorService.isOldFlavor(flavor.name);
+
 
       return augmentedFlavor;
     }
 
-    getCategory(flavorType, withDetails = false) {
-      let category = null;
-      /* eslint-disable no-restricted-syntax */
-      for (const c of this.CLOUD_FLAVORTYPE_CATEGORY) {
-        if (_.includes(c.types, flavorType)) {
-          category = withDetails ? c : _.get(c, 'id');
-          break;
-        }
-      }
-      /* eslint-enable no-restricted-syntax */
-      return category;
+    getCategory(flavorType) {
+      return _(this.CLOUD_FLAVORTYPE_CATEGORY).find(
+        currentCategory => _(currentCategory.types).includes(flavorType),
+      );
     }
   }
 
