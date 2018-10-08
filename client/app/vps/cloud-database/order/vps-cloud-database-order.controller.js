@@ -61,6 +61,7 @@ class VpsCloudDatabaseOrderCtrl {
 
     showOrRefreshDurations () {
         this.currentOrder.duration = null;
+        this.currentOrder.contractsAccepted = false;
 
         if (!this.currentOrder.version ||
             !this.currentOrder.ram ||
@@ -100,9 +101,18 @@ class VpsCloudDatabaseOrderCtrl {
 
     getPrices (duration, version, ram, datacenter) {
         return this.ApiOrderDb.getNewDetails({ duration: duration.value, version, ram, datacenter }).$promise
-            .then(({ prices }) => {
-                duration.prices = prices;
+            .then(details => {
+                duration.details = details;
             });
+    }
+
+    canOrder () {
+        return !_.any(this.loading) &&
+            this.currentOrder.version &&
+            this.currentOrder.ram &&
+            this.currentOrder.datacenter &&
+            this.currentOrder.duration &&
+            this.currentOrder.contractsAccepted;
     }
 }
 
