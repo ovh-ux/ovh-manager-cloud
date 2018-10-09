@@ -3,30 +3,31 @@
 @cloud-space-meter-uib-progress-background-color_usedbysnaphots: @supernova;
 
 .cloud-space-meter .progress {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cloud-space-meter .progress-bar {
-    box-shadow: none;
+  box-shadow: none;
 
-    &-used {
-        position: relative;
-        background-color: @cloud-space-meter-uib-progress-background-color_used;
-    }
+  &-used {
+    position: relative;
+    background-color: @cloud-space-meter-uib-progress-background-color_used;
+  }
 
-    &-used::after {
-        #ovh > .candystripes();
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        overflow: hidden;
-    }
+  &-used::after {
+    #ovh > .candystripes();
 
-    &-usedbysnapshots {
-        background-color: @cloud-space-meter-uib-progress-background-color_usedbysnaphots;
-    }
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &-usedbysnapshots {
+    background-color: @cloud-space-meter-uib-progress-background-color_usedbysnaphots;
+  }
 }

@@ -1,6 +1,6 @@
-angular.module("managerApp")
-    .directive("iplbBulletChart", () => ({
-        template: `
+angular.module('managerApp')
+  .directive('iplbBulletChart', () => ({
+    template: `
             <div class="oui-progress"
               data-ng-class="{
                 'oui-progress_error': $ctrl.value >= 100,
@@ -27,21 +27,21 @@ angular.module("managerApp")
               </div>
             </div>
             `,
-        restrict: "E",
-        controller: class {
-            getValue () {
-                return `${this.value}%`;
-            }
+    restrict: 'E',
+    controller: class {
+      getValue() {
+        return `${this.value}%`;
+      }
 
-            getLimit () {
-                return `${this.limit}%`;
-            }
-        },
-        controllerAs: "$ctrl",
-        scope: true,
-        bindToController: {
-            text: "<",
-            value: "<",
-            limit: "<"
-        }
-    }));
+      getLimit() {
+        return `${this.limit}%`;
+      }
+    },
+    controllerAs: '$ctrl',
+    scope: true,
+    bindToController: {
+      text: '<',
+      value: '<',
+      limit: '<',
+    },
+  }));

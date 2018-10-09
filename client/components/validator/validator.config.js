@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * validator-js - @see https://github.com/chriso/validator.js
  *
@@ -9,17 +7,18 @@
  * ```
  * and then easily use ng-messages (```data-ng-message="isIpValid"```).
  */
-angular.module("managerApp").run(function (validator) {
+angular.module('managerApp').run((validator) => {
+  // -- Put your validator-js extends here
 
-    // -- Put your validator-js extends here
-
-    // Validate an IPv4Block or IPv6Block
-    validator.extend("isIPBlock", function (str, version) {
-        if (version === 4 || version === 6) {
-            var split = str.split("/");
-            return split.length === 2 && validator.isIP(split[0], version) && parseInt(split[1], 10) > 0 && parseInt(split[1], 10) <= (version === 4 ? 32 : 128);
-        }
-        return validator.isIPBlock(str, 4) || validator.isIPBlock(str, 6);
-    });
-
+  // Validate an IPv4Block or IPv6Block
+  validator.extend('isIPBlock', (str, version) => {
+    if (version === 4 || version === 6) {
+      const split = str.split('/');
+      return split.length === 2
+        && validator.isIP(split[0], version)
+        && parseInt(split[1], 10) > 0
+        && parseInt(split[1], 10) <= (version === 4 ? 32 : 128);
+    }
+    return validator.isIPBlock(str, 4) || validator.isIPBlock(str, 6);
+  });
 });

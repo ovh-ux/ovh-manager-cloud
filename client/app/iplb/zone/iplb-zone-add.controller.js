@@ -1,56 +1,57 @@
 class IpLoadBalancerZoneAddCtrl {
-    constructor ($q, $translate, $stateParams, CloudMessage, CloudNavigation, ControllerHelper, IpLoadBalancerZoneAddService) {
-        this.$q = $q;
-        this.$translate = $translate;
-        this.CloudMessage = CloudMessage;
-        this.CloudNavigation = CloudNavigation;
-        this.ControllerHelper = ControllerHelper;
-        this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
+  constructor($q, $translate, $stateParams, CloudMessage, CloudNavigation, ControllerHelper,
+    IpLoadBalancerZoneAddService) {
+    this.$q = $q;
+    this.$translate = $translate;
+    this.CloudMessage = CloudMessage;
+    this.CloudNavigation = CloudNavigation;
+    this.ControllerHelper = ControllerHelper;
+    this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
 
-        this.serviceName = $stateParams.serviceName;
+    this.serviceName = $stateParams.serviceName;
 
-        this._initLoaders();
-        this._initModel();
+    this.initLoaders();
+    this.initModel();
+  }
+
+  $onInit() {
+    this.previousState = this.CloudNavigation.getPreviousState();
+    this.zones.load();
+  }
+
+  submit() {
+    if (this.form.$invalid) {
+      return this.$q.reject();
     }
 
-    $onInit () {
-        this.previousState = this.CloudNavigation.getPreviousState();
-        this.zones.load();
-    }
+    this.saving = true;
+    this.CloudMessage.flushChildMessage();
+    return this.IpLoadBalancerZoneAddService.addZones(this.serviceName, this.model.zones.value)
+      .then(() => {
+        this.previousState.go();
+      })
+      .finally(() => {
+        this.saving = false;
+      });
+  }
 
-    submit () {
-        if (this.form.$invalid) {
-            return this.$q.reject();
-        }
+  isLoading() {
+    return this.saving || this.zones.loading;
+  }
 
-        this.saving = true;
-        this.CloudMessage.flushChildMessage();
-        return this.IpLoadBalancerZoneAddService.addZones(this.serviceName, this.model.zones.value)
-            .then(() => {
-                this.previousState.go();
-            })
-            .finally(() => {
-                this.saving = false;
-            });
-    }
+  initLoaders() {
+    this.zones = this.ControllerHelper.request.getArrayLoader({
+      loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName),
+    });
+  }
 
-    isLoading () {
-        return this.saving || this.zones.loading;
-    }
-
-    _initLoaders () {
-        this.zones = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName)
-        });
-    }
-
-    _initModel () {
-        this.model = {
-            zones: {
-                value: []
-            }
-        };
-    }
+  initModel() {
+    this.model = {
+      zones: {
+        value: [],
+      },
+    };
+  }
 }
 
-angular.module("managerApp").controller("IpLoadBalancerZoneAddCtrl", IpLoadBalancerZoneAddCtrl);
+angular.module('managerApp').controller('IpLoadBalancerZoneAddCtrl', IpLoadBalancerZoneAddCtrl);

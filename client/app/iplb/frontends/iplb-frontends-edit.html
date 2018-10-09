@@ -60,7 +60,7 @@
                             data-ng-model="ctrl.frontend.zone"
                             data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
                             data-ng-change="ctrl.onZoneChange()"
-                            ui-validate="{ selection: 'ctrl.validateSelection($value)' }">
+                            ui-validate="{ selection: 'ctrl.constructor.validateSelection($value)' }">
                             <option data-translate="iplb_zone_select_placeholder"></option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
@@ -102,7 +102,7 @@
                             name="certificate"
                             id="certificate"
                             data-ng-model="ctrl.frontend.defaultSslId"
-                            data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data">
+                            data-ng-options="certificate.id as ctrl.constructor.getCertificateName(certificate) for certificate in ctrl.certificates.data">
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>

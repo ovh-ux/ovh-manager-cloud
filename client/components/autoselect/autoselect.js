@@ -1,11 +1,8 @@
-angular.module("managerApp").directive('autoselect', function ($timeout) {
-    "use strict";
-    return {
-        restrict: 'A',
-        link: function ($scope, $element) {
-            $timeout(function () {
-                $element[0].select();
-            });
-        }
-    };
-});
+angular.module('managerApp').directive('autoselect', $timeout => ({
+  restrict: 'A',
+  link($scope, $element) {
+    $timeout(() => {
+      $element[0].select();
+    });
+  },
+}));

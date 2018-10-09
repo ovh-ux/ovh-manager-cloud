@@ -1,42 +1,36 @@
-"use strict";
 
-angular.module("managerApp")
-    .controller("DeskaasChangeUsernameCtrl",
+
+angular.module('managerApp')
+  .controller('DeskaasChangeUsernameCtrl',
     function ($uibModalInstance) {
+      const self = this;
 
-        var self = this;
+      self.policies = {};
 
-        self.policies = {};
+      self.values = {
+        newUsername: '',
+      };
 
-        self.values = {
-            newUsername: ""
-        };
+      self.flags = {
+        init: false,
+      };
 
-        self.flags = {
-            init : false
-        };
+      self.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+      };
 
-        self.cancel = function () {
-            $uibModalInstance.dismiss("cancel");
-        };
-
-        self.ok = function () {
-
-            if (!self.values.newUsername) {
-                $uibModalInstance.dismiss("cancel");
-                return;
-            }
-
-            $uibModalInstance.close(self.values);
-
-        };
-
-        function init () {
-
-            self.flags.init = false;
-
+      self.ok = function () {
+        if (!self.values.newUsername) {
+          $uibModalInstance.dismiss('cancel');
+          return;
         }
 
-        init();
+        $uibModalInstance.close(self.values);
+      };
 
+      function init() {
+        self.flags.init = false;
+      }
+
+      init();
     });

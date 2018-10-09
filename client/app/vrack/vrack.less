@@ -15,93 +15,91 @@
 @vrack-text-font-color: #959eab;
 
 .vrack {
-    min-width: 32rem;
-    overflow-x: hidden;
+  min-width: 32rem;
+  overflow-x: hidden;
 
-    > * {
-        padding: 0 5.2rem;
+  > * {
+    padding: 0 5.2rem;
+  }
+
+  &__spinner  {
+    display: inline-block;
+    font-size: @vrack-spinner-size;
+
+    &_mapper {
+      display: block;
+      text-align: center;
+      font-size: @vrack-spinner-size_mapper;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
     }
+  }
 
-    &__spinner {
-        display: inline-block;
-        font-size: @vrack-spinner-size;
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    min-height: 11rem;
+    background-color: @vrack-header-background-color;
+    padding-bottom: 2rem;
+    margin: 0 0 20px 0;
+  }
 
-        &_mapper {
-            display: block;
-            text-align: center;
-            font-size: @vrack-spinner-size_mapper;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
+  &__error-list,
+  &__error-item {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__error-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &_in-header {
+      margin-left: 1rem;
     }
+  }
 
-    &__header {
-        display: flex;
-        align-items: flex-end;
-        min-height: 11rem;
-        background-color: @vrack-header-background-color;
-        padding-bottom: 2rem;
-        margin: 0 0 20px 0;
+  &__edit-button {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    flex: 0 0 5rem;
+  }
+
+  &__edit-input {
+    flex: 0 0 30rem;
+    height: 3.6rem;
+
+    @media (max-width: @screen-xs) {
+      flex: 0 0 22rem;
     }
+  }
 
-    &__error-list,
-    &__error-item {
-        padding: 0;
-        margin: 0;
-    }
+  &__edit-form {
+    flex: 1;
+    display: flex;
+  }
 
-    &__error-list {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+  &__section-title {
+    font-size: @vrack-section-title-font-size;
+    color: @vrack-section-title-font-color;
+    font-weight: @vrack-section-title-font-weight;
+    margin: 3.5rem 0 1.5rem 0;
+  }
 
-        &_in-header {
-            margin-left: 1rem;
-        }
-    }
+  &__text {
+    display: inline-block;
+    font-size: @vrack-text-font-size;
+    color: @vrack-text-font-color;
+  }
 
-    &__edit-button {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
+  &__description {
+    font-size: @vrack-text-font-size;
+    color: @vrack-text-font-color;
+  }
 
-    &__edit-input {
-        flex: 0 0 30rem;
-        height: 3.6rem;
-        @media (max-width: @screen-xs) {
-            flex: 0 0 22rem;
-        }
-    }
-
-    &__edit-button {
-        flex: 0 0 5rem;
-    }
-
-    &__edit-form {
-        flex: 1;
-        display: flex;
-    }
-
-    &__section-title {
-        font-size: @vrack-section-title-font-size;
-        color: @vrack-section-title-font-color;
-        font-weight: @vrack-section-title-font-weight;
-        margin: 3.5rem 0 1.5rem 0;
-    }
-
-    &__text {
-        display: inline-block;
-        font-size: @vrack-text-font-size;
-        color: @vrack-text-font-color;
-    }
-
-    &__description {
-        font-size: @vrack-text-font-size;
-        color: @vrack-text-font-color;
-    }
-
-    &__empty-description-text {
-        margin: 3.5rem 0 1.5rem 0;
-    }
+  &__empty-description-text {
+    margin: 3.5rem 0 1.5rem 0;
+  }
 }

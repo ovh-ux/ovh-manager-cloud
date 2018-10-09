@@ -1,3 +1,3 @@
-angular.module("managerApp").run(CurrencyService => {
-    CurrencyService.loadCurrency();
+angular.module('managerApp').run((CurrencyService) => {
+  CurrencyService.loadCurrency();
 });

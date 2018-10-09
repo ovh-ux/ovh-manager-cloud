@@ -1,16 +1,16 @@
-"use strict";
 
-angular.module("managerApp").controller("DetailsPopoverController", function (DetailsPopoverService, RegionService) {
-    var self = this;
-    self.RegionService = RegionService;
 
-    self.closePopover = function () {
-        DetailsPopoverService.reset();
-    };
+angular.module('managerApp').controller('DetailsPopoverController', function (DetailsPopoverService, RegionService) {
+  const self = this;
+  self.RegionService = RegionService;
 
-    function init () {
-        self.details = DetailsPopoverService.getCurrentDetails();
-    }
+  self.closePopover = function () {
+    DetailsPopoverService.reset();
+  };
 
-    init();
+  function init() {
+    self.details = DetailsPopoverService.getCurrentDetails();
+  }
+
+  init();
 });

@@ -1,12 +1,5 @@
-angular.module("managerApp").factory('CloudProjectComputeInfraIpFactory',
-    function (CloudProjectComputeInfraIpPublicFactory, CloudProjectComputeInfraIpFailoverFactory) {
-
-        'use strict';
-
-        return {
-            'public'   : CloudProjectComputeInfraIpPublicFactory,
-            'failover' : CloudProjectComputeInfraIpFailoverFactory
-        };
-
-    }
-);
+angular.module('managerApp').factory('CloudProjectComputeInfraIpFactory',
+  (CloudProjectComputeInfraIpPublicFactory, CloudProjectComputeInfraIpFailoverFactory) => ({
+    public: CloudProjectComputeInfraIpPublicFactory,
+    failover: CloudProjectComputeInfraIpFailoverFactory,
+  }));

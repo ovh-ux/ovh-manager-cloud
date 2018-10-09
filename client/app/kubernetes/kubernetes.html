@@ -1,0 +1,20 @@
+<div class="text-center" data-ng-if="$ctrl.loading">
+    <oui-spinner data-size="m"></oui-spinner>
+</div>
+<div data-ng-if="!$ctrl.loading">
+    <oui-page-header data-heading="{{:: $ctrl.cluster.name }}" data-description="{{:: $ctrl.cluster.id }}">
+        <oui-guide-menu data-text="{{:: 'kube_guides' | translate }}">
+            <oui-guide-menu-item data-text="{{:: 'kube_guides_kubernetes' | translate }}" data-href="{{:: $ctrl.KUBERNETES.urls.kubernetesDoc }}" data-external></oui-guide-menu-item>
+        </oui-guide-menu>
+        <oui-header-tabs>
+            <oui-header-tabs-item data-text="{{:: 'kube_service' | translate }}" data-state="paas.kube.service" data-state-params="{ serviceName: $ctrl.serviceName }"></oui-header-tabs-item>
+            <oui-header-tabs-item data-text="{{:: 'kube_nodes' | translate }}" data-state="paas.kube.nodes" data-state-params="{ serviceName: $ctrl.serviceName }"></oui-header-tabs-item>
+            <oui-header-tabs-item data-text="{{:: 'kube_containers_and_services' | translate }}" data-state="paas.kube.containers" data-state-params="{ serviceName: $ctrl.serviceName }"></oui-header-tabs-item>
+        </oui-header-tabs>
+    </oui-page-header>
+    <oui-message data-ng-if="$ctrl.errorMessage" data-type="error">
+        <span data-translate="kube_error" data-translate-values="{ message: $ctrl.errorMessage }"></span>
+    </oui-message>
+    <div data-ng-if="!$ctrl.errorMessage" class="cui-page__content" data-ui-view="kubernetesView"></div>
+</div>
+

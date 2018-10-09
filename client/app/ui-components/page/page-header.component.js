@@ -1,6 +1,6 @@
-angular.module("managerApp")
-    .component("cuiPageHeader", {
-        template: `
+angular.module('managerApp')
+  .component('cuiPageHeader', {
+    template: `
             <header class="cui-page__header">
                 <cui-page-header-title
                     data-text="$ctrl.titleText"
@@ -10,15 +10,15 @@ angular.module("managerApp")
                 <ng-transclude></ng-transclude>
             </header>
         `,
-        transclude: true,
-        bindings: {
-            titleText: "<",
-            cloudProjectTitle: "<",
-            subtitleText: "<",
-            guides: "<"
-        }
-    }).component("cuiPageHeaderTitle", {
-        template: `
+    transclude: true,
+    bindings: {
+      titleText: '<',
+      cloudProjectTitle: '<',
+      subtitleText: '<',
+      guides: '<',
+    },
+  }).component('cuiPageHeaderTitle', {
+    template: `
             <guide-component data-ng-if="$ctrl.guides"
                 class="pull-right"
                 data-guides="$ctrl.guides"></guide-component>
@@ -32,10 +32,10 @@ angular.module("managerApp")
                 data-ng-if="$ctrl.subtitleText"
                 data-ng-bind="$ctrl.subtitleText"></h2>
         `,
-        bindings: {
-            text: "<",
-            cloudProjectTitle: "<",
-            subtitleText: "<",
-            guides: "<"
-        }
-    });
+    bindings: {
+      text: '<',
+      cloudProjectTitle: '<',
+      subtitleText: '<',
+      guides: '<',
+    },
+  });

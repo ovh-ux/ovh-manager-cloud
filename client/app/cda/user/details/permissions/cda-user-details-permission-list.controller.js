@@ -1,60 +1,61 @@
-angular.module("managerApp")
-  .controller("CdaUserDetailsPermissionListCtrl", function ($q, $stateParams, $translate, CloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
-      "use strict";
+angular.module('managerApp')
+  .controller('CdaUserDetailsPermissionListCtrl', function ($q, $stateParams, $translate, CloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
+    const self = this;
+    self.loading = false;
 
-      var self = this;
-      self.loading = false;
+    self.datas = {
+      userPermissions: [],
+      pools: [],
+      poolsDisplay: [],
+    };
 
-      self.datas = {
-          userPermissions: [],
-          pools: [],
-          poolsDisplay: []
-      };
+    function initUserPermissions() {
+      OvhApiDedicatedCeph.User().Pool().v6().resetQueryCache();
 
-      function init () {
-          self.loading = true;
+      return OvhApiDedicatedCeph.User().Pool().v6().query({
+        serviceName: $stateParams.serviceName,
+        userName: $stateParams.userName,
+      }).$promise.then((userPermissions) => {
+        self.datas.userPermissions = userPermissions;
+        return userPermissions;
+      });
+    }
 
-          $q.allSettled([initUserPermissions(), initPools()]).then(function (poolsData) {
-              return computePoolsDisplay(poolsData[0], poolsData[1]);
-          }).then(function (poolsDisplay) {
-              self.datas.poolsDisplay = poolsDisplay;
-          }).catch(function (errors) {
-              displayError(_.find(errors, function (error) { return error; }));
-          }).finally(function () {
-              self.loading = false;
-          });
-      }
+    function initPools() {
+      OvhApiDedicatedCeph.Pool().v6().resetQueryCache();
 
-      function initUserPermissions () {
-          OvhApiDedicatedCeph.User().Pool().v6().resetQueryCache();
+      return OvhApiDedicatedCeph.Pool().v6().query({
+        serviceName: $stateParams.serviceName,
+      }).$promise.then((pools) => {
+        self.datas.pools = pools;
+        return pools;
+      });
+    }
 
-          return OvhApiDedicatedCeph.User().Pool().v6().query({
-              serviceName: $stateParams.serviceName,
-              userName: $stateParams.userName
-          }).$promise.then(function (userPermissions) {
-              self.datas.userPermissions = userPermissions;
-              return userPermissions;
-          });
-      }
+    function computePoolsDisplay(userPermissions, pools) {
+      return CdaUserPermissionService.computePoolsDisplay(userPermissions, pools);
+    }
 
-      function initPools () {
-          OvhApiDedicatedCeph.Pool().v6().resetQueryCache();
+    function displayError(error) {
+      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+    }
 
-          return OvhApiDedicatedCeph.Pool().v6().query({
-              serviceName: $stateParams.serviceName
-          }).$promise.then(function (pools) {
-              self.datas.pools = pools;
-              return pools;
-          });
-      }
+    function init() {
+      self.loading = true;
 
-      function computePoolsDisplay (userPermissions, pools) {
-          return CdaUserPermissionService.computePoolsDisplay(userPermissions, pools);
-      }
+      $q
+        .allSettled([initUserPermissions(), initPools()])
+        .then(poolsData => computePoolsDisplay(poolsData[0], poolsData[1]))
+        .then((poolsDisplay) => {
+          self.datas.poolsDisplay = poolsDisplay;
+        })
+        .catch((errors) => {
+          displayError(_.find(errors, error => error));
+        })
+        .finally(() => {
+          self.loading = false;
+        });
+    }
 
-      function displayError (error) {
-          CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
-      }
-
-      init();
+    init();
   });

@@ -1,16 +1,16 @@
 class WarningModalController {
-    constructor ($uibModalInstance, params) {
-        this.$uibModalInstance = $uibModalInstance;
-        this.params = params;
-    }
+  constructor($uibModalInstance, params) {
+    this.$uibModalInstance = $uibModalInstance;
+    this.params = params;
+  }
 
-    dismissModal () {
-        this.$uibModalInstance.dismiss();
-    }
+  dismissModal() {
+    this.$uibModalInstance.dismiss();
+  }
 
-    closeModal () {
-        this.$uibModalInstance.close();
-    }
+  closeModal() {
+    this.$uibModalInstance.close();
+  }
 }
 
-angular.module("managerApp").controller("WarningModalController", WarningModalController);
+angular.module('managerApp').controller('WarningModalController', WarningModalController);

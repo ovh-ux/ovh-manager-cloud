@@ -58,7 +58,7 @@
                 </div>
             </oui-field>
 
-            <oui-form-actions data-on-cancel="$ctrl.cancel()"
+            <oui-form-actions data-on-cancel="$ctrl.constructor.cancel()"
                               data-submit-text="{{'metrics_token_add_confirmation' | translate}}"
                               data-cancel-text="{{'metrics_token_cancel' | translate}}"
                               data-disabled="MetricsTokenAddForm.$invalid || $ctrl.loading"></oui-form-actions>

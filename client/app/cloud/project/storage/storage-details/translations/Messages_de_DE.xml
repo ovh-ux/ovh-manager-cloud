@@ -10,7 +10,7 @@
    <translation id="storage_details_link_tooltip" qtlid="241885">Die Objekte ansehen</translation>
    <translation id="storage_details_deleted_success" qtlid="241898">Objekt gelöscht</translation>
    <translation id="storage_details_upload_success" qtlid="241911">Datei hochgeladen</translation>
-   <translation id="storage_region" qtlid="30802">Rechenzentrum</translation>
+   <translation id="storage_region" qtlid="30802">Datacenter</translation>
 
    <translation id="storage_file_selected_count" qtlid="367540">{{count}} ausgewählt </translation>
    <translation id="storage_object_import_files" qtlid="241924">Dateien importieren</translation>

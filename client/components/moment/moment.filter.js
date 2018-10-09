@@ -1,8 +1,6 @@
-"use strict";
 
-angular.module("managerApp")
-    .filter("momentFormat", function (moment) {
-        return function (value, format) {
-            return moment(value).format(format);
-        };
-    });
+
+angular.module('managerApp')
+  .filter('momentFormat', moment => function (value, format) {
+    return moment(value).format(format);
+  });

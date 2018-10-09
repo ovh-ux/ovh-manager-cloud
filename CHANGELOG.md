@@ -1,3 +1,126 @@
+<a name="7.7.5"></a>
+## [7.7.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.4...v7.7.5) (2018-10-08)
+
+
+### Bug Fixes
+
+* set correct relative path to background images ([08ea932](https://github.com/ovh-ux/ovh-manager-cloud/commit/08ea932))
+
+
+
+<a name="7.7.4"></a>
+## [7.7.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.3...v7.7.4) (2018-10-08)
+
+
+### Bug Fixes
+
+* **cloud.infra:** infra tab state ([f223e58](https://github.com/ovh-ux/ovh-manager-cloud/commit/f223e58))
+
+
+
+<a name="7.7.3"></a>
+## [7.7.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.2...v7.7.3) (2018-10-05)
+
+
+### Bug Fixes
+
+* **cloud.project:** redirect on creation ([d21e519](https://github.com/ovh-ux/ovh-manager-cloud/commit/d21e519))
+
+
+
+<a name="7.7.2"></a>
+## [7.7.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.1...v7.7.2) (2018-10-05)
+
+
+### Bug Fixes
+
+* **deskass password:** fix position of pwd requirements informations ([f4ef2f8](https://github.com/ovh-ux/ovh-manager-cloud/commit/f4ef2f8))
+* **home:** display Summit banner in some subsidaries only ([31f84a1](https://github.com/ovh-ux/ovh-manager-cloud/commit/31f84a1))
+* **translations:** add back sso modal translations ([45c8670](https://github.com/ovh-ux/ovh-manager-cloud/commit/45c8670))
+* remove border top of the summit banner ([0294ddb](https://github.com/ovh-ux/ovh-manager-cloud/commit/0294ddb))
+* resolve stylelint errors ([e71a40f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e71a40f))
+* update gitignore file ([c0d6eae](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0d6eae))
+
+
+
+<a name="7.7.1"></a>
+## [7.7.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.0...v7.7.1) (2018-10-02)
+
+
+### Bug Fixes
+
+* **i18n:** submit / retrieve (submit) ([6562a84](https://github.com/ovh-ux/ovh-manager-cloud/commit/6562a84))
+* **instance modale:** remove strong balise for reboot ([d3a6d41](https://github.com/ovh-ux/ovh-manager-cloud/commit/d3a6d41))
+
+
+### Features
+
+* **home:** add Summer banner ([73905d5](https://github.com/ovh-ux/ovh-manager-cloud/commit/73905d5))
+
+
+
+<a name="7.7.0"></a>
+# [7.7.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.6...v7.7.0) (2018-10-01)
+
+
+### Bug Fixes
+
+* **cloud:** fix translations & remove useless translations files ([f6c474b](https://github.com/ovh-ux/ovh-manager-cloud/commit/f6c474b))
+* **components:** infrastructure condition error ([dd0d3d8](https://github.com/ovh-ux/ovh-manager-cloud/commit/dd0d3d8))
+* **components.atinternet:** apply eslint rules ([41fb0b6](https://github.com/ovh-ux/ovh-manager-cloud/commit/41fb0b6))
+* **components.cloud:** apply eslint rules ([babf154](https://github.com/ovh-ux/ovh-manager-cloud/commit/babf154))
+* **components.cloud.project:** apply eslint rules ([ef45f75](https://github.com/ovh-ux/ovh-manager-cloud/commit/ef45f75))
+* **components.cloud.project.add:** apply eslint rules ([e23ff50](https://github.com/ovh-ux/ovh-manager-cloud/commit/e23ff50))
+* **components.cloud.project.billing:** apply eslint rules ([d4b9178](https://github.com/ovh-ux/ovh-manager-cloud/commit/d4b9178))
+* **components.cloud.project.compute:** apply eslint rules ([cf84059](https://github.com/ovh-ux/ovh-manager-cloud/commit/cf84059))
+* **components.cloud.project.compute.infrastructur:** apply eslint rules ([5402500](https://github.com/ovh-ux/ovh-manager-cloud/commit/5402500))
+* **components.cloud.project.compute.volume:** apply eslint rules ([7fd6b85](https://github.com/ovh-ux/ovh-manager-cloud/commit/7fd6b85))
+* **components.contracts:** apply eslint rules ([814851f](https://github.com/ovh-ux/ovh-manager-cloud/commit/814851f))
+* **components.location:** apply eslint rules ([e3774d6](https://github.com/ovh-ux/ovh-manager-cloud/commit/e3774d6))
+* **components.lodash:** apply eslint rules ([cb6dfc5](https://github.com/ovh-ux/ovh-manager-cloud/commit/cb6dfc5))
+* **components.manager-preload:** apply eslint rules ([e98e140](https://github.com/ovh-ux/ovh-manager-cloud/commit/e98e140))
+* **components.moment:** apply eslint rules ([f73b5e5](https://github.com/ovh-ux/ovh-manager-cloud/commit/f73b5e5))
+* **components.navbar:** apply eslint rules ([240f904](https://github.com/ovh-ux/ovh-manager-cloud/commit/240f904))
+* **components.novnc:** add path to eslintigore file ([3485152](https://github.com/ovh-ux/ovh-manager-cloud/commit/3485152))
+* **components.openstreetmap:** apply eslint rules ([df172c4](https://github.com/ovh-ux/ovh-manager-cloud/commit/df172c4))
+* **components.orderedhash:** apply eslint rules ([210f9eb](https://github.com/ovh-ux/ovh-manager-cloud/commit/210f9eb))
+* **components.ovh-angular-otrs:** apply eslint rules ([efc1489](https://github.com/ovh-ux/ovh-manager-cloud/commit/efc1489))
+* **components.ovh-doc-url:** apply eslint rules ([fea1072](https://github.com/ovh-ux/ovh-manager-cloud/commit/fea1072))
+* **components.ovh-task-alert:** apply eslint rules ([0845f3f](https://github.com/ovh-ux/ovh-manager-cloud/commit/0845f3f))
+* **components.pluralize:** apply eslint rules ([82e32d6](https://github.com/ovh-ux/ovh-manager-cloud/commit/82e32d6))
+* **components.products:** apply eslint rules ([c7095f3](https://github.com/ovh-ux/ovh-manager-cloud/commit/c7095f3))
+* **components.q:** apply eslint rules ([c3937ef](https://github.com/ovh-ux/ovh-manager-cloud/commit/c3937ef))
+* **components.region:** apply eslint rules ([ab3e999](https://github.com/ovh-ux/ovh-manager-cloud/commit/ab3e999))
+* **components.runabove:** apply eslint rules ([62484b7](https://github.com/ovh-ux/ovh-manager-cloud/commit/62484b7))
+* **components.security:** apply eslint rules ([c84d832](https://github.com/ovh-ux/ovh-manager-cloud/commit/c84d832))
+* **components.session:** apply eslint rules ([34f61cd](https://github.com/ovh-ux/ovh-manager-cloud/commit/34f61cd))
+* **components.sidebar:** apply eslint rules ([746571e](https://github.com/ovh-ux/ovh-manager-cloud/commit/746571e))
+* **components.smoothscrollhere:** apply eslint rules ([b201ae2](https://github.com/ovh-ux/ovh-manager-cloud/commit/b201ae2))
+* **components.sshkeymin:** apply eslint rules ([69e992f](https://github.com/ovh-ux/ovh-manager-cloud/commit/69e992f))
+* **components.toaster:** apply eslint rules ([31ad062](https://github.com/ovh-ux/ovh-manager-cloud/commit/31ad062))
+* **components.translate:** apply eslint rules ([1ffc6b7](https://github.com/ovh-ux/ovh-manager-cloud/commit/1ffc6b7))
+* **components.ui-bootstrap:** apply eslint rules ([ecda9b4](https://github.com/ovh-ux/ovh-manager-cloud/commit/ecda9b4))
+* **components.ui-router:** apply eslint rules ([5e111fb](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e111fb))
+* **components.validator:** apply eslint rules ([6d7bb56](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d7bb56))
+* **components.writerightrequired:** apply eslint rules ([95beac4](https://github.com/ovh-ux/ovh-manager-cloud/commit/95beac4))
+* **eslint:** typo on configuration file ([ab81133](https://github.com/ovh-ux/ovh-manager-cloud/commit/ab81133))
+* **eslint:** update config file ([187213f](https://github.com/ovh-ux/ovh-manager-cloud/commit/187213f))
+* **home:** remove maintenance operation banner from code ([d3e80bb](https://github.com/ovh-ux/ovh-manager-cloud/commit/d3e80bb)), closes [#894](https://github.com/ovh-ux/ovh-manager-cloud/issues/894) [#933](https://github.com/ovh-ux/ovh-manager-cloud/issues/933)
+* **navbar:** add common translations to avoid clipping ([2e83c6c](https://github.com/ovh-ux/ovh-manager-cloud/commit/2e83c6c))
+* remove unexplored karma mocha and protactor deps ([214b57e](https://github.com/ovh-ux/ovh-manager-cloud/commit/214b57e))
+* **package.json:** set private true ([1c0394b](https://github.com/ovh-ux/ovh-manager-cloud/commit/1c0394b))
+* apply eslint rules ([c312fe1](https://github.com/ovh-ux/ovh-manager-cloud/commit/c312fe1))
+* apply eslint rules ([060572e](https://github.com/ovh-ux/ovh-manager-cloud/commit/060572e))
+* apply eslint rules ([86dd1ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/86dd1ee))
+* remove deprecated .buildignore file ([d5cf7f3](https://github.com/ovh-ux/ovh-manager-cloud/commit/d5cf7f3))
+* remove deprecated .yo-rc.json file ([70d32d7](https://github.com/ovh-ux/ovh-manager-cloud/commit/70d32d7))
+* **package.json:** update script lint:js ([91b87c2](https://github.com/ovh-ux/ovh-manager-cloud/commit/91b87c2))
+* **vps:** fix order of additionals disks ([858b491](https://github.com/ovh-ux/ovh-manager-cloud/commit/858b491))
+* update .gitattributes files ([5d46468](https://github.com/ovh-ux/ovh-manager-cloud/commit/5d46468))
+* update license file ([9dbb06f](https://github.com/ovh-ux/ovh-manager-cloud/commit/9dbb06f))
+
+
+
 <a name="7.6.6"></a>
 ## [7.6.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.6.5...v7.6.6) (2018-09-18)
 
