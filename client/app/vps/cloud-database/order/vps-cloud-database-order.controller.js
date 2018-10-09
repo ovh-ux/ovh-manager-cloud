@@ -42,6 +42,7 @@ class VpsCloudDatabaseOrderCtrl {
         };
 
         this.purchaseOrder = null;
+        this.redirectionTimeout = null;
 
         this.loadSelectValues();
         this.ApiMe.get().$promise.then(user => {
@@ -68,8 +69,7 @@ class VpsCloudDatabaseOrderCtrl {
     }
 
     showOrRefreshDurations () {
-        this.currentOrder.duration = null;
-        this.currentOrder.contractsAccepted = false;
+        this.cancelFurtherChoices();
 
         if (!this.currentOrder.version ||
             !this.currentOrder.ram ||
@@ -95,6 +95,16 @@ class VpsCloudDatabaseOrderCtrl {
             .finally(() => {
                 this.loading.durations = false;
             });
+    }
+
+    cancelFurtherChoices () {
+        this.$timeout.cancel(this.redirectionTimeout);
+        this.loading.purchaseOrder = false;
+        this.loading.redirection = false;
+
+        this.currentOrder.duration = null;
+        this.currentOrder.contractsAccepted = false;
+        this.purchaseOrder = null;
     }
 
     getPricesForEachDuration (durations, version, ram, datacenter) {
@@ -136,7 +146,7 @@ class VpsCloudDatabaseOrderCtrl {
             }).$promise
             .then(order => {
                 this.purchaseOrder = order;
-                this.$timeout(() => {
+                this.redirectionTimeout = this.$timeout(() => {
                     this.loading.redirection = false;
                     this.openPurchaseOrder();
                 }, 5000);
