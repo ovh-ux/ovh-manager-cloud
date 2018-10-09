@@ -2,7 +2,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
   constructor(
     $stateParams, $translate, $uibModalInstance,
     Kubernetes, projectId,
-    CLOUD_FLAVORTYPE_CATEGORY,
+    CLOUD_FLAVORTYPE_CATEGORY, KUBERNETES,
   ) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
@@ -10,6 +10,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
     this.Kubernetes = Kubernetes;
     this.projectId = projectId;
     this.CLOUD_FLAVORTYPE_CATEGORY = CLOUD_FLAVORTYPE_CATEGORY;
+    this.KUBERNETES = KUBERNETES;
   }
 
   $onInit() {
@@ -25,19 +26,22 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
         /**
         * @type {{id: string, familyName: string, flavors: Object[]}}
         */
-        this.flavorFamilies = _.map(this.CLOUD_FLAVORTYPE_CATEGORY, category => (
-          {
-            id: category.id,
-            familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
-            flavors: _.chain(flavors)
-              .filter(flavor => _.includes(category.types, flavor.type))
-              .map(flavor => (
-                {
-                  name: flavor.name,
-                  displayedName: this.Kubernetes.formatFlavor(flavor),
-                }))
-              .value(),
-          }));
+        this.flavorFamilies = _.chain(this.CLOUD_FLAVORTYPE_CATEGORY)
+          .filter(type => _.includes(this.KUBERNETES.flavorTypes, type.id))
+          .map(category => (
+            {
+              id: category.id,
+              familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
+              flavors: _.chain(flavors)
+                .filter(flavor => _.includes(category.types, flavor.type))
+                .map(flavor => (
+                  {
+                    name: flavor.name,
+                    displayedName: this.Kubernetes.formatFlavor(flavor),
+                  }))
+                .value(),
+            }))
+          .value();
         return flavors;
       })
       .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: error })))

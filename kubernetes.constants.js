@@ -5,6 +5,7 @@ angular.module('managerApp')
     deleteConfirmationInput: /^DELETE$/,
     kubeconfigFileName: 'kubeconfig',
     loadingStatus: ['INSTALLING', 'DELETING'],
+    flavorTypes: ['balanced', 'cpu', 'ram', 'accelerated'],
 
     urls: {
       kubectl: 'https://kubernetes.io/docs/reference/kubectl/overview/',
