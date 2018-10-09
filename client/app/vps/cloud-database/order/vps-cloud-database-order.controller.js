@@ -65,7 +65,11 @@ class VpsCloudDatabaseOrderCtrl {
           value: datacenter,
           name: this.$translate.instant(`common_datacenter_${datacenter}`),
         }));
-      });
+      })
+      .catch(error => this.CloudMessage.error([
+        this.$translate.instant('vps_tab_cloud_database_order_fetch_capacities_failed'),
+        _(error).get('data.message', error),
+      ].join(' ')));
   }
 
   showOrRefreshDurations() {

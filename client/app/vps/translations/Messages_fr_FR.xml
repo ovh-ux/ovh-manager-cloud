@@ -530,6 +530,7 @@
    <translation id="vps_tab_cloud_database_order_redirection">Vous allez être redirigé vers l'interface de paiement OVH.</translation>
    <translation id="vps_tab_cloud_database_order_purchase_order_open">Afficher le bon de commande</translation>
    <translation id="vps_tab_cloud_database_order_purchase_order">Générer le bon de commande</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_capacities_failed">Une erreur est survenue lors de la récupération des offres disponibles.</translation>
    <translation id="vps_tab_cloud_database_order_fetch_duration_failed">Une erreur est survenue lors de la récupération des durées disponibles.</translation>
    <translation id="vps_tab_cloud_database_order_fetch_prices_failed">Une erreur est survenue lors de la récupération des prix disponibles.</translation>
    <translation id="vps_tab_cloud_database_order_failed">Une erreur est survenue lors de la génération du bon de commande.</translation>
