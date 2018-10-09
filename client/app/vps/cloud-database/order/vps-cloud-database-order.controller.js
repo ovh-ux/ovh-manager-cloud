@@ -153,7 +153,7 @@ class VpsCloudDatabaseOrderCtrl {
         this.purchaseOrder = order;
         this.redirectionTimeout = this.$timeout(() => {
           this.loading.redirection = false;
-          this.openPurchaseOrder();
+          this.openPurchaseOrder(false);
         }, 5000);
       })
       .catch(error => this.CloudMessage.error([
@@ -165,7 +165,12 @@ class VpsCloudDatabaseOrderCtrl {
       });
   }
 
-  openPurchaseOrder() {
+  openPurchaseOrder(killAutoRedirection) {
+    if (killAutoRedirection) {
+      this.loading.redirection = false;
+      this.$timeout.cancel(this.redirectionTimeout);
+    }
+
     this.atInternet.trackOrder({
       name: `[sql-public]::${this.currentOrder.version.value}`,
       page: 'web::payment-pending',
