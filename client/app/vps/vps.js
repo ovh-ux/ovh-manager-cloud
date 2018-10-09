@@ -136,9 +136,9 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.cloud-database.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsCloudDatabaseContent"></div>'
-        }
-      }
+          template: '<div ui-view="vpsCloudDatabaseContent"></div>',
+        },
+      },
     })
     .state('iaas.vps.detail.cloud-database.list', {
       url: '/',
@@ -146,9 +146,9 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsCloudDatabaseContent: {
           templateUrl: 'app/vps/cloud-database/vps-cloud-database.html',
           controller: 'VpsCloudDatabaseCtrl',
-          controllerAs: '$ctrl'
-        }
-      }
+          controllerAs: '$ctrl',
+        },
+      },
     })
     .state('iaas.vps.detail.cloud-database.order', {
       url: '/order',
@@ -156,9 +156,9 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsCloudDatabaseContent: {
           templateUrl: 'app/vps/cloud-database/order/vps-cloud-database-order.html',
           controller: 'VpsCloudDatabaseOrderCtrl',
-          controllerAs: '$ctrl'
-        }
-      }
+          controllerAs: '$ctrl',
+        },
+      },
     })
     .state('iaas.vps.detail.monitoring', {
       url: '/monitoring',
