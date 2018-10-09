@@ -17,6 +17,7 @@
                    for="orderVersion"
                    data-translate="vps_tab_cloud_database_order_version"></label>
             <oui-select
+                data-name="orderVersion"
                 data-placeholder="{{:: 'common_select' | translate }}"
                 data-model="$ctrl.currentOrder.version"
                 data-items="$ctrl.versions"
@@ -32,6 +33,7 @@
                    for="orderRam"
                    data-translate="vps_tab_cloud_database_order_ram"></label>
             <oui-select
+                data-name="orderRam"
                 data-placeholder="{{:: 'common_select' | translate }}"
                 data-model="$ctrl.currentOrder.ram"
                 data-items="$ctrl.ramAmounts"
@@ -47,6 +49,7 @@
                    for="orderDatacenter"
                    data-translate="vps_tab_cloud_database_order_datacenter"></label>
             <oui-select
+                data-name="orderDatacenter"
                 data-placeholder="{{:: 'common_select' | translate }}"
                 data-model="$ctrl.currentOrder.datacenter"
                 data-items="$ctrl.datacenters"
