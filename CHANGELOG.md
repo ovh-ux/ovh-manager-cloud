@@ -1,3 +1,13 @@
+<a name="7.7.6"></a>
+## [7.7.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.5...v7.7.6) (2018-10-09)
+
+
+### Bug Fixes
+
+* **ie11:** app will now display correctly ([e71cb59](https://github.com/ovh-ux/ovh-manager-cloud/commit/e71cb59))
+
+
+
 <a name="7.7.5"></a>
 ## [7.7.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.4...v7.7.5) (2018-10-08)
 
