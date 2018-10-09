@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="kube_guides" qtlid="300370">Gidai</translation>
+   <translation id="kube_guides_kubernetes" qtlid="504826">Kubernetes</translation>
+
+   <translation id="kube_error" qtlid="504839">An error has occurred loading the information: {{message}}</translation>
+
+   <translation id="kube_service" qtlid="31042">Paslauga</translation>
+   <translation id="kube_service_description_information" qtlid="504852">You will find here general information about your managed Kubernetes service, and how to access it using the<a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">Kubectl tool.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
+   <translation id="kube_service_description_reset" qtlid="504865">You can reset you cluster at any time.</translation>
+   <translation id="kube_service_offer_beta" qtlid="504878">Beta Managed Kubernetes Service (free)</translation>
+
+   <translation id="kube_service_file" qtlid="504891">Kubeconfig file</translation>
+   <translation id="kube_service_file_error" qtlid="504904">An error has occurred loading the kubeconfig file</translation>
+   <translation id="kube_service_file_help" qtlid="504917">The kubectl command-line tool uses kubeconfig files to find the information it needs to choose a cluster and communicate with the API server of a cluster.</translation>
+   <translation id="kube_service_file_more_information" qtlid="504930">More information can be found here</translation>
+
+   <translation id="kube_service_cluster_information" qtlid="504943">Cluster information</translation>
+   <translation id="kube_service_cluster_status" qtlid="26443">Būsena</translation>
+   <translation id="kube_service_cluster_status_READY" qtlid="433745">OK</translation>
+   <translation id="kube_service_cluster_status_ERROR" qtlid="26407">Klaida</translation>
+   <translation id="kube_service_cluster_status_INSTALLING" qtlid="504956">Installing</translation>
+   <translation id="kube_service_cluster_status_DELETING" qtlid="152778">Trinama</translation>
+   <translation id="kube_service_cluster_version" qtlid="504969">Kubernetes version</translation>
+   <translation id="kube_service_cluster_region" qtlid="32434">Regionas</translation>
+   <translation id="kube_service_cluster_api_url" qtlid="504982">Kubernetes API URL</translation>
+   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes nodes URL</translation>
+
+   <translation id="kube_service_billing" qtlid="32950">Sąskaita</translation>
+   <translation id="kube_service_billing_plan" qtlid="38217">Pasiūlymas</translation>
+   <translation id="kube_service_billing_contact" qtlid="505008">Nic Billing</translation>
+   <translation id="kube_service_billing_renewal" qtlid="168172">Atnaujinimas</translation>
+
+   <translation id="kube_nodes" qtlid="505021">Nodes</translation>
+   <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
+   <translation id="kube_nodes_add_region" qtlid="505047">During beta stage, your nodes will be spwawned in GRA5. We will allow you to change this in the future.</translation>
+   <translation id="kube_nodes_add_success" qtlid="505060">The node is being installed</translation>
+   <translation id="kube_nodes_add_flavor_error" qtlid="505073">An error has occurred loading the flavors: {{message}}</translation>
+   <translation id="kube_nodes_add_flavor_family" qtlid="505086">Select a Flavor Family</translation>
+   <translation id="kube_nodes_add_flavor_family_balanced" qtlid="505099">General purpose</translation>
+   <translation id="kube_nodes_add_flavor_family_cpu" qtlid="25555">CPU</translation>
+   <translation id="kube_nodes_add_flavor_family_ram" qtlid="31354">RAM</translation>
+   <translation id="kube_nodes_add_flavor_family_accelerated" qtlid="401445">GPU</translation>
+   <translation id="kube_nodes_add_flavor_family_vps" qtlid="505112">SANDBOX</translation>
+   <translation id="kube_nodes_add_flavor" qtlid="505125">Select a Flavor in our PCI catalogue</translation>
+   <translation id="kube_nodes_add_pick_flavor" qtlid="505138">Select a Flavor</translation>
+   <translation id="kube_nodes_add_error" qtlid="505151">An error has occurred adding the node: {{message}}</translation>
+   <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
+
+   <translation id="kube_nodes_delete" qtlid="505164">Delete Node</translation>
+   <translation id="kube_nodes_delete_confirmation" qtlid="505177">Are you sure you want to delete {{ node}} ?</translation>
+   <translation id="kube_nodes_delete_warning" qtlid="505190">This action cannot be undone.</translation>
+   <translation id="kube_nodes_delete_enter" qtlid="505203">Type DELETE in the following field to confirm your action.</translation>
+   <translation id="kube_nodes_delete_success" qtlid="505216">The node is being deleted</translation>
+   <translation id="kube_nodes_delete_error" qtlid="505229">An error has occurred deleting the node: {{message}}</translation>
+
+   <translation id="kube_nodes_node" qtlid="505242">Node</translation>
+   <translation id="kube_nodes_error" qtlid="505255">An error has occurred loading nodes: {{message}}</translation>
+   <translation id="kube_nodes_refresh" qtlid="218081">Perkrauti lentelę</translation>
+   <translation id="kube_nodes_flavor" qtlid="505268">Flavor</translation>
+   <translation id="kube_nodes_flavor_error" qtlid="505281">An error has occurred loading flavor</translation>
+   <translation id="kube_nodes_project_error" qtlid="505294">An error has occurred loading public cloud project</translation>
+   <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be spawned in the  <a class="oui-link" href="{{ url }}">{{ description }}</a> public cloud project (we will allow to change this in a future version of the service).</translation>
+   <translation id="kube_nodes_description_project_2" qtlid="505320">These instances will be billed as usual in your public cloud project.</translation>
+
+   <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }}GB DisK)</translation>
+
+   <translation id="kube_containers_and_services" qtlid="505346">Containers and services</translation>
+   <translation id="kube_containers_coming_soon" qtlid="250043">Jau greitai </translation>
+   <translation id="kube_containers_description" qtlid="505359">You will see here all containers and services running in your kubernetes cluster.</translation>
+   <translation id="kube_containers_description_dashboard" qtlid="505372">In the meantime, we invite you to use either the `kubectl` command line interface or setup the "Kubernetes Dashboard" in your cluster. Kubernetes Dashboard is a community project consisting in a web UI, that is itself a service exposed in your cluster.</translation>
+   <translation id="kube_containers_description_dashboard_link" qtlid="505385">Follow <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">this guide<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a> to install Kubernetes Dashboard</translation>
+   <translation id="kube_containers_description_documentation" qtlid="505398">During the beta phase, please find documentation, including how to orchestrate your services and expose them on the internet on the <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">Kubernetes section on labs.ovh.com.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
+</translations>

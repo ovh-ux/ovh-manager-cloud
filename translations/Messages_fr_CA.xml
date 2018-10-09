@@ -39,7 +39,7 @@
    <translation id="kube_nodes_add_flavor_family" qtlid="505086">Choisir une famille d'instance</translation>
    <translation id="kube_nodes_add_flavor_family_balanced" qtlid="505099">General purpose</translation>
    <translation id="kube_nodes_add_flavor_family_cpu" qtlid="25555">CPU</translation>
-   <translation id="kube_nodes_add_flavor_family_ram" qtlid="31354">RAM</translation>
+   <translation id="kube_nodes_add_flavor_family_ram" qtlid="31354">Mémoire vive</translation>
    <translation id="kube_nodes_add_flavor_family_accelerated" qtlid="401445">GPU</translation>
    <translation id="kube_nodes_add_flavor_family_vps" qtlid="505112">SANDBOX</translation>
    <translation id="kube_nodes_add_flavor" qtlid="505125">Choisissez un modèle d'instance dans le catalogue OVH public cloud</translation>
