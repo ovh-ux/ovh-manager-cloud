@@ -51,6 +51,16 @@
                         </button>
                     </li>
                     <li class="divider"></li>
+                    <li role="menuitem">
+                        <a class="btn fs14 text-left"
+                           data-ui-sref="iaas.pci-project.compute.infrastructure.iac-view()"
+                           data-at-internet-click="{
+                               name: 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-view'
+                           }"
+                           data-ng-bind=":: 'cpci_view_iac' | translate ">
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
                     <li>
                         <button type="button" class="btn fs14"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.importIpFailover()"

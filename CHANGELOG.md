@@ -1,3 +1,63 @@
+<a name="7.7.8"></a>
+## [7.7.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.7...v7.7.8) (2018-10-10)
+
+
+### Bug Fixes
+
+* **cloud.project:** duplicate ids on private network ([d43a98a](https://github.com/ovh-ux/ovh-manager-cloud/commit/d43a98a))
+
+
+
+<a name="7.7.7"></a>
+## [7.7.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.6...v7.7.7) (2018-10-09)
+
+
+### Bug Fixes
+
+* **i18n:** submit & retrieve ([06d5893](https://github.com/ovh-ux/ovh-manager-cloud/commit/06d5893))
+* **kube:** prevent adding node on vps instances ([0f40ad7](https://github.com/ovh-ux/ovh-manager-cloud/commit/0f40ad7))
+* **kube:** remove icon from translation ([b9f80af](https://github.com/ovh-ux/ovh-manager-cloud/commit/b9f80af))
+* **scripts.clean:** add missing rimraf dependency ([d96e190](https://github.com/ovh-ux/ovh-manager-cloud/commit/d96e190))
+
+
+### Features
+
+* **clouddb:** add missing error handler ([589487e](https://github.com/ovh-ux/ovh-manager-cloud/commit/589487e))
+* **clouddb:** authorisé -> autorisé ([e223663](https://github.com/ovh-ux/ovh-manager-cloud/commit/e223663))
+* **kubernetes:** add kubernetes section ([6312c04](https://github.com/ovh-ux/ovh-manager-cloud/commit/6312c04))
+
+
+
+<a name="7.7.6"></a>
+## [7.7.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.5...v7.7.6) (2018-10-09)
+
+
+### Bug Fixes
+
+* **ie11:** app will now display correctly ([e71cb59](https://github.com/ovh-ux/ovh-manager-cloud/commit/e71cb59))
+
+
+
+<a name="7.7.5"></a>
+## [7.7.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.4...v7.7.5) (2018-10-08)
+
+
+### Bug Fixes
+
+* set correct relative path to background images ([08ea932](https://github.com/ovh-ux/ovh-manager-cloud/commit/08ea932))
+
+
+
+<a name="7.7.4"></a>
+## [7.7.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.3...v7.7.4) (2018-10-08)
+
+
+### Bug Fixes
+
+* **cloud.infra:** infra tab state ([f223e58](https://github.com/ovh-ux/ovh-manager-cloud/commit/f223e58))
+
+
+
 <a name="7.7.3"></a>
 ## [7.7.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.2...v7.7.3) (2018-10-05)
 

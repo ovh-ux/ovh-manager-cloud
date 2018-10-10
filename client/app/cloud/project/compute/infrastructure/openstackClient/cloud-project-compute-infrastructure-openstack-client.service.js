@@ -10,17 +10,24 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
     this.ws = null;
   }
 
+  setSession(session, term) {
+    if (!session) {
+      return this.$q.when();
+    }
+
+    this.session = session;
+    this.updateExpiresAt();
+
+    if (!term) {
+      return session;
+    }
+
+    return this.initWebSocket(session, term);
+  }
 
   getSession({ serviceName, term }) {
     return this.OvhApiCloudProjectOpenstackClient.v6().post({ serviceName }, {}).$promise
-      .then((session) => {
-        this.session = session;
-        this.updateExpiresAt();
-        if (!term) {
-          return session;
-        }
-        return this.initWebSocket(session, term);
-      })
+      .then(session => this.setSession(session, term))
       .catch(this.ServiceHelper.errorHandler('cpci_openstack_client_session_error', 'iaas.pci-project.compute.openstack-console'));
   }
 
@@ -32,6 +39,11 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
   sendAction(action) {
     this.clear();
     this.send(`${action}\n`);
+  }
+
+  pasteAction(action) {
+    this.clear();
+    this.send(action);
   }
 
   updateExpiresAt() {
@@ -46,6 +58,11 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
   initWebSocket(session, term) {
     const defer = this.$q.defer();
     let pingTimer;
+
+    if (!session) {
+      return defer.reject();
+    }
+
     this.ws = new WebSocket(session.websocket);
     this.ws.onopen = () => {
       this.retry = false;
