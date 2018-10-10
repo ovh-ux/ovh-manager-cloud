@@ -1,10 +1,4 @@
 node_modules
-tools/keys/*
-.tmp
-.idea
 dist
-*.orig
-dist.tar.gz
-tools/
-.DS_Store
-.vscode/
+tools
+.cache-loader

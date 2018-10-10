@@ -48,7 +48,7 @@
 
   .navbar-icon(@icon-selector) {
     .navbar-@{icon-selector} {
-      background: url('../assets/images/navbar/@{icon-selector}.svg') no-repeat center center;
+      background: url('../../../assets/images/navbar/@{icon-selector}.svg') no-repeat center center;
       background-size: contain;
     }
 
@@ -57,7 +57,9 @@
       &:focus,
       &_active,
       &[aria-expanded="true"] {
-        .navbar-@{icon-selector} { background: url('../assets/images/navbar/@{icon-selector}_on.svg') no-repeat center center; }
+        .navbar-@{icon-selector} {
+          background: url('../../../assets/images/navbar/@{icon-selector}_on.svg') no-repeat center center;
+        }
       }
     }
   }
@@ -104,4 +106,5 @@
   height: 1px;
   overflow: hidden;
   float: right;
+  position: absolute;
 }

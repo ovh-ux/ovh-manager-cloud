@@ -88,6 +88,7 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
               self.order = result;
             });
           }
+          pollProject();
           return null;
         case 'deleting':
           pollProject();
@@ -109,9 +110,14 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
       self.loaders.init = true;
       return OvhApiCloudProject.v6().get({
         serviceName: self.projectId,
-      }).$promise.then(project => handleProjectDetails(project), () => $state.go('iaas.pci-project-new')).finally(() => {
-        self.loaders.init = false;
-      });
+      }).$promise
+        .then(project => handleProjectDetails(project))
+        .catch(() => {
+          $state.go('iaas.pci-project-new');
+        })
+        .finally(() => {
+          self.loaders.init = false;
+        });
     }
 
     this.cancelProjectCreation = function () {

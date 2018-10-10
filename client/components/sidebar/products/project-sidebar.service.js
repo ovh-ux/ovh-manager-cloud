@@ -61,7 +61,7 @@ class CloudProjectSidebar {
 
   addToSection(service) {
     const section = this.SidebarMenu.getItemById('mainIaasItem');
-    const hasSubItems = section.subItems.length > 0;
+    const hasSubItems = _.get(section, 'subItems', []).length > 0;
     const projectItem = this.SidebarMenu.addMenuItem({
       id: service.project_id,
       title: service.description,
@@ -77,7 +77,7 @@ class CloudProjectSidebar {
 
     // Show on top: TODO: show in alphabetical order
     if (hasSubItems) {
-      _.remove(section.subItems, item => item.id === service.project_id);
+      _.remove(_.get(section, 'subItems'), item => item.id === service.project_id);
       section.subItems.unshift(projectItem);
     }
   }
