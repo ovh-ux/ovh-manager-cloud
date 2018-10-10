@@ -29,8 +29,8 @@
             <input id="{{ ::'subnetEnd' + region }}" name="{{ ::'subnetEnd' + region }}" type="text" readonly="readonly" class="form-control private-network-dialog__input private-network-dialog__input_range" data-ng-model="ctrl.models.subnets[region].end">
             <hr>
             <div class="flat-checkbox">
-                <input id="gateway"
-                       name="gateway"
+                <input id="{{'gateway' + $index}}"
+                       name="{{'gateway' + $index}}"
                        data-ng-model="ctrl.models.subnets[region].gateway"
                        data-ng-change="ctrl.changeSubnets(region)"
                        type="checkbox">
@@ -38,7 +38,7 @@
                 <div class="flat-checkbox-on"></div>
             </div>
             <span>&nbsp;</span>
-            <label for="gateway"
+            <label for="{{'gateway' + $index}}"
                    class="control-label private-network-dialog__label private-network-dialog__label_range"
                    data-translate="cpcipnd_subnet_gateway_label">
             </label>
