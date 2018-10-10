@@ -16,7 +16,8 @@
         <cui-tab data-text="'vps_tab_additional_disk' | translate"
                  data-state="iaas.vps.detail.additional-disk"
                  data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
-        <cui-tab data-text="'vps_tab_cloud_database' | translate"
+        <cui-tab data-ng-if="$ctrl.user.ovhSubsidiary !== 'CA'"
+                 data-text="'vps_tab_cloud_database' | translate"
                  data-state="iaas.vps.detail.cloud-database"
                  data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
         <cui-tab data-text="'vps_configuration_monitoring_title' | translate"
