@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Home Page</translation>
+   <translation id="veeam_enterprise_infos_general_load_error" qtlid="403801">Errore durante il caricamento delle informazioni generali.</translation>
+   <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Errore durante il caricamento delle informazioni di configurazione.</translation>
+   <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Errore durante il caricamento delle informazioni relative all'abbonamento.</translation>
+   <translation id="veeam_enterprise_infos_license_register_error">Erreur lors de l'activation de votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_register_success">Activation en cours de votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_error">Erreur lors de la mise à jour de votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_success">Mise à jour en cours de votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_already_registered_error">Vous avez déjà activé votre licence Veeam Enterprise.</translation>
+</translations>
