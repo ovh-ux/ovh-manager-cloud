@@ -13,7 +13,7 @@
         views: {
           iplbHeader,
           iplbContent: {
-            template: '<div ui-view="iplbFrontend"><div>',
+            template: '<div data-ui-view="iplbFrontend"><div>',
           },
         },
         translations: ['.'],

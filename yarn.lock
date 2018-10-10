@@ -1187,6 +1187,11 @@ angular-animate@~1.6:
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.10.tgz#c520f6d341370e34e0a62060c99bcf47b7d7db8c"
   integrity sha512-RU9ZJbTspq0W0x675H5k1DeSgKbAFfp2aiYoNGdlD+wQNKvwwMR5ho+EkDKkx9zE02a5goe8Z6EhhYPQSff9dA==
 
+angular-aria@^1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.4.tgz#0774cefa3a3e1bf0bf7aba5253e3bb9ca209f216"
+  integrity sha512-nmZ7xjvVMm1PVEvJ360gJQqEF4FGRdTFWZtDOE4+uHGZZlVJeCEcsrnZCONX4qyK3rrRHUFSHZc1OV8+heGrhw==
+
 angular-aria@~1.6:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.10.tgz#472bfff8682c4cfe634d4bfda0524443e07e3501"
@@ -1252,6 +1257,11 @@ angular-sanitize@1.3.x:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
   integrity sha1-WxyqQXa42yA519HBUnU3phvjzWc=
+
+angular-sanitize@^1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.4.tgz#c7d80176ed31507fd0e08bbb3a6c25bf09db2a61"
+  integrity sha512-i5NoK6lo21N/CDRtkXpUuqaXeyncP7icLNCGzCUCD6CQvfVh3nY9Nsiw+tHtiIeD34ppcbl5Wb6ihY7RKDoDVw==
 
 angular-sanitize@~1.6:
   version "1.6.10"
@@ -1320,6 +1330,11 @@ angular@1.3.x:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.3.20.tgz#b23a3d7c5e7f99f7d95b9b4d49b9ac355269baee"
   integrity sha1-sjo9fF5/mffZW5tNSbmsNVJpuu4=
+
+angular@^1.6.x:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.4.tgz#c1bf4884c2d470c06907737a1bf0835a9f646f31"
+  integrity sha512-nYTWc9CpZjTY57l8EA1+DGpQNzI6HewQ34bfRYoGXBYysIoPYjfcgTGWC+Vl3AaeCnhAb3VTkysVESvCBpUIoA==
 
 angular@~1.6:
   version "1.6.10"
@@ -2286,7 +2301,7 @@ cli-width@^2.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipboard@2.0.1:
+clipboard@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
   integrity sha512-7yhQBmtN+uYZmfRjjVjKa0dZdWuabzpSKGtyQZN+9C8xlC788SSJjOHWh7tzurfwTqTD5UDYAhIv5fRJg3sHjQ==
@@ -3848,10 +3863,10 @@ flatmap-stream@^0.1.0:
   resolved "https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.1.tgz#d34f39ef3b9aa5a2fc225016bd3adf28ac5ae6ea"
   integrity sha512-lAq4tLbm3sidmdCN8G3ExaxH7cUCtP5mgDvrYowsx84dcYkJJ4I28N7gkxA6+YlSXzaGLJYIDEi9WGfXzMiXdw==
 
-flatpickr@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.0.tgz#f72c7164a1c24e3ad419e3b2209d1a2d3604724a"
-  integrity sha512-7AfaM2BVyQmFW4uBpzgoNeRUr6EZlvEh4Pnj298rEsHBq8LIZnPgRaesLORir7dATETUvoLkhrfXZdmNssma+A==
+flatpickr@^4.5.1:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
+  integrity sha512-jDy4QYGpmiy7+Qk8QvKJ4spjDdxcx9cxMydmq1x427HkKWBw0qizLYeYM2F6tMcvvqGjU5VpJS55j4LnsaBblA==
 
 flush-write-stream@^1.0.0:
   version "1.0.3"
@@ -5362,6 +5377,11 @@ less-plugin-remcalc@^0.0.1:
   resolved "https://registry.yarnpkg.com/less-plugin-remcalc/-/less-plugin-remcalc-0.0.1.tgz#f6a52d0d340964935e07be0e7d6f752210ea53a7"
   integrity sha1-9qUtDTQJZJNeB74OfW91IhDqU6c=
 
+less-plugin-remcalc@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/less-plugin-remcalc/-/less-plugin-remcalc-0.1.0.tgz#34bce158cd24d2a14efa8984e01b2b9d0420d4cc"
+  integrity sha512-Nws5vHVO5QwXlIURF9ncZwTZtw91CH57F1yMm98c52RwWRaqZdmntcyxG+LuBLqM2Qfh2GWt0v0BrVrkzj2Cqg==
+
 less@^2.3.1:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
@@ -6847,22 +6867,25 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-ovh-ui-angular@~2.17.1:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.17.2.tgz#21a6fb5470749e04aa55a7788adc76c343d87e24"
-  integrity sha512-uthN2SSGLKhdrxdqzLFP8VtMNwRa3/JCWDXEjoV8FJ9lrCFzf9iEujF3wGv+AWppIsrc+irokvSVd0SY6QERAQ==
+ovh-ui-angular@~2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.19.0.tgz#e4396dbc46975669a81108708d5dbc45358a55fb"
+  integrity sha512-B9R0OTWwNAh3xHLPRRZeXdFc9AzAqhv8OKmmhfj5fcawRrxoQ2qEQAQo+z07WwsWIIx6UjXxfxuLb+qEVvsvFQ==
   dependencies:
-    clipboard "2.0.1"
+    angular "^1.6.x"
+    angular-aria "^1.6.x"
+    angular-sanitize "^1.6.x"
+    clipboard "^2.0.1"
     escape-string-regexp "^1.0.5"
-    flatpickr "4.5.0"
+    flatpickr "^4.5.1"
     popper.js "^1.14.3"
 
-ovh-ui-kit@~2.17.1:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.17.2.tgz#7c923f13f8e4f2c98441748c30437f72bb2feee8"
-  integrity sha512-MOVBfnjJCaEf/dbwXlBz3DVwuiunEpqSI15tre7TIL7U0wJb++FmXCp9KrWqEoblGA+RFKrcH6Psa5jrhjhkxQ==
+ovh-ui-kit@~2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.19.0.tgz#e9ca5304348aefad2e62e0954be1a228cca72995"
+  integrity sha512-aVXbt1CVWwKbUYzG2fS6yFh1SIHSENOIBWz0frJT8sWdWCFdoVbK6moJ6s/S2fQx//aO65tPlddByUcCEv5ofw==
   dependencies:
-    less-plugin-remcalc "^0.0.1"
+    less-plugin-remcalc "^0.1.0"
 
 p-defer@^1.0.0:
   version "1.0.0"

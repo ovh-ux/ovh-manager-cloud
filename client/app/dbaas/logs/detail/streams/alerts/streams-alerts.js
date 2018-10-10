@@ -5,7 +5,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'dbaas.logs.detail.streams.alerts.home',
       views: {
         logsStreams: {
-          template: '<div ui-view="logsAlerts"></div>',
+          template: '<div data-ui-view="logsAlerts"></div>',
           controller: 'LogsStreamsAlertsCtrl',
           controllerAs: 'ctrl',
         },

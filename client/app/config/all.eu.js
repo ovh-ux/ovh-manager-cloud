@@ -232,6 +232,9 @@ angular.module('managerApp')
       veeam: {
         FR: 'https://www.ovh.com/fr/storage-solutions/veeam-cloud-connect/',
       },
+      veeam_enterprise: {
+        FR: 'https://www.ovh.com/fr/storage-solutions/veeam-enterprise/',
+      },
       cloud_disk_array: {
         FR: 'https://www.ovh.com/fr/cloud/cloud-disk-array/',
       },

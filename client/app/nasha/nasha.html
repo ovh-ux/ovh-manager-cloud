@@ -14,11 +14,11 @@
             <div data-ng-include="'app/nasha/information/nasha-information.html'"></div>
 
             <div data-ng-if="!NashaCtrl.loading && NashaCtrl.data.information.status !== 'expired'">
-                <div ui-view="nashaPartition"></div>
+                <div data-ui-view="nashaPartition"></div>
             </div>
 
             <div data-ng-if="!NashaCtrl.loaders.nasha && NashaCtrl.data.information.status !== 'expired'">
-                <div ui-view="nashaPartitionAccess"></div>
+                <div data-ui-view="nashaPartitionAccess"></div>
             </div>
         </div>
     </div>

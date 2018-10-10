@@ -195,6 +195,7 @@ angular.module('managerApp', [
           minlength: $translate.instant('common_field_error_minlength', { minlength: '{{minlength}}' }),
           maxlength: $translate.instant('common_field_error_maxlength', { maxlength: '{{maxlength}}' }),
           pattern: $translate.instant('common_field_error_pattern'),
+          validIpAddress: $translate.instant('common_field_error_valid_ip_address'),
         },
       });
 

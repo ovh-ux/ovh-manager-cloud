@@ -13,7 +13,7 @@
         views: {
           iplbHeader,
           iplbContent: {
-            template: '<div ui-view="iplbSslCertificate"><div>',
+            template: '<div data-ui-view="iplbSslCertificate"><div>',
           },
         },
         translations: ['.'],

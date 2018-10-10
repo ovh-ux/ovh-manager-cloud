@@ -3,7 +3,7 @@ angular.module('managerApp')
     $stateProvider
       .state('paas.cda', {
         url: '/cda',
-        template: '<div ui-view="cdaDetails"></div>',
+        template: '<div data-ui-view="cdaDetails"></div>',
         translations: ['.'],
         abstract: true,
       });

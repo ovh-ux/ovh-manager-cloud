@@ -46,7 +46,7 @@ angular.module('managerApp').config(($stateProvider) => {
         metricsHeader,
         metricsContent: {
           template: `
-                        <div ui-view="metricsContent"></div>
+                        <div data-ui-view="metricsContent"></div>
                     `,
         },
       },
