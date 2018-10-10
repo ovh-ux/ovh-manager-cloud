@@ -3,9 +3,7 @@ angular.module('managerApp').config(($stateProvider) => {
     url: '/onboarding',
     views: {
       cloudProjectCompute: {
-        templateUrl: 'app/cloud/project/compute/tasks/onboarding/cloud-project-compute-tasks-onboarding.html',
-        controller: 'CloudProjectComputeTasksOnboardingCtrl',
-        controllerAs: '$ctrl',
+        component: 'cpcTasksOnboarding',
       },
     },
     translations: ['..'],

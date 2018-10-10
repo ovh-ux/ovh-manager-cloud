@@ -6,32 +6,31 @@
     <translation id="cpc_tasks_instances_error_region">Impossible de récupérer les tâches programmées pour toutes les régions : {{ message }}</translation>
     <translation id="cpc_tasks_backups_instance_name_error">Impossible de récupérer le nom de la ressource associée</translation>
 
-    <translation id="cpc_tasks_actions_description">En fonction de l'option choisie, seules les instances éligibles peuvent être choisies dans l'étape suivante.</translation>
+    <translation id="cpc_tasks_actions_description">Selon l’option choisie, seules les instances éligibles seront affichées lors de l’étape suivante.</translation>
 
-    <translation id="cpc_tasks_resource">Ressource</translation>
-    <translation id="cpc_tasks_resource_coming_soon">{{ resource }} (Bientôt disponible)</translation>
+    <translation id="cpc_tasks_resource">Choix de l'instance</translation>
     <translation id="cpc_tasks_resource_select">Selectionnez une ressource</translation>
-    <translation id="cpc_tasks_resources">Ressources</translation>
+    <translation id="cpc_tasks_resources">Choix de l'instance</translation>
+    <translation id="cpc_tasks_resources_description">Choisissez ci-dessous l’instance pour laquelle vous souhaitez activer l'option.</translation>
     <translation id="cpc_tasks_resources_error">Impossible de récupérer la liste des instances éligibles</translation>
+    <translation id="cpc_tasks_resources_required">Veuillez sélectionner une instance</translation>
 
     <translation id="cpc_tasks_schedule">Programme</translation>
     <translation id="cpc_tasks_schedule_rotate7">7 rotations</translation>
-    <translation id="cpc_tasks_schedule_rotate7_description">Une sauvegarde est effectuée quotidiennement et la rotation conserve un historique de 7 entrées. Lorsque la nouvelle sauvegarde est terminée, la plus ancienne est supprimée.</translation>
+    <translation id="cpc_tasks_schedule_rotate7_description">Une sauvegarde est effectuée quotidiennement. La rotation conserve un historique de 7 entrées. Lorsque la nouvelle sauvegarde est effectuée, la plus ancienne est supprimée.</translation>
     <translation id="cpc_tasks_schedule_rotate14">14 rotations</translation>
-    <translation id="cpc_tasks_schedule_rotate14_description">Une sauvegarde est effectuée quotidiennement et la rotation conserve un historique de 14 entrées. Lorsque la nouvelle sauvegarde est terminée, la plus ancienne est supprimée.</translation>
+    <translation id="cpc_tasks_schedule_rotate14_description">Une sauvegarde est effectuée quotidiennement. La rotation conserve un historique de 14 entrées. Lorsque la nouvelle sauvegarde est effectuée, la plus ancienne est supprimée.</translation>
     <translation id="cpc_tasks_schedule_custom">Personnalisé</translation>
-    <translation id="cpc_tasks_schedule_custom_description">Choisissez vous-même la programmation qui vous convient (syntaxe cron) et le nombre de rotations.</translation>
-    <translation id="cpc_tasks_schedule_time">Horaire de la sauvegarde</translation>
-    <translation id="cpc_tasks_schedule_time_help">Heure de la sauvegarde au format 24h</translation>
+    <translation id="cpc_tasks_schedule_custom_description">Choisissez vous-même la programmation qui vous convient (syntaxe cron) et le nombre de rotations souhaité.</translation>
+    <translation id="cpc_tasks_schedule_time">Horaire de la sauvegarde (format 24 heures)</translation>
     <translation id="cpc_tasks_schedule_cron">Cron</translation>
-    <translation id="cpc_tasks_schedule_cron_help">Définissez la période, au format "Crontab", en insérant des valeurs pour les minutes, l'heure, le jour, le mois, et le jour de la semaine.</translation>
-    <translation id="cpc_tasks_schedule_rotation">Rotation</translation>
-    <translation id="cpc_tasks_schedule_rotation_help">Nombre d'entrées qui seront conservées</translation>
+    <translation id="cpc_tasks_schedule_cron_help">Motif cron respectant le format "Crontab": minutes, heures, jour du mois, mois, jour de la semaine chacun séparé par une espace. Exemple : 0 1 20 * 5</translation>
+    <translation id="cpc_tasks_schedule_rotation">Rotations (nombre d'entrées conservées)</translation>
 
     <translation id="cpc_tasks_action">Action</translation>
     <translation id="cpc_tasks_action_snapshot">Snapshot</translation>
     <translation id="cpc_tasks_action_snapshot_description">Créer une sauvegarde automatisée d'une instance</translation>
-    <translation id="cpc_tasks_action_snapshot_condition">L'activation de ce service implique la facturation de l'espace disque nécessaire au stockage des sauvegardes. Tarifs disponibles dans la rubrique Object Storage.</translation>
+    <translation id="cpc_tasks_action_snapshot_condition">L'activation de ce service implique la facturation de l'espace disque nécessaire au stockage des sauvegardes. Tarifs disponibles dans la rubrique « Object Storage ».</translation>
 
     <translation id="cpc_tasks_create">Créer une tâche</translation>
     <translation id="cpc_tasks_create_error">Impossible de créer la tâche : {{ message }}</translation>
@@ -42,7 +41,7 @@
     <translation id="cpc_tasks_onboarding_new">Nouveau !</translation>
     <translation id="cpc_tasks_onboarding_automated_tasks">Tâches automatisées</translation>
     <translation id="cpc_tasks_onboarding_description_1">Cette nouvelle fonctionnalité vous permet de programmer l'éxécution d'actions sur votre infrastructure. Elle est disponible via votre espace client et via <a class="oui-link oui-link_icon" href="{{ url }}" rel="noopener" target="_blank">API Mistral.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
-    <translation id="cpc_tasks_onboarding_description_2">Vous pouvez par exemple prendre un snapshot d'une instance toutes les nuits.</translation>
-    <translation id="cpc_tasks_onboarding_discover">Découvrir l'offre</translation>
+    <translation id="cpc_tasks_onboarding_description_2">Vous pouvez par exemple prendre un snapshot d’une instance toutes les nuits, prévoir l’arrêt d’une instance le soir et son redémarrage le matin…</translation>
+    <translation id="cpc_tasks_onboarding_discover">Je découvre l'offre</translation>
     <translation id="cpc_tasks_onboarding_stop_showing">Ne plus afficher</translation>
 </translations>

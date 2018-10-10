@@ -3,9 +3,7 @@ angular.module('managerApp').config(($stateProvider) => {
     url: '/create',
     views: {
       'cloudProjectCompute@iaas.pci-project.compute': {
-        templateUrl: 'app/cloud/project/compute/tasks/create/cloud-project-compute-tasks-create.html',
-        controller: 'CloudProjectComputeTasksCreateCtrl',
-        controllerAs: '$ctrl',
+        component: 'cpcTasksCreate',
       },
     },
     params: {

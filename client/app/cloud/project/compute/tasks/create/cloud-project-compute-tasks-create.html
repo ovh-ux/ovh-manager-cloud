@@ -21,8 +21,10 @@
         </oui-step-form>
         <oui-step-form data-header="{{:: 'cpc_tasks_resources' | translate }}"
                        data-loading="$ctrl.instancesAreLoading"
-                       data-valid="$ctrl.isInstanceSelected()">
-            <oui-field data-label="{{:: 'cpc_tasks_resource' | translate }}">
+                       data-valid="$ctrl.isInstanceSelected()"
+                       data-description="{{:: 'cpc_tasks_resources_description' | translate }}">
+            <oui-field data-label="{{:: 'cpc_tasks_resource' | translate }}"
+                       data-error-messages="{ required: ('cpc_tasks_resources_required' | translate) }">
                 <oui-select name="computeTaskCreateInstances"
                             data-model="$ctrl.model.instance"
                             data-items="$ctrl.instances"
@@ -50,7 +52,7 @@
                                    data-model="$ctrl.model.schedule"
                                    data-description="{{:: 'cpc_tasks_schedule_' + schedule + '_description' | translate }}"
                                    data-values="[schedule]"
-                                   data-on-change="$ctrl.selectSchedule()"
+                                   data-on-change="$ctrl.selectSchedule(modelValue)"
                                    class="cui-grid-item cui-grid-cell">
                 </oui-select-picker>
             </div>
@@ -66,7 +68,7 @@
                            data-ng-model-options="{ updateOn: 'blur' }"
                            data-ui-validate="{ pattern: '$ctrl.validator.isCron($value)' }">
                 </oui-field>
-                <oui-field data-label="{{:: 'cpc_tasks_schedule_rotation' | translate }}" data-help-text="{{:: 'cpc_tasks_schedule_rotation_help' | translate }}" data-size="m">
+                <oui-field data-label="{{:: 'cpc_tasks_schedule_rotation' | translate }}" data-size="m">
                     <input class="oui-input"
                            type="number"
                            name="rotation"
@@ -77,14 +79,14 @@
             </div>
 
             <oui-field data-label="{{:: 'cpc_tasks_schedule_time' | translate }}"
-                       data-help-text="{{:: 'cpc_tasks_schedule_time_help' | translate }}"
                        data-size="m"
                        data-ng-if="$ctrl.model.schedule && !$ctrl.isCustomSchedule">
                 <input class="oui-input"
                        type="time"
                        name="timepicker"
                        data-ng-model="$ctrl.model.time"
-                       data-ng-required="!$ctrl.isCustomSchedule">
+                       data-ng-required="!$ctrl.isCustomSchedule"
+                       data-ng-blur="$ctrl.selectTime()">
             </oui-field>
         </oui-step-form>
     </oui-stepper>

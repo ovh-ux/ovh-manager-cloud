@@ -26,18 +26,18 @@ angular.module('managerApp')
         schedule: null,
       };
 
-      this.getRegionsWithWorkflowService();
+      this.getRegionsWithWorkflowService()
+        .then(() => this.getCloudProjectEligibleInstances())
+        .catch(() => {
+          this.CloudMessage.error(this.$translate.instant('cpc_tasks_resources_error'));
+        })
+        .finally(() => { this.instancesAreLoading = false; });
     }
 
     getRegionsWithWorkflowService() {
       return this.CloudProjectCompute.getRegionsWithWorkflowService(this.serviceName)
         .then((regions) => {
           this.regions = regions;
-          return this.getCloudProjectEligibleInstances();
-        })
-        .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('cpc_tasks_resources_error'));
-          this.instancesAreLoading = false;
         });
     }
 
@@ -51,11 +51,7 @@ angular.module('managerApp')
           if (this.instanceId) {
             this.model.instance = _.find(instances, { id: this.instanceId });
           }
-        })
-        .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('cpc_tasks_resources_error'));
-        })
-        .finally(() => { this.instancesAreLoading = false; });
+        });
     }
 
     isActionSelected() {
@@ -71,28 +67,26 @@ angular.module('managerApp')
     }
 
     createTask() {
-      if (this.model.action.id === 'snapshot') {
-        this.generateSnapshotTaskParams();
-        this.createSnapshotTask();
-      }
+      return this[`create${this.model.action.id}Task`]();
     }
 
-    selectSchedule() {
-      this.isCustomSchedule = this.model.schedule === 'custom';
-    }
-
-    generateSnapshotTaskParams() {
-      if (this.isCustomSchedule) {
+    selectSchedule(schedule) {
+      if (schedule === 'custom') {
         this.model.name = `${this.model.instance.name}-custom`;
+        this.isCustomSchedule = true;
       } else {
         this.model.name = `${this.model.instance.name}-daily`;
-        this.model.rotation = _.get(this.CPC_TASKS, `defaultSchedules.${this.model.schedule}.rotation`);
-        const time = moment(this.model.time);
-        this.model.cron = `${time.minutes()} ${time.hours()} * * *`;
+        this.model.rotation = _.get(this.CPC_TASKS, `defaultSchedules.${schedule}.rotation`);
+        this.isCustomSchedule = false;
       }
     }
 
-    createSnapshotTask() {
+    selectTime() {
+      const time = moment(this.model.time);
+      this.model.cron = `${time.minutes()} ${time.hours()} * * *`;
+    }
+
+    createsnapshotTask() {
       this.createLoader = true;
       return this.CloudProjectCompute
         .createWorkflowBackup(this.serviceName, this.model.instance.region, {
