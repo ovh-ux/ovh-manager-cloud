@@ -90,7 +90,7 @@ class VpsCloudDatabaseCtrl {
   }
 
   isVpsAuthorized(serviceName) {
-    return this.ApiWhitelist.get({ serviceName, ip: this.ipv4, service: true }).$promise
+    return this.ApiWhitelist.query({ serviceName, ip: this.ipv4, service: true }).$promise
       .then(whitelist => !_.isEmpty(whitelist));
   }
 
