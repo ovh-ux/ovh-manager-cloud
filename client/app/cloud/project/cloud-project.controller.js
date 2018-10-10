@@ -41,7 +41,7 @@ angular.module('managerApp')
                 });
             }
           })
-              .catch(() => $state.go('iaas.pci-project.details'))
+          .catch(() => $state.go('iaas.pci-project.details'))
           .finally(() => {
             self.loaders.project = false;
           });
