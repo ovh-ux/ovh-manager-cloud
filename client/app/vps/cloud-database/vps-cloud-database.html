@@ -16,7 +16,7 @@
     <oui-datagrid data-ng-if="!$ctrl.loading && $ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0"
                   data-rows="$ctrl.cloudDatabases"
                   data-empty-placeholder="{{:: 'vps_tab_cloud_database_table_empty' | translate }}">
-        <oui-column data-title="'vps_tab_cloud_database_header_name' | translate"
+        <oui-column data-title="::'vps_tab_cloud_database_header_name' | translate"
                     data-property="name"
                     data-type="string"
                     data-sortable
@@ -24,7 +24,7 @@
                     data-filterable>
             <span data-ng-bind="$row.name"></span>
         </oui-column>
-        <oui-column data-title="'vps_tab_cloud_database_header_version' | translate"
+        <oui-column data-title="::'vps_tab_cloud_database_header_version' | translate"
                     data-property="version"
                     data-type="string"
                     data-sortable
@@ -32,7 +32,7 @@
                     data-filterable>
             <span data-ng-bind="$row.version"></span>
         </oui-column>
-        <oui-column data-title="'vps_tab_cloud_database_header_vps_authorized' | translate"
+        <oui-column data-title="::'vps_tab_cloud_database_header_vps_authorized' | translate"
                     data-property="vpsAuthorized"
                     data-type="boolean"
                     data-sortable="desc"
@@ -42,7 +42,7 @@
                   data-ng-if="$row.vpsAuthorized">
             </span>
         </oui-column>
-        <oui-column data-title="'vps_tab_cloud_database_header_status' | translate"
+        <oui-column data-title="::'vps_tab_cloud_database_header_status' | translate"
                     data-property="state"
                     data-sortable
                     data-searchable
