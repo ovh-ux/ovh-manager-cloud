@@ -53,18 +53,18 @@ class VpsCloudDatabaseOrderCtrl {
   loadSelectValues() {
     return this.ApiPrivateDb.availableOrderCapacities({ offer: 'public' }).$promise
       .then((capacity) => {
-        this.versions = _.map(_.sortBy(capacity.version), version => ({
+        this.versions = _(capacity.version).sortBy().map(version => ({
           value: version,
           name: this.$translate.instant(`common_database_version_${version.replace('.', '')}`),
-        }));
-        this.ramAmounts = _.map(capacity.ram, ram => ({
+        })).value();
+        this.ramAmounts = _(capacity.ram).map(ram => ({
           value: ram,
           name: `${ram} ${this.$translate.instant('unit_size_MB')}`,
-        }));
-        this.datacenters = _.map(capacity.datacenter, datacenter => ({
+        })).value();
+        this.datacenters = _(capacity.datacenter).map(datacenter => ({
           value: datacenter,
           name: this.$translate.instant(`common_datacenter_${datacenter}`),
-        }));
+        })).value();
       })
       .catch(error => this.CloudMessage.error([
         this.$translate.instant('vps_tab_cloud_database_order_fetch_capacities_failed'),
