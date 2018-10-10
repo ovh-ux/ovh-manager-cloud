@@ -1,3 +1,13 @@
+<a name="7.7.8"></a>
+## [7.7.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.7...v7.7.8) (2018-10-10)
+
+
+### Bug Fixes
+
+* **cloud.project:** duplicate ids on private network ([d43a98a](https://github.com/ovh-ux/ovh-manager-cloud/commit/d43a98a))
+
+
+
 <a name="7.7.7"></a>
 ## [7.7.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.6...v7.7.7) (2018-10-09)
 
