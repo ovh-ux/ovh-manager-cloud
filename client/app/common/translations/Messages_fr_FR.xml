@@ -565,10 +565,8 @@
    <translation id="common_status_created">OK</translation>
    <translation id="common_status_creating">Création en cours</translation>
    <translation id="common_status_deleting">Suppression en cours</translation>
-
    <translation id="common_datacenter_gra1">Gravelines</translation>
    <translation id="common_datacenter_p19">Paris</translation>
-
    <translation id="common_database_version_mariadb_101">MariaDB 10.1</translation>
    <translation id="common_database_version_mariadb_102">MariaDB 10.2</translation>
    <translation id="common_database_version_mysql_41">MySQL 4.1</translation>
@@ -585,7 +583,6 @@
    <translation id="common_database_version_redis_40">Redis 4.0</translation>
    <translation id="common_database_version_mongodb_34">MongoDB 3.4</translation>
    <translation id="common_database_version_mongodb_40">MongoDB 4.0</translation>
-
    <translation id="common_database_status_detached">Détachée</translation>
    <translation id="common_database_status_restartPending">Redémarrage en cours</translation>
    <translation id="common_database_status_startPending">Démarrage en cours</translation>
