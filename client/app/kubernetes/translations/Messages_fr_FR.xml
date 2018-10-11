@@ -64,12 +64,13 @@
    <translation id="kube_nodes_flavor_error" qtlid="505281">Une erreur est survenue lors du chargement du type d'instance associé</translation>
    <translation id="kube_nodes_project_error" qtlid="505294">Une erreur s'est produite lors du chargement du projet associé</translation>
    <translation id="kube_nodes_description_project_1" qtlid="505307">Votre cluster Kubernetes utilise des nœuds pour héberger vos conteneurs et services. Tous vos nœuds seront lancés dans le projet public cloud <a class="oui-link" href="{{ url }}">{{ description }}</a> (nous permettrons de changer cela dans le futur).</translation>
-   <translation id="kube_nodes_description_project_2" qtlid="505320">Ces instances vous seront facturées normalement dans votre projet public cloud.</translation>
+   <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer forfait mensuel dans votre projet Public Cloud.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Pour maîtriser votre consommation Cloud, votre projet est limité en ressources.</translation>
    <translation id="kube_nodes_quota_more" qtlid="251278">Si vous avez besoin de plus de ressources, vous pouvez les demander à notre équipe en cliquant sur le bouton ci dessous.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Augmenter mes limites</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}Go RAM {{ diskCapacity }}Go Disque)</translation>
+   <translation id="kube_flavor_price" qtlid="270033">{{price}} HT/h</translation>
 
    <translation id="kube_containers_and_services" qtlid="505346">Conteneurs et services</translation>
    <translation id="kube_containers_coming_soon" qtlid="250043">Bientôt disponible</translation>

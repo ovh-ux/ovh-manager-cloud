@@ -42,10 +42,15 @@
                             data-match="displayedName"
                             data-disabled="!$ctrl.flavorFamily"
                             required>
-                    <div class="d-flex align-items-center">
-                        <span data-ng-if="$item.quotaOverflow" class="oui-icon oui-icon-error_circle d-inline position-static" aria-hidden="true"></span>
-                        <span data-ng-if="!$item.quotaOverflow" class="oui-icon oui-icon-success_circle d-inline position-static" aria-hidden="true"></span>
+                    <button data-ng-if="$item.quotaOverflow"
+                            class="d-flex align-items-center ui-select-choices-row oui-dropdown-option"
+                            disabled>
                         <span data-ng-bind="$item.displayedName"></span>
+                        <span data-ng-if="$item.quotaOverflow" class="oui-icon oui-icon-info_circle d-inline position-static" aria-hidden="true"></span>
+                    </button>
+                    <div data-ng-if="!$item.quotaOverflow">
+                        <span data-ng-bind="$item.displayedName"></span>
+                        <span data-translate="kube_flavor_price" data-translate-values="{ price : $item.price }"></span>
                     </div>
                 </oui-select>
                 <div class="oui-field__error" data-ng-if="$ctrl.selectedFlavor.quotaOverflow">

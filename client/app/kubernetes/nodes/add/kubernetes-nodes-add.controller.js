@@ -1,14 +1,17 @@
 angular.module('managerApp').controller('KubernetesNodesAddCtrl', class KubernetesNodesAddCtrl {
   constructor(
-    $stateParams, $translate, $uibModalInstance,
-    CloudFlavorService, Kubernetes, projectId,
+    $q, $stateParams, $translate, $uibModalInstance,
+    CloudFlavorService, Kubernetes, OvhApiMe, OvhCloudPriceHelper, projectId,
     CLOUD_FLAVORTYPE_CATEGORY, KUBERNETES,
   ) {
+    this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.CloudFlavorService = CloudFlavorService;
     this.Kubernetes = Kubernetes;
+    this.OvhApiMe = OvhApiMe;
+    this.OvhCloudPriceHelper = OvhCloudPriceHelper;
     this.projectId = projectId;
     this.CLOUD_FLAVORTYPE_CATEGORY = CLOUD_FLAVORTYPE_CATEGORY;
     this.KUBERNETES = KUBERNETES;
@@ -18,24 +21,26 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
     this.loading = true;
     this.serviceName = this.$stateParams.serviceName;
 
-    this.getPublicCloudProjectId()
-      .then(() => this.getProjectQuota())
-      .then(() => this.getFlavors())
+    this.getPublicCloudProject()
+      .then(() => this.$q.all({
+        quotas: this.getProjectQuota(),
+        prices: this.getPrices(),
+      }))
+      .then(({ quotas, prices }) => this.getFlavors(quotas, prices))
       .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: error })))
       .finally(() => { this.loading = false; });
   }
 
-  getPublicCloudProjectId() {
+  getPublicCloudProject() {
     return this.Kubernetes.getAssociatedPublicCloudProjects(this.serviceName)
       .then((projects) => { this.project = _.first(projects); });
   }
 
   getProjectQuota() {
-    return this.Kubernetes.getProjectQuota(this.project.projectId)
-      .then((quotas) => { this.quotas = quotas; });
+    return this.Kubernetes.getProjectQuota(this.project.projectId);
   }
 
-  getFlavors() {
+  getFlavors(quotas, prices) {
     return this.Kubernetes.getFlavors(this.projectId)
       .then((flavors) => {
         /**
@@ -49,12 +54,12 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
               familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
               flavors: _.chain(flavors)
                 .filter(flavor => _.includes(category.types, flavor.type) && flavor.osType !== 'windows')
-                .map(flavor => (
-                  {
-                    name: flavor.name,
-                    displayedName: this.Kubernetes.formatFlavor(flavor),
-                    quotaOverflow: this.getQuotaOverflow(flavor),
-                  }))
+                .map(flavor => ({
+                  name: flavor.name,
+                  displayedName: this.Kubernetes.formatFlavor(flavor),
+                  quotaOverflow: this.getQuotaOverflow(flavor, quotas),
+                  price: _.get(_.get(prices, flavor.planCodes.hourly), 'price.text'),
+                }))
                 .value(),
             }))
           .value();
@@ -62,10 +67,18 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
       });
   }
 
-  getQuotaOverflow(flavor) {
+  getSubsidiary() {
+    return this.OvhApiMe.v6().get().then((me) => { this.subsidiary = me.subsidiary; });
+  }
+
+  getPrices() {
+    return this.OvhCloudPriceHelper.getPrices(this.project.projectId);
+  }
+
+  getQuotaOverflow(flavor, quotas) {
     // addOverQuotaInfos adds 'disabled' key to flavor parameter
     const testedFlavor = _.clone(flavor);
-    this.CloudFlavorService.constructor.addOverQuotaInfos(testedFlavor, this.quotas);
+    this.CloudFlavorService.constructor.addOverQuotaInfos(testedFlavor, quotas);
     return _.get(testedFlavor, 'disabled');
   }
 
