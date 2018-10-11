@@ -1,6 +1,6 @@
 <form id="kubeNodesAdd"
       name="kubeNodesAdd"
-      data-ng-submit="kubeNodesAdd.$valid && $ctrl.addNode()"
+      data-ng-submit="kubeNodesAdd.$valid && $ctrl.instanceIsValid()&& $ctrl.addNode()"
       novalidate>
     <oui-modal data-heading="{{:: 'kube_nodes_add' | translate }}"
                data-primary-label="{{:: 'common_add' | translate }}"
@@ -30,17 +30,33 @@
                 <span data-translate="common_field_error_required"></span>
             </div>
         </div>
-        <oui-field data-label="{{:: 'kube_nodes_add_flavor' | translate }}">
-            <oui-select name="flavorFamily"
-                        data-model="$ctrl.selectedFlavor"
-                        data-title="{{:: 'kube_nodes_add_flavor_family' | translate }}"
-                        data-placeholder="{{:: 'kube_nodes_add_pick_flavor' | translate }}"
-                        data-items="$ctrl.flavors"
-                        data-match="displayedName"
-                        data-disabled="!$ctrl.flavorFamily"
-                        required>
-                <span data-ng-bind="$item.displayedName"></span>
-            </oui-select>
-        </oui-field>
+        <div class="oui-field"
+             data-ng-class="{ 'oui-field_error':  (kubeNodesAdd.$submitted && !$ctrl.selectedFlavor) || $ctrl.selectedFlavor.quotaOverflow }">
+            <label for="oui-select" class="oui-label" data-translate="kube_nodes_add_flavor"></label>
+            <div class="oui-field__control oui-field__control_auto">
+                <oui-select name="flavorFamily"
+                            data-model="$ctrl.selectedFlavor"
+                            data-title="{{:: 'kube_nodes_add_flavor_family' | translate }}"
+                            data-placeholder="{{:: 'kube_nodes_add_pick_flavor' | translate }}"
+                            data-items="$ctrl.flavors"
+                            data-match="displayedName"
+                            data-disabled="!$ctrl.flavorFamily"
+                            required>
+                    <div class="d-flex align-items-center">
+                        <span data-ng-if="$item.quotaOverflow" class="oui-icon oui-icon-error_circle d-inline position-static" aria-hidden="true"></span>
+                        <span data-ng-if="!$item.quotaOverflow" class="oui-icon oui-icon-success_circle d-inline position-static" aria-hidden="true"></span>
+                        <span data-ng-bind="$item.displayedName"></span>
+                    </div>
+                </oui-select>
+                <div class="oui-field__error" data-ng-if="$ctrl.selectedFlavor.quotaOverflow">
+                    <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                    <span data-translate="{{ 'kube_nodes_add_flavor_' + $ctrl.selectedFlavor.quotaOverflow }}"></span>
+                </div>
+                <div class="oui-field__error" data-ng-if="!$ctrl.selectedFlavor">
+                    <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
+                    <span data-translate="common_field_error_required"></span>
+                </div>
+            </div>
+        </div>
     </oui-modal>
 </form>

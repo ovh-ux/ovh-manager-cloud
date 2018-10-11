@@ -3,6 +3,15 @@
 </div>
 <div data-ng-if="!$ctrl.loading">
     <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
+    <div class="oui-box">
+        <p class="bold" data-translate="kube_nodes_quota_description"></p>
+        <p write-right-required data-translate="kube_nodes_quota_more"></p>
+        <oui-button data-variant="primary"
+                    data-on-click="$ctrl.openSupportPopup()"
+                    write-right-required>
+            <span data-translate="kube_nodes_quota_ask_more"></span>
+        </oui-button>
+    </div>
     <div data-ng-if="$ctrl.nodes">
         <p class="mb-3">
             <span data-translate="kube_nodes_description_project_1" data-translate-values="{ description: $ctrl.project.description, url: $ctrl.$state.href('iaas.pci-project.compute', { projectId: $ctrl.project.project_id }) }"></span>

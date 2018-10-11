@@ -1,12 +1,13 @@
 angular.module('managerApp').controller('KubernetesNodesAddCtrl', class KubernetesNodesAddCtrl {
   constructor(
     $stateParams, $translate, $uibModalInstance,
-    Kubernetes, projectId,
+    CloudFlavorService, Kubernetes, projectId,
     CLOUD_FLAVORTYPE_CATEGORY, KUBERNETES,
   ) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
+    this.CloudFlavorService = CloudFlavorService;
     this.Kubernetes = Kubernetes;
     this.projectId = projectId;
     this.CLOUD_FLAVORTYPE_CATEGORY = CLOUD_FLAVORTYPE_CATEGORY;
@@ -17,7 +18,21 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
     this.loading = true;
     this.serviceName = this.$stateParams.serviceName;
 
-    this.getFlavors();
+    this.getPublicCloudProjectId()
+      .then(() => this.getProjectQuota())
+      .then(() => this.getFlavors())
+      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: error })))
+      .finally(() => { this.loading = false; });
+  }
+
+  getPublicCloudProjectId() {
+    return this.Kubernetes.getAssociatedPublicCloudProjects(this.serviceName)
+      .then((projects) => { this.project = _.first(projects); });
+  }
+
+  getProjectQuota() {
+    return this.Kubernetes.getProjectQuota(this.project.projectId)
+      .then((quotas) => { this.quotas = quotas; });
   }
 
   getFlavors() {
@@ -38,14 +53,20 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
                   {
                     name: flavor.name,
                     displayedName: this.Kubernetes.formatFlavor(flavor),
+                    quotaOverflow: this.getQuotaOverflow(flavor),
                   }))
                 .value(),
             }))
           .value();
         return flavors;
-      })
-      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: error })))
-      .finally(() => { this.loading = false; });
+      });
+  }
+
+  getQuotaOverflow(flavor) {
+    // addOverQuotaInfos adds 'disabled' key to flavor parameter
+    const testedFlavor = _.clone(flavor);
+    this.CloudFlavorService.constructor.addOverQuotaInfos(testedFlavor, this.quotas);
+    return _.get(testedFlavor, 'disabled');
   }
 
   onFlavorFamilyChange(selectedFamily) {
@@ -59,6 +80,10 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
       .then(() => this.$uibModalInstance.close())
       .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_error', { message: error })))
       .finally(() => { this.loading = false; });
+  }
+
+  instanceIsValid() {
+    return _.isNull(this.selectedFlavor.quotaOverflow);
   }
 
   dismiss(error) {
