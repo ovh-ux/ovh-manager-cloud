@@ -48,7 +48,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
               id: category.id,
               familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
               flavors: _.chain(flavors)
-                .filter(flavor => _.includes(category.types, flavor.type))
+                .filter(flavor => _.includes(category.types, flavor.type) && flavor.osType !== 'windows')
                 .map(flavor => (
                   {
                     name: flavor.name,
