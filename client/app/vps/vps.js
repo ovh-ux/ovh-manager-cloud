@@ -139,6 +139,16 @@ angular.module('managerApp').config(($stateProvider) => {
           template: '<div ui-view="vpsCloudDatabaseContent"></div>',
         },
       },
+      resolve: {
+        shouldNotBeCA: ['$q', 'OvhApiMe', ($q, OvhApiMe) => OvhApiMe.v6().get().$promise
+          .then((me) => {
+            if (me.ovhSubsidiary === 'CA') {
+              return $q.reject('Not authorized');
+            }
+            return $q.when();
+          }),
+        ],
+      },
     })
     .state('iaas.vps.detail.cloud-database.list', {
       url: '/',
