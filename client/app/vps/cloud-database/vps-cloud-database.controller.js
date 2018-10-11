@@ -24,14 +24,11 @@ class VpsCloudDatabaseCtrl {
     this.serviceName = this.$stateParams.serviceName;
 
     this.statusFilterOptions = {
-      values: {
-        detached: this.$translate.instant('common_database_status_detached'),
-        restartPending: this.$translate.instant('common_database_status_restartPending'),
-        startPending: this.$translate.instant('common_database_status_startPending'),
-        started: this.$translate.instant('common_database_status_started'),
-        stopPending: this.$translate.instant('common_database_status_stopPending'),
-        stopped: this.$translate.instant('common_database_status_stopped'),
-      },
+      values: _.reduce(
+        ['detached', 'restartPending', 'startPending', 'started', 'stopPending', 'stopped'],
+        (result, key) => _.assign(result, { [key]: this.$translate.instant(`common_database_status_${key}`) }),
+        {},
+      ),
     };
 
     this.ipv4 = null;
