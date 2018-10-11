@@ -2,6 +2,7 @@ class VpsCloudDatabaseCtrl {
   constructor(
     $q,
     $stateParams,
+    $timeout,
     $translate,
     $window,
     CloudMessage,
@@ -11,6 +12,7 @@ class VpsCloudDatabaseCtrl {
   ) {
     this.$q = $q;
     this.$stateParams = $stateParams;
+    this.$timeout = $timeout;
     this.$translate = $translate;
     this.$window = $window;
     this.CloudMessage = CloudMessage;
@@ -33,12 +35,12 @@ class VpsCloudDatabaseCtrl {
 
     this.ipv4 = null;
     this.cloudDatabases = [];
-    this.loading = true;
 
     this.refresh();
   }
 
   refresh() {
+    this.loading = true;
     return this.loadIps()
       .then((response) => {
         this.ipv4 = _(response.results).chain()
@@ -106,8 +108,10 @@ class VpsCloudDatabaseCtrl {
       },
     ).$promise
       .then(() => {
-        this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
-        return this.refresh();
+        this.$timeout(() => {
+          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
+          this.refresh();
+        }, 2000);
       })
       .catch((error) => {
         this.CloudMessage.error([
@@ -121,8 +125,10 @@ class VpsCloudDatabaseCtrl {
     const { serviceName } = database;
     return this.ApiWhitelist.deleteIp({ serviceName }, { ip: this.ipv4 }).$promise
       .then(() => {
-        this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
-        return this.refresh();
+        this.$timeout(() => {
+          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
+          this.refresh();
+        }, 2000);
       })
       .catch((error) => {
         this.CloudMessage.error([
