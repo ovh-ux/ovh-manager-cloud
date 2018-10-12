@@ -1,10 +1,11 @@
 angular.module('managerApp').controller('KubernetesNodesAddCtrl', class KubernetesNodesAddCtrl {
   constructor(
-    $q, $stateParams, $translate, $uibModalInstance,
+    $q, $state, $stateParams, $translate, $uibModalInstance,
     CloudFlavorService, Kubernetes, OvhApiMe, OvhCloudPriceHelper, projectId,
     CLOUD_FLAVORTYPE_CATEGORY, KUBERNETES,
   ) {
     this.$q = $q;
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
@@ -101,5 +102,10 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
 
   dismiss(error) {
     this.$uibModalInstance.dismiss(error);
+  }
+
+  goToProjectQuota() {
+    this.$uibModalInstance.close();
+    this.$state.go('iaas.pci-project.compute.quota', { projectId: this.project.projectId });
   }
 });

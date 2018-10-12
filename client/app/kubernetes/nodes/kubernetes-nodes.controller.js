@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesNodesCtrl {
   constructor(
     $q, $state, $stateParams, $timeout, $translate, $uibModal,
-    CloudMessage, Kubernetes, OtrsPopupService,
+    CloudMessage, Kubernetes,
     KUBERNETES,
   ) {
     this.$q = $q;
@@ -12,7 +12,6 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
     this.$uibModal = $uibModal;
     this.CloudMessage = CloudMessage;
     this.Kubernetes = Kubernetes;
-    this.OtrsPopupService = OtrsPopupService;
     this.KUBERNETES = KUBERNETES;
   }
 
@@ -118,13 +117,5 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   refreshNodes() {
     this.Kubernetes.resetNodesCache();
     return this.getNodes();
-  }
-
-  openSupportPopup() {
-    if (!this.OtrsPopupService.isLoaded()) {
-      this.OtrsPopupService.init();
-    } else {
-      this.OtrsPopupService.toggle();
-    }
   }
 });
