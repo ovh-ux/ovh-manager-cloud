@@ -6,7 +6,7 @@
         <p data-translate="vps_tab_cloud_database_description"></p>
         <oui-button data-variant="primary"
                     data-ui-sref="iaas.vps.detail.cloud-database.order">
-            {{:: 'common_order' | translate}}
+            <span data-translate="common_order"></span>
         </oui-button>
     </div>
 
@@ -35,7 +35,7 @@
                     data-sortable
                     data-searchable
                     data-filterable>
-            <span>{{ 'common_database_version_' + $row.version.replace('.', '') | translate }}</span>
+            <span data-ng-bind="'common_database_version_' + $row.version.replace('.', '') | translate"></span>
         </oui-column>
         <oui-column data-title="::'vps_tab_cloud_database_header_vps_authorized' | translate"
                     data-property="vpsAuthorized"
@@ -44,6 +44,7 @@
                     data-searchable
                     data-filterable>
             <span class="oui-icon oui-icon-success_circle"
+                  aria-hidden="true"
                   data-ng-if="$row.vpsAuthorized">
             </span>
         </oui-column>
@@ -79,7 +80,7 @@
                     type="button"
                     data-ui-sref="iaas.vps.detail.cloud-database.order">
               <span aria-hidden="true" class="oui-icon oui-icon_circle oui-icon-add"></span>
-              <span>{{:: 'vps_tab_cloud_database_order' | translate}}</span>
+              <span data-translate="vps_tab_cloud_database_order"></span>
             </button>
         </extra-top>
     </oui-datagrid>

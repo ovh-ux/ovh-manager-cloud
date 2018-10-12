@@ -139,9 +139,8 @@ class VpsCloudDatabaseCtrl {
   }
 
   goToCloudDatabase(database) {
-    this.$window.open(this.ControllerHelper.navigation.getUrl('privateDatabase', {
-      serviceName: database.serviceName,
-    }));
+    const { serviceName } = database;
+    this.$window.open(this.ControllerHelper.navigation.getUrl('privateDatabase', { serviceName }));
   }
 }
 

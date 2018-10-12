@@ -76,8 +76,8 @@ class VpsCloudDatabaseOrderCtrl {
     this.cancelFurtherChoices();
 
     if (!this.currentOrder.version
-            || !this.currentOrder.ram
-            || !this.currentOrder.datacenter) {
+      || !this.currentOrder.ram
+      || !this.currentOrder.datacenter) {
       return this.$q.when();
     }
 
@@ -134,17 +134,17 @@ class VpsCloudDatabaseOrderCtrl {
 
   canOrder() {
     return !_.any(this.loading)
-            && this.currentOrder.version
-            && this.currentOrder.ram
-            && this.currentOrder.datacenter
-            && this.currentOrder.duration
-            && this.currentOrder.contractsAccepted;
+      && this.currentOrder.version
+      && this.currentOrder.ram
+      && this.currentOrder.datacenter
+      && this.currentOrder.duration
+      && this.currentOrder.contractsAccepted;
   }
 
   generatePurchaseOrder() {
     this.loading.purchaseOrder = true;
     this.loading.redirection = true;
-    this.ApiOrderDb.orderNew(
+    return this.ApiOrderDb.orderNew(
       { duration: this.currentOrder.duration.value },
       {
         version: this.currentOrder.version.value,
