@@ -506,6 +506,7 @@
    <translation id="vps_tab_cloud_database_header_vps_authorized">VPS autorisé</translation>
    <translation id="vps_tab_cloud_database_header_status">Statut</translation>
    <translation id="vps_tab_cloud_database_table_empty">Aucune base de données trouvée.</translation>
+   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip">Autoriser le VPS à accéder à cette base</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip">Retirer l'autorisation d'accéder à cette base</translation>
    <translation id="vps_tab_cloud_database_fetch_error">Une erreur est survenue lors du chargement des bases de données.</translation>
