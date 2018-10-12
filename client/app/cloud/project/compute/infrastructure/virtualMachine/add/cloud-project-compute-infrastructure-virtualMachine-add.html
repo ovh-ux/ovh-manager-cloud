@@ -24,7 +24,8 @@
                                                data-placeholder="{{ 'cpcivm_add_step1_distribution_choose' | translate }}"
                                                data-picture="assets/images/cloud/os/{{ distribution }}_50.png"
                                                data-text="{{:: 'cpcivm_add_distribution_' + distribution | translate }}{{ imageType === 'windows' ? ' *' : '' }}"
-                                               data-values="images">
+                                               data-values="images"
+                                               data-on-change="$ctrl.onSelectChange()">
                             </oui-select-picker>
                         </div>
                     </div>
