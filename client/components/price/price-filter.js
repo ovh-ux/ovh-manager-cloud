@@ -52,12 +52,12 @@ function priceFilter($translate) {
       }
       if (frequency === 'yearly') {
         return `<span class="bold">${$translate.instant('common_price_ht_label', { price: price.withoutTax.text })}`
-                          + `<small>${$translate.instant('common_price_label_yearly')}</small></span> `
-                          + `<span class="italic small"> (${$translate.instant('common_price_ttc_label', { price: price.withTax.text })}`
-                          + `<small>${$translate.instant('common_price_label_yearly')}</small>)</span>`;
+          + `<small>${$translate.instant('common_price_label_yearly')}</small></span> `
+          + `<span class="italic small"> (${$translate.instant('common_price_ttc_label', { price: price.withTax.text })}`
+          + `<small>${$translate.instant('common_price_label_yearly')}</small>)</span>`;
       }
       return `<span class="bold">${$translate.instant('common_price_ht_label', { price: price.withoutTax.text })}`
-                      + `</span> <span class="italic small"> (${$translate.instant('common_price_ttc_label', { price: price.withTax.text })})</span>`;
+        + `</span> <span class="italic small"> (${$translate.instant('common_price_ttc_label', { price: price.withTax.text })})</span>`;
     }
     return `<span class="bold">${$translate.instant('common_price_free')}</span>`;
   }

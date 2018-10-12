@@ -15,6 +15,10 @@
         EU: allEuropeanSubsidiaries,
         CA: allCanadianSubsidiaries,
       },
+      cloudDatabase: {
+        EU: allEuropeanSubsidiaries,
+        CA: [],
+      },
     },
     SERVER: {
       sidebarMenu: {

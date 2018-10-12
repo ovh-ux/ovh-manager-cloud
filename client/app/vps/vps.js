@@ -140,13 +140,12 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
       resolve: {
-        shouldNotBeCA: ['$q', 'OvhApiMe', ($q, OvhApiMe) => OvhApiMe.v6().get().$promise
-          .then((me) => {
-            if (me.ovhSubsidiary === 'CA') {
-              return $q.reject('Not authorized');
-            }
-            return $q.when();
-          }),
+        shouldNotBeCA: [
+          '$q',
+          'OvhApiMe',
+          ($q, FeatureAvailabilityService) => FeatureAvailabilityService
+            .hasFeaturePromise('VPS', 'cloudDatabase')
+            .then(hasFeature => (hasFeature ? $q.when() : $q.reject('Not authorized'))),
         ],
       },
     })
