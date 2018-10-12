@@ -136,6 +136,12 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
       });
   }
 
+  onSelectChange() {
+    if (this.model.imageType.type === 'windows') {
+      this.addingSshKey = false;
+    }
+  }
+
   isStep1Valid() {
     return this.model.imageType && !this.addingSshKey && (this.model.imageType.type !== 'linux' || this.model.sshKey);
   }
