@@ -47,23 +47,21 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
         /**
         * @type {{id: string, familyName: string, flavors: Object[]}}
         */
-        this.flavorFamilies = _.chain(this.CLOUD_FLAVORTYPE_CATEGORY)
+        this.flavorFamilies = this.CLOUD_FLAVORTYPE_CATEGORY
           .filter(type => _.includes(this.KUBERNETES.flavorTypes, type.id))
           .map(category => (
             {
               id: category.id,
               familyName: this.$translate.instant(`kube_nodes_add_flavor_family_${category.id}`),
-              flavors: _.chain(flavors)
+              flavors: flavors
                 .filter(flavor => _.includes(category.types, flavor.type) && flavor.osType !== 'windows')
                 .map(flavor => ({
                   name: flavor.name,
                   displayedName: this.Kubernetes.formatFlavor(flavor),
                   quotaOverflow: this.getQuotaOverflow(flavor, quotas),
                   price: _.get(_.get(prices, flavor.planCodes.hourly), 'price.text'),
-                }))
-                .value(),
-            }))
-          .value();
+                })),
+            }));
         return flavors;
       });
   }
@@ -97,7 +95,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
   }
 
   instanceIsValid() {
-    return _.isNull(this.selectedFlavor.quotaOverflow);
+    return !this.selectedFlavor.quotaOverflow;
   }
 
   dismiss(error) {
