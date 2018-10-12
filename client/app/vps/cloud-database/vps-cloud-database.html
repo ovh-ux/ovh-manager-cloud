@@ -1,16 +1,21 @@
 <section class="cui-page__content">
 
-    <div data-ng-if="$ctrl.loading" class="text-center">
-        <oui-spinner  data-size="l"></oui-spinner>
-    </div>
+    <h3 class="h1 mb-2" data-translate="vps_tab_cloud_database"></h3>
 
     <div class="mb-5" data-ng-if="!$ctrl.loading && (!$ctrl.cloudDatabases || $ctrl.cloudDatabases.length === 0)">
-        <h3 class="h1 mb-5" data-translate="vps_tab_cloud_database"></h3>
         <p data-translate="vps_tab_cloud_database_description"></p>
         <oui-button data-variant="primary"
                     data-ui-sref="iaas.vps.detail.cloud-database.order">
             {{:: 'common_order' | translate}}
         </oui-button>
+    </div>
+
+    <div class="mb-5" data-ng-if="!$ctrl.loading && $ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0">
+        <p data-translate="vps_tab_cloud_database_explanation"></p>
+    </div>
+
+    <div data-ng-if="$ctrl.loading" class="text-center">
+        <oui-spinner  data-size="l"></oui-spinner>
     </div>
 
     <oui-datagrid data-ng-if="!$ctrl.loading && $ctrl.cloudDatabases && $ctrl.cloudDatabases.length > 0"
