@@ -53,18 +53,18 @@ class VpsCloudDatabaseOrderCtrl {
   loadSelectValues() {
     return this.ApiPrivateDb.availableOrderCapacities({ offer: 'public' }).$promise
       .then((capacity) => {
-        this.versions = _(capacity.version).sortBy().map(version => ({
+        this.versions = capacity.version.sort().map(version => ({
           value: version,
           name: this.$translate.instant(`common_database_version_${version.replace('.', '')}`),
-        })).value();
-        this.ramAmounts = _(capacity.ram).map(ram => ({
+        }));
+        this.ramAmounts = capacity.ram.map(ram => ({
           value: ram,
           name: `${ram} ${this.$translate.instant('unit_size_MB')}`,
-        })).value();
-        this.datacenters = _(capacity.datacenter).map(datacenter => ({
+        }));
+        this.datacenters = capacity.datacenter.map(datacenter => ({
           value: datacenter,
           name: this.$translate.instant(`common_datacenter_${datacenter}`),
-        })).value();
+        }));
       })
       .catch(error => this.CloudMessage.error([
         this.$translate.instant('vps_tab_cloud_database_order_fetch_capacities_failed'),
@@ -126,9 +126,9 @@ class VpsCloudDatabaseOrderCtrl {
       duration: duration.value, version, ram, datacenter,
     }).$promise
       .then((details) => {
-        // we actually want to trigger a change in the UI
+        // we want to trigger a change in the UI
         // by assigning prices to each already shown duration
-        duration.details = details; // eslint-disable-line no-param-reassign
+        Object.assign(duration, { details });
       });
   }
 

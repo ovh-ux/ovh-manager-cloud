@@ -28,7 +28,7 @@ class VpsCloudDatabaseCtrl {
     this.statusFilterOptions = {
       values: _.reduce(
         ['detached', 'restartPending', 'startPending', 'started', 'stopPending', 'stopped'],
-        (result, key) => _.assign(result, { [key]: this.$translate.instant(`common_database_status_${key}`) }),
+        (result, key) => Object.assign({}, result, { [key]: this.$translate.instant(`common_database_status_${key}`) }),
         {},
       ),
     };

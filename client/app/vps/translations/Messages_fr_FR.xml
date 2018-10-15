@@ -500,7 +500,7 @@
 
    <translation id="vps_tab_cloud_database">Base de données</translation>
    <translation id="vps_tab_cloud_database_description">Besoin de bases de données fiables, performantes et 100% managées par OVH ?<br/>Commandez notre service Cloud Databases !<br/>Vous disposerez d'une base de données autonome et compatible avec tous vos produits Cloud OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL et Redis disponibles !</translation>
-   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.</br>Ainsi que commander de nouvelles bases de données.</translation>
+   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
    <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
    <translation id="vps_tab_cloud_database_header_version">Version</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized">VPS autorisé</translation>

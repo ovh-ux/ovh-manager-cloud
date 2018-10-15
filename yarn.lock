@@ -1051,7 +1051,7 @@ angular-animate@~1.6:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.10.tgz#c520f6d341370e34e0a62060c99bcf47b7d7db8c"
 
-angular-aria@^1.6.x:
+angular-aria@>=1.6.x:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.5.tgz#e66334d80ad6b4b01f005f590d7c7eef0064312f"
 
@@ -1110,7 +1110,7 @@ angular-sanitize@1.3.x:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
 
-angular-sanitize@^1.6.x:
+angular-sanitize@>=1.6.x:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.5.tgz#75d49e15071ca9c70581e76d20940f26372e24d2"
 
@@ -1163,7 +1163,7 @@ angular-websocket@^2.0.0:
     angular "*"
     ws "^1.0.0"
 
-angular@*, angular@1.x, "angular@>=1.2.26 <=1.7", angular@^1.6.x:
+angular@*, angular@1.x, "angular@>=1.2.26 <=1.7", angular@>=1.6.x:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.5.tgz#d1c1c01c6f5dc835638f3f9aa51012857bdac49e"
 
@@ -3358,7 +3358,7 @@ flatmap-stream@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.1.tgz#d34f39ef3b9aa5a2fc225016bd3adf28ac5ae6ea"
 
-flatpickr@^4.5.1:
+flatpickr@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
 
@@ -5954,21 +5954,28 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-ovh-ui-angular@2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.0.tgz#3e6892b5401c9e53a60cfa1b019f707aef5481ec"
+ovh-ui-angular@~2.20.0:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.3.tgz#e98a43aed0756e7e9191ef731d134f7241108ca8"
   dependencies:
-    angular "^1.6.x"
-    angular-aria "^1.6.x"
-    angular-sanitize "^1.6.x"
+    angular ">=1.6.x"
+    angular-aria ">=1.6.x"
+    angular-sanitize ">=1.6.x"
     clipboard "^2.0.1"
     escape-string-regexp "^1.0.5"
-    flatpickr "^4.5.1"
-    popper.js "^1.14.3"
+    flatpickr "^4.5.2"
+    ovh-ui-kit "^2.20.0"
+    popper.js "^1.14.4"
 
-ovh-ui-kit@2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.0.tgz#edba008b8ac9c6d884f0d5f3356df183f2acaff8"
+ovh-ui-kit@^2.20.0:
+  version "2.21.4"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.21.4.tgz#cbb08a80887766abbc2c0fdcea077c2300af24a5"
+  dependencies:
+    less-plugin-remcalc "^0.1.0"
+
+ovh-ui-kit@~2.20.0:
+  version "2.20.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.2.tgz#63715e743e0299cb2c8d2624211d0f8c6cf82e5e"
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
@@ -6221,7 +6228,7 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
-popper.js@^1.14.1, popper.js@^1.14.3:
+popper.js@^1.14.1, popper.js@^1.14.4:
   version "1.14.4"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
 
