@@ -42,8 +42,11 @@ class VpsCloudDatabaseCtrl {
   refresh() {
     this.loading = true;
     return this.loadIps()
-      .then((response) => {
-        this.ipv4 = _(response.results).chain()
+      .then(({ results }) => {
+        if (_(results).isString()) {
+          throw new Error('Temporary error from the API');
+        }
+        this.ipv4 = _(results).chain()
           .find({ version: 'v4' })
           .get('ipAddress')
           .value();
