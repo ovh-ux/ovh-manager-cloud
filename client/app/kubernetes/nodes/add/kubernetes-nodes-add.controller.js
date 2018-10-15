@@ -28,7 +28,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
         prices: this.getPrices(),
       }))
       .then(({ quotas, prices }) => this.getFlavors(quotas, prices))
-      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: error })))
+      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_flavor_error', { message: _.get(error, 'data.message', '') })))
       .finally(() => { this.loading = false; });
   }
 
@@ -67,7 +67,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
   }
 
   getSubsidiary() {
-    return this.OvhApiMe.v6().get().then((me) => { this.subsidiary = me.subsidiary; });
+    return this.OvhApiMe.v6().get().then(({ subsidiary }) => { this.subsidiary = subsidiary; });
   }
 
   getPrices() {
@@ -90,7 +90,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
     this.loading = true;
     return this.Kubernetes.addNode(this.serviceName, this.selectedFlavor.name)
       .then(() => this.$uibModalInstance.close())
-      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_error', { message: error })))
+      .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_error', { message: _.get(error, 'data.message', '') })))
       .finally(() => { this.loading = false; });
   }
 

@@ -42,18 +42,11 @@
                             data-match="displayedName"
                             data-disabled="!$ctrl.flavorFamily"
                             required>
-                    <button data-ng-if="$item.quotaOverflow"
-                            class="d-flex align-items-center ui-select-choices-row oui-dropdown-option"
-                            disabled>
-                        <span data-ng-bind="$item.displayedName"></span>
-                        <span class="oui-icon oui-icon-info_circle d-inline position-static"
-                              aria-label="{{:: 'kube_nodes_add_flavor_' + $item.quotaOverflow | translate }}">
-                        </span>
-                    </button>
-                    <div data-ng-if="!$item.quotaOverflow">
-                        <span data-ng-bind="$item.displayedName"></span>
-                        <span data-translate="kube_flavor_price" data-translate-values="{ price : $item.price }"></span>
-                    </div>
+                            <div class="d-flex align-items-center">
+                                <span data-ng-if="$item.quotaOverflow" class="oui-icon oui-icon-warning_circle d-inline position-static" aria-hidden="true"></span>
+                                <span data-ng-bind="$item.displayedName" data-ng-class="{ 'ml-5': !$item.quotaOverflow, 'ml-1': $item.quotaOverflow }"></span>
+                                <span data-ng-if="!$item.quotaOverflow" data-translate="kube_flavor_price" data-translate-values="{ price : $item.price }" class="ml-2"></span>
+                            </div>
                 </oui-select>
                 <div role="alert" class="oui-field__error" data-ng-if="$ctrl.selectedFlavor.quotaOverflow">
                     <span class="oui-icon oui-icon-error" aria-hidden="true"></span>
