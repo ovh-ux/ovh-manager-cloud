@@ -77,7 +77,7 @@ class CloudProjectSidebar {
 
     // Show on top: TODO: show in alphabetical order
     if (hasSubItems) {
-        _.remove(_.get(section, 'subItems'), item => item.id === service.project_id);
+      _.remove(_.get(section, 'subItems'), item => item.id === service.project_id);
       section.subItems.unshift(projectItem);
     }
   }

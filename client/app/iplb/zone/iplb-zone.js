@@ -10,7 +10,7 @@ angular.module('managerApp').config(($stateProvider) => {
         },
         iplbContent: {
           template: `
-                        <div ui-view="iplbZone"></div>
+                        <div data-ui-view="iplbZone"></div>
                     `,
         },
       },

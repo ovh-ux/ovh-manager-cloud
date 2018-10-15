@@ -10,7 +10,7 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'ctrl',
         },
         iplbContent: {
-          template: '<div ui-view="iplbVrack"><div>',
+          template: '<div data-ui-view="iplbVrack"><div>',
         },
       },
       translations: ['../frontends'],

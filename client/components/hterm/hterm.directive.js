@@ -28,7 +28,7 @@ angular.module('managerApp')
       }, 600);
       scope.$on('$destroy', () => {
         if (interval) {
-            interval.cancel();
+          interval.cancel();
         }
       });
     },

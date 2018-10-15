@@ -8,7 +8,7 @@ angular.module('managerApp')
         url: '/dbaas',
         abstract: true,
         template: `
-                    <div ui-view="dbaasContainer"></div>
+                    <div data-ui-view="dbaasContainer"></div>
                 `,
         translations: ['../common', '../cloud'],
       });

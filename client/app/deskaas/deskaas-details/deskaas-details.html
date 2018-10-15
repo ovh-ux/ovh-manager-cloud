@@ -94,7 +94,7 @@
                             data-description="{{$ctrl.services.offer}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.changeOffer.isAvailable()">
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.changeOffer.text}}"
-                                    data-aria-label="{{::$ctrl.actions.changeOffer.text}}"
+                                    aria-label="{{::$ctrl.actions.changeOffer.text}}"
                                     data-on-click="$ctrl.actions.changeOffer.callback()">
                                 </oui-action-menu-item>
                             </oui-action-menu>
@@ -104,7 +104,7 @@
                             data-description="{{$ctrl.services.expiration | momentFormat:'LL'}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.manageAutorenew.isAvailable()">
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.manageAutorenew.text}}"
-                                    data-aria-label="{{::$ctrl.actions.manageAutorenew.text}}"
+                                    aria-label="{{::$ctrl.actions.manageAutorenew.text}}"
                                     data-href="{{$ctrl.actions.manageAutorenew.href}}"
                                     data-external>
                                 </oui-action-menu-item>
@@ -130,7 +130,7 @@
                             </oui-tile-description>
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.manageContact.isAvailable()">
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.manageContact.text}}"
-                                    data-aria-label="{{::$ctrl.actions.manageContact.text}}"
+                                    aria-label="{{::$ctrl.actions.manageContact.text}}"
                                     data-href="{{::$ctrl.actions.manageContact.href}}"
                                     data-external>
                                 </oui-action-menu-item>
@@ -211,7 +211,7 @@
                             data-description="{{$ctrl.details.displayName}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.changeAlias.isAvailable()">
                                 <oui-action-menu-item data-text="{{$ctrl.actions.changeAlias.text}}"
-                                    data-aria-label="{{::$ctrl.actions.changeAlias.text}}"
+                                    aria-label="{{::$ctrl.actions.changeAlias.text}}"
                                     data-on-click="$ctrl.actions.changeAlias.callback()">
                                 </oui-action-menu-item>
                             </oui-action-menu>

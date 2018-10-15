@@ -49,7 +49,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.backup-storage.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsBackupStorageContent"></div>',
+          template: '<div data-ui-view="vpsBackupStorageContent"></div>',
         },
       },
     })
@@ -78,7 +78,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.veeam.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsVeeamContent"></div>',
+          template: '<div data-ui-view="vpsVeeamContent"></div>',
         },
       },
     })
@@ -107,7 +107,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.additional-disk.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsAdditionalDiskContent"></div>',
+          template: '<div data-ui-view="vpsAdditionalDiskContent"></div>',
         },
       },
     })
