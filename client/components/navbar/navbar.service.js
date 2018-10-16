@@ -27,7 +27,7 @@ class ManagerNavbarService {
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.sections = {
       iaas: ['PROJECT', 'VPS', 'SERVER', 'DEDICATED_CLOUD', 'HOUSING'],
-      paas: ['CEPH', 'NAS', 'NASHA', 'CDN', 'VEEAM', 'VEEAM_ENTERPRISE'],
+      paas: ['CEPH', 'KUBE', 'NAS', 'NASHA', 'CDN', 'VEEAM', 'VEEAM_ENTERPRISE'],
       metrics: 'METRICS',
       vracks: 'VRACK',
       loadBalancer: 'LOAD_BALANCER',
@@ -97,6 +97,8 @@ class ManagerNavbarService {
         return this.$translate.instant('cloud_sidebar_section_paas_veeam');
       case 'VEEAM_ENTERPRISE':
         return this.$translate.instant('cloud_sidebar_section_paas_veeam_enterprise');
+      case 'KUBE':
+        return this.$translate.instant('cloud_sidebar_section_paas_kube');
       default:
         return '';
     }
@@ -178,6 +180,14 @@ class ManagerNavbarService {
             return {
               title: service.displayName,
               state: 'paas.cda.cda-details.cda-details-home',
+              stateParams: {
+                serviceName: service.serviceName,
+              },
+            };
+          case 'KUBE':
+            return {
+              title: service.displayName,
+              state: 'paas.kube.service',
               stateParams: {
                 serviceName: service.serviceName,
               },
