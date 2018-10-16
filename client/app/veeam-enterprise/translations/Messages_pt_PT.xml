@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Página Inicial</translation>
+   <translation id="veeam_enterprise_infos_general_load_error" qtlid="505842">Ocorreu um erro ao carregar as informações gerais.</translation>
+   <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Ocorreu um erro ao carregar as informações de configuração.</translation>
+   <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Ocorreu um erro ao carregar as informações de subscrição.</translation>
+   <translation id="veeam_enterprise_infos_license_register_error" qtlid="505855">Ocorreu um erro ao ativar a sua licença Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_register_success" qtlid="505868">Ativação em curso da sua licença Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_error" qtlid="505881">Ocorreu um erro ao atualizar a sua licença Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_success" qtlid="505894">Atualização em curso da sua licença Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_already_registered_error" qtlid="505907">Já ativou a sua licença Veeam Enterprise.</translation>
+</translations>

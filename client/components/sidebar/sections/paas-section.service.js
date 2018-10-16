@@ -1,6 +1,6 @@
 class PaasSectionSidebarService {
   constructor($translate, SidebarMenu, SidebarHelper, CdaSidebar, KubernetesSidebar, NasSidebar,
-    NashaSidebar, CdnSidebar, VeeamSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
+    NashaSidebar, CdnSidebar, VeeamSidebar, VeeamEnterpriseSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
     this.$translate = $translate;
     this.SidebarMenu = SidebarMenu;
     this.SidebarHelper = SidebarHelper;
@@ -14,6 +14,7 @@ class PaasSectionSidebarService {
       NashaSidebar,
       CdnSidebar,
       VeeamSidebar,
+      VeeamEnterpriseSidebar,
     ];
   }
 

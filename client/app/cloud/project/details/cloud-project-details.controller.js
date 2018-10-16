@@ -111,12 +111,12 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
       return OvhApiCloudProject.v6().get({
         serviceName: self.projectId,
       }).$promise
-        .then((project) => handleProjectDetails(project))
+        .then(project => handleProjectDetails(project))
         .catch(() => {
-           $state.go('iaas.pci-project-new');
+          $state.go('iaas.pci-project-new');
         })
         .finally(() => {
-            self.loaders.init = false;
+          self.loaders.init = false;
         });
     }
 

@@ -11,6 +11,8 @@
    <translation id="cloud_sidebar_section_paas" qtlid="323447">Piattaforme e servizi</translation>
    <translation id="cloud_sidebar_section_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_paas_veeam" qtlid="404113">Veeam CC</translation>
+   <translation id="cloud_sidebar_section_paas_veeam_enterprise" qtlid="506362">Veeam Enterprise</translation>
+   <translation id="cloud_sidebar_section_paas_kube">Kubernetes</translation>
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licenze</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
@@ -55,6 +57,7 @@
    <translation id="cloud_sidebar_actions_menu_dbaas_ts" qtlid="383525">Metrics</translation>
    <translation id="cloud_sidebar_actions_menu_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_actions_menu_paas_veeam" qtlid="404113">Veeam CC</translation>
+   <translation id="cloud_sidebar_actions_menu_paas_veeam_enterprise" qtlid="506362">Veeam Enterprise</translation>
    <translation id="cloud_sidebar_actions_menu_clouddb" qtlid="404863">CloudDB</translation>
    <translation id="cloud_sidebar_actions_menu_clouddesktop" qtlid="303952">Cloud Desktop</translation>
 

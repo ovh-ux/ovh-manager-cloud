@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciiac_deploy_title" qtlid="506258">Desplegar una infraestructura como código con Terraform</translation>
+   <translation id="cpciiac_deploy_intro" qtlid="506271">Despliegue fácil y rápidamente una infraestructura como código no gestionada en su proyecto Cloud, en solo unos clics, con nuestros scripts de despliegue de infraestructura.</translation>
+   <translation id="cpciiac_deploy_guide" qtlid="506284">Quickstart</translation>
+   <translation id="cpciiac_deploy_configure" qtlid="4010">Configurar</translation>
+   <translation id="cpciiac_deploy_copy_paste" qtlid="506297">Copiar y pegar</translation>
+   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Se ha producido un error al solicitar el despliegue: {{message}}</translation>
+</translations>

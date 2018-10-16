@@ -1,16 +1,27 @@
 class VpsHeaderCtrl {
-  constructor($rootScope, $stateParams, $translate, CloudMessage, VpsNotificationIpv6,
-    STOP_NOTIFICATION_USER_PREF, VpsService, ProductsService) {
+  constructor(
+    $rootScope,
+    $stateParams,
+    $translate,
+    CloudMessage,
+    OvhApiMe,
+    VpsNotificationIpv6,
+    STOP_NOTIFICATION_USER_PREF,
+    VpsService,
+    ProductsService,
+  ) {
     this.$rootScope = $rootScope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CloudMessage = CloudMessage;
+    this.OvhApiMe = OvhApiMe;
     this.VpsNotificationIpv6 = VpsNotificationIpv6;
     this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
     this.serviceName = $stateParams.serviceName;
     this.description = $stateParams.serviceName;
     this.VpsService = VpsService;
     this.ProductsService = ProductsService;
+
     this.loaders = {
       init: false,
     };
@@ -19,6 +30,12 @@ class VpsHeaderCtrl {
       autoRenew: true,
       ipV6: true,
     };
+
+    this.OvhApiMe.v6()
+      .get().$promise
+      .then((me) => {
+        this.user = me;
+      });
   }
 
   $onInit() {

@@ -142,7 +142,8 @@ angular.module('managerApp')
         WS: 'https://www.ovh.com/us/es/public-cloud/storage/cloud-archive/',
       },
       veeam: {
-
+      },
+      veeam_enterprise: {
       },
       cloud_disk_array: {
       },

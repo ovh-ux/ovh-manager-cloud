@@ -6,9 +6,9 @@
    <translation id="cda_home_tasks_title" qtlid="354405">Tareas activas</translation>
 
    <translation id="cda_detail_billing_state" qtlid="354418">Estado de facturación</translation>
-   <translation id="cda_detail_status_label_CREATING" qtlid="26227">En création</translation>
+   <translation id="cda_detail_status_label_CREATING" qtlid="26227">En proceso de creación</translation>
    <translation id="cda_detail_status_label_INSTALLED" qtlid="108913">Prêt</translation>
-   <translation id="cda_detail_status_label_DELETING" qtlid="133929">Eliminando</translation>
+   <translation id="cda_detail_status_label_DELETING" qtlid="133929">En proceso de eliminación</translation>
    <translation id="cda_detail_status_label_DELETED" qtlid="134514">Eliminado</translation>
    <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Tâche en cours d'exécution</translation>
 

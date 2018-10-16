@@ -15,14 +15,18 @@ class CloudProjectVirtualMachineAddService {
     return _.map(_.uniq(images, 'id'), this.CloudImageService.constructor.augmentImage);
   }
 
-  getAugmentedFlavorsFilteredByType(flavors, type) {
-    return _.filter(_.map(_.filter(flavors, {
-      available: true,
-      osType: type,
-    }), flavor => this.CloudFlavorService.augmentFlavor(flavor)), {
-      diskType: 'ssd',
-      flex: false,
-    });
+  filterFlavorsByType(flavors, type) {
+    return _(flavors)
+      .filter({
+        available: true,
+        osType: type,
+      })
+      .map(flavor => this.CloudFlavorService.augmentFlavor(flavor))
+      .filter({
+        diskType: 'ssd',
+        flex: false,
+      })
+      .value();
   }
 
   static getFilteredFlavorsByRegion(flavors, regionCode) {
@@ -123,25 +127,35 @@ class CloudProjectVirtualMachineAddService {
   }
 
   groupFlavorsByCategory(flavors, flavorsTypes) {
-    const categorizedFlavors = [];
-    _.forEach(flavorsTypes, (flavorType) => {
-      const category = this.CloudFlavorService.getCategory(flavorType, true);
-      const filteredFlavor = _.filter(flavors, { type: flavorType });
-      if (filteredFlavor.length > 0) {
-        const categoryObject = _.find(categorizedFlavors, { category: category.id });
-        if (categoryObject) {
-          categoryObject.flavors = _(categoryObject.flavors)
-            .concat(_.filter(flavors, { type: flavorType })).value();
-        } else {
-          categorizedFlavors.push({
+    return _(flavorsTypes)
+      .chain()
+      .reduce((previousValues, flavorType) => {
+        const flavorsOfCurrentFlavorType = _(flavors).filter({ type: flavorType }).value();
+
+        if (_(flavorsOfCurrentFlavorType).isEmpty()) {
+          return previousValues;
+        }
+
+        const category = this.CloudFlavorService.getCategory(flavorType, true);
+        const categoryObject = _(previousValues).find({ category: category.id });
+        const matchingFlavors = _(flavors).filter({ type: flavorType }).value();
+
+        if (!categoryObject) {
+          return previousValues.concat({
             category: category.id,
             order: category.order,
-            flavors: _.filter(flavors, { type: flavorType }),
+            flavors: matchingFlavors,
           });
         }
-      }
-    });
-    return _.sortBy(categorizedFlavors, 'order');
+
+        categoryObject.flavors = categoryObject.flavors
+          .concat(matchingFlavors)
+          .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+
+        return previousValues;
+      }, [])
+      .sortBy('order')
+      .value();
   }
 
   hasVRack(serviceName) {

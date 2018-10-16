@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciiac_view_title" qtlid="506323">Choose an infrastructure to deploy</translation>
+   <translation id="cpciiac_view_intro" qtlid="506271">In just a few clicks, you can deploy unmanaged infrastructure as code in your cloud project with our infrastructure deployment scripts.</translation>
+   <translation id="cpciiac_view_general_ERROR" qtlid="506336">An error has occurred retrieving infrastructure as code templates: {{message}}</translation>
+   <translation id="cpciiac_view_stack_terraform-ovh-publiccloud-k8s" qtlid="504826">Kubernetes</translation>
+   <translation id="cpciiac_view_stack_ovh-analytics-openstack">Hadoop</translation>
+   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">An error has occurred requesting the deployment: {{message}}</translation>
+</translations>

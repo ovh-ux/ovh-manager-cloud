@@ -3,7 +3,7 @@ angular.module('managerApp').config(($stateProvider) => {
     .state('network', {
       url: '/network',
       template: `
-                <div ui-view="networkContainer"></div>
+                <div data-ui-view="networkContainer"></div>
             `,
       abstract: true,
     })

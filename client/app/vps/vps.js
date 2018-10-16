@@ -49,7 +49,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.backup-storage.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsBackupStorageContent"></div>',
+          template: '<div data-ui-view="vpsBackupStorageContent"></div>',
         },
       },
     })
@@ -78,7 +78,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.veeam.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsVeeamContent"></div>',
+          template: '<div data-ui-view="vpsVeeamContent"></div>',
         },
       },
     })
@@ -107,7 +107,7 @@ angular.module('managerApp').config(($stateProvider) => {
       redirectTo: 'iaas.vps.detail.additional-disk.list',
       views: {
         vpsContent: {
-          template: '<div ui-view="vpsAdditionalDiskContent"></div>',
+          template: '<div data-ui-view="vpsAdditionalDiskContent"></div>',
         },
       },
     })
@@ -127,6 +127,44 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsAdditionalDiskContent: {
           templateUrl: 'app/vps/additional-disk/order/vps-order-additional-disk.html',
           controller: 'VpsOrderDiskCtrl',
+          controllerAs: '$ctrl',
+        },
+      },
+    })
+    .state('iaas.vps.detail.cloud-database', {
+      url: '/cloud-database',
+      redirectTo: 'iaas.vps.detail.cloud-database.list',
+      views: {
+        vpsContent: {
+          template: '<div ui-view="vpsCloudDatabaseContent"></div>',
+        },
+      },
+      resolve: {
+        shouldNotBeCA: [
+          '$q',
+          'FeatureAvailabilityService',
+          ($q, FeatureAvailabilityService) => FeatureAvailabilityService
+            .hasFeaturePromise('VPS', 'cloudDatabase')
+            .then(hasFeature => (hasFeature ? $q.when() : $q.reject('Not authorized'))),
+        ],
+      },
+    })
+    .state('iaas.vps.detail.cloud-database.list', {
+      url: '/',
+      views: {
+        vpsCloudDatabaseContent: {
+          templateUrl: 'app/vps/cloud-database/vps-cloud-database.html',
+          controller: 'VpsCloudDatabaseCtrl',
+          controllerAs: '$ctrl',
+        },
+      },
+    })
+    .state('iaas.vps.detail.cloud-database.order', {
+      url: '/order',
+      views: {
+        vpsCloudDatabaseContent: {
+          templateUrl: 'app/vps/cloud-database/order/vps-cloud-database-order.html',
+          controller: 'VpsCloudDatabaseOrderCtrl',
           controllerAs: '$ctrl',
         },
       },

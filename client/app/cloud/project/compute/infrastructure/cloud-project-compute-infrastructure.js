@@ -1,5 +1,3 @@
-
-
 angular.module('managerApp')
   .config(($stateProvider) => {
     $stateProvider
@@ -23,6 +21,7 @@ angular.module('managerApp')
           createNewVm: false,
           editVm: null,
           monitorVm: null,
+          hTerm: null,
         },
         translations: [
           '../snapshot/add',

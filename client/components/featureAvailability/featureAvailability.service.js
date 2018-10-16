@@ -15,6 +15,10 @@
         EU: allEuropeanSubsidiaries,
         CA: allCanadianSubsidiaries,
       },
+      cloudDatabase: {
+        EU: allEuropeanSubsidiaries,
+        CA: [],
+      },
     },
     SERVER: {
       sidebarMenu: {
@@ -130,6 +134,14 @@
       },
     },
     VEEAM: {
+      sidebarMenu: {
+        EU: ['FR'],
+      },
+      sidebarOrder: {
+        EU: ['FR'],
+      },
+    },
+    VEEAM_ENTERPRISE: {
       sidebarMenu: {
         EU: ['FR'],
       },

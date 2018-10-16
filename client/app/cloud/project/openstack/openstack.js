@@ -12,6 +12,7 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectOpenstackCtrl',
           },
         },
+        redirectTo: 'iaas.pci-project.compute.openstack.users',
         translations: ['.'],
       });
   });

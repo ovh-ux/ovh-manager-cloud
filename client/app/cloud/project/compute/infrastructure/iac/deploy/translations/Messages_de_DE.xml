@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciiac_deploy_title" qtlid="506258">Infrastructure-as-Code via Terraform deployen</translation>
+   <translation id="cpciiac_deploy_intro" qtlid="506271">Deployen Sie schnell und unkompliziert eine nicht verwaltete Infrastructure-as-Code in Ihrem Cloud-Projekt, und das in nur wenigen Klicks dank unserer Infrastruktur-Deployment-Skripte.</translation>
+   <translation id="cpciiac_deploy_guide" qtlid="506284">Quickstart</translation>
+   <translation id="cpciiac_deploy_configure" qtlid="4010">Konfigurieren</translation>
+   <translation id="cpciiac_deploy_copy_paste" qtlid="506297">Copy/Paste</translation>
+   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Bei der Deployment-Anfrage ist ein Fehler aufgetreten: {{message}}</translation>
+</translations>

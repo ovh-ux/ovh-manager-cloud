@@ -9,7 +9,6 @@
     }
 
     $onInit() {
-      this.$state.go('iaas.pci-project.compute.openstack.users');
       this.loadMessages();
     }
 
