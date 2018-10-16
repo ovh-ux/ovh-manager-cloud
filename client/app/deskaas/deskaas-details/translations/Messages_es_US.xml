@@ -72,15 +72,15 @@
    <translation id="vdi_task_name_updateUserPassword" qtlid="370954">Mise à jour du mot de passe utilisateur</translation>
    <translation id="vdi_task_name_getConsoleAccess" qtlid="406528">Demande d'accès à la console</translation>
 
-   <translation id="vdi_task_state_toCreate" qtlid="26227">En création</translation>
+   <translation id="vdi_task_state_toCreate" qtlid="26227">En proceso de creación</translation>
    <translation id="vdi_task_state_waitingTodo" qtlid="29467">En attente</translation>
    <translation id="vdi_task_state_todo" qtlid="134605">Pendiente</translation>
    <translation id="vdi_task_state_doing" qtlid="26383">En cours</translation>
    <translation id="vdi_task_state_done" qtlid="370967">Fait</translation>
-   <translation id="vdi_task_state_error" qtlid="26407">Erreur</translation>
+   <translation id="vdi_task_state_error" qtlid="26407">Error</translation>
    <translation id="vdi_task_state_fixing" qtlid="370980">Dépannage</translation>
    <translation id="vdi_task_state_canceled" qtlid="27631">Annulé</translation>
-   <translation id="vdi_task_state_unknown" qtlid="77142">Inconnu</translation>
+   <translation id="vdi_task_state_unknown" qtlid="77142">Desconocido</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">En attente de sous-tâches</translation>
 
    <translation id="vdi_default_error" qtlid="371006">Une erreur est survenue. Nos équipes ont été prévenues. Veuillez patienter quelques minutes.</translation>

@@ -18,7 +18,7 @@
    <translation id="kube_service_cluster_information" qtlid="504943">Cluster information</translation>
    <translation id="kube_service_cluster_status" qtlid="26443">Estado</translation>
    <translation id="kube_service_cluster_status_READY" qtlid="433745">Ok</translation>
-   <translation id="kube_service_cluster_status_ERROR" qtlid="26407">Erreur</translation>
+   <translation id="kube_service_cluster_status_ERROR" qtlid="26407">Error</translation>
    <translation id="kube_service_cluster_status_INSTALLING" qtlid="504956">Installing</translation>
    <translation id="kube_service_cluster_status_DELETING" qtlid="152778">Eliminando</translation>
    <translation id="kube_service_cluster_version" qtlid="504969">Kubernetes version</translation>

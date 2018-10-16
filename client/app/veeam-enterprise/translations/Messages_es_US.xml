@@ -3,7 +3,7 @@
    <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Accueil</translation>
    <translation id="veeam_enterprise_infos_general_load_error" qtlid="403801">Se ha producido un error al cargar los datos generales.</translation>
    <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Se ha producido un error al cargar los datos de configuración.</translation>
-   <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Se ha producido un error al cargar los datos de suscripción</translation>
+   <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Se ha producido un error al cargar los datos de suscripción.</translation>
    <translation id="veeam_enterprise_infos_license_register_error">Erreur lors de l'activation de votre licence Veeam Enterprise.</translation>
    <translation id="veeam_enterprise_infos_license_register_success">Activation en cours de votre licence Veeam Enterprise.</translation>
    <translation id="veeam_enterprise_infos_license_update_error">Erreur lors de la mise à jour de votre licence Veeam Enterprise.</translation>
