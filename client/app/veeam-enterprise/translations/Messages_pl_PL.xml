@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Strona główna</translation>
-   <translation id="veeam_enterprise_infos_general_load_error" qtlid="403801">Błąd podczas pobierania informacji ogólnych.</translation>
+   <translation id="veeam_enterprise_infos_general_load_error" qtlid="505842">Błąd podczas pobierania informacji ogólnych.</translation>
    <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Błąd podczas pobierania informacji o konfiguracji.</translation>
    <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Błąd podczas pobierania informacji o abonamencie.</translation>
-   <translation id="veeam_enterprise_infos_license_register_error">Erreur lors de l'activation de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_register_success">Activation en cours de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_update_error">Erreur lors de la mise à jour de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_update_success">Mise à jour en cours de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_already_registered_error">Vous avez déjà activé votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_register_error" qtlid="505855">Błąd podczas aktywacji Twojej licencji Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_register_success" qtlid="505868">Trwa aktywacja Twojej licencji Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_error" qtlid="505881">Błąd podczas aktualizacji Twojej licencji Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_update_success" qtlid="505894">Trwa aktualizacja Twojej licencji Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_already_registered_error" qtlid="505907">Już aktywowałeś Twoją licencję Veeam Enterprise.</translation>
 </translations>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpciiac_deploy_title">Déployer une infrastructure as code via Terraform</translation>
-   <translation id="cpciiac_deploy_intro">Déployez rapidement et simplement une infrastructure-as-code non managée dans votre projet Cloud, et ce en quelques clics grâce à nos scripts de déploiement d'infrastructure.</translation>
-   <translation id="cpciiac_deploy_guide">Quickstart</translation>
-   <translation id="cpciiac_deploy_configure">Configurer</translation>
-   <translation id="cpciiac_deploy_copy_paste">Copier/Coller</translation>
-   <translation id="cpciiac_view_deployment_ERROR">Une erreur s'est produite lors de la demande de déploiement : {{message}}</translation>
+   <translation id="cpciiac_deploy_title" qtlid="506258">Déployer une infrastructure as code via Terraform</translation>
+   <translation id="cpciiac_deploy_intro" qtlid="506271">Déployez rapidement et simplement une infrastructure-as-code non managée dans votre projet Cloud, et ce en quelques clics grâce à nos scripts de déploiement d'infrastructure.</translation>
+   <translation id="cpciiac_deploy_guide" qtlid="506284">Quickstart</translation>
+   <translation id="cpciiac_deploy_configure" qtlid="4010">Configureren</translation>
+   <translation id="cpciiac_deploy_copy_paste" qtlid="506297">Copier/Coller</translation>
+   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Une erreur s'est produite lors de la demande de déploiement : {{message}}</translation>
 </translations>

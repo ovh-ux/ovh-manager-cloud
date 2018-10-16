@@ -498,14 +498,17 @@
 
    <translation id="vps_additional_disk_info_fail" qtlid="281706">Se ha producido un error al cargar la información de los discos adicionales. </translation>
 
+
    <translation id="vps_tab_cloud_database" qtlid="275026">Base de datos </translation>
    <translation id="vps_tab_cloud_database_description" qtlid="505933">¿Necesita bases de datos fiables, de alto rendimiento y 100% administradas por OVH?<br/>¡Descubra nuestro servicio Cloud Databases!<br/>Disfrute de una base de datos autónoma y compatible con todos los productos Cloud de OVH.<br/>¡MariaDB, MongoDB, MySQL, PostgreSQL y Redis disponibles!</translation>
-   <translation id="vps_tab_cloud_database_header_name" qtlid="91081">Nombre de la instancia</translation>
-   <translation id="vps_tab_cloud_database_header_version" qtlid="505946">Versión de la base de datos</translation>
+   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
+   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
+   <translation id="vps_tab_cloud_database_header_version">Version</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">VPS autorizado</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Estado</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">No se ha encontrado ninguna base de datos.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Autorizar al VPS a acceder a esta base</translation>
+   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Retirar la autorización para acceder a esta base</translation>
    <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">Se ha producido un error al cargar las bases de datos.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Acceso para el VPS {{ vps }}</translation>

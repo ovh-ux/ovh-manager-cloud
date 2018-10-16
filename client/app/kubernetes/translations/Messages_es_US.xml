@@ -44,6 +44,10 @@
    <translation id="kube_nodes_add_flavor_family_vps" qtlid="505112">SANDBOX</translation>
    <translation id="kube_nodes_add_flavor" qtlid="505125">Select a Flavor in our PCI catalogue</translation>
    <translation id="kube_nodes_add_pick_flavor" qtlid="505138">Select a Flavor</translation>
+   <translation id="kube_nodes_add_flavor_QUOTA_VCPUS" qtlid="251551">El límite de su proyecto no le permite añadir una máquina con tanto CPU.</translation>
+   <translation id="kube_nodes_add_flavor_QUOTA_RAM" qtlid="251564">El límite de su proyecto no le permite añadir una máquina con tanta RAM.</translation>
+   <translation id="kube_nodes_add_flavor_QUOTA_INSTANCE" qtlid="301851">Ha alcanzado el consumo máximo de máquinas para esta región.</translation>
+   <translation id="kube_nodes_add_flavor_quota_manage">Gérer mon quota.</translation>
    <translation id="kube_nodes_add_error" qtlid="505151">An error has occurred adding the node: {{message}}</translation>
    <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
 
@@ -61,9 +65,13 @@
    <translation id="kube_nodes_flavor_error" qtlid="505281">An error has occurred loading flavor</translation>
    <translation id="kube_nodes_project_error" qtlid="505294">An error has occurred loading public cloud project</translation>
    <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be spawned in the  <a class="oui-link" href="{{ url }}">{{ description }}</a> public cloud project (we will allow to change this in a future version of the service).</translation>
-   <translation id="kube_nodes_description_project_2" qtlid="505320">These instances will be billed as usual in your public cloud project.</translation>
+   <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
+   <translation id="kube_nodes_quota_description" qtlid="251265">Para controlar su consumo del Cloud, su proyecto presenta una limitación de recursos.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede solicitarlos haciendo clic aquí.</translation>
+   <translation id="kube_nodes_quota_ask_more" qtlid="251291">Extender los límites</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }}GB DisK)</translation>
+   <translation id="kube_flavor_price" qtlid="270033">{{price}}/hora</translation>
 
    <translation id="kube_containers_and_services" qtlid="505346">Containers and services</translation>
    <translation id="kube_containers_coming_soon" qtlid="250043">Próximamente disponible</translation>

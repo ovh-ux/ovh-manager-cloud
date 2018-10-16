@@ -498,14 +498,17 @@
 
    <translation id="vps_additional_disk_info_fail" qtlid="281706">Fehler beim Laden der Informationen der zusätzlichen Festplatten</translation>
 
+
    <translation id="vps_tab_cloud_database" qtlid="275026">Datenbanken</translation>
    <translation id="vps_tab_cloud_database_description" qtlid="505933">Sie suchen zuverlässige, performante und vollständig von OVH gemanagte Datenbanken?<br/>Dann bestellen Sie unsere Cloud Databases!<br/>Sie erhalten eine autonome Datenbank, die mit Ihren OVH Cloud Produkten kompatibel ist.<br/>MariaDB, MongoDB, MySQL, PostgreSQL und Redis verfügbar!</translation>
-   <translation id="vps_tab_cloud_database_header_name" qtlid="91081">Name der Instanz</translation>
-   <translation id="vps_tab_cloud_database_header_version" qtlid="505946">Datenbankversion</translation>
+   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
+   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
+   <translation id="vps_tab_cloud_database_header_version">Version</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">Autorisierter VPS</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Status</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">Keine Datenbank gefunden</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Dem VPS Zugriff auf diese Datenbank erlauben</translation>
+   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Zugriffsberechtigung auf diese Datenbank aufheben</translation>
    <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">Beim Laden der Datenbanken ist ein Fehler aufgetreten.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Zugriff für den VPS {{ vps }}</translation>
