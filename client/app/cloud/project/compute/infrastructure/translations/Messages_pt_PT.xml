@@ -14,7 +14,7 @@
    <translation id="cpci_add_btn" qtlid="37923">Adicionar</translation>
    <translation id="cpci_add_server" qtlid="19315">Adicionar servidor</translation>
    <translation id="cpci_add_ip" qtlid="25615">IP</translation>
-   <translation id="cpci_view_iac">Déployer une infrastructure pas-à-pas</translation>
+   <translation id="cpci_view_iac" qtlid="506349">Implementar uma infraestrutura passo a passo</translation>
    <translation id="cpci_import_ip_failover" qtlid="275869">Importar os endereços IP Failover OVH</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Adquirir endereços IP Failover Cloud</translation>
 

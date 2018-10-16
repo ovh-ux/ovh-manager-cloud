@@ -16,7 +16,7 @@
    <translation id="cloud_common_state_restoring-backup" qtlid="258899">Restaurando...</translation>
    <translation id="cloud_common_state_backing-up" qtlid="258912">Guardando...</translation>
    <translation id="cloud_common_state_snapshotting" qtlid="348438">Realizando snapshot...</translation>
-   <translation id="cloud_common_state_error" qtlid="26407">Erreur</translation>
+   <translation id="cloud_common_state_error" qtlid="26407">Error</translation>
 
    <translation id="cloud_common_region" qtlid="168237">Localización</translation>
    <translation id="cloud_common_instance" qtlid="19459">Servidores</translation>

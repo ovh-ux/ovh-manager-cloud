@@ -57,7 +57,7 @@
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} activos</translation>
 
    <translation id="iplb_status_success_service" qtlid="433745">Ok</translation>
-   <translation id="iplb_status_error_service" qtlid="26407">Erreur</translation>
+   <translation id="iplb_status_error_service" qtlid="26407">Error</translation>
    <translation id="iplb_status_warning_service" qtlid="373441">Aviso</translation>
    <translation id="iplb_status_help_service" qtlid="438506">No hay información.</translation>
 
