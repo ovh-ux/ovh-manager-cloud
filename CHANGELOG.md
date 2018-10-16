@@ -1,3 +1,13 @@
+<a name="7.8.1"></a>
+## [7.8.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.0...v7.8.1) (2018-10-16)
+
+
+### Bug Fixes
+
+* **infrastructure:** add missing styles ([1331499](https://github.com/ovh-ux/ovh-manager-cloud/commit/1331499))
+
+
+
 <a name="7.8.0"></a>
 # [7.8.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.8...v7.8.0) (2018-10-16)
 
