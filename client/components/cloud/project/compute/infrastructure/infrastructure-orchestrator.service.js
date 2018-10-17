@@ -690,13 +690,16 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
           },
           namespace: 'cloud.infra.vms',
           notifyOnError: false,
-        })
-        .then((vms) => {
-          updateInstancesFromPolling(vms);
-        })
-        .finally((vms) => {
-          updateInstancesFromPolling(vms);
-        });
+        }).then((vms) => {
+        updateInstancesFromPolling(vms);
+      }, (err) => {
+        if (err && err.status) {
+          console.warn('pollVms', err);
+          // @todo add bugkiller here
+        }
+      }, (vms) => {
+        updateInstancesFromPolling(vms);
+      });
     };
 
     /**
@@ -724,13 +727,16 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
             return ip.status === 'ok';
           },
           namespace: 'cloud.infra.ips',
-        })
-        .then((ips) => {
-          updateIpsFromPolling(ips, type);
-        })
-        .finally((ips) => {
-          updateIpsFromPolling(ips, type);
-        });
+        }).then((ips) => {
+        updateIpsFromPolling(ips, type);
+      }, (err) => {
+        if (err && err.status) {
+          console.warn('pollIps', err);
+          // @todo add bugkiller here
+        }
+      }, (ips) => {
+        updateIpsFromPolling(ips, type);
+      });
     };
 
     /**

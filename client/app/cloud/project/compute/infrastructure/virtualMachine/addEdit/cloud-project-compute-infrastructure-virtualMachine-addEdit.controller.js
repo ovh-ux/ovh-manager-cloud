@@ -82,6 +82,7 @@ angular.module('managerApp')
       $timeout,
       $translate,
       atInternet,
+      CloudFlavorService,
       CloudImageService,
       CloudMessage,
       CloudProjectComputeInfrastructureOrchestrator,
@@ -406,7 +407,7 @@ angular.module('managerApp')
           });
 
           // filter GPU
-          if (flavorType === 'g1' || flavorType === 'g2' || flavorType === 'g3' || flavorType === 't1') {
+          if (['g1', 'g2', 'g3', 't1'].includes(flavorType)) {
             self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => image.type === 'linux' || (flavorType ? _.includes(image.flavorType, flavorType) : true));
           } else {
             self.displayData.images[imageType] = _.filter(
@@ -1103,7 +1104,8 @@ angular.module('managerApp')
             OvhApiCloudProjectFlavor.v6().query({
               serviceName,
             }).$promise.then((flavorsList) => {
-              const modifiedFlavorsList = _.map(flavorsList, flavor => addDetailsToFlavor(flavor));
+              const modifiedFlavorsList = flavorsList
+                .map(flavor => CloudFlavorService.augmentFlavor(flavor));
 
               // Flavor types (ovh.ram, ovh.cpu, ...)
               self.enums.flavorsTypes = _.uniq(_.pluck(modifiedFlavorsList, 'type'));
@@ -1130,7 +1132,7 @@ angular.module('managerApp')
                 recalculateFlavor();
               }
               if (self.vmInEdition.status === 'ACTIVE') {
-                self.currentFlavor = addDetailsToFlavor(self.vmInEdition.flavor);
+                self.currentFlavor = CloudFlavorService.augmentFlavor(self.vmInEdition.flavor);
               }
 
               connectFlavorTogether();
@@ -1380,7 +1382,7 @@ angular.module('managerApp')
         // check disk compatibility
         if (diskType) {
           if (self.vmInEdition.status === 'ACTIVE') {
-            const augmentedFlavor = addDetailsToFlavor(self.originalVm.flavor);
+            const augmentedFlavor = CloudFlavorService.augmentFlavor(self.originalVm.flavor);
             // It should always be impossible to switch from an existing SSD instance
             // to a ceph instance.
             if (augmentedFlavor.diskType === 'ssd' && diskType === 'ceph') {
@@ -1476,52 +1478,6 @@ angular.module('managerApp')
             _.set(flavor, 'similarFlavors', _.filter(flavorList, flavorToCompare => flavor.shortGroupName === flavorToCompare.shortGroupName));
           }
         });
-      }
-
-      function addDetailsToFlavor(flavor) {
-        // Regex to get more info on flavor
-        const augmentedFlavor = flavor;
-        if (/vps/.test(flavor.type)) {
-          augmentedFlavor.vps = true;
-          augmentedFlavor.diskType = 'ssd';
-          augmentedFlavor.flex = false;
-          augmentedFlavor.shortGroupName = flavor.name;
-        } else {
-          let shortType;
-          let numberType;
-          if (flavor.osType === 'windows') {
-            shortType = _.first(_.rest(flavor.name.split('-')));
-            numberType = _.first(_.rest(_.rest(flavor.name.split('-'))));
-          } else {
-            shortType = _.first(flavor.name.split('-'));
-            numberType = _.first(_.rest(flavor.name.split('-')));
-          }
-          if (shortType) {
-            augmentedFlavor.shortType = shortType;
-          }
-          if (numberType) {
-            augmentedFlavor.numberType = numberType;
-          }
-          if (shortType && numberType) {
-            augmentedFlavor.shortGroupName = `${shortType}-${numberType}`;
-          }
-          augmentedFlavor.flex = /flex$/.test(flavor.name);
-          augmentedFlavor.diskType = /ssd/.test(flavor.type) ? 'ssd' : 'ceph';
-
-          if (_.indexOf(['g1', 'g2', 'g3', 't1'], augmentedFlavor.shortType) > -1) {
-            if (numberType === '120') {
-              augmentedFlavor.gpuCardCount = 3;
-            } else {
-              augmentedFlavor.gpuCardCount = 1;
-            }
-          }
-          augmentedFlavor.isOldFlavor = isOldFlavor(flavor.name);
-        }
-        return augmentedFlavor;
-      }
-
-      function isOldFlavor(flavorName) {
-        return /eg|sp|hg|vps-ssd/.test(flavorName);
       }
 
       function checkFlavorCompatibility(fromFlavor, toFlavor) {
