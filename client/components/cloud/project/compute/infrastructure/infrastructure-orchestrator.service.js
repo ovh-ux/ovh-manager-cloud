@@ -132,7 +132,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     this.addNewVmToList = function addNewVmToList(vmOptions) {
       let vm;
 
-      return $q.when(true).then(() => {
+      return $q.when().then(() => {
         if (!vmOptions) {
           return getDefaultVmConfiguration();
         }

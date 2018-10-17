@@ -406,7 +406,7 @@ angular.module('managerApp')
           });
 
           // filter GPU
-          if (flavorType === 'g1' || flavorType === 'g2' || flavorType === 'g3') {
+          if (flavorType === 'g1' || flavorType === 'g2' || flavorType === 'g3' || flavorType === 't1') {
             self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => image.type === 'linux' || (flavorType ? _.includes(image.flavorType, flavorType) : true));
           } else {
             self.displayData.images[imageType] = _.filter(
@@ -1126,7 +1126,6 @@ angular.module('managerApp')
               }
               self.panelsData.flavors = modifiedFlavorsList;
 
-
               if (!self.vmInEdition.flavor) { // this is a snapshot           to review
                 recalculateFlavor();
               }
@@ -1509,7 +1508,7 @@ angular.module('managerApp')
           augmentedFlavor.flex = /flex$/.test(flavor.name);
           augmentedFlavor.diskType = /ssd/.test(flavor.type) ? 'ssd' : 'ceph';
 
-          if (_.indexOf(['g1', 'g2', 'g3'], augmentedFlavor.shortType) > -1) {
+          if (_.indexOf(['g1', 'g2', 'g3', 't1'], augmentedFlavor.shortType) > -1) {
             if (numberType === '120') {
               augmentedFlavor.gpuCardCount = 3;
             } else {
