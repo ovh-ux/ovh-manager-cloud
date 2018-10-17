@@ -1,3 +1,13 @@
+<a name="7.8.2"></a>
+## [7.8.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.1...v7.8.2) (2018-10-17)
+
+
+### Bug Fixes
+
+* **cloud.infra.add:** instance name ([176545e](https://github.com/ovh-ux/ovh-manager-cloud/commit/176545e))
+
+
+
 <a name="7.8.1"></a>
 ## [7.8.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.0...v7.8.1) (2018-10-16)
 
