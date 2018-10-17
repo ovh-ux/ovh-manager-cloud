@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_enterprise_shortcut_title" qtlid="403658">Shortcuts</translation>
-   <translation id="veeam_enterprise_shortcut_label_activate_license" qtlid="505764">Activer la licence</translation>
-   <translation id="veeam_enterprise_shortcut_label_update_informations" qtlid="505777">Mettre à jour mes informations</translation>
-   <translation id="veeam_enterprise_shortcut_label_cancel_license" qtlid="505790">Résilier la licence</translation>
+   <translation id="veeam_enterprise_shortcut_label_activate_license" qtlid="505764">Licentie activeren</translation>
+   <translation id="veeam_enterprise_shortcut_label_update_informations" qtlid="505777">Mijn informatie updaten</translation>
+   <translation id="veeam_enterprise_shortcut_label_cancel_license" qtlid="505790">Licentie annuleren</translation>
 
-   <translation id="veeam_enterprise_terminate_title" qtlid="505790">Résilier la licence</translation>
-   <translation id="veeam_enterprise_terminate_confirm" qtlid="505803">Êtes-vous certain de vouloir résilier cette licence?</translation>
-   <translation id="veeam_enterprise_terminate_success" qtlid="505816">Un email a été envoyé pour accuser réception de votre demande.</translation>
-   <translation id="veeam_enterprise_terminate_error" qtlid="505829">Une erreur est survenue lors de la résiliation de la licence.</translation>
+   <translation id="veeam_enterprise_terminate_title" qtlid="505790">Licentie annuleren</translation>
+   <translation id="veeam_enterprise_terminate_confirm" qtlid="505803">Weet u zeker dat u deze licentie wilt annuleren?</translation>
+   <translation id="veeam_enterprise_terminate_success" qtlid="505816">Er is een bevestigingsmail verzonden voor uw aanvraag.</translation>
+   <translation id="veeam_enterprise_terminate_error" qtlid="505829">Er is een fout opgetreden bij het annuleren van uw licentie.</translation>
 
    <translation id="veeam_enterprise_configuration_title" qtlid="4406">Configuratie</translation>
    <translation id="veeam_enterprise_configuration_label_name" qtlid="3818">Naam</translation>

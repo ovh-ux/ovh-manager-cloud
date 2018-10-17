@@ -15,7 +15,7 @@
    <translation id="cpci_add_btn" qtlid="37923">Toevoegen</translation>
    <translation id="cpci_add_server" qtlid="19315">Een server toevoegen</translation>
    <translation id="cpci_add_ip" qtlid="25615">IP</translation>
-   <translation id="cpci_view_iac" qtlid="506349">Déployer une infrastructure pas-à-pas</translation>
+   <translation id="cpci_view_iac" qtlid="506349">Implementeer infrastructuur stapsgewijs</translation>
    <translation id="cpci_import_ip_failover" qtlid="275869">Importeer OVH Failover IP's</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Koop Cloud Failover IP's</translation>
 
