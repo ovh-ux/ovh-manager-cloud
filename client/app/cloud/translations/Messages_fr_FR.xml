@@ -51,6 +51,8 @@
    <translation id="cloud_common_region_SYD_micro" qtlid="449167">Sydney ({{ micro }})</translation>
    <translation id="cloud_common_region_US" qtlid="108396">États-Unis</translation>
    <translation id="cloud_common_region_US_micro" qtlid="497933">États-Unis ({{ micro }})</translation>
+   <translation id="cloud_common_region_VIN">Vint Hil</translation>
+   <translation id="cloud_common_region_VIN_micro">Vint Hil ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localiser</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europe Centrale (France)</translation>
@@ -65,6 +67,7 @@
    <translation id="cloud_common_region_location_SGP" qtlid="447547">Asie du Sud-Est (Singapour)</translation>
    <translation id="cloud_common_region_location_SYD" qtlid="449180">Océanie (Australie)</translation>
    <translation id="cloud_common_region_location_US" qtlid="108396">États-Unis</translation>
+   <translation id="cloud_common_region_location_VIN">East Coast (États-Unis)</translation>
 
    <translation id="cloud_common_region_continent_SBG" qtlid="468885">Europe Centrale</translation>
    <translation id="cloud_common_region_continent_WAW" qtlid="468885">Europe Centrale</translation>

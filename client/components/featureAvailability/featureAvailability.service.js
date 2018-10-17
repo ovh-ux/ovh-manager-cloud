@@ -72,9 +72,11 @@
       sidebarMenu: {
         EU: allEuropeanSubsidiaries,
         CA: allCanadianSubsidiaries,
+        US: ['US'],
       },
       sidebarOrder: {
         EU: allEuropeanSubsidiaries,
+        US: ['US'],
       },
     },
     VRACK: {
