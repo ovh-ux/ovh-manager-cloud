@@ -6,16 +6,28 @@
  *  This orchestrator is used to init and manage a Cloud infrastructure.
  */
 angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestrator',
-  function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref,
-    CloudProjectComputeVolumesOrchestrator, CloudProjectComputeInfrastructureFactory,
-    OvhApiCloudProjectInstance, OvhApiCloudProjectIp, OvhApiIp, OvhApiCloudProjectRegion,
-    OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectSshKey) {
+  function CloudProjectComputeInfrastructureOrchestrator(
+    $q,
+    $rootScope,
+    $translate,
+    CloudProjectComputeInfrastructureFactory,
+    CloudProjectComputeVolumesOrchestrator,
+    CloudUserPref,
+    OvhApiCloudProjectFlavor,
+    OvhApiCloudProjectImage,
+    OvhApiCloudProjectInstance,
+    OvhApiCloudProjectIp,
+    OvhApiCloudProjectRegion,
+    OvhApiCloudProjectSshKey,
+    Poller,
+    CLOUD_INSTANCE_DEFAULTS,
+  ) {
     // Warning: all values must be reset at init (see resetDatas())
     const self = this;
     let editedVm;
     let monitoredVm;
     let paramEdition = null; // type enum {NAME, POWER, OS}
-    const resetDatas = function () {
+    const resetDatas = function resetDatas() {
       // The full infra to display
       self.infra = null;
 
@@ -101,7 +113,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Get the default vm configuration options
      */
-    const getDefaultVmConfiguration = function () {
+    const getDefaultVmConfiguration = function getDefaultVmConfiguration() {
       return OvhApiCloudProjectRegion.v6().query({
         serviceName: self.infra.serviceName,
       }).$promise.then((regionList) => {
@@ -117,7 +129,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Add a virtual machine into project infrastructure
      */
-    this.addNewVmToList = function (vmOptions) {
+    this.addNewVmToList = function addNewVmToList(vmOptions) {
       let vm;
 
       return $q.when(true).then(() => {
@@ -137,7 +149,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Launch the vm creation.
      */
-    this.saveNewVm = function (vm) {
+    this.saveNewVm = function saveNewVm(vm) {
       const oldId = vm.id;
       return vm.launchCreation().then(() => {
         // we must do it because old id is a fake one
@@ -150,7 +162,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      * Launch vm creation, creating multiple copies.
      */
-    this.saveMultipleNewVms = function (vmBase, count) {
+    this.saveMultipleNewVms = function saveMultipleNewVms(vmBase, count) {
       return OvhApiCloudProjectInstance.v6().bulk({
         serviceName: self.infra.serviceName,
       }, {
@@ -173,7 +185,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Set the virtual machine that is currently in edition
      */
-    this.turnOnVmEdition = function (vm) {
+    this.turnOnVmEdition = function turnOnVmEdition(vm) {
       editedVm = vm;
       editedVm.startEdition();
     };
@@ -181,7 +193,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Close/Reset the virtual machine that is currently in edition
      */
-    this.turnOffVmEdition = function (reset, vmWithChanges) {
+    this.turnOffVmEdition = function turnOffVmEdition(reset, vmWithChanges) {
       editedVm.stopEdition(!!reset, vmWithChanges);
       editedVm = null;
     };
@@ -189,40 +201,40 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Open monitoring panel
      */
-    this.openMonitoringPanel = function (vm) {
+    this.openMonitoringPanel = function openMonitoringPanel(vm) {
       monitoredVm = vm;
       vm.startMonitoring();
     };
 
-    this.getMonitoredVm = function () {
+    this.getMonitoredVm = function getMonitoredVm() {
       return monitoredVm;
     };
 
     /**
      *  Get the virtual machine that is currently in edition
      */
-    this.getEditedVm = function () {
+    this.getEditedVm = function getEditedVm() {
       return editedVm;
     };
 
     /**
      *  Get parameters for current edition
      */
-    this.getEditVmParam = function () {
+    this.getEditVmParam = function getEditVmParam() {
       return paramEdition;
     };
 
     /**
      *  Get parameters for current edition
      */
-    this.setEditVmParam = function (param) {
+    this.setEditVmParam = function setEditVmParam(param) {
       paramEdition = param;
     };
 
     /**
      *  Save the VM modifications
      */
-    this.saveEditedVm = function (vm) {
+    this.saveEditedVm = function saveEditedVm(vm) {
       return vm.edit().then(() => {
         self.saveToUserPref();
         self.pollVms(); // WARNING: Never return promise because pulling had to live on her side
@@ -232,7 +244,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Delete VM
      */
-    this.deleteVm = function (vm) {
+    this.deleteVm = function deleteVm(vm) {
       if (vm.status === 'DRAFT') {
         return $q.when(true).then(() => {
           self.infra.vrack.removeVmFromPublicCloudList(vm);
@@ -249,7 +261,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Rescue VM
      */
-    this.rescueVm = function (vm, enable, image) {
+    this.rescueVm = function rescueVm(vm, enable, image) {
       return vm.rescueMode(enable, image).then((result) => {
         self.pollVms();
         return result;
@@ -259,7 +271,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Reboot [soft|hard] VM
      */
-    this.rebootVm = function (vm, type) {
+    this.rebootVm = function rebootVm(vm, type) {
       return vm.reboot(type).then(() => {
         self.pollVms(); // WARNING: Never return promise because pulling had to live on her side
       });
@@ -268,7 +280,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Resume VM
      */
-    this.resumeVm = function (vm) {
+    this.resumeVm = function resumeVm(vm) {
       return vm.resume().then(() => {
         self.pollVms(); // WARNING: Never return promise because pulling had to live on her side
       });
@@ -277,7 +289,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Reinstall VM
      */
-    this.reinstallVm = function (vm) {
+    this.reinstallVm = function reinstallVm(vm) {
       return vm.reinstall().then(() => {
         self.pollVms(); // WARNING: Never return promise because pulling had to live on her side
       });
@@ -286,7 +298,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Create a new snapshot of VM
      */
-    this.backupVm = function (vm, snapshotName) {
+    this.backupVm = function backupVm(vm, snapshotName) {
       return vm.backup(snapshotName).then(() => {
         self.pollVms(); // WARNING: Never return promise because pulling had to live on her side
       });
@@ -295,7 +307,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Collapse all vm
      */
-    this.collapseAllVm = function () {
+    this.collapseAllVm = function collapseAllVm() {
       this.infra.vrack.collapseAll();
       this.saveToUserPref(); // ------ TODO: dangerous, this do an ASYNC call
     };
@@ -303,7 +315,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Uncollapse all vm
      */
-    this.uncollapseAllVm = function () {
+    this.uncollapseAllVm = function uncollapseAllVm() {
       this.infra.vrack.uncollapseAll();
       this.saveToUserPref(); // ------ TODO: dangerous, this do an ASYNC call
     };
@@ -311,7 +323,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Toggle the collapsed state of given vm and save to userPref
      */
-    this.toggleVmCollapsedState = function (vm) {
+    this.toggleVmCollapsedState = function toggleVmCollapsedState(vm) {
       _.set(vm, 'collapsed', !vm.collapsed);
       this.saveToUserPref(); // ------ TODO: dangerous, this do an ASYNC call
       return $q.when(vm);
@@ -320,13 +332,13 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Toggle the collapsed state of given vm and save to userPref
      */
-    this.toggleCollapsedVolumes = function (vm) {
+    this.toggleCollapsedVolumes = function toggleCollapsedVolumes(vm) {
       _.set(vm, 'collapsedVolumes', !vm.collapsedVolumes);
       this.saveToUserPref(); // ------ TODO: dangerous, this do an ASYNC call
       return $q.when(vm);
     };
 
-    this.loadVmMonitoringData = function () {
+    this.loadVmMonitoringData = function loadVmMonitoringData() {
       _.each(this.infra.vrack.publicCloud.items, (instance) => {
         instance.getMonitoringData();
       });
@@ -338,7 +350,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
      =         VLANs           =
      ========================== */
 
-    this.hasVrack = function () {
+    this.hasVrack = function hasVrack() {
       return this.infra.vlan.hasVrack();
     };
 
@@ -349,7 +361,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      * Attach an IP to a VM
      */
-    this.attachIptoVm = function (ip, vm) {
+    this.attachIptoVm = function attachIptoVm(ip, vm) {
       if (ip.status === 'DRAFT') {
         // @todo
         return $q.when('TODO').then(() => {
@@ -399,7 +411,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Make the links between VMs and IPs
      */
-    this.refreshLinks = function () {
+    this.refreshLinks = function refreshLinks() {
       angular.forEach(self.infra.internet.ipList.items, (ip) => {
         self.infra.refreshVmsRoutedToFromIp(ip);
       });
@@ -650,7 +662,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
      *
      *  Poll VM query
      */
-    this.pollVms = function () {
+    this.pollVms = function pollVms() {
       const continueStatus = [
         'DELETING',
         'BUILDING',
@@ -678,16 +690,13 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
           },
           namespace: 'cloud.infra.vms',
           notifyOnError: false,
-        }).then((vms) => {
-        updateInstancesFromPolling(vms);
-      }, (err) => {
-        if (err && err.status) {
-          console.warn('pollVms', err);
-          // @todo add bugkiller here
-        }
-      }, (vms) => {
-        updateInstancesFromPolling(vms);
-      });
+        })
+        .then((vms) => {
+          updateInstancesFromPolling(vms);
+        })
+        .finally((vms) => {
+          updateInstancesFromPolling(vms);
+        });
     };
 
     /**
@@ -695,7 +704,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
      *
      *  Kill the Poll VM query
      */
-    this.killPollVms = function () {
+    this.killPollVms = function killPollVms() {
       Poller.kill({ namespace: 'cloud.infra.vms' });
     };
 
@@ -707,7 +716,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
      *  Poll IPs list
      *  [ip] : the type of the IPs
      */
-    this.pollIps = function (type) {
+    this.pollIps = function pollIps(type) {
       return Poller.poll(`/cloud/project/${self.infra.serviceName}/ip/${type}`,
         null,
         {
@@ -715,16 +724,13 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
             return ip.status === 'ok';
           },
           namespace: 'cloud.infra.ips',
-        }).then((ips) => {
-        updateIpsFromPolling(ips, type);
-      }, (err) => {
-        if (err && err.status) {
-          console.warn('pollIps', err);
-          // @todo add bugkiller here
-        }
-      }, (ips) => {
-        updateIpsFromPolling(ips, type);
-      });
+        })
+        .then((ips) => {
+          updateIpsFromPolling(ips, type);
+        })
+        .finally((ips) => {
+          updateIpsFromPolling(ips, type);
+        });
     };
 
     /**
@@ -732,7 +738,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
      *
      *  Kill the Poll IPs query
      */
-    this.killPollIps = function () {
+    this.killPollIps = function killPollIps() {
       Poller.kill({ namespace: 'cloud.infra.ips' });
     };
 
@@ -743,12 +749,12 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     =            UserPref            =
     ==================================== */
 
-    this.saveToUserPref = function () {
+    this.saveToUserPref = function saveToUserPref() {
       return CloudUserPref.set(`cloud_project_${self.infra.serviceName}_infra`,
         self.infra.prepareToJson());
     };
 
-    this.createFromUserPref = function (serviceName) {
+    this.createFromUserPref = function createFromUserPref(serviceName) {
       const key = `cloud_project_${serviceName}_infra`;
       return CloudUserPref.get(key).then((infra) => {
         _.set(infra, 'serviceName', serviceName);
@@ -820,7 +826,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     /**
      *  Initialize a new Infrastructure
      */
-    this.init = function (opts) {
+    this.init = function init(opts) {
       resetDatas();
       return initExistingProject(opts);
     };
