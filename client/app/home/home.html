@@ -1,6 +1,6 @@
 <a
     data-ng-if="$ctrl.shouldDisplayBanner"
-    data-ng-href="https://summit.ovh.com/{{:: $ctrl.localeForSummitBanner }}/live"
+    data-ng-href="{{ $ctrl.localeForSummitBanner === 'fr' ? 'https://blog.ovh.com/fr/blog/ovh-summit-2018-les-grandes-annonces' : 'https://blog.ovh.com/fr/blog/ovh-summit-2018-new-products-annoucements/'}}"
     target="_blank"
     rel="noopener"
     title="{{:: 'configuration_summit_banner_alt' | translate }}">
