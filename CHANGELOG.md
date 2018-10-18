@@ -1,3 +1,13 @@
+<a name="7.8.4"></a>
+## [7.8.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.3...v7.8.4) (2018-10-18)
+
+
+### Features
+
+* **home:** change subscription banner by updates banner ([3f66936](https://github.com/ovh-ux/ovh-manager-cloud/commit/3f66936))
+
+
+
 <a name="7.8.3"></a>
 ## [7.8.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.2...v7.8.3) (2018-10-18)
 
