@@ -1,3 +1,19 @@
+<a name="7.8.3"></a>
+## [7.8.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.2...v7.8.3) (2018-10-18)
+
+
+### Bug Fixes
+
+* **dbaas.logs:** update twitter file configuration ([5e47744](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e47744))
+* **i18n:** retrieve translations ([e6df947](https://github.com/ovh-ux/ovh-manager-cloud/commit/e6df947))
+
+
+### Features
+
+* **home:** change subscription banner to live banner ([7ac4436](https://github.com/ovh-ux/ovh-manager-cloud/commit/7ac4436))
+
+
+
 <a name="7.8.2"></a>
 ## [7.8.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.1...v7.8.2) (2018-10-17)
 
