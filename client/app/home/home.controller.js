@@ -1,19 +1,14 @@
 class HomeCtrl {
-  constructor($q, $translate, DocsService, FeatureAvailabilityService, OvhApiMe) {
+  constructor($q, DocsService, FeatureAvailabilityService) {
     this.$q = $q;
-    this.$translate = $translate;
-
     this.DocsService = DocsService;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
-    this.OvhApiMe = OvhApiMe;
   }
 
   $onInit() {
     this.defaultSections = ['PROJECT', 'VPS'];
     this.guides = {};
     this.guides.all = this.DocsService.getAllGuidesLink();
-
-    this.buildSummitData();
 
     return this.setSections();
   }
@@ -28,19 +23,6 @@ class HomeCtrl {
           .map(section => this.DocsService.getGuidesOfSection(section))
           .value();
         return this.guides.sections;
-      });
-  }
-
-  buildSummitData() {
-    this.localeForSummitBanner = this.$translate.use().split('_')[0] === 'fr' ? 'fr' : 'en';
-
-    const subsidiariesWithSummitBanner = ['FR', 'GB', 'DE', 'ES'];
-    this.shouldDisplayBanner = false;
-
-    return this.OvhApiMe.v6()
-      .get().$promise
-      .then(({ ovhSubsidiary }) => {
-        this.shouldDisplayBanner = _(subsidiariesWithSummitBanner).includes(ovhSubsidiary);
       });
   }
 }
