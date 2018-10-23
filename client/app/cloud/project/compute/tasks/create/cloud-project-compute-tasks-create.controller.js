@@ -2,8 +2,9 @@ angular.module('managerApp')
   .controller('CloudProjectComputeTasksCreateCtrl', class CloudProjectComputeTasksCreateCtrl {
     constructor(
       $state, $stateParams, $translate,
-      CloudMessage, CloudProjectCompute, OvhApiCloudProjectInstance, validator,
-      CPC_TASKS,
+      CloudMessage, CloudProjectCompute, OvhApiCloudProjectInstance, OvhApiMe,
+      validator,
+      CPC_TASKS, URLS,
     ) {
       this.$state = $state;
       this.$stateParams = $stateParams;
@@ -11,8 +12,10 @@ angular.module('managerApp')
       this.CloudMessage = CloudMessage;
       this.CloudProjectCompute = CloudProjectCompute;
       this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
+      this.OvhApiMe = OvhApiMe;
       this.validator = validator;
       this.CPC_TASKS = CPC_TASKS;
+      this.URLS = URLS;
     }
 
     $onInit() {
@@ -54,6 +57,13 @@ angular.module('managerApp')
         });
     }
 
+    getSubsidiary() {
+      return this.OvhApiMe.v6().get().$promise
+        .then(({ ovhSubsidiary }) => {
+          this.priceUrl = this.URLS.website_order.pcs[ovhSubsidiary];
+        });
+    }
+
     isActionSelected() {
       return !_.isNull(this.model.action);
     }
@@ -66,28 +76,49 @@ angular.module('managerApp')
       return !_.isNull(this.model.schedule);
     }
 
+    loadTasks() {
+      return this[`load${this.model.action.id}Tasks`]();
+    }
+
+    loadsnapshotTasks() {
+      return this.CloudProjectCompute
+        .getWorkflowBackup(this.serviceName, this.model.instance.region)
+        .then((backups) => {
+          this.existingTasksNames = _.map(backups, 'name');
+        });
+    }
+
+    isNameValid(taskName) {
+      if (this.existingTasksNames) {
+        return !this.existingTasksNames.find(name => name === taskName);
+      }
+
+      return false;
+    }
+
     createTask() {
-      return this[`create${this.model.action.id}Task`]();
+      this.createLoader = true;
+      return this[`create${this.model.action.id}Task`]()
+        .then(() => {
+          this.createLoader = false;
+        });
     }
 
     selectSchedule(schedule) {
       if (schedule === 'custom') {
-        this.model.name = `${this.model.instance.name}-custom`;
         this.isCustomSchedule = true;
       } else {
-        this.model.name = `${this.model.instance.name}-daily`;
         this.model.rotation = _.get(this.CPC_TASKS, `defaultSchedules.${schedule}.rotation`);
         this.isCustomSchedule = false;
       }
     }
 
     selectTime() {
-      const time = moment(this.model.time);
+      const time = moment(this.model.time).utc();
       this.model.cron = `${time.minutes()} ${time.hours()} * * *`;
     }
 
     createsnapshotTask() {
-      this.createLoader = true;
       return this.CloudProjectCompute
         .createWorkflowBackup(this.serviceName, this.model.instance.region, {
           cron: this.model.cron,
@@ -98,9 +129,6 @@ angular.module('managerApp')
         .then(() => this.goToTasksList())
         .catch((error) => {
           this.CloudMessage.error(this.$translate.instant('cpc_tasks_create_error', { message: _.get(error, 'data.message', '') }));
-        })
-        .finally(() => {
-          this.createLoader = false;
         });
     }
 

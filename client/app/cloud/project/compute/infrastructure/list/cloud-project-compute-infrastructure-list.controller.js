@@ -1,15 +1,17 @@
 class CloudProjectComputeInfrastructureListCtrl {
-  constructor($scope, $q, $stateParams, $translate, $timeout,
-    CloudMessage, CloudNavigation, CloudProjectOrchestrator,
+  constructor($scope, $q, $state, $stateParams, $translate, $timeout,
+    CloudMessage, CloudNavigation, CloudProjectCompute, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
     OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
     this.$scope = $scope;
     this.$q = $q;
     this.$timeout = $timeout;
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CloudMessage = CloudMessage;
     this.CloudNavigation = CloudNavigation;
+    this.CloudProjectCompute = CloudProjectCompute;
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.InfrastructureService = CloudProjectComputeInfrastructureService;
     this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
@@ -68,7 +70,11 @@ class CloudProjectComputeInfrastructureListCtrl {
 
     this.InfrastructureService.setPreferredView('list');
 
-    return this.initInfra();
+    return this.initInfra()
+      .then(() => this.getRegionsWithWorkflowServices())
+      .finally(() => {
+        this.loaders.infra = false;
+      });
   }
 
   initInfra() {
@@ -94,8 +100,6 @@ class CloudProjectComputeInfrastructureListCtrl {
       this.table.items = [];
       this.CloudMessage.error(`${this.$translate.instant('cpci_errors_init_title')} : ${_.get(err, 'data.message', '')}`);
       return this.$q.reject(err);
-    }).finally(() => {
-      this.loaders.infra = false;
     });
   }
 
@@ -113,11 +117,16 @@ class CloudProjectComputeInfrastructureListCtrl {
   static getStatusToTranslate(instance) {
     if (instance.status === 'ACTIVE' && instance.monthlyBilling && instance.monthlyBilling.status === 'activationPending') {
       return 'UPDATING';
-    } if (instance.status === 'ACTIVE') {
+    }
+
+    if (instance.status === 'ACTIVE') {
       return 'OK';
-    } if (instance.status === 'REBOOT' || instance.status === 'HARD_REBOOT' || instance.status === 'RESCUING' || instance.status === 'UNRESCUING') {
+    }
+
+    if (instance.status === 'REBOOT' || instance.status === 'HARD_REBOOT' || instance.status === 'RESCUING' || instance.status === 'UNRESCUING') {
       return 'REBOOT';
     }
+
     return instance.status;
   }
 

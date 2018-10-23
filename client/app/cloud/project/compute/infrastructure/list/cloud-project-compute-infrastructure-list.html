@@ -19,8 +19,8 @@
                             data-ng-bind=":: 'cpci_volume_add' | translate">
                     </button>
                     <oui-dropdown-item data-text="{{:: 'cpci_add_task' | translate }}"
-                                       data-state="iaas.pci-project.compute.task.create"
-                                       data-state-params="{ serviceName: $ctrl.serviceName }">
+                                       data-on-click="$ctrl.$state.go('iaas.pci-project.compute.task.create', { serviceName: $ctrl.serviceName })"
+                                       data-ng-if="$ctrl.table.items.length">
                     </oui-dropdown-item>
                     <oui-dropdown-divider></oui-dropdown-divider>
                     <button type="button"

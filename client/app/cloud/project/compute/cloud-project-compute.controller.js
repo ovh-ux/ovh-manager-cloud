@@ -133,6 +133,10 @@ class CloudProjectComputeCtrl {
       return message;
     });
   }
+
+  isInfrastructureTabActive() {
+    return this.$state.includes('iaas.pci-project.compute.infrastructure');
+  }
 }
 
 angular.module('managerApp').controller('CloudProjectComputeCtrl', CloudProjectComputeCtrl);

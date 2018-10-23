@@ -18,15 +18,20 @@ angular.module('managerApp')
     $onInit() {
       this.projectId = this.$stateParams.projectId;
 
-      this.getRegionsWithWorkflowService();
+      this.loading = true;
+
+      this.getRegionsWithWorkflowService()
+        .then(() => this.getCloudInstancesBackup())
+        .then(() => this.getProjectInstances())
+        .finally(() => {
+          this.loading = false;
+        });
     }
 
     getRegionsWithWorkflowService() {
-      this.loading = true;
       return this.CloudProjectCompute.getRegionsWithWorkflowService(this.projectId)
         .then((regions) => {
           this.regions = regions;
-          return this.getCloudInstancesBackup();
         })
         .catch((error) => {
           this.CloudMessage.error(this.$translate.instant('cpc_tasks_instances_error', { message: _.get(error, 'data.message', '') }));
@@ -51,7 +56,6 @@ angular.module('managerApp')
         )
         .finally(() => {
           this.backups = _.chain(backupResults).flatten().map(backup => _.set(backup, 'action', 'Snapshot')).value();
-          this.loading = false;
         });
     }
 
@@ -59,6 +63,13 @@ angular.module('managerApp')
       return this.CloudProjectCompute.getInstance(this.projectId, backup.instanceId)
         .then(instance => _.set(backup, 'instanceName', instance.name))
         .catch(() => _.set(backup, 'instanceName', this.$translate.instant('cpc_tasks_backups_instance_name_error')));
+    }
+
+    getProjectInstances() {
+      return this.CloudProjectCompute.getInstances(this.projectId)
+        .then((instances) => {
+          this.projectHasInstances = !_.isEmpty(instances);
+        });
     }
 
     deleteTask({ id, region, backupName }) {
@@ -77,7 +88,10 @@ angular.module('managerApp')
       })
         .result.then(() => {
           this.loading = true;
-          this.getCloudInstancesBackup();
+          this.getCloudInstancesBackup()
+            .then(() => {
+              this.loading = false;
+            });
         });
     }
   });

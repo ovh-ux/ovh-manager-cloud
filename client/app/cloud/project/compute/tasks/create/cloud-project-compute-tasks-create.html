@@ -3,26 +3,38 @@
                      data-state="iaas.pci-project.compute.task"
                      data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }">
     </oui-back-button>
-    <oui-stepper>
+    <oui-stepper data-on-init="$ctrl.getSubsidiary()">
         <oui-step-form data-header="{{:: 'cpc_tasks_action' | translate }}"
                        data-valid="$ctrl.isActionSelected()"
-                       data-description="{{:: 'cpc_tasks_actions_description' | translate }}">
+                       data-description="{{:: 'cpc_tasks_actions_description' | translate }}"
+                       data-loading="!$ctrl.priceUrl">
             <div data-ng-repeat="action in $ctrl.CPC_TASKS.availableActions track by $index" class="cui-grid-list">
                 <oui-select-picker data-text="{{:: 'cpc_tasks_action_' + action | translate }}"
                                    name="action"
-                                   data-match="condition"
                                    data-model="$ctrl.model.action"
+                                   data-match="condition"
                                    data-description="{{:: 'cpc_tasks_action_' + action + '_description' | translate }}"
-                                   data-required
                                    data-values="[{id: action, condition: ('cpc_tasks_action_' + action + '_condition' | translate) }]"
+                                   data-required
+                                   data-variant="light"
                                    class="cui-grid-item cui-grid-cell">
+                    <span class="oui-select-picker__section" data-ng-if="action === 'snapshot'">
+                        <a class="oui-link_icon"
+                           href="{{:: $ctrl.priceUrl }}"
+                           rel="noopener"
+                           target="_blank">
+                           <span data-translate="cpc_tasks_action_prices"></span>
+                           <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                        </a>
+                    </span>
                 </oui-select-picker>
             </div>
         </oui-step-form>
         <oui-step-form data-header="{{:: 'cpc_tasks_resources' | translate }}"
                        data-loading="$ctrl.instancesAreLoading"
                        data-valid="$ctrl.isInstanceSelected()"
-                       data-description="{{:: 'cpc_tasks_resources_description' | translate }}">
+                       data-description="{{:: 'cpc_tasks_resources_description' | translate }}"
+                       data-on-submit="$ctrl.loadTasks()">
             <oui-field data-label="{{:: 'cpc_tasks_resource' | translate }}"
                        data-error-messages="{ required: ('cpc_tasks_resources_required' | translate) }">
                 <oui-select name="computeTaskCreateInstances"
@@ -38,10 +50,6 @@
         </oui-step-form>
         <oui-step-form data-header="{{:: 'cpc_tasks_schedule' | translate }}"
                        data-valid="$ctrl.isScheduleSelected()"
-                       data-cancel-text="{{:: 'common_cancel' | translate }}"
-                       data-on-submit="$ctrl.createTask()"
-                       data-on-cancel="$ctrl.goToTasksList()"
-                       data-loading="$ctrl.createLoader"
                        data-name="scheduleForm">
             <div class="cui-grid-list">
                 <oui-select-picker data-ng-repeat="schedule in $ctrl.CPC_TASKS.schedules track by $index"
@@ -80,13 +88,31 @@
 
             <oui-field data-label="{{:: 'cpc_tasks_schedule_time' | translate }}"
                        data-size="m"
-                       data-ng-if="$ctrl.model.schedule && !$ctrl.isCustomSchedule">
+                       data-ng-if="$ctrl.model.schedule && !$ctrl.isCustomSchedule"
+                       data-error-messages="{ time: ('common_field_error_pattern' | translate) }">
                 <input class="oui-input"
                        type="time"
                        name="timepicker"
                        data-ng-model="$ctrl.model.time"
                        data-ng-required="!$ctrl.isCustomSchedule"
                        data-ng-blur="$ctrl.selectTime()">
+            </oui-field>
+        </oui-step-form>
+        <oui-step-form data-header="{{:: 'cpc_tasks_options' | translate }}"
+                       data-cancel-text="{{:: 'common_cancel' | translate }}"
+                       data-on-submit="$ctrl.createTask()"
+                       data-on-cancel="$ctrl.goToTasksList()"
+                       data-loading="$ctrl.createLoader">
+            <oui-field data-label="{{:: 'cpc_tasks_options_name' | translate }}"
+                       data-error-messages="{ pattern: ('cpc_tasks_options_name_duplicate' | translate) }"
+                       data-size="m">
+                <input class="oui-input"
+                       type="text"
+                       name="taskName"
+                       data-ng-model="$ctrl.model.name"
+                       data-ng-model-options="{ updateOn: 'blur' }"
+                       data-ui-validate="{ pattern: '$ctrl.isNameValid($value)' }"
+                       required>
             </oui-field>
         </oui-step-form>
     </oui-stepper>

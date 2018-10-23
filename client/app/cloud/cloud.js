@@ -11,7 +11,7 @@ angular.module('managerApp').run(($transitions, $state, $stateParams, CloudUserP
             createNewVm: true,
           });
         } else {
-          CloudUserPref.get(CPC_TASKS.onboardingKey)
+          CloudUserPref.get(`${CPC_TASKS.onboardingKey}_${$stateParams.projectId}`)
             .then((taskOnBoardingPref) => {
               if (_.isEmpty(taskOnBoardingPref) || !_.get(taskOnBoardingPref, 'done')) {
                 $state.go('iaas.pci-project.compute.taskOnboarding');

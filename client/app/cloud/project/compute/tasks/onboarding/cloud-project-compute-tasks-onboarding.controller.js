@@ -1,10 +1,11 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeTasksOnboardingCtrl', class CloudProjectComputeTasksOnboardingCtrl {
     constructor(
-      $state, $stateParams, $translate,
+      $q, $state, $stateParams, $translate,
       CloudMessage, CloudProjectCompute, CloudUserPref,
       CPC_TASKS,
     ) {
+      this.$q = $q;
       this.$state = $state;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
@@ -16,6 +17,21 @@ angular.module('managerApp')
 
     $onInit() {
       this.projectId = this.$stateParams.projectId;
+
+      this.loading = true;
+
+      this.CloudProjectCompute.getRegionsWithWorkflowService(this.projectId)
+        .then(regions => this.$q.all(
+          regions.map(
+            region => this.CloudProjectCompute.getWorkflowBackup(this.projectId, region),
+          ),
+        ))
+        .then((backups) => {
+          if (!_(backups).flatten().isEmpty()) {
+            this.discardOnboarding();
+          }
+        })
+        .finally(() => { this.loading = false; });
     }
 
 
@@ -34,6 +50,6 @@ angular.module('managerApp')
     }
 
     updateOnboardingStatus() {
-      return this.CloudUserPref.set(this.CPC_TASKS.onboardingKey, { done: true });
+      return this.CloudUserPref.set(`${this.CPC_TASKS.onboardingKey}_${this.projectId}`, { done: true });
     }
   });

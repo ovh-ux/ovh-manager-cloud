@@ -7,8 +7,8 @@
         <oui-page-header data-heading="{{:: CloudProjectComputeCtrl.serviceName}}" data-description="{{:: CloudProjectComputeCtrl.serviceName}}">
             <oui-header-tabs>
                 <oui-header-tabs-item data-text="{{:: 'cpc_tab_infra' | translate }}"
-                                      data-state="iaas.pci-project.compute.infrastructure"
-                                      data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }">
+                                      data-href="{{:: CloudProjectComputeCtrl.$state.href('iaas.pci-project.compute.infrastructure.diagram', { serviceName: CloudProjectComputeCtrl.serviceName }) }}"
+                                      data-active="CloudProjectComputeCtrl.isInfrastructureTabActive()">
                 </oui-header-tabs-item>
                 <oui-header-tabs-item data-text="{{:: 'cpc_tab_snapshot' | translate }}"
                                       data-state="iaas.pci-project.compute.snapshot"

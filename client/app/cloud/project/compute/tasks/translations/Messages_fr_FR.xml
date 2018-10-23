@@ -5,6 +5,7 @@
     <translation id="cpc_tasks_instances_error">Impossible de récupérer les tâches programmées : {{ message }}</translation>
     <translation id="cpc_tasks_instances_error_region">Impossible de récupérer les tâches programmées pour toutes les régions : {{ message }}</translation>
     <translation id="cpc_tasks_backups_instance_name_error">Impossible de récupérer le nom de la ressource associée</translation>
+    <translation id="cpc_tasks_no_instances">Vous n'avez pas d'instances associées à ce projet</translation>
 
     <translation id="cpc_tasks_actions_description">Selon l’option choisie, seules les instances éligibles seront affichées lors de l’étape suivante.</translation>
 
@@ -30,9 +31,13 @@
     <translation id="cpc_tasks_action">Action</translation>
     <translation id="cpc_tasks_action_snapshot">Snapshot</translation>
     <translation id="cpc_tasks_action_snapshot_description">Créer une sauvegarde automatisée d'une instance</translation>
-    <translation id="cpc_tasks_action_snapshot_condition">L'activation de ce service implique la facturation de l'espace disque nécessaire au stockage des sauvegardes. Tarifs disponibles dans la rubrique « Object Storage ».</translation>
+    <translation id="cpc_tasks_action_snapshot_condition">L'activation de ce service implique la facturation de l'espace disque nécessaire au stockage des sauvegardes.</translation>
+    <translation id="cpc_tasks_action_prices">Voir les tarifs</translation>
+    <translation id="cpc_tasks_options">Options</translation>
+    <translation id="cpc_tasks_options_name">Nom de la tâche</translation>
+    <translation id="cpc_tasks_options_name_duplicate">Une autre tâche porte déjà ce nom</translation>
 
-    <translation id="cpc_tasks_create">Créer une tâche</translation>
+    <translation id="cpc_tasks_create">Créer une tâche automatisée</translation>
     <translation id="cpc_tasks_create_error">Impossible de créer la tâche : {{ message }}</translation>
 
     <translation id="cpc_tasks_delete_confirm">Êtes-vous certain de vouloir supprimer cette tâche ?</translation>
