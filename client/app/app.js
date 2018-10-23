@@ -1,4 +1,5 @@
 import asyncLoaderFactory from './async-loader.factory';
+import cloudUniverseComponents from '../cloudUniverseComponents';
 
 angular.module('managerApp', [
   'ngCookies',
@@ -56,6 +57,7 @@ angular.module('managerApp', [
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',
+  cloudUniverseComponents,
 ])
   .factory('asyncLoader', asyncLoaderFactory)
   .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider,
