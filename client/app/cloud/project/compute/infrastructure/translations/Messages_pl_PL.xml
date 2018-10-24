@@ -14,7 +14,7 @@
    <translation id="cpci_add_btn" qtlid="37923">Dodaj</translation>
    <translation id="cpci_add_server" qtlid="19315">Dodaj serwer</translation>
    <translation id="cpci_add_ip" qtlid="25615">IP</translation>
-   <translation id="cpci_view_iac">Déployer une infrastructure pas-à-pas</translation>
+   <translation id="cpci_view_iac" qtlid="506349">Rozwiń infrastrukturę krok po kroku</translation>
    <translation id="cpci_import_ip_failover" qtlid="275869">Importuj IP Failover OVH</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Zamów IP Failover Cloud</translation>
 
@@ -63,7 +63,7 @@
    <translation id="cpci_vm_status_ERROR" qtlid="45508">Błąd</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Restart</translation>
    <translation id="cpci_vm_status_REBUILD" qtlid="34740">Reinstalacja</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Mode Rescue</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Tryb Rescue</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
    <translation id="cpci_vm_status_UPDATING" qtlid="26863">Aktualizacja</translation>
 

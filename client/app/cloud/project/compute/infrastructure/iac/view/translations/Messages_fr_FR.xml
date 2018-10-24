@@ -4,5 +4,6 @@
    <translation id="cpciiac_view_intro" qtlid="506271">Déployez rapidement et simplement une infrastructure-as-code non managée dans votre projet Cloud, et ce en quelques clics grâce à nos scripts de déploiement d'infrastructure.</translation>
    <translation id="cpciiac_view_general_ERROR" qtlid="506336">Une erreur s'est produite lors de la récupération des modèles d'infrastucture as code : {{message}}</translation>
    <translation id="cpciiac_view_stack_terraform-ovh-publiccloud-k8s" qtlid="504826">Kubernetes</translation>
+   <translation id="cpciiac_view_stack_ovh-analytics-openstack" qtlid="507198">Hadoop</translation>
    <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Une erreur s'est produite lors de la demande de déploiement : {{message}}</translation>
 </translations>

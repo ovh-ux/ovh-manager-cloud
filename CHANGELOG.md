@@ -1,3 +1,104 @@
+<a name="7.8.7"></a>
+## [7.8.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.6...v7.8.7) (2018-10-23)
+
+
+
+<a name="7.8.6"></a>
+## [7.8.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.5...v7.8.6) (2018-10-22)
+
+
+
+<a name="7.8.5"></a>
+## [7.8.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.4...v7.8.5) (2018-10-19)
+
+
+### Bug Fixes
+
+* **translations:** en_asia & en_sg work now correctly ([e06b080](https://github.com/ovh-ux/ovh-manager-cloud/commit/e06b080))
+
+
+
+<a name="7.8.4"></a>
+## [7.8.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.3...v7.8.4) (2018-10-18)
+
+
+### Features
+
+* **home:** change subscription banner by updates banner ([3f66936](https://github.com/ovh-ux/ovh-manager-cloud/commit/3f66936))
+
+
+
+<a name="7.8.3"></a>
+## [7.8.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.2...v7.8.3) (2018-10-18)
+
+
+### Bug Fixes
+
+* **dbaas.logs:** update twitter file configuration ([5e47744](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e47744))
+* **i18n:** retrieve translations ([e6df947](https://github.com/ovh-ux/ovh-manager-cloud/commit/e6df947))
+
+
+### Features
+
+* **home:** change subscription banner to live banner ([7ac4436](https://github.com/ovh-ux/ovh-manager-cloud/commit/7ac4436))
+
+
+
+<a name="7.8.2"></a>
+## [7.8.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.1...v7.8.2) (2018-10-17)
+
+
+### Bug Fixes
+
+* **cloud.infra.add:** instance name ([176545e](https://github.com/ovh-ux/ovh-manager-cloud/commit/176545e))
+
+
+
+<a name="7.8.1"></a>
+## [7.8.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.0...v7.8.1) (2018-10-16)
+
+
+### Bug Fixes
+
+* **infrastructure:** add missing styles ([1331499](https://github.com/ovh-ux/ovh-manager-cloud/commit/1331499))
+
+
+
+<a name="7.8.0"></a>
+# [7.8.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.8...v7.8.0) (2018-10-16)
+
+
+### Bug Fixes
+
+* **cloud.project.compute.infra:** use ng-bind ([101ee0e](https://github.com/ovh-ux/ovh-manager-cloud/commit/101ee0e))
+* **i18n:** retrieve translations ([781880e](https://github.com/ovh-ux/ovh-manager-cloud/commit/781880e))
+* **i18n:** retrieve translations ([ce360cf](https://github.com/ovh-ux/ovh-manager-cloud/commit/ce360cf))
+* **i18n:** retrieve translations ([ef31f37](https://github.com/ovh-ux/ovh-manager-cloud/commit/ef31f37))
+* **i18n:** retrieve translations ([d5a5e46](https://github.com/ovh-ux/ovh-manager-cloud/commit/d5a5e46))
+* **i18n:** submit translations ([4884163](https://github.com/ovh-ux/ovh-manager-cloud/commit/4884163))
+* **i18n:** submit translations ([2142d92](https://github.com/ovh-ux/ovh-manager-cloud/commit/2142d92))
+* **openstack:** route fix ([cff10f3](https://github.com/ovh-ux/ovh-manager-cloud/commit/cff10f3))
+* **project.compute.infrastructure:** apply first review ([5cb24b0](https://github.com/ovh-ux/ovh-manager-cloud/commit/5cb24b0))
+* **project.compute.infrastructure:** minor code review ([05ab0c3](https://github.com/ovh-ux/ovh-manager-cloud/commit/05ab0c3))
+* **project.compute.infrastructure:** minor improvements ([cfe6759](https://github.com/ovh-ux/ovh-manager-cloud/commit/cfe6759))
+* **ssh-creation:** button missing in windows tab ([78532f0](https://github.com/ovh-ux/ovh-manager-cloud/commit/78532f0))
+* apply eslint ([84416cd](https://github.com/ovh-ux/ovh-manager-cloud/commit/84416cd))
+
+
+### Features
+
+* **kube:** check project quota before adding node ([318e1e0](https://github.com/ovh-ux/ovh-manager-cloud/commit/318e1e0))
+* **project.compute.infrastructure:** deploy stack step-by-step ([f029884](https://github.com/ovh-ux/ovh-manager-cloud/commit/f029884))
+* **project.compute.infrastructure:** deploy stack step-by-step ([b52c5cd](https://github.com/ovh-ux/ovh-manager-cloud/commit/b52c5cd))
+* **veeam-enterprise:** add api response management ([1b9a965](https://github.com/ovh-ux/ovh-manager-cloud/commit/1b9a965))
+* **veeam-enterprise:** add license modal ([18f96e5](https://github.com/ovh-ux/ovh-manager-cloud/commit/18f96e5))
+* **veeam-enterprise:** add terminate confirm ([9030af5](https://github.com/ovh-ux/ovh-manager-cloud/commit/9030af5))
+* **veeam-enterprise:** add veeam enterprise pages ([396cac9](https://github.com/ovh-ux/ovh-manager-cloud/commit/396cac9))
+* **virtualmachine.add:** handle new GPU offers ([9a11164](https://github.com/ovh-ux/ovh-manager-cloud/commit/9a11164))
+* **vps:** add clouddb tab ([4371de2](https://github.com/ovh-ux/ovh-manager-cloud/commit/4371de2))
+
+
+
 <a name="7.7.8"></a>
 ## [7.7.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.7.7...v7.7.8) (2018-10-10)
 

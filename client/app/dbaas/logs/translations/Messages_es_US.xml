@@ -100,7 +100,7 @@
    <translation id="logs_password_change_title" qtlid="8434">Modifier le mot de passe</translation>
    <translation id="logs_password_get_started_title" qtlid="449453">Comenzar</translation>
    <translation id="logs_password_new_label" qtlid="17177">Nouveau mot de passe</translation>
-   <translation id="logs_password_setup_label" qtlid="2270">Mot de passe</translation>
+   <translation id="logs_password_setup_label" qtlid="2270">Contraseña</translation>
    <translation id="logs_password_confirm_label" qtlid="9382">Confirmation du mot de passe</translation>
    <translation id="logs_password_setup_message" qtlid="474298">¡Bienvenido, {{userFullName}}! Primeramente debe establecer una contraseña para su cuenta Logs Data Platform ({{userName}}).</translation>
    <translation id="logs_password_rule_length" qtlid="474311">La contraseña debe contener al menos 12 caracteres.</translation>
@@ -134,7 +134,7 @@
    <translation id="logs_home_account_name" qtlid="3818">Nombre</translation>
    <translation id="logs_home_tokens" qtlid="421386">Tokens de lectura</translation>
    <translation id="logs_home_tokens_tooltip" qtlid="474558">Estos tokens le permiten acceder a las API</translation>
-   <translation id="logs_home_password" qtlid="2270">Mot de passe</translation>
+   <translation id="logs_home_password" qtlid="2270">Contraseña</translation>
    <translation id="logs_home_ssi_configuration" qtlid="474571">Configuración SSI</translation>
    <translation id="logs_home_collector" qtlid="421217">Herramientas de recopilación de datos</translation>
    <translation id="logs_home_formats_and_ports" qtlid="421191">Formato de mensaje y puertos disponibles</translation>
@@ -527,7 +527,7 @@
    <translation id="inputs_state_to_configure" qtlid="424142">Configuracion pendiente</translation>
    <translation id="inputs_state_pending" qtlid="424168">Inicio pendiente</translation>
    <translation id="inputs_state_running" qtlid="424155">Operativo</translation>
-   <translation id="inputs_state_unknown" qtlid="77142">Inconnu</translation>
+   <translation id="inputs_state_unknown" qtlid="77142">Desconocido</translation>
    <translation id="inputs_edit" qtlid="37875">Modificar</translation>
    <translation id="inputs_start" qtlid="25951">Démarrer</translation>
    <translation id="inputs_restart" qtlid="33538">Redémarrer</translation>
@@ -552,7 +552,7 @@
    <translation id="inputs_logs_edit_description" qtlid="477379">Para el recopilador <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Modificar</translation>
    <translation id="inputs_logs_step1_add" qtlid="37923">Añadir</translation>
-   <translation id="inputs_logs_step2" qtlid="4010">Configurer</translation>
+   <translation id="inputs_logs_step2" qtlid="4010">Configurar</translation>
    <translation id="inputs_logs_step3" qtlid="470258">Autorizar redes</translation>
    <translation id="inputs_logs_networks_title" qtlid="423661">Red de confianza</translation>
    <translation id="inputs_logs_networks_add_remove_network_title" qtlid="477392">Añadir/eliminar redes de confianza </translation>

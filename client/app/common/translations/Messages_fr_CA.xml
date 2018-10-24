@@ -217,19 +217,19 @@
    <translation id="contract_list_title" qtlid="180408">Il y a 1 contrat à consulter.</translation>
    <translation id="contracts_list_title" qtlid="250108">Il y a {{nbr}} contrats à consulter.</translation>
 
-   <translation id="common_duration_day_1">1 jour</translation>
-   <translation id="common_duration_day_other">{{duration}} jours</translation>
-   <translation id="common_duration_month_1">1 mois</translation>
-   <translation id="common_duration_month_other">{{duration}} mois</translation>
-   <translation id="common_duration_year_1">1 an</translation>
-   <translation id="common_duration_year_other">{{duration}} ans</translation>
-   <translation id="common_duration_upto">Jusqu'au {{duration}}</translation>
-   <translation id="common_duration_uptofirstdaynextmonth">Jusqu'au premier jour du prochain mois</translation>
-   <translation id="common_duration_engage">S'engager {{duration}}</translation>
-   <translation id="common_price_ht_label">{{price}}&#160;HT</translation>
-   <translation id="common_price_ttc_label">{{price}}&#160;TTC</translation>
-   <translation id="common_price_free">Inclus</translation>
-   <translation id="common_price_label_yearly">/an</translation>
+   <translation id="common_duration_day_1" qtlid="28807">1 jour</translation>
+   <translation id="common_duration_day_other" qtlid="506141">{{duration}} jours</translation>
+   <translation id="common_duration_month_1" qtlid="70241">1 mois</translation>
+   <translation id="common_duration_month_other" qtlid="506154">{{duration}} mois</translation>
+   <translation id="common_duration_year_1" qtlid="70277">1 an</translation>
+   <translation id="common_duration_year_other" qtlid="506167">{{duration}} ans</translation>
+   <translation id="common_duration_upto" qtlid="506180">Jusqu'au {{duration}}</translation>
+   <translation id="common_duration_uptofirstdaynextmonth" qtlid="158630">Jusqu'au premier jour du prochain mois</translation>
+   <translation id="common_duration_engage" qtlid="506193">S'engager {{duration}}</translation>
+   <translation id="common_price_ht_label" qtlid="503254">{{price}}</translation>
+   <translation id="common_price_ttc_label" qtlid="503267">{{price}}</translation>
+   <translation id="common_price_free" qtlid="195776">Inclus</translation>
+   <translation id="common_price_label_yearly" qtlid="288977">/an</translation>
 
    <translation id="unit_frequency_HZ" qtlid="147577">Hz</translation>
    <translation id="unit_frequency_KHZ" qtlid="147590">KHz</translation>
@@ -561,33 +561,33 @@
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
 
-   <translation id="common_status_created">OK</translation>
-   <translation id="common_status_creating">Création en cours</translation>
-   <translation id="common_status_deleting">Suppression en cours</translation>
-   <translation id="common_datacenter_gra1">Gravelines</translation>
-   <translation id="common_datacenter_p19">Paris</translation>
-   <translation id="common_database_version_mariadb_101">MariaDB 10.1</translation>
-   <translation id="common_database_version_mariadb_102">MariaDB 10.2</translation>
-   <translation id="common_database_version_mysql_41">MySQL 4.1</translation>
-   <translation id="common_database_version_mysql_50">MySQL 5.0</translation>
-   <translation id="common_database_version_mysql_51">MySQL 5.1</translation>
-   <translation id="common_database_version_mysql_55">MySQL 5.5</translation>
-   <translation id="common_database_version_mysql_56">MySQL 5.6</translation>
-   <translation id="common_database_version_mysql_57">MySQL 5.7</translation>
-   <translation id="common_database_version_postgresql_94">PostgreSQL 9.4</translation>
-   <translation id="common_database_version_postgresql_95">PostgreSQL 9.5</translation>
-   <translation id="common_database_version_postgresql_96">PostgreSQL 9.6</translation>
-   <translation id="common_database_version_postgresql_10">PostgreSQL 10</translation>
-   <translation id="common_database_version_redis_32">Redis 3.2</translation>
-   <translation id="common_database_version_redis_40">Redis 4.0</translation>
-   <translation id="common_database_version_mongodb_34">MongoDB 3.4</translation>
-   <translation id="common_database_version_mongodb_40">MongoDB 4.0</translation>
-   <translation id="common_database_status_detached">Détachée</translation>
-   <translation id="common_database_status_restartPending">Redémarrage en cours</translation>
-   <translation id="common_database_status_startPending">Démarrage en cours</translation>
-   <translation id="common_database_status_started">Démarrée</translation>
-   <translation id="common_database_status_stopPending">Arrêt en cours</translation>
-   <translation id="common_database_status_stopped">Arrêtée</translation>
+   <translation id="common_status_created" qtlid="31522">OK</translation>
+   <translation id="common_status_creating" qtlid="146632">Création en cours</translation>
+   <translation id="common_status_deleting" qtlid="146645">Suppression en cours</translation>
+   <translation id="common_datacenter_gra1" qtlid="264192">Gravelines</translation>
+   <translation id="common_datacenter_p19" qtlid="93991">Paris</translation>
+   <translation id="common_database_version_mariadb_101" qtlid="444430">MariaDB 10.1</translation>
+   <translation id="common_database_version_mariadb_102" qtlid="473256">MariaDB 10.2</translation>
+   <translation id="common_database_version_mysql_41" qtlid="215572">MySQL 4.1</translation>
+   <translation id="common_database_version_mysql_50" qtlid="215585">MySQL 5.0</translation>
+   <translation id="common_database_version_mysql_51" qtlid="215598">MySQL 5.1</translation>
+   <translation id="common_database_version_mysql_55" qtlid="215611">MySQL 5.5</translation>
+   <translation id="common_database_version_mysql_56" qtlid="215624">MySQL 5.6</translation>
+   <translation id="common_database_version_mysql_57" qtlid="288483">MySQL 5.7</translation>
+   <translation id="common_database_version_postgresql_94" qtlid="282718">PostgreSQL 9.4</translation>
+   <translation id="common_database_version_postgresql_95" qtlid="354197">PostgreSQL 9.5</translation>
+   <translation id="common_database_version_postgresql_96" qtlid="360970">PostgreSQL 9.6</translation>
+   <translation id="common_database_version_postgresql_10" qtlid="444443">PostgreSQL 10</translation>
+   <translation id="common_database_version_redis_32" qtlid="448314">Redis 3.2</translation>
+   <translation id="common_database_version_redis_40" qtlid="506206">Redis 4.0</translation>
+   <translation id="common_database_version_mongodb_34" qtlid="448301">MongoDB 3.4</translation>
+   <translation id="common_database_version_mongodb_40" qtlid="506219">MongoDB 4.0</translation>
+   <translation id="common_database_status_detached" qtlid="506232">Détachée</translation>
+   <translation id="common_database_status_restartPending" qtlid="215650">Redémarrage en cours</translation>
+   <translation id="common_database_status_startPending" qtlid="215663">Démarrage en cours</translation>
+   <translation id="common_database_status_started" qtlid="26251">Démarrée</translation>
+   <translation id="common_database_status_stopPending" qtlid="215676">Arrêt en cours</translation>
+   <translation id="common_database_status_stopped" qtlid="506245">Arrêtée</translation>
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Condition</translation>

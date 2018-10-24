@@ -1,7 +1,8 @@
 angular.module('managerApp').service('Kubernetes', class Kubernetes {
   constructor(
     $q, $translate,
-    OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectInstance, OvhApiKube,
+    OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectInstance,
+    OvhApiKube, OvhApiCloudProjectQuota,
     KUBERNETES,
   ) {
     this.$q = $q;
@@ -10,6 +11,7 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
     this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
     this.OvhApiKube = OvhApiKube;
+    this.OvhApiCloudProjectQuota = OvhApiCloudProjectQuota;
     this.KUBERNETES = KUBERNETES;
   }
 
@@ -38,6 +40,13 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
 
   getProject(projectId) {
     return this.OvhApiCloudProject.v6().get({ serviceName: projectId }).$promise;
+  }
+
+  getProjectQuota(serviceName) {
+    return this.OvhApiCloudProjectQuota
+      .v6()
+      .query({ serviceName })
+      .$promise;
   }
 
   getNodes(serviceName) {

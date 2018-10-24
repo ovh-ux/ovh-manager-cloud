@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_enterprise_tab_dashboard" qtlid="27643">Home</translation>
-   <translation id="veeam_enterprise_infos_general_load_error" qtlid="403801">Er is een fout opgetreden tijdens het laden van de algemene informatie. </translation>
+   <translation id="veeam_enterprise_infos_general_load_error" qtlid="505842">Er is een fout opgetreden bij het laden van de algemene informatie.</translation>
    <translation id="veeam_enterprise_infos_configuration_load_error" qtlid="403814">Er is een fout opgetreden tijdens het laden van de configuratie-informatie. </translation>
    <translation id="veeam_enterprise_infos_subscription_load_error" qtlid="403827">Er is een fout opgetreden tijdens het laden van de abonnementinformatie. </translation>
-   <translation id="veeam_enterprise_infos_license_register_error">Erreur lors de l'activation de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_register_success">Activation en cours de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_update_error">Erreur lors de la mise à jour de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_update_success">Mise à jour en cours de votre licence Veeam Enterprise.</translation>
-   <translation id="veeam_enterprise_infos_license_already_registered_error">Vous avez déjà activé votre licence Veeam Enterprise.</translation>
+   <translation id="veeam_enterprise_infos_license_register_error" qtlid="505855">Er is een fout opgetreden bij het activeren van uw Veeam Enterprise licentie.</translation>
+   <translation id="veeam_enterprise_infos_license_register_success" qtlid="505868">Uw Veeam Enterprise licentie wordt geactiveerd.</translation>
+   <translation id="veeam_enterprise_infos_license_update_error" qtlid="505881">Er is een fout opgetreden bij het updaten van uw Veeam Enterprise licentie.</translation>
+   <translation id="veeam_enterprise_infos_license_update_success" qtlid="505894">Uw Veeam Enterprise licentie wordt geüpdatet.</translation>
+   <translation id="veeam_enterprise_infos_license_already_registered_error" qtlid="505907">U hebt uw Veeam Enterprise licentie al geactiveerd.</translation>
 </translations>

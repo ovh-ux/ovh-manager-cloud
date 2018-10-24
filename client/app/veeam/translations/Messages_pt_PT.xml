@@ -4,8 +4,8 @@
    <translation id="veeam_tab_storage" qtlid="403762">Espaço de armazenamento</translation>
    <translation id="veeam_quota" qtlid="6874">Quota</translation>
    <translation id="veeam_infos_general_load_error" qtlid="403801">Ocorreu um erro aquando do carregamento das informações gerais.</translation>
-   <translation id="veeam_infos_configuration_load_error" qtlid="403814">Ocorreu um erro aquando do carregamento das informações de configuração.</translation>
-   <translation id="veeam_infos_subscription_load_error" qtlid="403827">Ocorreu um erro aquando das informações de subscrição.</translation>
+   <translation id="veeam_infos_configuration_load_error" qtlid="403814">Ocorreu um erro ao carregar as informações de configuração.</translation>
+   <translation id="veeam_infos_subscription_load_error" qtlid="403827">Ocorreu um erro ao carregar as informações de subscrição.</translation>
    <translation id="veeam_offer_prices_load_error" qtlid="403840">Ocorreu um erro aquando do carregamento das ofertas e do seu preço.</translation>
    <translation id="veeam_orderable_offer_load_error" qtlid="403853">Ocorreu um erro aquando do carregamento das ofertas disponíveis.</translation>
    <translation id="veeam_update_offer_post_success" qtlid="403866">A nota de encomenda <a href="{{orderUrl}}" target="_blank">{{orderId}}</a> acaba de ser criada com sucesso.</translation>

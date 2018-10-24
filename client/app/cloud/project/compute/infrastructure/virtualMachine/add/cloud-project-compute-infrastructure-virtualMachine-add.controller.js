@@ -68,12 +68,10 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
   }
 
   initProject() {
-    this.promisePrices = this.OvhCloudPriceHelper.getPrices(this.serviceName);
     this.promiseQuota = this.OvhApiCloudProjectQuota.v6()
       .query({ serviceName: this.serviceName }).$promise;
     this.promisePublicNetworks = this.OvhApiCloudProjectNetworkPublic.v6()
       .query({ serviceName: this.serviceName }).$promise;
-    this.promiseVRack = this.VirtualMachineAddService.hasVRack(this.serviceName);
     this.urls.vLansApiGuide = this.ovhDocUrl.getDocUrl('g2162.public_cloud_et_vrack_-_comment_utiliser_le_vrack_et_les_reseaux_prives_avec_les_instances_public_cloud');
     if (this.TARGET === 'US') {
       this.urls.guidesSshkey = this.URLS.guides.ssh.create.US;
@@ -285,30 +283,38 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
      |  Step 3: Instances  |
      ---------------------*/
 
+  fetchingAugmentedFlavors() {
+    return this.OvhApiCloudProjectFlavor.v6()
+      .query({
+        serviceName: this.serviceName,
+        region: this.model.region.microRegion.code,
+      }).$promise
+      .then((flavors) => {
+        this.flavors = flavors;
+        const augmentedFlavors = this.VirtualMachineAddService.filterFlavorsByType(
+          flavors,
+          this.model.imageType.type,
+        );
+        this.enums.flavorsTypes = this.CloudFlavorService.constructor
+          .getFlavorTypes(augmentedFlavors);
+        return augmentedFlavors;
+      });
+  }
+
   initInstances() {
     this.loaders.step3 = true;
     this.submitted.step3 = false;
     this.resetStep4();
 
     return this.$q.all({
-      flavors: this.OvhApiCloudProjectFlavor.v6().query({ serviceName: this.serviceName }).$promise
-        .then((flavors) => {
-          this.flavors = flavors;
-          const filteredFlavors = this.VirtualMachineAddService.getAugmentedFlavorsFilteredByType(
-            flavors,
-            this.model.imageType.type,
-          );
-          this.enums.flavorsTypes = this.CloudFlavorService.constructor
-            .getFlavorTypes(filteredFlavors);
-          return filteredFlavors;
-        }),
-      hasVRack: this.promiseVRack,
-      prices: this.promisePrices
-        .then((prices) => { this.prices = prices; })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step3_flavor_prices_ERROR')),
+      flavors: this.fetchingAugmentedFlavors(),
+      hasVRack: this.VirtualMachineAddService.hasVRack(this.serviceName),
+      prices: this.OvhCloudPriceHelper.getPrices(this.serviceName),
     })
-      .then(({ flavors, hasVRack }) => {
+      .then(({ flavors, hasVRack, prices }) => {
+        this.prices = prices;
         this.state.hasVRack = hasVRack;
+
         // Load private networks asynchronously
         if (hasVRack) {
           this.getPrivateNetworks();

@@ -238,7 +238,7 @@
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Ativar o Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Ativar a opção Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Deseja ativar a opção Backup Storage para o VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Este opção terá um preço mensal de <span class="red bold">{{ price }} IVA não incluído</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Esta opção terá um preço mensal de <span class="bold">{{ price }} + IVA</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">O Backup Storage é um espaço de arquivo que lhe permite transferir conteúdos, dados, parâmetros e configurações.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">A gerar nota de encomenda ...</translation>
@@ -316,8 +316,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Subscrever aos Backups Automatizados</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Ocorreu um erro aquando do carregamento das informações</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">A seguir, o serviço será faturado ao preço de <span class="red bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Deseja subscrever a opção de backup automático para o VPS <span class="italic normal">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">A seguir, o serviço será faturado ao preço de <span class="bold">{{ price }}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Deseja subscrever a opção de backup automático para o VPS "{{ serviceName }}"?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Preço c/IVA.</translation>
@@ -441,7 +441,7 @@
    <translation id="vps_backup_storage_access_delete_success" qtlid="452878">A eliminação do acesso do bloco ip{{ipBlock}} ao Backup Storage pode demorar alguns minutos</translation>
    <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Ocorreu um erro na eliminação do acesso do bloco IP {{ipBlock}} ao Backup Storage</translation>
 
-   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Erro no acesso aos blocos disponíveis para receber autorizações</translation>
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="505920">Ocorreu um erro ao recuperar os blocos autorizados</translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add" qtlid="180772">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Queira escolher o bloco de IPs que deseja autorizar, bem como as opções de acesso.</translation>
@@ -498,42 +498,45 @@
 
    <translation id="vps_additional_disk_info_fail" qtlid="281706">Ocorreu um erro aquando do carregamento das informações sobre os discos adicionais</translation>
 
-   <translation id="vps_tab_cloud_database">Base de données</translation>
-   <translation id="vps_tab_cloud_database_description">Besoin de bases de données fiables, performantes et 100% managées par OVH ?<br/>Commandez notre service Cloud Databases !<br/>Vous disposerez d'une base de données autonome et compatible avec tous vos produits Cloud OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL et Redis disponibles !</translation>
-   <translation id="vps_tab_cloud_database_header_name">Nom de l'instance</translation>
-   <translation id="vps_tab_cloud_database_header_version">Version de la base de donnée</translation>
-   <translation id="vps_tab_cloud_database_header_vps_authorized">VPS autorisé</translation>
-   <translation id="vps_tab_cloud_database_header_status">Statut</translation>
-   <translation id="vps_tab_cloud_database_table_empty">Aucune base de données trouvée.</translation>
-   <translation id="vps_tab_cloud_database_add_authorized_ip">Autoriser le VPS à accéder à cette base</translation>
-   <translation id="vps_tab_cloud_database_remove_authorized_ip">Retirer l'autorisation d'accéder à cette base</translation>
-   <translation id="vps_tab_cloud_database_fetch_error">Une erreur est survenue lors du chargement des bases de données.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_ip_name">Accès pour le VPS {{ vps }}</translation>
-   <translation id="vps_tab_cloud_database_whitelist_add_success">Le VPS a été autorisé par la base avec succès. Il peut maintenant accéder à celle-ci.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_add_error">Une erreur est survenue lors de la demande d'autorisation du VPS.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_remove_success">Le VPS a été retiré des accès à la base avec succès. Il ne peut désormais plus accéder à la base.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_remove_error">Une erreur est survenue lors de la demande de suppression d'accès à la base.</translation>
-   <translation id="vps_tab_cloud_database_order">Commander une base de données</translation>
-   <translation id="vps_tab_cloud_database_order_disclaimer">L’offre CloudDB nécessite un service ayant accès au réseau internet public.</translation>
-   <translation id="vps_tab_cloud_database_order_explanation_title">Caractéristiques de CloudDB :</translation>
-   <translation id="vps_tab_cloud_database_order_explanation_text">Accessible depuis le réseau public uniquement<br />Nombre de bases illimité<br />Mémoire RAM garantie de 512 Mo à 4Go<br />Disque garanti de 8 Go à 54 Go<br />Sauvegardes automatiques journalières<br />Jusqu'à 200 connexions simultanées</translation>
-   <translation id="vps_tab_cloud_database_order_customize">Personnalisation</translation>
-   <translation id="vps_tab_cloud_database_order_version">Version du serveur</translation>
-   <translation id="vps_tab_cloud_database_order_ram">Ram</translation>
-   <translation id="vps_tab_cloud_database_order_datacenter">Datacentre</translation>
-   <translation id="vps_tab_cloud_database_order_period_title">Choisissez la durée</translation>
-   <translation id="vps_tab_cloud_database_order_period_subtitle">Combien de temps désirez-vous l'utiliser ?</translation>
-   <translation id="vps_tab_cloud_database_order_contracts_title">Contrats</translation>
-   <translation id="vps_tab_cloud_database_order_contracts_text">Cliquez sur "Générer le bon de commande" pour commander votre serveur de base de données CloudDB.</translation>
-   <translation id="vps_tab_cloud_database_order_contracts_accept">J'ai lu et j'accepte les contrats suivants :</translation>
-   <translation id="vps_tab_cloud_database_order_purchase_order_created">Le bon de commande a été généré.</translation>
-   <translation id="vps_tab_cloud_database_order_redirection">Vous allez être redirigé vers l'interface de paiement OVH.</translation>
-   <translation id="vps_tab_cloud_database_order_purchase_order_open">Afficher le bon de commande</translation>
-   <translation id="vps_tab_cloud_database_order_purchase_order">Générer le bon de commande</translation>
-   <translation id="vps_tab_cloud_database_order_fetch_capacities_failed">Une erreur est survenue lors de la récupération des offres disponibles.</translation>
-   <translation id="vps_tab_cloud_database_order_fetch_duration_failed">Une erreur est survenue lors de la récupération des durées disponibles.</translation>
-   <translation id="vps_tab_cloud_database_order_fetch_prices_failed">Une erreur est survenue lors de la récupération des prix disponibles.</translation>
-   <translation id="vps_tab_cloud_database_order_failed">Une erreur est survenue lors de la génération du bon de commande.</translation>
+
+   <translation id="vps_tab_cloud_database" qtlid="275026">Base de dados</translation>
+   <translation id="vps_tab_cloud_database_description" qtlid="505933">Besoin de bases de données fiables, performantes et 100% managées par OVH ?<br/>Commandez notre service Cloud Databases !<br/>Vous disposerez d'une base de données autonome et compatible avec tous vos produits Cloud OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL et Redis disponibles !</translation>
+   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
+   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
+   <translation id="vps_tab_cloud_database_header_version">Version</translation>
+   <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">VPS autorisé</translation>
+   <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Estado</translation>
+   <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">Aucune base de données trouvée.</translation>
+   <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Autoriser le VPS à accéder à cette base</translation>
+   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
+   <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Retirer l'autorisation d'accéder à cette base</translation>
+   <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">Une erreur est survenue lors du chargement des bases de données.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Accès pour le VPS {{ vps }}</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_success" qtlid="506037">Le VPS a été autorisé par la base avec succès. Il peut maintenant accéder à celle-ci.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_error" qtlid="506050">Une erreur est survenue lors de la demande d'autorisation du VPS.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_remove_success" qtlid="506063">Le VPS a été retiré des accès à la base avec succès. Il ne peut désormais plus accéder à la base.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_remove_error" qtlid="506076">Une erreur est survenue lors de la demande de suppression d'accès à la base.</translation>
+   <translation id="vps_tab_cloud_database_order" qtlid="217821">Encomendar uma base de dados</translation>
+   <translation id="vps_tab_cloud_database_order_disclaimer" qtlid="405655">A oferta CloudDB requer um serviço com acesso à rede pública.</translation>
+   <translation id="vps_tab_cloud_database_order_explanation_title" qtlid="404876">Características do CloudDB:</translation>
+   <translation id="vps_tab_cloud_database_order_explanation_text" qtlid="506089">Accessible depuis le réseau public uniquement<br />Nombre de bases illimité<br />Mémoire RAM garantie de 512 Mo à 4Go<br />Disque garanti de 8 Go à 54 Go<br />Sauvegardes automatiques journalières<br />Jusqu'à 200 connexions simultanées</translation>
+   <translation id="vps_tab_cloud_database_order_customize" qtlid="58196">Personalização</translation>
+   <translation id="vps_tab_cloud_database_order_version" qtlid="217548">Versão do servidor</translation>
+   <translation id="vps_tab_cloud_database_order_ram" qtlid="28195">RAM</translation>
+   <translation id="vps_tab_cloud_database_order_datacenter" qtlid="30802">Datacenter</translation>
+   <translation id="vps_tab_cloud_database_order_period_title" qtlid="229203">Escolher a duração</translation>
+   <translation id="vps_tab_cloud_database_order_period_subtitle" qtlid="352334">Durante quanto tempo deseja usar as BD?</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_title" qtlid="213336">Contratos</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_text" qtlid="506102">Cliquez sur "Générer le bon de commande" pour commander votre serveur de base de données CloudDB.</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_accept" qtlid="352360">Li e aceito os seguintes contratos:</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order_created" qtlid="352373">A nota de encomenda foi gerada.</translation>
+   <translation id="vps_tab_cloud_database_order_redirection" qtlid="352386">Vai ser reencaminhado para a interface de pagamento OVH.</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order_open" qtlid="352399">Ver nota de encomenda</translation>
+   <translation id="vps_tab_cloud_database_order_purchase_order" qtlid="186219">Gerar nota de encomenda</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_capacities_failed" qtlid="506115">Une erreur est survenue lors de la récupération des offres disponibles.</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_duration_failed" qtlid="260052">Erro na pesquisa dos períodos disponíveis.</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_prices_failed" qtlid="506128">Une erreur est survenue lors de la récupération des prix disponibles.</translation>
+   <translation id="vps_tab_cloud_database_order_failed" qtlid="216781">Erro ao gerar nota de encomenda.</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Ocorreu um erro durante o pedido de não enviar alertas quando está ativada a renovação automática.</translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Simplifique a sua vida e opte pela renovação automática do seu servidor VPS! Acabe com os alertas e com os cortes inoportunos.</translation>

@@ -131,6 +131,44 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
     })
+    .state('iaas.vps.detail.cloud-database', {
+      url: '/cloud-database',
+      redirectTo: 'iaas.vps.detail.cloud-database.list',
+      views: {
+        vpsContent: {
+          template: '<div ui-view="vpsCloudDatabaseContent"></div>',
+        },
+      },
+      resolve: {
+        shouldNotBeCA: [
+          '$q',
+          'FeatureAvailabilityService',
+          ($q, FeatureAvailabilityService) => FeatureAvailabilityService
+            .hasFeaturePromise('VPS', 'cloudDatabase')
+            .then(hasFeature => (hasFeature ? $q.when() : $q.reject('Not authorized'))),
+        ],
+      },
+    })
+    .state('iaas.vps.detail.cloud-database.list', {
+      url: '/',
+      views: {
+        vpsCloudDatabaseContent: {
+          templateUrl: 'app/vps/cloud-database/vps-cloud-database.html',
+          controller: 'VpsCloudDatabaseCtrl',
+          controllerAs: '$ctrl',
+        },
+      },
+    })
+    .state('iaas.vps.detail.cloud-database.order', {
+      url: '/order',
+      views: {
+        vpsCloudDatabaseContent: {
+          templateUrl: 'app/vps/cloud-database/order/vps-cloud-database-order.html',
+          controller: 'VpsCloudDatabaseOrderCtrl',
+          controllerAs: '$ctrl',
+        },
+      },
+    })
     .state('iaas.vps.detail.monitoring', {
       url: '/monitoring',
       views: {

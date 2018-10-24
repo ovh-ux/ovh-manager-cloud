@@ -254,11 +254,11 @@
                         <div class="cui-grid-list">
                             <div class="cui-grid-list-item cui-grid-cell"
                                  data-ng-repeat="flavor in group.flavors track by flavor.id">
-                                <oui-radio data-text="{{ flavor.name }}"
-                                           data-id="flavor_{{ flavor.id }}"
+                                <oui-radio data-id="flavor_{{ flavor.id }}"
                                            data-disabled="flavor.disabled"
                                            data-thumbnail
                                            data-value="flavor">
+                                    {{flavor.name}}
                                     <span class="oui-radio__section">
                                         <span class="d-flex flex-wrap">
                                             <span data-translate="cpcivm_add_step3_label_ram"></span>
@@ -331,9 +331,9 @@
                 <div class="cui-grid-cell">
                     <oui-radio data-model="$ctrl.model.flavor"
                                data-name="flavorSelected"
-                               data-text="{{ $ctrl.model.flavor.name }}"
                                data-value="$ctrl.model.flavor"
                                data-thumbnail>
+                        {{$ctrl.model.flavor.name}}
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
                                 <span data-translate="cpcivm_add_step3_label_ram"></span>
