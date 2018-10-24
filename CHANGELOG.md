@@ -1,3 +1,13 @@
+<a name="7.8.8"></a>
+## [7.8.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.7...v7.8.8) (2018-10-24)
+
+
+### Bug Fixes
+
+* **cloud.vm.add:** Missing labels billing period ([8c6ae3f](https://github.com/ovh-ux/ovh-manager-cloud/commit/8c6ae3f))
+
+
+
 <a name="7.8.7"></a>
 ## [7.8.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.6...v7.8.7) (2018-10-23)
 
