@@ -461,10 +461,10 @@
                 <div class="cui-grid-list">
                     <div class="cui-grid-list-item cui-grid-cell"
                          data-ng-repeat="period in $ctrl.enums.billingPeriods track by $index">
-                        <oui-radio data-text="{{:: 'cpcivm_add_step5_billing_period_' + period | translate}}"
-                                   data-id="period_{{period}}"
+                        <oui-radio data-id="period_{{period}}"
                                    data-thumbnail
                                    data-value="period">
+                            {{:: 'cpcivm_add_step5_billing_period_' + period | translate}}
                             <span class="oui-radio__section"
                                   data-translate="cpci_vm_flavor_price"
                                   data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.price.value) | currency: $ctrl.currentCurrency: 3) || '?' }"
