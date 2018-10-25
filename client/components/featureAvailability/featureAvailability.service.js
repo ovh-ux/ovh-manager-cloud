@@ -143,10 +143,12 @@
     },
     VEEAM_ENTERPRISE: {
       sidebarMenu: {
-        EU: ['FR'],
+        EU: ['DE', 'ES', 'FR', 'GB', 'IT', 'NL', 'PL', 'PT'],
+        CA: ['CA', 'QC'],
       },
       sidebarOrder: {
-        EU: ['FR'],
+        EU: ['DE', 'ES', 'FR', 'GB', 'IT', 'NL', 'PL', 'PT'],
+        CA: ['CA', 'QC'],
       },
     },
     CLOUD_DESKTOP: {

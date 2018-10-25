@@ -144,6 +144,8 @@ angular.module('managerApp')
       veeam: {
       },
       veeam_enterprise: {
+        CA: 'https://www.ovh.com/ca/en/storage-solutions/veeam-enterprise.xml',
+        QC: 'https://www.ovh.com/ca/fr/storage-solutions/veeam-enterprise.xml',
       },
       cloud_disk_array: {
       },
