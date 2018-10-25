@@ -441,7 +441,7 @@
    <translation id="vps_backup_storage_access_delete_success" qtlid="452878">Deletion of access to backup storage for the {{ipBlock}} IP block has been processed, but this may take a few minutes</translation>
    <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">An error has occurred while attempting to delete backup storage access for the {{ipBlock}} IP block</translation>
 
-   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="505920">An error has occurred retrieving authorised blocks</translation>
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="505920">An error has occurred while retrieving authorized blocks</translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Add an access</translation>
    <translation id="vps_backup_storage_access_add" qtlid="180772">Add an access</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Please select the IP block you wish to authorize and the access options.</translation>
@@ -504,39 +504,39 @@
    <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
    <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
    <translation id="vps_tab_cloud_database_header_version">Version</translation>
-   <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">Authorised VPS</translation>
+   <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">Authorized VPS</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Status</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">No database found.</translation>
-   <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Authorise the VPS to access this database</translation>
+   <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Authorize the VPS to access this database</translation>
    <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
-   <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Remove authorisation to access this database</translation>
-   <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">An error has occurred loading databases.</translation>
+   <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Remove authorization to access this database</translation>
+   <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">An error has occurred while loading databases.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Access for the {{ vps }} VPS</translation>
-   <translation id="vps_tab_cloud_database_whitelist_add_success" qtlid="506037">The database has successfully authorised this VPS. It can now access the database.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_add_error" qtlid="506050">An error has occurred requesting authorisation for the VPS.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_success" qtlid="506037">The database has successfully authorized this VPS. It can now access the database.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_add_error" qtlid="506050">An error has occurred while requesting authorization for the VPS.</translation>
    <translation id="vps_tab_cloud_database_whitelist_remove_success" qtlid="506063">Database access successfully removed for the VPS. The VPS can no longer access the database.</translation>
-   <translation id="vps_tab_cloud_database_whitelist_remove_error" qtlid="506076">An error has occurred requesting database access removal.</translation>
+   <translation id="vps_tab_cloud_database_whitelist_remove_error" qtlid="506076">An error has occurred while requesting database access removal.</translation>
    <translation id="vps_tab_cloud_database_order" qtlid="217821">Order a database</translation>
-   <translation id="vps_tab_cloud_database_order_disclaimer" qtlid="405655">CloudDB needs a service which has access to the public network/internet. </translation>
+   <translation id="vps_tab_cloud_database_order_disclaimer" qtlid="405655">CloudDB needs a service that has access to the public network/internet. </translation>
    <translation id="vps_tab_cloud_database_order_explanation_title" qtlid="404876">CloudDB characteristics:</translation>
    <translation id="vps_tab_cloud_database_order_explanation_text" qtlid="506089">Accessible via the public network only<br />Unlimited number of databases<br />512 MB - 4 GB guaranteed RAM<br />8 GB - 54 GB guaranteed disk space<br />Automated daily backups<br />Up to 200 concurrent connections</translation>
-   <translation id="vps_tab_cloud_database_order_customize" qtlid="58196">Customisation</translation>
+   <translation id="vps_tab_cloud_database_order_customize" qtlid="58196">Customization</translation>
    <translation id="vps_tab_cloud_database_order_version" qtlid="217548">Server version</translation>
    <translation id="vps_tab_cloud_database_order_ram" qtlid="28195">RAM</translation>
    <translation id="vps_tab_cloud_database_order_datacenter" qtlid="30802">Data centre</translation>
    <translation id="vps_tab_cloud_database_order_period_title" qtlid="229203">Choose the duration</translation>
    <translation id="vps_tab_cloud_database_order_period_subtitle" qtlid="352334">How long do you want to use it for?</translation>
    <translation id="vps_tab_cloud_database_order_contracts_title" qtlid="213336">Contracts</translation>
-   <translation id="vps_tab_cloud_database_order_contracts_text" qtlid="506102">Click "Generate purchase order" to order your CloudDB database server.</translation>
+   <translation id="vps_tab_cloud_database_order_contracts_text" qtlid="506102">Click on "Generate purchase order" to order your CloudDB database server.</translation>
    <translation id="vps_tab_cloud_database_order_contracts_accept" qtlid="352360">I have read and accept the following contracts: </translation>
    <translation id="vps_tab_cloud_database_order_purchase_order_created" qtlid="352373">The purchase order has been generated. </translation>
    <translation id="vps_tab_cloud_database_order_redirection" qtlid="352386">You will be redirected to the OVH payment interface. </translation>
    <translation id="vps_tab_cloud_database_order_purchase_order_open" qtlid="352399">Display purchase order </translation>
    <translation id="vps_tab_cloud_database_order_purchase_order" qtlid="186219">Generate purchase order</translation>
-   <translation id="vps_tab_cloud_database_order_fetch_capacities_failed" qtlid="506115">An error has occurred retrieving the solutions available.</translation>
+   <translation id="vps_tab_cloud_database_order_fetch_capacities_failed" qtlid="506115">An error has occurred while retrieving the solutions available.</translation>
    <translation id="vps_tab_cloud_database_order_fetch_duration_failed" qtlid="260052">An error has occurred retrieving the available durations.</translation>
    <translation id="vps_tab_cloud_database_order_fetch_prices_failed" qtlid="506128">An error has occurred retrieving the available prices.</translation>
-   <translation id="vps_tab_cloud_database_order_failed" qtlid="216781">An error has occurred generating the purchase order.</translation>
+   <translation id="vps_tab_cloud_database_order_failed" qtlid="216781">An error has occurred while generating the purchase order.</translation>
 
    <translation id="vps_autorenew_stop_bother_error" qtlid="290589">An error occurred while sending the request to stop showing you information about automatic renewal. </translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Make your life easier and choose automatic renewal for your VPS! Say goodbye to reminders and unnecessary deletions. </translation>

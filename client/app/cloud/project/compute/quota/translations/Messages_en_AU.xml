@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpb_quota_protect_explain" qtlid="251265">The number of resources for your Cloud project is limited to enable you to control your resource consumption.</translation>
-   <translation id="cpb_quota_protect_more" qtlid="251278">If you need more resources, you can request them from our team by clicking the button below.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">If you need more resources, you can request them from our team by clicking on the button below.</translation>
    <translation id="cpb_quota_protect_more_btn" qtlid="251291">Increase my limits</translation>
    <translation id="cpb_quota_current_limit" qtlid="251304">Current limits</translation>
 

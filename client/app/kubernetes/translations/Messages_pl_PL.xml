@@ -67,7 +67,7 @@
    <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be spawned in the  <a class="oui-link" href="{{ url }}">{{ description }}</a> public cloud project (we will allow to change this in a future version of the service).</translation>
    <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Abyś mógł kontrolować wykorzystanie zasobów w ramach usługi Cloud, Twój projekt ma ograniczone zasoby.</translation>
-   <translation id="kube_nodes_quota_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić klikając na poniższy przycisk.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić, klikając na poniższy przycisk.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Zwiększ limity</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }}GB DisK)</translation>

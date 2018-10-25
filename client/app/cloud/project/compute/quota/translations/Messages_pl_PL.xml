@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpb_quota_protect_explain" qtlid="251265">Abyś mógł kontrolować wykorzystanie zasobów w ramach usługi Cloud, Twój projekt ma ograniczone zasoby.</translation>
-   <translation id="cpb_quota_protect_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić klikając na poniższy przycisk.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić, klikając na poniższy przycisk.</translation>
    <translation id="cpb_quota_protect_more_btn" qtlid="251291">Zwiększ limity</translation>
    <translation id="cpb_quota_current_limit" qtlid="251304">Aktualne ograniczenia</translation>
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_enterprise_shortcut_title" qtlid="403658">Scelta rapida</translation>
-   <translation id="veeam_enterprise_shortcut_label_activate_license" qtlid="505764">Activer la licence</translation>
-   <translation id="veeam_enterprise_shortcut_label_update_informations" qtlid="505777">Mettre à jour mes informations</translation>
-   <translation id="veeam_enterprise_shortcut_label_cancel_license" qtlid="505790">Résilier la licence</translation>
+   <translation id="veeam_enterprise_shortcut_label_activate_license" qtlid="505764">Attiva la licenza</translation>
+   <translation id="veeam_enterprise_shortcut_label_update_informations" qtlid="505777">Aggiorna le tue informazioni</translation>
+   <translation id="veeam_enterprise_shortcut_label_cancel_license" qtlid="505790">Cancella la licenza</translation>
 
-   <translation id="veeam_enterprise_terminate_title" qtlid="505790">Résilier la licence</translation>
-   <translation id="veeam_enterprise_terminate_confirm" qtlid="505803">Êtes-vous certain de vouloir résilier cette licence?</translation>
-   <translation id="veeam_enterprise_terminate_success" qtlid="505816">Un email a été envoyé pour accuser réception de votre demande.</translation>
-   <translation id="veeam_enterprise_terminate_error" qtlid="505829">Une erreur est survenue lors de la résiliation de la licence.</translation>
+   <translation id="veeam_enterprise_terminate_title" qtlid="505790">Cancella la licenza</translation>
+   <translation id="veeam_enterprise_terminate_confirm" qtlid="505803">Vuoi davvero cancellare questa licenza?</translation>
+   <translation id="veeam_enterprise_terminate_success" qtlid="505816">Ti abbiamo inviato un'email di conferma a seguito della tua richiesta.</translation>
+   <translation id="veeam_enterprise_terminate_error" qtlid="505829">Si è verificato un errore durante la cancellazione della licenza.</translation>
 
    <translation id="veeam_enterprise_configuration_title" qtlid="4406">Configurazione</translation>
    <translation id="veeam_enterprise_configuration_label_name" qtlid="3818">Nome</translation>

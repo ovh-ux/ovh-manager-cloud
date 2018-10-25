@@ -24,7 +24,7 @@
    <translation id="kube_service_cluster_version" qtlid="504969">Kubernetes version installed</translation>
    <translation id="kube_service_cluster_region" qtlid="32434">Region</translation>
    <translation id="kube_service_cluster_api_url" qtlid="504982">Kubernetes API URL for your cluster</translation>
-   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes nodes URLs for your cluster</translation>
+   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes node URLs for your cluster</translation>
 
    <translation id="kube_service_billing" qtlid="32950">Billing</translation>
    <translation id="kube_service_billing_plan" qtlid="38217">Solution </translation>
@@ -67,7 +67,7 @@
    <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be deployed in the <a class="oui-link" href="{{ url }}">{{ description }}</a> Public Cloud project (you will be able to change this in a future version of the service).</translation>
    <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">The number of resources for your Cloud project is limited to enable you to control your resource consumption.</translation>
-   <translation id="kube_nodes_quota_more" qtlid="251278">If you need more resources, you can request them from our team by clicking the button below.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">If you need more resources, you can request them from our team by clicking on the button below.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Increase my limits</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }} GB RAM {{ diskCapacity }} GB disk)</translation>
