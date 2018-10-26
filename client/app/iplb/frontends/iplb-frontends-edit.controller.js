@@ -169,7 +169,9 @@ class IpLoadBalancerFrontendsEditCtrl {
 
     if (this.type === 'http' && /http/.test(protocol)) {
       return false;
-    } if (this.protocol === protocol) {
+    }
+
+    if (this.protocol === protocol) {
       return false;
     }
 
@@ -227,7 +229,10 @@ class IpLoadBalancerFrontendsEditCtrl {
     }
     if (this.frontend.allowedSource) {
       request.allowedSource = _.map(this.frontend.allowedSource.split(','), source => _.trim(source));
+    } else {
+      request.allowedSource = [];
     }
+
     delete request.protocol;
     return request;
   }
