@@ -24,7 +24,7 @@
    <translation id="kube_service_cluster_version" qtlid="504969">Kubernetes version installed</translation>
    <translation id="kube_service_cluster_region" qtlid="32434">State</translation>
    <translation id="kube_service_cluster_api_url" qtlid="504982">Kubernetes API URL for your cluster</translation>
-   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes nodes URLs for your cluster</translation>
+   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes node URLs for your cluster</translation>
 
    <translation id="kube_service_billing" qtlid="32950">Billing</translation>
    <translation id="kube_service_billing_plan" qtlid="38217">Solution </translation>

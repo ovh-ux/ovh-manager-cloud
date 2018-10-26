@@ -74,16 +74,39 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl',
     function CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl(
-      $scope, $stateParams, $q, $filter, $timeout, $translate, CloudMessage, $rootScope,
+      $filter,
+      $q,
+      $rootScope,
+      $scope,
+      $stateParams,
+      $timeout,
+      $translate,
+      atInternet,
+      CloudFlavorService,
+      CloudImageService,
+      CloudMessage,
       CloudProjectComputeInfrastructureOrchestrator,
-      OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhCloudPriceHelper,
-      OvhApiCloudProjectImage, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
-      OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate,
-      OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
-      RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY,
-      CLOUD_FLAVOR_SPECIFIC_IMAGE, OvhApiMe, URLS, REDIRECT_URLS, atInternet,
-      CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl,
+      OvhApiCloudProjectSshKey,
+      OvhApiCloudProjectFlavor,
+      OvhCloudPriceHelper,
+      OvhApiCloudProjectImage,
+      OvhApiCloudProjectNetworkPrivate,
+      OvhApiCloudProjectNetworkPrivateSubnet,
+      OvhApiCloudProjectNetworkPublic,
+      OvhApiCloudProjectQuota,
+      OvhApiCloudProjectRegion,
+      OvhApiCloudProjectSnapshot,
+      OvhApiMe,
+      ovhDocUrl,
+      RegionService,
+      CLOUD_FLAVOR_SPECIFIC_IMAGE,
+      CLOUD_FLAVORTYPE_CATEGORY,
+      CLOUD_INSTANCE_CPU_FREQUENCY,
+      CLOUD_INSTANCE_DEFAULT_FALLBACK,
+      CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES,
+      REDIRECT_URLS,
       TARGET,
+      URLS,
     ) {
       const self = this;
       const orderBy = $filter('orderBy');
@@ -384,7 +407,7 @@ angular.module('managerApp')
           });
 
           // filter GPU
-          if (flavorType === 'g1' || flavorType === 'g2' || flavorType === 'g3') {
+          if (['g1', 'g2', 'g3', 't1'].includes(flavorType)) {
             self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => image.type === 'linux' || (flavorType ? _.includes(image.flavorType, flavorType) : true));
           } else {
             self.displayData.images[imageType] = _.filter(
@@ -438,11 +461,11 @@ angular.module('managerApp')
           - self.displayData.sshKeyAvailables;
       }
 
-      self.projectHasNoSshKeys = function () {
+      self.projectHasNoSshKeys = function projectHasNoSshKeys() {
         return (!self.loaders.panelsData.sshKeys && self.panelsData.sshKeys.length === 0);
       };
 
-      this.sectionCanBeModifiedInEdition = function (section) {
+      this.sectionCanBeModifiedInEdition = function sectionCanBeModifiedInEdition(section) {
         switch (section) {
           case 'flavors':
             return !self.vmInEdition.hasChange('images');
@@ -732,7 +755,7 @@ angular.module('managerApp')
       }
 
       // Open panel if toggle.editDetail is different of editDetail otherwise close this panel
-      self.openEditDetail = function (editDetail) {
+      self.openEditDetail = function openEditDetail(editDetail) {
         // reset accordion value to show focus on selected input
         if (editDetail === 'flavors') {
           if (self.model.flavorId) {
@@ -761,14 +784,14 @@ angular.module('managerApp')
         }, 500);
       };
 
-      self.backToMenu = function () {
+      self.backToMenu = function backToMenu() {
         self.activeSwitchPageIndex = 0;
         self.toggle.editDetail = null;
         self.toggle.editFlavor = 'categories';
         self.states.hasSetFlavor = false;
       };
 
-      self.isSwitchMode = function () {
+      self.isSwitchMode = function isSwitchMode() {
         return self.switcher.getDisplayMode() === 'switch';
       };
 
@@ -776,12 +799,12 @@ angular.module('managerApp')
 
       // --------- VM  CREATION---------
 
-      self.getFormattedFlavorType = function (flavorType) {
+      self.getFormattedFlavorType = function getFormattedFlavorType(flavorType) {
         return _.snakeCase(flavorType);
       };
 
       // Returns the remaining number of instances the user can create on a given region.
-      self.getRemainingInstanceQuota = function (region) {
+      self.getRemainingInstanceQuota = function getRemainingInstanceQuota(region) {
         let limit = 0; // by default we assume we aren't allowed to create new instances
         // check quota
         if (self.panelsData.quota) {
@@ -798,7 +821,7 @@ angular.module('managerApp')
         return limit;
       };
 
-      self.isValid = function () {
+      self.isValid = function isValid() {
         const vm = $scope.VmAddEditCtrl.vmInEdition;
         /*
          * When editing, it's possible that the image is not found because
@@ -821,7 +844,7 @@ angular.module('managerApp')
           && (self.model.sshKeyId || !self.sshKeyRequired));
       };
 
-      self.putPostVM = function () {
+      self.putPostVM = function putPostVM() {
         self.loaders.launch = true;
         self.backToMenu();
 
@@ -907,7 +930,7 @@ angular.module('managerApp')
         }
       };
 
-      this.cancelVm = function () {
+      this.cancelVm = function cancelVm() {
         // delete vm if it's a draft
         if (self.vmInEdition.status === 'DRAFT') {
           CloudProjectComputeInfrastructureOrchestrator.deleteVm(self.vmInEdition);
@@ -916,7 +939,7 @@ angular.module('managerApp')
         CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
       };
 
-      const closeOnEscapeKey = function (evt) {
+      const closeOnEscapeKey = function closeOnEscapeKey(evt) {
         if (evt.which === 27) {
           self.cancelVm();
         }
@@ -1036,13 +1059,13 @@ angular.module('managerApp')
 
       // --------- VM NAME ---------
 
-      self.canEditName = function () {
+      self.canEditName = function canEditName() {
         return self.loaders.allCompleted;
       };
 
       // cancel: true/false: force close if true
       // ev: $event given by keyup
-      self.toggleEditVmName = function (cancel, ev) {
+      self.toggleEditVmName = function toggleEditVmName(cancel, ev) {
         // If [escape], close name edition
         if (ev) {
           if (ev.keyCode === 27) {
@@ -1073,7 +1096,7 @@ angular.module('managerApp')
 
       // --------- FLAVORS panel ---------
 
-      self.getFlavors = function () {
+      self.getFlavors = function getFlavors() {
         if (!self.loaders.panelsData.flavors) {
           self.loaders.panelsData.flavors = true;
 
@@ -1081,7 +1104,8 @@ angular.module('managerApp')
             OvhApiCloudProjectFlavor.v6().query({
               serviceName,
             }).$promise.then((flavorsList) => {
-              const modifiedFlavorsList = _.map(flavorsList, flavor => addDetailsToFlavor(flavor));
+              const modifiedFlavorsList = flavorsList
+                .map(flavor => CloudFlavorService.augmentFlavor(flavor));
 
               // Flavor types (ovh.ram, ovh.cpu, ...)
               self.enums.flavorsTypes = _.uniq(_.pluck(modifiedFlavorsList, 'type'));
@@ -1104,12 +1128,11 @@ angular.module('managerApp')
               }
               self.panelsData.flavors = modifiedFlavorsList;
 
-
               if (!self.vmInEdition.flavor) { // this is a snapshot           to review
                 recalculateFlavor();
               }
               if (self.vmInEdition.status === 'ACTIVE') {
-                self.currentFlavor = addDetailsToFlavor(self.vmInEdition.flavor);
+                self.currentFlavor = CloudFlavorService.augmentFlavor(self.vmInEdition.flavor);
               }
 
               connectFlavorTogether();
@@ -1286,7 +1309,7 @@ angular.module('managerApp')
         self.orderBy(orderBy, category, self.order.reverse);
       };
 
-      self.orderBy = function (by, category, reverse) {
+      self.orderBy = function orderByFilter(by, category, reverse) {
         let filters = [];
         self.order.by = by;
         self.order.reverse = !!reverse;
@@ -1312,11 +1335,11 @@ angular.module('managerApp')
       };
 
 
-      self.onMouseEnterFlavor = function () {
+      self.onMouseEnterFlavor = function onMouseEnterFlavor() {
         // Decorated function at runtime
       };
 
-      self.selectFlavor = function (category, flavor) {
+      self.selectFlavor = function selectFlavor(category, flavor) {
         let realFlavor = self.getRealFlavor(flavor);
 
         if (!realFlavor) {
@@ -1355,11 +1378,11 @@ angular.module('managerApp')
         }
       };
 
-      self.isIncompatible = function (category, diskType) {
+      self.isIncompatible = function isIncompatible(category, diskType) {
         // check disk compatibility
         if (diskType) {
           if (self.vmInEdition.status === 'ACTIVE') {
-            const augmentedFlavor = addDetailsToFlavor(self.originalVm.flavor);
+            const augmentedFlavor = CloudFlavorService.augmentFlavor(self.originalVm.flavor);
             // It should always be impossible to switch from an existing SSD instance
             // to a ceph instance.
             if (augmentedFlavor.diskType === 'ssd' && diskType === 'ceph') {
@@ -1404,27 +1427,31 @@ angular.module('managerApp')
         return true;
       };
 
-      self.selectDiskType = function (diskType, category) {
+      self.selectDiskType = function selectDiskType(diskType, category) {
         self.model.diskType = diskType;
         self.selectFlavor(category, self.categoriesVmInEditionFlavor[category]);
       };
 
-      self.hasGuaranteedRessources = function (flavorType) {
+      self.hasGuaranteedRessources = function hasGuaranteedRessources(flavorType) {
         return _.find(CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, elem => elem === flavorType);
       };
 
-      self.getRealFlavor = function (flavor, category) {
+      self.getRealFlavor = function getRealFlavor(flavor, category) {
         const osType = self.vmInEdition.image ? self.vmInEdition.image.type : 'linux';
         const flex = category === 'accelerated' ? false : self.model.flex;
         return self.getFlavorOfType(flavor, self.model.diskType, flex, self.model.region, osType);
       };
 
-      self.getFlavorOfCurrentRegionAndOSType = function (flavor, diskType, flex) {
+      self.getFlavorOfCurrentRegionAndOSType = function getFlavorOfCurrentRegionAndOSType(
+        flavor,
+        diskType,
+        flex,
+      ) {
         const osType = self.vmInEdition.image ? self.vmInEdition.image.type : 'linux';
         return self.getFlavorOfType(flavor, diskType, flex, self.model.region, osType);
       };
 
-      self.getFlavorOfType = function (flavor, diskType, flex, region, osType) {
+      self.getFlavorOfType = function getFlavorOfType(flavor, diskType, flex, region, osType) {
         if (flavor) {
           if (flavor.vps) {
             return flavor;
@@ -1453,52 +1480,6 @@ angular.module('managerApp')
         });
       }
 
-      function addDetailsToFlavor(flavor) {
-        // Regex to get more info on flavor
-        const augmentedFlavor = flavor;
-        if (/vps/.test(flavor.type)) {
-          augmentedFlavor.vps = true;
-          augmentedFlavor.diskType = 'ssd';
-          augmentedFlavor.flex = false;
-          augmentedFlavor.shortGroupName = flavor.name;
-        } else {
-          let shortType;
-          let numberType;
-          if (flavor.osType === 'windows') {
-            shortType = _.first(_.rest(flavor.name.split('-')));
-            numberType = _.first(_.rest(_.rest(flavor.name.split('-'))));
-          } else {
-            shortType = _.first(flavor.name.split('-'));
-            numberType = _.first(_.rest(flavor.name.split('-')));
-          }
-          if (shortType) {
-            augmentedFlavor.shortType = shortType;
-          }
-          if (numberType) {
-            augmentedFlavor.numberType = numberType;
-          }
-          if (shortType && numberType) {
-            augmentedFlavor.shortGroupName = `${shortType}-${numberType}`;
-          }
-          augmentedFlavor.flex = /flex$/.test(flavor.name);
-          augmentedFlavor.diskType = /ssd/.test(flavor.type) ? 'ssd' : 'ceph';
-
-          if (_.indexOf(['g1', 'g2', 'g3'], augmentedFlavor.shortType) > -1) {
-            if (numberType === '120') {
-              augmentedFlavor.gpuCardCount = 3;
-            } else {
-              augmentedFlavor.gpuCardCount = 1;
-            }
-          }
-          augmentedFlavor.isOldFlavor = isOldFlavor(flavor.name);
-        }
-        return augmentedFlavor;
-      }
-
-      function isOldFlavor(flavorName) {
-        return /eg|sp|hg|vps-ssd/.test(flavorName);
-      }
-
       function checkFlavorCompatibility(fromFlavor, toFlavor) {
         return fromFlavor.diskType === toFlavor.diskType;
       }
@@ -1506,11 +1487,11 @@ angular.module('managerApp')
 
       // --------- CATEGORIES panel ---------
 
-      self.isCurrentCategory = function (category) {
+      self.isCurrentCategory = function isCurrentCategory(category) {
         return !_.isEmpty(self.categoriesVmInEditionFlavor[category]);
       };
 
-      self.changeCategory = function (category) {
+      self.changeCategory = function changeCategory(category) {
         if (_.isUndefined(self.categoriesVmInEditionFlavor[category])) {
           // select the first VM of the category as the default (i.e: displayed info on the panel)
           self.orderBy('vcpus', category);
@@ -1525,7 +1506,7 @@ angular.module('managerApp')
 
       // --------- IMAGES+SNAPSHOTS panel ---------
 
-      self.getImages = function () {
+      self.getImages = function getImages() {
         if (!self.loaders.panelsData.images) {
           self.loaders.panelsData.images = true;
           return OvhApiCloudProjectImage.v6().query({
@@ -1571,7 +1552,7 @@ angular.module('managerApp')
         }
       };
 
-      self.getSnapshots = function () {
+      self.getSnapshots = function getSnapshots() {
         if (!self.loaders.panelsData.snapshots) {
           self.loaders.panelsData.snapshots = true;
           return OvhApiCloudProjectSnapshot.v6().query({
@@ -1612,7 +1593,7 @@ angular.module('managerApp')
 
       // --------- REGIONS panel ---------
 
-      self.getRegions = function () {
+      self.getRegions = function getRegions() {
         if (!self.loaders.panelsData.regions) {
           self.loaders.panelsData.regions = true;
 
@@ -1631,7 +1612,7 @@ angular.module('managerApp')
 
       // --------- SSHKEYS panel ---------
 
-      self.getSshKeys = function (clearCache) {
+      self.getSshKeys = function getSshKeys(clearCache) {
         if (!self.loaders.panelsData.sshKeys) {
           self.loaders.panelsData.sshKeys = true;
           if (clearCache) {
@@ -1657,7 +1638,7 @@ angular.module('managerApp')
         }
       };
 
-      self.postSshKey = function () {
+      self.postSshKey = function postSshKey() {
         if (!self.loaders.sshKey.add) {
           const uniq = _.find(
             self.panelsData.sshKeys,
@@ -1689,7 +1670,7 @@ angular.module('managerApp')
         }
       };
 
-      self.sshKeyAddRegion = function (sshKey) {
+      self.sshKeyAddRegion = function sshKeyAddRegion(sshKey) {
         self.loaders.sshKey.add = true;
         return OvhApiCloudProjectSshKey.v6().save({
           serviceName,
@@ -1707,7 +1688,7 @@ angular.module('managerApp')
         });
       };
 
-      self.deleteSshKey = function (keyId) {
+      self.deleteSshKey = function deleteSshKey(keyId) {
         if (!self.loaders.sshKey.remove) {
           self.loaders.sshKey.remove = true;
           return OvhApiCloudProjectSshKey.v6().remove({
@@ -1726,7 +1707,7 @@ angular.module('managerApp')
         }
       };
 
-      self.toggleAddSshKey = function () {
+      self.toggleAddSshKey = function toggleAddSshKey() {
         if (self.toggle.openAddSshKey) {
           initNewSshKey();
         }
@@ -1735,7 +1716,7 @@ angular.module('managerApp')
 
       // return the maximum number of instances the user can create, for the choosen flavor
       // regarding is remaining quota
-      self.getMaximumInstanceCreationCount = function () {
+      self.getMaximumInstanceCreationCount = function getMaximumInstanceCreationCount() {
         const flavor = _.find(self.panelsData.flavors, { id: self.model.flavorId });
         const quota = _.find(self.panelsData.quota, { region: self.model.region });
         let max = 0;
@@ -1751,7 +1732,7 @@ angular.module('managerApp')
 
       // ---
 
-      self.fetchPublicNetworks = function () {
+      self.fetchPublicNetworks = function fetchPublicNetworks() {
         if (self.loaders.publicNetwork.query) {
           return;
         }
@@ -1772,7 +1753,7 @@ angular.module('managerApp')
         });
       };
 
-      self.fetchPrivateNetworks = function () {
+      self.fetchPrivateNetworks = function fetchPrivateNetworks() {
         if (self.loaders.privateNetwork.query) {
           return;
         }
@@ -1794,7 +1775,7 @@ angular.module('managerApp')
         });
       };
 
-      self.fetchPrivateNetworksSubnets = function () {
+      self.fetchPrivateNetworksSubnets = function fetchPrivateNetworksSubnets() {
         if (self.loaders.privateNetwork.subnet.query) {
           return;
         }
@@ -1836,7 +1817,7 @@ angular.module('managerApp')
           });
       };
 
-      self.getPrivateNetworks = function () {
+      self.getPrivateNetworks = function getPrivateNetworks() {
         const pad = Array(5).join('0');
         return _.chain(self.panelsData.privateNetworks)
           .filter((privateNetwork) => {
@@ -1853,29 +1834,29 @@ angular.module('managerApp')
           .value();
       };
 
-      self.hasVrackSupport = function () {
+      self.hasVrackSupport = function hasVrackSupport() {
         return self.states.hasVrack;
       };
 
-      self.getVlansGuideUrl = function () {
+      self.getVlansGuideUrl = function getVlansGuideUrl() {
         return self.urls.vlansGuide;
       };
 
-      self.getVlansApiGuideUrl = function () {
+      self.getVlansApiGuideUrl = function getVlansApiGuideUrl() {
         return self.urls.vlansApiGuide;
       };
 
-      self.getVrackUrl = function () {
+      self.getVrackUrl = function getVrackUrl() {
         return self.urls.vrack;
       };
 
-      self.getCreateSshKeysGuideUrl = function () {
+      self.getCreateSshKeysGuideUrl = function getCreateSshKeysGuideUrl() {
         return self.urls.guidesSshkeyURL;
       };
 
       // TODO : Delete this and the code in the .html once we remove the old catalog.
       //        Used to display the proper label text.
-      self.catalogVersion = function () {
+      self.catalogVersion = function catalogVersion() {
         let oldCatalog = _.any(self.panelsData.regions, region => /GRA1|BHS1|SBG1/.test(region));
         if (/(WAW)|(DE)|(UK)/.test(self.model.region)) {
           oldCatalog = false;
@@ -1889,15 +1870,15 @@ angular.module('managerApp')
        * @return {Boolean}  true if migration to this category of VPS is not possible
        *                    because of Windows.
        */
-      self.hasWindowsCompatibilityIssue = function (category) {
+      self.hasWindowsCompatibilityIssue = function hasWindowsCompatibilityIssue(category) {
         return self.vmInEdition.image && self.vmInEdition.image.type === 'windows' && category === 'vps';
       };
 
-      self.showFlex = function (category) {
+      self.showFlex = function showFlex(category) {
         return _.includes(['balanced', 'cpu', 'ram'], category);
       };
 
-      self.showCeph = function (category) {
+      self.showCeph = function showCeph(category) {
         return _.includes(['balanced', 'cpu', 'ram'], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], 'ceph', false) !== undefined;
       };
     });

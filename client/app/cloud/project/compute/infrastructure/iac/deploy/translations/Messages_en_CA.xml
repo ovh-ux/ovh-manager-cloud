@@ -5,5 +5,5 @@
    <translation id="cpciiac_deploy_guide" qtlid="506284">QuickStart</translation>
    <translation id="cpciiac_deploy_configure" qtlid="4010">Configure</translation>
    <translation id="cpciiac_deploy_copy_paste" qtlid="506297">Copy/Paste</translation>
-   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">An error has occurred requesting the deployment: {{message}}</translation>
+   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">An error has occurred while requesting the deployment: {{message}}</translation>
 </translations>

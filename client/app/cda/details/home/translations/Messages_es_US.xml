@@ -21,7 +21,7 @@
    <translation id="cda_detail_monitor" qtlid="354444">Monitor</translation>
    <translation id="cda_detail_create_date" qtlid="26419">Fecha de creación</translation>
    <translation id="cda_detail_update_date" qtlid="293905">Fecha de edición</translation>
-   <translation id="cda_detail_version" qtlid="34210">Version</translation>
+   <translation id="cda_detail_version" qtlid="34210">Versión</translation>
 
    <translation id="cda_health_status" qtlid="159098">Estado del servidor</translation>
    <translation id="cda_health_healthy" qtlid="354457">Saludable</translation>

@@ -234,7 +234,14 @@ angular.module('managerApp')
         FR: 'https://www.ovh.com/fr/storage-solutions/veeam-cloud-connect/',
       },
       veeam_enterprise: {
-        FR: 'https://www.ovh.com/fr/storage-solutions/veeam-enterprise/',
+        DE: 'https://www.ovh.de/storage-solutions/veeam-enterprise.xml',
+        ES: 'https://www.ovh.es/storage-solutions/veeam-enterprise.xml',
+        FR: 'https://www.ovh.com/fr/storage-solutions/veeam-enterprise.xml',
+        GB: 'https://www.ovh.co.uk/storage-solutions/veeam-enterprise.xml',
+        IT: 'https://www.ovh.it/storage-solutions/veeam-enterprise.xml',
+        NL: 'https://www.ovh.nl/storage-solutions/veeam-enterprise.xml',
+        PL: 'https://www.ovh.pl/storage-solutions/veeam-enterprise.xml',
+        PT: 'https://www.ovh.pt/storage-solutions/veeam-enterprise.xml',
       },
       cloud_disk_array: {
         FR: 'https://www.ovh.com/fr/cloud/cloud-disk-array/',
