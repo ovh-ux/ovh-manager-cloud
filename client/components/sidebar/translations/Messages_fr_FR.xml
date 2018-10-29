@@ -35,6 +35,7 @@
    <translation id="cloud_sidebar_pci_object_storage" qtlid="233733">Stockage</translation>
    <translation id="cloud_sidebar_pci_manage" qtlid="323460">Gestion du projet</translation>
    <translation id="cloud_sidebar_pci_openstack" qtlid="241586">Openstack</translation>
+   <translation id="cloud_sidebar_pci_tasks">Tâches automatisées</translation>
    <translation id="cloud_sidebar_server_more" qtlid="323473">Gérer les {{count}} services</translation>
 
 <!-- Time Series -->

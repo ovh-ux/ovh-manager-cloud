@@ -136,6 +136,19 @@ class CloudProjectSidebar {
       category: 'action-page',
       searchable: false,
     }, subSection);
+    this.SidebarMenu.addMenuItem({
+      title: this.$translate.instant('cloud_sidebar_pci_tasks'),
+      state: 'iaas.pci-project.compute.task',
+      stateParams: {
+        projectId: project.serviceName || project.project_id,
+      },
+      loadOnState: 'iaas.pci-project.compute.task',
+      loadOnStateParams: {
+        projectId: project.serviceName || project.project_id,
+      },
+      category: 'action-page',
+      searchable: false,
+    }, subSection);
   }
 }
 
