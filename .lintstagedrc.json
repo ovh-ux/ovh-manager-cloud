@@ -1,4 +1,7 @@
 {
+  "*.html": [
+    "htmlhint --ignore '**/noVNC/**' 'client/**/*.html'"
+  ],
   "*.js": [
     "eslint --fix",
     "git add"
