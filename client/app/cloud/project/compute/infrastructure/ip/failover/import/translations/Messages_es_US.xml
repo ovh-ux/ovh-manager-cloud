@@ -4,7 +4,7 @@
    <translation id="cpciif_import_ips_error" qtlid="249211">Lo sentimos, no se ha podido recuperar la lista de IP Failover</translation>
    <translation id="cpciif_import_ips_empty" qtlid="249224">No hay IP Failover disponibles.</translation>
    <translation id="cpciif_import_ips" qtlid="227806">IP Failover</translation>
-   <translation id="cpciif_import_ips_country" qtlid="25171">Pays</translation>
+   <translation id="cpciif_import_ips_country" qtlid="25171">País</translation>
    <translation id="cpciif_import_routedto" qtlid="249237">Servicio asociado</translation>
    <translation id="cpciif_import_ips_route" qtlid="249250">Seleccione la(s) IP Failover que desea importar:</translation>
    <translation id="cpciif_import_ips_32only" qtlid="258717">Nota: Por el momento solo puede importar bloques IPv4.</translation>

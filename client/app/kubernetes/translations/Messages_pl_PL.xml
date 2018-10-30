@@ -3,80 +3,80 @@
    <translation id="kube_guides" qtlid="300370">Przewodniki</translation>
    <translation id="kube_guides_kubernetes" qtlid="504826">Kubernetes</translation>
 
-   <translation id="kube_error" qtlid="504839">An error has occurred loading the information: {{message}}</translation>
+   <translation id="kube_error" qtlid="504839">Wystąpił błąd podczas pobierania informacji: {{message}}</translation>
 
    <translation id="kube_service" qtlid="31042">Usługa</translation>
-   <translation id="kube_service_description_information" qtlid="504852">You will find here general information about your managed Kubernetes service, and how to access it using the<a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">Kubectl tool.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
-   <translation id="kube_service_description_reset" qtlid="504865">You can reset you cluster at any time.</translation>
-   <translation id="kube_service_offer_beta" qtlid="504878">Beta Managed Kubernetes Service (free)</translation>
+   <translation id="kube_service_description_information" qtlid="504852">Poniżej znajdziesz dane umożliwiające dostęp do Twojej usługi Kubernetes przy użyciu <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">narzędzia kubetcl.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
+   <translation id="kube_service_description_reset" qtlid="504865">Możesz w każdym momencie zresetować konfigurację Twojego klastra Kubernetes.</translation>
+   <translation id="kube_service_offer_beta" qtlid="504878">Zarządzana usługa Kubernetes Beta (bez opłat)</translation>
 
-   <translation id="kube_service_file" qtlid="504891">Kubeconfig file</translation>
-   <translation id="kube_service_file_error" qtlid="504904">An error has occurred loading the kubeconfig file</translation>
-   <translation id="kube_service_file_help" qtlid="504917">The kubectl command-line tool uses kubeconfig files to find the information it needs to choose a cluster and communicate with the API server of a cluster.</translation>
-   <translation id="kube_service_file_more_information" qtlid="504930">More information can be found here</translation>
+   <translation id="kube_service_file" qtlid="504891">Plik "kubeconfig"</translation>
+   <translation id="kube_service_file_error" qtlid="504904">Wystąpił błąd podczas pobierania pliku konfiguracyjnego</translation>
+   <translation id="kube_service_file_help" qtlid="504917">Plik "kubectl" zawiera dane umożliwiające interfejsowi wiersza poleceń komunikację z API Twojego klastra. </translation>
+   <translation id="kube_service_file_more_information" qtlid="504930">Więcej informacji znajdziesz tutaj</translation>
 
-   <translation id="kube_service_cluster_information" qtlid="504943">Cluster information</translation>
+   <translation id="kube_service_cluster_information" qtlid="504943">Informacje o klastrze</translation>
    <translation id="kube_service_cluster_status" qtlid="26443">Status</translation>
    <translation id="kube_service_cluster_status_READY" qtlid="433745">Ok</translation>
    <translation id="kube_service_cluster_status_ERROR" qtlid="26407">Błąd</translation>
-   <translation id="kube_service_cluster_status_INSTALLING" qtlid="504956">Installing</translation>
+   <translation id="kube_service_cluster_status_INSTALLING" qtlid="504956">Instalacja w toku</translation>
    <translation id="kube_service_cluster_status_DELETING" qtlid="152778">W trakcie usuwania</translation>
-   <translation id="kube_service_cluster_version" qtlid="504969">Kubernetes version</translation>
+   <translation id="kube_service_cluster_version" qtlid="504969">Zainstalowana wersja Kubernetes</translation>
    <translation id="kube_service_cluster_region" qtlid="32434">Województwo</translation>
-   <translation id="kube_service_cluster_api_url" qtlid="504982">Kubernetes API URL</translation>
-   <translation id="kube_service_cluster_nodes_url" qtlid="504995">Kubernetes nodes URL</translation>
+   <translation id="kube_service_cluster_api_url" qtlid="504982">URL API Kubernetes Twojego klastra</translation>
+   <translation id="kube_service_cluster_nodes_url" qtlid="504995">URL węzłów Kubernetes Twojego klastra</translation>
 
    <translation id="kube_service_billing" qtlid="32950">Płatności</translation>
    <translation id="kube_service_billing_plan" qtlid="38217">Pakiet</translation>
-   <translation id="kube_service_billing_contact" qtlid="505008">Nic Billing</translation>
+   <translation id="kube_service_billing_contact" qtlid="505008">Kontakt księgowy</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Odnowienie</translation>
 
-   <translation id="kube_nodes" qtlid="505021">Nodes</translation>
-   <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
-   <translation id="kube_nodes_add_region" qtlid="505047">During beta stage, your nodes will be spwawned in GRA5. We will allow you to change this in the future.</translation>
-   <translation id="kube_nodes_add_success" qtlid="505060">The node is being installed</translation>
-   <translation id="kube_nodes_add_flavor_error" qtlid="505073">An error has occurred loading the flavors: {{message}}</translation>
-   <translation id="kube_nodes_add_flavor_family" qtlid="505086">Select a Flavor Family</translation>
+   <translation id="kube_nodes" qtlid="505021">Węzły</translation>
+   <translation id="kube_nodes_add" qtlid="505034">Dodaj węzeł</translation>
+   <translation id="kube_nodes_add_region" qtlid="505047">W fazie beta wszystkie Twoje węzły będą zlokalizowane w centrum danych GRA5. W przyszłości udostępnimy możliwość wyboru innej lokalizacji.</translation>
+   <translation id="kube_nodes_add_success" qtlid="505060">Węzeł w trakcie instalacji</translation>
+   <translation id="kube_nodes_add_flavor_error" qtlid="505073">Wystąpił błąd podczas pobierania modeli instancji: {{message}}</translation>
+   <translation id="kube_nodes_add_flavor_family" qtlid="505086">Wybierz typ instancji</translation>
    <translation id="kube_nodes_add_flavor_family_balanced" qtlid="505099">General purpose</translation>
    <translation id="kube_nodes_add_flavor_family_cpu" qtlid="25555">CPU</translation>
    <translation id="kube_nodes_add_flavor_family_ram" qtlid="31354">RAM</translation>
    <translation id="kube_nodes_add_flavor_family_accelerated" qtlid="401445">GPU</translation>
    <translation id="kube_nodes_add_flavor_family_vps" qtlid="505112">SANDBOX</translation>
-   <translation id="kube_nodes_add_flavor" qtlid="505125">Select a Flavor in our PCI catalogue</translation>
-   <translation id="kube_nodes_add_pick_flavor" qtlid="505138">Select a Flavor</translation>
+   <translation id="kube_nodes_add_flavor" qtlid="505125">Wybierz model instancji w katalogu Public Cloud OVH</translation>
+   <translation id="kube_nodes_add_pick_flavor" qtlid="505138">Wybierz model instancji</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_VCPUS" qtlid="251551">Limit rozmiaru Twojego projektu nie pozwala na dodanie maszyny z takim parametrem procesora.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_RAM" qtlid="251564">Limit rozmiaru Twojego projektu nie pozwala na dodanie maszyny z taką ilością pamięci RAM.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_INSTANCE" qtlid="301851">Osiągnąłeś maksymalną liczbę maszyn dla tego regionu.</translation>
    <translation id="kube_nodes_add_flavor_quota_manage">Gérer mon quota.</translation>
-   <translation id="kube_nodes_add_error" qtlid="505151">An error has occurred adding the node: {{message}}</translation>
-   <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
+   <translation id="kube_nodes_add_error" qtlid="505151">Wystąpił błąd podczas dodawania węzła: {{message}}</translation>
+   <translation id="kube_nodes_add" qtlid="505034">Dodaj węzeł</translation>
 
-   <translation id="kube_nodes_delete" qtlid="505164">Delete Node</translation>
-   <translation id="kube_nodes_delete_confirmation" qtlid="505177">Are you sure you want to delete {{ node}} ?</translation>
-   <translation id="kube_nodes_delete_warning" qtlid="505190">This action cannot be undone.</translation>
-   <translation id="kube_nodes_delete_enter" qtlid="505203">Type DELETE in the following field to confirm your action.</translation>
-   <translation id="kube_nodes_delete_success" qtlid="505216">The node is being deleted</translation>
-   <translation id="kube_nodes_delete_error" qtlid="505229">An error has occurred deleting the node: {{message}}</translation>
+   <translation id="kube_nodes_delete" qtlid="505164">Usuń węzeł</translation>
+   <translation id="kube_nodes_delete_confirmation" qtlid="505177">Czy na pewno chcesz usunąć {{ node}} ?</translation>
+   <translation id="kube_nodes_delete_warning" qtlid="505190">Operacja ta jest nieodwracalna.</translation>
+   <translation id="kube_nodes_delete_enter" qtlid="505203">Aby potwierdzić, wprowadź "DELETE" w poniższym polu</translation>
+   <translation id="kube_nodes_delete_success" qtlid="505216">Trwa usuwanie węzła</translation>
+   <translation id="kube_nodes_delete_error" qtlid="505229">Wystąpił błąd podczas usuwania węzła: {{message}}</translation>
 
-   <translation id="kube_nodes_node" qtlid="505242">Node</translation>
-   <translation id="kube_nodes_error" qtlid="505255">An error has occurred loading nodes: {{message}}</translation>
+   <translation id="kube_nodes_node" qtlid="505242">Węzeł</translation>
+   <translation id="kube_nodes_error" qtlid="505255">Wystąpił błąd podczas pobierania węzłów: {{message}}</translation>
    <translation id="kube_nodes_refresh" qtlid="218081">Odśwież tabelę</translation>
-   <translation id="kube_nodes_flavor" qtlid="505268">Flavor</translation>
-   <translation id="kube_nodes_flavor_error" qtlid="505281">An error has occurred loading flavor</translation>
-   <translation id="kube_nodes_project_error" qtlid="505294">An error has occurred loading public cloud project</translation>
-   <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be spawned in the  <a class="oui-link" href="{{ url }}">{{ description }}</a> public cloud project (we will allow to change this in a future version of the service).</translation>
+   <translation id="kube_nodes_flavor" qtlid="505268">Model instancji</translation>
+   <translation id="kube_nodes_flavor_error" qtlid="505281">Wystąpił błąd podczas pobierania powiązanego typu instancji</translation>
+   <translation id="kube_nodes_project_error" qtlid="505294">Wystąpił błąd podczas pobierania powiązanego projektu</translation>
+   <translation id="kube_nodes_description_project_1" qtlid="505307">Twój klaster Kubernetes używa węzłów do hostowania Twoich kontenerów i usług. Wszystkie Twoje węzły zostaną uruchomione w projekcie Public Cloud <a class="oui-link" href="{{ url }}">{{ description }}</a> (w przyszłości udostępnimy możliwość zmiany).</translation>
    <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Abyś mógł kontrolować wykorzystanie zasobów w ramach usługi Cloud, Twój projekt ma ograniczone zasoby.</translation>
    <translation id="kube_nodes_quota_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić, klikając na poniższy przycisk.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Zwiększ limity</translation>
 
-   <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }}GB DisK)</translation>
+   <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }} GB Dysk)</translation>
    <translation id="kube_flavor_price" qtlid="270033">{{price}} netto/godz.</translation>
 
-   <translation id="kube_containers_and_services" qtlid="505346">Containers and services</translation>
+   <translation id="kube_containers_and_services" qtlid="505346">Kontenery i usługi</translation>
    <translation id="kube_containers_coming_soon" qtlid="250043">Dostępne wkrótce</translation>
-   <translation id="kube_containers_description" qtlid="505359">You will see here all containers and services running in your kubernetes cluster.</translation>
-   <translation id="kube_containers_description_dashboard" qtlid="505372">In the meantime, we invite you to use either the `kubectl` command line interface or setup the "Kubernetes Dashboard" in your cluster. Kubernetes Dashboard is a community project consisting in a web UI, that is itself a service exposed in your cluster.</translation>
-   <translation id="kube_containers_description_dashboard_link" qtlid="505385">Follow <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">this guide<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a> to install Kubernetes Dashboard</translation>
-   <translation id="kube_containers_description_documentation" qtlid="505398">During the beta phase, please find documentation, including how to orchestrate your services and expose them on the internet on the <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">Kubernetes section on labs.ovh.com.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
+   <translation id="kube_containers_description" qtlid="505359">Wkrótce będziesz mógł znaleźć tutaj wszystkie kontenery i usługi hostowane przez Twój klaster Kubernetes.</translation>
+   <translation id="kube_containers_description_dashboard" qtlid="505372">Zachęcamy do korzystania z interfejsu wiersza poleceń "kubectl" lub zainstalowania dashboardu Kubernetes - internetowego interfejsu użytkownika obsługiwanego przez społeczność Kubernetes i wyświetlanego jako usługa w Twoim klastrze.</translation>
+   <translation id="kube_containers_description_dashboard_link" qtlid="505385">Aby zainstalować dashboard Kubernetes, postępuj zgodnie z <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">tym tutorialem<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
+   <translation id="kube_containers_description_documentation" qtlid="505398">W fazie beta możesz korzystać z dokumentacji (Jak zarządzać usługami i umieszczać je w Internecie, etc...) dostępnej w <a class="oui-link oui-link_icon" href="{{ url }}" target="_blank" rel="noopener">sekcji Kubernetes na stronie labs.ovh.com.<span class="oui-icon oui-icon-external_link" aria-hidden="true"></span></a></translation>
 </translations>

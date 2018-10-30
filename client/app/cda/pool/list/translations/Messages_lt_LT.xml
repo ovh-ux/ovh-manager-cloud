@@ -22,7 +22,7 @@
    <translation id="cda_pool_add_success" qtlid="354327">Telkinys buvo sėkmingai pridėtas.</translation>
 
    <translation id="cda_pool_delete_title" qtlid="354340">Pašalinti telkinį</translation>
-   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Vardas:</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Vardas</translation>
    <translation id="cda_pool_delete_confirm" qtlid="354353">Ar iš tiesų norite pašalinti šį telkinį?</translation>
    <translation id="cda_pool_delete_success" qtlid="354366">Telkinys buvo sėkmingai pašalintas</translation>
 

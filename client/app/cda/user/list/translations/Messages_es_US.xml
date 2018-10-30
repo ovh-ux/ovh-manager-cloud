@@ -20,7 +20,7 @@
    <translation id="cda_user_add_success" qtlid="354743">El usuario se ha añadido correctamente.</translation>
 
    <translation id="cda_user_delete_title" qtlid="7666">Supprimer un utilisateur</translation>
-   <translation id="cda_user_delete_username_label" qtlid="100328">Nom :</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Apellidos</translation>
    <translation id="cda_user_delete_confirm" qtlid="354756">¿Está seguro(a) que desea eliminar este usuario?</translation>
    <translation id="cda_user_delete_success" qtlid="354769">El usuario se ha eliminado correctamente.</translation>
 
