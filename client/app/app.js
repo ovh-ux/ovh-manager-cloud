@@ -1,4 +1,4 @@
-import asyncLoaderFactory from './async-loader.factory';
+import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
 angular.module('managerApp', [
@@ -57,9 +57,10 @@ angular.module('managerApp', [
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',
+
+  translateAsyncLoader,
   cloudUniverseComponents,
 ])
-  .factory('asyncLoader', asyncLoaderFactory)
   .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider,
     TranslateServiceProvider, LANGUAGES) => {
     // Config current locale
