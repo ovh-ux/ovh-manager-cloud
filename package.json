@@ -23,7 +23,7 @@
     "build:ca": "webpack --env.region=ca --env.production",
     "build:eu": "webpack --env.region=eu --env.production",
     "build:us": "webpack --env.region=us --env.production",
-    "clean": "npx rimraf .cache-loader dist node_modules",
+    "clean": "npx rimraf dist node_modules",
     "clean:dist": "npx rimraf dist",
     "lint": "run-p lint:css lint:html lint:js",
     "lint:css": "stylelint 'client/**/*.less' --fix",
