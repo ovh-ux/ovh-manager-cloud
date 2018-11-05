@@ -1,8 +1,13 @@
 class NavbarNotificationService {
-  constructor($interval, $q, $translate, CloudMessage, OvhApiNotificationAapi, TARGET, UNIVERSE) {
+  constructor(
+    $interval, $q, $translate,
+    atInternet, CloudMessage, OvhApiNotificationAapi,
+    TARGET, UNIVERSE,
+  ) {
     this.$interval = $interval;
     this.$q = $q;
     this.$translate = $translate;
+    this.atInternet = atInternet;
     this.CloudMessage = CloudMessage;
     this.OvhApiNotificationAapi = OvhApiNotificationAapi;
     this.TARGET = TARGET;
@@ -94,7 +99,13 @@ class NavbarNotificationService {
         title: this.$translate.instant('common_navbar_notification_title'),
         iconClass: 'icon-notifications',
         limitTo: 10,
-        onClick: () => this.aknowledgeAll(),
+        onClick: () => {
+          this.aknowledgeAll();
+          this.atInternet.trackClick({
+            name: 'notifications',
+            type: 'action',
+          });
+        },
         subLinks: sublinks,
         show: true,
       };
