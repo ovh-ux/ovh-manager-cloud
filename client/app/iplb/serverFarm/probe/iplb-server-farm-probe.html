@@ -12,11 +12,16 @@
 
         <oui-field data-label="{{ ::'iplb_farm_edit_probe_url' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
             <input class="oui-input"
-                type="text"
-                id="probe_url"
-                name="probe_url"
-                data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
+                   type="text"
+                   id="probe_url"
+                   name="probe_url"
+                   data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
         </oui-field>
+
+        <oui-checkbox data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'"
+                      data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.forceSsl">
+            <span data-translate="iplb_farm_edit_probe_forceSsl"></span>
+        </oui-checkbox>
 
         <oui-field data-label="{{ ::'iplb_farm_edit_probe_port' | translate }}" data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('port')">
             <oui-numeric
