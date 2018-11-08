@@ -147,6 +147,7 @@ CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x  Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_t1">{{ cardCount }} x Nvidia Tesla V100</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud tegen de beste prijs</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD gebruiken een gedeelde plaatselijke SSD RAID en hun performance kan van tijd tot tijd verschillend zijn </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Ze zijn ideaal voor uw tests en ontwikkelomgevingen. Hun performance kan enigszins variëren van tijd tot tijd.</translation>

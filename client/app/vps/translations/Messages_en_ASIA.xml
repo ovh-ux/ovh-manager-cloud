@@ -501,14 +501,14 @@
 
    <translation id="vps_tab_cloud_database" qtlid="275026">Database </translation>
    <translation id="vps_tab_cloud_database_description" qtlid="505933">Need reliable, high-performance databases that are fully managed by OVH?<br/>Order our Cloud Databases service!<br/>You get an autonomous database compatible with all of your OVH cloud products.<br/>MariaDB, MongoDB, MySQL, PostgreSQL and Redis are available!</translation>
-   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
-   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
-   <translation id="vps_tab_cloud_database_header_version">Version</translation>
+   <translation id="vps_tab_cloud_database_explanation" qtlid="507159">All your databases are listed below.<br/>For each database, you can authorise or remove your VPS IP address here.<br/>You can also order new databases.</translation>
+   <translation id="vps_tab_cloud_database_header_name" qtlid="507172">CloudDB instance</translation>
+   <translation id="vps_tab_cloud_database_header_version" qtlid="34210">Version</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">Authorised VPS</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Status</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">No database found.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Authorise the VPS to access this database</translation>
-   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
+   <translation id="vps_tab_cloud_database_manage" qtlid="507185">Manage database</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Remove authorisation to access this database</translation>
    <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">An error has occurred loading databases.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Access for the {{ vps }} VPS</translation>
