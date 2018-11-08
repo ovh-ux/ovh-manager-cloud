@@ -47,7 +47,7 @@
    <translation id="kube_nodes_add_flavor_QUOTA_VCPUS" qtlid="251551">Le quote del tuo progetto non consentono di aggiungere una macchina con questa CPU.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_RAM" qtlid="251564">Le quote del tuo progetto non consentono di aggiungere una macchina con questa quantità di RAM.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_INSTANCE" qtlid="301851">Hai raggiunto la quota massima di macchine consentite per questa Region.</translation>
-   <translation id="kube_nodes_add_flavor_quota_manage">Gérer mon quota.</translation>
+   <translation id="kube_nodes_add_flavor_quota_manage" qtlid="507211">Gestisci le quote</translation>
    <translation id="kube_nodes_add_error" qtlid="505151">Si è verificato un errore durante l'aggiunta del nodo: {{message}}</translation>
    <translation id="kube_nodes_add" qtlid="505034">Aggiungi un nodo</translation>
 
@@ -65,7 +65,7 @@
    <translation id="kube_nodes_flavor_error" qtlid="505281">Si è verificato un errore durante il caricamento del flavor associato</translation>
    <translation id="kube_nodes_project_error" qtlid="505294">Si è verificato un errore durante il caricamento del progetto associato</translation>
    <translation id="kube_nodes_description_project_1" qtlid="505307">Il tuo cluster Kubernetes utilizza i nodi per ospitare i tuoi container e servizi. Tutti i nodi saranno lanciati nel progetto di Public Cloud <a class="oui-link" href="{{ url }}"> {{description}} </a> (sarà possibile modificarlo in futuro).</translation>
-   <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
+   <translation id="kube_nodes_description_project_2" qtlid="507224">Queste istanze vengono distribuite con la fatturazione oraria standard. Puoi trovare i dettagli di fatturazione nel tuo progetto Public Cloud e scegliere di passare a un piano mensile.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Per una migliore gestione dei tuoi consumi Cloud, abbiamo limitato le risorse utilizzate per il tuo progetto.</translation>
    <translation id="kube_nodes_quota_more" qtlid="251278">Clicca sul bottone sottostante e chiedi più risorse al nostro team.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Modifica limiti</translation>

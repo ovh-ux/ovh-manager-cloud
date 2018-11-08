@@ -47,7 +47,7 @@
    <translation id="kube_nodes_add_flavor_QUOTA_VCPUS" qtlid="251551">El límite de su proyecto no le permite añadir una máquina con tanta CPU.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_RAM" qtlid="251564">El límite de su proyecto no le permite añadir una máquina con tanta RAM.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_INSTANCE" qtlid="301851">Ha alcanzado el límite máximo de máquinas para esta región.</translation>
-   <translation id="kube_nodes_add_flavor_quota_manage">Gérer mon quota.</translation>
+   <translation id="kube_nodes_add_flavor_quota_manage" qtlid="507211">Gestionar mi límite.</translation>
    <translation id="kube_nodes_add_error" qtlid="505151">Se ha producido un error al añadir el nodo: {{message}}</translation>
    <translation id="kube_nodes_add" qtlid="505034">Añadir un nodo</translation>
 
@@ -65,7 +65,7 @@
    <translation id="kube_nodes_flavor_error" qtlid="505281">Se ha producido un error al cargar el tipo de instancia asociada.</translation>
    <translation id="kube_nodes_project_error" qtlid="505294">Se ha producido un error al cargar el proyecto asociado.</translation>
    <translation id="kube_nodes_description_project_1" qtlid="505307">Su cluster Kubernetes utiliza nodos para alojar sus contenedores y servicios. Todos los nodos se lanzarán en el proyecto Public Cloud <a class="oui-link" href="{{ url }}">{{ description }}</a>. Más adelante habilitaremos la posibilidad de cambiarlo.</translation>
-   <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
+   <translation id="kube_nodes_description_project_2" qtlid="507224">Estas instancias se lanzan con facturación estándar por horas. Consulte su proyecto Public Cloud para más información sobre la tarificación o si quiere pasar a la opción de facturación mensual.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Para controlar su consumo de cloud, su proyecto tiene los recursos limitados.</translation>
    <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede pedírselos a nuestro equipo haciendo clic en el siguiente botón.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Aumentar mis límites</translation>
