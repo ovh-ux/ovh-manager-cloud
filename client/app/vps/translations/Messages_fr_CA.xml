@@ -487,7 +487,7 @@
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Commander un disque additionnel</translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Veuillez choisir la taille du disque additionnel pour votre VPS. Il sera visible en tant que second disque dur depuis votre système d'exploitation.</translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">Le disque additionnel sera ajouté à votre serveur jusqu'à la date de renouvellement de votre VPS, puis il sera ensuite renouvelé avec ce dernier.</translation>
-   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} HT/mois</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} /mois</translation>
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Prix:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Prix:</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option :</translation>
@@ -501,14 +501,14 @@
 
    <translation id="vps_tab_cloud_database" qtlid="275026">Base de données</translation>
    <translation id="vps_tab_cloud_database_description" qtlid="505933">Besoin de bases de données fiables, performantes et 100% managées par OVH ?<br/>Commandez notre service Cloud Databases !<br/>Vous disposerez d'une base de données autonome et compatible avec tous vos produits Cloud OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL et Redis disponibles !</translation>
-   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
-   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
-   <translation id="vps_tab_cloud_database_header_version">Version</translation>
+   <translation id="vps_tab_cloud_database_explanation" qtlid="507159">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou au contraire le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
+   <translation id="vps_tab_cloud_database_header_name" qtlid="507172">Instance CloudDB</translation>
+   <translation id="vps_tab_cloud_database_header_version" qtlid="34210">Version</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">VPS autorisé</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Statut</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">Aucune base de données trouvée.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Autoriser le VPS à accéder à cette base</translation>
-   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
+   <translation id="vps_tab_cloud_database_manage" qtlid="507185">Gérer la base</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Retirer l'autorisation d'accéder à cette base</translation>
    <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">Une erreur est survenue lors du chargement des bases de données.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Accès pour le VPS {{ vps }}</translation>

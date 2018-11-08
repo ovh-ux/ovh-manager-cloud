@@ -501,14 +501,14 @@
 
    <translation id="vps_tab_cloud_database" qtlid="275026">Base de dados</translation>
    <translation id="vps_tab_cloud_database_description" qtlid="505933">Precisa de bases de dados fidedignas, eficientes e totalmente geridas pela OVH?<br/>Encomende o nosso serviço Cloud Databases!<br/>Terá à sua disposição uma base de dados autónoma e compatível com todos os seus produtos Cloud da OVH.<br/>MariaDB, MongoDB, MySQL, PostgreSQL e Redis disponíveis!</translation>
-   <translation id="vps_tab_cloud_database_explanation">Retrouvez ci-dessous toutes vos bases de données.<br/>Vous pouvez pour chaque base de données, autoriser l'IP de votre VPS ou a contrario le supprimer.<br/>Ainsi que commander de nouvelles bases de données.</translation>
-   <translation id="vps_tab_cloud_database_header_name">Instance CloudDB</translation>
-   <translation id="vps_tab_cloud_database_header_version">Version</translation>
+   <translation id="vps_tab_cloud_database_explanation" qtlid="507159">Consulte todas as suas bases de dados abaixo.<br/>Para cada base de dados, pode autorizar ou eliminar o IP do seu VPS, assim como<br/> encomendar novas bases de dados.</translation>
+   <translation id="vps_tab_cloud_database_header_name" qtlid="507172">Instância CloudDB</translation>
+   <translation id="vps_tab_cloud_database_header_version" qtlid="34210">Versão</translation>
    <translation id="vps_tab_cloud_database_header_vps_authorized" qtlid="505959">VPS autorizado</translation>
    <translation id="vps_tab_cloud_database_header_status" qtlid="26443">Estado</translation>
    <translation id="vps_tab_cloud_database_table_empty" qtlid="505972">Não foi encontrada nenhuma base de dados.</translation>
    <translation id="vps_tab_cloud_database_add_authorized_ip" qtlid="505985">Autorizar o acesso do VPS a esta base</translation>
-   <translation id="vps_tab_cloud_database_manage">Gérer la base</translation>
+   <translation id="vps_tab_cloud_database_manage" qtlid="507185">Gerir a base</translation>
    <translation id="vps_tab_cloud_database_remove_authorized_ip" qtlid="505998">Remover a autorização de acesso a esta base</translation>
    <translation id="vps_tab_cloud_database_fetch_error" qtlid="506011">Ocorreu um erro ao carregar as bases de dados.</translation>
    <translation id="vps_tab_cloud_database_whitelist_ip_name" qtlid="506024">Acesso ao VPS {{ vps }}</translation>

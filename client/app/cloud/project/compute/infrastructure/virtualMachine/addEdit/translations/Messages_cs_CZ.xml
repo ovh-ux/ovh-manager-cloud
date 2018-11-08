@@ -146,6 +146,7 @@
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }}x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }}x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }}x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_t1">{{ cardCount }} x Nvidia Tesla V100</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instance VPS-SSD: <br/>public cloud za nejlepší cenu</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD využívají lokální SSD RAID a jejich výkon může v čase kolísat</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Ideální pro Vaše vývojářské či testovací prostředí. Jejich výkon může v průběhu času nepatrně kolísat.</translation>
