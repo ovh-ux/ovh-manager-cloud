@@ -22,7 +22,7 @@
    <translation id="cda_pool_add_success" qtlid="354327">El pool se ha añadido correctamente.</translation>
 
    <translation id="cda_pool_delete_title" qtlid="354340">Eliminar un pool</translation>
-   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nom :</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Apellidos</translation>
    <translation id="cda_pool_delete_confirm" qtlid="354353">¿Está seguro(a) que desea eliminar el pool?</translation>
    <translation id="cda_pool_delete_success" qtlid="354366">El pool se ha eliminado correctamente.</translation>
 

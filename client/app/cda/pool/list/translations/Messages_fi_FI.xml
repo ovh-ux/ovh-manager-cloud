@@ -22,7 +22,7 @@
    <translation id="cda_pool_add_success" qtlid="354327">Datasäilön lisäys onnistui.</translation>
 
    <translation id="cda_pool_delete_title" qtlid="354340">Poista datasäilö</translation>
-   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nimi:</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nimi</translation>
    <translation id="cda_pool_delete_confirm" qtlid="354353">Haluatko varmasti poistaa tämän datasäilön</translation>
    <translation id="cda_pool_delete_success" qtlid="354366">Datasäilön poisto onnistui.</translation>
 

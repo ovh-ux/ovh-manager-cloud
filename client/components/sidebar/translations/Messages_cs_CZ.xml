@@ -12,7 +12,7 @@
    <translation id="cloud_sidebar_section_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_paas_veeam" qtlid="404113">Veeam CC</translation>
    <translation id="cloud_sidebar_section_paas_veeam_enterprise" qtlid="506362">Veeam Enterprise</translation>
-   <translation id="cloud_sidebar_section_paas_kube">Kubernetes</translation>
+   <translation id="cloud_sidebar_section_paas_kube" qtlid="504826">Kubernetes</translation>
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licence</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>

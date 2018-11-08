@@ -20,7 +20,7 @@
    <translation id="cda_user_add_success" qtlid="354743">Naudotojas pridėtas sėkmingai.</translation>
 
    <translation id="cda_user_delete_title" qtlid="7666">Ištrinti naudotoją</translation>
-   <translation id="cda_user_delete_username_label" qtlid="100328">Vardas:</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Vardas</translation>
    <translation id="cda_user_delete_confirm" qtlid="354756">Ar tikrai norite pašalinti šį naudotoją?</translation>
    <translation id="cda_user_delete_success" qtlid="354769">Naudotojas pašalintas sėkmingai.</translation>
 

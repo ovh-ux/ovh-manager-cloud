@@ -4,6 +4,6 @@
    <translation id="cpciiac_view_intro" qtlid="506271">Deployen Sie schnell und unkompliziert eine nicht verwaltete Infrastructure-as-Code in Ihrem Cloud-Projekt, und das in nur wenigen Klicks dank unserer Infrastruktur-Deployment-Skripte.</translation>
    <translation id="cpciiac_view_general_ERROR" qtlid="506336">Beim Abruf der Infrastructure-as-Code-Templates ist ein Fehler aufgetreten: {{message}}</translation>
    <translation id="cpciiac_view_stack_terraform-ovh-publiccloud-k8s" qtlid="504826">Kubernetes</translation>
-   <translation id="cpciiac_view_stack_ovh-analytics-openstack">Hadoop</translation>
+   <translation id="cpciiac_view_stack_ovh-analytics-openstack" qtlid="507198">Hadoop</translation>
    <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Bei der Deployment-Anfrage ist ein Fehler aufgetreten: {{message}}</translation>
 </translations>

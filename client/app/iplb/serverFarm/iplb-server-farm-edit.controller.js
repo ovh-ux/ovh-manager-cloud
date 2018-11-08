@@ -176,6 +176,7 @@ class IpLoadBalancerServerFarmEditCtrl {
         pickList.push('port');
         pickList.push('method');
         pickList.push('match');
+        pickList.push('forceSsl');
         break;
       case 'mysql':
       case 'pgsql':
