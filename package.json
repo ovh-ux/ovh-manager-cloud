@@ -96,7 +96,7 @@
     "ovh-angular-jquery-ui-droppable": "ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1",
     "ovh-angular-jsplumb": "ovh-ux/ovh-angular-jsplumb#^3.0.5",
     "ovh-angular-list-view": "ovh-ux/ovh-angular-list-view#^0.1.5",
-    "ovh-angular-otrs": "ovh-ux/ovh-angular-otrs#^6.1.1",
+    "ovh-angular-otrs": "^6.3.0",
     "ovh-angular-pagination-front": "ovh-ux/ovh-angular-pagination-front#^5.1.0",
     "ovh-angular-proxy-request": "ovh-ux/ovh-angular-proxy-request#^0.1.0",
     "ovh-angular-q-allsettled": "ovh-ux/ovh-angular-q-allSettled#^0.3.1",
