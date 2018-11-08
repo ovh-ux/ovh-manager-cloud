@@ -64,7 +64,7 @@ class NavbarNotificationService {
     return notification;
   }
 
-  aknowledgeAll() {
+  acknowledgeAll() {
     if (this.navbarContent) {
       const toAcknowledge = this.navbarContent.subLinks
         .filter(subLink => !subLink.acknowledged && subLink.isActive);
@@ -77,6 +77,7 @@ class NavbarNotificationService {
             });
           });
       }
+      this.navbarContent.iconAnimated = false;
     }
   }
 
@@ -98,9 +99,10 @@ class NavbarNotificationService {
         name: 'notifications',
         title: this.$translate.instant('common_navbar_notification_title'),
         iconClass: 'icon-notifications',
+        iconAnimated: this.constructor.shouldAnimateIcon(sublinks),
         limitTo: 10,
         onClick: () => {
-          this.aknowledgeAll();
+          this.acknowledgeAll();
           this.atInternet.trackClick({
             name: 'notifications',
             type: 'action',
@@ -112,6 +114,10 @@ class NavbarNotificationService {
       this.navbarContent = navbarContent;
       return navbarContent;
     });
+  }
+
+  static shouldAnimateIcon(sublinks) {
+    return _.some(sublinks, sublink => _.includes(['incident', 'error', 'warning'], sublink.level) && sublink.isActive);
   }
 }
 
