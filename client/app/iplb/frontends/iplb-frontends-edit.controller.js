@@ -150,6 +150,7 @@ class IpLoadBalancerFrontendsEditCtrl {
     if (this.$stateParams.frontendId) {
       this.edition = true;
       this.apiFrontend.load()
+        .then(() => (this.frontend.ssl ? this.certificates.load() : null))
         .then(() => {
           this.farms.load();
         });
