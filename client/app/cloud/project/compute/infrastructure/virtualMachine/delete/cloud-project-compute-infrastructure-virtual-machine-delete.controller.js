@@ -5,7 +5,7 @@ angular.module('managerApp')
     $uibModalInstance, params,
   ) {
     const self = this;
-    const vmToDelete = params;
+    self.vmToDelete = params;
 
     self.loaders = {
       ips: false,
@@ -24,7 +24,7 @@ angular.module('managerApp')
     };
 
     function init() {
-      self.isMonthlyBilling = vmToDelete.monthlyBilling && vmToDelete.monthlyBilling.status === 'ok';
+      self.isMonthlyBilling = self.vmToDelete.monthlyBilling && self.vmToDelete.monthlyBilling.status === 'ok';
     }
 
 
