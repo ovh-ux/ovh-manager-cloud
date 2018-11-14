@@ -1,5 +1,7 @@
 angular.module('managerApp').controller('KubernetesServiceCtrl', class KubernetesServiceCtrl {
-  constructor($stateParams, $translate, CloudMessage, ControllerHelper, Kubernetes, KUBERNETES) {
+  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper, Kubernetes,
+    KUBERNETES) {
+    this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CloudMessage = CloudMessage;
@@ -71,5 +73,11 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
   downloadConfigFile() {
     // Set yml extension manually as there is no MIME type yet
     this.ControllerHelper.constructor.downloadContent({ fileContent: this.kubernetesConfig.content, fileName: `${this.kubernetesConfig.fileName}.yml` });
+  }
+
+  resetCluster() {
+    return this.$state.go('paas.kube.service.reset', {
+      cluster: this.cluster,
+    });
   }
 });
