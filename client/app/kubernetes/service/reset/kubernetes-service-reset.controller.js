@@ -1,6 +1,7 @@
 class kubernetesResetCtrl {
-  constructor($stateParams, $translate, $uibModalInstance, CloudMessage, ControllerHelper,
-    Kubernetes) {
+  constructor($rootScope, $stateParams, $translate, $uibModalInstance, CloudMessage,
+    ControllerHelper, Kubernetes) {
+    this.$rootScope = $rootScope;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
     this.$translate = $translate;
@@ -39,6 +40,8 @@ class kubernetesResetCtrl {
           this.loading = false;
           this.ControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close();
+          this.Kubernetes.resetClusterCache();
+          this.$rootScope.$broadcast('kube.service.refresh');
         }),
     });
     return this.saving.load();

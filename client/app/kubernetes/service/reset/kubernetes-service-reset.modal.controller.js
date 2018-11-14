@@ -22,6 +22,7 @@ class kubernetesResetModalCtrl {
     this.$state.go('paas.kube.service', {
       serviceName: this.serviceName,
     });
+    this.$scope.$broadcast('kube.service.refresh');
   }
 }
 

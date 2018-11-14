@@ -1,6 +1,7 @@
 angular.module('managerApp').controller('KubernetesServiceCtrl', class KubernetesServiceCtrl {
-  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper, Kubernetes,
-    KUBERNETES) {
+  constructor($scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
+    Kubernetes, KUBERNETES) {
+    this.$scope = $scope;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
@@ -17,12 +18,13 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
       config: true,
     };
 
+    this.$scope.$on('kube.service.refresh', () => this.getClusterInfos());
+
     this.getClusterInfos()
       .then(() => this.getConfigFile())
       .then(() => this.getBillingInfos())
       .then(() => this.loadMessages());
   }
-
 
   loadMessages() {
     this.CloudMessage.unSubscribe('paas.kube.service');

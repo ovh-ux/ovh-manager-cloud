@@ -20,12 +20,12 @@
                                      'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING',
                                      'oui-status_error' : $ctrl.cluster.status === 'ERROR'
                                      }"
-                              data-translate="{{:: 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
+                              data-translate="{{ 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
                         </span>
                     </oui-tile-description>
-                    <oui-action-menu data-compact align="end"> 
+                    <oui-action-menu data-compact align="end" data-disabled="$ctrl.cluster.status !== 'READY'"> 
                         <oui-action-menu-item on-click="$ctrl.resetCluster()">
-                            {{:: 'kube_service_reset_title' | translate }}
+                            <span data-translate="kube_service_reset_title"></span>
                         </oui-action-menu-item>
                     </oui-action-menu>
                 </oui-tile-definition>
