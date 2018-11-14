@@ -1,13 +1,6 @@
-angular.module('managerApp').run(($translate, asyncLoader) => {
-  asyncLoader.addTranslations(
-    import(`ovh-angular-sidebar-menu/src/ovh-angular-sidebar-menu/translations/Messages_${$translate.use()}.xml`)
-      .catch(() => import(`ovh-angular-sidebar-menu/src/ovh-angular-sidebar-menu/translations/Messages_${$translate.fallbackLanguage()}.xml`))
-      .then(x => x.default),
-  );
-  asyncLoader.addTranslations(import(`./translations/Messages_${$translate.use()}.xml`).then(x => x.default));
-  $translate.refresh();
-});
-angular.module('managerApp')
+angular
+  .module('managerApp')
+  .run(/* @ngTranslationsInject:json ./translations ../../../node_modules/ovh-angular-sidebar-menu/dist/ovh-angular-sidebar-menu/translations */) // eslint-disable-line max-len
   .run(($q, $translate, Toast, SidebarMenu, SidebarOrderService, SidebarContentService,
     ProductsService, SessionService) => {
     const promise = $q.all({

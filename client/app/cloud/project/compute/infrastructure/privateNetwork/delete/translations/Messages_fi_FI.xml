@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpci_private_network_delete_title" qtlid="405538">Yksityisverkon poisto</translation>
-   <translation id="cpci_private_network_delete_confirm" qtlid="405551">Haluatko varmasti poistaa tämän yksityisverkon?</translation>
-   <translation id="cpci_private_network_delete_success" qtlid="405564">Yksityisverkon poistaminen onnistui.</translation>
-   <translation id="cpci_private_network_delete_error" qtlid="405577">Tapahtui virhe yksityisen verkon poistossa.</translation>
-</translations>

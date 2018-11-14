@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="veeam_update_offer_title" qtlid="403632">Upgrade della tua offerta Veeam Cloud Connect</translation>
-   <translation id="veeam_update_offer_information" qtlid="403645">L'abbonamento è di <strong>{{ price }} +IVA/mese</strong></translation>
-   <translation id="veeam_update_offer_cancel" qtlid="37863">Annulla</translation>
-   <translation id="veeam_update_offer_continue" qtlid="4070">Continua</translation>
-   <translation id="veeam_update_offer_change" qtlid="69893">Cambia</translation>
-   <translation id="veeam_update_storage_add" qtlid="37923">Aggiungi</translation>
-</translations>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="veeam_update_offer_title" qtlid="403632">Veeam Cloud Connect upgraden</translation>
-   <translation id="veeam_update_offer_information" qtlid="403645">Das Abbonement kostet <strong>{{ price }} /Monat</strong></translation>
-   <translation id="veeam_update_offer_cancel" qtlid="37863">Abbrechen</translation>
-   <translation id="veeam_update_offer_continue" qtlid="4070">Weiter</translation>
-   <translation id="veeam_update_offer_change" qtlid="69893">Ändern</translation>
-   <translation id="veeam_update_storage_add" qtlid="37923">Hinzufügen</translation>
-</translations>

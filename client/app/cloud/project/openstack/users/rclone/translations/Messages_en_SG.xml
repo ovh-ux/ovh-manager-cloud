@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpou_rclone_modal_title" qtlid="451058">Download an Rclone configuration file</translation>
-   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Please download a configuration file to access Rclone.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Find out more</translation>
-   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Select the region for this file:</translation>
-   <translation id="cpou_rclone_modal_security_note" qtlid="451084">For security reasons, the configuration file doesn't include your password. You must add your password manually by editing the configuration file.</translation>
-   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">An error has occurred loading the data linked to the Rclone file: {{ message }}</translation>
-</translations>

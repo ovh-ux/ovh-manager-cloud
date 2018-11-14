@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_delete_title" qtlid="247950">Mazání instance</translation>
-   <translation id="cpcivm_delete_info" qtlid="247963">Již jste zaplatili Vaši měsíční fakturu za tento server. Jakékoli předplacené dny budou ztraceny.</translation>
-   <translation id="cpcivm_failover_info" qtlid="269383">Následující adresy IP Failover budou permanentně odstraněny:</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Jste si jisti, že chcete odstranit tuto instanci?</translation>
-</translations>

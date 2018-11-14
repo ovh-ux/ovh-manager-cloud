@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpbhd_monthly_header" qtlid="363939">Abonamenty miesięczne z {{month}} {{year}}</translation>
-   <translation id="cpbhd_hourly_header" qtlid="363952">Zużycie zasobów na żądanie z {{month}} {{year}}</translation>
-   <translation id="cpbhd_bill_link" qtlid="363965">Wyświetl wszystkie faktury</translation>
-   <translation id="cpbhd_bill_pdf_tooltip" qtlid="363978">Wyświetl fakturę w formacie PDF</translation>
-   <translation id="cpbhd_bill_pdf_link" qtlid="363991">Faktura {{month}} {{year}}</translation>
-</translations>

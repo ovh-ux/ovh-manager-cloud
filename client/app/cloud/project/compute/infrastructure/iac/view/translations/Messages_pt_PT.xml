@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpciiac_view_title" qtlid="506323">Selecione a infraestrutura que pretende implementar</translation>
-   <translation id="cpciiac_view_intro" qtlid="506271">Implemente de forma rápida e simples uma infraestrutura as code não gerida no seu projeto Cloud. Pode fazê-lo em apenas alguns cliques graças aos nossos scripts de implementação de infraestrutura.</translation>
-   <translation id="cpciiac_view_general_ERROR" qtlid="506336">Ocorreu um erro ao recuperar os modelos de infraestrutura as code: {{message}}</translation>
-   <translation id="cpciiac_view_stack_terraform-ovh-publiccloud-k8s" qtlid="504826">Kubernetes</translation>
-   <translation id="cpciiac_view_stack_ovh-analytics-openstack" qtlid="507198">Hadoop</translation>
-   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Ocorreu um erro no pedido de implementação: {{message}}</translation>
-</translations>

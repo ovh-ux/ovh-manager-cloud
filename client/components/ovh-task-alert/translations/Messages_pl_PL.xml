@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="ovh_task_follow_button" qtlid="445006">Informacje o incydencie</translation>
-   <translation id="ovh_task_follow_modal_title" qtlid="445019">Monitoruj status incydentu</translation>
-   <translation id="ovh_task_follow_modal_comment" qtlid="446583">Dernière mise à jour : {{ date }}</translation>
-</translations>

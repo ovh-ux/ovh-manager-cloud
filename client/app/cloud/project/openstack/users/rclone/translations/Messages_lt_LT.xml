@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpou_rclone_modal_title" qtlid="451058">Atsisiųsti konfigūracinį failą rClone</translation>
-   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Jūs ketinate atsisiųsti konfigūracinį failą, leidžiantį prisijungti prie Rclone.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Daugiau informacijos</translation>
-   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Pasirinkti regioną, kuriame bus taikomas failas:</translation>
-   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Dėl saugumo priežasčių konfigūraciniame faile nėra jūsų slaptažodžio, todėl būtina pakeisti konfigūracinį failą pridedant jūsų slaptažodį rankiniu būdu.</translation>
-   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Klaida įkeliant duomenis, susietus su rClone failu: {{ message }}</translation>
-</translations>
