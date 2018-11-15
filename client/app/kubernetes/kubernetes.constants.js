@@ -3,6 +3,7 @@ angular.module('managerApp')
     // For now only one region is available
     region: 'GRA5',
     deleteConfirmationInput: /^DELETE$/,
+    resetConfirmationInput: /^RESET$/,
     kubeconfigFileName: 'kubeconfig',
     loadingStatus: ['INSTALLING', 'DELETING'],
     flavorTypes: ['balanced', 'cpu', 'ram', 'accelerated'],

@@ -7706,8 +7706,8 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
 ovh-api-services@ovh-ux/ovh-api-services#^3.18.0:
-  version "3.21.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/0982b2482d553f813a47d4fd5f72e59fe396b975"
+  version "3.22.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/5d0ea68f45a576b6bb612704ca056daa9ba320ca"
   dependencies:
     lodash "^3.10.1"
 

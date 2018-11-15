@@ -1,6 +1,6 @@
 class kubernetesResetCtrl {
   constructor($rootScope, $stateParams, $translate, $uibModalInstance, CloudMessage,
-    ControllerHelper, Kubernetes) {
+    ControllerHelper, Kubernetes, KUBERNETES) {
     this.$rootScope = $rootScope;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
@@ -8,6 +8,7 @@ class kubernetesResetCtrl {
     this.CloudMessage = CloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.Kubernetes = Kubernetes;
+    this.KUBERNETES = KUBERNETES;
   }
 
   $onInit() {
