@@ -1,3 +1,12 @@
+## [7.9.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.0...v7.9.1) (2018-11-15)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** error no data ([2eb5f3e](https://github.com/ovh-ux/ovh-manager-cloud/commit/2eb5f3e))
+
+
+
 # [7.9.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.8...v7.9.0) (2018-11-08)
 
 
