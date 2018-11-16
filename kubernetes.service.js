@@ -86,4 +86,12 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
       diskCapacity: flavor.disk,
     });
   }
+
+  resetCluster(serviceName) {
+    return this.OvhApiKube.v6().reset({ serviceName }, {}).$promise;
+  }
+
+  resetClusterCache() {
+    this.OvhApiKube.v6().resetCache();
+  }
 });
