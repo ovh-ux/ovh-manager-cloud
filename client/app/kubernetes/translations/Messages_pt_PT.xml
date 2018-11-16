@@ -31,6 +31,12 @@
    <translation id="kube_service_billing_contact" qtlid="505008">ID de faturação</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Renovação</translation>
 
+   <translation id="kube_service_reset_title">Réinitialiser la configuration de votre cluster Kubernetes</translation>
+   <translation id="kube_service_reset_message">En cliquant ici vous remettrez votre service Kubernetes dans son état original. Cela supprimera l'intégralité de vos nœuds de calcul, vos services, leur configuration etc... <strong>Cette action est irréversible</strong>.</translation>
+   <translation id="kube_service_reset_success">Votre cluster Kubernetes est en cours de réinitialisation.</translation>
+   <translation id="kube_service_reset_error">Une erreur est survenue lors de la réinitialisation de votre cluster : {{ message }}</translation>
+   <translation id="kube_service_reset_enter">Entrez "RESET" dans le champ ci-dessous pour confirmer</translation>
+
    <translation id="kube_nodes" qtlid="505021">Nós</translation>
    <translation id="kube_nodes_add" qtlid="505034">Adicionar um nó</translation>
    <translation id="kube_nodes_add_region" qtlid="505047">Durante a fase beta, todos os nós estarão localizados na região GRA5. Mais tarde, permitiremos a possibilidade de escolher outra região.</translation>
