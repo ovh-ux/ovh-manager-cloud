@@ -1,3 +1,12 @@
+## [7.9.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.1...v7.9.2) (2018-11-16)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** consumption error ([8a473d6](https://github.com/ovh-ux/ovh-manager-cloud/commit/8a473d6))
+
+
+
 ## [7.9.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.0...v7.9.1) (2018-11-15)
 
 
