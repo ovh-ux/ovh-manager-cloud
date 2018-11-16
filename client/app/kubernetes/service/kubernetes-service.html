@@ -16,13 +16,18 @@
                     <oui-tile-description>
                         <span class="oui-status"
                               data-ng-class="{
-                                        'oui-status_success' : $ctrl.cluster.status === 'READY',
-                                        'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING',
-                                        'oui-status_error' : $ctrl.cluster.status === 'ERROR'
-                                        }"
-                              data-translate="{{:: 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
+                                     'oui-status_success' : $ctrl.cluster.status === 'READY',
+                                     'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING',
+                                     'oui-status_error' : $ctrl.cluster.status === 'ERROR'
+                                     }"
+                              data-translate="{{ 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
                         </span>
                     </oui-tile-description>
+                    <oui-action-menu data-compact align="end" data-disabled="$ctrl.cluster.status !== 'READY'"> 
+                        <oui-action-menu-item on-click="$ctrl.resetCluster()">
+                            <span data-translate="kube_service_reset_title"></span>
+                        </oui-action-menu-item>
+                    </oui-action-menu>
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_version' | translate }}" data-description="{{:: $ctrl.cluster.version }}"></oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_region' | translate }}" data-description="{{:: $ctrl.cluster.region }}"></oui-tile-definition>
@@ -86,4 +91,5 @@
             </oui-tile>
         </div>
     </div>
+    <div data-ui-view="kubernetesResetView"></div>
 </div>

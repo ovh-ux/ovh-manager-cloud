@@ -31,6 +31,9 @@
    <translation id="kube_service_billing_contact" qtlid="505008">Billing NIC handle</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Renewal</translation>
 
+   <translation id="kube_service_reset_title">Reset this service</translation>
+   <translation id="kube_service_reset_message">You are about to put your service in the original state it was delivered on. This will delete all your nodes, your services, their configuration... <strong>This action cannot be undone</strong>.</translation>
+
    <translation id="kube_nodes" qtlid="505021">Nodes</translation>
    <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
    <translation id="kube_nodes_add_region" qtlid="505047">During the beta stage, your nodes will be based in GRA5. You will be able to change this region in the future.</translation>
