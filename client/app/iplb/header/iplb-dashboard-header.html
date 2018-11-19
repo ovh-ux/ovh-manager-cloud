@@ -37,6 +37,7 @@
                         data-state-params="{ serviceName: ctrl.serviceName }">
                 </oui-header-tabs-item>
                 <oui-header-tabs-item
+                        data-ng-if="ctrl.TARGET !== 'US'"
                         data-text="{{ ::'iplb_tab_ssl_certificate' | translate}}"
                         data-state="network.iplb.detail.ssl-certificate"
                         data-state-params="{ serviceName: ctrl.serviceName }">

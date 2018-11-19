@@ -241,7 +241,8 @@
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition
-                        data-term="{{::'common_tile_subscription_contact' | translate}}">
+                        data-term="{{::'common_tile_subscription_contact' | translate}}"
+                        data-ng-if="$ctrl.TARGET !== 'US'">
                         <oui-tile-description>
                             <ul class="list-unstyled">
                                 <li>
