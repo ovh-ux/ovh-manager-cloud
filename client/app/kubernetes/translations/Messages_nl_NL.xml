@@ -31,6 +31,12 @@
    <translation id="kube_service_billing_contact" qtlid="505008">Nic Billing</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Verlenging</translation>
 
+   <translation id="kube_service_reset_title">Réinitialiser la configuration de votre cluster Kubernetes</translation>
+   <translation id="kube_service_reset_message">En cliquant ici vous remettrez votre service Kubernetes dans son état original. Cela supprimera l'intégralité de vos nœuds de calcul, vos services, leur configuration etc... <strong>Cette action est irréversible</strong>.</translation>
+   <translation id="kube_service_reset_success">Votre cluster Kubernetes est en cours de réinitialisation.</translation>
+   <translation id="kube_service_reset_error">Une erreur est survenue lors de la réinitialisation de votre cluster : {{ message }}</translation>
+   <translation id="kube_service_reset_enter">Entrez "RESET" dans le champ ci-dessous pour confirmer</translation>
+
    <translation id="kube_nodes" qtlid="505021">Nodes</translation>
    <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
    <translation id="kube_nodes_add_region" qtlid="505047">During beta stage, your nodes will be spwawned in GRA5. We will allow you to change this in the future.</translation>
@@ -47,7 +53,7 @@
    <translation id="kube_nodes_add_flavor_QUOTA_VCPUS" qtlid="251551">Het quota van uw project laat u niet toe om een machine toe te voegen met zoveel CPU.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_RAM" qtlid="251564">Uw project quota laat u niet toe om een machine met deze hoeveelheid RAM toe te voegen.</translation>
    <translation id="kube_nodes_add_flavor_QUOTA_INSTANCE" qtlid="301851">U heeft het maximale aantal machines voor deze regio bereikt. </translation>
-   <translation id="kube_nodes_add_flavor_quota_manage">Gérer mon quota.</translation>
+   <translation id="kube_nodes_add_flavor_quota_manage" qtlid="507211">Quotas beheren</translation>
    <translation id="kube_nodes_add_error" qtlid="505151">An error has occurred adding the node: {{message}}</translation>
    <translation id="kube_nodes_add" qtlid="505034">Add node</translation>
 
@@ -65,7 +71,7 @@
    <translation id="kube_nodes_flavor_error" qtlid="505281">An error has occurred loading flavor</translation>
    <translation id="kube_nodes_project_error" qtlid="505294">An error has occurred loading public cloud project</translation>
    <translation id="kube_nodes_description_project_1" qtlid="505307">Your Kubernetes cluster needs nodes to host your containers and services. All your nodes will be spawned in the  <a class="oui-link" href="{{ url }}">{{ description }}</a> public cloud project (we will allow to change this in a future version of the service).</translation>
-   <translation id="kube_nodes_description_project_2">Ces instances sont lancées en facturation standard à l'heure. Vous pouvez retrouver les détails sur la facturation et les basculer en forfait mensuel dans votre projet Public Cloud.</translation>
+   <translation id="kube_nodes_description_project_2" qtlid="507224">Deze instances worden ingezet met standaard facturering per uur. U kunt details over uw factuur vinden en overschakelen naar een maandelijks abonnement in uw Public Cloud project.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Het aantal resources voor uw Cloud project is beperkt, zodat uw resource verbruik beperkt blijft.</translation>
    <translation id="kube_nodes_quota_more" qtlid="251278">Als u meer resources nodig heeft, kunt u hierom verzoeken door op de onderstaande knop te klikken.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Mijn limieten verhogen</translation>

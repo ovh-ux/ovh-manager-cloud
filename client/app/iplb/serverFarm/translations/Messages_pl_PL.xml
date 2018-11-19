@@ -78,6 +78,7 @@
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Wystąpił błąd podczas pobierania informacji dla sondy.</translation>
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Ustawienia sondy</translation>
+   <translation id="iplb_farm_edit_probe_forceSsl" qtlid="508871">Force SSL</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Anuluj</translation>
    <translation id="iplb_farm_add_confirm" qtlid="37923">Dodaj</translation>

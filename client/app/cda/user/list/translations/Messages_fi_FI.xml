@@ -20,7 +20,7 @@
    <translation id="cda_user_add_success" qtlid="354743">Käyttäjän lisäys onnistui.</translation>
 
    <translation id="cda_user_delete_title" qtlid="7666">Poista käyttäjä</translation>
-   <translation id="cda_user_delete_username_label" qtlid="100328">Nimi:</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Nimi</translation>
    <translation id="cda_user_delete_confirm" qtlid="354756">Haluatko varmasti poistaa tämän käyttäjän?</translation>
    <translation id="cda_user_delete_success" qtlid="354769">Käyttäjän poisto onnistui.</translation>
 

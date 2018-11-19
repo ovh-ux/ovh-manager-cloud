@@ -310,18 +310,30 @@ class ManagerNavbarService {
         title: this.$translate.instant('common_menu_support_guide'),
         url: cloudGuide,
         isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides::cloud',
+          type: 'action',
+        }),
       });
     } else if (homeGuide) {
       assistanceMenu.push({
         title: this.$translate.instant('common_menu_support_all_guides'),
         url: homeGuide,
         isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides',
+          type: 'action',
+        }),
       });
     } else if (frenchHomeGuide) {
       assistanceMenu.push({
         title: this.$translate.instant('common_menu_support_all_guides'),
         url: frenchHomeGuide,
         isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides',
+          type: 'action',
+        }),
       });
     }
 
@@ -335,6 +347,11 @@ class ManagerNavbarService {
           this.otrsPopupService.toggle();
         }
 
+        this.atInternet.trackClick({
+          name: 'assistance::create_assistance_request',
+          type: 'action',
+        });
+
         if (typeof callback === 'function') {
           callback();
         }
@@ -345,6 +362,10 @@ class ManagerNavbarService {
     assistanceMenu.push({
       title: this.$translate.instant('common_menu_support_list_ticket'),
       url: _.get(this.REDIRECT_URLS, 'support', ''),
+      click: () => this.atInternet.trackClick({
+        name: 'assistance::assistance_requests_created',
+        type: 'action',
+      }),
     });
 
     // Telephony (External)
@@ -353,6 +374,10 @@ class ManagerNavbarService {
         title: this.$translate.instant('common_menu_support_telephony_contact'),
         url: this.URLS.support_contact[locale] || this.URLS.support_contact.FR,
         isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::helpline',
+          type: 'action',
+        }),
       });
     }
 
@@ -360,6 +385,10 @@ class ManagerNavbarService {
       name: 'assistance',
       title: this.$translate.instant('common_menu_support_assistance'),
       iconClass: 'icon-assistance',
+      onClick: () => this.atInternet.trackClick({
+        name: 'assistance',
+        type: 'action',
+      }),
       subLinks: assistanceMenu,
     };
   }
@@ -390,6 +419,15 @@ class ManagerNavbarService {
     };
   }
 
+  trackUserMenuSection(name, chapter2) {
+    this.atInternet.trackClick({
+      name,
+      type: 'action',
+      chapter1: 'account',
+      chapter2,
+    });
+  }
+
   getUserMenu(currentUser) {
     return {
       name: 'user',
@@ -403,6 +441,7 @@ class ManagerNavbarService {
           name: 'user.account',
           title: this.$translate.instant('common_menu_account'),
           url: this.REDIRECT_URLS.userInfos,
+          click: () => this.trackUserMenuSection('my_account', 'account'),
           subLinks: [{
             title: this.$translate.instant('common_menu_account_infos'),
             url: this.REDIRECT_URLS.userInfos,
@@ -431,6 +470,7 @@ class ManagerNavbarService {
           name: 'user.billing',
           title: this.$translate.instant('common_menu_billing'),
           url: this.REDIRECT_URLS.billing,
+          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
           subLinks: [{
             title: this.$translate.instant('common_menu_billing_history'),
             url: this.REDIRECT_URLS.billing,
@@ -445,6 +485,7 @@ class ManagerNavbarService {
           name: 'user.services',
           title: this.$translate.instant('common_menu_renew'),
           url: this.REDIRECT_URLS.services,
+          click: () => this.trackUserMenuSection('my_services', 'services'),
           subLinks: [{
             title: this.$translate.instant('common_menu_renew_management'),
             url: this.REDIRECT_URLS.services,
@@ -462,6 +503,7 @@ class ManagerNavbarService {
           name: 'user.payment',
           title: this.$translate.instant('common_menu_means'),
           url: this.REDIRECT_URLS.paymentMeans,
+          click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
           subLinks: [{
             title: this.$translate.instant('common_menu_means_mean'),
             url: this.REDIRECT_URLS.paymentMeans,
@@ -490,18 +532,21 @@ class ManagerNavbarService {
         (!currentUser.isEnterprise && this.TARGET === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
           title: this.$translate.instant('common_menu_orders'),
           url: this.REDIRECT_URLS.orders,
+          click: () => this.trackUserMenuSection('my_orders', 'orders'),
         },
 
         // Contacts
         (this.TARGET === 'EU') && {
           title: this.$translate.instant('common_menu_contacts'),
           url: this.REDIRECT_URLS.contacts,
+          click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
         },
 
         // Tickets
         {
           title: this.$translate.instant('common_menu_list_ticket'),
           url: this.REDIRECT_URLS.support,
+          click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
         },
 
         // Logout

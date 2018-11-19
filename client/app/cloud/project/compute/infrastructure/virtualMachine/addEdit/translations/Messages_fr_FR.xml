@@ -146,6 +146,7 @@
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_t1" qtlid="508832">{{ cardCount }} x Nvidia Tesla V100</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instances VPS-SSD : <br/>le public cloud au meilleur coût</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Les VPS SSD utilisent un RAID local SSD partagé et leurs performances peuvent légèrement varier au cours du temps</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Elles sont idéales pour vos tests et environnements de développement et recette. Leurs performances peuvent légèrement varier au cours du temps.</translation>

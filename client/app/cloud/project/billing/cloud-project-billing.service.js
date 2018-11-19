@@ -7,11 +7,11 @@ angular.module('managerApp')
     }
 
     function initHourlyInstanceList() {
-      if (!self.data.hourlyBilling || !self.data.hourlyBilling.hourlyUsage) {
+      if (!_.get(self.data, 'hourlyBilling') || !_.get(self.data, 'hourlyBilling.hourlyUsage')) {
         return;
       }
       const hourlyInstances = _.flatten(_.map(
-        self.data.hourlyBilling.hourlyUsage.instance,
+        _.get(self.data, 'hourlyBilling.hourlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
           newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
@@ -20,18 +20,19 @@ angular.module('managerApp')
       ));
       self.data.hourlyInstances = hourlyInstances;
       self.data.totals.hourly.instance = _.reduce(
-        self.data.hourlyBilling.hourlyUsage.instance,
+        _.get(self.data, 'hourlyBilling.hourlyUsage.instance'),
         (sum, instance) => sum + roundNumber(instance.totalPrice, 2), 0,
       );
-      self.data.totals.hourly.instance = roundNumber(self.data.totals.hourly.instance, 2);
+      self.data.totals.hourly.instance = roundNumber(_.get(self.data, 'totals.hourly.instance'), 2);
     }
 
     function initMonthlyInstanceList() {
-      if (!self.data.monthlyBilling || !self.data.hourlyBilling.monthlyUsage) {
+      if (!_.get(self.data, 'monthlyBilling') || !_.get(self.data, 'monthlyBilling.monthlyUsage')) {
         return;
       }
+
       const monthlyInstances = _.flatten(_.map(
-        self.data.monthlyBilling.monthlyUsage.instance,
+        _.get(self.data, 'monthlyBilling.monthlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
           newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
@@ -129,6 +130,7 @@ angular.module('managerApp')
         .then(() => {
           self.data.hourlyBilling = hourlyBillingInfo;
           self.data.monthlyBilling = monthlyBillingInfo;
+
           return $q
             .allSettled([
               initHourlyInstanceList(),

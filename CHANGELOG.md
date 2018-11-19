@@ -1,3 +1,58 @@
+## [7.9.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.1...v7.9.2) (2018-11-16)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** consumption error ([8a473d6](https://github.com/ovh-ux/ovh-manager-cloud/commit/8a473d6))
+
+
+
+## [7.9.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.0...v7.9.1) (2018-11-15)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** error no data ([2eb5f3e](https://github.com/ovh-ux/ovh-manager-cloud/commit/2eb5f3e))
+
+
+
+# [7.9.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.8...v7.9.0) (2018-11-08)
+
+
+### Bug Fixes
+
+* **deps:** update manager-webpack-config to v2.4.6 ([1d4544e](https://github.com/ovh-ux/ovh-manager-cloud/commit/1d4544e))
+* **deps:** update translate-async-loader to v1.0.5 ([17e861d](https://github.com/ovh-ux/ovh-manager-cloud/commit/17e861d))
+* **deps:** upgrade manager-webpack-config to v2.4.5 ([35c68ce](https://github.com/ovh-ux/ovh-manager-cloud/commit/35c68ce))
+* **deps:** upgrade ovh-angular-otrs to v6.3.0 ([4962c35](https://github.com/ovh-ux/ovh-manager-cloud/commit/4962c35))
+* **deps:** upgrade ovh-ui-kit to v2.22.0 ([17d2a38](https://github.com/ovh-ux/ovh-manager-cloud/commit/17d2a38))
+* **i18n:** retrieve translations ([b9ec3e9](https://github.com/ovh-ux/ovh-manager-cloud/commit/b9ec3e9))
+* **i18n:** retrieve translations ([098b662](https://github.com/ovh-ux/ovh-manager-cloud/commit/098b662))
+* **i18n:** retrieve translations ([80d94d7](https://github.com/ovh-ux/ovh-manager-cloud/commit/80d94d7))
+* **i18n:** submit translations ([39f28bf](https://github.com/ovh-ux/ovh-manager-cloud/commit/39f28bf))
+* **iplb.frontends:** fix ips whitelist removal ([#1150](https://github.com/ovh-ux/ovh-manager-cloud/issues/1150)) ([2966f54](https://github.com/ovh-ux/ovh-manager-cloud/commit/2966f54)), closes [#1131](https://github.com/ovh-ux/ovh-manager-cloud/issues/1131)
+* **project.compute:** apply eslint rules ([e78c8ac](https://github.com/ovh-ux/ovh-manager-cloud/commit/e78c8ac))
+
+
+### Features
+
+* **config:** add veeam enterprise urls for subs ([00ce2b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/00ce2b2))
+* **iplb.farm.probe:** add force SSL option for HTTP probe ([efdb7fa](https://github.com/ovh-ux/ovh-manager-cloud/commit/efdb7fa))
+* **navbar:** add tracking for assistance and notifications ([8466a92](https://github.com/ovh-ux/ovh-manager-cloud/commit/8466a92))
+* **vm.add-edit:** handle new GPU flavors ([5fb61f8](https://github.com/ovh-ux/ovh-manager-cloud/commit/5fb61f8))
+
+
+
+<a name="7.8.8"></a>
+## [7.8.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.7...v7.8.8) (2018-10-24)
+
+
+### Bug Fixes
+
+* **cloud.vm.add:** Missing labels billing period ([8c6ae3f](https://github.com/ovh-ux/ovh-manager-cloud/commit/8c6ae3f))
+
+
+
 <a name="7.8.7"></a>
 ## [7.8.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.8.6...v7.8.7) (2018-10-23)
 

@@ -87,7 +87,7 @@
    <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Comment faire?</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">Mémoire vive</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Pour plus de mémoire vive passez à l'offre {{offer}}.</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">Processeur</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Pour plus un processeur plus puissant passez à l'offre {{offer}}.</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Pour plus de ressources passez a l'offre {{offer}}.</translation>
 
@@ -142,10 +142,11 @@
    <translation id="cpcivm_addedit_table_core" qtlid="248509">Processeurs virtuels</translation>
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">Mémoire vive</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disques</translation>
-   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">Processeur graphique</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_t1" qtlid="508832">{{ cardCount }} x Nvidia Tesla V100</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instances VPS-SSD : <br/>le cloud public au meilleur coût</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Les VPS SSD utilisent un RAID local SSD partagé et leurs performances peuvent légèrement varier au cours du temps</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Elles sont idéales pour vos tests et environnements de développement et recette. Leurs performances peuvent légèrement varier au cours du temps.</translation>
@@ -162,7 +163,7 @@
    <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
    <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Choisir selon le nombre de vCores</translation>
    <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Choisir selon la mémoire vive</translation>
-   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">Processeur</translation>
    <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} mémoire vive</translation>
    <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Permettre le changement de taille flexible</translation>
    <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Cocher cette option force un stockage de 50 Go, offrant des images instantanées plus rapides et la possibilité de mise à niveau inférieure ultérieurement</translation>

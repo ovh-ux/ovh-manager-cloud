@@ -22,7 +22,7 @@
    <translation id="cda_pool_add_success" qtlid="354327">Zakres został dodany.</translation>
 
    <translation id="cda_pool_delete_title" qtlid="354340">Usuń zakres</translation>
-   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nazwa:</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nazwa</translation>
    <translation id="cda_pool_delete_confirm" qtlid="354353">Czy chcesz usunąć ten zakres?</translation>
    <translation id="cda_pool_delete_success" qtlid="354366">Zakres został usunięty.</translation>
 

@@ -78,6 +78,7 @@
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Beim Abruf der Informationen für die Sonde ist ein Fehler aufgetreten.</translation>
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Einstellungen der Sonde</translation>
+   <translation id="iplb_farm_edit_probe_forceSsl" qtlid="508871">Force SSL</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Abbrechen</translation>
    <translation id="iplb_farm_add_confirm" qtlid="37923">Hinzufügen</translation>

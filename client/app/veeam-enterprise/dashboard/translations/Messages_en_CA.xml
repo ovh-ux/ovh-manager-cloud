@@ -8,7 +8,7 @@
    <translation id="veeam_enterprise_terminate_title" qtlid="505790">Cancel licence</translation>
    <translation id="veeam_enterprise_terminate_confirm" qtlid="505803">Are you sure you want to cancel this licence?</translation>
    <translation id="veeam_enterprise_terminate_success" qtlid="505816">A confirmation email has been sent for your request.</translation>
-   <translation id="veeam_enterprise_terminate_error" qtlid="505829">An error has occurred cancelling your licence.</translation>
+   <translation id="veeam_enterprise_terminate_error" qtlid="505829">An error has occurred while cancelling your licence.</translation>
 
    <translation id="veeam_enterprise_configuration_title" qtlid="4406">Configuration</translation>
    <translation id="veeam_enterprise_configuration_label_name" qtlid="3818">Name</translation>
