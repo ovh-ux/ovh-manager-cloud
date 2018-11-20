@@ -8,5 +8,8 @@ angular.module('managerApp')
       controller: 'HomeCtrl',
       controllerAs: '$ctrl',
       translations: ['../common', '.'],
+      atInternet: {
+        rename: 'Header-Cloud',
+      },
     });
   });
