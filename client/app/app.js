@@ -15,6 +15,7 @@ angular.module('managerApp', [
 
   'ovh-angular-sso-auth',
   'ovh-angular-sso-auth-modal-plugin',
+  'ovh-angular-apiv7',
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-checkbox-table',
