@@ -1,3 +1,28 @@
+# [7.10.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.3...v7.10.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update manager-webpack-config to v2.4.7 ([147cb16](https://github.com/ovh-ux/ovh-manager-cloud/commit/147cb16))
+* **deps:** upgrade manager-webpack-config to v3.0.0 ([00d3c25](https://github.com/ovh-ux/ovh-manager-cloud/commit/00d3c25))
+* **deps:** upgrade ovh-api-services to v3.24.0 ([be2eb5a](https://github.com/ovh-ux/ovh-manager-cloud/commit/be2eb5a))
+* **i18n:** retrieve translations ([f79d070](https://github.com/ovh-ux/ovh-manager-cloud/commit/f79d070))
+* **i18n:** retrieve translations ([cde6159](https://github.com/ovh-ux/ovh-manager-cloud/commit/cde6159))
+* **i18n:** retrieve translations ([d14ec26](https://github.com/ovh-ux/ovh-manager-cloud/commit/d14ec26))
+* **i18n:** submit translations ([422b1c3](https://github.com/ovh-ux/ovh-manager-cloud/commit/422b1c3))
+* **iplb:** wrong guides link ([57b70d0](https://github.com/ovh-ux/ovh-manager-cloud/commit/57b70d0))
+* **kube:** remove GPU instances  ([f46e442](https://github.com/ovh-ux/ovh-manager-cloud/commit/f46e442))
+* **load-balancer:** ssl certificate load  ([b128fa4](https://github.com/ovh-ux/ovh-manager-cloud/commit/b128fa4))
+
+
+### Features
+
+* **cloud.project:** Delete instance name ([aaa66b1](https://github.com/ovh-ux/ovh-manager-cloud/commit/aaa66b1))
+* **kube:** reset cluster ([43ef837](https://github.com/ovh-ux/ovh-manager-cloud/commit/43ef837))
+* **navbar.user:** add tracking on user menu ([67b4314](https://github.com/ovh-ux/ovh-manager-cloud/commit/67b4314))
+
+
+
 ## [7.9.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.2...v7.9.3) (2018-11-20)
 
 
