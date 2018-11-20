@@ -135,7 +135,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
   }
 
   onSelectChange() {
-    if (this.model.imageType.type === 'windows') {
+    if (_.get(this.model, 'imageType.type') === 'windows') {
       this.addingSshKey = false;
     }
   }
