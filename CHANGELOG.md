@@ -1,3 +1,12 @@
+## [7.10.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.0...v7.10.1) (2018-11-20)
+
+
+### Bug Fixes
+
+* **deps:** add missing ovh-angular-apiv7 ([6f75d0d](https://github.com/ovh-ux/ovh-manager-cloud/commit/6f75d0d))
+
+
+
 # [7.10.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.3...v7.10.0) (2018-11-20)
 
 
