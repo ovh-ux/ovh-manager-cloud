@@ -31,6 +31,12 @@
    <translation id="kube_service_billing_contact" qtlid="505008">Kontakt księgowy</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Odnowienie</translation>
 
+   <translation id="kube_service_reset_title">Réinitialiser la configuration de votre cluster Kubernetes</translation>
+   <translation id="kube_service_reset_message">En cliquant ici vous remettrez votre service Kubernetes dans son état original. Cela supprimera l'intégralité de vos nœuds de calcul, vos services, leur configuration etc... <strong>Cette action est irréversible</strong>.</translation>
+   <translation id="kube_service_reset_success">Votre cluster Kubernetes est en cours de réinitialisation.</translation>
+   <translation id="kube_service_reset_error">Une erreur est survenue lors de la réinitialisation de votre cluster : {{ message }}</translation>
+   <translation id="kube_service_reset_enter">Entrez "RESET" dans le champ ci-dessous pour confirmer</translation>
+
    <translation id="kube_nodes" qtlid="505021">Węzły</translation>
    <translation id="kube_nodes_add" qtlid="505034">Dodaj węzeł</translation>
    <translation id="kube_nodes_add_region" qtlid="505047">W fazie beta wszystkie Twoje węzły będą zlokalizowane w centrum danych GRA5. W przyszłości udostępnimy możliwość wyboru innej lokalizacji.</translation>
@@ -67,7 +73,7 @@
    <translation id="kube_nodes_description_project_1" qtlid="505307">Twój klaster Kubernetes używa węzłów do hostowania Twoich kontenerów i usług. Wszystkie Twoje węzły zostaną uruchomione w projekcie Public Cloud <a class="oui-link" href="{{ url }}">{{ description }}</a> (w przyszłości udostępnimy możliwość zmiany).</translation>
    <translation id="kube_nodes_description_project_2" qtlid="507224">Instancje te są uruchamiane z opcją standardowego rozliczenia w trybie godzinowym. Sprawdź, jaki jest tryb rozliczenia Twojego projektu Public Cloud i w razie potrzeby przejdź do opcji rozliczenia miesięcznego.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Abyś mógł kontrolować wykorzystanie zasobów w ramach usługi Cloud, Twój projekt ma ograniczone zasoby.</translation>
-   <translation id="kube_nodes_quota_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić, klikając na poniższy przycisk.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">Jeśli potrzebujesz więcej zasobów, możesz je zamówić, klikając poniższy przycisk.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Zwiększ limity</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }}GB RAM {{ diskCapacity }} GB Dysk)</translation>

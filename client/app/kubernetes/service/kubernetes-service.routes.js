@@ -12,5 +12,15 @@ angular.module('managerApp')
           serviceName: $stateParams => $stateParams.serviceName,
         },
         translations: ['..'],
+      })
+      .state('paas.kube.service.reset', {
+        url: '/reset',
+        views: {
+          kubernetesResetView: {
+            controller: 'kubernetesResetModalCtrl',
+            controllerAs: 'ctrl',
+          },
+        },
+        translations: ['..'],
       });
   });
