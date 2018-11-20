@@ -1,3 +1,12 @@
+## [7.9.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.2...v7.9.3) (2018-11-20)
+
+
+### Bug Fixes
+
+* **cloud.project.vm:** random click image choice ([ffd5e21](https://github.com/ovh-ux/ovh-manager-cloud/commit/ffd5e21))
+
+
+
 ## [7.9.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.1...v7.9.2) (2018-11-16)
 
 
