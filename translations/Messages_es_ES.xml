@@ -73,7 +73,7 @@
    <translation id="kube_nodes_description_project_1" qtlid="505307">Su cluster Kubernetes utiliza nodos para alojar sus contenedores y servicios. Todos los nodos se lanzarán en el proyecto Public Cloud <a class="oui-link" href="{{ url }}">{{ description }}</a>. Más adelante habilitaremos la posibilidad de cambiarlo.</translation>
    <translation id="kube_nodes_description_project_2" qtlid="507224">Estas instancias se lanzan con facturación estándar por horas. Consulte su proyecto Public Cloud para más información sobre la tarificación o si quiere pasar a la opción de facturación mensual.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Para controlar su consumo de cloud, su proyecto tiene los recursos limitados.</translation>
-   <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede pedírselos a nuestro equipo haciendo clic en el siguiente botón.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede realizar una solicitud a nuestro equipo haciendo clic en el siguiente botón.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Aumentar mis límites</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }} GB RAM {{ diskCapacity }} GB disco)</translation>
