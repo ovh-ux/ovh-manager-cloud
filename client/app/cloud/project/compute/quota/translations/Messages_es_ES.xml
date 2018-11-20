@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpb_quota_protect_explain" qtlid="251265">Para controlar su consumo de cloud, su proyecto tiene los recursos limitados.</translation>
-   <translation id="cpb_quota_protect_more" qtlid="251278">Si necesita más recursos, puede pedírselos a nuestro equipo haciendo clic en el siguiente botón.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Si necesita más recursos, puede realizar una solicitud a nuestro equipo haciendo clic en el siguiente botón.</translation>
    <translation id="cpb_quota_protect_more_btn" qtlid="251291">Aumentar mis límites</translation>
    <translation id="cpb_quota_current_limit" qtlid="251304">Limitaciones actuales</translation>
 
