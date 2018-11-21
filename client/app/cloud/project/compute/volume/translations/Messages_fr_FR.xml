@@ -34,6 +34,6 @@
    <translation id="cpc_volume_delete_error_plural" qtlid="253049">Oups, nous n'arrivons pas à supprimer {{nbVolumes}} volumes !</translation>
    <translation id="cpc_volume_delete_error_one" qtlid="253062">Oups, nous n'arrivons pas à supprimer un volume !</translation>
 
-   <translation id="cpc_volume_total_size_price" qtlid="296180">A titre indicatif, vos volumes actuels totalisent <span class="text-danger">{{ capacity }}</span>, soit environ <span class="text-danger">{{ total }} HT/mois</span>.</translation>
+   <translation id="cpc_volume_total_size_price">A titre indicatif, la consommation actuelle liée à vos volumes s'élève à <span class="text-danger">{{ total }} HT/mois</span>.</translation>
 
 </translations>

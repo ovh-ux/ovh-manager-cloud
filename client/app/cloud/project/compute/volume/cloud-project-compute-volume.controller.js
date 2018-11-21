@@ -3,7 +3,8 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
     CloudProjectOrchestrator, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-    OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
+    OvhApiCloudProjectInstance, OvhApiCloudProjectUsageCurrent, CloudMessage, RegionService,
+    CLOUD_UNIT_CONVERSION) {
     const self = this;
 
 
@@ -184,42 +185,32 @@ angular.module('managerApp')
     }
 
     function setDetails() {
-      const fullInfosQueue = []; let tmpInstanceDetail; let
-        firstVolumePrice;
-      angular.forEach(self.table.volume, (volume) => {
-        fullInfosQueue.push(volume.getFullInformations());
-      });
-
-      return $q.all(fullInfosQueue).then(() => {
-        // reset total resume
-        self.totalResume.capacity = 0;
+      return OvhApiCloudProjectUsageCurrent.v6().get({
+        serviceName: $stateParams.projectId,
+      }).$promise.then((billingInfo) => {
         self.totalResume.price.value = 0;
         self.totalResume.price.text = 0;
         self.totalResume.price.currencyCode = 0;
 
-        angular.forEach(self.table.volume, (volume) => {
-          _.set(volume, 'attachedToDetails', []);
-          // calculate total capacity
-          self.totalResume.capacity += volume.size;
-          // calculate total price value
-          self.totalResume.price.value += volume.calculatePrice().monthlyPrice.value;
+        billingInfo.hourlyUsage.volume.forEach((volume) => {
+          self.totalResume.price.value += volume.totalPrice;
+        });
 
-          angular.forEach(volume.attachedTo, (instanceId) => {
-            tmpInstanceDetail = _.find(self.table.instance, { id: instanceId });
+        self.table.volume.forEach((volume) => {
+          _.set(volume, 'attachedToDetails', []);
+          volume.attachedTo.forEach((instanceId) => {
+            const tmpInstanceDetail = _.find(self.table.instance, { id: instanceId });
             if (tmpInstanceDetail) {
               volume.attachedToDetails.push(tmpInstanceDetail.name);
             }
           });
-
-          // check if the volume is linked to one or more snapshots
-          _.set(volume, 'snapshotted', !!_.find(self.table.snapshots, { volumeId: volume.id }));
         });
 
         if (self.table.volume.length) {
-          firstVolumePrice = self.table.volume[0].calculatePrice();
+          const firstVolumePrice = _.first(self.table.volume).calculatePrice();
           // set good total price
-          self.totalResume.price.text = firstVolumePrice.monthlyPrice.text.replace(/\d+(?:[.,]\d+)?/, `${self.totalResume.price.value.toFixed(2)}`);
-          self.totalResume.price.currencyCode = firstVolumePrice.monthlyPrice.currencyCode;
+          self.totalResume.price.text = _.get(firstVolumePrice.monthlyPrice, 'text', '').replace(/\d+(?:[.,]\d+)?/, `${self.totalResume.price.value.toFixed(2)}`);
+          self.totalResume.price.currencyCode = _.get(firstVolumePrice.monthlyPrice, 'currencyCode');
         }
       });
     }
@@ -253,16 +244,18 @@ angular.module('managerApp')
           }).$promise.then((snapshotList) => {
             self.table.snapshots = snapshotList;
           }),
-        ]).then(() => setDetails().then(() => {
+        ]).then(() => setDetails()).then(() => {
           filterVolume(); // orderBy is call by filterVolume();
-        }), (err) => {
+        }).catch((err) => {
+          console.log(err);
           self.table.volume = null;
           self.table.instance = null;
           self.table.snapshots = null;
           CloudMessage.error([$translate.instant('cpc_volume_error'), (err.data && err.data.message) || ''].join(' '));
-        }).finally(() => {
-          self.loaders.table.volume = false;
-        });
+        })
+          .finally(() => {
+            self.loaders.table.volume = false;
+          });
       }
     };
 
