@@ -1,1 +1,16 @@
-{"iplb_configuration_title":"Aseta konfiguraatio","iplb_configuration_intro":"Kuormantasaajasi konfigurointi on otettava käyttöön nimenomaisesti jokaisessa konesalissa. Ainoastaan sen jälkeen muutokset tulevat vierailijoidesi nähtäville. Tällä tavoin monimutkainen konfiguraatiomuutos voidaan tehdä yhdellä kertaa.","iplb_configuration_datacenter":"Palvelinkeskus","iplb_configuration_progress":"Edistyminen","iplb_configuration_status":"Tila","iplb_configuration_action":"Toiminto","iplb_configuration_action_apply":"Aseta konfiguraatio","iplb_configuration_changes_0":"Ei muutosta","iplb_configuration_changes_1":"1 muutos","iplb_configuration_changes_count":"{{count}} muutosta","iplb_configuration_info_error":"Tapahtui virhe kuormantasaajan tietojen haussa: {{message}}","iplb_configuration_apply_success":"Kuormantasaajan konfigurointi on käynnissä.","iplb_configuration_apply_error":"Tapahtui virhe kuormantasaajan konfiguraation käyttöönotossa: {{message}}","iplb_configuration_pending_changes":"Kuormantasaajasi konfigurointia ei sovelleta kaikkiin konesaleihin."}
+{
+  "iplb_configuration_title": "Aseta konfiguraatio",
+  "iplb_configuration_intro": "Kuormantasaajasi konfigurointi on otettava käyttöön nimenomaisesti jokaisessa konesalissa. Ainoastaan sen jälkeen muutokset tulevat vierailijoidesi nähtäville. Tällä tavoin monimutkainen konfiguraatiomuutos voidaan tehdä yhdellä kertaa.",
+  "iplb_configuration_datacenter": "Palvelinkeskus",
+  "iplb_configuration_progress": "Edistyminen",
+  "iplb_configuration_status": "Tila",
+  "iplb_configuration_action": "Toiminto",
+  "iplb_configuration_action_apply": "Aseta konfiguraatio",
+  "iplb_configuration_changes_0": "Ei muutosta",
+  "iplb_configuration_changes_1": "1 muutos",
+  "iplb_configuration_changes_count": "{{count}} muutosta",
+  "iplb_configuration_info_error": "Tapahtui virhe kuormantasaajan tietojen haussa: {{message}}",
+  "iplb_configuration_apply_success": "Kuormantasaajan konfigurointi on käynnissä.",
+  "iplb_configuration_apply_error": "Tapahtui virhe kuormantasaajan konfiguraation käyttöönotossa: {{message}}",
+  "iplb_configuration_pending_changes": "Kuormantasaajasi konfigurointia ei sovelleta kaikkiin konesaleihin."
+}

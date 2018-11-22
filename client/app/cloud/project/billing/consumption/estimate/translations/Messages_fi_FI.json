@@ -1,1 +1,16 @@
-{"cpbe_estimate_summary_header":"Jos kulutuksesi säilyy samana, tulee kuun {{ month }} 1. päivä maksettavaksi:","cpbe_estimate_summary_renew_monthly_sub_label":"Kuukausimaksullisten tilausten uusinta: <strong>{{ total }}</strong>","cpbe_estimate_summary_hourly_consumption_label":"On-demand -kulutus {{ month }}: <strong>{{ total }}</strong>","cpbe_estimate_alert_header_title":"On-demand -hälytys kulutusrajan ylittämisestä","cpbe_estimate_alert_header_description":"Tämä hälytys perustuu kuukauden lopun tilanteeseen","cpbe_estimate_alert_create":"Luo hälytys","cpbe_estimate_alert_edit":"Muokkaa hälytystä","cpbe_estimate_alert_delete":"Poista hälytys","cpbe_estimate_alert_delete_success":"Kulutuksen hälytys poistettu","cpbe_estimate_alert_delete_error":"Hups, tapahtui virhe hälytyksen poistamisessa.","cpbe_estimate_alert_chart_label_now":"Tänään","cpbe_estimate_alert_chart_label_future":"Kuukauden loppu","cpbe_estimate_alert_chart_label_limit":"Raja","cpbe_estimate_price_error_message":"Pahoittelemme, emme voineet hakea tietoa hinnoista."}
+{
+  "cpbe_estimate_summary_header": "Jos kulutuksesi säilyy samana, tulee kuun {{ month }} 1. päivä maksettavaksi:",
+  "cpbe_estimate_summary_renew_monthly_sub_label": "Kuukausimaksullisten tilausten uusinta: <strong>{{ total }}</strong>",
+  "cpbe_estimate_summary_hourly_consumption_label": "On-demand -kulutus {{ month }}: <strong>{{ total }}</strong>",
+  "cpbe_estimate_alert_header_title": "On-demand -hälytys kulutusrajan ylittämisestä",
+  "cpbe_estimate_alert_header_description": "Tämä hälytys perustuu kuukauden lopun tilanteeseen",
+  "cpbe_estimate_alert_create": "Luo hälytys",
+  "cpbe_estimate_alert_edit": "Muokkaa hälytystä",
+  "cpbe_estimate_alert_delete": "Poista hälytys",
+  "cpbe_estimate_alert_delete_success": "Kulutuksen hälytys poistettu",
+  "cpbe_estimate_alert_delete_error": "Hups, tapahtui virhe hälytyksen poistamisessa.",
+  "cpbe_estimate_alert_chart_label_now": "Tänään",
+  "cpbe_estimate_alert_chart_label_future": "Kuukauden loppu",
+  "cpbe_estimate_alert_chart_label_limit": "Raja",
+  "cpbe_estimate_price_error_message": "Pahoittelemme, emme voineet hakea tietoa hinnoista."
+}

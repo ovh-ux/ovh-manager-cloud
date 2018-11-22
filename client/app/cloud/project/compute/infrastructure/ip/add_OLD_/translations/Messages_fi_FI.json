@@ -1,1 +1,7 @@
-{"cpciip_add_title":"Lisää IP-osoite","cpciip_add_run_now":"Lisää nyt","cpciip_add_geoloc":"Sijaintipaikan valinta","cpciip_add_geoloc_loading":"Sijaintipaikkoja ladataan…","cpciip_add_post_ip_error":"Uuden IP-osoitteen lisäys ei onnistu."}
+{
+  "cpciip_add_title": "Lisää IP-osoite",
+  "cpciip_add_run_now": "Lisää nyt",
+  "cpciip_add_geoloc": "Sijaintipaikan valinta",
+  "cpciip_add_geoloc_loading": "Sijaintipaikkoja ladataan…",
+  "cpciip_add_post_ip_error": "Uuden IP-osoitteen lisäys ei onnistu."
+}

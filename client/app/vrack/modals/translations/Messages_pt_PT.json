@@ -1,1 +1,10 @@
-{"private_network_activate":"Ativar","private_network_activate_new_vRack_description":"Será reencaminhado para a página de encomenda para ativar o novo vRack. Após a ativação, poderá associá-lo aos seus serviços. A configuração e a ativação demoram alguns segundos.","private_network_activate_title":"Ativar as redes privadas","private_network_activate_existing":"Existente","private_network_activate_new":"Novo ","private_network_select_placeholder":"Selecionar","private_network_deactivate":"Desativar as redes privadas","private_network_deactivate_confirmation":"Quer mesmo desativar as redes privadas associadas a este serviço?"}
+{
+  "private_network_activate": "Ativar",
+  "private_network_activate_new_vRack_description": "Será reencaminhado para a página de encomenda para ativar o novo vRack. Após a ativação, poderá associá-lo aos seus serviços. A configuração e a ativação demoram alguns segundos.",
+  "private_network_activate_title": "Ativar as redes privadas",
+  "private_network_activate_existing": "Existente",
+  "private_network_activate_new": "Novo ",
+  "private_network_select_placeholder": "Selecionar",
+  "private_network_deactivate": "Desativar as redes privadas",
+  "private_network_deactivate_confirmation": "Quer mesmo desativar as redes privadas associadas a este serviço?"
+}

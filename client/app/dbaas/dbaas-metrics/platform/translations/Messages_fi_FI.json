@@ -1,1 +1,13 @@
-{"metrics_endpoint_howto":"Käytön aloitus","metrics_platform_title":"Alustat","metrics_platform_back":"Palaa etusivulle","metrics_platform_proto":"Protokolla","metrics_platform_address":"Osoite","metrics_platform_doc":"Dokumentaatio","metrics_guide":"Ohje","metrics_endpoint_tools":"Työkalut","metrics_endpoint_intro_1":"Alla näät listan OVH Metrics -alustan tukemista protokollista.","metrics_endpoint_intro_2":"Jokainen protokolla liittyy projektisi sijainnista riippuvaan osoitteeseen.","metrics_endpoint_intro_3":"Näiden osoitteiden avulla voit käyttää täysin ja natiivilla tavalla jokaista protokollaa."}
+{
+  "metrics_endpoint_howto": "Käytön aloitus",
+  "metrics_platform_title": "Alustat",
+  "metrics_platform_back": "Palaa etusivulle",
+  "metrics_platform_proto": "Protokolla",
+  "metrics_platform_address": "Osoite",
+  "metrics_platform_doc": "Dokumentaatio",
+  "metrics_guide": "Ohje",
+  "metrics_endpoint_tools": "Työkalut",
+  "metrics_endpoint_intro_1": "Alla näät listan OVH Metrics -alustan tukemista protokollista.",
+  "metrics_endpoint_intro_2": "Jokainen protokolla liittyy projektisi sijainnista riippuvaan osoitteeseen.",
+  "metrics_endpoint_intro_3": "Näiden osoitteiden avulla voit käyttää täysin ja natiivilla tavalla jokaista protokollaa."
+}

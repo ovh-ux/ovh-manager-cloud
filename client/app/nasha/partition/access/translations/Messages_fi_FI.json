@@ -1,1 +1,24 @@
-{"nasha_access_ip":"IP","nasha_access_action_add":"Lisää pääsyoikeus","nasha_access_action_add_message":"Lisää IP-osoite tai RIPE-osoiteavaruus","nasha_access_action_add_services":"IP-osoitteet","nasha_access_action_add_placeholder":"Syötä IP-osoite tai valitse yksi omista palveluista","nasha_access_back_to_partitions":"Paluu osiojakoihin","nasha_access_partition":"<strong>Osiojako: </strong>{{partitionName}}","nasha_partition_access_no_data":"Pääsyoikeus ei käytettävissä","nasha_partitions_access_no_data_error":"Pääsyoikeuksia ei pystytä näyttämään.","nasha_partitions_access_loading_error":"Tapahtui virhe tietojen lataamisen yhteydessä.","nasha_access_action_add_success":"Yhteys {{accessIp}} luodaan hetken kuluttua.","nasha_access_action_add_failure":"Tapahtui virhe {{accessIp}} -yhteyden luomisen yhteydessä.","nasha_access_action_delete_title":"Poista pääsyoikeus","nasha_access_action_delete_confirmation":"Haluatko varmasti poistaa {{accessIp}} -yhteyden?","nasha_access_action_delete_success":"Yhteyden {{accessIp}} poisto tapahtuu hetken kuluttua. ","nasha_access_action_delete_failure":"Tapahtui virhe {{accessIp}} -yhteyden poistamisen yhteydessä.","nasha_access_action_failure":"Tapahtui virhe yhteyden muokkaamisen yhteydessä.","nasha_partitions_access_readonly":"Vain luku","nasha_partitions_access_readwrite":"Luku/Kirjoitus","nasha_partitions_access_permissions":"Oikeudet","nasha_partitions_access_permissions_warning_cifs":"Pelkkä lukutila on saatavilla ainoastaan NFS:ssä.","nasha_partitions_access_notice":"Tällä hetkellä NAS-HA on käytettävissä ainoastaan OVH:n IP-osoitteilla (Dedikoidut palvelimet/ VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi)."}
+{
+  "nasha_access_ip": "IP",
+  "nasha_access_action_add": "Lisää pääsyoikeus",
+  "nasha_access_action_add_message": "Lisää IP-osoite tai RIPE-osoiteavaruus",
+  "nasha_access_action_add_services": "IP-osoitteet",
+  "nasha_access_action_add_placeholder": "Syötä IP-osoite tai valitse yksi omista palveluista",
+  "nasha_access_back_to_partitions": "Paluu osiojakoihin",
+  "nasha_access_partition": "<strong>Osiojako: </strong>{{partitionName}}",
+  "nasha_partition_access_no_data": "Pääsyoikeus ei käytettävissä",
+  "nasha_partitions_access_no_data_error": "Pääsyoikeuksia ei pystytä näyttämään.",
+  "nasha_partitions_access_loading_error": "Tapahtui virhe tietojen lataamisen yhteydessä.",
+  "nasha_access_action_add_success": "Yhteys {{accessIp}} luodaan hetken kuluttua.",
+  "nasha_access_action_add_failure": "Tapahtui virhe {{accessIp}} -yhteyden luomisen yhteydessä.",
+  "nasha_access_action_delete_title": "Poista pääsyoikeus",
+  "nasha_access_action_delete_confirmation": "Haluatko varmasti poistaa {{accessIp}} -yhteyden?",
+  "nasha_access_action_delete_success": "Yhteyden {{accessIp}} poisto tapahtuu hetken kuluttua. ",
+  "nasha_access_action_delete_failure": "Tapahtui virhe {{accessIp}} -yhteyden poistamisen yhteydessä.",
+  "nasha_access_action_failure": "Tapahtui virhe yhteyden muokkaamisen yhteydessä.",
+  "nasha_partitions_access_readonly": "Vain luku",
+  "nasha_partitions_access_readwrite": "Luku/Kirjoitus",
+  "nasha_partitions_access_permissions": "Oikeudet",
+  "nasha_partitions_access_permissions_warning_cifs": "Pelkkä lukutila on saatavilla ainoastaan NFS:ssä.",
+  "nasha_partitions_access_notice": "Tällä hetkellä NAS-HA on käytettävissä ainoastaan OVH:n IP-osoitteilla (Dedikoidut palvelimet/ VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi)."
+}

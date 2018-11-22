@@ -1,1 +1,4 @@
-{"cpbc_tab_consumption":"Mi consumo a {{date}}","cpbc_tab_forecast":"Estimación de mi próxima factura"}
+{
+  "cpbc_tab_consumption": "Mi consumo a {{date}}",
+  "cpbc_tab_forecast": "Estimación de mi próxima factura"
+}

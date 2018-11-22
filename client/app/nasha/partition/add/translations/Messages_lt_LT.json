@@ -1,1 +1,9 @@
-{"nasha_partitions_action_add_partition_title":"Pasirinkite protokolą","nasha_partitions_action_add_success":"Skirsnis {{partitionName}} bus pridėtas po kelių minučių.","nasha_partitions_action_add_failure":"Įvyko klaida kuriant skirsnį {{partitionName}}.","nasha_partitions_action_add_desc_CIFS":"CIFS: mainų protokolas, sukurtas Windows serveriams.","nasha_partitions_action_add_desc_NFS":"NFS: mainų protokolas, sukurtas Linux/Unix serveriams.","nasha_partitions_action_add_desc_NFS_CIFS":"NFS CIFS: galimas bendras keitimasis duomenimis tarp Windows ir Linux/Unix serverių.","nasha_partitions_name_fail":"Pavadinimas neteisingas."}
+{
+  "nasha_partitions_action_add_partition_title": "Pasirinkite protokolą",
+  "nasha_partitions_action_add_success": "Skirsnis {{partitionName}} bus pridėtas po kelių minučių.",
+  "nasha_partitions_action_add_failure": "Įvyko klaida kuriant skirsnį {{partitionName}}.",
+  "nasha_partitions_action_add_desc_CIFS": "CIFS: mainų protokolas, sukurtas Windows serveriams.",
+  "nasha_partitions_action_add_desc_NFS": "NFS: mainų protokolas, sukurtas Linux/Unix serveriams.",
+  "nasha_partitions_action_add_desc_NFS_CIFS": "NFS CIFS: galimas bendras keitimasis duomenimis tarp Windows ir Linux/Unix serverių.",
+  "nasha_partitions_name_fail": "Pavadinimas neteisingas."
+}

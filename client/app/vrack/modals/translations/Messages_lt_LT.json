@@ -1,1 +1,10 @@
-{"private_network_activate":"Įjungti","private_network_activate_new_vRack_description":"Būsite nukreipti į užsakymų puslapį, kur galėsite aktyvuoti naują vRack. Tuomet galėsite susieti jį su savo paslaugomis. Konfigūracija pradės veikti po kelių sekundžių.","private_network_activate_title":"Įjungti privačius tinklus","private_network_activate_existing":"Egzistuojantys","private_network_activate_new":"Naujas","private_network_select_placeholder":"Pasirinkti","private_network_deactivate":"Išjungti privačius tinklus","private_network_deactivate_confirmation":"Ar tikrai norite išjungti privačius tinklus šiai paslaugai?"}
+{
+  "private_network_activate": "Įjungti",
+  "private_network_activate_new_vRack_description": "Būsite nukreipti į užsakymų puslapį, kur galėsite aktyvuoti naują vRack. Tuomet galėsite susieti jį su savo paslaugomis. Konfigūracija pradės veikti po kelių sekundžių.",
+  "private_network_activate_title": "Įjungti privačius tinklus",
+  "private_network_activate_existing": "Egzistuojantys",
+  "private_network_activate_new": "Naujas",
+  "private_network_select_placeholder": "Pasirinkti",
+  "private_network_deactivate": "Išjungti privačius tinklus",
+  "private_network_deactivate_confirmation": "Ar tikrai norite išjungti privačius tinklus šiai paslaugai?"
+}

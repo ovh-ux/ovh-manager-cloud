@@ -1,1 +1,12 @@
-{"ceph_common_error":"Atsiprašome, įvyko klaida:","cda_tab_home":"Santrauka","cda_tab_user":"Vartotojai","cda_tab_ip":"IP prieigos kontrolė","cda_tab_pool":"Telkiniai","cda_guide_title":"Gidai","cda_guide_name":"Cloud Disk Array (CDA)","cda_guide_footer":"Visi OVH gidai","cda_new_window":"Naujas langas","cda_guide_retrieval_error":"Įvyko klaida įkeliant gidą Cloud Disk Array (CDA)."}
+{
+  "ceph_common_error": "Atsiprašome, įvyko klaida:",
+  "cda_tab_home": "Santrauka",
+  "cda_tab_user": "Vartotojai",
+  "cda_tab_ip": "IP prieigos kontrolė",
+  "cda_tab_pool": "Telkiniai",
+  "cda_guide_title": "Gidai",
+  "cda_guide_name": "Cloud Disk Array (CDA)",
+  "cda_guide_footer": "Visi OVH gidai",
+  "cda_new_window": "Naujas langas",
+  "cda_guide_retrieval_error": "Įvyko klaida įkeliant gidą Cloud Disk Array (CDA)."
+}

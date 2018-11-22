@@ -1,1 +1,8 @@
-{"veeam_update_offer_title":"Nosta Veeam Cloud Connect -tuotteen tasoa","veeam_update_offer_information":"Tilauksen hinta on <strong>{{ price }} /kk</strong>","veeam_update_offer_cancel":"Peruuta","veeam_update_offer_continue":"Jatka","veeam_update_offer_change":"Muuta","veeam_update_storage_add":"Lisää"}
+{
+  "veeam_update_offer_title": "Nosta Veeam Cloud Connect -tuotteen tasoa",
+  "veeam_update_offer_information": "Tilauksen hinta on <strong>{{ price }} /kk</strong>",
+  "veeam_update_offer_cancel": "Peruuta",
+  "veeam_update_offer_continue": "Jatka",
+  "veeam_update_offer_change": "Muuta",
+  "veeam_update_storage_add": "Lisää"
+}

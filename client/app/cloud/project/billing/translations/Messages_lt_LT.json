@@ -1,1 +1,8 @@
-{"cpb_tab_details":"Išsamiau","cpb_tab_consumption":"Sunaudojimas","cpb_tab_history":"Išklotinė","cpb_tab_rights":"Kontaktai ir teisės","cpb_tab_vouchers":"Kreditas ir čekiai","cpb_error_message":"Atsiprašome, nepavyko atkurti visų duomenų."}
+{
+  "cpb_tab_details": "Išsamiau",
+  "cpb_tab_consumption": "Sunaudojimas",
+  "cpb_tab_history": "Išklotinė",
+  "cpb_tab_rights": "Kontaktai ir teisės",
+  "cpb_tab_vouchers": "Kreditas ir čekiai",
+  "cpb_error_message": "Atsiprašome, nepavyko atkurti visų duomenų."
+}

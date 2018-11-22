@@ -1,1 +1,24 @@
-{"nasha_access_ip":"IP","nasha_access_action_add":"Sukurti prieigą","nasha_access_action_add_message":"Pridėti IP adresą ar RIPE bloką","nasha_access_action_add_services":"Jūsų IP OVH","nasha_access_action_add_placeholder":"Įveskite IP adresą ar pasirinkite iš turimų paslaugų sąrašo ","nasha_access_back_to_partitions":"Grįžti prie skirsnių","nasha_access_partition":"<strong>Skirsnis: </strong>{{partitionName}}","nasha_partition_access_no_data":"Nėra jokios prieigos","nasha_partitions_access_no_data_error":"Neįmanoma paskelbti prieigų.","nasha_partitions_access_loading_error":"Įvyko klaida įkeliant duomenis.","nasha_access_action_add_success":"Prieiga {{accessIp}} bus sukurta po kelių minučių.","nasha_access_action_add_failure":"Įvyko klaida kuriant prieigą {{accessIp}}.","nasha_access_action_delete_title":"Pašalinti prieigą","nasha_access_action_delete_confirmation":"Ar tikrai norite pašalinti prieigą {{accessIp}}?","nasha_access_action_delete_success":"Prieigos prie {{accessIp}} pašalinimas įsigalios po kelių minučių.","nasha_access_action_delete_failure":"Įvyko klaida šalinant prieigą {{accessIp}}.","nasha_access_action_failure":"Įvyko klaida keičiant prieigą.","nasha_partitions_access_readonly":"Tik skaitymas","nasha_partitions_access_readwrite":"Skaitymas/rašymas","nasha_partitions_access_permissions":"Leidimai","nasha_partitions_access_permissions_warning_cifs":"Režimas „tik skaitymas“ priienamas tik NFS.","nasha_partitions_access_notice":"Šiuo metu NAS-HA saugykla naudojama tik per OVH IP (dedikuoto serverio / VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi / ADSL)."}
+{
+  "nasha_access_ip": "IP",
+  "nasha_access_action_add": "Sukurti prieigą",
+  "nasha_access_action_add_message": "Pridėti IP adresą ar RIPE bloką",
+  "nasha_access_action_add_services": "Jūsų IP OVH",
+  "nasha_access_action_add_placeholder": "Įveskite IP adresą ar pasirinkite iš turimų paslaugų sąrašo ",
+  "nasha_access_back_to_partitions": "Grįžti prie skirsnių",
+  "nasha_access_partition": "<strong>Skirsnis: </strong>{{partitionName}}",
+  "nasha_partition_access_no_data": "Nėra jokios prieigos",
+  "nasha_partitions_access_no_data_error": "Neįmanoma paskelbti prieigų.",
+  "nasha_partitions_access_loading_error": "Įvyko klaida įkeliant duomenis.",
+  "nasha_access_action_add_success": "Prieiga {{accessIp}} bus sukurta po kelių minučių.",
+  "nasha_access_action_add_failure": "Įvyko klaida kuriant prieigą {{accessIp}}.",
+  "nasha_access_action_delete_title": "Pašalinti prieigą",
+  "nasha_access_action_delete_confirmation": "Ar tikrai norite pašalinti prieigą {{accessIp}}?",
+  "nasha_access_action_delete_success": "Prieigos prie {{accessIp}} pašalinimas įsigalios po kelių minučių.",
+  "nasha_access_action_delete_failure": "Įvyko klaida šalinant prieigą {{accessIp}}.",
+  "nasha_access_action_failure": "Įvyko klaida keičiant prieigą.",
+  "nasha_partitions_access_readonly": "Tik skaitymas",
+  "nasha_partitions_access_readwrite": "Skaitymas/rašymas",
+  "nasha_partitions_access_permissions": "Leidimai",
+  "nasha_partitions_access_permissions_warning_cifs": "Režimas „tik skaitymas“ priienamas tik NFS.",
+  "nasha_partitions_access_notice": "Šiuo metu NAS-HA saugykla naudojama tik per OVH IP (dedikuoto serverio / VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi / ADSL)."
+}

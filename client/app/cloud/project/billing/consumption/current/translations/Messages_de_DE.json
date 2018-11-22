@@ -1,1 +1,4 @@
-{"cpbc_monthly_header":"Bereits abgerechnet <small>(Monatspauschalen und Kosten für Verbrauch)</small> ","cpbc_hourly_header":"Abrechnung ausstehend <small>(Kosten für den Verbrauch des laufenden Monats)</small>"}
+{
+  "cpbc_monthly_header": "Bereits abgerechnet <small>(Monatspauschalen und Kosten für Verbrauch)</small> ",
+  "cpbc_hourly_header": "Abrechnung ausstehend <small>(Kosten für den Verbrauch des laufenden Monats)</small>"
+}

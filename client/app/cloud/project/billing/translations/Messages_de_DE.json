@@ -1,1 +1,8 @@
-{"cpb_tab_details":"Details","cpb_tab_consumption":"Verbrauch","cpb_tab_history":"History ","cpb_tab_rights":"Kontakte und Berechtigungen","cpb_tab_vouchers":"Guthaben und Gutscheine","cpb_error_message":"Leider können wir nicht alle Informationen abrufen. "}
+{
+  "cpb_tab_details": "Details",
+  "cpb_tab_consumption": "Verbrauch",
+  "cpb_tab_history": "History ",
+  "cpb_tab_rights": "Kontakte und Berechtigungen",
+  "cpb_tab_vouchers": "Guthaben und Gutscheine",
+  "cpb_error_message": "Leider können wir nicht alle Informationen abrufen. "
+}

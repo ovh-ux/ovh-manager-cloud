@@ -1,1 +1,21 @@
-{"cda_user_permission_definition":"Jūsų naudotojai gali naudoti klasterį su telkiniui priskirtais leidimais.","cda_user_add_button_text":"Pridėti naudotoją","cda_user_delete_button_text":"Trinti","cda_user_edit_button_text":"Peržiūrėti leidimus","cda_user_table_col_username":"Pavadinimas","cda_user_table_col_key":"Raktas","cda_user_table_col_pool":"Telkiniai","cda_user_table_col_actions":"Veiksmai","cda_user_add_title":"Pridėti naudotoją","cda_user_add_username_label":"Pavadinimas","cda_user_add_username_required":"Pavadinimas yra būtinas.","cda_user_add_username_pattern":"Pavadinime negali būti tarpų.","cda_user_add_username_maxlength":"Pavadinime turi būti ne daugiau nei {{ maxlength }} simbolis(-iai)/(-ių).","cda_user_add_success":"Naudotojas pridėtas sėkmingai.","cda_user_delete_title":"Ištrinti naudotoją","cda_user_delete_username_label":"Vardas","cda_user_delete_confirm":"Ar tikrai norite pašalinti šį naudotoją?","cda_user_delete_success":"Naudotojas pašalintas sėkmingai.","cda_user_table_empty":"Nėra naudotojų"}
+{
+  "cda_user_permission_definition": "Jūsų naudotojai gali naudoti klasterį su telkiniui priskirtais leidimais.",
+  "cda_user_add_button_text": "Pridėti naudotoją",
+  "cda_user_delete_button_text": "Trinti",
+  "cda_user_edit_button_text": "Peržiūrėti leidimus",
+  "cda_user_table_col_username": "Pavadinimas",
+  "cda_user_table_col_key": "Raktas",
+  "cda_user_table_col_pool": "Telkiniai",
+  "cda_user_table_col_actions": "Veiksmai",
+  "cda_user_add_title": "Pridėti naudotoją",
+  "cda_user_add_username_label": "Pavadinimas",
+  "cda_user_add_username_required": "Pavadinimas yra būtinas.",
+  "cda_user_add_username_pattern": "Pavadinime negali būti tarpų.",
+  "cda_user_add_username_maxlength": "Pavadinime turi būti ne daugiau nei {{ maxlength }} simbolis(-iai)/(-ių).",
+  "cda_user_add_success": "Naudotojas pridėtas sėkmingai.",
+  "cda_user_delete_title": "Ištrinti naudotoją",
+  "cda_user_delete_username_label": "Vardas",
+  "cda_user_delete_confirm": "Ar tikrai norite pašalinti šį naudotoją?",
+  "cda_user_delete_success": "Naudotojas pašalintas sėkmingai.",
+  "cda_user_table_empty": "Nėra naudotojų"
+}

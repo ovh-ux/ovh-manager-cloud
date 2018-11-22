@@ -1,1 +1,7 @@
-{"cpciip_add_title":"Add IPs","cpciip_add_run_now":"Add now","cpciip_add_geoloc":"Choice of location","cpciip_add_geoloc_loading":"Loading available locations...","cpciip_add_post_ip_error":"Oops! Unable to add a new IP!"}
+{
+  "cpciip_add_title": "Add IPs",
+  "cpciip_add_run_now": "Add now",
+  "cpciip_add_geoloc": "Choice of location",
+  "cpciip_add_geoloc_loading": "Loading available locations...",
+  "cpciip_add_post_ip_error": "Oops! Unable to add a new IP!"
+}

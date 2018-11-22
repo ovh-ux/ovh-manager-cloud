@@ -1,1 +1,19 @@
-{"nasha_partitions_zfs_title":"Asetukset: Z File System (ZFS)","nasha_partitions_zfs_atime_label":"Hakuajan päivitykset (atime)","nasha_partitions_zfs_atime_disable":"Poista käytöstä","nasha_partitions_zfs_atime_description":"Poistaa tarpeen, jonka mukaan kernelin täytyy päivittää tiedoston hakuaika joka kerta kun tiedostoa pyydetään. ","nasha_partitions_zfs_recordsize_label":"ZFS recordsize","nasha_partitions_zfs_recordsize_default":"(Oletus)","nasha_partitions_zfs_sync_label":"Sync","nasha_partitions_zfs_sync_standard":"Standard","nasha_partitions_zfs_sync_description_standard":"Suojattu profiili: Yhdistää vakauden ja asianmukaisen suorituskyvyn, tiedostot kirjoitetaan ensin, jonka jälkeen kaikki elementit puhdistetaan tietojen vakauden varmistamiseksi.","nasha_partitions_zfs_sync_always":"Always","nasha_partitions_zfs_sync_description_always":"Vahvasti suojattu profiili: Suorituskyvyltään hitaampi, sillä tiedostojensiirrossa vakaus on erittäin suuri.","nasha_partitions_zfs_sync_disabled":"Disabled","nasha_partitions_zfs_sync_description_disabled":"Suojaamaton profiili: Erittäin korkea suorituskyky mutta samaan aikaan vaarallinen, sillä ZFS ei huomioi synkronointuja siirtopyyntöjä. (BDD, NFS...)","nasha_partitions_zfs_sync_description_disabled_warning":"Tämä valinta on tarkoitettu ainoastaan administraattorien käyttöön, mikäli riskit on ymmärretty hyvin.","nasha_partitions_zfs_modal_success":"ZFS-valintojen muokkaus tapahtuu hetken kuluttua. ","nasha_partitions_zfs_modal_fail":"Tapahtui virhe ZFS-valintojen muokkauksessa.","nasha_partitions_zfs_modal_loading_fail":"Tapahtui virhe ZFS-valintojen latauksessa."}
+{
+  "nasha_partitions_zfs_title": "Asetukset: Z File System (ZFS)",
+  "nasha_partitions_zfs_atime_label": "Hakuajan päivitykset (atime)",
+  "nasha_partitions_zfs_atime_disable": "Poista käytöstä",
+  "nasha_partitions_zfs_atime_description": "Poistaa tarpeen, jonka mukaan kernelin täytyy päivittää tiedoston hakuaika joka kerta kun tiedostoa pyydetään. ",
+  "nasha_partitions_zfs_recordsize_label": "ZFS recordsize",
+  "nasha_partitions_zfs_recordsize_default": "(Oletus)",
+  "nasha_partitions_zfs_sync_label": "Sync",
+  "nasha_partitions_zfs_sync_standard": "Standard",
+  "nasha_partitions_zfs_sync_description_standard": "Suojattu profiili: Yhdistää vakauden ja asianmukaisen suorituskyvyn, tiedostot kirjoitetaan ensin, jonka jälkeen kaikki elementit puhdistetaan tietojen vakauden varmistamiseksi.",
+  "nasha_partitions_zfs_sync_always": "Always",
+  "nasha_partitions_zfs_sync_description_always": "Vahvasti suojattu profiili: Suorituskyvyltään hitaampi, sillä tiedostojensiirrossa vakaus on erittäin suuri.",
+  "nasha_partitions_zfs_sync_disabled": "Disabled",
+  "nasha_partitions_zfs_sync_description_disabled": "Suojaamaton profiili: Erittäin korkea suorituskyky mutta samaan aikaan vaarallinen, sillä ZFS ei huomioi synkronointuja siirtopyyntöjä. (BDD, NFS...)",
+  "nasha_partitions_zfs_sync_description_disabled_warning": "Tämä valinta on tarkoitettu ainoastaan administraattorien käyttöön, mikäli riskit on ymmärretty hyvin.",
+  "nasha_partitions_zfs_modal_success": "ZFS-valintojen muokkaus tapahtuu hetken kuluttua. ",
+  "nasha_partitions_zfs_modal_fail": "Tapahtui virhe ZFS-valintojen muokkauksessa.",
+  "nasha_partitions_zfs_modal_loading_fail": "Tapahtui virhe ZFS-valintojen latauksessa."
+}

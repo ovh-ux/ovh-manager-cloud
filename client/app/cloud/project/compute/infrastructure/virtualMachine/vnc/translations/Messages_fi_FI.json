@@ -1,1 +1,7 @@
-{"cpcivm_vnc_title":"VNC-konsoli","cpcivm_vnc_tip":"Vinkki: mikäli et voi syöttää tekstiä uudessa ikkunassa, klikkaa alla olevaa sinistä palkkia.","cpcivm_vnc_window":"Avaa uudessa ikkunassa","cpcivm_vnc_error":"Virhe: VNC-konsolia ei voida avata.","cpcivm_vnc_linuxinfo":"Käyttääksesi VNC-konsolia Linux-käyttöjärjestelmässä, sinun täytyy kirjautua ensin SSH-yhteydellä ja määritellä käyttäjä & sen salasana."}
+{
+  "cpcivm_vnc_title": "VNC-konsoli",
+  "cpcivm_vnc_tip": "Vinkki: mikäli et voi syöttää tekstiä uudessa ikkunassa, klikkaa alla olevaa sinistä palkkia.",
+  "cpcivm_vnc_window": "Avaa uudessa ikkunassa",
+  "cpcivm_vnc_error": "Virhe: VNC-konsolia ei voida avata.",
+  "cpcivm_vnc_linuxinfo": "Käyttääksesi VNC-konsolia Linux-käyttöjärjestelmässä, sinun täytyy kirjautua ensin SSH-yhteydellä ja määritellä käyttäjä & sen salasana."
+}

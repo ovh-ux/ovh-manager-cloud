@@ -1,1 +1,13 @@
-{"cpcv_snapshot_add_title":"Virtualaus disko atsarginės kopijos kūrimas","cpcv_snapshot_choose_name":"Įveskite savo atsarginės kopijos pavadinimą:","cpcv_snapshot_name":"Atsarginės kopijos pavadinimas ","cpcv_snapshot_confirm":"Paleisti atsarginę kopiją","cpcv_snapshot_monthlyPrice":"({{ size | bytes:2:'true' }} x {{ price }} be PVM/GB/mėn.)","cpcv_snapshot_name_error":"Prašome teisingai pavadinti savo atsarginę kopiją (pavadinimas turi būti galiojantis).","cpcv_snapshot_name_length_error":"Prašome pasirinkti trumpesnį pavadinimą savo atsarginei kopijai.","cpcv_snapshot_creation_info":"Vykdoma atsarginė kopija...","cpcv_snapshot_creation_error":"Atsiprašome, įvyko klaida atliekant atsarginį virtualaus disko kopijavimą.","cpcv_snapshot_error":"Įvyko klaida atkuriant atsarginės kopijos duomenis, prašome mėginti dar kartą vėliau.","cpcv_snapshot_attach_warning":"Jūsų diskas šiuo metu yra susietas su virtualia mašina. Norėdami užtikrinti jūsų duomenų vientisumą, prieš atliekant atsarginį kopijavimą, patariame atjungti šį diską."}
+{
+  "cpcv_snapshot_add_title": "Virtualaus disko atsarginės kopijos kūrimas",
+  "cpcv_snapshot_choose_name": "Įveskite savo atsarginės kopijos pavadinimą:",
+  "cpcv_snapshot_name": "Atsarginės kopijos pavadinimas ",
+  "cpcv_snapshot_confirm": "Paleisti atsarginę kopiją",
+  "cpcv_snapshot_monthlyPrice": "({{ size | bytes:2:'true' }} x {{ price }} be PVM/GB/mėn.)",
+  "cpcv_snapshot_name_error": "Prašome teisingai pavadinti savo atsarginę kopiją (pavadinimas turi būti galiojantis).",
+  "cpcv_snapshot_name_length_error": "Prašome pasirinkti trumpesnį pavadinimą savo atsarginei kopijai.",
+  "cpcv_snapshot_creation_info": "Vykdoma atsarginė kopija...",
+  "cpcv_snapshot_creation_error": "Atsiprašome, įvyko klaida atliekant atsarginį virtualaus disko kopijavimą.",
+  "cpcv_snapshot_error": "Įvyko klaida atkuriant atsarginės kopijos duomenis, prašome mėginti dar kartą vėliau.",
+  "cpcv_snapshot_attach_warning": "Jūsų diskas šiuo metu yra susietas su virtualia mašina. Norėdami užtikrinti jūsų duomenų vientisumą, prieš atliekant atsarginį kopijavimą, patariame atjungti šį diską."
+}

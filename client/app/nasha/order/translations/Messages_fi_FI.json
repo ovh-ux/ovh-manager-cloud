@@ -1,1 +1,4 @@
-{"nasha_order_title":"Tilaa NAS-HA","nasha_order_validationPending":"Ole hyvä ja suorita <a href=\"{{url}}\" target='_blank'>tilauksesi</a> maksu."}
+{
+  "nasha_order_title": "Tilaa NAS-HA",
+  "nasha_order_validationPending": "Ole hyvä ja suorita <a href=\"{{url}}\" target='_blank'>tilauksesi</a> maksu."
+}

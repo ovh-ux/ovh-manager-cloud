@@ -1,1 +1,21 @@
-{"iplb_home_tile_status":"Tila","iplb_home_tile_status_frontends":"{{number}} Frontends","iplb_home_tile_status_farms":"{{number}} Palvelinfarmia","iplb_home_tile_status_servers":"{{number}} Palvelinta","iplb_home_tile_usage":"Käyttö","iplb_home_tile_graph":"Grafiikat","iplb_home_tile_infos":"Tiedot","iplb_home_tile_infos_ipv4":"IPv4","iplb_home_tile_infos_ipv6":"IPv6","iplb_home_tile_infos_ip_failover":"Fail-over IP","iplb_home_tile_infos_ip_outbound":"Lähtevä IPv4","iplb_home_tile_configuration":"Konfiguraatio","iplb_home_tile_configuration_name":"Nimi","iplb_home_tile_configuration_quota_max":"Kuukausittainen kiintiö","iplb_home_tile_configuration_quota_alert":"Hälytysraja","iplb_home_tile_configuration_quota_unlimited":"Rajoittamaton","iplb_home_tile_configuration_quota_cipher":"Ciphers","iplb_home_tile_configuration_quota_datacenter":"Saatavuusalueet","iplb_home_tile_configuration_private_network":"Yksityiset verkot"}
+{
+  "iplb_home_tile_status": "Tila",
+  "iplb_home_tile_status_frontends": "{{number}} Frontends",
+  "iplb_home_tile_status_farms": "{{number}} Palvelinfarmia",
+  "iplb_home_tile_status_servers": "{{number}} Palvelinta",
+  "iplb_home_tile_usage": "Käyttö",
+  "iplb_home_tile_graph": "Grafiikat",
+  "iplb_home_tile_infos": "Tiedot",
+  "iplb_home_tile_infos_ipv4": "IPv4",
+  "iplb_home_tile_infos_ipv6": "IPv6",
+  "iplb_home_tile_infos_ip_failover": "Fail-over IP",
+  "iplb_home_tile_infos_ip_outbound": "Lähtevä IPv4",
+  "iplb_home_tile_configuration": "Konfiguraatio",
+  "iplb_home_tile_configuration_name": "Nimi",
+  "iplb_home_tile_configuration_quota_max": "Kuukausittainen kiintiö",
+  "iplb_home_tile_configuration_quota_alert": "Hälytysraja",
+  "iplb_home_tile_configuration_quota_unlimited": "Rajoittamaton",
+  "iplb_home_tile_configuration_quota_cipher": "Ciphers",
+  "iplb_home_tile_configuration_quota_datacenter": "Saatavuusalueet",
+  "iplb_home_tile_configuration_private_network": "Yksityiset verkot"
+}

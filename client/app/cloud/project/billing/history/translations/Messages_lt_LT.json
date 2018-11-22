@@ -1,1 +1,5 @@
-{"cpbh_current_month":"Sąskaitos: {{year}} {{month}}","cpbh_next_month":"Kitas mėnuo","cpbh_previous_month":"Ankstesnis mėnuo"}
+{
+  "cpbh_current_month": "Sąskaitos: {{year}} {{month}}",
+  "cpbh_next_month": "Kitas mėnuo",
+  "cpbh_previous_month": "Ankstesnis mėnuo"
+}

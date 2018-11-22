@@ -1,1 +1,23 @@
-{"cda_pool_pool_definition":"Täällä voit luoda datasäilöjä.","cda_pool_permission_definition":"Datasäilöt (Pools) ovat \"kontteja\", joihin tietosi on varastoitu. Datasäilön käyttöoikeuksia voidaan hallita käyttäjäkohtaisesti.","cda_pool_add_button_text":"Lisää datasäilö","cda_pool_delete_button_text":"Poista","cda_pool_table_col_poolname":"Nimi","cda_pool_table_col_pooltype":"Tyyppi","cda_pool_table_col_replica":"Jäljennösten lukumäärä","cda_pool_table_col_minreplica":"Aktiivisten jäljennösten lukumäärä","cda_pool_table_col_backup":"Backup datasäilö","cda_pool_table_col_actions":"Toiminnot","cda_pool_add_title":"Lisää datasäilö","cda_pool_add_poolname_label":"Nimi","cda_pool_add_poolname_required":"Nimi vaaditaan.","cda_pool_add_poolname_pattern":"Nimessä ei voi olla välilyöntejä.","cda_pool_add_poolname_maxlength":"Nimen on oltava enintään {{ maxlength }} merkkiä pitkä.","cda_pool_add_success":"Datasäilön lisäys onnistui.","cda_pool_delete_title":"Poista datasäilö","cda_pool_delete_poolname_label":"Nimi","cda_pool_delete_confirm":"Haluatko varmasti poistaa tämän datasäilön","cda_pool_delete_success":"Datasäilön poisto onnistui.","cda_pool_table_empty":"Ei yhtään datasäilöä."}
+{
+  "cda_pool_pool_definition": "Täällä voit luoda datasäilöjä.",
+  "cda_pool_permission_definition": "Datasäilöt (Pools) ovat \"kontteja\", joihin tietosi on varastoitu. Datasäilön käyttöoikeuksia voidaan hallita käyttäjäkohtaisesti.",
+  "cda_pool_add_button_text": "Lisää datasäilö",
+  "cda_pool_delete_button_text": "Poista",
+  "cda_pool_table_col_poolname": "Nimi",
+  "cda_pool_table_col_pooltype": "Tyyppi",
+  "cda_pool_table_col_replica": "Jäljennösten lukumäärä",
+  "cda_pool_table_col_minreplica": "Aktiivisten jäljennösten lukumäärä",
+  "cda_pool_table_col_backup": "Backup datasäilö",
+  "cda_pool_table_col_actions": "Toiminnot",
+  "cda_pool_add_title": "Lisää datasäilö",
+  "cda_pool_add_poolname_label": "Nimi",
+  "cda_pool_add_poolname_required": "Nimi vaaditaan.",
+  "cda_pool_add_poolname_pattern": "Nimessä ei voi olla välilyöntejä.",
+  "cda_pool_add_poolname_maxlength": "Nimen on oltava enintään {{ maxlength }} merkkiä pitkä.",
+  "cda_pool_add_success": "Datasäilön lisäys onnistui.",
+  "cda_pool_delete_title": "Poista datasäilö",
+  "cda_pool_delete_poolname_label": "Nimi",
+  "cda_pool_delete_confirm": "Haluatko varmasti poistaa tämän datasäilön",
+  "cda_pool_delete_success": "Datasäilön poisto onnistui.",
+  "cda_pool_table_empty": "Ei yhtään datasäilöä."
+}

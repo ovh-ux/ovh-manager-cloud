@@ -1,1 +1,17 @@
-{"cpc_tab_infra":"Infrastruktura","cpc_tab_snapshot":"Snapshoty","cpc_tab_volume":"Dodatkowe dyski","cpc_tab_ssh":"Klucz SSH","cpc_tab_loadbalancer":"IP Load Balancer","cpc_tab_project":"Zarządzanie i zasoby projektu","cpb_tab_quota":"Quota","cpc_message":"Rozwiązania Cloud OVH dostępne w Niemczech! <a href=\"http://superlienverslapage\">Odkryj nasze centrum danych w Limburgu.</a>","cloud_message_pci_uk1":"Nowe centrum danych UK1 w Londynie (Wielka Brytania)!","cloud_message_pci_uk1_link":"Sprawdź korzyści","cloud_message_pci_de1":"Nowe centrum danych DE1 we Frankfurcie!","cloud_message_pci_de1_link":"Sprawdź korzyści","cloud_message_pci_g3":"Nowość: instancje GPU G3-30 i G3-120 doskonałe do projektów data science i uczenia maszynowego.","cloud_message_pci_no_link":"Więcej informacji...","cloud_message_pci_bandwitdh_xmas":"W dniach od 19.12.2017 do 8.01.2018 włącznie przepustowość dla instancji C2-120, B2-120, R2-240 i G3-120 do 10 Gbps (globalnie)."}
+{
+  "cpc_tab_infra": "Infrastruktura",
+  "cpc_tab_snapshot": "Snapshoty",
+  "cpc_tab_volume": "Dodatkowe dyski",
+  "cpc_tab_ssh": "Klucz SSH",
+  "cpc_tab_loadbalancer": "IP Load Balancer",
+  "cpc_tab_project": "Zarządzanie i zasoby projektu",
+  "cpb_tab_quota": "Quota",
+  "cpc_message": "Rozwiązania Cloud OVH dostępne w Niemczech! <a href=\"http://superlienverslapage\">Odkryj nasze centrum danych w Limburgu.</a>",
+  "cloud_message_pci_uk1": "Nowe centrum danych UK1 w Londynie (Wielka Brytania)!",
+  "cloud_message_pci_uk1_link": "Sprawdź korzyści",
+  "cloud_message_pci_de1": "Nowe centrum danych DE1 we Frankfurcie!",
+  "cloud_message_pci_de1_link": "Sprawdź korzyści",
+  "cloud_message_pci_g3": "Nowość: instancje GPU G3-30 i G3-120 doskonałe do projektów data science i uczenia maszynowego.",
+  "cloud_message_pci_no_link": "Więcej informacji...",
+  "cloud_message_pci_bandwitdh_xmas": "W dniach od 19.12.2017 do 8.01.2018 włącznie przepustowość dla instancji C2-120, B2-120, R2-240 i G3-120 do 10 Gbps (globalnie)."
+}

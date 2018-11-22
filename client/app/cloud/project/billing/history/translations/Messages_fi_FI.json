@@ -1,1 +1,5 @@
-{"cpbh_current_month":"Laskut {{month}} {{year}}","cpbh_next_month":"Seuraava kuukausi","cpbh_previous_month":"Edellinen kuukausi"}
+{
+  "cpbh_current_month": "Laskut {{month}} {{year}}",
+  "cpbh_next_month": "Seuraava kuukausi",
+  "cpbh_previous_month": "Edellinen kuukausi"
+}
