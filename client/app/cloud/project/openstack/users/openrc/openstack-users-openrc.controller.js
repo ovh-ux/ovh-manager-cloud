@@ -1,7 +1,7 @@
 angular.module('managerApp')
-  .controller('OpenstackUsersOpenrcCtrl', function OpenstackUsersOpenrcCtrl($scope, OvhApiCloud,
-    $httpParamSerializer, $uibModalInstance, CONFIG_API, openstackUser, $stateParams, $translate,
-    URLS, OvhApiMe, RegionService) {
+  .controller('OpenstackUsersOpenrcCtrl', function OpenstackUsersOpenrcCtrl($httpParamSerializer,
+    $stateParams, $uibModalInstance, CLOUD_OPENRC_VERSION, CONFIG_API, openstackUser,
+    OvhApiCloud, OvhApiMe, RegionService, URLS) {
     const self = this;
 
     self.regionService = RegionService;
@@ -15,6 +15,7 @@ angular.module('managerApp')
     self.data = {
       region: null,
       guideURL: null,
+      v3: false,
     };
 
     self.loaders = {
@@ -59,6 +60,7 @@ angular.module('managerApp')
         '?',
         $httpParamSerializer({
           region: self.data.region,
+          version: self.data.v3 ? CLOUD_OPENRC_VERSION.V3 : CLOUD_OPENRC_VERSION.V2,
           download: 1,
         }),
       ].join('');
