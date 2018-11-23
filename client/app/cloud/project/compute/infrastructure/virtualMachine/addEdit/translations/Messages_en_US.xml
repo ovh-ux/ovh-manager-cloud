@@ -146,7 +146,7 @@
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_t1">{{ cardCount }} x Nvidia Tesla V100</translation>
+   <translation id="cpcivm_addedit_table_gpu_t1" qtlid="508832">{{ cardCount }} x Nvidia Tesla V100</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud at the best price</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD use a shared local SSD RAID and their performance may vary through time</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">They are ideal for your tests and development environments. Their performance could slightly vary over time. </translation>
@@ -249,8 +249,8 @@
    <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Mass creation:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Number of instance(s) to create:</translation>
    <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Please enter a valid instance number.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">Votre <a ui-sref="{{sref}}">quota</a> actuel vous permet de créer simultanéement jusqu'à {{max}} instances de type {{type}} pour la region {{region}}.</translation>
-   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">Votre <a ui-sref="{{sref}}">quota</a> actuel ne vous permet pas de créer plus d'une instance de type {{type}} pour la région {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="497946">With your current <a ui-sref="{{sref}}">quota</a>, you can create up to {{max}} {type}} instances for the {{region}} region.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="497959">With your current <a ui-sref="{{sref}}">quota</a>, you cannot create more than one {{type}} instance for the {{region}} region.</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Link to the private network </translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">None</translation>
    <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oops, unable to retrieve the list of private networks. {{ message }}</translation>

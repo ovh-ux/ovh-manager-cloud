@@ -31,6 +31,12 @@
    <translation id="kube_service_billing_contact" qtlid="505008">ID de facturación</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Renovación</translation>
 
+   <translation id="kube_service_reset_title">Réinitialiser la configuration de votre cluster Kubernetes</translation>
+   <translation id="kube_service_reset_message">En cliquant ici vous remettrez votre service Kubernetes dans son état original. Cela supprimera l'intégralité de vos nœuds de calcul, vos services, leur configuration etc... <strong>Cette action est irréversible</strong>.</translation>
+   <translation id="kube_service_reset_success">Votre cluster Kubernetes est en cours de réinitialisation.</translation>
+   <translation id="kube_service_reset_error">Une erreur est survenue lors de la réinitialisation de votre cluster : {{ message }}</translation>
+   <translation id="kube_service_reset_enter">Entrez "RESET" dans le champ ci-dessous pour confirmer</translation>
+
    <translation id="kube_nodes" qtlid="505021">Nodos</translation>
    <translation id="kube_nodes_add" qtlid="505034">Añadir un nodo</translation>
    <translation id="kube_nodes_add_region" qtlid="505047">Durante la beta, todos los nodos estarán localizados en la región GRA5. Más adelante habilitaremos la posibilidad de elegir otra región.</translation>
@@ -67,7 +73,7 @@
    <translation id="kube_nodes_description_project_1" qtlid="505307">Su cluster Kubernetes utiliza nodos para alojar sus contenedores y servicios. Todos los nodos se lanzarán en el proyecto Public Cloud <a class="oui-link" href="{{ url }}">{{ description }}</a>. Más adelante habilitaremos la posibilidad de cambiarlo.</translation>
    <translation id="kube_nodes_description_project_2" qtlid="507224">Estas instancias se lanzan con facturación estándar por horas. Consulte su proyecto Public Cloud para más información sobre la tarificación o si quiere pasar a la opción de facturación mensual.</translation>
    <translation id="kube_nodes_quota_description" qtlid="251265">Para controlar su consumo de cloud, su proyecto tiene los recursos limitados.</translation>
-   <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede pedírselos a nuestro equipo haciendo clic en el siguiente botón.</translation>
+   <translation id="kube_nodes_quota_more" qtlid="251278">Si necesita más recursos, puede realizar una solicitud a nuestro equipo haciendo clic en el siguiente botón.</translation>
    <translation id="kube_nodes_quota_ask_more" qtlid="251291">Aumentar mis límites</translation>
 
    <translation id="kube_flavor" qtlid="505333">{{ name }} ({{ cpuNumber }} CPU {{ ramCapacity }} GB RAM {{ diskCapacity }} GB disco)</translation>

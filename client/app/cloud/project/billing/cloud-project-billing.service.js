@@ -27,9 +27,10 @@ angular.module('managerApp')
     }
 
     function initMonthlyInstanceList() {
-      if (!_.get(self.data, 'monthlyBilling') || !_.get(self.data, 'hourlyBilling.monthlyUsage')) {
+      if (!_.get(self.data, 'monthlyBilling') || !_.get(self.data, 'monthlyBilling.monthlyUsage')) {
         return;
       }
+
       const monthlyInstances = _.flatten(_.map(
         _.get(self.data, 'monthlyBilling.monthlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
@@ -129,6 +130,7 @@ angular.module('managerApp')
         .then(() => {
           self.data.hourlyBilling = hourlyBillingInfo;
           self.data.monthlyBilling = monthlyBillingInfo;
+
           return $q
             .allSettled([
               initHourlyInstanceList(),
