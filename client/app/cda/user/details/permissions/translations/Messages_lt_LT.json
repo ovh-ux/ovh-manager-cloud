@@ -1,12 +1,12 @@
 {
-  "cda_user_details_permission_title": "Prieigos prie telkinio leidimai",
-  "cda_user_details_permission_description": "Leidimai skirti Cloud Disk Array OSD. Pagal nutylėjimą, naudotojas turi „allow r“ leidimą, skirtą MONs. Šiuo metu MDS leidimai nenaudojami.",
-  "cda_user_details_permissions_edit_button_text": "Keisti leidimus",
-  "cda_user_details_permissions_table_col_poolname": "Telkinys",
-  "cda_user_details_permissions_table_col_read": "Skaitymas",
-  "cda_user_details_permissions_table_col_write": "Rašymas",
-  "cda_user_details_permissions_table_col_execute": "Vykdymas",
-  "cda_user_details_permissions_table_col_classread": "Classread",
-  "cda_user_details_permissions_table_col_classwrite": "Classwrite",
-  "cda_user_details_permissions_table_empty": "Jokio leidimo naudotojui."
+ "cda_user_details_permission_title": "Prieigos prie telkinio leidimai",
+ "cda_user_details_permission_description": "Leidimai skirti Cloud Disk Array OSD. Pagal nutylėjimą, naudotojas turi „allow r“ leidimą, skirtą MONs. Šiuo metu MDS leidimai nenaudojami.",
+ "cda_user_details_permissions_edit_button_text": "Keisti leidimus",
+ "cda_user_details_permissions_table_col_poolname": "Telkinys",
+ "cda_user_details_permissions_table_col_read": "Skaitymas",
+ "cda_user_details_permissions_table_col_write": "Rašymas",
+ "cda_user_details_permissions_table_col_execute": "Vykdymas",
+ "cda_user_details_permissions_table_col_classread": "Classread",
+ "cda_user_details_permissions_table_col_classwrite": "Classwrite",
+ "cda_user_details_permissions_table_empty": "Jokio leidimo naudotojui."
 }

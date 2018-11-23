@@ -1,14 +1,14 @@
 {
-  "dtpdt_key_add_title": "Nový klíč API",
-  "dtpdt_key_edit_title": "Změnit klíč API",
-  "dtpdt_name": "Název klíče",
-  "dtpdt_permission": "Oprávnění",
-  "dtpdt_description": "Popis",
-  "dtpdt_tags": "Tagy",
-  "dtpdt_add_tag": "Přidat tag",
-  "dtpdt_remove_tag": "Odstranit",
-  "dtpdt_tag_key": "Název",
-  "dtpdt_tag_value": "Hodnota",
-  "dtpdt_add_key": "Vytvořit",
-  "dtpdt_edit_key": "Upravit"
+ "dtpdt_key_add_title": "Nový klíč API",
+ "dtpdt_key_edit_title": "Změnit klíč API",
+ "dtpdt_name": "Název klíče",
+ "dtpdt_permission": "Oprávnění",
+ "dtpdt_description": "Popis",
+ "dtpdt_tags": "Tagy",
+ "dtpdt_add_tag": "Přidat tag",
+ "dtpdt_remove_tag": "Odstranit",
+ "dtpdt_tag_key": "Název",
+ "dtpdt_tag_value": "Hodnota",
+ "dtpdt_add_key": "Vytvořit",
+ "dtpdt_edit_key": "Upravit"
 }

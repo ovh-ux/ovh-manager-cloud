@@ -1,12 +1,12 @@
 {
-  "metrics_token_add_name": "Pavadinimas (pasirinktinai)",
-  "metrics_token_add_permission": "Leidimas",
-  "metrics_token_add_labels": "Etiketės (pasirinktinai)",
-  "metrics_token_add_permission_read": "Skaitymas",
-  "metrics_token_add_permission_write": "Rašymas",
-  "metrics_token_add_labels_add": "Pridėti etiketes",
-  "metrics_token_add_labels_key": "Raktas",
-  "metrics_token_add_labels_value": "Reikšmė",
-  "metrics_token_add_token": "Pridėti kodą",
-  "metrics_token_add_confirmation": "Pridėti"
+ "metrics_token_add_name": "Pavadinimas (pasirinktinai)",
+ "metrics_token_add_permission": "Leidimas",
+ "metrics_token_add_labels": "Etiketės (pasirinktinai)",
+ "metrics_token_add_permission_read": "Skaitymas",
+ "metrics_token_add_permission_write": "Rašymas",
+ "metrics_token_add_labels_add": "Pridėti etiketes",
+ "metrics_token_add_labels_key": "Raktas",
+ "metrics_token_add_labels_value": "Reikšmė",
+ "metrics_token_add_token": "Pridėti kodą",
+ "metrics_token_add_confirmation": "Pridėti"
 }

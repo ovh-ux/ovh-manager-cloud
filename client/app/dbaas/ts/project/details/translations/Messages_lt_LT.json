@@ -1,14 +1,14 @@
 {
-  "dbaasts_tab_tokens": "API raktai",
-  "dbaasts_tab_quota": "Kvota",
-  "dbaasts_tab_billing": "Sunaudojimas",
-  "dbaasts_tab_settings": "Parametrai",
-  "dbaasts_region": "Regionas",
-  "dbaasts_ok": "OK",
-  "dbaasts_name": "Pavadinimas",
-  "dtpds_name_error": "Dėmesio: pavadinimas turi atitikti šias sąlygas:",
-  "dtpds_name_error1": "- Mažiausiai {{min}} simboliai(-ių)",
-  "dtpds_name_error2": "- Daugiausiai {{max}} simboliai(-ių)",
-  "dtpds_name_error3": "- Jokių diakritinių ženklų",
-  "dtpds_name_error4": "- Jokių specialių simbolių išskyrus . - ir _."
+ "dbaasts_tab_tokens": "API raktai",
+ "dbaasts_tab_quota": "Kvota",
+ "dbaasts_tab_billing": "Sunaudojimas",
+ "dbaasts_tab_settings": "Parametrai",
+ "dbaasts_region": "Regionas",
+ "dbaasts_ok": "OK",
+ "dbaasts_name": "Pavadinimas",
+ "dtpds_name_error": "Dėmesio: pavadinimas turi atitikti šias sąlygas:",
+ "dtpds_name_error1": "- Mažiausiai {{min}} simboliai(-ių)",
+ "dtpds_name_error2": "- Daugiausiai {{max}} simboliai(-ių)",
+ "dtpds_name_error3": "- Jokių diakritinių ženklų",
+ "dtpds_name_error4": "- Jokių specialių simbolių išskyrus . - ir _."
 }

@@ -1,9 +1,9 @@
 {
-  "nasha_partitions_action_add_partition_title": "Zvolte protokol",
-  "nasha_partitions_action_add_success": "Diskový oddíl {{partitionName}} bude za okamžik přidán.",
-  "nasha_partitions_action_add_failure": "Při vytváření diskového oddílu {{partitionName}} došlo k chybě.",
-  "nasha_partitions_action_add_desc_CIFS": "CIFS: doporučený protokol pro Windows servery.",
-  "nasha_partitions_action_add_desc_NFS": "NFS: doporučený protokol pro Linux/Unix servery.",
-  "nasha_partitions_action_add_desc_NFS_CIFS": "NFS_CIFS: umožňuje sdílenou komunikaci mezi Windows a Linux/Unix servery.",
-  "nasha_partitions_name_fail": "Neplatný název"
+ "nasha_partitions_action_add_partition_title": "Zvolte protokol",
+ "nasha_partitions_action_add_success": "Diskový oddíl {{partitionName}} bude za okamžik přidán.",
+ "nasha_partitions_action_add_failure": "Při vytváření diskového oddílu {{partitionName}} došlo k chybě.",
+ "nasha_partitions_action_add_desc_CIFS": "CIFS: doporučený protokol pro Windows servery.",
+ "nasha_partitions_action_add_desc_NFS": "NFS: doporučený protokol pro Linux/Unix servery.",
+ "nasha_partitions_action_add_desc_NFS_CIFS": "NFS_CIFS: umožňuje sdílenou komunikaci mezi Windows a Linux/Unix servery.",
+ "nasha_partitions_name_fail": "Neplatný název"
 }

@@ -1,6 +1,6 @@
 {
-  "cpcivm_delete_title": "Instanssia poistetaan",
-  "cpcivm_delete_info": "Olet maksanut tämän palvelimen kuukausittaisen laskun. Kaikki etukäteen maksetut päivät menetetään.",
-  "cpcivm_failover_info": "Seuraavat FailOver IP -osoitteet poistetaan pysyvästi:",
-  "cpcivm_delete_confirm": "Oletko varma, että haluat poistaa tämän instanssin?"
+ "cpcivm_delete_title": "Instanssia poistetaan",
+ "cpcivm_delete_info": "Olet maksanut tämän palvelimen kuukausittaisen laskun. Kaikki etukäteen maksetut päivät menetetään.",
+ "cpcivm_failover_info": "Seuraavat FailOver IP -osoitteet poistetaan pysyvästi:",
+ "cpcivm_delete_confirm": "Oletko varma, että haluat poistaa tämän instanssin?"
 }

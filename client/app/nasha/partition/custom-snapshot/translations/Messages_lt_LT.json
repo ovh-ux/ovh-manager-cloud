@@ -1,11 +1,11 @@
 {
-  "nasha_custom_snapshot_of": "Skirsnio {{partitionName}} momentinė kopija",
-  "nasha_custom_snapshot_modal_title": "Momentinė kopija (snapshot)",
-  "nasha_custom_snapshot_modal_success": "Momentinė kopija bus netrukus sukurta.",
-  "nasha_custom_snapshot_modal_fail": "Įvyko klaida keičiant momentinių kopijų atlikimo dažnumą.",
-  "nasha_custom_snapshot_modal_informations": "Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.",
-  "nasha_custom_snapshot_modal_informations_size": "Momentinės kopijos naudoja vietą jūsų skirsnyje, kad teisingai veiktų.",
-  "nasha_custom_snapshot_modal_label_snapshot_name": "Momentinės kopijos pavadinimas",
-  "nasha_custom_snapshot_modal_fail_snapshot_name_length": "Momentinės kopijos pavadinime turi būti ne daugiau nei {{ maxlength }} simbolis(-iai)/(-ių).",
-  "nasha_custom_snapshot_modal_fail_snapshot_name_required": "Būtinas momentinės kopijos pavadinimas."
+ "nasha_custom_snapshot_of": "Skirsnio {{partitionName}} momentinė kopija",
+ "nasha_custom_snapshot_modal_title": "Momentinė kopija (snapshot)",
+ "nasha_custom_snapshot_modal_success": "Momentinė kopija bus netrukus sukurta.",
+ "nasha_custom_snapshot_modal_fail": "Įvyko klaida keičiant momentinių kopijų atlikimo dažnumą.",
+ "nasha_custom_snapshot_modal_informations": "Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.",
+ "nasha_custom_snapshot_modal_informations_size": "Momentinės kopijos naudoja vietą jūsų skirsnyje, kad teisingai veiktų.",
+ "nasha_custom_snapshot_modal_label_snapshot_name": "Momentinės kopijos pavadinimas",
+ "nasha_custom_snapshot_modal_fail_snapshot_name_length": "Momentinės kopijos pavadinime turi būti ne daugiau nei {{ maxlength }} simbolis(-iai)/(-ių).",
+ "nasha_custom_snapshot_modal_fail_snapshot_name_required": "Būtinas momentinės kopijos pavadinimas."
 }

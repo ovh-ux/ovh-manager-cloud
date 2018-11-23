@@ -1,13 +1,13 @@
 {
-  "cpou_token_title": "Luo OpenStack-valtuus (token)",
-  "cpou_openrc_title": "Lataa RC-tiedosto OpenStackilta",
-  "cpou_token_info": "Ole hyvä ja syötä käyttäjän <b>{{ username }}</b> salasana Openstack-tunnuksen generoimista varten.",
-  "cpou_token_password_label": "Salasana",
-  "cpou_token_error": "OpenStack-valtuutta ei voitu luoda.",
-  "cpou_token_title_information": "Kirjoita tämä valtuus muistiin. Et voi nähdä tätä enää seuraavan päivityksen jälkeen.",
-  "cpou_token_xauthtoken": "OpenStack-valtuus (token), joka mahdollistaa tunnistamisen HTTP-pyynnöillä (X-Auth-Token) on seuraava:",
-  "cpou_token_xauthtoken_guide": "Katso käyttöesimerkki<a href=\"{{ link }}\" target=\"_blank\">tästä ohjeesta</a>.",
-  "cpou_token_catalog_region": "Region",
-  "cpou_token_catalog_service": "Palvelu",
-  "cpou_token_catalog_endpoint": "Endpoint"
+ "cpou_token_title": "Luo OpenStack-valtuus (token)",
+ "cpou_openrc_title": "Lataa RC-tiedosto OpenStackilta",
+ "cpou_token_info": "Ole hyvä ja syötä käyttäjän <b>{{ username }}</b> salasana Openstack-tunnuksen generoimista varten.",
+ "cpou_token_password_label": "Salasana",
+ "cpou_token_error": "OpenStack-valtuutta ei voitu luoda.",
+ "cpou_token_title_information": "Kirjoita tämä valtuus muistiin. Et voi nähdä tätä enää seuraavan päivityksen jälkeen.",
+ "cpou_token_xauthtoken": "OpenStack-valtuus (token), joka mahdollistaa tunnistamisen HTTP-pyynnöillä (X-Auth-Token) on seuraava:",
+ "cpou_token_xauthtoken_guide": "Katso käyttöesimerkki<a href=\"{{ link }}\" target=\"_blank\">tästä ohjeesta</a>.",
+ "cpou_token_catalog_region": "Region",
+ "cpou_token_catalog_service": "Palvelu",
+ "cpou_token_catalog_endpoint": "Endpoint"
 }

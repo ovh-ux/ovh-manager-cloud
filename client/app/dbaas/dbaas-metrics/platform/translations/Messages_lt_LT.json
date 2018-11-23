@@ -1,13 +1,13 @@
 {
-  "metrics_endpoint_howto": "Gerai pradžiai",
-  "metrics_platform_title": "Platformos",
-  "metrics_platform_back": "Grįžti į pagrindinį",
-  "metrics_platform_proto": "Protokolas",
-  "metrics_platform_address": "Adresas",
-  "metrics_platform_doc": "Dokumentacija",
-  "metrics_guide": "Gidas",
-  "metrics_endpoint_tools": "Įrankiai",
-  "metrics_endpoint_intro_1": "Žemiau pateiktas protokolų, palaikomų OVH Metrics platformoje, sąrašas.",
-  "metrics_endpoint_intro_2": "Kiekvienas protokolas yra susietas su adresu, priklausančiu nuo duomenų centro regiono, kuriame talpinamas jūsų projektas.",
-  "metrics_endpoint_intro_3": "Šie adresai leidžia visapusiškai išnaudoti kiekvieną protokolą."
+ "metrics_endpoint_howto": "Gerai pradžiai",
+ "metrics_platform_title": "Platformos",
+ "metrics_platform_back": "Grįžti į pagrindinį",
+ "metrics_platform_proto": "Protokolas",
+ "metrics_platform_address": "Adresas",
+ "metrics_platform_doc": "Dokumentacija",
+ "metrics_guide": "Gidas",
+ "metrics_endpoint_tools": "Įrankiai",
+ "metrics_endpoint_intro_1": "Žemiau pateiktas protokolų, palaikomų OVH Metrics platformoje, sąrašas.",
+ "metrics_endpoint_intro_2": "Kiekvienas protokolas yra susietas su adresu, priklausančiu nuo duomenų centro regiono, kuriame talpinamas jūsų projektas.",
+ "metrics_endpoint_intro_3": "Šie adresai leidžia visapusiškai išnaudoti kiekvieną protokolą."
 }

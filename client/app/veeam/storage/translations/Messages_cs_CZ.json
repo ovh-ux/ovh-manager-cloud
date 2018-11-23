@@ -1,11 +1,11 @@
 {
-  "veeam_storage_title": "Diskový prostor",
-  "veeam_storage_back": "Zpět na hlavní stránku",
-  "veeam_storage_add_storage": "Přidat úložiště",
-  "veeam_storage_search": "Vyhledávání...",
-  "veeam_storage_update_title": "Upravit",
-  "veeam_storage_update_quota_title": "Upravit velikost diskového prostoru",
-  "veeam_storage_update_quota_information": "Zadejte maximální kvótu diskového prostoru. Hodnota se musí pohybovat v rozmezí 1000 GB a {{maxquota}}.",
-  "veeam_storage_update_quota_cancel": "Zrušit",
-  "veeam_storage_update_quota_confirm": "Upravit"
+ "veeam_storage_title": "Diskový prostor",
+ "veeam_storage_back": "Zpět na hlavní stránku",
+ "veeam_storage_add_storage": "Přidat úložiště",
+ "veeam_storage_search": "Vyhledávání...",
+ "veeam_storage_update_title": "Upravit",
+ "veeam_storage_update_quota_title": "Upravit velikost diskového prostoru",
+ "veeam_storage_update_quota_information": "Zadejte maximální kvótu diskového prostoru. Hodnota se musí pohybovat v rozmezí 1000 GB a {{maxquota}}.",
+ "veeam_storage_update_quota_cancel": "Zrušit",
+ "veeam_storage_update_quota_confirm": "Upravit"
 }

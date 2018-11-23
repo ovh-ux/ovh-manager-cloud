@@ -1,7 +1,7 @@
 {
-  "cpciip_add_title": "Adicionar endereços IP",
-  "cpciip_add_run_now": "Adicionar agora",
-  "cpciip_add_geoloc": "Escolha da informação de \"geo-localização\"",
-  "cpciip_add_geoloc_loading": "Carregamento das localizações disponíveis.",
-  "cpciip_add_post_ip_error": "Oops, não foi possível criar um endereço IP!"
+ "cpciip_add_title": "Ajouter des IP",
+ "cpciip_add_run_now": "Ajouter maintenant",
+ "cpciip_add_geoloc": "Choix de la localisation",
+ "cpciip_add_geoloc_loading": "Chargement des localisations disponibles.",
+ "cpciip_add_post_ip_error": "Oups, nous n'arrivons pas à créer de nouvelle IP !"
 }

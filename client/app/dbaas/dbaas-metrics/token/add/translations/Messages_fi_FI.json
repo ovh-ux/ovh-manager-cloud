@@ -1,12 +1,12 @@
 {
-  "metrics_token_add_name": "Nimi (valinnainen)",
-  "metrics_token_add_permission": "Lupa",
-  "metrics_token_add_labels": "Nimiöt (valinnainen)",
-  "metrics_token_add_permission_read": "Luku",
-  "metrics_token_add_permission_write": "Kirjoitus",
-  "metrics_token_add_labels_add": "Lisää nimiöitä",
-  "metrics_token_add_labels_key": "Avain",
-  "metrics_token_add_labels_value": "Arvo",
-  "metrics_token_add_token": "Lisää tunniste",
-  "metrics_token_add_confirmation": "Lisää"
+ "metrics_token_add_name": "Nimi (valinnainen)",
+ "metrics_token_add_permission": "Lupa",
+ "metrics_token_add_labels": "Nimiöt (valinnainen)",
+ "metrics_token_add_permission_read": "Luku",
+ "metrics_token_add_permission_write": "Kirjoitus",
+ "metrics_token_add_labels_add": "Lisää nimiöitä",
+ "metrics_token_add_labels_key": "Avain",
+ "metrics_token_add_labels_value": "Arvo",
+ "metrics_token_add_token": "Lisää tunniste",
+ "metrics_token_add_confirmation": "Lisää"
 }

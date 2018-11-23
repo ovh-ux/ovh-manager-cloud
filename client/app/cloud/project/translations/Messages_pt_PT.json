@@ -1,6 +1,6 @@
 {
-  "cpc_tab_billing": "Consumo",
-  "cpc_tab_openstack_users": "Openstack",
-  "cpb_details_compute_error_message": "Oops, não foi possível carregar as informações relativas às infraestruturas.",
-  "cpb_read_only_access_alert": "A sua conta é apenas de leitura, e como tal, algumas operações estão inacessíveis. Para obter privilégios de escrita contacte o seu administrador."
+ "cpc_tab_billing": "Consumo",
+ "cpc_tab_openstack_users": "Openstack",
+ "cpb_details_compute_error_message": "Oops, não foi possível carregar as informações relativas às infraestruturas.",
+ "cpb_read_only_access_alert": "A sua conta é apenas de leitura, e como tal, algumas operações estão inacessíveis. Para obter privilégios de escrita contacte o seu administrador."
 }

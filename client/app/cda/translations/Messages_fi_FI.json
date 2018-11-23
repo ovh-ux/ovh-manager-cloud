@@ -1,12 +1,12 @@
 {
-  "ceph_common_error": "Hups tapahtui virhe:",
-  "cda_tab_home": "Tiivistelmä",
-  "cda_tab_user": "Käyttäjät",
-  "cda_tab_ip": "IP-käyttöoikeuksien valvonta",
-  "cda_tab_pool": "Pools",
-  "cda_guide_title": "Oppaat",
-  "cda_guide_name": "Cloud Disk Array (CDA)",
-  "cda_guide_footer": "Kaikki OVH:n ohjeet",
-  "cda_new_window": "Uusi ikkuna",
-  "cda_guide_retrieval_error": "Tapahtui virhe haettaessa Cloud Disk Array (CDA) -ohjetta."
+ "ceph_common_error": "Hups tapahtui virhe:",
+ "cda_tab_home": "Tiivistelmä",
+ "cda_tab_user": "Käyttäjät",
+ "cda_tab_ip": "IP-käyttöoikeuksien valvonta",
+ "cda_tab_pool": "Pools",
+ "cda_guide_title": "Oppaat",
+ "cda_guide_name": "Cloud Disk Array (CDA)",
+ "cda_guide_footer": "Kaikki OVH:n ohjeet",
+ "cda_new_window": "Uusi ikkuna",
+ "cda_guide_retrieval_error": "Tapahtui virhe haettaessa Cloud Disk Array (CDA) -ohjetta."
 }

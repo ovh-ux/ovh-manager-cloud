@@ -1,8 +1,8 @@
 {
-  "veeam_update_offer_title": "Upgrade řešení Veeam Cloud Connect",
-  "veeam_update_offer_information": "Poplatky činí <strong>{{ price }} bez DPH/měsíc</strong>",
-  "veeam_update_offer_cancel": "Zrušit",
-  "veeam_update_offer_continue": "Pokračovat",
-  "veeam_update_offer_change": "Změnit",
-  "veeam_update_storage_add": "Přidat"
+ "veeam_update_offer_title": "Upgrade řešení Veeam Cloud Connect",
+ "veeam_update_offer_information": "Poplatky činí <strong>{{ price }} bez DPH/měsíc</strong>",
+ "veeam_update_offer_cancel": "Zrušit",
+ "veeam_update_offer_continue": "Pokračovat",
+ "veeam_update_offer_change": "Změnit",
+ "veeam_update_storage_add": "Přidat"
 }

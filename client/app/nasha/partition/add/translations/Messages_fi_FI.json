@@ -1,9 +1,9 @@
 {
-  "nasha_partitions_action_add_partition_title": "Valitse protokolla",
-  "nasha_partitions_action_add_success": "Osiojako {{partitionName}} lisätään hetken kuluttua.",
-  "nasha_partitions_action_add_failure": "Tapahtui virhe osiojaon {{partitionName}} luomisessa.",
-  "nasha_partitions_action_add_desc_CIFS": "CIFS: Windows-palvelimille tarkoitettu tiedonsiirtoprotokolla",
-  "nasha_partitions_action_add_desc_NFS": "NFS: Linux/Unix-palvelimille tarkoitettu tiedonsiirtoprotokolla",
-  "nasha_partitions_action_add_desc_NFS_CIFS": "NFS CIFS: mahdollistaa jaetun tiedonsiirron Windows ja Linux/Unix -palvelimilla.",
-  "nasha_partitions_name_fail": "Nimi ei ole kelvollinen."
+ "nasha_partitions_action_add_partition_title": "Valitse protokolla",
+ "nasha_partitions_action_add_success": "Osiojako {{partitionName}} lisätään hetken kuluttua.",
+ "nasha_partitions_action_add_failure": "Tapahtui virhe osiojaon {{partitionName}} luomisessa.",
+ "nasha_partitions_action_add_desc_CIFS": "CIFS: Windows-palvelimille tarkoitettu tiedonsiirtoprotokolla",
+ "nasha_partitions_action_add_desc_NFS": "NFS: Linux/Unix-palvelimille tarkoitettu tiedonsiirtoprotokolla",
+ "nasha_partitions_action_add_desc_NFS_CIFS": "NFS CIFS: mahdollistaa jaetun tiedonsiirron Windows ja Linux/Unix -palvelimilla.",
+ "nasha_partitions_name_fail": "Nimi ei ole kelvollinen."
 }

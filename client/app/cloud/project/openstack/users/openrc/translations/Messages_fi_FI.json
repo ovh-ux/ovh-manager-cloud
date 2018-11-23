@@ -1,9 +1,9 @@
 {
-  "cpou_openrc_title": "Lataa Openstackin konfigurointitiedosto",
-  "cpou_openrc_expl": "Olet lataamassa konfigurointitiedostoa, jonka avulla kirjaudutaan Openstackiin.",
-  "cpou_openrc_more": "Lisätietoa",
-  "cpou_openrc_form_select_region": "Valitse alue, johon tiedostoa sovelletaan:",
-  "cpou_openrc_form_select_region_placeholder": "Valitse alue",
-  "cpou_openrc_getopenrc_success": "Konfigurointitiedostoa ladataan",
-  "cpou_openrc_getopenrc_error": "Valitettavasti emme pysty lataamaan konfigurointitiedostoa"
+ "cpou_openrc_title": "Lataa Openstackin konfigurointitiedosto",
+ "cpou_openrc_expl": "Olet lataamassa konfigurointitiedostoa, jonka avulla kirjaudutaan Openstackiin.",
+ "cpou_openrc_more": "Lisätietoa",
+ "cpou_openrc_form_select_region": "Valitse alue, johon tiedostoa sovelletaan:",
+ "cpou_openrc_form_select_region_placeholder": "Valitse alue",
+ "cpou_openrc_getopenrc_success": "Konfigurointitiedostoa ladataan",
+ "cpou_openrc_getopenrc_error": "Valitettavasti emme pysty lataamaan konfigurointitiedostoa"
 }

@@ -1,6 +1,6 @@
 {
-  "cpc_tab_billing": "Sunaudojimas",
-  "cpc_tab_openstack_users": "Openstack",
-  "cpb_details_compute_error_message": "Atsiprašome, nepavyko atkurti duomenų apie infrastruktūras.",
-  "cpb_read_only_access_alert": "Jūsų paskyra prieinama tik skaitymui, kai kurios operacijos neprieinamos. Norėdami gauti rašymo teises, susisiekite su mūsų administratoriumi."
+ "cpc_tab_billing": "Sunaudojimas",
+ "cpc_tab_openstack_users": "Openstack",
+ "cpb_details_compute_error_message": "Atsiprašome, nepavyko atkurti duomenų apie infrastruktūras.",
+ "cpb_read_only_access_alert": "Jūsų paskyra prieinama tik skaitymui, kai kurios operacijos neprieinamos. Norėdami gauti rašymo teises, susisiekite su mūsų administratoriumi."
 }
