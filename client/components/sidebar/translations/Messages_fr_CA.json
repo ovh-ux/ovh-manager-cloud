@@ -1,7 +1,7 @@
 {
  "cloud_sidebar_error": "Oups, nous n'arrivons pas à initialiser le menu ! TEST CA",
  "cloud_sidebar_section_iaas": "Serveurs TEST CA",
- "cloud_sidebar_section_vps": "VPS",
+ "cloud_sidebar_section_vps": "VPS TEST CA",
  "cloud_sidebar_section_dedicated_server": "Serveur Dédié",
  "cloud_sidebar_section_cloud_project": "Projet Cloud",
  "cloud_sidebar_section_dedicated_cloud": "Cloud Privé",
@@ -35,7 +35,7 @@
  "cloud_sidebar_dbaasts_tokens": "Clés d'API",
  "cloud_sidebar_dbaasts_quota": "Quota",
  "cloud_sidebar_dbaasts_billing": "Consommation",
- "cloud_sidebar_actions_menu_vps": "VPS",
+ "cloud_sidebar_actions_menu_vps": "VPS TEST CA",
  "cloud_sidebar_actions_menu_dedicated_server": "Serveur Dédié",
  "cloud_sidebar_actions_menu_cloud_project": "Projet Cloud",
  "cloud_sidebar_actions_menu_dedicated_cloud": "Cloud Privé",
