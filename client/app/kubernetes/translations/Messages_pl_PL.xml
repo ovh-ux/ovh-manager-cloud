@@ -31,11 +31,11 @@
    <translation id="kube_service_billing_contact" qtlid="505008">Kontakt księgowy</translation>
    <translation id="kube_service_billing_renewal" qtlid="168172">Odnowienie</translation>
 
-   <translation id="kube_service_reset_title">Réinitialiser la configuration de votre cluster Kubernetes</translation>
-   <translation id="kube_service_reset_message">En cliquant ici vous remettrez votre service Kubernetes dans son état original. Cela supprimera l'intégralité de vos nœuds de calcul, vos services, leur configuration etc... <strong>Cette action est irréversible</strong>.</translation>
-   <translation id="kube_service_reset_success">Votre cluster Kubernetes est en cours de réinitialisation.</translation>
-   <translation id="kube_service_reset_error">Une erreur est survenue lors de la réinitialisation de votre cluster : {{ message }}</translation>
-   <translation id="kube_service_reset_enter">Entrez "RESET" dans le champ ci-dessous pour confirmer</translation>
+   <translation id="kube_service_reset_title" qtlid="509222">Reset konfiguracji Twojego klastra Kubernetes</translation>
+   <translation id="kube_service_reset_message" qtlid="509235">Klikając tutaj, przywrócisz pierwotne ustawienia usługi Kubernetes. Operacja ta spowoduje usunięcie wszystkich węzłów obliczeniowych, usług, ich konfiguracji, etc... <strong>Operacja ta jest nieodwracalna</strong>.</translation>
+   <translation id="kube_service_reset_success" qtlid="509248">Reset klastra Kubernetes w toku...</translation>
+   <translation id="kube_service_reset_error" qtlid="509261">Wystąpił błąd podczas resetu klastra: {{ message }}</translation>
+   <translation id="kube_service_reset_enter" qtlid="509274">Wprowadź "RESET" w poniższym polu, aby potwierdzić operację.</translation>
 
    <translation id="kube_nodes" qtlid="505021">Węzły</translation>
    <translation id="kube_nodes_add" qtlid="505034">Dodaj węzeł</translation>

@@ -5,6 +5,7 @@
    <translation id="cpou_openrc_more" qtlid="44536">Więcej informacji</translation>
    <translation id="cpou_openrc_form_select_region" qtlid="263806">Wybierz region, dla którego ma zostać zastosowany ten plik:</translation>
    <translation id="cpou_openrc_form_select_region_placeholder" qtlid="263819">Wybierz region</translation>
+   <translation id="cpou_openrc_form_version3">Utiliser le fichier de configuration OpenRC v3</translation>
    <translation id="cpou_openrc_getopenrc_success" qtlid="263832">Trwa pobieranie pliku konfiguracyjnego.</translation>
    <translation id="cpou_openrc_getopenrc_error" qtlid="263845">Nie możemy pobrać pliku konfiguracyjnego.</translation>
 </translations>
