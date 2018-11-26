@@ -1,0 +1,12 @@
+{
+  "dtpdq_quota_protect_explain": "Aby bylo možno řídit spotřebu PaaS Time Series, Váš projekt má omezené zdroje.",
+  "dtpdq_quota_protect_more": "Pokud potřebujete více zdrojů, můžete si je vyžádat od našeho týmu kliknutím na tlačítko níže.",
+  "dtpdq_quota_protect_more_btn": "Navýšení mých limitů",
+  "dtpdq_quota_loading_error": "Během načítání kvót došlo k chybě.",
+  "dtpdq_table_title": "Kvóty",
+  "dtpdq_thead_description": "Zdroje",
+  "dtpdq_thead_pourcent": "Využití",
+  "dtpdq_thead_mads": "Active time series - měsíčně",
+  "dtpdq_thead_ddp": "Zprávy napsané přes den",
+  "dtpdq_increase_support": "Pro navýšení limitů pro svůj projekt kontaktujte podporu."
+}

@@ -1,0 +1,16 @@
+{
+  "nasha_snapshot_loading_error": "Při načítání snapshotu došlo k chybě.",
+  "nasha_snapshot_set_success": "Frekvence vytváření snapshotů bude za okamžik změněna.",
+  "nasha_snapshot_set_success_fail": "Při aktualizaci intervalů snapshotu došlo k neočekávané chybě.",
+  "nasha_snapshot_of": "Snapshot oddílu {{partitionName}}",
+  "nasha_snapshot_frequency": "Frekvence vytváření snapshotů",
+  "nasha_snapshot_day-1": "Každý den",
+  "nasha_snapshot_day-2": "Každé 2 dny",
+  "nasha_snapshot_day-3": "Každé 3 hodiny",
+  "nasha_snapshot_day-7": "Týden",
+  "nasha_snapshot_hour-1": "Každou hodinu",
+  "nasha_snapshot_hour-6": "Každých 6 hodin",
+  "nasha_snapshot_informations": "Snapshot je instantní snímek Vašeho NAS-HA. Tento snímek zaznamenává přesný stav Vašeho NAS-HA úložiště v momentu jeho pořízení.",
+  "nasha_snapshot_informations_size": "Pro správnou funkčnost snapshotů je na Vašem diskovém oddílu vyhrazeno speciální místo. K dispozici není žádná historie pořizování snapshotů. V případě snapshotů s totožnými intervaly platí pravidlo, že poslední pořízený snapshot přepisuje ten předcházející.",
+  "nasha_snapshot_warning_frequency": "Pokud nevyberete délku intervalu, budou Vaše existující snapshoty pro tento oddíl smazány."
+}

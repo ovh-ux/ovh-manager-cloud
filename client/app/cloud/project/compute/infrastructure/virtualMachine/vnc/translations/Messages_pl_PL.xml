@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_vnc_title" qtlid="251161">Konsola VNC</translation>
-   <translation id="cpcivm_vnc_tip" qtlid="251174">Uwaga: Jeśli wpisywanie nie działa, kliknij na niebieski pasek znajdujący się poniżej.</translation>
-   <translation id="cpcivm_vnc_window" qtlid="92753">Otwórz w nowym oknie</translation>
-   <translation id="cpcivm_vnc_error" qtlid="251187">Wystąpił błąd podczas otwierania konsoli VNC.</translation>
-   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Aby korzystać z konsoli VNC na serwerze z systemem Linux, należy najpierw połączyć się z serwerem przez SSH i skonfigurować użytkownika.</translation>
-</translations>

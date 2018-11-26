@@ -1,0 +1,16 @@
+{
+  "nasha_snapshot_loading_error": "Klaida nuskaitant momentines kopijas.",
+  "nasha_snapshot_set_success": "Momentinių kopijų atlikimo dažnumo keitimas įsigalios po kelių minučių.",
+  "nasha_snapshot_set_success_fail": "Įvyko klaida keičiant momentinių kopijų atlikimo dažnumą.",
+  "nasha_snapshot_of": "Skirsnio {{partitionName}} momentinė kopija",
+  "nasha_snapshot_frequency": "Momentinių kopijų atlikimo dažnumas",
+  "nasha_snapshot_day-1": "Kasdien",
+  "nasha_snapshot_day-2": "Kas 2 dienas",
+  "nasha_snapshot_day-3": "Kas 3 dienas",
+  "nasha_snapshot_day-7": "Kas savaitę",
+  "nasha_snapshot_hour-1": "Kas valandą",
+  "nasha_snapshot_hour-6": "Kas 6 valandas",
+  "nasha_snapshot_informations": "Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.",
+  "nasha_snapshot_informations_size": "Momentinės kopijos naudoja disko vietą jūsų skirsnyje, taip užtikrinamas teisingas veikimas. Momentinių kopijų atlikimo istorija neregistruojama: esant tam pačiam dažnumui, naujausia momentinė kopija panaikina prieš tai buvusią.",
+  "nasha_snapshot_warning_frequency": "jeigu nepasirinksite trukmės, sukurtos skirsnio kopijos bus ištrintos."
+}

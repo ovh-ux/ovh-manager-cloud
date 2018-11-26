@@ -1,0 +1,14 @@
+{
+  "login_information_error": "Hups! Kirjautumistietojen haku ei onnistu.",
+  "cpcivm_login_information_title": "Kirjautumistiedot",
+  "cpcivm_login_information_instance_title": "Kirjaudu instanssiin",
+  "cpcivm_login_information_instance_info_linux": "Syötä seuraava käsky päätteelle:<br/><code>ssh {{user}}@{{ip}}</code>",
+  "cpcivm_login_information_instance_info_windows": "Ensimmäisen kirjautumisen yhteydessä sinun on käytettävä VNC-pääteohjelmaa Windows-konfiguraation viimeistelemiseksi. Käytä tämän jälkeen valitsemaasi RDP-asiakaohjelmaa esimerkiksi Linux-työasemalla:",
+  "cpcivm_login_information_application_title": "Kirjautuminen sovelluksiin",
+  "cpcivm_login_information_application_label_type": "Tyyppi",
+  "cpcivm_login_information_application_label_url": "URL",
+  "cpcivm_login_information_application_label_login": "Käyttäjätunnus",
+  "cpcivm_login_information_application_label_password": "Salasana",
+  "cpcivm_login_information_go_to_console": "Kirjaudu VNC-pääteohjelmaan",
+  "cpcivm_login_information_application_readonly": "Tililläsi ei ole tarvittavia oikeuksia sovellusten kirjautumistietoihin pääsemiseksi. Ota yhteyttä administraattoriisi pääsyoikeuden saamiseksi. "
+}

@@ -1,0 +1,19 @@
+{
+  "me_alerts_PAYMENTMEAN_DEFAULT_MISSING": "Nebyla vybrána žádná výchozí platební metoda. Přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a> a buď některou vyberte, nebo přidejte novou.",
+  "me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED": "Platnost Vaší výchozí platební metody vypršela. Pro přidání nové platební metody přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON": "Platnost Vaší výchozí platební metody vyprší za 30 dní. Pro přidání nové platební metody přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION": "Vaše výchozí platební metoda (bankovní účet) čeká na schválení. Pro více informací přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES": "Vyskytl se problém s Vaší výchozí platební metodou (platební karta). Pro ověření její platnosti a/nebo přidání nových platebních metod přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES": "Vyskytl se problém s Vaší výchozí platební metodou (PayPal). Pro ověření její platnosti a/nebo přidání nových platebních metod přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION": "Počet bankovních účtů čekajících na schválení: <strong>{{count}}</strong>. Pro získání detailních informací přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES": "Počet platebních karet s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti karet a/nebo přidání nových platebních metod přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES": "Počet účtů PayPal s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti účtů a/nebo přidání nových platebních metod přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_OVHACCOUNT_DEBT": "Na Vašem účtu evidujeme ke dni {{date | date:'medium'}} dlužnou částku ve výši <strong>{{value}}</strong>. Pro uhrazení částky přejděte prosím do sekce <a href=\"{{link}}\" class=\"alert-link\">Fakturace</a>.",
+  "me_alerts_DEBTACCOUNT_DEBT": "Váš aktuální dluh: <strong>{{value}}</strong>. Pro vyřešení této situace přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>.",
+  "me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT": "Na Vašem účtu evidujeme dlužnou částku ve výši <strong>{{ dueAmount }}</strong> (včetně doposud neuhrazené částky {{ unmaturedAmount }}). Pro vyřešení této situace přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Fakturace\"</a>. ",
+  "me_alerts_OVHACCOUNT_ALERTTHRESHOLD": "Váš účet dosáhl Vámi definovaného limitu. Pro více informací přejděte prosím do sekce <a href=\"{{link}}\" class=\"alert-link\">Fakturace</a>.",
+  "me_alerts_ORDERS_DOCUMENTSREQUESTED": "Počet objednávek čekajících na připojení potřebných dokumentů: <strong>{{count}}</strong>. Pro dokončení objednávek přejděte prosím do <a href=\"{{link}}\" class=\"alert-link\">sekce \"Mé objednávky\"</a>.",
+  "me_alerts_AGREEMENTS_TODO": "Počet smluv čekajících na potvrzení: <strong>{{count}}</strong>.",
+  "me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS": "Počet žádostí na změnu kontaktu: <strong>{{count}}</strong>.",
+  "me_alerts_AUTORENEW_INVITE": "Nastavte si automatické obnovení <a href=\"{{ link }}\">svých služeb</a>!"
+}

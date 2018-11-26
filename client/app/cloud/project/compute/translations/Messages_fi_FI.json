@@ -1,0 +1,17 @@
+{
+  "cpc_tab_infra": "Infrastruktuuri",
+  "cpc_tab_snapshot": "Varmuuskopiot",
+  "cpc_tab_volume": "Lisälevyt",
+  "cpc_tab_ssh": "SSH-avaimet",
+  "cpc_tab_loadbalancer": "Kuormantasaus-IP",
+  "cpc_tab_project": "Projektin hallinta ja kulutus",
+  "cpb_tab_quota": "Kiintiö",
+  "cpc_message": "OVH:n Cloud saapuu Saksaan!  <a href=\"http://superlienverslapage\">Tutustu Limburgin konesaliimme.</a>",
+  "cloud_message_pci_uk1": "Uusi Iso-Britannian konesalimme UK1 Lontoo on nyt avattu!",
+  "cloud_message_pci_uk1_link": "Katso, mitä tämä tarkoittaa sinulle",
+  "cloud_message_pci_de1": "Uusi alue DE1 aukeaa Saksan Frankfurtissa!",
+  "cloud_message_pci_de1_link": "Katso, mitä tämä tarkoittaa sinulle",
+  "cloud_message_pci_g3": "Uutta: GPU G3-30- ja G3-120 -instanssien lanseeraus datatiede- tai koneoppimisprojekteihin.",
+  "cloud_message_pci_no_link": "Lisätietoja...",
+  "cloud_message_pci_bandwitdh_xmas": "19.12.2017 - 8.1.2018, hyödynnä verkon kaistanleveyttä, jonka kokonaiskapasiteetti on jopa 10 GBits/s. Saatavilla instansseissa C2-120, B2-120, R2-240 ja G3-120."
+}

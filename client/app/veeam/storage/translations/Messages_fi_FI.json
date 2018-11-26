@@ -1,0 +1,11 @@
+{
+  "veeam_storage_title": "Storagetila",
+  "veeam_storage_back": "Palaa etusivulle",
+  "veeam_storage_add_storage": "Lisää storagetila",
+  "veeam_storage_search": "Etsi...",
+  "veeam_storage_update_title": "Muokkaa",
+  "veeam_storage_update_quota_title": "Muokkaa storagetilaa",
+  "veeam_storage_update_quota_information": "Määritä storagetilasi maksimikiintiö. Arvon täytyy olla välillä 1000 GB ja {{maxquota}} GB.",
+  "veeam_storage_update_quota_cancel": "Peruuta",
+  "veeam_storage_update_quota_confirm": "Muokkaa"
+}

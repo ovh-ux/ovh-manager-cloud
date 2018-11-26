@@ -1,0 +1,10 @@
+{
+  "private_network_activate": "Aktivieren",
+  "private_network_activate_new_vRack_description": "Sie werden zur Bestellung weitergeleitet, um das neue vRack zu aktivieren. Danach können Sie es mit Ihren Dienstleistungen verbinden. Die Konfiguration wird nach einigen Sekunden aktiv.",
+  "private_network_activate_title": "Private Netzwerke aktivieren",
+  "private_network_activate_existing": "Existierende",
+  "private_network_activate_new": "Neu",
+  "private_network_select_placeholder": "Auswählen",
+  "private_network_deactivate": "Private Netzwerke deaktivieren",
+  "private_network_deactivate_confirmation": "Sind Sie sicher, dass Sie die privaten Netzwerke für diese Dienstleistung deaktivieren möchten?"
+}

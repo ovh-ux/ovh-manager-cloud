@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpou_rclone_modal_title" qtlid="451058">Rclone Konfigurationsdatei herunterladen</translation>
-   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Bitte laden Sie eine Konfigurationsdatei herunter, um sich mit Rclone zu verbinden.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Mehr Informationen</translation>
-   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Wählen Sie die Region aus, in der diese Datei angewandt wird:</translation>
-   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Aus Sicherheitsgründen enthält die Konfigurationsdatei nicht Ihr Passwort. Bearbeiten Sie daher die Konfigurationsdatei und fügen Sie Ihr Passwort manuell hinzu.</translation>
-   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Beim Laden der zugehörigen Daten der Rclone Datei ist ein Fehler aufgetreten: {{ message }}</translation>
-</translations>

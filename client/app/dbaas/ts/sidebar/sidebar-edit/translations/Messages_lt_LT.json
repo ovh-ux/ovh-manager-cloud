@@ -1,0 +1,8 @@
+{
+  "dbaasts_project_delete_title": "Projekto trynimas",
+  "dbaasts_project_delete_info": "Per 24 val. jums bus išsiųstas el. laiškas, patvirtinantis visų projekto resursų galutinį pašalinimą. Šis veiksmas neatkuriamas, visi duomenys bus nedelsiant ištrinti ir prarasti, visi API raktai neteks galiojimo.",
+  "dbaasts_project_delete_info_bill": "Sąskaita už papildomų resursų naudojimą bus suformuota per 24 val. po patvirtinimo. ",
+  "dbaasts_project_delete_info_credits": "Po sąskaitos išsiuntimo visas jūsų nepanaudotas kreditas, susietas su šiuo projektu, bus taip pat prarastas, be kompensavimo.",
+  "dbaasts_project_delete_email_sent": "Patvirtinimo el. laiškas bus išsiųstas per 24 val.",
+  "dbaasts_sidebar_edit_name_error": "Klaida keičiant pavadinimą."
+}

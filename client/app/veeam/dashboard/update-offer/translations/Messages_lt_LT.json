@@ -1,0 +1,8 @@
+{
+  "veeam_update_offer_title": "Padidinti Veeam Cloud Connect pajėgumą",
+  "veeam_update_offer_information": "Abonementas <strong>{{ price }} + PVM/mėn.</strong>",
+  "veeam_update_offer_cancel": "Anuliuoti",
+  "veeam_update_offer_continue": "Tęsti",
+  "veeam_update_offer_change": "Keisti",
+  "veeam_update_storage_add": "Pridėti"
+}

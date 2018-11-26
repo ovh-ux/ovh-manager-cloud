@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpou_rclone_modal_title" qtlid="451058">Lataa rClone-konfigurointitiedosto</translation>
-   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Olet lataamassa konfigurointitiedostoa, jonka avulla voit kirjautua Rclone-ohjelmistoon.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Lisätietoa</translation>
-   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Valitse alue, johon tiedostoa sovelletaan:</translation>
-   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Tietoturvasyistä konfigurointitiedosto ei sisällä salasanaasi. Sinun on siis muokattava konfigurointitiedostoa ja lisättävä salasana käsin.</translation>
-   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Virhe rClone-tiedostoon liittyvien tietojen latauksessa: {{ message }}</translation>
-</translations>

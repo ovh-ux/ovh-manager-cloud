@@ -1,0 +1,7 @@
+{
+  "cpbhd_monthly_header": "Mėnesinis abonementas: {{year}} {{month}}",
+  "cpbhd_hourly_header": "Suvartojimas pagal poreikį: {{year}} {{month}}",
+  "cpbhd_bill_link": "Peržiūrėti visas sąskaitas",
+  "cpbhd_bill_pdf_tooltip": "Peržiūrėti sąskaitos PDF versiją",
+  "cpbhd_bill_pdf_link": "Sąskaita: {{year}} {{month}}"
+}

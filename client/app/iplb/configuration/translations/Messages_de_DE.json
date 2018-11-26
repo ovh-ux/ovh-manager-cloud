@@ -1,0 +1,16 @@
+{
+  "iplb_configuration_title": "Die Konfiguration anwenden",
+  "iplb_configuration_intro": "Die Konfiguration Ihres Loadbalancers muss für jedes Rechenzentrum einzeln angewandt werden. Erst danach sind die Änderungen sichtbar für Ihre Besucher. Dies ermöglicht es Ihnen, auch komplexere Konfigurationen gleichzeitig auszuführen.",
+  "iplb_configuration_datacenter": "Datacenter",
+  "iplb_configuration_progress": "Fortschritt ",
+  "iplb_configuration_status": "Status",
+  "iplb_configuration_action": "Aktion",
+  "iplb_configuration_action_apply": "Die Konfiguration anwenden",
+  "iplb_configuration_changes_0": "Keine Änderungen",
+  "iplb_configuration_changes_1": "1 Änderung",
+  "iplb_configuration_changes_count": "{{count}} Änderungen",
+  "iplb_configuration_info_error": "Beim Abruf der Informationen des Loadbalancers ist ein Fehler aufgetreten: {{message}}",
+  "iplb_configuration_apply_success": "Ihr Loadbalancer wird konfiguriert.",
+  "iplb_configuration_apply_error": "Bei der Konfiguration Ihres Loadbalancers ist ein Fehler aufgetereten: {{message}}",
+  "iplb_configuration_pending_changes": "Die Konfiguration Ihres Loadbalancers wird nicht für alle Rechenzentren angewendet."
+}

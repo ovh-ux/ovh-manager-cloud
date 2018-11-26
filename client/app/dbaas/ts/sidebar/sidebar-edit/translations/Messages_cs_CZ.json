@@ -1,0 +1,8 @@
+{
+  "dbaasts_project_delete_title": "Odstranění projektu",
+  "dbaasts_project_delete_info": "Během 24 hodin Vám bude odeslán e-mail pro potvrzení, že chcete smazat všechny zdroje projektu. Tuto akci nelze vrátit, všechna data budou smazána a všechny klíče API budou zneplatněny.",
+  "dbaasts_project_delete_info_bill": "Konečná faktura za on-demand použití bude vystavena do 24 hodin od potvrzení.",
+  "dbaasts_project_delete_info_credits": "Nevyužitý kredit spojený s tímto projektem bude smazán, nelze jej refundovat.",
+  "dbaasts_project_delete_email_sent": "Potvrzující e-mail Vám bude odeslán během 24 hodin.",
+  "dbaasts_sidebar_edit_name_error": "Během změny jména došlo k chybě."
+}

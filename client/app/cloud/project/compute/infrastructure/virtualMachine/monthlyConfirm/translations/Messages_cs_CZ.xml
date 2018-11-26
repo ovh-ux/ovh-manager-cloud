@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Přechod na měsíční předplatné</translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Snižte si cenu na polovinu převodem tohoto stroje na měsíční předplatné (platba předem).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Okamžitě Vám vystavíme fakturu na poměrnou částku do konce měsíce.</translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Tento server bude během několika okamžiků převeden na předplatné.</translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Během převodu na předplatné došlo k chybě.</translation>
-</translations>

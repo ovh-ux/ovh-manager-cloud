@@ -1,0 +1,21 @@
+{
+  "cda_user_permission_definition": "Käyttäjäsi voivat käyttää klusteria erityisillä pool-luvilla.",
+  "cda_user_add_button_text": "Lisää käyttäjä",
+  "cda_user_delete_button_text": "Poista",
+  "cda_user_edit_button_text": "Katso luvat",
+  "cda_user_table_col_username": "Nimi",
+  "cda_user_table_col_key": "Avain",
+  "cda_user_table_col_pool": "Pools",
+  "cda_user_table_col_actions": "Toiminnot",
+  "cda_user_add_title": "Lisää käyttäjä",
+  "cda_user_add_username_label": "Nimi",
+  "cda_user_add_username_required": "Nimi vaaditaan.",
+  "cda_user_add_username_pattern": "Nimessä ei voi olla välilyöntejä.",
+  "cda_user_add_username_maxlength": "Nimen on oltava enintään {{ maxlength }} merkkiä pitkä.",
+  "cda_user_add_success": "Käyttäjän lisäys onnistui.",
+  "cda_user_delete_title": "Poista käyttäjä",
+  "cda_user_delete_username_label": "Nimi",
+  "cda_user_delete_confirm": "Haluatko varmasti poistaa tämän käyttäjän?",
+  "cda_user_delete_success": "Käyttäjän poisto onnistui.",
+  "cda_user_table_empty": "Ei käyttäjiä"
+}
