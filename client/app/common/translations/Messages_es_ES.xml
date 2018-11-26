@@ -603,8 +603,8 @@
    <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">es inferior a</translation>
    <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">es superior a</translation>
    <translation id="common_criteria_adder_operator_date_is" qtlid="479121">es</translation>
-   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">es antes de</translation>
-   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">es después de</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">es anterior a</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">es posterior a</translation>
    <translation id="common_criteria_adder_operator_options_is" qtlid="479121">es</translation>
    <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">no es</translation>
    <translation id="common_criteria_adder_true_label" qtlid="34776">Sí</translation>
