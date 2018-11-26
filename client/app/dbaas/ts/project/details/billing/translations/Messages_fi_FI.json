@@ -1,0 +1,17 @@
+{
+  "dtpdb_loading_error": "Hups, tapahtui virhe laskun lataamisessa.",
+  "dtpdb_bill_current_month": "Kulutus kuukaudelta <strong>{{month}} {{year}}</strong>",
+  "dtpdb_total_current_month": "Kokonaisarvio kuukauden kuluista:",
+  "dtpdb_thead_description": "Kuvaus",
+  "dtpdb_thead_quantity": "Määrä",
+  "dtpdb_thead_unit_price": "Yksikköhinta",
+  "dtpdb_thead_price": "Yhteensä",
+  "put": "PUT (rekisteröityjä pisteitä)",
+  "get": "GET (luettuja pisteitä)",
+  "10kseries": "Time series (per 10k)",
+  "100Gstorage": "Storage: 0 - 100 miljoonaa pistettä",
+  "250Gstorage": "Storage: 100 - 250 miljoonaa pistettä",
+  "500Gstorage": "Storage: 250 - 500 miljoonaa pistettä",
+  "1000Gstorage": "Storage: 500 - 1000 miljoonaa pistettä",
+  "more1000Gstorage": "Storage: yli 1000 miljoonaa pistettä"
+}

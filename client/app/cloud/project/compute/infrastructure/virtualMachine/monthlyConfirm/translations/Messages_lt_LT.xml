@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Perėjimas prie mėnesinio apmokėjimo</translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Sumažinkite serverio kainą 50% perėję prie mėnesinio apmokėjimo (apmokama iš anksto).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Bus sugeneruota sąskaita už likusias nepanaudotas mėnesio dienas.</translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Mėnesinis apmokestinimas šiam serveriui bus įjungtas po kelių sekundžių.</translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Klaida įjungiant mėnesinį apmokėjimą.</translation>
-</translations>

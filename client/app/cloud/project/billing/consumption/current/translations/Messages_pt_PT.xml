@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpbc_monthly_header" qtlid="364876">Já faturado <small>(pacotes mensais e pro-ratas)</small></translation>
-   <translation id="cpbc_hourly_header" qtlid="364889">Faturação pendente <small>(consumo a pedido no mês em curso)</small></translation>
-</translations>

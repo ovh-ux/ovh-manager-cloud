@@ -1,0 +1,16 @@
+{
+  "iplb_configuration_title": "Aplikovat konfiguraci",
+  "iplb_configuration_intro": "Váš Load Balancer musí být nakonfigurován v každém datacentru zvlášť. Teprve poté budou změny v konfiguraci viditelné pro Vaše uživatele. To Vám následně umožní provádět komplexní změny v konfiguracích najednou.",
+  "iplb_configuration_datacenter": "Datacentrum",
+  "iplb_configuration_progress": "Postup",
+  "iplb_configuration_status": "Stav",
+  "iplb_configuration_action": "Akce",
+  "iplb_configuration_action_apply": "Aplikovat konfiguraci",
+  "iplb_configuration_changes_0": "Žádné změny",
+  "iplb_configuration_changes_1": "1 změna",
+  "iplb_configuration_changes_count": "{{count}} změny/změn",
+  "iplb_configuration_info_error": "Při získávání informací o load balanceru došlo k následující chybě: {{message}}",
+  "iplb_configuration_apply_success": "Probíhá konfigurace load balanceru.",
+  "iplb_configuration_apply_error": "Při aplikaci konfigurace load balanceru došlo k následující chybě: {{message}}",
+  "iplb_configuration_pending_changes": "Konfigurace Vašeho load balanceru není aplikována ve všech datacentrech."
+}

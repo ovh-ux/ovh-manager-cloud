@@ -1,0 +1,12 @@
+{
+  "cda_user_details_permissions_list_edit_btn_back": "Atgal",
+  "cda_user_details_permissions_list_edit_title": "Keisti leidimus",
+  "cda_user_details_permissions_list_username": "Vartotojo vardas",
+  "cda_user_details_permissions_list_label_permission": "Leidimai",
+  "cda_user_details_permissions_list_edit_success": "Duomenys sėkmingai pakeisti.",
+  "cda_user_details_permissions_list_type_read": "Skaitymas",
+  "cda_user_details_permissions_list_type_write": "Rašymas",
+  "cda_user_details_permissions_list_type_execute": "Vykdymas",
+  "cda_user_details_permissions_list_type_classRead": "Classread",
+  "cda_user_details_permissions_list_type_classWrite": "Classwrite"
+}

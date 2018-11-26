@@ -1,0 +1,11 @@
+{
+  "veeam_storage_title": "Saugykla",
+  "veeam_storage_back": "Grįžti į pagrindinį",
+  "veeam_storage_add_storage": "Pridėti saugyklą",
+  "veeam_storage_search": "Paieška...",
+  "veeam_storage_update_title": "Keisti",
+  "veeam_storage_update_quota_title": "Modifier l'espace de stockage",
+  "veeam_storage_update_quota_information": "Définissez le quota maximum de votre espace de stockage. La valeur est comprise entre 1000 GB et {{maxquota}} GB.",
+  "veeam_storage_update_quota_cancel": "Anuliuoti",
+  "veeam_storage_update_quota_confirm": "Keisti"
+}

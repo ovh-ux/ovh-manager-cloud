@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_delete_title" qtlid="153779">Skirsnio trynimas</translation>
-   <translation id="nasha_partitions_delete_confirmation" qtlid="344779">Ar tikrai norite pašalinti skirsnį {{partitionName}}?</translation>
-   <translation id="nasha_partitions_action_delete_success" qtlid="344792">Skirsnis {{partitionName}} bus pašalintas po kelių minučių.</translation>
-   <translation id="nasha_partitions_action_delete_failure" qtlid="344805">Įvyko klaida šalinant skirsnį {{partitionName}}. {{message}}</translation>
-</translations>

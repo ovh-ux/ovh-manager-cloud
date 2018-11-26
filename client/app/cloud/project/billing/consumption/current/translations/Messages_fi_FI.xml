@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpbc_monthly_header" qtlid="364876">Jo laskutettu <small>(kuukausimaksut ja pro rata -maksut)</small></translation>
-   <translation id="cpbc_hourly_header" qtlid="364889">Tuleva laskutus <small>(kuluvan kuukauden käyttöön perustuva kulutus)</small></translation>
-</translations>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_delete_title" qtlid="153779">Levyosion poisto</translation>
-   <translation id="nasha_partitions_delete_confirmation" qtlid="344779">Haluatko varmasti poistaa levyosion {{partitionName}}?</translation>
-   <translation id="nasha_partitions_action_delete_success" qtlid="344792">LevyOsio {{partitionName}} poistetaan hetken kuluttua.</translation>
-   <translation id="nasha_partitions_action_delete_failure" qtlid="344805">Tapahtui virhe levyosion {{partitionName}} poistamisen yhteydessä. {{message}}</translation>
-</translations>

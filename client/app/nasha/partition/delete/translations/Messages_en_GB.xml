@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_delete_title" qtlid="153779">Delete a partition</translation>
-   <translation id="nasha_partitions_delete_confirmation" qtlid="344779">Are you sure you want to delete partition {{partitionName}}?</translation>
-   <translation id="nasha_partitions_action_delete_success" qtlid="344792">Partition {{partitionName}} will be deleted shortly.</translation>
-   <translation id="nasha_partitions_action_delete_failure" qtlid="344805">An error occurred during the removal of partition {{partitionName}}. {{message}}</translation>
-</translations>

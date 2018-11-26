@@ -1,0 +1,12 @@
+{
+  "cda_user_details_permission_title": "Luvat pooliin",
+  "cda_user_details_permission_description": "Luvat on määritetty Cloud Disk Array OSD:hen. Käyttäjällä on oletuksena \"allow r\" lupa MON'siin. MDS-oikeudet eivät ole tällä hetkellä käytössä.",
+  "cda_user_details_permissions_edit_button_text": "Muokkaa lupia",
+  "cda_user_details_permissions_table_col_poolname": "Pool",
+  "cda_user_details_permissions_table_col_read": "Luku",
+  "cda_user_details_permissions_table_col_write": "Kirjoitus",
+  "cda_user_details_permissions_table_col_execute": "Suoritus",
+  "cda_user_details_permissions_table_col_classread": "Classread -lukuoikeus",
+  "cda_user_details_permissions_table_col_classwrite": "Classwrite -kirjoitusoikeus",
+  "cda_user_details_permissions_table_empty": "Käyttäjällä ei ole yhtään lupaa."
+}

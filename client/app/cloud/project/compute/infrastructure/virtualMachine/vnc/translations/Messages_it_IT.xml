@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_vnc_title" qtlid="251161">Console VNC</translation>
-   <translation id="cpcivm_vnc_tip" qtlid="251174">Suggerimento: se l'inserimento da tastiera non funziona, clicca sulla barra blu sottostante</translation>
-   <translation id="cpcivm_vnc_window" qtlid="92753">Aprire in una nuova finestra</translation>
-   <translation id="cpcivm_vnc_error" qtlid="251187">Si è verificato un errore nell'apertura della console VNC</translation>
-   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Per utilizzare la console VNC su una macchina Linux, connettiti via SSH e imposta nome utente e password.</translation>
-</translations>

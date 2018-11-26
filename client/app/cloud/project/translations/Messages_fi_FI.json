@@ -1,0 +1,6 @@
+{
+  "cpc_tab_billing": "Käyttö",
+  "cpc_tab_openstack_users": "OpenStack",
+  "cpb_details_compute_error_message": "Infrastruktuurien tietoja ei löydy.",
+  "cpb_read_only_access_alert": "Hallintapaneelissasi kaikki toiminnot eivät ole käytettävissä, koska tilillesi on määritelty vain lukuoikeudet. Saadaksesi kirjoitusoikeudet, ota yhteys omaan administraattoriisi."
+}
