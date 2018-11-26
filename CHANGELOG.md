@@ -1,3 +1,12 @@
+## [7.10.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.1...v7.10.2) (2018-11-26)
+
+
+### Bug Fixes
+
+* **cloud.project.rclone:** undefined content file ([4462b8e](https://github.com/ovh-ux/ovh-manager-cloud/commit/4462b8e))
+
+
+
 ## [7.10.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.0...v7.10.1) (2018-11-20)
 
 
