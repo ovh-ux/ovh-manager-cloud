@@ -237,7 +237,7 @@
    <translation id="vps_configuration_option_released" qtlid="284893">Not renewed </translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activate Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activate the Backup storage option</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Do you want to order the Backup Storage option on VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question">Commande de l'option Backup storage sur le VPS {{ serviceName }}&#160;?</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be bliled at the monthly rate of <span class="red bold">{{ price }}</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">The Backup storage is an archiving space for transferring your content, data, settings and configurations.</translation>
@@ -317,7 +317,7 @@
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">An error occurred while loading the information.</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">The service will then be billed monthly at the rate of <span class="red bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Do you wish to order the Automated Backup option for  VPS <span class="italic normal">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_question">Commande de l'option Backups automatisés sur le VPS {{ serviceName }}&#160;?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">To confirm your request, please accept the terms and conditions and click on "Next" below.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Price excl. taxes:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Price incl. taxes:</translation>

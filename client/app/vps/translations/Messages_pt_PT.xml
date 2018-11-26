@@ -237,7 +237,7 @@
    <translation id="vps_configuration_option_released" qtlid="284893">Não renovado</translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Ativar o Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Ativar a opção Backup storage</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Deseja ativar a opção Backup Storage para o VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question">Commande de l'option Backup storage sur le VPS {{ serviceName }}&#160;?</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Esta opção terá um preço mensal de <span class="bold">{{ price }} + IVA</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">O Backup Storage é um espaço de arquivo que lhe permite transferir conteúdos, dados, parâmetros e configurações.</translation>
@@ -317,7 +317,7 @@
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Ocorreu um erro aquando do carregamento das informações</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">A seguir, o serviço será faturado ao preço de <span class="bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Deseja subscrever a opção de backup automático para o VPS "{{ serviceName }}"?</translation>
+   <translation id="vps_configuration_veeam_order_step1_question">Commande de l'option Backups automatisés sur le VPS {{ serviceName }}&#160;?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Preço c/IVA.</translation>
