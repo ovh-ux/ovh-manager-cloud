@@ -9,6 +9,9 @@ angular.module('managerApp')
             abstract: true,
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });

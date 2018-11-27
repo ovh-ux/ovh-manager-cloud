@@ -8,13 +8,19 @@ angular.module('managerApp')
         templateUrl: 'app/nasha/add/nasha-add.html',
         controller: 'NashaAddCtrl',
         controllerAs: 'NashaAddCtrl',
-        translations: ['../../common', '.', '..'],
+        translations: {
+          value: ['../../common', '.', '..'],
+          format: 'json',
+        },
       })
       .state('paas.nasha-unavailable', {
         url: '/nasha/unavailable',
         templateUrl: 'app/nasha/add/nasha-unavailable.html',
         controller: 'NashaUnavailableCtrl',
         controllerAs: '$ctrl',
-        translations: ['../../common', '.', '..'],
+        translations: {
+          value: ['../../common', '.', '..'],
+          format: 'json',
+        },
       });
   });

@@ -11,7 +11,10 @@ angular.module('managerApp')
         resolve: {
           serviceName: $stateParams => $stateParams.serviceName,
         },
-        translations: ['..'],
+        translations: {
+          value: ['..'],
+          format: 'json',
+        },
       })
       .state('paas.kube.service.reset', {
         url: '/reset',
@@ -21,6 +24,9 @@ angular.module('managerApp')
             controllerAs: 'ctrl',
           },
         },
-        translations: ['..'],
+        translations: {
+          value: ['..'],
+          format: 'json',
+        },
       });
   });

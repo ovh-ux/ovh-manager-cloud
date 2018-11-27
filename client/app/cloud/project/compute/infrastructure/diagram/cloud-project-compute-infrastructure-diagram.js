@@ -11,6 +11,9 @@ angular.module('managerApp').config(($stateProvider) => {
         noTranslations: true,
       },
     },
-    translations: ['../../../billing/vouchers/addCredit'],
+    translations: {
+      value: ['../../../billing/vouchers/addCredit'],
+      format: 'json',
+    },
   });
 });

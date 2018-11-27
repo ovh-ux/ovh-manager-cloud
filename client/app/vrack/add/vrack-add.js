@@ -8,6 +8,9 @@ angular.module('managerApp')
         templateUrl: 'app/vrack/add/vrack-add.html',
         controller: 'VrackAddCtrl',
         controllerAs: 'VrackAddCtrl',
-        translations: ['../../common', '..', '.'],
+        translations: {
+          value: ['../../common', '..', '.'],
+          format: 'json',
+        },
       });
   });

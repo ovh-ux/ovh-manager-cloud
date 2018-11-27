@@ -7,6 +7,9 @@ angular.module('managerApp')
       templateUrl: 'app/cloud/project/openstack/users/openrc/openstack-users-openrc.html',
       controller: 'OpenstackUsersOpenrcCtrl',
       controllerAs: 'OpenstackUsersOpenrcCtrl',
-      translations: ['.'],
+      translations: {
+        value: ['.'],
+        format: 'json',
+      },
     });
   });

@@ -14,6 +14,9 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['.', '../zone', '../vrack'],
+      translations: {
+        value: ['.', '../zone', '../vrack'],
+        format: 'json',
+      },
     });
 });

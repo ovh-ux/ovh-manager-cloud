@@ -10,6 +10,9 @@ angular.module('managerApp')
             controllerAs: 'CdaUserDetailsPermissionListEditCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });

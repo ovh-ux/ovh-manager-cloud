@@ -15,6 +15,9 @@ angular.module('managerApp').config(($stateProvider) => {
         return DBaasTsProjectService.ensureProjectIsActive($stateParams);
       },
     },
-    translations: ['.', '..'],
+    translations: {
+      value: ['.', '..'],
+      format: 'json',
+    },
   });
 });

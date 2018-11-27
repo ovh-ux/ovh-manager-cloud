@@ -8,6 +8,9 @@ angular.module('managerApp')
         url: '/iaas',
         abstract: true,
         template: '<ui-view/>',
-        translations: ['../common', '.'],
+        translations: {
+          format: 'json',
+          value: ['../common', '.'],
+        },
       });
   });

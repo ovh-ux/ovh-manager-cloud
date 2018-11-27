@@ -10,6 +10,9 @@ angular.module('managerApp')
             controllerAs: 'CdaIpListCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });
