@@ -15,7 +15,7 @@ angular.module('managerApp')
           text: 'guide_project_1',
           atInternetClickTag: 'TopGuide-PublicCloud-1',
           isExternal: true,
-          href: 'https://docs.ovh.com/fr/public-cloud/debuter-avec-public-cloud-premiere-connexion/#etape-3-creer-son-premier-projet-public-cloud',
+          href: 'https://docs.ovh.com/fr/public-cloud/getting_started_with_public_cloud_logging_in_and_creating_a_project/',
         }, {
           text: 'guide_project_2',
           atInternetClickTag: 'TopGuide-PublicCloud-2',
