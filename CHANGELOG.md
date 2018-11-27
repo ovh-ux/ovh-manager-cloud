@@ -1,3 +1,22 @@
+# [7.11.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.2...v7.11.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **cloud:** wrong guide url ([d144e6e](https://github.com/ovh-ux/ovh-manager-cloud/commit/d144e6e))
+* **deps:** upgrade npm-run-all to v4.1.5 ([d0ebbd8](https://github.com/ovh-ux/ovh-manager-cloud/commit/d0ebbd8))
+* **i18n:** retrieve translations ([e81731f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e81731f))
+* **i18n:** submit translations ([05f21d9](https://github.com/ovh-ux/ovh-manager-cloud/commit/05f21d9))
+* **veeam.order:** ask for retranslating  text with issue ([5eb9d29](https://github.com/ovh-ux/ovh-manager-cloud/commit/5eb9d29))
+* **vps.upgrade:** previous state ([1fb1b02](https://github.com/ovh-ux/ovh-manager-cloud/commit/1fb1b02))
+
+
+### Features
+
+* **openstack:** openRC v3 file download ([bc58634](https://github.com/ovh-ux/ovh-manager-cloud/commit/bc58634))
+
+
+
 ## [7.10.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.1...v7.10.2) (2018-11-26)
 
 
