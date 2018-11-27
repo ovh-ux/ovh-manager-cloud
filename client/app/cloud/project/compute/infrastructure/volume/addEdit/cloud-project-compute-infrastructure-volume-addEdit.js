@@ -8,6 +8,9 @@ angular.module('managerApp')
         templateUrl: 'app/cloud/project/compute/infrastructure/volume/addEdit/cloud-project-compute-infrastructure-volume-addEdit.html',
         controller: 'CloudProjectComputeInfrastructureVolumeAddEditCtrl',
         controllerAs: 'CloudProjectComputeInfrastructureVolumeAddEditCtrl',
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

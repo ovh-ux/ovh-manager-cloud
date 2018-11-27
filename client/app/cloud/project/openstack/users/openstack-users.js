@@ -13,11 +13,14 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectOpenstackUsersCtrl',
           },
         },
-        translations: [
-          '.',
-          './token',
-          './openrc',
-          './rclone',
-        ],
+        translations: {
+          value: [
+            '.',
+            './token',
+            './openrc',
+            './rclone',
+          ],
+          format: 'json',
+        },
       });
   });

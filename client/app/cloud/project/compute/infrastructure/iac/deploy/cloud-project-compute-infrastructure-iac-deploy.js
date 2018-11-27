@@ -15,6 +15,9 @@ angular.module('managerApp').config(($stateProvider) => {
         regions: null,
       },
     },
-    translations: ['.'],
+    translations: {
+      value: ['.'],
+      format: 'json',
+    },
   });
 });

@@ -17,6 +17,9 @@ angular.module('managerApp').config(($stateProvider) => {
       },
       createNewVm: false,
     },
-    translations: ['.'],
+    translations: {
+      value: ['.'],
+      format: 'json',
+    },
   });
 });

@@ -16,7 +16,10 @@
             template: '<div data-ui-view="iplbFrontend"><div>',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.frontends.home', {
         url: '/',
@@ -27,7 +30,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.frontends.add', {
         url: '/add',
@@ -38,7 +44,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.frontends.update', {
         url: '/:frontendId',
@@ -49,7 +58,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });
 })();

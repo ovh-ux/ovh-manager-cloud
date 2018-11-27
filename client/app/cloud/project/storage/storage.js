@@ -12,7 +12,10 @@ angular.module('managerApp')
             controllerAs: 'RA.storageCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
 
     $stateProvider
@@ -25,10 +28,13 @@ angular.module('managerApp')
             controllerAs: 'RA.storageAddCtrl',
           },
         },
-        translations: [
-          '.',
-          '../storage/storage-add',
-        ],
+        translations: {
+          value: [
+            '.',
+            '../storage/storage-add',
+          ],
+          format: 'json',
+        },
       });
 
     $stateProvider
@@ -41,6 +47,12 @@ angular.module('managerApp')
             controllerAs: 'RA.storageDetailsCtrl',
           },
         },
-        translations: ['.', './storage-details'],
+        translations: {
+          value: [
+            '.',
+            './storage-details',
+          ],
+          format: 'json',
+        },
       });
   });

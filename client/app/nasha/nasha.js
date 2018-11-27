@@ -9,6 +9,9 @@ angular.module('managerApp')
         controller: 'NashaCtrl',
         controllerAs: 'NashaCtrl',
         abstract: true,
-        translations: ['../common', '.'],
+        translations: {
+          value: ['../common', '.'],
+          format: 'json',
+        },
       });
   });

@@ -11,6 +11,9 @@ angular.module('managerApp')
         resolve: {
           serviceName: $stateParams => $stateParams.serviceName,
         },
-        translations: ['..'],
+        translations: {
+          value: ['..'],
+          format: 'json',
+        },
       });
   });

@@ -13,15 +13,18 @@ angular.module('managerApp')
           },
         },
         onEnter: CloudMessage => CloudMessage.flushMessages(),
-        translations: [
-          '../../common',
-          '.',
-          './add',
-          './delete',
-          './update',
-          './snapshot',
-          './custom-snapshot',
-          './zfs-options',
-        ],
+        translations: {
+          value: [
+            '../../common',
+            '.',
+            './add',
+            './delete',
+            './update',
+            './snapshot',
+            './custom-snapshot',
+            './zfs-options',
+          ],
+          format: 'json',
+        },
       });
   });

@@ -13,6 +13,9 @@ angular.module('managerApp')
           },
         },
         redirectTo: 'iaas.pci-project.compute.openstack.users',
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });
