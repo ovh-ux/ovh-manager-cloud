@@ -25,8 +25,8 @@ class VpsUpgradeCtrl {
     this.upgradesList = null;
   }
 
-  $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+  gotoPreviousState() {
+    return this.CloudNavigation.getPreviousState().go();
   }
 
   getCurrentModel() {
@@ -59,7 +59,7 @@ class VpsUpgradeCtrl {
         } else {
           this.CloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
         }
-        this.previousState.go();
+        this.gotoPreviousState();
       }).finally(() => {
         this.loaders.step1 = false;
       });
@@ -105,7 +105,7 @@ class VpsUpgradeCtrl {
   }
 
   cancel() {
-    this.previousState.go();
+    this.gotoPreviousState();
   }
 
   confirm() {
