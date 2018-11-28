@@ -1,3 +1,3 @@
 angular
   .module('managerApp')
-  .run(/* @ngTranslationsInject:xml ovh-angular-otrs/src/translations */);
+  .run(/* @ngTranslationsInject ../../../node_modules/ovh-angular-otrs/src/translations */);
