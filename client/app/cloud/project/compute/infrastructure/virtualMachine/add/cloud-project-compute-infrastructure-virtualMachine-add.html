@@ -175,7 +175,8 @@
                                                data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
                                                data-placeholder="{{ 'cpcivm_add_step2_datacenter_choose' | translate }}"
                                                data-text="{{region.macroRegion.text}}"
-                                               data-values="region.dataCenters">
+                                               data-values="region.dataCenters"
+                                               data-variant="light">
                                 <span class="oui-select-picker__section text-center"
                                       data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
                                     <oui-button data-variant="link"
@@ -205,7 +206,8 @@
                                                data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }} flag"
                                                data-placeholder="{{ 'cpcivm_add_step2_datacenter_choose' | translate }}"
                                                data-text="{{ region.macroRegion.text }}"
-                                               data-values="region.dataCenters">
+                                               data-values="region.dataCenters"
+                                               data-variant="light">
                                 <span class="oui-select-picker__section text-center"
                                       data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
                                     <oui-button data-variant="link"
@@ -231,7 +233,8 @@
                                        data-name="regionSelected"
                                        data-picture="flag-icon flag-icon-{{ $ctrl.model.region.macroRegion.code | lowercase }} flag"
                                        data-text="{{ $ctrl.model.region.macroRegion.text }}"
-                                       data-values="[$ctrl.model.region]">
+                                       data-values="[$ctrl.model.region]"
+                                       data-variant="light">
                     </oui-select-picker>
                 </div>
             </div>
