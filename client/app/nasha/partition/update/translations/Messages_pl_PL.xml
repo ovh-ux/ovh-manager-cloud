@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_update_success" qtlid="344974">Rozmiar partycji {{partitionName}} zostanie zaktualizowany w ciągu kilku minut.</translation>
-   <translation id="nasha_partitions_action_update_failure" qtlid="344987">Wystąpił błąd podczas aktualizowania rozmiaru partycji {{partitionName}}.</translation>
-</translations>

@@ -1,0 +1,17 @@
+{
+  "dtpdb_loading_error": "Během načítání faktury došlo k chybě.",
+  "dtpdb_bill_current_month": "Měsíční spotřeba za <strong>{{month}} {{year}}</strong>",
+  "dtpdb_total_current_month": "Odhad celkových nákladů za tento měsíc:",
+  "dtpdb_thead_description": "Popis",
+  "dtpdb_thead_quantity": "Kvantita",
+  "dtpdb_thead_unit_price": "Kusová cena",
+  "dtpdb_thead_price": "Celkem",
+  "put": "PUT (uložené body)",
+  "get": "GET (přečtené body)",
+  "10kseries": "Time series (per 10k)",
+  "100Gstorage": "Úložiště: 0 až 100 Gpoints",
+  "250Gstorage": "Úložiště: 100 až 250 Gpoints",
+  "500Gstorage": "Úložiště: 250 až 500 Gpoints",
+  "1000Gstorage": "Úložiště: 500 až 1000 Gpoints",
+  "more1000Gstorage": "Úložiště: nad 1000 Gpoints"
+}

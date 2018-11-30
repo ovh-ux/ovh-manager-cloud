@@ -1,0 +1,13 @@
+{
+  "cpb_vouchers_add_credit_title": "Įsigyti cloud kreditų",
+  "cpb_vouchers_add_credit_info": "Nustatykite sumą (be mokesčių), kuria kredituosite šį projektą. Kai užsakymas bus įvykdytas, kreditas bus naudojamas projekto resursų apmokėjimui 12 ateinančių mėnesių.",
+  "cpb_vouchers_add_credit_amount": "Kredituojama suma ( be PVM {{ currency }} ):",
+  "cpb_vouchers_add_credit_required_error": "Jūs turite nurodyti kredito sumą, kurią norite priskirti.",
+  "cpb_vouchers_add_credit_max_error": "Ši suma neteisinga.",
+  "cpb_vouchers_add_credit_doing": "Kuriamas užsakymas...",
+  "cpb_vouchers_add_credit_valid": "Generuoti užsakymą",
+  "cpb_vouchers_add_credit_cancel": "Anuliuoti",
+  "cpb_vouchers_add_credit_error": "Atsiprašome, nepavyko įsigyti cloud kredito.",
+  "cpb_vouchers_add_credit_success": "Jūsų kredito {{ amount }} užsakymas prieinamas <a href=\"{{ url }}\" target=\"_blank\">čia</a>.",
+  "cpb_vouchers_add_credit_load_err": "Oups, une erreur est survenue lors du chargement de l’achat de crédit cloud."
+}

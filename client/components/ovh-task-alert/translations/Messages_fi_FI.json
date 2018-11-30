@@ -1,0 +1,5 @@
+{
+  "ovh_task_follow_button": "Häiriön tiedot",
+  "ovh_task_follow_modal_title": "Häiriön seuranta",
+  "ovh_task_follow_modal_comment": "Päivitetty viimeksi: {{ date }}"
+}

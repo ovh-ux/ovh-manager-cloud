@@ -60,7 +60,7 @@ class NashaAddService {
       quantity: 1,
       configuration: [{
         label: 'datacenter',
-        values: [model.selectedDatacenter.toUpperCase()],
+        value: [model.selectedDatacenter.toUpperCase()],
       }],
     })
       .then(response => ({ url: response }))

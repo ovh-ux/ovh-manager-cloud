@@ -14,6 +14,9 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'ctrl',
         },
       },
-      translations: ['../task'],
+      translations: {
+        value: ['../task'],
+        format: 'json',
+      },
     });
 });

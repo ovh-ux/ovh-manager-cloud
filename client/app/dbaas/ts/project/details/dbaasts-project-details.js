@@ -17,6 +17,9 @@ angular.module('managerApp')
           squash: true,
         },
       },
-      translations: ['.', '../../../../cloud/project/delete'],
+      translations: {
+        value: ['.', '../../../../cloud/project/delete'],
+        format: 'json',
+      },
     });
   });

@@ -1,0 +1,13 @@
+{
+  "cpb_vouchers_add_credit_title": "Osta Public Cloud -krediittejä",
+  "cpb_vouchers_add_credit_info": "Valitse summa (ilman arvonlisäveroa), joka lisätään tähän projektiin. Maksettuasi tilauksen, krediitti on käytettävissä 12 kuukauden ajan projektin kuukausilaskun sekä kulutuksen maksuun.",
+  "cpb_vouchers_add_credit_amount": "Ladattava summa (ALV 0 % {{ currency }}):",
+  "cpb_vouchers_add_credit_required_error": "Sinun täytyy syöttää määrä ",
+  "cpb_vouchers_add_credit_max_error": "Tämä ei ole kelvollinen määrä.",
+  "cpb_vouchers_add_credit_doing": "Tilausta luodaan…",
+  "cpb_vouchers_add_credit_valid": "Luo tilaus",
+  "cpb_vouchers_add_credit_cancel": "Peruuta",
+  "cpb_vouchers_add_credit_error": "Tapahtui virhe Public Cloud -krediittien oston aikana.",
+  "cpb_vouchers_add_credit_success": "Tilauksesi {{ amount }} krediitille on saatavilla <a href=\"{{ url }}\" target=\"_blank\">tästä</a>.",
+  "cpb_vouchers_add_credit_load_err": "Hups, tapahtui virhe cloud-krediitin ostamisessa."
+}

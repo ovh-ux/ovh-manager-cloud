@@ -1,0 +1,6 @@
+{
+  "nasha_partitions_action_delete_title": "Vymazat diskový oddíl",
+  "nasha_partitions_delete_confirmation": "Opravdu si přejete odstranit diskový oddíl {{partitionName}}?",
+  "nasha_partitions_action_delete_success": "Diskový oddíl {{partitionName}} bude za okamžik odstraněn.",
+  "nasha_partitions_action_delete_failure": "Při odstraňování diskového oddílu {{partitionName}} došlo k chybě. {{message}}"
+}

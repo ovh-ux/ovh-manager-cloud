@@ -1,0 +1,14 @@
+{
+  "dtpdt_key_add_title": "Uusi API-avain",
+  "dtpdt_key_edit_title": "Muokkaa API-avainta",
+  "dtpdt_name": "Avaimen nimi",
+  "dtpdt_permission": "Lupa",
+  "dtpdt_description": "Kuvaus",
+  "dtpdt_tags": "Tagit",
+  "dtpdt_add_tag": "Lisää tagi",
+  "dtpdt_remove_tag": "Poista",
+  "dtpdt_tag_key": "Nimi",
+  "dtpdt_tag_value": "Arvo",
+  "dtpdt_add_key": "Luo",
+  "dtpdt_edit_key": "Muokkaa"
+}

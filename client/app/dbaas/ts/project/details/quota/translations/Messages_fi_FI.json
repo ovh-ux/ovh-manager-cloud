@@ -1,0 +1,12 @@
+{
+  "dtpdq_quota_protect_explain": "Jotta PaaS Time Series -palvelun kulutus pysyy hallinnassasi, on projektissasi rajalliset resussit.",
+  "dtpdq_quota_protect_more": "Jos tarvitset lisäresursseja, voit pyytää niitä tiimiltämme klikkaamalla alla olevaa painiketta.",
+  "dtpdq_quota_protect_more_btn": "Nosta rajoituksia",
+  "dtpdq_quota_loading_error": "Hups, tapahtui virhe kiintiöiden lataamisessa. ",
+  "dtpdq_table_title": "Kiintiöt",
+  "dtpdq_thead_description": "Resurssi",
+  "dtpdq_thead_pourcent": "Käyttö",
+  "dtpdq_thead_mads": "Tilapäiset kuukauksittain aktivoidut sarjat",
+  "dtpdq_thead_ddp": "Kirjoitettuja viestejä päivässä",
+  "dtpdq_increase_support": "Ota yhteyttä asiakastukeen projektisi rajoitusten nostamiseksi."
+}

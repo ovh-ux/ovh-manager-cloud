@@ -7,7 +7,10 @@ angular.module('managerApp')
       templateUrl: 'app/deskaas/deskaas-details/deskaas-details.html',
       controller: 'DeskaasDetailsCtrl',
       controllerAs: '$ctrl',
-      translations: ['.'],
+      translations: {
+        value: ['.'],
+        format: 'json',
+      },
       params: {
         followTask: null,
       },

@@ -1,0 +1,16 @@
+{
+  "iplb_configuration_title": "Zastosuj konfigurację",
+  "iplb_configuration_intro": "Konfiguracja Twojego Load Balancera musi zostać przeprowadzona oddzielnie w każdym centrum danych. Tylko wtedy adresy IP będą widoczne dla użytkowników końcowych. Ta operacja pozwala dokonać kompleksowej zmiany za jednym razem.",
+  "iplb_configuration_datacenter": "Data center",
+  "iplb_configuration_progress": "Postęp",
+  "iplb_configuration_status": "Status",
+  "iplb_configuration_action": "Operacja",
+  "iplb_configuration_action_apply": "Zastosuj konfigurację",
+  "iplb_configuration_changes_0": "Bez zmian",
+  "iplb_configuration_changes_1": "1 zmiana",
+  "iplb_configuration_changes_count": "{{count}} zmian(y)",
+  "iplb_configuration_info_error": "Wystąpił błąd podczas pobierania informacji o Load Balancerze: {{message}}",
+  "iplb_configuration_apply_success": "Trwa konfiguracja Load Balancera.",
+  "iplb_configuration_apply_error": "Wystąpił błąd podczas konfiguracji Load Balancera: {{message}}",
+  "iplb_configuration_pending_changes": "Konfiguracja Twojego Load Balancera nie została zastosowana we wszystkich centrach danych."
+}

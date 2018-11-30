@@ -13,6 +13,9 @@ angular.module('managerApp')
             controllerAs: 'CdaUserDetailsPermissionListCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });

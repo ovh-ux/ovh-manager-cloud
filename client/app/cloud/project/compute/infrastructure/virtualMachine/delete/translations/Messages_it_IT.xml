@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_delete_title" qtlid="247950">Elimina istanza</translation>
-   <translation id="cpcivm_delete_info" qtlid="247963">L'importo relativo al mese in corso per questo server è già stato saldato: se non lo utilizzi, verrà perso. Non sono previsti rimborsi, né diritti di recesso. </translation>
-   <translation id="cpcivm_failover_info" qtlid="269383">Questi IP Failover saranno eliminati definitivamente:</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Vuoi davvero eliminare questa istanza?</translation>
-</translations>

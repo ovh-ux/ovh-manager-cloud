@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Passagem à renovação mensal</translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Reduza o preço em 50% ao passar esta máquina para renovação mensal (pagamento efetuado antecipadamente).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Uma fatura de 'pro rata temporis' para os dias restantes será imediatamente criada.</translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Este servidor será integrado às renovações mensais dentro de alguns instantes.</translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Ocorreu um erro aquando da passagem para renovação mensal.</translation>
-</translations>

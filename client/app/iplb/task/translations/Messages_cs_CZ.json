@@ -1,0 +1,16 @@
+{
+  "iplb_task_title": "Úkoly",
+  "iplb_task_intro_text": "Úkoly na Vaší službě IP Load Balancer jsou z tohoto seznamu automaticky odstraňovány 48 hodin po dokončení.",
+  "iplb_task_list_col_creation_date": "Datum vytvoření",
+  "iplb_task_list_col_task": "Úkol",
+  "iplb_task_list_col_progress": "Postup",
+  "iplb_task_list_col_status": "Stav",
+  "iplb_task_list_col_action": "Akce",
+  "iplb_task_preview_title": "Detaily úkolu",
+  "iplb_task_preview_creation_date": "Datum vytvoření",
+  "iplb_task_preview_task": "Úkol",
+  "iplb_task_preview_progress": "Postup",
+  "iplb_task_preview_status": "Stav",
+  "iplb_task_preview_id": "Identifikátor",
+  "iplb_task_no_task": "Žádné probíhající úkoly"
+}

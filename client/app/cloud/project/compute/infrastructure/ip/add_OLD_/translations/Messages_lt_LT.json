@@ -1,0 +1,7 @@
+{
+  "cpciip_add_title": "Pridėti IP adresus",
+  "cpciip_add_run_now": "Pridėti dabar",
+  "cpciip_add_geoloc": "Lokacijos pasirinkimas",
+  "cpciip_add_geoloc_loading": "Prieinamos lokacijos įkėlimas.",
+  "cpciip_add_post_ip_error": "Atsiprašome, nepavyko sukurti naujo IP adreso!"
+}

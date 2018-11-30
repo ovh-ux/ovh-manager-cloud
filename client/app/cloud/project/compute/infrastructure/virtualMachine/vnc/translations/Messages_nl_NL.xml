@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_vnc_title" qtlid="251161">VNC console</translation>
-   <translation id="cpcivm_vnc_tip" qtlid="251174">Tip: als u niet kunt typen in het venster, klikt u op de blauwe balk er onder.</translation>
-   <translation id="cpcivm_vnc_window" qtlid="92753">Openen in een nieuw venster</translation>
-   <translation id="cpcivm_vnc_error" qtlid="251187">Error: niet mogelijk om de VNC console te openen.</translation>
-   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Om de VNC console op de Linux machine te gebruiken, moet u eerst inloggen via SSH en een gebruiker met een wachtwoord configureren.</translation>
-</translations>

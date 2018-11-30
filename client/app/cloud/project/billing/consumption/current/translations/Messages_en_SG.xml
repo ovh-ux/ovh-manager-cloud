@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpbc_monthly_header" qtlid="364876">Already billed <small>(monthly costs and pro rata)</small></translation>
-   <translation id="cpbc_hourly_header" qtlid="364889">Future billing <small>(on-demand usage for the current month)</small></translation>
-</translations>

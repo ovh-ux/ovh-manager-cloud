@@ -1,0 +1,6 @@
+{
+  "cpcivm_delete_title": "Virtualios mašinos pašalinimas",
+  "cpcivm_delete_info": "Jūs jau apmokėjote savo mėnesinį abonementą už šį serverį. Išankstinis mokėjimas už nepanaudotas dienas nekompensuojamas.",
+  "cpcivm_failover_info": "Šie papildomi IP adresai bus pašalinti negrįžtamai:",
+  "cpcivm_delete_confirm": "Ar tikrai norite ištrinti šią VM?"
+}

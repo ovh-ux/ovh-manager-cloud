@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="veeam_storage_add_title" qtlid="403671">Pridėti saugyklą</translation>
-   <translation id="veeam_storage_add_confirmation" qtlid="403749">Ar tikrai norite pridėti saugyklą?</translation>
-   <translation id="veeam_storage_add_confirm" qtlid="37923">Pridėti</translation>
-   <translation id="veeam_storage_add_cancel" qtlid="37863">Anuliuoti</translation>
-</translations>

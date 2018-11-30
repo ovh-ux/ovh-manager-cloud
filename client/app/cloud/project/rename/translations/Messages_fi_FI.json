@@ -1,0 +1,9 @@
+{
+  "cloud_project_rename_loading_error": "Tapahtui virhe kuvauksen lataamisessa.",
+  "cloud_project_rename_error": "Tapahtui virhe muokattaessa kuvausta.",
+  "cpb_details_project_delete": "Poista projekti",
+  "cpb_details_project_rename_reset": "Peruuta",
+  "cpb_details_project_rename_ok": "Tallenna",
+  "cpb_details_project_rename": "Uudelleennimeä",
+  "cpb_details_project_description": "Projektin kuvaus"
+}

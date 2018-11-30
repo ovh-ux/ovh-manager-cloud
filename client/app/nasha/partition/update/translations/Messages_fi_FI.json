@@ -1,0 +1,4 @@
+{
+  "nasha_partitions_action_update_success": "Levyosion{{partitionName}} koko päivitetään hetken kuluttua.",
+  "nasha_partitions_action_update_failure": "Tapahtui virhe levyosion {{partitionName}} koon päivityksessä."
+}

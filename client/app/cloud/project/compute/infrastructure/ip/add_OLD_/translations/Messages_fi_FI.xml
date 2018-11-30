@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpciip_add_title" qtlid="249328">Lisää IP-osoite</translation>
-   <translation id="cpciip_add_run_now" qtlid="249341">Lisää nyt</translation>
-   <translation id="cpciip_add_geoloc" qtlid="249354">Sijaintipaikan valinta</translation>
-   <translation id="cpciip_add_geoloc_loading" qtlid="249367">Sijaintipaikkoja ladataan…</translation>
-   <translation id="cpciip_add_post_ip_error" qtlid="249380">Uuden IP-osoitteen lisäys ei onnistu.</translation>
-</translations>
