@@ -8,10 +8,10 @@
               data-translate="cpci_menu_view_label"></span>
         <nav class="oui-button-group align-middle mb-0">
             <a class="oui-button oui-button_secondary"
-               ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
                data-translate="cpci_menu_view_diagram"></a>
             <a class="oui-button oui-button_primary"
-               ui-sref="iaas.pci-project.compute.infrastructure.list()"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.list()"
                data-translate="cpci_menu_view_list"></a>
         </nav>
     </div>
@@ -24,20 +24,20 @@
                         <button type="button" class="oui-button oui-button_dropdown dropdown-toggle mb-0" aria-haspopup="true" aria-expanded="false"
                                 data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vRack"
                                 data-toggle="dropdown"
-                                write-right-required>
+                                data-write-right-required>
                             <span data-ng-bind=":: 'common_actions' | translate"></span>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </button>
                         <ul class="dropdown-menu mt-0" role="menu">
                             <li role="menuitem">
-                                <a class="btn fs14 text-left" ui-sref="iaas.pci-project.compute.infrastructure.vm-add()"
-                                   at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                                <a class="btn fs14 text-left" data-ui-sref="iaas.pci-project.compute.infrastructure.vm-add()"
+                                   data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
                                    data-ng-bind=":: 'cpci_add_server' | translate">
                                 </a>
                             </li>
                             <li>
                                 <button type="button" class="btn fs14"
-                                        at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
+                                        data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
                                         data-ng-bind=":: 'cpci_volume_add' | translate"
                                         data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.addVolume()">
                                 </button>
@@ -61,10 +61,10 @@
                                         data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.buyIpFailOver()">
                                 </button>
                             </li>
-                            <li class="divider"
+                            <li class="divider" role="presentation"
                                 data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
                             </li>
-                            <li data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
+                            <li data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'" role="menuitem">
                                 <button type="button"
                                         class="btn fs14"
                                         data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.orderCredit()"

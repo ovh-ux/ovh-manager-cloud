@@ -1,9 +1,10 @@
 class VpsOrderVeeamCtrl {
-  constructor($scope, $stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService,
-    ServiceHelper) {
+  constructor($scope, $stateParams, $translate, $window,
+    atInternet, CloudMessage, CloudNavigation, VpsService, ServiceHelper) {
     this.$scope = $scope;
     this.$translate = $translate;
     this.$window = $window;
+    this.atInternet = atInternet;
     this.CloudMessage = CloudMessage;
     this.CloudNavigation = CloudNavigation;
     this.serviceName = $stateParams.serviceName;
@@ -49,6 +50,10 @@ class VpsOrderVeeamCtrl {
         .then(({ url }) => {
           this.$scope.model.url = url;
         });
+      this.atInternet.trackClick({
+        name: 'VPS-backup-order',
+        type: 'action',
+      });
     } else if (this.$scope.model.contractsValidated) {
       this.CloudMessage.error(this.$translate.instant('vps_configuration_veeam_order_fail'));
     }
