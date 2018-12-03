@@ -1,13 +1,13 @@
 {
-  "cpcv_snapshot_add_title": "Virtualaus disko atsarginės kopijos kūrimas",
-  "cpcv_snapshot_choose_name": "Įveskite savo atsarginės kopijos pavadinimą:",
-  "cpcv_snapshot_name": "Atsarginės kopijos pavadinimas ",
-  "cpcv_snapshot_confirm": "Paleisti atsarginę kopiją",
-  "cpcv_snapshot_monthlyPrice": "({{ size | bytes:2:'true' }} x {{ price }} be PVM/GB/mėn.)",
-  "cpcv_snapshot_name_error": "Prašome teisingai pavadinti savo atsarginę kopiją (pavadinimas turi būti galiojantis).",
-  "cpcv_snapshot_name_length_error": "Prašome pasirinkti trumpesnį pavadinimą savo atsarginei kopijai.",
-  "cpcv_snapshot_creation_info": "Vykdoma atsarginė kopija...",
-  "cpcv_snapshot_creation_error": "Atsiprašome, įvyko klaida atliekant atsarginį virtualaus disko kopijavimą.",
-  "cpcv_snapshot_error": "Įvyko klaida atkuriant atsarginės kopijos duomenis, prašome mėginti dar kartą vėliau.",
-  "cpcv_snapshot_attach_warning": "Jūsų diskas šiuo metu yra susietas su virtualia mašina. Norėdami užtikrinti jūsų duomenų vientisumą, prieš atliekant atsarginį kopijavimą, patariame atjungti šį diską."
+ "cpcv_snapshot_add_title": "Creating a volume backup ",
+ "cpcv_snapshot_choose_name": "Enter the snapshot name:",
+ "cpcv_snapshot_name": "Snapshot name",
+ "cpcv_snapshot_confirm": "Take a snapshot",
+ "cpcv_snapshot_monthlyPrice": "({{ size | bytes:2:'true' }} x {{ price }} excl. VAT/GiB/month)",
+ "cpcv_snapshot_name_error": "Please give a valid name to your backup.",
+ "cpcv_snapshot_name_length_error": "Please choose a shorter name for your backup.",
+ "cpcv_snapshot_creation_info": "Backing up...",
+ "cpcv_snapshot_creation_error": "Oops! An error occurred when backing up the volume.",
+ "cpcv_snapshot_error": "An error occurred when retrieving backup information, please try again later.",
+ "cpcv_snapshot_attach_warning": "Your disk is currently attached to an instance. To ensure the integrity of your data, you are advised to detach the disk before performing a backup."
 }

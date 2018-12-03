@@ -1,14 +1,14 @@
 {
-  "login_information_error": "Hups! Kirjautumistietojen haku ei onnistu.",
-  "cpcivm_login_information_title": "Kirjautumistiedot",
-  "cpcivm_login_information_instance_title": "Kirjaudu instanssiin",
-  "cpcivm_login_information_instance_info_linux": "Syötä seuraava käsky päätteelle:<br/><code>ssh {{user}}@{{ip}}</code>",
-  "cpcivm_login_information_instance_info_windows": "Ensimmäisen kirjautumisen yhteydessä sinun on käytettävä VNC-pääteohjelmaa Windows-konfiguraation viimeistelemiseksi. Käytä tämän jälkeen valitsemaasi RDP-asiakaohjelmaa esimerkiksi Linux-työasemalla:",
-  "cpcivm_login_information_application_title": "Kirjautuminen sovelluksiin",
-  "cpcivm_login_information_application_label_type": "Tyyppi",
-  "cpcivm_login_information_application_label_url": "URL",
-  "cpcivm_login_information_application_label_login": "Käyttäjätunnus",
-  "cpcivm_login_information_application_label_password": "Salasana",
-  "cpcivm_login_information_go_to_console": "Kirjaudu VNC-pääteohjelmaan",
-  "cpcivm_login_information_application_readonly": "Tililläsi ei ole tarvittavia oikeuksia sovellusten kirjautumistietoihin pääsemiseksi. Ota yhteyttä administraattoriisi pääsyoikeuden saamiseksi. "
+ "login_information_error": "Oops! We are unable to retrieve the login details.",
+ "cpcivm_login_information_title": "Login information",
+ "cpcivm_login_information_instance_title": "Instance login",
+ "cpcivm_login_information_instance_info_linux": "In a terminal, enter the following command:<br/><code>ssh {{user}}@{{ip}}</code>",
+ "cpcivm_login_information_instance_info_windows": "When you first log in, you will need to use the VNC console to finalise the Windows configuration. Then use your preferred RDP client, for example via a Linux desktop:",
+ "cpcivm_login_information_application_title": "Application login",
+ "cpcivm_login_information_application_label_type": "Type",
+ "cpcivm_login_information_application_label_url": "URL",
+ "cpcivm_login_information_application_label_login": "Login",
+ "cpcivm_login_information_application_label_password": "Password",
+ "cpcivm_login_information_go_to_console": "Access the VNC console",
+ "cpcivm_login_information_application_readonly": "Your account doesn't have the necessary rights to access the application login details. Please contact your administrator to get access."
 }

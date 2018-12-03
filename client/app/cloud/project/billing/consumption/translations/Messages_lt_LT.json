@@ -1,4 +1,4 @@
 {
-  "cpbc_tab_consumption": "Mano suvartojimas {{date}}",
-  "cpbc_tab_forecast": "Mano būsimos sąskaitos sąmata"
+ "cpbc_tab_consumption": "My usage in {{date}} ",
+ "cpbc_tab_forecast": "Estimate of my next invoice"
 }

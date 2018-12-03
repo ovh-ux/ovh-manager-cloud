@@ -1,14 +1,14 @@
 {
-  "cpc_snapshot_add_title": "Ota tilannekuva",
-  "cpc_snapshot_add_cancel": "Peruuta",
-  "cpc_snapshot_add_info": "Syötä tilannekuvan nimi",
-  "cpc_snapshot_add_name_required_error": "Tilannekuvalla on oltava nimi.",
-  "cpc_snapshot_add_name_max_error": "Nimi on liian pitkä.",
-  "cpc_snapshot_add_name": "Tilannekuvan nimi.",
-  "cpc_snapshot_add_valid": "Ota tilannekuva",
-  "cpc_snapshot_add_doing": "Tilannekuvan ottopyyntöä käsitellään…",
-  "cpc_snapshot_add_success": "Tilannekuva {{snapshotname}} tullaan ottamaan ja toimenpide päättyy muutamassa minuutissa.",
-  "cpc_snapshot_add_availibility": "Palvelimesi toiminta keskeytetään muutamaksi sekunniksi ja luku-/kirjoitussuorituskyky on vajavainen kunnes varmuuskopio-operaatio on valmistunut.",
-  "cpc_snapshot_add_error": "Tästä palvelimesta ei voitu ottaa tilannekuvaa.",
-  "cpc_snapshot_add_total": "({{size | bytes:2}} eli noin {{price}} ALV 0 %/kk)"
+ "cpc_snapshot_add_title": "Take a snapshot",
+ "cpc_snapshot_add_cancel": "Cancel",
+ "cpc_snapshot_add_info": "Enter the snapshot name:",
+ "cpc_snapshot_add_name_required_error": "You must name your snapshot.",
+ "cpc_snapshot_add_name_max_error": "This name is too long.",
+ "cpc_snapshot_add_name": "Snapshot name",
+ "cpc_snapshot_add_valid": "Take a snapshot",
+ "cpc_snapshot_add_doing": "Processing snapshot request...",
+ "cpc_snapshot_add_success": "The {{snapshotname}} snapshot is going to be taken and will be available in a few minutes.",
+ "cpc_snapshot_add_availibility": "Your server will be suspended for a few seconds and read/write performance may be impacted until the backup is complete. ",
+ "cpc_snapshot_add_error": "Oops! We were unable to take a snapshot of this server.",
+ "cpc_snapshot_add_total": "({{size | bytes:2}}, approximately {{price}} exl. VAT/month)"
 }

@@ -1,6 +1,6 @@
 {
-  "cpci_private_network_delete_title": "Privataus tinklo pašalinimas",
-  "cpci_private_network_delete_confirm": "Ar tikrai norite pašalinti šį privatų tinklą?",
-  "cpci_private_network_delete_success": "Privatus tinklas sėkmingai pašalintas",
-  "cpci_private_network_delete_error": "Įvyko klaida šalinant privatų tinklą"
+ "cpci_private_network_delete_title": "Private network deletion",
+ "cpci_private_network_delete_confirm": "Are you sure that you want to delete this private network? ",
+ "cpci_private_network_delete_success": "The private network has been successfully deleted",
+ "cpci_private_network_delete_error": "There was an error when deleting the private network "
 }

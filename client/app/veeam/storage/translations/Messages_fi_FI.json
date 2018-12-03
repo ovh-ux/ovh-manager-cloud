@@ -1,11 +1,11 @@
 {
-  "veeam_storage_title": "Storagetila",
-  "veeam_storage_back": "Palaa etusivulle",
-  "veeam_storage_add_storage": "Lisää storagetila",
-  "veeam_storage_search": "Etsi...",
-  "veeam_storage_update_title": "Muokkaa",
-  "veeam_storage_update_quota_title": "Muokkaa storagetilaa",
-  "veeam_storage_update_quota_information": "Määritä storagetilasi maksimikiintiö. Arvon täytyy olla välillä 1000 GB ja {{maxquota}} GB.",
-  "veeam_storage_update_quota_cancel": "Peruuta",
-  "veeam_storage_update_quota_confirm": "Muokkaa"
+ "veeam_storage_title": "Storage space ",
+ "veeam_storage_back": "Back to home page",
+ "veeam_storage_add_storage": "Add storage space",
+ "veeam_storage_search": "Searching....",
+ "veeam_storage_update_title": "Edit",
+ "veeam_storage_update_quota_title": "Modify storage space",
+ "veeam_storage_update_quota_information": "Determine the maximum quota of your storage space. The value must be between 1000 GB and {{maxquota}} GB.",
+ "veeam_storage_update_quota_cancel": "Cancel",
+ "veeam_storage_update_quota_confirm": "Edit"
 }

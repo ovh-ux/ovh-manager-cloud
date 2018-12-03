@@ -1,12 +1,12 @@
 {
-  "cpbea_estimate_alert_add_header_title": "Hälytys kulutusrajan ylittämisestä",
-  "cpbea_estimate_alert_add_mail_label": "Sähköposti",
-  "cpbea_estimate_alert_add_mail_required": "Sähköpostiosoite vaaditaan lähetyksen lähettämistä varten.",
-  "cpbea_estimate_alert_add_mail_bad_format": "Sähköpostiosoite ei kelpaa.",
-  "cpbea_estimate_alert_add_threshold_label": "Kynnysraja",
-  "cpbea_estimate_alert_add_threshold_required": "Sinun täytyy määritellä maksimikulutus, jota ei saa ylittää.",
-  "cpbea_estimate_alert_add_cancel_btn": "Peruuta",
-  "cpbea_estimate_alert_add_submit_btn": "Tallenna",
-  "cpbea_estimate_alert_error": "Valitettavasti hälytystä tallennettaessa tapahtui virhe.",
-  "cpbea_estimate_alert_success": "Käyttöhälytys tallennettu."
+ "cpbea_estimate_alert_add_header_title": "Threshold alert ",
+ "cpbea_estimate_alert_add_mail_label": "Email address",
+ "cpbea_estimate_alert_add_mail_required": "An email address is required to send an alert. ",
+ "cpbea_estimate_alert_add_mail_bad_format": "Email address invalid.",
+ "cpbea_estimate_alert_add_threshold_label": "Threshold",
+ "cpbea_estimate_alert_add_threshold_required": "The usage threshold is required. ",
+ "cpbea_estimate_alert_add_cancel_btn": "Cancel",
+ "cpbea_estimate_alert_add_submit_btn": "Save",
+ "cpbea_estimate_alert_error": "Oops, an error occurred while saving your alert.",
+ "cpbea_estimate_alert_success": "Usage alert saved"
 }

@@ -1,4 +1,4 @@
 {
-  "cpbc_monthly_header": "Jau sumokėta <small>(išankstinis apmokėjimas ir proporcingas perskaičiavimas)</small>",
-  "cpbc_hourly_header": "Būsima sąskaita <small>(sunaudojimas pagal einamojo mėnesio duomenis)</small>"
+ "cpbc_monthly_header": "Already billed <small>(monthly costs and pro rata)</small>",
+ "cpbc_hourly_header": "Future billing <small>(on-demand usage for the current month)</small>"
 }

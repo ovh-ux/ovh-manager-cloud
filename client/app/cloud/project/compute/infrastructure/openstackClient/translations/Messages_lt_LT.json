@@ -1,10 +1,10 @@
 {
-  "cpci_openstack_client_session_error": "Neįmanoma pakeisti terminalo: {{message}}",
-  "cpci_openstack_client_regions_error": "Neįmanoma pakeisti regionų sąrašo: {{message}}",
-  "cpci_openstack_client_session_closed": "Sesija buvo nutraukta.",
-  "cpci_openstack_client": "OpenStack Client",
-  "cpci_openstack_client_regions": "Regionai:",
-  "cpci_openstack_client_commands": "Užsakymai:",
-  "cpci_openstack_client_select_region": "Pasirinkti",
-  "cpci_openstack_client_remaining_time": "Likęs laikas: <b>{{time}}</b>"
+ "cpci_openstack_client_session_error": "Unable to load terminal: {{message}}",
+ "cpci_openstack_client_regions_error": "Unable to load list of regions: {{message}}",
+ "cpci_openstack_client_session_closed": "Your session has been interrupted.",
+ "cpci_openstack_client": "OpenStack Client",
+ "cpci_openstack_client_regions": "Regions:",
+ "cpci_openstack_client_commands": "Commands:",
+ "cpci_openstack_client_select_region": "Choose",
+ "cpci_openstack_client_remaining_time": "Time remaining: <b>{{time}}</b>"
 }

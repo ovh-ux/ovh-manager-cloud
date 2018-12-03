@@ -1,12 +1,12 @@
 {
-  "vrack_title": "vRack užsakymas",
-  "vrack_subtitle": "Ši paslauga užsakoma ir suteikiama nemokamai. Jūsų vRack bus suteiktas po kelių minučių.",
-  "vrack_validationPending": "Prašome nemokamai patvirtinti savo <a href=\"{{url}}\" target='_blank'>užsakymą</a>.",
-  "vrack_order_delay": "Jūsų vRack bus prieinamas po kelių minučių nuo užsakymo patvirtinimo.",
-  "vrack_order": "Užsakyti",
-  "vrack_order_install_now_label": "Įdiegti dabar",
-  "vrack_contract_empty": "Jūs sutikote su šio produkto sutarčių sąlygomis.",
-  "vrack_error": "Klaida.",
-  "vrack_error_reason": "Įvyko klaida: {{message}}",
-  "vrack_adding_success": "Jūsų vRack įjungimo užsakymas priimtas ir pradės galioti po kelių minučių, kai bus patvirtintas užsakymas Nr. <a href=\"{{data.url}}\" target='_blank'>{{data.orderId}}</a>."
+ "vrack_title": "vRack Installation",
+ "vrack_subtitle": "You can install this service for free. Your vRack will be delivered in a few minutes.",
+ "vrack_validationPending": "Please complete your free <a href=\"{{url}}\" target='_blank'>purchase order</a> payment.",
+ "vrack_order_delay": "Your vRack will be available a few minutes after you have validated your purchase order.",
+ "vrack_order": "Order",
+ "vrack_order_install_now_label": "Install now",
+ "vrack_contract_empty": "You have accepted all the contracts related to this product.",
+ "vrack_error": "An error occurred.",
+ "vrack_error_reason": "There was an error: {{message}}",
+ "vrack_adding_success": "The vRack activation request has been taken into account and will be effective in a few minutes once order number <a href=\"{{data.url}}\"target='_blank'>{{data.orderId}}</a> is validated."
 }

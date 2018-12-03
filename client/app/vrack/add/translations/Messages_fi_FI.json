@@ -1,12 +1,12 @@
 {
-  "vrack_title": "Virtuaaliräkin (vRack) tilaus",
-  "vrack_subtitle": "Tämän palvelun tilaaminen on maksutonta. Virtuaaliräkkisi toimitetaan muutaman minuutin kuluessa. ",
-  "vrack_validationPending": "Ole hyvä ja suorita <a href=\"{{url}}\" target='_blank'>tilausvahvistuksesi</a> ilmainen maksu.",
-  "vrack_order_delay": "Virtuaaliräkkisi on saatavilla tilauksen hyväksymisen jälkeen muutamassa minuutissa.",
-  "vrack_order": "Tilaa",
-  "vrack_order_install_now_label": "Asenna nyt",
-  "vrack_contract_empty": "Olet hyväksynyt kaikki palveluun liittyvät sopimusehdot.",
-  "vrack_error": "Tapahtui virhe",
-  "vrack_error_reason": "Tapahtui virhe: {{message}}",
-  "vrack_adding_success": "Virtuaaliräkkisi aktivointipyyntö on rekisteröity ja se pannaan täytäntöön muutaman minuutin kuluessa tilausnumeron <a href=\"{{data.url}}\" target='_blank'>{{data.orderId}}</a> hyväksymisen jälkeen."
+ "vrack_title": "vRack Installation",
+ "vrack_subtitle": "You can install this service for free. Your vRack will be delivered in a few minutes.",
+ "vrack_validationPending": "Please complete your free <a href=\"{{url}}\" target='_blank'>purchase order</a> payment.",
+ "vrack_order_delay": "Your vRack will be available a few minutes after you have validated your purchase order.",
+ "vrack_order": "Order",
+ "vrack_order_install_now_label": "Install now",
+ "vrack_contract_empty": "You have accepted all the contracts related to this product.",
+ "vrack_error": "An error occurred.",
+ "vrack_error_reason": "There was an error: {{message}}",
+ "vrack_adding_success": "The vRack activation request has been taken into account and will be effective in a few minutes once order number <a href=\"{{data.url}}\"target='_blank'>{{data.orderId}}</a> is validated."
 }

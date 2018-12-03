@@ -1,12 +1,12 @@
 {
-  "cda_user_details_permissions_list_edit_btn_back": "Takaisin",
-  "cda_user_details_permissions_list_edit_title": "Muokkaa lupia",
-  "cda_user_details_permissions_list_username": "Käyttäjänimi",
-  "cda_user_details_permissions_list_label_permission": "Oikeudet",
-  "cda_user_details_permissions_list_edit_success": "Tietojen muokkaus onnistui.",
-  "cda_user_details_permissions_list_type_read": "Luku",
-  "cda_user_details_permissions_list_type_write": "Kirjoitus",
-  "cda_user_details_permissions_list_type_execute": "Suoritus",
-  "cda_user_details_permissions_list_type_classRead": "Classread -lukuoikeus",
-  "cda_user_details_permissions_list_type_classWrite": "Classwrite -kirjoitusoikeus"
+ "cda_user_details_permissions_list_edit_btn_back": "Back",
+ "cda_user_details_permissions_list_edit_title": "Modify permissions",
+ "cda_user_details_permissions_list_username": "User name",
+ "cda_user_details_permissions_list_label_permission": "Permissions",
+ "cda_user_details_permissions_list_edit_success": "Update successful.",
+ "cda_user_details_permissions_list_type_read": "Read",
+ "cda_user_details_permissions_list_type_write": "Write",
+ "cda_user_details_permissions_list_type_execute": "Execution",
+ "cda_user_details_permissions_list_type_classRead": "Classread",
+ "cda_user_details_permissions_list_type_classWrite": "Classwrite"
 }

@@ -1,8 +1,8 @@
 {
-  "veeam_update_offer_title": "Nosta Veeam Cloud Connect -tuotteen tasoa",
-  "veeam_update_offer_information": "Tilauksen hinta on <strong>{{ price }} /kk</strong>",
-  "veeam_update_offer_cancel": "Peruuta",
-  "veeam_update_offer_continue": "Jatka",
-  "veeam_update_offer_change": "Muuta",
-  "veeam_update_storage_add": "Lisää"
+ "veeam_update_offer_title": "Upgrade the Veeam Cloud Connect solution",
+ "veeam_update_offer_information": "The subscription price is <strong>{{ price }} /month</strong>",
+ "veeam_update_offer_cancel": "Cancel",
+ "veeam_update_offer_continue": "Continue",
+ "veeam_update_offer_change": "Change",
+ "veeam_update_storage_add": "Add"
 }

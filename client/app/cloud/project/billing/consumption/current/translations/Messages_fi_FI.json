@@ -1,4 +1,4 @@
 {
-  "cpbc_monthly_header": "Jo laskutettu <small>(kuukausimaksut ja pro rata -maksut)</small>",
-  "cpbc_hourly_header": "Tuleva laskutus <small>(kuluvan kuukauden käyttöön perustuva kulutus)</small>"
+ "cpbc_monthly_header": "Already billed <small>(monthly costs and pro rata)</small>",
+ "cpbc_hourly_header": "Future billing <small>(on-demand usage for the current month)</small>"
 }
