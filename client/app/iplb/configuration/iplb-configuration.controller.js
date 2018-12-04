@@ -40,7 +40,11 @@ class IpLoadBalancerConfigurationCtrl {
     if (zone) {
       promise = this.IpLoadBalancerConfigurationService
         .refresh(this.$stateParams.serviceName, zone);
-    } else if (this.selectedZones.length === this.zones.length) {
+    }
+
+    const zoneData = _.has(this.zones, 'data') ? this.zones.data : this.zones;
+
+    if (this.selectedZones.length === zoneData.length) {
       // All selected, just call the API with no zone.
       promise = this.IpLoadBalancerConfigurationService
         .refresh(this.$stateParams.serviceName, null);
