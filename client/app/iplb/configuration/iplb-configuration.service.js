@@ -64,25 +64,36 @@ class IpLoadBalancerConfigurationService {
   }
 
   refresh(serviceName, zone) {
-    return this.IpLoadBalancing.v6().refresh({
-      serviceName,
-    }, {
-      zone,
-    })
-      .$promise
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
+    return this.IpLoadBalancing.v6()
+      .refresh({
+        serviceName,
+      }, {
+        zone,
+      }).$promise
+      .then((data) => {
+        this.ServiceHelper.successHandler('iplb_configuration_apply_success')(data);
+      })
+      .catch((error) => {
+        this.ServiceHelper.errorHandler('iplb_configuration_apply_error')(error);
+      });
   }
 
   batchRefresh(serviceName, zones) {
-    const promises = zones.map(zone => this.IpLoadBalancing.v6().refresh({
-      serviceName,
-    }, {
-      zone,
-    }).$promise);
-    return this.$q.all(promises)
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
+    const promises = zones.map(zone => this.IpLoadBalancing.v6()
+      .refresh({
+        serviceName,
+      }, {
+        zone,
+      }).$promise);
+
+    return this.$q
+      .all(promises)
+      .then((refreshResults) => {
+        refreshResults.forEach(refreshResult => this.ServiceHelper.successHandler('iplb_configuration_apply_success')(refreshResult));
+      })
+      .catch((error) => {
+        this.ServiceHelper.errorHandler('iplb_configuration_apply_error')(error);
+      });
   }
 
   getRefreshTasks(serviceName, statuses) {
