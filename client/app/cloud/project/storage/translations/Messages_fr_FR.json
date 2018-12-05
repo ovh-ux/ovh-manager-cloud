@@ -21,7 +21,7 @@
   "storage_file_name": "Nom du fichier",
   "storage_last_modify": "Dernière modification",
   "storage_file_type": "Type",
-  "storage_file_region": "Datacentre",
+  "storage_file_region": "Datacenter",
   "storage_size": "Taille",
   "storage_delete_button": "Supprimer",
   "storage_delete_pending": "Suppression en cours",
