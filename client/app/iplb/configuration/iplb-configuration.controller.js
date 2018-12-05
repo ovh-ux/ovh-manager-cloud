@@ -27,30 +27,25 @@ class IpLoadBalancerConfigurationCtrl {
       .then(() => {
         this.startPolling();
       });
-
-    this.selectedZones = [];
   }
 
-  onSelectionChange(selection) {
-    this.selectedZones = selection;
-  }
-
-  applyChanges(zone) {
+  applyChanges(targets) {
     let promise = this.$q.resolve([]);
-    if (zone) {
+
+    if (!_.isArray(targets)) {
       promise = this.IpLoadBalancerConfigurationService
-        .refresh(this.$stateParams.serviceName, zone);
+        .refresh(this.$stateParams.serviceName, targets);
     }
 
     const zoneData = _.has(this.zones, 'data') ? this.zones.data : this.zones;
 
-    if (this.selectedZones.length === zoneData.length) {
+    if (targets.length === zoneData.length) {
       // All selected, just call the API with no zone.
       promise = this.IpLoadBalancerConfigurationService
         .refresh(this.$stateParams.serviceName, null);
-    } else if (this.selectedZones.length) {
+    } else if (targets.length) {
       promise = this.IpLoadBalancerConfigurationService
-        .batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, 'id'));
+        .batchRefresh(this.$stateParams.serviceName, _.map(targets, 'id'));
     }
 
     promise.then(() => {
@@ -86,24 +81,8 @@ class IpLoadBalancerConfigurationCtrl {
       this.poller.kill();
     }
   }
-
-  static statusTemplate() {
-    return `
-      <span data-ng-if="$row.changes === 0" class="oui-status oui-status_success" data-translate="iplb_configuration_changes_0"></span>
-      <span data-ng-if="$row.changes === 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_1"></span>
-      <span data-ng-if="$row.changes > 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_count" data-translate-values="{ count: $row.changes }"></span>
-    `;
-  }
-
-  static actionTemplate() {
-    return `
-      <oui-action-menu data-align="end" data-compact>
-        <oui-action-menu-item
-          data-text="{{'iplb_configuration_action_apply' | translate}}"
-          data-on-click="ctrl.applyChanges($row.id)">
-        </oui-action-menu-item>
-      </oui-action-menu>`;
-  }
 }
 
-angular.module('managerApp').controller('IpLoadBalancerConfigurationCtrl', IpLoadBalancerConfigurationCtrl);
+angular
+  .module('managerApp')
+  .controller('IpLoadBalancerConfigurationCtrl', IpLoadBalancerConfigurationCtrl);

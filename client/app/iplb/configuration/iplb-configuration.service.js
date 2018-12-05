@@ -30,7 +30,9 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
+      .catch((error) => {
+        this.ServiceHelper.errorHandler('iplb_configuration_info_error')(error);
+      });
   }
 
   getZoneChanges(serviceName, zone) {
@@ -47,7 +49,9 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
+      .catch((error) => {
+        this.ServiceHelper.errorHandler('iplb_configuration_info_error', undefined, 'data')(error);
+      });
   }
 
   static getLastUndoneTask(tasks, zone) {
