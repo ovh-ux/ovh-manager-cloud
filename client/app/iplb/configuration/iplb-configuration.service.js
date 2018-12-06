@@ -30,9 +30,7 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       }))
-      .catch((error) => {
-        this.ServiceHelper.errorHandler('iplb_configuration_info_error')(error);
-      });
+      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
   }
 
   getZoneChanges(serviceName, zone) {
@@ -49,9 +47,7 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       })
-      .catch((error) => {
-        this.ServiceHelper.errorHandler('iplb_configuration_info_error', undefined, 'data')(error);
-      });
+      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
   }
 
   static getLastUndoneTask(tasks, zone) {
@@ -74,12 +70,8 @@ class IpLoadBalancerConfigurationService {
       }, {
         zone,
       }).$promise
-      .then((data) => {
-        this.ServiceHelper.successHandler('iplb_configuration_apply_success')(data);
-      })
-      .catch((error) => {
-        this.ServiceHelper.errorHandler('iplb_configuration_apply_error')(error);
-      });
+      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
+      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
   batchRefresh(serviceName, zones) {
@@ -93,11 +85,9 @@ class IpLoadBalancerConfigurationService {
     return this.$q
       .all(promises)
       .then((refreshResults) => {
-        refreshResults.forEach(refreshResult => this.ServiceHelper.successHandler('iplb_configuration_apply_success')(refreshResult));
+        refreshResults.forEach(this.ServiceHelper.successHandler('iplb_configuration_apply_success'));
       })
-      .catch((error) => {
-        this.ServiceHelper.errorHandler('iplb_configuration_apply_error')(error);
-      });
+      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
   getRefreshTasks(serviceName, statuses) {

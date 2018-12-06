@@ -1,18 +1,37 @@
 class IpLoadBalancerConfigurationCtrl {
-  constructor($q, $scope, $stateParams, CloudMessage, CloudPoll, ControllerHelper,
-    IpLoadBalancerConfigurationService, ServiceHelper) {
+  constructor(
+    $q,
+    $scope,
+    $stateParams,
+    $translate,
+    CloudMessage,
+    CloudPoll,
+    ControllerHelper,
+    IpLoadBalancerConfigurationService,
+    ServiceHelper,
+  ) {
     this.$q = $q;
     this.$scope = $scope;
     this.$stateParams = $stateParams;
+    this.$translate = $translate;
+
     this.CloudMessage = CloudMessage;
     this.CloudPoll = CloudPoll;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.ServiceHelper = ServiceHelper;
+  }
+
+  $onInit() {
+    this.$scope.$on('$destroy', () => this.stopTaskPolling());
+    this.applications = {};
 
     this.initLoaders();
 
-    this.$scope.$on('$destroy', () => this.stopTaskPolling());
+    this.zones.load()
+      .then(() => {
+        this.startPolling();
+      });
   }
 
   initLoaders() {
@@ -22,45 +41,78 @@ class IpLoadBalancerConfigurationCtrl {
     });
   }
 
-  $onInit() {
-    this.zones.load()
-      .then(() => {
-        this.startPolling();
-      });
-  }
-
-  applyChanges(targets) {
+  applyChanges(zone) {
+    this.zones.loading = true;
     let promise = this.$q.resolve([]);
-
-    if (!_.isArray(targets)) {
-      promise = this.IpLoadBalancerConfigurationService
-        .refresh(this.$stateParams.serviceName, targets);
-    }
 
     const zoneData = _.has(this.zones, 'data') ? this.zones.data : this.zones;
 
-    if (targets.length === zoneData.length) {
+    const targets = _.isArray(zone)
+      ? zone
+<<<<<<< HEAD
+      : [this.zones.data.find(currentZone => currentZone.id === zone)];
+    const targetsThatCantBeChanged = targets.filter(target => target.task.status !== 'done');
+=======
+      : [this.zones.data.find(({ id }) => id === zone)];
+    const targetsThatCantBeChanged = targets.filter(target => _.has(target, 'task.status') && _.get(target, 'task.status') !== 'done');
+>>>>>>> 4a59e709... fixup! feat(iplb.configuration): enhance view features and texts
+
+    if (!_.isEmpty(targetsThatCantBeChanged)) {
+      const messageToDisplay = targetsThatCantBeChanged.length !== targets.length
+        ? `${this.$translate.instant(
+          'iplb_configuration_excludedZones_some',
+          {
+            datacenters: targetsThatCantBeChanged.map(target => target.name).join(','),
+          },
+        )} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`
+        : `${this.$translate.instant('iplb_configuration_excludedZones_all')} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`;
+
+      this.CloudMessage.success(messageToDisplay);
+    }
+
+    const targetsToApplyChangesTo = targets.filter(target => target.task.status === 'done');
+
+    if (targetsToApplyChangesTo.length === zoneData.length) {
       // All selected, just call the API with no zone.
       promise = this.IpLoadBalancerConfigurationService
         .refresh(this.$stateParams.serviceName, null);
-    } else if (targets.length) {
+    } else if (targetsToApplyChangesTo.length) {
       promise = this.IpLoadBalancerConfigurationService
-        .batchRefresh(this.$stateParams.serviceName, _.map(targets, 'id'));
+        .batchRefresh(this.$stateParams.serviceName, _.map(targetsToApplyChangesTo, 'id'));
     }
 
-    promise.then(() => {
-      this.startPolling();
-      if (this.poller) {
-        this.poller.$promise.then(() => {
+    promise
+      .then(() => {
+        this.zones.data
+          .filter(currentZone => targetsToApplyChangesTo
+            .find(({ name }) => name === currentZone.name))
+          .forEach((target) => {
+            this.applications[target.id] = true;
+
+            Object.assign(
+              target.task,
+              {
+                progress: 0,
+                status: 'todo',
+              },
+            );
+          });
+
+        this.startPolling();
+        if (this.poller) {
+          this.poller.$promise.then(() => {
           // check if at least one change remains
-          if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
-            this.CloudMessage.flushChildMessage();
-          } else {
-            this.CloudMessage.flushMessages();
-          }
-        });
-      }
-    });
+            if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
+              this.CloudMessage.flushChildMessage();
+            } else {
+              this.CloudMessage.flushMessages();
+            }
+          });
+        }
+      })
+      .finally(() => {
+        this.zones.loading = false;
+      });
 
     return promise;
   }
