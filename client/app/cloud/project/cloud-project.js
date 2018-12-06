@@ -16,7 +16,7 @@ angular.module('managerApp')
         controller: 'CloudProjectCtrl',
         controllerAs: 'CloudProjectCtrl',
         translations: {
-          value: ['.'],
+          value: ['.', './billing'],
           format: 'json',
         },
         atInternet: { ignore: true },
