@@ -13,6 +13,9 @@ angular.module('managerApp')
             controllerAs: 'CloudProjectComputeSnapshotCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

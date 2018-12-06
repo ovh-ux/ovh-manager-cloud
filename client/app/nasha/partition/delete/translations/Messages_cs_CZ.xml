@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_delete_title" qtlid="153779">Vymazat diskový oddíl</translation>
-   <translation id="nasha_partitions_delete_confirmation" qtlid="344779">Opravdu si přejete odstranit diskový oddíl {{partitionName}}?</translation>
-   <translation id="nasha_partitions_action_delete_success" qtlid="344792">Diskový oddíl {{partitionName}} bude za okamžik odstraněn.</translation>
-   <translation id="nasha_partitions_action_delete_failure" qtlid="344805">Při odstraňování diskového oddílu {{partitionName}} došlo k chybě. {{message}}</translation>
-</translations>

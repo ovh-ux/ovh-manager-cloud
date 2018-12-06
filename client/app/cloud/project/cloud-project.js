@@ -15,7 +15,10 @@ angular.module('managerApp')
         templateUrl: 'app/cloud/project/cloud-project.html',
         controller: 'CloudProjectCtrl',
         controllerAs: 'CloudProjectCtrl',
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
         atInternet: { ignore: true },
       });
   });

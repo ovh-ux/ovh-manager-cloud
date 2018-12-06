@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_order_title" qtlid="345130">Užsakyti NAS-HA</translation>
-   <translation id="nasha_order_validationPending" qtlid="345143">Prašome apmokėti <a href="{{url}}" target='_blank'>užsakymą</a>.</translation>
-</translations>

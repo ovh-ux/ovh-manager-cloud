@@ -1,0 +1,4 @@
+{
+ "nasha_partitions_action_update_success": "Velikost diskového oddílu {{partitionName}} bude za okamžik aktualizována.",
+ "nasha_partitions_action_update_failure": "Při aktualizaci velikosti diskového oddílu {{partitionName}} došlo k chybě."
+}

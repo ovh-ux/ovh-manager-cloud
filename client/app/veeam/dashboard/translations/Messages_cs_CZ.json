@@ -1,0 +1,18 @@
+{
+ "veeam_tiles_shortcut_title": "Zkratky",
+ "veeam_tiles_shortcut_label_add_storage": "Přidat úložiště",
+ "veeam_tiles_shortcut_label_change_offer": "Přejít na vyšší nabídku",
+ "veeam_tiles_configuration_title": "Konfigurace",
+ "veeam_tiles_configuration_label_name": "Název",
+ "veeam_tiles_configuration_label_offer": "Nabídka",
+ "veeam_tiles_configuration_label_stockage_number": "Počet úložišť",
+ "veeam_tiles_configuration_label_vm_count": "Počet VM",
+ "veeam_tiles_configuration_label_datacenter": "Datacentrum",
+ "veeam_tiles_subscription_title": "Předplatné",
+ "veeam_tiles_subscription_label_renewal_date": "Automatické obnovení",
+ "veeam_tiles_subscription_label_renewal_renew_link": "Správa",
+ "veeam_tiles_subscription_label_renewal_warning": "Vaše služba bude deaktivována za {{remainingDays}} dní.",
+ "veeam_tiles_subscription_label_renewal_warning_link": "Přejít na vyšší nabídku",
+ "veeam_tiles_subscription_label_creation_date": "Datum vytvoření",
+ "veeam_message_product_disabled": "Nabídka \"demo\" již vyexpirovala. Vaše služba byla deaktivována."
+}

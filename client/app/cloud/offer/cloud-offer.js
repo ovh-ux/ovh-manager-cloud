@@ -13,6 +13,9 @@ angular.module('managerApp')
         templateUrl: 'app/cloud/offer/cloud-offer.html',
         controller: 'CloudOfferCtrl',
         controllerAs: 'CloudOfferCtrl',
-        translations: ['../project/add', '.'],
+        translations: {
+          format: 'json',
+          value: ['../project/add', '.'],
+        },
       });
   });

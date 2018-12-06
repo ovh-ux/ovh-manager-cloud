@@ -7,13 +7,19 @@ angular.module('managerApp').config(($stateProvider) => {
       templateUrl: 'app/vrack/vrack.html',
       controller: 'VrackCtrl',
       controllerAs: 'VrackCtrl',
-      translations: ['../common', '.'],
+      translations: {
+        value: ['../common', '.'],
+        format: 'json',
+      },
     })
     .state('vrack-home', {
       url: '/vrack',
       templateUrl: 'app/vrack/vrack.html',
       controller: 'VrackCtrl',
       controllerAs: 'VrackCtrl',
-      translations: ['../common', '.'],
+      translations: {
+        value: ['../common', '.'],
+        format: 'json',
+      },
     });
 });

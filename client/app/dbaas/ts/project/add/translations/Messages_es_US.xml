@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="dtpa_title" qtlid="300720">Creación de un nuevo proyecto PaaS TimeSeries</translation>
-   <translation id="dtpa_order_expl1" qtlid="300733">El PaaS TimeSeries está disponible en distintas suscripciones y en pago por uso.</translation>
-   <translation id="dtpa_go_to_order" qtlid="158851">Ir al pedido</translation>
-</translations>

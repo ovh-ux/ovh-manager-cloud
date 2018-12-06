@@ -6,7 +6,10 @@ angular.module('managerApp').config(($stateProvider) => {
       templateUrl: 'app/veeam-enterprise/veeam-enterprise.html',
       controller: 'VeeamEnterpriseCtrl',
       controllerAs: '$ctrl',
-      translations: ['../common', '.'],
+      translations: {
+        value: ['../common', '.'],
+        format: 'json',
+      },
     })
     .state('paas.veeam-enterprise.dashboard', {
       url: '/dashboard',
@@ -17,6 +20,9 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['../common', '.', './dashboard'],
+      translations: {
+        value: ['../common', '.', './dashboard'],
+        format: 'json',
+      },
     });
 });

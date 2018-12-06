@@ -17,6 +17,9 @@ angular.module('managerApp')
             controllerAs: 'DBaasTsProjectAddCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

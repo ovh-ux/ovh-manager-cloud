@@ -16,7 +16,10 @@
             template: '<div data-ui-view="iplbSslCertificate"><div>',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.ssl-certificate.home', {
         url: '/',
@@ -27,7 +30,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.ssl-certificate.add', {
         url: '/sslCertificate/add',
@@ -38,7 +44,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       })
       .state('network.iplb.detail.ssl-certificate.order', {
         url: '/sslCertificate/order',
@@ -49,7 +58,10 @@
             controllerAs: 'ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });
 })();

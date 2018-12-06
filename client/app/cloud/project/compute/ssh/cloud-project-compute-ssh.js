@@ -11,6 +11,9 @@ angular.module('managerApp')
             controllerAs: '$ctrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_vnc_title" qtlid="251161">VNC konzole</translation>
-   <translation id="cpcivm_vnc_tip" qtlid="251174">Tip: jestliže nejste schopní psát v oknu, klikněte na modrou lištu níže.</translation>
-   <translation id="cpcivm_vnc_window" qtlid="92753">Otevřít v novém okně</translation>
-   <translation id="cpcivm_vnc_error" qtlid="251187">Chyba, není možné otevřít VNC konzoli.</translation>
-   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Pro použití VNC konzole na Linuxovém serveru se musíte nejdříve přihlásit pomocí SSH a nastavit uživatele a heslo.</translation>
-</translations>
