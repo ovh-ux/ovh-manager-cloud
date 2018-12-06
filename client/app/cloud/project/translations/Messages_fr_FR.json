@@ -6,5 +6,6 @@
   "cpc_header_tab_compute": "Compute",
   "cpc_header_tab_tech_mgmt": "Gestion technique",
   "cpb_header_tab_admin_mgmt": "Gestion administrative",
-  "cpc_header_tab_localisation": "Ajout de localisation"
+  "cpc_header_tab_localisation": "Ajout de localisation",
+  "cpc_header_tab_openstack": "OpenStack users"
 }
