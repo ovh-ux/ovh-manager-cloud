@@ -3,18 +3,16 @@
     <oui-spinner size="l" inline="true"></oui-spinner>
 </div>
 <div data-ng-hide="ComputeInfrastructureListCtrl.loaders.init">
-    <div class="row">
-        <div class="col-xs-12 mb-5 text-right">
-            <span class="oui-label align-middle d-inline-block mb-0 mr-3"
-                  data-translate="cpci_menu_view_label"></span>
-            <nav class="oui-button-group align-middle mb-0">
-                <a class="oui-button oui-button_secondary"
-                   data-ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
-                   data-translate="cpci_menu_view_diagram"></a>
-                <a class="oui-button oui-button_primary"
-                   data-ui-sref="iaas.pci-project.compute.infrastructure.list()"
-                   data-translate="cpci_menu_view_list"></a>
-            </nav>
+    <div class="mb-5 text-right">
+        <span class="oui-label align-middle d-inline-block mb-0 mr-3"
+              data-translate="cpci_menu_view_label"></span>
+        <div class="oui-button-group align-middle mb-0">
+            <a class="oui-button oui-button_secondary"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
+               data-translate="cpci_menu_view_diagram"></a>
+            <a class="oui-button oui-button_primary"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.list()"
+               data-translate="cpci_menu_view_list"></a>
         </div>
     </div>
 
