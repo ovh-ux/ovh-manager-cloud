@@ -38,7 +38,7 @@ class NashaSidebar {
       id: 'order-nasha',
       title: this.$translate.instant('cloud_sidebar_actions_menu_NASHA'),
       icon: 'ovh-font ovh-font-cloudnas',
-      state: 'paas.nasha-unavailable',
+      state: 'paas.nasha-add',
     };
   }
 }
