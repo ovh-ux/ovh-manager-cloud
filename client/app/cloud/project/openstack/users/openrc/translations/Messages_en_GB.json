@@ -4,7 +4,7 @@
  "cpou_openrc_more": "Find out more",
  "cpou_openrc_form_select_region": "Select the region for this file:",
  "cpou_openrc_form_select_region_placeholder": "Choose the region ",
- "cpou_openrc_form_version3": "Utiliser le fichier de configuration OpenRC v3",
+ "cpou_openrc_form_version3": "Use OpenRC v3 configuration file",
  "cpou_openrc_getopenrc_success": "Downloading configuration file ",
  "cpou_openrc_getopenrc_error": "Oops! We cannot download the configuration file"
 }
