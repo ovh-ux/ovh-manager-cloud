@@ -4,7 +4,7 @@
  "cpou_openrc_more": "Mais informação",
  "cpou_openrc_form_select_region": "Selecionar a região para aplicar o ficheiro:",
  "cpou_openrc_form_select_region_placeholder": "Selecionar uma região",
- "cpou_openrc_form_version3": "Utilizar o ficheiro de configuração OpenRC v3",
+ "cpou_openrc_form_version3": "Utiliser le fichier de configuration OpenRC v3",
  "cpou_openrc_getopenrc_success": "O download do ficheiro de configuração está em curso",
  "cpou_openrc_getopenrc_error": "Oups! Não conseguimos efetuar o download do ficheiro de configuração"
 }
