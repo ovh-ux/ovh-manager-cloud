@@ -29,7 +29,7 @@
     "lint:css": "stylelint 'client/**/*.less' --fix",
     "lint:html": "htmlhint --ignore '**/noVNC/**' 'client/**/*.html'",
     "lint:js": "eslint --quiet --fix ./client",
-    "start": "webpack-dev-server --env.region=eu",
+    "start": "yarn run start:eu",
     "start:ca": "webpack-dev-server --env.region=ca",
     "start:eu": "webpack-dev-server --env.region=eu",
     "start:us": "webpack-dev-server --env.region=us",
