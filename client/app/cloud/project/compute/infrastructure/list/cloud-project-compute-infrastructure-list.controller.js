@@ -1,5 +1,5 @@
 class CloudProjectComputeInfrastructureListCtrl {
-  constructor($scope, $q, $stateParams, $translate, $timeout,
+  constructor($scope, $q, $stateParams, $translate, $timeout, atInternet,
     CloudMessage, CloudNavigation, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
     OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
@@ -8,6 +8,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.$timeout = $timeout;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
+    this.atInternet = atInternet;
     this.CloudMessage = CloudMessage;
     this.CloudNavigation = CloudNavigation;
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
@@ -135,6 +136,28 @@ class CloudProjectComputeInfrastructureListCtrl {
         _.remove(this.table.items, item => item.id === foundId);
       }
     }
+  }
+
+  trackOnClick(name) {
+    this.atInternet.trackClick({
+      name,
+      type: 'action',
+    });
+  }
+
+  addVolume() {
+    this.trackOnClick('cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume');
+    return this.InfrastructureService.addVolume();
+  }
+
+  buyIpFailOver() {
+    this.trackOnClick('cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip');
+    return this.InfrastructureService.buyIpFailOver();
+  }
+
+  openDeleteProjectModal() {
+    this.trackOnClick('cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project');
+    return this.InfrastructureService.openDeleteProjectModal();
   }
 }
 
