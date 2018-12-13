@@ -1,3 +1,25 @@
+# [7.12.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.11.0...v7.12.0) (2018-12-13)
+
+
+### Bug Fixes
+
+* **deps:** ugrade ovh-angular-sidebar-menu to v7.2.2 ([bdd24ab](https://github.com/ovh-ux/ovh-manager-cloud/commit/bdd24ab))
+* align action menu ([72ac363](https://github.com/ovh-ux/ovh-manager-cloud/commit/72ac363))
+* **i18n:** add missing translations ([a0c94d9](https://github.com/ovh-ux/ovh-manager-cloud/commit/a0c94d9))
+* **i18n:** add missing translations ([6ea6255](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ea6255))
+* **i18n:** add missing translations ([272c922](https://github.com/ovh-ux/ovh-manager-cloud/commit/272c922))
+* **i18n:** add missing translations ([bcb1030](https://github.com/ovh-ux/ovh-manager-cloud/commit/bcb1030))
+* **i18n:** retrieve translations manually ([dd57a1a](https://github.com/ovh-ux/ovh-manager-cloud/commit/dd57a1a))
+* **nasha.order:** enable order ([4dec7da](https://github.com/ovh-ux/ovh-manager-cloud/commit/4dec7da))
+* **project.virtualmachine.add:** set blue region selection color ([f09b95a](https://github.com/ovh-ux/ovh-manager-cloud/commit/f09b95a))
+
+
+### Features
+
+* **i18n:** move xml files to json files ([c8d413b](https://github.com/ovh-ux/ovh-manager-cloud/commit/c8d413b))
+
+
+
 # [7.11.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.2...v7.11.0) (2018-11-27)
 
 
