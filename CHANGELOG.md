@@ -1,3 +1,12 @@
+## [7.12.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.1...v7.12.2) (2018-12-13)
+
+
+### Bug Fixes
+
+* **nasha:** typo in generated order url ([58ed337](https://github.com/ovh-ux/ovh-manager-cloud/commit/58ed337))
+
+
+
 ## [7.12.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.0...v7.12.1) (2018-12-13)
 
 
