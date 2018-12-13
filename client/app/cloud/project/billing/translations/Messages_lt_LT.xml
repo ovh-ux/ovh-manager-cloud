@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpb_tab_details" qtlid="37527">Išsamiau</translation>
-   <translation id="cpb_tab_consumption" qtlid="25639">Sunaudojimas</translation>
-   <translation id="cpb_tab_history" qtlid="364394">Išklotinė</translation>
-   <translation id="cpb_tab_rights" qtlid="261049">Kontaktai ir teisės</translation>
-   <translation id="cpb_tab_vouchers" qtlid="255220">Kreditas ir čekiai</translation>
-   <translation id="cpb_error_message" qtlid="364407">Atsiprašome, nepavyko atkurti visų duomenų.</translation>
-</translations>

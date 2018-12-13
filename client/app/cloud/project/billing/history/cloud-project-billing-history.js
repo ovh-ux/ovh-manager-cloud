@@ -45,6 +45,9 @@ angular.module('managerApp').config(($stateProvider) => {
         };
       },
     },
-    translations: ['.', '../../../../../components/cloud/project/billing'],
+    translations: {
+      value: ['.', '../../../../../components/cloud/project/billing'],
+      format: 'json',
+    },
   });
 });

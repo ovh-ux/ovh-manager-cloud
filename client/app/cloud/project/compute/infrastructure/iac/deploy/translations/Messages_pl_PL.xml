@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpciiac_deploy_title" qtlid="506258">Rozwiń infrastrukturę jako kod za pomocą Terraform</translation>
-   <translation id="cpciiac_deploy_intro" qtlid="506271">Rozwiń szybko i w prosty sposób niezarządzalny IaaC w Twoim projekcie Cloud, korzystając z naszych skryptów do wdrażania infrastruktury.</translation>
-   <translation id="cpciiac_deploy_guide" qtlid="506284">Quickstart</translation>
-   <translation id="cpciiac_deploy_configure" qtlid="4010">Konfiguruj</translation>
-   <translation id="cpciiac_deploy_copy_paste" qtlid="506297">Kopiuj/Wklej</translation>
-   <translation id="cpciiac_view_deployment_ERROR" qtlid="506310">Wystąpił błąd podczas żądania wdrożenia infrastruktury: {{message}}</translation>
-</translations>

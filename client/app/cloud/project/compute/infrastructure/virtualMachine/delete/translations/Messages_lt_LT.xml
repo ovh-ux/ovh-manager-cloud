@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_delete_title" qtlid="247950">Virtualios mašinos pašalinimas</translation>
-   <translation id="cpcivm_delete_info" qtlid="247963">Jūs jau apmokėjote savo mėnesinį abonementą už šį serverį. Išankstinis mokėjimas už nepanaudotas dienas nekompensuojamas.</translation>
-   <translation id="cpcivm_failover_info" qtlid="269383">Šie papildomi IP adresai bus pašalinti negrįžtamai:</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Ar tikrai norite ištrinti šią VM?</translation>
-</translations>

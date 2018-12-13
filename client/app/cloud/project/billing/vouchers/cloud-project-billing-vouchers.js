@@ -10,6 +10,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'VouchersCtrl',
       },
     },
-    translations: ['.', './addCredit'],
+    translations: {
+      value: ['.', './addCredit'],
+      format: 'json',
+    },
   });
 });

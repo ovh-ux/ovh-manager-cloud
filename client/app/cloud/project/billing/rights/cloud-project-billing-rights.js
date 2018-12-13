@@ -11,6 +11,9 @@ angular.module('managerApp')
           controllerAs: 'BillingRightsCtrl',
         },
       },
-      translations: ['.'],
+      translations: {
+        value: ['.'],
+        format: 'json',
+      },
     });
   });

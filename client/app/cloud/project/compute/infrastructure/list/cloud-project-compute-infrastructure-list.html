@@ -3,89 +3,62 @@
     <oui-spinner size="l" inline="true"></oui-spinner>
 </div>
 <div data-ng-hide="ComputeInfrastructureListCtrl.loaders.init">
-    <div class="row mb-5">
-        <div class="col-xs-3">
-            <div class="btn-group cloud-compute-infra-primary-actions">
-                <button type="button" class="oui-button oui-button_dropdown dropdown-toggle mb-0" aria-haspopup="true" aria-expanded="false"
-                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vRack"
-                        data-toggle="dropdown"
-                        write-right-required>
-                    <span data-ng-bind=":: 'common_actions' | translate"></span>
-                    <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                </button>
-                <ul class="dropdown-menu mt-0" role="menu">
-                    <li role="menuitem">
-                        <a class="btn fs14 text-left" ui-sref="iaas.pci-project.compute.infrastructure.vm-add()"
-                           at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
-                           data-ng-bind=":: 'cpci_add_server' | translate">
-                        </a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
-                                data-ng-bind=":: 'cpci_volume_add' | translate"
-                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.addVolume()">
-                        </button>
-                    </li>
-                    <li class="divider" role="presentation"></li>
-                    <li role="menuitem">
-                        <button type="button"
-                                class="btn fs14"
-                                data-ui-sref="iaas.pci-project.compute.infrastructure.iac-view"
-                                data-at-internet-click="{
-                                    name: 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-view'
-                                }"
-                                data-ng-bind=":: 'cpci_view_iac' | translate ">
-                        </button>
-                    </li>
-                    <li class="divider" role="presentation"></li>
-                    <li>
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
-                                data-ng-bind=":: 'cpci_buy_ip_failover' | translate"
-                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.buyIpFailOver()">
-                        </button>
-                    </li>
-                    <li class="divider"
-                        data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
-                    </li>
-                    <li data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'">
-                        <button type="button"
-                                class="btn fs14"
-                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.orderCredit()"
-                                data-translate="cpb_vouchers_add_credit_title">
-                        </button>
-                    </li>
-                    <li class="divider" role="presentation"></li>
-                    <li role="menuitem">
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
-                                data-ng-bind=":: 'cpb_details_project_delete' | translate"
-                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openDeleteProjectModal()"
-                                write-right-required>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-xs-9 text-right">
-            <div class="d-inline-block">
-                <span class="oui-label align-middle d-inline-block mb-0 mr-3"
-                      data-translate="cpci_menu_view_label"></span>
-                <nav class="oui-button-group align-middle mb-0">
-                    <a class="oui-button oui-button_secondary"
-                       ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
-                       data-translate="cpci_menu_view_diagram"></a>
-                    <a class="oui-button oui-button_primary"
-                       ui-sref="iaas.pci-project.compute.infrastructure.list()"
-                       data-translate="cpci_menu_view_list"></a>
-                </nav>
-            </div>
+    <div class="mb-5 text-right">
+        <span class="oui-label align-middle d-inline-block mb-0 mr-3"
+              data-translate="cpci_menu_view_label"></span>
+        <div class="oui-button-group align-middle mb-0">
+            <a class="oui-button oui-button_secondary"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
+               data-translate="cpci_menu_view_diagram"></a>
+            <a class="oui-button oui-button_primary"
+               data-ui-sref="iaas.pci-project.compute.infrastructure.list()"
+               data-translate="cpci_menu_view_list"></a>
         </div>
     </div>
 
     <section class="row">
         <oui-datagrid class="col-xs-12" data-rows="ComputeInfrastructureListCtrl.table.items">
+            <extra-top>
+                <oui-action-menu
+                    data-text="{{ ::'common_actions' | translate }}"
+                    data-disabled="ComputeInfrastructureDiagramCtrl.loaders.vRack"
+                    data-write-right-required>
+                    <oui-action-menu-item
+                        data-ui-sref="iaas.pci-project.compute.infrastructure.vm-add()"
+                        data-text="{{ ::'cpci_add_server' | translate }}"
+                        data-write-right-required
+                        data-on-click="ComputeInfrastructureListCtrl.trackOnClick('cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine')">
+                    </oui-action-menu-item>
+                    <oui-action-menu-item
+                        data-text="{{ ::'cpci_volume_add' | translate }}"
+                        data-write-right-required
+                        data-on-click="ComputeInfrastructureListCtrl.addVolume()">
+                    </oui-action-menu-item>
+                    <oui-action-menu-divider></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-text="{{ ::'cpci_view_iac' | translate }}"
+                        data-ui-sref="iaas.pci-project.compute.infrastructure.iac-view"
+                        data-on-click="ComputeInfrastructureListCtrl.trackOnClick('cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-view')">
+                    </oui-action-menu-item>
+                    <oui-action-menu-divider></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-text="{{ ::'cpci_buy_ip_failover' | translate }}"
+                        data-on-click="ComputeInfrastructureListCtrl.buyIpFailOver()">
+                    </oui-action-menu-item>
+                    <oui-action-menu-divider data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'"></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-ng-if="ComputeInfrastructureListCtrl.TARGET === 'US'"
+                        data-text="{{ ::'cpb_vouchers_add_credit_title' | translate }}"
+                        data-on-click="ComputeInfrastructureListCtrl.InfrastructureService.orderCredit()">
+                    </oui-action-menu-item>
+                    <oui-action-menu-divider></oui-action-menu-divider>
+                    <oui-action-menu-item
+                        data-text="{{ ::'cpb_details_project_delete' | translate }}"
+                        data-ng-click="ComputeInfrastructureListCtrl.openDeleteProjectModal()"
+                        data-write-right-required>
+                    </oui-action-menu-item>
+                </oui-action-menu>
+            </extra-top>
             <oui-column title="'cpci_vm_name' | translate" data-property="name" data-type="string" data-searchable data-filterable data-sortable="asc">
             </oui-column>
             <oui-column data-title="'cpci_vm_region' | translate" data-property="macroRegion" data-type="options" data-type-options="ComputeInfrastructureListCtrl.regionOptions" data-filterable>

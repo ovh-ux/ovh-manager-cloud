@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_delete_title" qtlid="247950">Usunięcie instancji</translation>
-   <translation id="cpcivm_delete_info" qtlid="247963">Opłata za bieżący miesiąc za ten serwer została już uregulowana. Pozostała kwota nie ulega zwrotowi.</translation>
-   <translation id="cpcivm_failover_info" qtlid="269383">Te adresy IP Failover zostaną definitywnie usunięte:</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Czy chcesz usunąć tę instancję?</translation>
-</translations>

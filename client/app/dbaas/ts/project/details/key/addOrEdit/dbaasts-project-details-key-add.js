@@ -10,7 +10,10 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'DBaasTsProjectDetailsKeyAddOrEditCtrl',
       },
     },
-    translations: ['..'],
+    translations: {
+      value: ['..'],
+      format: 'json',
+    },
   });
 
   $stateProvider.state('dbaas.dbaasts-project.dbaasts-project-details.dbaasts-project-details-key-edit', {
@@ -22,6 +25,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'DBaasTsProjectDetailsKeyAddOrEditCtrl',
       },
     },
-    translations: ['.', '..'],
+    translations: {
+      value: ['.', '..'],
+      format: 'json',
+    },
   });
 });

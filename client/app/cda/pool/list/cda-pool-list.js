@@ -10,6 +10,9 @@ angular.module('managerApp')
             controllerAs: 'CdaPoolListCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });

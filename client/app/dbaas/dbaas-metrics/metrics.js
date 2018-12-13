@@ -14,7 +14,10 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
       abstract: true,
-      translations: ['.'],
+      translations: {
+        value: ['.'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail', {
       url: '/{serviceName}',
@@ -25,7 +28,10 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsDetailCtrl',
         },
       },
-      translations: ['.'],
+      translations: {
+        value: ['.'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail.dashboard', {
       url: '/dashboard',
@@ -37,7 +43,10 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['.', './dashboard', './token'],
+      translations: {
+        value: ['.', './dashboard', './token'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail.token', {
       url: '/token',
@@ -50,7 +59,10 @@ angular.module('managerApp').config(($stateProvider) => {
                     `,
         },
       },
-      translations: ['.', './token'],
+      translations: {
+        value: ['.', './token'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail.token.home', {
       url: '/',
@@ -61,7 +73,10 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsTokenCtrl',
         },
       },
-      translations: ['.', './token'],
+      translations: {
+        value: ['.', './token'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail.token.add', {
       url: '/add',
@@ -72,7 +87,10 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: '$ctrl',
         },
       },
-      translations: ['.', './token', './token/add'],
+      translations: {
+        value: ['.', './token', './token/add'],
+        format: 'json',
+      },
     })
     .state('dbaas.metrics.detail.platform', {
       url: '/platform',
@@ -84,6 +102,9 @@ angular.module('managerApp').config(($stateProvider) => {
           controllerAs: 'MetricsPlatformCtrl',
         },
       },
-      translations: ['.', './platform'],
+      translations: {
+        value: ['.', './platform'],
+        format: 'json',
+      },
     });
 });

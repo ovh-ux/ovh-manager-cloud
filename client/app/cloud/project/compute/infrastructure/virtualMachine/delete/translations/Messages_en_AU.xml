@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_delete_title" qtlid="247950">Deleting an instance</translation>
-   <translation id="cpcivm_delete_info" qtlid="247963">You have already paid your monthly bill for this server. Any pre-paid days will be lost.</translation>
-   <translation id="cpcivm_failover_info" qtlid="269383">The following Failover IPs will be permanently deleted:</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Are you sure you want to delete this instance?</translation>
-</translations>

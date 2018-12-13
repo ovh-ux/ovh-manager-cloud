@@ -1,0 +1,17 @@
+{
+ "cpc_tab_infra": "Infra.",
+ "cpc_tab_snapshot": "Backups",
+ "cpc_tab_volume": "Extra disks",
+ "cpc_tab_ssh": "SSH-key",
+ "cpc_tab_loadbalancer": "Load Balancing IP",
+ "cpc_tab_project": "Beheer en gebruik van het project",
+ "cpb_tab_quota": "Quota",
+ "cpc_message": "OVH Cloud is nu ook in Duitsland! <a href=\"http://superlienverslapage\">Ontdek ons datacenter in het Duitse Limburg.</a>",
+ "cloud_message_pci_uk1": "Ons nieuwe Britse UK1 datacenter in London is nu open!",
+ "cloud_message_pci_uk1_link": "Wat kan dit voor u betekenen",
+ "cloud_message_pci_de1": "We hebben een nieuwe DE1 regio geopend in Frankfurt, Duitsland! ",
+ "cloud_message_pci_de1_link": "Wat kan dit voor u betekenen",
+ "cloud_message_pci_g3": "Nieuw: lancering van onze GPU G3-30 en G3-120 instances, voor uw data science of machine learning projecten.",
+ "cloud_message_pci_no_link": "Meer informatie...",
+ "cloud_message_pci_bandwitdh_xmas": "Van 19 december 2017 t/m 8 januari 2018 krijgt u tot 10 GBits/s netwerkbandbreedte (algemeen) voor C2-120, B2-120, R2-240 en G3-120 instances."
+}

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpci_private_network_delete_title" qtlid="405538">Odstranění privátní sítě</translation>
-   <translation id="cpci_private_network_delete_confirm" qtlid="405551">Opravdu si přejete odstranit tuto privátní síť?</translation>
-   <translation id="cpci_private_network_delete_success" qtlid="405564">Privátní síť byla úspěšně odstraněna</translation>
-   <translation id="cpci_private_network_delete_error" qtlid="405577">Při odstraňování privátní sítě došlo k chybě</translation>
-</translations>

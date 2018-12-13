@@ -13,6 +13,9 @@ angular.module('managerApp')
         templateUrl: 'app/cloud/project/add/cloud-project-add.html',
         controller: 'CloudProjectAddCtrl',
         controllerAs: 'CloudProjectAddCtrl',
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

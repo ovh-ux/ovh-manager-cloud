@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Passage au forfait mensuel</translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Réduisez le prix de 50% en passant cette machine au forfait mensuel (payé par avance).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Une facture de prorata pour les jours restants du mois va être immédiatement éditée.</translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Ce serveur sera intégré au forfait mensuel dans quelques instants.</translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Une erreur est survenue lors du passage au forfait mensuel.</translation>
-</translations>

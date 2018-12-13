@@ -8,6 +8,9 @@ angular.module('managerApp')
         url: '/paas',
         abstract: true,
         template: '<ui-view/>',
-        translations: ['../common', '.'],
+        translations: {
+          value: ['../common', '.'],
+          format: 'json',
+        },
       });
   });

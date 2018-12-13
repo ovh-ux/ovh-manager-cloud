@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_vnc_title" qtlid="251161">VNC-konsoli</translation>
-   <translation id="cpcivm_vnc_tip" qtlid="251174">Vinkki: mikäli et voi syöttää tekstiä uudessa ikkunassa, klikkaa alla olevaa sinistä palkkia.</translation>
-   <translation id="cpcivm_vnc_window" qtlid="92753">Avaa uudessa ikkunassa</translation>
-   <translation id="cpcivm_vnc_error" qtlid="251187">Virhe: VNC-konsolia ei voida avata.</translation>
-   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Käyttääksesi VNC-konsolia Linux-käyttöjärjestelmässä, sinun täytyy kirjautua ensin SSH-yhteydellä ja määritellä käyttäjä & sen salasana.</translation>
-</translations>

@@ -667,8 +667,8 @@ class ManagerNavbarService {
     };
 
     this.asyncLoader.addTranslations(
-      import(`../../app/common/translations/Messages_${this.$translate.use()}.xml`)
-        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.xml`))
+      import(`../../app/common/translations/Messages_${this.$translate.use()}.json`)
+        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.json`))
         .then(x => x.default),
     );
 

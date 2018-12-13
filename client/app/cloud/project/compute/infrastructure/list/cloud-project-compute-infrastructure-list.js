@@ -10,6 +10,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'ComputeInfrastructureListCtrl',
       },
     },
-    translations: ['../../../billing/vouchers/addCredit'],
+    translations: {
+      value: ['../../../billing/vouchers/addCredit'],
+      format: 'json',
+    },
   });
 });

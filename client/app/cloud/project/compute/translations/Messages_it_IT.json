@@ -1,0 +1,17 @@
+{
+ "cpc_tab_infra": "Infrastruttura",
+ "cpc_tab_snapshot": "Snapshot",
+ "cpc_tab_volume": "Dischi aggiuntivi",
+ "cpc_tab_ssh": "Chiavi SSH",
+ "cpc_tab_loadbalancer": "IP Load Balancer",
+ "cpc_tab_project": "Gestione e consumo del progetto",
+ "cpb_tab_quota": "Quota",
+ "cpc_message": "Il Cloud OVH arriva Germania! <a href=\"http://superlienverslapage\">Scopri il datacenter OVH di Limburg.</a>",
+ "cloud_message_pci_uk1": "È disponibile la nuova Region UK1 a Londra, nel Regno Unito!",
+ "cloud_message_pci_uk1_link": "Scopri tutti i vantaggi",
+ "cloud_message_pci_de1": "È disponibile la nuova Region DE1 a Francoforte, in Germania!",
+ "cloud_message_pci_de1_link": "Scopri tutti i vantaggi",
+ "cloud_message_pci_g3": "Novità: lancio delle istanze GPU G3-30 e G3-120, per i tuoi progetti di Data Science e Machine Learning.",
+ "cloud_message_pci_no_link": "Per saperne di più...",
+ "cloud_message_pci_bandwitdh_xmas": "Dal 19 dicembre 2017 all’8 gennaio 2018, approfitta di una rete con banda passante totale fino a 10 Gbit/s per le istanze C2-120, B2-120, R2-240 e G3-120. "
+}

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="nasha_partitions_action_update_success" qtlid="344974">Levyosion{{partitionName}} koko päivitetään hetken kuluttua.</translation>
-   <translation id="nasha_partitions_action_update_failure" qtlid="344987">Tapahtui virhe levyosion {{partitionName}} koon päivityksessä.</translation>
-</translations>

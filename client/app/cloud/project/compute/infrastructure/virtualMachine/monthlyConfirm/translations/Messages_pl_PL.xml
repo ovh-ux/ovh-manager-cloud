@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Przejście na abonament miesięczny</translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Zmniejsz cenę o 50% zmieniając abonament na miesięczny dla tej maszyny (abonament płatny z góry).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Otrzymasz natychmiast fakturę na kwotę odpowiadającą liczbie dni do końca miesiąca.</translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Ten serwer zostanie zintegrowany z abonamentem miesięcznym w ciągu kilku minut.</translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Wystąpił błąd podczas przechodzenia na abonament miesięczny.</translation>
-</translations>

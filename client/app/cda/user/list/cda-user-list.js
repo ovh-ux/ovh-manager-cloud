@@ -10,6 +10,9 @@ angular.module('managerApp')
             controllerAs: 'CdaUserListCtrl',
           },
         },
-        translations: ['.'],
+        translations: {
+          format: 'json',
+          value: ['.'],
+        },
       });
   });
