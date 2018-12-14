@@ -981,8 +981,8 @@
                                 <table class="table table-pretty table-hover table-striped shadow-z-1">
                                     <tbody>
                                         <tr data-ng-repeat="image in images track by image.id"
-                                            data-ng-click="VmAddEditCtrl.model.imageId = image.disabled ? VmAddEditCtrl.model.imageId : image.id"
-                                            data-ng-class="{'disabled opacity5': image.disabled || image.deprecated }"
+                                            data-ng-click="VmAddEditCtrl.model.imageId = (image.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(image)) ? VmAddEditCtrl.model.imageId : image.id"
+                                            data-ng-class="{'disabled opacity5': image.disabled || image.deprecated || !VmAddEditCtrl.isImageSelectableInEditMode(app) }"
                                             class="pointer" role="button" tabindex="0" click-enter-on-keypress
                                             data-uib-tooltip="{{:: image.disabled ? ('cpcivm_addedit_image_disabled_' + image.disabled | translate) : (image.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
@@ -992,7 +992,7 @@
                                                            name="imagesChoice" id="{{::image.id}}"
                                                            data-ovh-stop-event="click"
                                                            value="{{::image.id}}"
-                                                           data-ng-disabled="image.disabled"
+                                                           data-ng-disabled="image.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(image)"
                                                            data-ng-model="VmAddEditCtrl.model.imageId">
                                                 </flat-radio>
                                             </td>
@@ -1032,8 +1032,8 @@
                                     <tbody>
                                         <p data-translate="cpcivm_addedit_image_application_warning"></p>
                                         <tr data-ng-repeat="app in VmAddEditCtrl.displayData.apps track by app.id"
-                                            data-ng-click="VmAddEditCtrl.model.imageId = app.disabled ? VmAddEditCtrl.model.imageId : app.id"
-                                            data-ng-class="{'disabled opacity5': app.disabled || app.deprecated }"
+                                            data-ng-click="VmAddEditCtrl.model.imageId = (app.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(app)) ? VmAddEditCtrl.model.imageId : app.id"
+                                            data-ng-class="{'disabled opacity5': app.disabled || app.deprecated || !VmAddEditCtrl.isImageSelectableInEditMode(app) }"
                                             class="pointer" role="button" tabindex="0" click-enter-on-keypress
                                             data-uib-tooltip="{{:: app.disabled ? ('cpcivm_addedit_image_disabled_' + app.disabled | translate) : (app.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
@@ -1043,7 +1043,7 @@
                                                            name="imagesChoice" id="{{::app.id}}"
                                                            data-ovh-stop-event="click"
                                                            value="{{::app.id}}"
-                                                           data-ng-disabled="app.disabled"
+                                                           data-ng-disabled="image.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(app)"
                                                            data-ng-model="VmAddEditCtrl.model.imageId">
                                                 </flat-radio>
                                             </td>
