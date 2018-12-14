@@ -14,7 +14,7 @@
                         data-ng-model="ctrl.newPassword"
                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.new_password.$invalid}"
                         cui-password
-                        data-ng-keyup="ctrl.validatePassword()"
+                        data-ng-change="ctrl.validatePassword()"
                         autofocus
                         required />
                 </div>
