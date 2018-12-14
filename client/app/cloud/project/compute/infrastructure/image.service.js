@@ -38,6 +38,7 @@
     'deeplearning',
     'rstudio',
     'minikube',
+    'nvidia_ngc',
   ];
 
   class CloudImageService {
