@@ -47,6 +47,7 @@ angular.module('managerApp')
     'g1',
     'g2',
     'g3',
+    't1',
   ])
   .constant('CLOUD_INSTANCE_CPU_FREQUENCY', {
     'ovh.vps-ssd': 2.4,
