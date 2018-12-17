@@ -114,31 +114,10 @@ class ManagerNavbarService {
             return {
               name: service.serviceName,
               title: service.displayName,
-              subLinks: [{
-                title: this.$translate.instant('cloud_sidebar_pci_infrastructure'),
-                state: 'iaas.pci-project.compute',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_object_storage'),
-                state: 'iaas.pci-project.compute.storage',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_manage'),
-                state: 'iaas.pci-project.billing',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_openstack'),
-                state: 'iaas.pci-project.compute.openstack',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }],
+              state: 'iaas.pci-project.compute.infrastructure.diagram',
+              stateParams: {
+                projectId: service.serviceName,
+              },
             };
           case 'VPS':
             return {
