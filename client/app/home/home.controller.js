@@ -48,10 +48,9 @@ angular
       return this.$q
         .all(sectionsPromise)
         .then((sections) => {
-          this.guides.sections = _.chain(this.defaultSections)
+          this.guides.sections = this.defaultSections
             .filter((value, index) => sections[index])
-            .map(section => this.DocsService.getGuidesOfSection(section))
-            .value();
+            .map(section => this.DocsService.getGuidesOfSection(section));
         });
     }
   });
