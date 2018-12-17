@@ -14,11 +14,11 @@ class CloudProjectSidebar {
         id: project.serviceName,
         title: project.displayName || project.serviceName,
         icon: 'ovh-font ovh-font-cloud-public2',
-        state: 'iaas.pci-project.compute',
+        state: 'iaas.pci-project.compute.infrastructure.diagram',
         stateParams: {
           projectId: project.serviceName,
         },
-        loadOnState: 'iaas.pci-project.compute',
+        loadOnState: 'iaas.pci-project.compute.infrastructure.diagram',
         loadOnStateParams: {
           projectId: project.serviceName,
         },
