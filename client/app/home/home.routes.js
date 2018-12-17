@@ -1,12 +1,9 @@
-
-
-angular.module('managerApp')
+angular
+  .module('managerApp')
   .config(($stateProvider) => {
     $stateProvider.state('home', {
       url: '/',
-      templateUrl: 'app/home/home.html',
-      controller: 'HomeCtrl',
-      controllerAs: '$ctrl',
+      component: 'home',
       translations: {
         value: ['.', '../common'],
         format: 'json',
