@@ -1,6 +1,7 @@
 {
   "homepage_welcome_to_your_manager_1": "Bienvenue dans votre",
   "homepage_welcome_to_your_manager_2": "espace client OVH",
+  "homepage_top_guides_header_fr": "Pour obtenir une assistance ou des informations détaillées sur vos services et l’état de vos services, rendez-vous sur la page :",
   "homepage_top_guides_header": "Pour obtenir de l'information plus détaillée, veuillez consulter <a class=\"oui-link\" href=\"{{ url }}\" target=\"_blank\">nos guides</a>.",
   "homepage_type_of_guide_vps": "VPS",
   "homepage_type_of_guide_pci": "Public Cloud",

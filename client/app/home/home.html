@@ -4,9 +4,27 @@
             <span data-translate="homepage_welcome_to_your_manager_1"></span>
             <span data-translate="homepage_welcome_to_your_manager_2"></span>
         </h1>
-        <p class="lead"
-           data-ng-bind-html="'homepage_top_guides_header' | translate: { url: $ctrl.guides.all }">
-        </p>
+        <p
+            class="lead"
+            data-ng-if="$ctrl.subsidiary !== 'FR'"
+            data-ng-bind-html="'homepage_top_guides_header' | translate: { url: $ctrl.guides.all }"></p>
+
+        <div
+            class="row"
+            data-ng-if="$ctrl.subsidiary === 'FR'">
+            <p class="lead col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                <span data-translate="homepage_top_guides_header_fr"></span>
+                <a
+                    class="oui-link_icon"
+                    data-ng-href="{{:: $ctrl.helpCenterURLs.FR }}"
+                    target="_blank"
+                    rel="noopener">
+                    <span data-translate="common_menu_support_help_center"></span>
+                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                    <span class="sr-only" data-translate="common_new_tab"></span>
+                </a>.
+            </p>
+        </div>
     </div>
     <div class="row d-md-flex">
         <div class="col-md-10 col-lg-8 mx-md-auto">

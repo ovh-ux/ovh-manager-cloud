@@ -25,9 +25,7 @@ angular
         all: this.DocsService.getAllGuidesLink(),
       };
 
-      this.helpCenterURL = {
-        FR: this.URLS.support.FR,
-      };
+      this.helpCenterURLs = this.URLS.support;
 
       return this.fetchingSubsidiary()
         .then(() => this.setSections());
