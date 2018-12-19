@@ -105,31 +105,64 @@ class PrivateNetworkListCtrl {
      * @memberof PrivateNetworkListCtrl
      */
   addVRack() {
-    this.VrackService.selectVrack()
-      .then((selectedVrack) => {
-        this.loaders.vrack.link = true;
-        this.models.vrack = {
-          id: selectedVrack.serviceName,
-          name: selectedVrack.name,
-        };
-        return this.VrackService.linkCloudProjectToVrack(
-          selectedVrack.serviceName,
-          this.serviceName,
-        );
-      })
-      .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
-      .then(() => {
-        this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
-      })
-      .catch((err) => {
-        if (err === 'cancel') {
-          return;
-        }
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
-      })
-      .finally(() => {
-        this.loaders.vrack.link = false;
-      });
+  // this.VrackService.selectVrack()
+  //   .then((selectedVrack) => {
+  //     this.loaders.vrack.link = true;
+  //     this.models.vrack = {
+  //       id: selectedVrack.serviceName,
+  //       name: selectedVrack.name,
+  //     };
+  //     return this.VrackService.linkCloudProjectToVrack(
+  //       selectedVrack.serviceName,
+  //       this.serviceName,
+  //     );
+  //   })
+  //   .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+  //   .then(() => {
+  //  add success message
+  //   })
+  //   .catch((err) => {
+  //     if (err === 'cancel') {
+  //       return;
+  //     }
+  //     this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+  //   })
+  //   .finally(() => {
+  //     this.loaders.vrack.link = false;
+  //   });
+
+    this.resources.project.createVrack({ serviceName: this.serviceName }).$promise
+      .then(({ id }) => this.startOperationPolling(id)
+        .then(() => {
+          this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
+        })
+        .catch((err) => {
+          if (err === 'cancel') {
+            return;
+          }
+          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+        })
+        .finally(() => {
+          this.loaders.vrack.link = false;
+        }));
+  }
+
+  startOperationPolling(taskId) {
+    this.stopTaskPolling();
+
+    const taskToPoll = {
+      id: taskId,
+    };
+
+    this.poller = this.CloudPoll.poll({
+      item: taskToPoll,
+      pollFunction: task => this.resources.project.getOperation(
+        { serviceName: this.serviceName, operationId: task.id },
+      ).$promise,
+      stopCondition: task => !task || _.includes(['completed', 'error'], task.status),
+    });
+
+    return this.poller;
   }
 
   unlinkVrack() {
