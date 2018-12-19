@@ -40,7 +40,7 @@
  "cloud_sidebar_actions_menu_cloud_project": "Cloud project ",
  "cloud_sidebar_actions_menu_dedicated_cloud": "Private Cloud",
  "cloud_sidebar_actions_menu_ip": "Additional IP ",
- "cloud_sidebar_actions_menu_iplb": "Load Balancing IP",
+ "cloud_sidebar_actions_menu_iplb": "Load Balancer",
  "cloud_sidebar_actions_menu_vrack": "vRack",
  "cloud_sidebar_actions_menu_licence": "Licence",
  "cloud_sidebar_actions_menu_NAS": "NAS",
