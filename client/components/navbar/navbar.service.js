@@ -304,23 +304,23 @@ class ManagerNavbarService {
     const assistanceMenuItems = [
       {
         title: this.$translate.instant('common_menu_support_guide'),
-        url: _.get(this.URLS.guides, `cloud.${subsidiary}`),
+        url: _.get(this.URLS, `guides.cloud.${subsidiary}`),
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::all_guides::cloud',
           type: 'action',
         }),
-        mustBeKept: !mustDisplayNewMenu && _.has(this.URLS.guides, `cloud.${subsidiary}`),
+        mustBeKept: !mustDisplayNewMenu && _.has(this.URLS, `guides.cloud.${subsidiary}`),
       },
       {
         title: this.$translate.instant('common_menu_support_all_guides'),
-        url: _.get(this.URLS.guides, `home.${subsidiary}`),
+        url: _.get(this.URLS, `guides.home.${subsidiary}`),
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::all_guides',
           type: 'action',
         }),
-        mustBeKept: !mustDisplayNewMenu && !_.has(this.URLS.guides, `cloud.${subsidiary}`) && _.has(this.URLS.guides, `home.${subsidiary}`),
+        mustBeKept: !mustDisplayNewMenu && !_.has(this.URLS, `guides.cloud.${subsidiary}`) && _.has(this.URLS, `guides.home.${subsidiary}`),
       },
       {
         title: this.$translate.instant('common_menu_support_help_center'),
@@ -372,7 +372,7 @@ class ManagerNavbarService {
       },
       {
         title: this.$translate.instant('common_menu_support_telephony_contact'),
-        url: this.URLS.support_contact[subsidiary] || this.URLS.support_contact.FR,
+        url: _.get(this.URLS, 'support_contact', {})[subsidiary] || _.get(this.URLS, 'support_contact.FR'),
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::helpline',
