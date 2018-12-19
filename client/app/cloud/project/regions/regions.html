@@ -1,0 +1,41 @@
+<section class="cui-page__content">
+  <cui-page-content-title text="Regions"></cui-page-content-title>
+  <p>OVH offers you several locations to create your infrastructures or create a container.
+    By default you have access to some regions but you can choose to add new regions.</p>
+
+    <oui-spinner size="l" data-ng-if="ctrl.loaders.regions"></oui-spinner>
+    <oui-tabs data-ng-if="!ctrl.loaders.regions">
+      <oui-tabs-item heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in ctrl.displayedRegions track by region.macroRegion.code">
+            <oui-select-picker data-id="allRegions_{{region.macroRegion.code}}"
+              data-disabled="true"
+              data-match="microRegion.text"
+              data-name="allRegions"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
+              data-text="{{region.macroRegion.text}}"
+              data-values="region.dataCenters"
+              data-variant="light">
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+      <oui-tabs-item data-ng-repeat="(continent, regions) in ctrl.groupedRegions track by $index" heading="{{continent}}">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in regions track by region.macroRegion.code">
+            <oui-select-picker data-id="region_{{ region.macroRegion.code }}"
+              data-disabled="true"
+              data-match="microRegion.text"
+              data-name="region"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }} flag"
+              data-text="{{ region.macroRegion.text }}"
+              data-values="region.dataCenters"
+              data-variant="light">
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+    </oui-tabs>
+</section>
