@@ -78,6 +78,7 @@ class RegionsCtrl {
         .addRegion({ serviceName: this.serviceName },
           { region: this.availableRegionToAdd.microRegion.code })
         .$promise
+        .then(() => this.initLoaders())
         .then(() => this.ServiceHelper.successHandler('cpci_add_regions_add_region_success')({ code: this.availableRegionToAdd.microRegion.code }))
         .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_add_region_error')(error))
         .finally(() => this.ControllerHelper.scrollPageToTop()),
