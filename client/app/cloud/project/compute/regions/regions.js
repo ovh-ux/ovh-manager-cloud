@@ -5,13 +5,13 @@ angular.module('managerApp')
         url: '/regions',
         views: {
           cloudProjectCompute: {
-            templateUrl: 'app/cloud/project/regions/regions.html',
+            templateUrl: 'app/cloud/project/compute/regions/regions.html',
             controller: 'RegionsCtrl',
             controllerAs: 'ctrl',
           },
         },
         translations: {
-          value: ['.'],
+          value: ['.', './../infrastructure/virtualMachine/add'],
           format: 'json',
         },
       });

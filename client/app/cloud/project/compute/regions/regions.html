@@ -1,0 +1,93 @@
+<section class="cui-page__content">
+  <h3 class="oui-heading_3">{{ 'cpci_add_regions_title' | translate }}</h3>
+  <p>{{ 'cpci_add_regions_description' | translate }}</p>
+
+    <!-- regions added -->
+    <h6 class="oui-header_6">{{ 'cpci_add_regions_added_title' | translate }}:</h6>
+    <oui-spinner size="s" data-ng-if="ctrl.regionsByDatacenter.loading || ctrl.regionsByContinent.loading"></oui-spinner>
+    <oui-tabs data-ng-if="!ctrl.regionsByDatacenter.loading || !ctrl.regionsByContinent.loading">
+      <oui-tabs-item heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in ctrl.regionsByDatacenter.data track by region.macroRegion.code">
+            <oui-select-picker data-id="region_{{ region.macroRegion.code }}"
+              data-disabled="true"
+              data-name="region"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
+              data-label="{{ region.macroRegion.text }}"
+              data-variant="light">
+              <oui-select-picker-section data-ng-repeat="datacenter in region.dataCenters track by datacenter.microRegion.code">{{datacenter.microRegion.text}}</oui-select-picker-section>
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+      <oui-tabs-item data-ng-repeat="(continent, regions) in ctrl.regionsByContinent.data track by $index"
+        heading="{{continent}}"
+        index="($index + 1)">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in regions track by region.macroRegion.code">
+            <oui-select-picker data-id="region_{{ region.macroRegion.code }}"
+              data-disabled="true"
+              data-name="region"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
+              data-label="{{ region.macroRegion.text }}"
+              data-variant="light">
+              <oui-select-picker-section data-ng-repeat="datacenter in region.dataCenters track by datacenter.microRegion.code">{{datacenter.microRegion.text}}</oui-select-picker-section>
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+    </oui-tabs>
+
+    <!-- available regions to add -->
+    <h6 class="oui-header_6 mt-5">{{ 'cpci_add_regions_available_to_add_title' | translate }}:</h6>
+    <oui-spinner size="s" data-ng-if="ctrl.availableRegionsByDatacenter.loading || ctrl.availableRegionsByContinent.loading"></oui-spinner>
+    <oui-tabs data-ng-if="!ctrl.availableRegionsByDatacenter.loading || !ctrl.availableRegionsByContinent.loading">
+      <oui-tabs-item heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in ctrl.availableRegionsByDatacenter.data track by region.macroRegion.code">
+            <oui-select-picker data-id="availableRegion_{{ region.macroRegion.code }}"
+              data-match="microRegion.text"
+              data-model="ctrl.availableRegionToAdd"
+              data-name="allAvailableRegions"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
+              data-label="{{ region.macroRegion.text }}"
+              data-values="region.dataCenters"
+              data-variant="light">
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+      <oui-tabs-item data-ng-repeat="(continent, regions)  in ctrl.availableRegionsByContinent.data track by $index"
+        heading="{{continent}}"
+        index="($index + 1)">
+        <div class="cui-grid-list">
+          <div class="cui-grid-list-item cui-grid-cell"
+            data-ng-repeat="region in regions track by region.macroRegion.code">
+            <oui-select-picker data-id="availableRegion__{{ region.macroRegion.code }}"
+              data-match="microRegion.text"
+              data-model="ctrl.availableRegionToAdd"
+              data-name="availableRegion"
+              data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }} flag"
+              data-label="{{ region.macroRegion.text }}"
+              data-values="region.dataCenters"
+              data-variant="light">
+            </oui-select-picker>
+          </div>
+        </div>
+      </oui-tabs-item>
+    </oui-tabs>
+
+    <!-- add regions button -->
+    <oui-button class="mt-5"
+      data-variant="primary"
+      data-type="button"
+      data-text="{{ ::'cpci_add_regions_add_region' | translate }}"
+      data-on-click="ctrl.addRegions()"
+      data-disabled="ctrl.availableRegionToAdd === null"
+      data-ng-if="!ctrl.addRegion.loading">
+    </oui-button>
+    <oui-spinner data-ng-if="ctrl.addRegion.loading"></oui-spinner>
+</section>

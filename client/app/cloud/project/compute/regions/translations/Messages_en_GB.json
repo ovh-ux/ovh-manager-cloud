@@ -1,0 +1,11 @@
+{
+  "cpci_add_regions_title": "Add regions",
+  "cpci_add_regions_description": "OVH offers you several locations to create your infrastructures or create a container. By default you have access to some regions but you can choose to add new regions.",
+  "cpci_add_regions_added_title": "Regions available",
+  "cpci_add_regions_available_to_add_title": "Regions that you can add",
+  "cpci_add_regions_add_region": "Add region",
+  "cpci_add_regions_get_regions_error": "Failed to fetch regions: {{message}}",
+  "cpci_add_regions_get_available_regions_error": "Failed to fetch available regions: {{message}}",
+  "cpci_add_regions_add_region_error": "Failed to add region: {{message}}",
+  "cpci_add_regions_add_region_success": "Region {{code}} added"
+}
