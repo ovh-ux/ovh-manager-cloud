@@ -47,7 +47,7 @@
     <!-- available regions to add -->
     <h6 class="mt-5" data-translate="cpci_add_regions_available_to_add_title"></h6>
     <oui-spinner data-size="s" data-ng-if="$ctrl.availableRegionsByDatacenter.loading || $ctrl.availableRegionsByContinent.loading"></oui-spinner>
-    <p data-translate="cpci_add_regions_all_added" ng-if="$ctrl.availableRegionsByDatacenter.data.length === 0">
+    <p data-translate="cpci_add_regions_all_added" ng-if="$ctrl.availableRegionsByDatacenter.data.length === 0"></p>
     <div data-ng-if="$ctrl.availableRegionsByDatacenter.data.length > 0">
       <oui-tabs>
         <oui-tabs-item data-heading="{{ ::'cpcivm_add_step2_tab_all' | translate }}">
