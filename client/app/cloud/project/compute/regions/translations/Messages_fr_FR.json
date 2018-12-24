@@ -7,5 +7,6 @@
   "cpci_add_regions_get_regions_error": "Impossible de récupérer les régions: {{message}}",
   "cpci_add_regions_get_available_regions_error": "Échec d'extraction des régions disponibles: {{message}}",
   "cpci_add_regions_add_region_error": "Impossible d'ajouter la région: {{message}}",
-  "cpci_add_regions_add_region_success": "Région {{code}} ajoutée"
+  "cpci_add_regions_add_region_success": "Région {{code}} ajoutée",
+  "cpci_add_regions_all_added": "Toutes les régions ajoutées"
 }

@@ -8,13 +8,13 @@ class RegionsCtrl {
     CloudProjectVirtualMachineAddService,
     RegionService,
   ) {
-    this.serviceName = $stateParams.projectId;
     this.CloudMessage = CloudMessage;
-    this.ServiceHelper = ServiceHelper;
     this.ControllerHelper = ControllerHelper;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
-    this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.RegionService = RegionService;
+    this.ServiceHelper = ServiceHelper;
+    this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
+    this.serviceName = $stateParams.projectId;
   }
 
   $onInit() {

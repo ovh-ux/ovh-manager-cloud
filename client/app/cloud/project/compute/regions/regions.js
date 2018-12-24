@@ -7,7 +7,7 @@ angular.module('managerApp')
           cloudProjectCompute: {
             templateUrl: 'app/cloud/project/compute/regions/regions.html',
             controller: 'RegionsCtrl',
-            controllerAs: 'ctrl',
+            controllerAs: '$ctrl',
           },
         },
         translations: {
