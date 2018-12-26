@@ -1,11 +1,10 @@
 class PrivateNetworkListCtrl {
   constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal,
     CloudProjectComputeInfrastructurePrivateNetworkService, OvhApiCloudProjectNetworkPrivate,
-    OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
+    REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
     VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
     this.resources = {
       privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
-      project: OvhApiCloudProject.v6(),
       aapi: OvhApiVrack.Aapi(),
       modal: $uibModal,
     };
@@ -33,6 +32,7 @@ class PrivateNetworkListCtrl {
         get: false,
         link: false,
         unlink: false,
+        progress: 0,
       },
       vracks: {
         get: true,
@@ -81,6 +81,15 @@ class PrivateNetworkListCtrl {
     this.User.v6().get().$promise.then((user) => {
       this.orderUrl = _.get(this.URLS.website_order, `vrack.${user.ovhSubsidiary}`);
     });
+    this.VrackService.listOperations(this.$stateParams.projectId)
+      .then((result) => {
+        const status = _.filter(result, f => f.status !== 'completed');
+        console.log(status);
+        if (status.length > 0) {
+          this.loaders.vrack.link = true;
+          this.pollOperationStatus(status[0].id);
+        }
+      });
   }
 
   fetchVrack() {
@@ -98,6 +107,32 @@ class PrivateNetworkListCtrl {
       .finally(() => { this.loaders.vrack.get = false; });
   }
 
+  linkProjectToVrack(selectedVrack) {
+    this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName).$promise
+      .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+      .then(() => {
+        this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
+      })
+      .catch((err) => {
+        if (err === 'cancel') {
+          return;
+        }
+        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+      })
+      .finally(() => {
+        this.loaders.vrack.link = false;
+      });
+  }
+
+  createNewVrack() {
+    this.VrackService.createNewVrack(this.serviceName)
+      .then(({ id }) => {
+        this.pollOperationStatus(id);
+      }).catch(() => {
+        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+        this.loaders.vrack.link = false;
+      });
+  }
 
   /**
      * open UI activate private network modal
@@ -105,46 +140,36 @@ class PrivateNetworkListCtrl {
      * @memberof PrivateNetworkListCtrl
      */
   addVRack() {
-  // this.VrackService.selectVrack()
-  //   .then((selectedVrack) => {
-  //     this.loaders.vrack.link = true;
-  //     this.models.vrack = {
-  //       id: selectedVrack.serviceName,
-  //       name: selectedVrack.name,
-  //     };
-  //     return this.VrackService.linkCloudProjectToVrack(
-  //       selectedVrack.serviceName,
-  //       this.serviceName,
-  //     );
-  //   })
-  //   .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
-  //   .then(() => {
-  //  add success message
-  //   })
-  //   .catch((err) => {
-  //     if (err === 'cancel') {
-  //       return;
-  //     }
-  //     this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
-  //   })
-  //   .finally(() => {
-  //     this.loaders.vrack.link = false;
-  //   });
+    this.VrackService.selectVrack()
+      .then((selectedVrack) => {
+        this.loaders.vrack.link = true;
+        if (selectedVrack) {
+          this.models.vrack = {
+            id: selectedVrack.serviceName,
+            name: selectedVrack.name,
+          };
+          this.linkProjectToVrack(selectedVrack);
+        } else {
+          this.createNewVrack();
+        }
+      });
+  }
 
-    this.resources.project.createVrack({ serviceName: this.serviceName }).$promise
-      .then(({ id }) => this.startOperationPolling(id)
-        .then(() => {
-          this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
-        })
-        .catch((err) => {
-          if (err === 'cancel') {
-            return;
-          }
-          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
-        })
-        .finally(() => {
-          this.loaders.vrack.link = false;
-        }));
+  pollOperationStatus(id) {
+    this.startOperationPolling(id).$promise
+      .then(() => {
+        this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
+        this.fetchVrack();
+      })
+      .catch((err) => {
+        if (err === 'cancel') {
+          return;
+        }
+        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+      })
+      .finally(() => {
+        this.loaders.vrack.link = false;
+      });
   }
 
   startOperationPolling(taskId) {
@@ -156,9 +181,11 @@ class PrivateNetworkListCtrl {
 
     this.poller = this.CloudPoll.poll({
       item: taskToPoll,
-      pollFunction: task => this.resources.project.getOperation(
-        { serviceName: this.serviceName, operationId: task.id },
-      ).$promise,
+      pollFunction: task => this.VrackService.getOperation(this.serviceName, task.id)
+        .then((res) => {
+          this.loaders.vrack.progress = res.progress;
+          return res;
+        }),
       stopCondition: task => !task || _.includes(['completed', 'error'], task.status),
     });
 

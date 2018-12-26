@@ -10,15 +10,19 @@
                 <button class="private-networks__header-edit-vrack-button oui-icon oui-icon-close" type="button" aria-hidden="true" data-ng-click="$ctrl.unlinkVrack()"></button>
             </p>
         </div>
-        <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
-            <p data-translate="cpci_private_network_activateVrack_description"></p>
+        <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack()">
+            <p data-ng-if="!$ctrl.hasPendingLoaders()" data-translate="cpci_private_network_activateVrack_description"></p>
+            <p data-ng-if="$ctrl.hasPendingLoaders()" data-translate="cpci_private_network_activateVrack_loading"></p>
             <a type="button"
-                data-ng-show="$ctrl.orderUrl"
+                data-ng-show="$ctrl.orderUrl && !$ctrl.hasPendingLoaders()"
                 data-ng-disabled="$ctrl.loaders.vracks.get"
                 class="ovh-button ovh-button_secondary"
                 data-ng-click="$ctrl.addVRack()"
                 data-translate="private_network_activate_title">
             </a>
+            <oui-progress data-ng-if="$ctrl.hasPendingLoaders()">
+                <oui-progress-bar type="success" value="$ctrl.loaders.vrack.progress"></oui-progress-bar>
+            </oui-progress>
         </div>
     </li>
     <li class="private-networks__item" data-ng-repeat="network in $ctrl.getPrivateNetworks() track by network.id" data-ng-if="$ctrl.hasVrack()">
@@ -46,11 +50,11 @@
     </li>
 
     <li class="private-networks__item private-networks__item_action" write-right-required>
-        <button class="private-networks__item_action-button" type="button"
+        <!-- <button class="private-networks__item_action-button" type="button"
                 data-ng-if="$ctrl.hasPendingLoaders() || $ctrl.isVrackCreating()"
                 data-ng-disabled="true">
                 <span class="private-networks__item_action-button-icon fa fa-circle-o-notch fa-spin"></span>
-        </button>
+        </button> -->
         <button class="private-networks__item_action-button" type="button"
                 data-ng-if="!$ctrl.hasPendingLoaders() && $ctrl.hasVrack()"
                 data-responsive-popover="'app/cloud/project/compute/infrastructure/privateNetwork/dialog/cloud-project-compute-infrastructure-privateNetwork-dialog.html'"
