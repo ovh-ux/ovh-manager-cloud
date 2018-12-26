@@ -1,6 +1,6 @@
-@cloud-project-sidebar-width    : 250px;
-@cloud-project-sidebar-zindex   : 1020;
-@cloud-project-bottombar-zindex : 1010;
+@cloud-project-sidebar-width: 250px;
+@cloud-project-sidebar-zindex: 1020;
+@cloud-project-bottombar-zindex: 1010;
 
 //--------SIDEBAR--------
 
@@ -35,19 +35,19 @@
 //--------CONTENT--------
 
 .cloud-project-content.with-sidebar {
-  margin-left: @cloud-project-sidebar-width; //because sidebar
+  margin-left: @cloud-project-sidebar-width; /* because sidebar */
 }
 
 @media (max-width: @screen-md-min) {
   .cloud-project-content.with-sidebar {
-    margin-left: 0; //because sidebar become topbar
+    margin-left: 0; /* because sidebar become topbar */
   }
 }
 
 /* Medium devices (desktops, 992px and up to 1200px) */
 @media (min-width: @screen-md-min) and (max-width: @screen-lg-min) {
   .cloud-project-content.with-sidebar {
-    margin-left: @cloud-project-sidebar-width - 50px; //because sidebar but small screen
+    margin-left: @cloud-project-sidebar-width - 50px; /* because sidebar but small screen */
   }
 }
 
@@ -59,18 +59,18 @@
   width: 100%;
   background: rgba(68, 133, 120, 0.8);
   z-index: @cloud-project-bottombar-zindex;
-  padding: 0 @cloud-project-sidebar-width; //because sidebar
+  padding: 0 @cloud-project-sidebar-width; /* because sidebar */
 }
 
 @media (max-width: @screen-md-min) {
   .cloud-project-bottombar-zone {
-    padding: 0; //because sidebar become topbar
+    padding: 0; /* because sidebar become topbar */
   }
 }
 
 /* Medium devices (desktops, 992px and up to 1200px) */
 @media (min-width: @screen-md-min) and (max-width: @screen-lg-min) {
   .cloud-project-bottombar-zone {
-    padding: 0 @cloud-project-sidebar-width - 50px; //because sidebar but small screen
+    padding: 0 @cloud-project-sidebar-width - 50px; /* because sidebar but small screen */
   }
 }

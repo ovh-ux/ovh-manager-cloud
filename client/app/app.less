@@ -2,10 +2,6 @@
 @rem-base: rem-base(10px);
 
 @import "../../node_modules/ovh-ui-kit/packages/oui/stylekit";
-
-//@oui-icon-dist-folder: "../assets/ovh-ui-kit/dist/icons";
-//@oui-font-source-sans-pro-folder: "../assets/ovh-ui-kit/packages/oui-typography/fonts/source-sans-pro";
-
 @import (less) 'ovh-angular-list-view/dist/ovh-angular-list-view.min.css';
 @import 'font-awesome/less/font-awesome.less';
 @import 'ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu.less';
@@ -20,69 +16,64 @@
 @import 'ovh-common-style/less/fonts/open-sans.less';
 @import 'ovh-angular-form-flat/less/ovh-angular-form-flat.less';
 
-@flat-switch-cursor-color : @UNIVERS_SECONDARY;
-@flat-switch-background-color-active : #dfeeeb;
-@flat-switch-cursor-border-color : #53a191;
+@flat-switch-cursor-color: @univers_secondary;
+@flat-switch-background-color-active: #dfeeeb;
+@flat-switch-cursor-border-color: #53a191;
 
 @import 'ovh-manager-webfont/dist/less/ovh-font.less';
-
 @import 'ovh-angular-slider/less/ovh-angular-slider.less';
 @ovh-angular-slider-handle-background: #8d919c;
 @ovh-angular-slider-handle-border-color: darken(@ovh-angular-slider-handle-background, 5%);
 @ovh-angular-slider-handle-hover-background: #009fe3;
 @ovh-angular-slider-handle-hover-border-color: darken(@ovh-angular-slider-handle-background, 5%);
 @ovh-angular-slider-bubble-limit-color: #777;
+
 @import 'ovh-angular-tail-logs/less/ovh-angular-tail-logs.less';
 @import 'flag-icon-css/less/flag-icon.less';
 @import 'ovh-angular-responsive-popover/less/ovh-angular-responsive-popover.less';
 @import 'ovh-angular-responsive-page-switcher/dist/less/ovh-angular-responsive-page-switcher.less';
 @import 'ovh-angular-sso-auth-modal-plugin/less/ovh-angular-sso-auth-modal-plugin.less';
-
 @import "ovh-angular-otrs/dist/ovh-angular-otrs.less";
 
-// Overide ovh-form-flat Params
-@FormFlatBorderSize      : 1px;
+/* Overide ovh-form-flat Params */
+@formflatbordersize: 1px;
 
-// Overide Bootstrap Params
+/* Overide Bootstrap Params */
 @screen-xs-max: @v6-max-with;
 @screen-sm-min: @v6-min-with;
 @screen-sm-max: (@oui-responsive-breakpoint-tablet - 1px);
 @screen-md-min: @oui-responsive-breakpoint-tablet;
 @screen-md-max: (@oui-responsive-breakpoint-medium - 1px);
 @screen-lg-min: @oui-responsive-breakpoint-medium;
-@component-offset-horizontal : 200px;
+@component-offset-horizontal: 200px;
 @modal-backdrop-bg: @oui-color-shuttle;
 
-// Params use by bootstrap and app
-@v6-min-with : 801px;
-@v6-max-with : 800px;
+/* Params use by bootstrap and app */
+@v6-min-with: 801px;
+@v6-max-with: 800px;
+@font-size-base: 12px;
+@border-radius-base: 2px;
+@border-radius-large: 2px;
+@border-radius-small: 1px;
+@top_bar_height: 80px;
 
-@font-size-base : 12px;
+/* App params structure */
+@topnavheight: 44px;
+@mobiletopnavheight: @topnavheight;
+@toptabbackground: #e0e0e0;
+@topnavbackground: @toptabbackground;
+@univers: #edc200;
+@univers_hover: #e9d473;
+@univers_secondary: hsl(168, 32%, 54%); //#65afa0;
+@univers_secondary_hover: lighten(@univers_secondary, 8%);
+@defaultfontsize: 12px;
 
-@border-radius-base  : 2px;
-@border-radius-large : 2px;
-@border-radius-small : 1px;
-@top_bar_height : 80px;
+/* Zindex */
+@zindexfulloverlay: 1040;
 
-// App params structure
-@TopNavHeight           : 44px;
-@MobileTopNavHeight     : @TopNavHeight;
-
-@TopTabBackground       : #e0e0e0;
-@TopNavBackground       : @TopTabBackground;
-
-@UNIVERS       : #edc200;
-@UNIVERS_HOVER : #e9d473;
-@UNIVERS_SECONDARY       : hsl(168, 32%, 54%); //#65afa0;
-@UNIVERS_SECONDARY_HOVER : lighten(@UNIVERS_SECONDARY, 8%);
-
-@DefaultFontSize : 12px;
-
-// Zindex
-@zIndexFullOverlay        : 1040;
 @imgPath: '../assets/';
 
-@table-header-background-color : @UNIVERS_SECONDARY;
+@table-header-background-color: @univers_secondary;
 
 .table {
   &.table-pretty {
@@ -106,7 +97,7 @@ html {
 /* Move down content because we have a fixed navbar that is 50px tall */
 @media (min-width: @v6-min-with) {
   body {
-    margin-top: @TopNavHeight;
+    margin-top: @topnavheight;
   }
 }
 
@@ -123,7 +114,7 @@ html {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: @zIndexFullOverlay;
+  z-index: @zindexfulloverlay;
   display: none;
 
   &.nav-open {
@@ -134,10 +125,6 @@ html {
 @media (max-width: @v6-max-with) {
   #full-overlay[class*="nav-open"] {
     display: block;
-
-    // &[class*="sidebar"] {
-    //     z-index : @zIndexFullOverlaySidebar;
-    // }
   }
 }
 
@@ -155,7 +142,7 @@ html {
 
 @media (max-width: @v6-max-with) {
   #content {
-    margin-top: @MobileTopNavHeight - 1;
+    margin-top: @mobiletopnavheight - 1;
   }
 }
 
@@ -167,7 +154,7 @@ html {
   width: auto;
 }
 
-//App-wide Styles
+/* App-wide Styles */
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: @v6-min-with) {
@@ -175,7 +162,6 @@ html {
     max-width: 730px;
   }
 }
-//App-wide Styles
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: @v6-min-with) {
@@ -189,15 +175,15 @@ html {
  */
 
 .tab-container {
-  background-color: @TopTabBackground;
+  background-color: @toptabbackground;
   box-shadow: inset 0 -4px 7px -5px #bbb;
 
   .nav.nav-tabs {
     border-bottom: 0;
-    // overflow: hidden;        // Dont put overflow, coz it hide more-dropdown
+
     > li {
       a {
-        color: @TopNavBackground;
+        color: @topnavbackground;
         display: inline-block;
         text-align: center;
         padding: 15px 25px;
@@ -222,20 +208,18 @@ html {
           border: 0;
           background-color: white;
           border-radius: 0;
-          color: @UNIVERS_SECONDARY;
+          color: @univers_secondary;
         }
       }
 
       &:not(.disabled) a:hover {
         background: transparent;
-        color: @UNIVERS_SECONDARY;
+        color: @univers_secondary;
       }
     }
   }
 }
 
-// inject:less
-// inject:less
 @import "cda/cda.less";
 @import "cda/details/home/detail/cda-detail.component.less";
 @import "cda/user/details/cda-user-details.less";
@@ -338,24 +322,16 @@ html {
 @import "ui-components/icons/button-action.less";
 @import "ui-components/inline-adder/inline-adder.less";
 @import "ui-components/input/key-value.less";
-//@import "ui-components/labels/labels.less";
 @import "ui-components/modal/modal.less";
 @import "ui-components/page/_variables.less";
 @import "ui-components/page/page.less";
 @import "ui-components/panel/panel.less";
 @import "ui-components/preview-list/_variables.less";
 @import "ui-components/preview-list/preview-list.less";
-//@import "ui-components/skeleton/skeleton.less";
-//@import "ui-components/table/_mixins.less";
 @import "ui-components/table/_normalize.less";
 @import "ui-components/table/_variables.less";
 @import "ui-components/table/table.less";
 @import "ui-components/tabs/tabs.less";
-//@import "ui-components/tile/_mixins.less";
-//@import "ui-components/tile/_variables.less";
-//@import "ui-components/tile/custom/definition/cui-tile-definition-description-region.less";
-//@import "ui-components/tile/custom/item/cui-tile-item-status.less";
-//@import "ui-components/tile/tile.less";
 @import "veeam/veeam.less";
 @import "vps/dashboard/vps-tile-status.less";
 @import "vps/modal/shortcut/kvm/vps-kvm.less";
@@ -392,9 +368,6 @@ html {
 @import "../components/runabove/promise-task-state/promise-task-state.less";
 @import "../components/runabove/runabove.less";
 @import "../components/sidebar/sidebar.less";
-// endinject
-// endinject
-
 @import (less) "../../node_modules/animate.css/animate.css";
 @import (less) "../../node_modules/bootstrap-additions/dist/modules/popover.min.css";
 @import (less) "../../node_modules/flag-icon-css/css/flag-icon.min.css";

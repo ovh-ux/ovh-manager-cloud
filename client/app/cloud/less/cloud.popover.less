@@ -14,10 +14,6 @@
 
   .popover-content {
     .responsive-switch {
-      &.responsive-switch-switch {
-        //width: @CLOUD_ADDOREDIT_POPOVER_WIDTH; //override
-      }
-
       &.responsive-switch-switch,
       &.responsive-switch-sidebyside {
         .responsive-switch-page {
@@ -30,23 +26,10 @@
           }
 
           &.responsive-switch-page-right {
-            background: @DEFAULT_BACKGROUND;
+            background: @default_background;
 
             .responsive-switch-page-wrapper {
-              background: @DEFAULT_BACKGROUND;
-              //min-height: @CLOUD_ADDOREDIT_POPOVER_MIN_HEIGHT !important;    //override
-            }
-          }
-
-          &.responsive-switch-page-left,
-          &.responsive-switch-page-right {
-            .responsive-switch-page-wrapper {
-              //min-height: @CLOUD_ADDOREDIT_POPOVER_HEIGHT;        //override
-
-              .responsive-switch-page-content {
-                //width: @CLOUD_ADDOREDIT_POPOVER_WIDTH;          //override
-                //min-height: @CLOUD_ADDOREDIT_POPOVER_HEIGHT;    //override
-              }
+              background: @default_background;
             }
           }
         }
@@ -116,7 +99,7 @@
         &.active,
         > button:not(:disabled):hover .chevron-right,
         > button:focus .chevron-right {
-          background: @DEFAULT_BACKGROUND;
+          background: @default_background;
           opacity: 1;
         }
 
@@ -288,7 +271,7 @@
         margin-bottom: 0;
 
         thead {
-          background-color: @table-header-background-color;   // from table-pretty
+          background-color: @table-header-background-color;   /* from table-pretty */
           border-bottom: 2px solid #dedede;
 
           th {
@@ -313,7 +296,7 @@
         tr:active,
         tr:focus {
           input:not(:disabled) {
-            .flat-radio-input-hover;    // from ovh-form-flat
+            .flat-radio-input-hover;    /* from ovh-form-flat */
           }
         }
       }
@@ -347,7 +330,7 @@
 
   .popover-list-item {
     display: inline-block;
-    font-size: @DefaultFontSize;
+    font-size: @defaultfontsize;
     font-weight: 400;
 
     .popover-list-item-illustration,

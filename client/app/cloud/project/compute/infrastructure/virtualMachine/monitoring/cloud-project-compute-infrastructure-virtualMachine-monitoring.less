@@ -1,8 +1,8 @@
-@CLOUD_MONITORING_VM_POPOVER_WIDTH:  450px;
-@CLOUD_MONITORING_VM_POPOVER_MIN_HEIGHT:  500px;
+@CLOUD_MONITORING_VM_POPOVER_WIDTH: 450px;
+@CLOUD_MONITORING_VM_POPOVER_MIN_HEIGHT: 500px;
 
 .vm-monitoring-popover {
-  background-color: @DEFAULT_BACKGROUND !important;
+  background-color: @default_background !important;
 
   #vm-monitoring {
     width: @CLOUD_MONITORING_VM_POPOVER_WIDTH;
@@ -14,7 +14,7 @@
     }
 
     .status-warning {
-      color: @VM_MONITORING_WARNING_COLOR;
+      color: @vm_monitoring_warning_color;
     }
 
     .alert {
@@ -120,7 +120,7 @@
         margin-bottom: 0;
 
         thead {
-          background-color: @table-header-background-color;   // from table-pretty
+          background-color: @table-header-background-color;   /* from table-pretty */
           border-bottom: 2px solid #dedede;
         }
 
@@ -141,7 +141,7 @@
         tr:active,
         tr:focus {
           input:not(:disabled) {
-            .flat-radio-input-hover;    // from ovh-form-flat
+            .flat-radio-input-hover;    /* from ovh-form-flat */
           }
         }
       }

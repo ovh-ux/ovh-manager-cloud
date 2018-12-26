@@ -13,13 +13,10 @@
         position: relative;
         padding-right: 50px;
 
-        // ---
-
         > .header {
           position: relative;
           margin-left: 14px;
           padding-left: 14px;
-          // border-left: 2px solid @network_line_color;
           border-left: 2px solid @network_disabled_line_color;
 
           .badge {
@@ -33,9 +30,9 @@
 
         .infra-vrack-public-ctnr {
           .infra-vrack-public-title {
-            background: @UNIVERS_SECONDARY;
+            background: @univers_secondary;
             padding: 2px 15px;
-            border-bottom: 2px solid darken(@UNIVERS_SECONDARY, 9%);
+            border-bottom: 2px solid darken(@univers_secondary, 9%);
             color: white;
             font-size: 16px;
 
@@ -121,7 +118,7 @@
           position: relative;
           margin-bottom: 20px;
           background: white;
-          border: 1px solid @VM_BORDER_COLOR;
+          border: 1px solid @vm_border_color;
           box-shadow: 0 0 8px 1px rgba(167, 167, 167, 0.4);
           transition: border 500ms, box-shadow 500ms;
 
@@ -218,21 +215,21 @@
               &:hover,
               &:focus,
               &:active {
-                background-color: @UNIVERS_SECONDARY;
+                background-color: @univers_secondary;
                 color: white;
               }
             }
 
             &.open {
               & > button {
-                background-color: @UNIVERS_SECONDARY;
+                background-color: @univers_secondary;
                 color: white;
               }
             }
           }
 
           ul.dropdown-menu {
-            z-index: 1033 !important; // display dropdown-menu over dragged vm & over jsPlumb links
+            z-index: 1033 !important; /* display dropdown-menu over dragged vm & over jsPlumb links */
           }
 
           h3 {
@@ -251,7 +248,7 @@
             }
 
             .vm-stat {
-              line-height: @VM_STATS_LINE_HEIGHT;
+              line-height: @vm_stats_line_height;
 
               &.stat-core,
               &.stat-ram {
@@ -260,7 +257,7 @@
             }
 
             .vm-private-ip {
-              background-color: @VM_STATS_BG_COLOR;
+              background-color: @vm_stats_bg_color;
               padding: 3px 5px;
               color: #777;
               font-size: 12px;
@@ -296,21 +293,17 @@
               position: absolute;
               top: 50%;
               left: -35px;
-              // width: 60px;
               width: 35px;
               height: 1px;
-              // background: @network_line_color;
-              // border: 2px solid @network_line_color;
               border: 2px dashed @network_disabled_line_color;
-              // margin-top: -2px;
               margin-top: -25px;
             }
 
             .private-ip {
               position: relative;
               margin: 0 25px 10px;
-              background: @VM_IP_BG_COLOR;
-              border: 1px solid darken(@VM_IP_BG_COLOR, 10%);
+              background: @vm_ip_bg_color;
+              border: 1px solid darken(@vm_ip_bg_color, 10%);
               padding: 5px;
               border-radius: @IP_BORDER_RADIUS;
               text-align: center;
@@ -333,7 +326,6 @@
               position: absolute;
               top: 50%;
               right: -23px;
-              // margin-top: -25px;
               margin-top: -50px;
 
               .flat-checkbox {
