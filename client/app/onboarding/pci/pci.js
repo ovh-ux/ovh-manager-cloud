@@ -6,7 +6,7 @@ angular.module('managerApp').config(($stateProvider) => {
         onboardingContent: {
           templateUrl: 'app/onboarding/pci/pci.html',
           controller: 'pciSlideshowCtrl',
-          controllerAs: 'Ctrl',
+          controllerAs: '$ctrl',
         },
       },
     });
