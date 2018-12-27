@@ -1,10 +1,11 @@
 class PrivateNetworkListCtrl {
   constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal,
     CloudProjectComputeInfrastructurePrivateNetworkService, OvhApiCloudProjectNetworkPrivate,
-    REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
+    OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
     VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
     this.resources = {
       privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
+      project: OvhApiCloudProject.v6(),
       aapi: OvhApiVrack.Aapi(),
       modal: $uibModal,
     };
@@ -84,7 +85,6 @@ class PrivateNetworkListCtrl {
     this.VrackService.listOperations(this.$stateParams.projectId)
       .then((result) => {
         const status = _.filter(result, f => f.status !== 'completed');
-        console.log(status);
         if (status.length > 0) {
           this.loaders.vrack.link = true;
           this.pollOperationStatus(status[0].id);

@@ -61,7 +61,7 @@ class VrackService {
     }, {
       project: projectId,
     }).$promise
-      .then(vrackTask => vrackTask.data);
+      .then(vrackTask => vrackTask.data.id);
   }
 
   createNewVrack(serviceName) {

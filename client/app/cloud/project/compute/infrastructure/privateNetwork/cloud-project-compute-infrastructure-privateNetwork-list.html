@@ -50,11 +50,11 @@
     </li>
 
     <li class="private-networks__item private-networks__item_action" write-right-required>
-        <!-- <button class="private-networks__item_action-button" type="button"
-                data-ng-if="$ctrl.hasPendingLoaders() || $ctrl.isVrackCreating()"
+        <button class="private-networks__item_action-button" type="button"
+                data-ng-if="$ctrl.hasPendingLoaders() && $ctrl.hasVrack()"
                 data-ng-disabled="true">
                 <span class="private-networks__item_action-button-icon fa fa-circle-o-notch fa-spin"></span>
-        </button> -->
+        </button>
         <button class="private-networks__item_action-button" type="button"
                 data-ng-if="!$ctrl.hasPendingLoaders() && $ctrl.hasVrack()"
                 data-responsive-popover="'app/cloud/project/compute/infrastructure/privateNetwork/dialog/cloud-project-compute-infrastructure-privateNetwork-dialog.html'"
