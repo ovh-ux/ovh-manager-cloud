@@ -1,5 +1,5 @@
 class VrackService {
-  constructor($q, $translate, ControllerHelper, OvhApiVrack, OvhApiCloudProject) {
+  constructor($q, $translate, ControllerHelper, OvhApiCloudProject, OvhApiVrack) {
     this.$q = $q;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
