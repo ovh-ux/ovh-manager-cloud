@@ -23,6 +23,17 @@ class RegionsCtrl {
   }
 
   initLoaders() {
+    // load regions
+    this.initRegions();
+    this.initRegionsByDatacenter();
+    this.initRegionsByContinent();
+    // load available regions
+    this.initAvailableRegions();
+    this.initAvailableRegionsByDatacenter();
+    this.initAvailableRegionsByContinent();
+  }
+
+  initRegions() {
     this.regions = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.v6()
         .query({ serviceName: this.serviceName })
@@ -30,7 +41,10 @@ class RegionsCtrl {
         .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region)))
         .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_get_regions_error')(error)),
     });
-    this.regions.load();
+    return this.regions.load();
+  }
+
+  initRegionsByDatacenter() {
     this.regionsByDatacenter = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.regions
         .promise
@@ -38,15 +52,19 @@ class RegionsCtrl {
           regions,
         )),
     });
-    this.regionsByDatacenter.load();
+    return this.regionsByDatacenter.load();
+  }
+
+  initRegionsByContinent() {
     this.regionsByContinent = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.regionsByDatacenter
         .promise
         .then(regions => _.groupBy(regions, 'continent')),
     });
-    this.regionsByContinent.load();
+    return this.regionsByContinent.load();
+  }
 
-    // load available regions
+  initAvailableRegions() {
     this.availableRegions = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.AvailableRegions().v6()
         .query({ serviceName: this.serviceName })
@@ -54,7 +72,10 @@ class RegionsCtrl {
         .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region.name)))
         .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
     });
-    this.availableRegions.load();
+    return this.availableRegions.load();
+  }
+
+  initAvailableRegionsByDatacenter() {
     this.availableRegionsByDatacenter = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.availableRegions
         .promise
@@ -62,13 +83,16 @@ class RegionsCtrl {
           regions,
         )),
     });
-    this.availableRegionsByDatacenter.load();
+    return this.availableRegionsByDatacenter.load();
+  }
+
+  initAvailableRegionsByContinent() {
     this.availableRegionsByContinent = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.availableRegionsByDatacenter
         .promise
         .then(regions => _.groupBy(regions, 'continent')),
     });
-    this.availableRegionsByContinent.load();
+    return this.availableRegionsByContinent.load();
   }
 
   addRegions() {
