@@ -1,0 +1,22 @@
+<form novalidate name="ctrl.form">
+    <oui-modal data-title="{{ ::'kube_service_rename_title' | translate }}"
+                data-primary-action="ctrl.updateName()"
+                data-primary-label="{{ ::'common_save' | translate }}"
+                data-secondary-action="ctrl.cancel()"
+                data-secondary-label="{{ ::'common_cancel' | translate }}"
+                data-on-dismiss="ctrl.cancel()"
+                data-loading="ctrl.saving.loading">
+        <oui-spinner data-ng-if="ctrl.kubernetesDetails.loading"></oui-spinner>
+        <p class="oui-paragraph"
+            data-ng-if="!ctrl.kubernetesDetails.loading"
+            data-translate="kube_service_rename_description"></p>
+        <oui-field data-label="{{ ::'kube_service_name' | translate }}">
+            <input type="text" id="display_name" name="display_name"
+                class="oui-input"
+                data-ng-model="ctrl.kubernetesDetails.data.name"
+                data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.display_name.$invalid}"
+                data-ng-maxlength="ctrl.KUBERNETES.displayNameMaxLength"
+                autofocus>
+        </oui-field>
+    </oui-modal>
+</form>

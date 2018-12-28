@@ -26,6 +26,12 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
       .then(() => this.loadMessages());
   }
 
+  changeClusterName() {
+    this.$state.go('paas.kube.service.rename', {
+      serviceName: this.serviceName,
+    });
+  }
+
   loadMessages() {
     this.CloudMessage.unSubscribe('paas.kube.service');
     this.messageHandler = this.CloudMessage.subscribe('paas.kube.service', { onMessage: () => this.refreshMessages() });
