@@ -16,7 +16,7 @@
   "veeam_infos_subscription_renew_automatic_description": "Automatique",
   "veeam_table_storage": "Espace de stockage",
   "veeam_table_usage": "Utilisation",
-  "veeam_table_datacenter": "Datacentre de réplication",
+  "veeam_table_datacenter": "Datacenter de réplication",
   "veeam_table_action": "Action",
   "veeam_storage_list_load_error": "Erreur lors du chargement des espaces de stockage.",
   "veeam_storage_update_quota_pending": "La mise à jour de votre quota de stockage est en cours.",
