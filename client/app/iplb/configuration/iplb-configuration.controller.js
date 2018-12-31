@@ -49,13 +49,9 @@ class IpLoadBalancerConfigurationCtrl {
 
     const targets = _.isArray(zone)
       ? zone
-<<<<<<< HEAD
-      : [this.zones.data.find(currentZone => currentZone.id === zone)];
-    const targetsThatCantBeChanged = targets.filter(target => target.task.status !== 'done');
-=======
       : [this.zones.data.find(({ id }) => id === zone)];
+
     const targetsThatCantBeChanged = targets.filter(target => _.has(target, 'task.status') && _.get(target, 'task.status') !== 'done');
->>>>>>> 4a59e709... fixup! feat(iplb.configuration): enhance view features and texts
 
     if (!_.isEmpty(targetsThatCantBeChanged)) {
       const messageToDisplay = targetsThatCantBeChanged.length !== targets.length
@@ -70,7 +66,7 @@ class IpLoadBalancerConfigurationCtrl {
       this.CloudMessage.success(messageToDisplay);
     }
 
-    const targetsToApplyChangesTo = targets.filter(target => target.task.status === 'done');
+    const targetsToApplyChangesTo = targets.filter(target => !_.has(target, 'task.status') || target.task.status === 'done');
 
     if (targetsToApplyChangesTo.length === zoneData.length) {
       // All selected, just call the API with no zone.
@@ -88,6 +84,10 @@ class IpLoadBalancerConfigurationCtrl {
             .find(({ name }) => name === currentZone.name))
           .forEach((target) => {
             this.applications[target.id] = true;
+
+            if (!_.has(target, 'task')) {
+              Object.assign(target, { task: {} });
+            }
 
             Object.assign(
               target.task,

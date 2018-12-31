@@ -32,7 +32,7 @@
                 data-translate="iplb_configuration_changesApplied"></span>
             <oui-progress
                 data-compact
-                data-ng-if="$row.task.progress !== 100">
+                data-ng-if="$row.task && $row.task.progress !== 100">
                 <oui-progress-bar
                     data-type="{{:: $ctrl.ServiceHelper.constructor.getTaskProgressType($row.task.status) }}"
                     data-value="$row.task.progress"></oui-progress-bar>
