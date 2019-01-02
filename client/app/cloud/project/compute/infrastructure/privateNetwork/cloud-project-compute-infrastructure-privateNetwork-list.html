@@ -13,15 +13,14 @@
         <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack()">
             <p data-ng-if="!$ctrl.hasPendingLoaders()" data-translate="cpci_private_network_activateVrack_description"></p>
             <p data-ng-if="$ctrl.hasPendingLoaders()" data-translate="cpci_private_network_activateVrack_loading"></p>
-            <a type="button"
-                data-ng-show="$ctrl.orderUrl && !$ctrl.hasPendingLoaders()"
-                data-ng-disabled="$ctrl.loaders.vracks.get"
-                class="ovh-button ovh-button_secondary"
-                data-ng-click="$ctrl.addVRack()"
-                data-translate="private_network_activate_title">
-            </a>
+            <oui-button
+                data-ng-if="$ctrl.orderUrl && !$ctrl.hasPendingLoaders()"
+                data-disabled="$ctrl.loaders.vracks.get"
+                data-on-click="$ctrl.addVRack()"
+                data-text="{{ ::'private_network_activate_title' | translate }}">
+            </oui-button>
             <oui-progress data-ng-if="$ctrl.hasPendingLoaders()">
-                <oui-progress-bar type="success" value="$ctrl.loaders.vrack.progress"></oui-progress-bar>
+                <oui-progress-bar data-type="success" data-value="$ctrl.loaders.vrack.progress"></oui-progress-bar>
             </oui-progress>
         </div>
     </li>

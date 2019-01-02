@@ -84,10 +84,10 @@ class PrivateNetworkListCtrl {
     });
     this.VrackService.listOperations(this.$stateParams.projectId)
       .then((result) => {
-        const status = _.filter(result, f => f.status !== 'completed');
-        if (status.length > 0) {
+        const [status] = _.filter(result, f => f.status !== 'completed');
+        if (status) {
           this.loaders.vrack.link = true;
-          this.pollOperationStatus(status[0].id);
+          this.pollOperationStatus(status.id);
         }
       });
   }
@@ -114,10 +114,9 @@ class PrivateNetworkListCtrl {
         this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
       })
       .catch((err) => {
-        if (err === 'cancel') {
-          return;
+        if (err !== 'cancel') {
+          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
         }
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
       })
       .finally(() => {
         this.loaders.vrack.link = false;
@@ -125,7 +124,7 @@ class PrivateNetworkListCtrl {
   }
 
   createNewVrack() {
-    this.VrackService.createNewVrack(this.serviceName)
+    return this.VrackService.createNewVrack(this.serviceName)
       .then(({ id }) => {
         this.pollOperationStatus(id);
       }).catch(() => {
