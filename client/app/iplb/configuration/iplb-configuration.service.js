@@ -64,24 +64,29 @@ class IpLoadBalancerConfigurationService {
   }
 
   refresh(serviceName, zone) {
-    return this.IpLoadBalancing.v6().refresh({
-      serviceName,
-    }, {
-      zone,
-    })
-      .$promise
+    return this.IpLoadBalancing.v6()
+      .refresh({
+        serviceName,
+      }, {
+        zone,
+      }).$promise
       .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
       .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
   batchRefresh(serviceName, zones) {
-    const promises = zones.map(zone => this.IpLoadBalancing.v6().refresh({
-      serviceName,
-    }, {
-      zone,
-    }).$promise);
-    return this.$q.all(promises)
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
+    const promises = zones.map(zone => this.IpLoadBalancing.v6()
+      .refresh({
+        serviceName,
+      }, {
+        zone,
+      }).$promise);
+
+    return this.$q
+      .all(promises)
+      .then((refreshResults) => {
+        refreshResults.forEach(this.ServiceHelper.successHandler('iplb_configuration_apply_success'));
+      })
       .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
