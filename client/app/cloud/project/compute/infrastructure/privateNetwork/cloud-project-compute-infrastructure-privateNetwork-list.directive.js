@@ -77,12 +77,13 @@ class PrivateNetworkListCtrl {
 
     // Loading privateNetwork first because vrack can fallback to privateNetworkList
     // to find it's ID.
-    this.fetchPrivateNetworks().then(() => this.fetchVrack());
-
-    this.User.v6().get().$promise.then((user) => {
-      this.orderUrl = _.get(this.URLS.website_order, `vrack.${user.ovhSubsidiary}`);
-    });
-    this.VrackService.listOperations(this.$stateParams.projectId)
+    this.fetchPrivateNetworks()
+      .then(() => this.fetchVrack())
+      .then(() => this.User.v6().get().$promise)
+      .then((user) => {
+        this.orderUrl = _.get(this.URLS.website_order, `vrack.${user.ovhSubsidiary}`);
+      })
+      .then(() => this.VrackService.listOperations(this.$stateParams.projectId))
       .then((result) => {
         const [status] = _.filter(result, f => f.status !== 'completed');
         if (status) {
@@ -161,10 +162,9 @@ class PrivateNetworkListCtrl {
         this.fetchVrack();
       })
       .catch((err) => {
-        if (err === 'cancel') {
-          return;
+        if (err !== 'cancel') {
+          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
         }
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
       })
       .finally(() => {
         this.loaders.vrack.link = false;
@@ -211,7 +211,7 @@ class PrivateNetworkListCtrl {
         this.CloudMessage.success(this.$translate.instant('cpci_private_network_remove_vrack_success'));
       })
       .catch((err) => {
-        if (err === 'cancel') {
+        if (err !== 'cancel') {
           return;
         }
         this.CloudMessage.error(this.$translate.instant('cpci_private_network_remove_vrack_error'));
