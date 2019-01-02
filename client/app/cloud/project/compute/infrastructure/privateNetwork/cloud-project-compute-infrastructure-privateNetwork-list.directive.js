@@ -212,9 +212,8 @@ class PrivateNetworkListCtrl {
       })
       .catch((err) => {
         if (err !== 'cancel') {
-          return;
+          this.CloudMessage.error(this.$translate.instant('cpci_private_network_remove_vrack_error'));
         }
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_remove_vrack_error'));
       })
       .finally(() => {
         this.loaders.vrack.unlink = false;
