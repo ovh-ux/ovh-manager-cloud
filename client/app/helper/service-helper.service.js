@@ -8,37 +8,48 @@
     constructor($q, $translate, $window, CloudMessage) {
       this.$q = $q;
       this.$translate = $translate;
-      this.CloudMessage = CloudMessage;
       this.$window = $window;
+
+      this.CloudMessage = CloudMessage;
     }
 
-    errorHandler(messageInput, containerName, messageDetailsPath = 'data.message') {
-      return (err) => {
+    errorHandler(messageInput, containerName, pathsToGetErrorMessage) {
+      return (error) => {
         const errorMessageConfig = {};
 
-        const apiMessage = _.get(err, messageDetailsPath, err.message);
-        if (apiMessage) {
-          errorMessageConfig.apiMessage = apiMessage;
-        }
+        const firstPaths = _.isArray(pathsToGetErrorMessage)
+          ? pathsToGetErrorMessage
+          : [pathsToGetErrorMessage];
+        const standardPaths = [
+          'data.message',
+          'message',
+          'data'];
 
-        if (_.isString(messageInput)) {
-          errorMessageConfig.textToTranslate = messageInput;
-        } else if (_.has(messageInput, 'text')) {
-          errorMessageConfig.text = messageInput.text;
-        } else if (_.has(messageInput, 'textHtml')) {
-          errorMessageConfig.textHtml = messageInput.textHtml;
-        } else if (_.has(messageInput, 'translateParams')) {
-          errorMessageConfig.textToTranslate = messageInput.textToTranslate;
-          errorMessageConfig.translateParams = messageInput.translateParams;
-        } else {
-          errorMessageConfig.textToTranslate = defaultErrorMessage;
-        }
+        const paths = [...firstPaths, ...standardPaths];
 
-        const message = this.buildErrorMessage(errorMessageConfig);
+        return (_.isArray(error) ? error : [error]).map((currentError) => {
+          const matchingPath = paths.find(path => _.has(currentError, path));
+          errorMessageConfig.apiMessage = _.get(currentError, matchingPath);
 
-        this.CloudMessage.error(message, containerName);
+          if (_.isString(messageInput)) {
+            errorMessageConfig.textToTranslate = messageInput;
+          } else if (_.has(messageInput, 'text')) {
+            errorMessageConfig.text = messageInput.text;
+          } else if (_.has(messageInput, 'textHtml')) {
+            errorMessageConfig.textHtml = messageInput.textHtml;
+          } else if (_.has(messageInput, 'translateParams')) {
+            errorMessageConfig.textToTranslate = messageInput.textToTranslate;
+            errorMessageConfig.translateParams = messageInput.translateParams;
+          } else {
+            errorMessageConfig.textToTranslate = defaultErrorMessage;
+          }
 
-        return this.$q.reject(err);
+          const message = this.buildErrorMessage(errorMessageConfig);
+
+          this.CloudMessage.error(message, containerName);
+
+          return this.$q.reject(currentError);
+        });
       };
     }
 
@@ -68,19 +79,20 @@
     }
 
     successHandler(message, containerName) {
-      return (data) => {
+      return data => (_.isArray(data) ? data : [data]).map((datum) => {
+        let messageToWrite = this.$translate.instant(defaultSuccessMessage);
+
         if (message) {
-          const jsonData = data ? data.toJSON ? data.toJSON() : data : {}; // eslint-disable-line
-          this.CloudMessage.success(_.isString(message)
+          const jsonData = _.isFunction(datum, 'toJSON') ? datum.toJSON() : datum || {};
+          messageToWrite = _.isString(message)
             ? this.$translate.instant(message, jsonData)
-            : message, containerName);
-        } else {
-          // Default success message
-          this.CloudMessage.success(this.$translate.instant(defaultSuccessMessage), containerName);
+            : message;
         }
 
-        return data;
-      };
+        this.CloudMessage.success(messageToWrite, containerName);
+
+        return datum;
+      });
     }
 
     static findOrderId(data) {

@@ -8,7 +8,7 @@
   "storage_details_link_tooltip": "Voir les objets",
   "storage_details_deleted_success": "Objet supprimé",
   "storage_details_upload_success": "Fichier uploadé",
-  "storage_region": "Datacentre",
+  "storage_region": "Datacenter",
   "storage_file_selected_count": "{{count}} sélectionnés",
   "storage_object_import_files": "Importer des fichiers",
   "storage_object_add_multiple": "Ajouter des objets",
