@@ -189,7 +189,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
@@ -220,7 +220,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
