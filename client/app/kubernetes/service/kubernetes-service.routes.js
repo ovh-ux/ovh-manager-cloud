@@ -28,18 +28,5 @@ angular.module('managerApp')
           value: ['..'],
           format: 'json',
         },
-      })
-      .state('paas.kube.service.rename', {
-        url: '/rename',
-        views: {
-          kubernetesRenameView: {
-            controller: 'kubernetesRenameModalCtrl',
-            controllerAs: 'ctrl',
-          },
-        },
-        translations: {
-          value: ['..'],
-          format: 'json',
-        },
       });
   });

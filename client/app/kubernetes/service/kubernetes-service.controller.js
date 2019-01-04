@@ -26,9 +26,19 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
       .then(() => this.loadMessages());
   }
 
+  rename(displayName) {
+    delete this.cluster.region;
+    this.cluster.name = displayName;
+    return this.Kubernetes.updateKubernetes(this.serviceName, this.cluster);
+  }
+
   changeClusterName() {
-    this.$state.go('paas.kube.service.rename', {
+    this.ControllerHelper.modal.showNameChangeModal({
       serviceName: this.serviceName,
+      displayName: this.cluster.name,
+      onSave: newDisplayName => this.rename(newDisplayName)
+        .then(() => this.$scope.$emit('changeKubernetesName', newDisplayName))
+        .then(() => this.getClusterInfos()),
     });
   }
 

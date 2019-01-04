@@ -2,8 +2,8 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
   constructor(
     $q, $translate,
     OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectInstance,
-    OvhApiKube, OvhApiCloudProjectQuota,
-    KUBERNETES, SidebarMenu,
+    OvhApiKube, OvhApiCloudProjectQuota, SidebarMenu,
+    KUBERNETES,
   ) {
     this.$q = $q;
     this.$translate = $translate;
@@ -12,8 +12,8 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
     this.OvhApiKube = OvhApiKube;
     this.OvhApiCloudProjectQuota = OvhApiCloudProjectQuota;
-    this.KUBERNETES = KUBERNETES;
     this.SidebarMenu = SidebarMenu;
+    this.KUBERNETES = KUBERNETES;
   }
 
   getKubernetesCluster(serviceName) {
