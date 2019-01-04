@@ -1,3 +1,12 @@
+## [7.12.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.2...v7.12.3) (2019-01-04)
+
+
+### Bug Fixes
+
+* **cloud.privatenetwork:** apply right default loader state ([#1243](https://github.com/ovh-ux/ovh-manager-cloud/issues/1243)) ([00eb0b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/00eb0b2))
+
+
+
 ## [7.12.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.1...v7.12.2) (2018-12-13)
 
 
