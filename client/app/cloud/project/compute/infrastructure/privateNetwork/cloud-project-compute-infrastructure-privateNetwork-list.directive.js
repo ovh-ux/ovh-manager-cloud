@@ -35,7 +35,7 @@ class PrivateNetworkListCtrl {
         unlink: false,
       },
       vracks: {
-        get: true,
+        get: false,
       },
     };
     this.urls = {
@@ -264,7 +264,9 @@ class PrivateNetworkListCtrl {
   getVrackId() {
     if (_.has(this.models.vrack, 'id') && !_.isEmpty(this.models.vrack.id)) {
       return this.$q.when(this.models.vrack.id);
-    } if (_.isEmpty(this.models.vrack.name)) {
+    }
+
+    if (_.isEmpty(this.models.vrack.name)) {
       return this.fetchPrivateNetworks()
         .then(() => {
           if (_.any(this.collections.privateNetworks)) {
@@ -273,6 +275,7 @@ class PrivateNetworkListCtrl {
           return this.$q.when(null);
         });
     }
+
     return this.resources.aapi.query().$promise
       .then((vracks) => {
         const vrack = _.find(vracks, { name: this.models.vrack.name });
@@ -312,10 +315,10 @@ class PrivateNetworkListCtrl {
 
   hasPendingLoaders() {
     return _.some(this.loaders, 'query', true)
-               || _.some(this.loaders, 'get', true)
-               || _.some(this.loaders, 'link', true)
-               || _.some(this.loaders, 'unlink', true)
-               || this.isVrackCreating();
+      || _.some(this.loaders, 'get', true)
+      || _.some(this.loaders, 'link', true)
+      || _.some(this.loaders, 'unlink', true)
+      || this.isVrackCreating();
   }
 
   isVrackCreating() {
