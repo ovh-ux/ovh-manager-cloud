@@ -20,8 +20,9 @@
         <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc" type="string" searchable filterable></oui-column>
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'logs_index_col_free_space' | translate" type="number">
-            <span class="oui-status"
+            <span class="oui-status" data-ng-if="$row.info.isShareable"
                 data-ng-class="ctrl.storageColor($row.info)" data-ng-bind="($row.info.currentStorage | bytes:2) + '/' + ($row.info.maxSize | bytes:2)"></span>
+            <span data-ng-if="!$row.info.isShareable"> - </span>
         </oui-column>
         <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.updatedAt | momentFormat:'L'}}

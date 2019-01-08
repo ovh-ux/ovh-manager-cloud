@@ -65,7 +65,7 @@
                             </button>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <oui-tile-definition>
+                    <oui-tile-definition data-term="{{ctrl.accountDetails.data.graylogEntryPoint}}">
                         <oui-tile-description>
                             <a data-ng-href="{{ ctrl.accountDetails.data.graylogWebuiUrl }}"
                                class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
@@ -131,7 +131,7 @@
                             chart-options="ctrl.dataUsageGraphData.options">
                     </canvas>
                     <p class="ml-2" data-ng-if="!ctrl.storageData.loading && ctrl.storageData.data.timestamps.length===0" data-translate="logs_home_no_usage_data"></p>
-                    <p class="ml-3" data-ng-if="!ctrl.coldStorage.loading && ctrl.coldStorage.data.coldStorage!==undefined" data-translate="logs_home_cold_storage" data-translate-values="{ coldStorage: '{{ctrl.coldStorage.data.coldStorage | bytes: 1:true:'B'}}' }"></p>
+                    <p class="ml-2" data-ng-if="!ctrl.coldStorage.loading && ctrl.coldStorage.data.coldStorage!==undefined" data-translate="logs_home_cold_storage" data-translate-values="{ coldStorage: '{{ctrl.coldStorage.data.coldStorage | bytes: 1:true:'B'}}' }"></p>
                 </div>
             </oui-tile>
         </div>
