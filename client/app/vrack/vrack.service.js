@@ -1,9 +1,11 @@
 class VrackService {
-  constructor($q, $translate, ControllerHelper, OvhApiVrack) {
+  constructor($q, $translate, ControllerHelper, OvhApiCloudProject, OvhApiVrack) {
     this.$q = $q;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
     this.OvhApiVrack = OvhApiVrack;
+    this.OvhApiCloudProject = OvhApiCloudProject;
+    this.OvhApiCloudProjectV6 = OvhApiCloudProject.v6();
   }
 
   static getGroupedServiceTypes() {
@@ -60,6 +62,18 @@ class VrackService {
       project: projectId,
     }).$promise
       .then(vrackTask => vrackTask.data.id);
+  }
+
+  createNewVrack(serviceName) {
+    return this.OvhApiCloudProjectV6.createVrack({ serviceName }).$promise;
+  }
+
+  getOperation(serviceName, operationId) {
+    return this.OvhApiCloudProjectV6.getOperation({ serviceName, operationId }).$promise;
+  }
+
+  listOperations(serviceName) {
+    return this.OvhApiCloudProjectV6.operations({ serviceName }).$promise;
   }
 
   unlinkVrackModal(text) {

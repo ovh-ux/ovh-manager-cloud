@@ -35,8 +35,7 @@ class SelectVrackCtrl {
    * @memberof AddVRackCtrl
    */
   orderNewVrack() {
-    this.modal.close();
-    this.$window.open(this.orderUrl, '_blank');
+    return this.modal.close();
   }
 
   /**
