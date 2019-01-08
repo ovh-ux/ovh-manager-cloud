@@ -2,7 +2,7 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
   constructor(
     $q, $translate,
     OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectInstance,
-    OvhApiKube, OvhApiCloudProjectQuota,
+    OvhApiKube, OvhApiCloudProjectQuota, SidebarMenu,
     KUBERNETES,
   ) {
     this.$q = $q;
@@ -12,6 +12,7 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
     this.OvhApiKube = OvhApiKube;
     this.OvhApiCloudProjectQuota = OvhApiCloudProjectQuota;
+    this.SidebarMenu = SidebarMenu;
     this.KUBERNETES = KUBERNETES;
   }
 
@@ -57,6 +58,13 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Node().v6().save({ serviceName }, { flavorName }).$promise;
   }
 
+  changeMenuTitle(serviceName, name) {
+    const menuItem = this.SidebarMenu.getItemById(serviceName);
+    if (menuItem) {
+      menuItem.title = name;
+    }
+  }
+
   deleteNode(serviceName, nodeId) {
     return this.OvhApiKube.PublicCloud().Node().v6().delete({ serviceName, nodeId }).$promise;
   }
@@ -93,5 +101,13 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
 
   resetClusterCache() {
     this.OvhApiKube.v6().resetCache();
+  }
+
+  updateKubernetes(serviceName, kubernetes) {
+    return this.OvhApiKube.v6().update({ serviceName }, { name: kubernetes.name }).$promise
+      .then((res) => {
+        this.changeMenuTitle(serviceName, kubernetes.name);
+        return res;
+      });
   }
 });
