@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpou_rclone_modal_title" qtlid="451058">Transferir um ficheiro de configuração rClone</translation>
-   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Vai transferir um ficheiro de configuração que permite a ligação ao rClone.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Mais informação</translation>
-   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Selecionar a região para aplicar o ficheiro:</translation>
-   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Por razões de segurança o ficheiro de configuração não contém a sua password.. Para adicionar a password, é necessário editar o ficheiro e adicioná-la manualmente</translation>
-   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Ocorreu um erro no carregamento dos dados associados ao ficheiro rClone: {{ message }}</translation>
-</translations>

@@ -10,6 +10,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'BillingConsumptionEstimateCtrl',
       },
     },
-    translations: ['.', './alert/add'],
+    translations: {
+      value: ['.', './alert/add'],
+      format: 'json',
+    },
   });
 });

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpb_tab_details" qtlid="37527">Details</translation>
-   <translation id="cpb_tab_consumption" qtlid="25639">Verbrauch</translation>
-   <translation id="cpb_tab_history" qtlid="364394">History </translation>
-   <translation id="cpb_tab_rights" qtlid="261049">Kontakte und Berechtigungen</translation>
-   <translation id="cpb_tab_vouchers" qtlid="255220">Guthaben und Gutscheine</translation>
-   <translation id="cpb_error_message" qtlid="364407">Leider können wir nicht alle Informationen abrufen. </translation>
-</translations>

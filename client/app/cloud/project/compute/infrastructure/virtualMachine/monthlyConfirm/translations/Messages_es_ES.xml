@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpcivm_monthly_title" qtlid="269318">Cambiar a tarifa mensual </translation>
-   <translation id="cpcivm_monthly_info" qtlid="269331">Ahorre un 50% en el precio de la máquina cambiando a tarifa mensual (con pago por adelantado).</translation>
-   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Se emitirá inmediatamente una factura de la parte proporcional al período restante del mes actual. </translation>
-   <translation id="cpcivm_monthly_success" qtlid="269357">Su servidor cambiará a tarifa mensual en los próximos minutos. </translation>
-   <translation id="cpcivm_monthly_fail" qtlid="269370">Se ha producido un error al cambiar a tarifa mensual. </translation>
-</translations>

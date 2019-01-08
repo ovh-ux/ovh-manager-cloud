@@ -298,88 +298,89 @@ class ManagerNavbarService {
     return universeMenu;
   }
 
-  getAssistanceMenu(locale) {
-    const assistanceMenu = [];
+  getAssistanceMenu(subsidiary) {
+    const mustDisplayNewMenu = ['FR'].includes(subsidiary);
 
-    // Guides (External)
-    const cloudGuide = _.get(this.URLS.guides, `cloud.${locale}`);
-    const homeGuide = _.get(this.URLS.guides, `home.${locale}`);
-    const frenchHomeGuide = _.get(this.URLS.guides, 'home.FR');
-    if (cloudGuide) {
-      assistanceMenu.push({
+    const assistanceMenuItems = [
+      {
         title: this.$translate.instant('common_menu_support_guide'),
-        url: cloudGuide,
+        url: _.get(this.URLS, `guides.cloud.${subsidiary}`),
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::all_guides::cloud',
           type: 'action',
         }),
-      });
-    } else if (homeGuide) {
-      assistanceMenu.push({
-        title: this.$translate.instant('common_menu_support_all_guides'),
-        url: homeGuide,
-        isExternal: true,
-        click: () => this.atInternet.trackClick({
-          name: 'assistance::all_guides',
-          type: 'action',
-        }),
-      });
-    } else if (frenchHomeGuide) {
-      assistanceMenu.push({
-        title: this.$translate.instant('common_menu_support_all_guides'),
-        url: frenchHomeGuide,
-        isExternal: true,
-        click: () => this.atInternet.trackClick({
-          name: 'assistance::all_guides',
-          type: 'action',
-        }),
-      });
-    }
-
-    // New ticket
-    assistanceMenu.push({
-      title: this.$translate.instant('common_menu_support_new_ticket'),
-      click: (callback) => {
-        if (!this.otrsPopupService.isLoaded()) {
-          this.otrsPopupService.init();
-        } else {
-          this.otrsPopupService.toggle();
-        }
-
-        this.atInternet.trackClick({
-          name: 'assistance::create_assistance_request',
-          type: 'action',
-        });
-
-        if (typeof callback === 'function') {
-          callback();
-        }
+        mustBeKept: !mustDisplayNewMenu && _.has(this.URLS, `guides.cloud.${subsidiary}`),
       },
-    });
+      {
+        title: this.$translate.instant('common_menu_support_all_guides'),
+        url: _.get(this.URLS, `guides.home.${subsidiary}`),
+        isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides',
+          type: 'action',
+        }),
+        mustBeKept: !mustDisplayNewMenu && !_.has(this.URLS, `guides.cloud.${subsidiary}`) && _.has(this.URLS, `guides.home.${subsidiary}`),
+      },
+      {
+        title: this.$translate.instant('common_menu_support_help_center'),
+        url: _.get(this.URLS, 'support.FR'),
+        isExternal: true,
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::all_guides',
+          type: 'action',
+        }),
+        mustBeKept: mustDisplayNewMenu && _.has(this.URLS, 'support.FR'),
+      },
+      {
+        title: this.$translate.instant('common_menu_support_new_ticket'),
+        click: (callback) => {
+          if (!this.otrsPopupService.isLoaded()) {
+            this.otrsPopupService.init();
+          } else {
+            this.otrsPopupService.toggle();
+          }
 
-    // Tickets list
-    assistanceMenu.push({
-      title: this.$translate.instant('common_menu_support_list_ticket'),
-      url: _.get(this.REDIRECT_URLS, 'support', ''),
-      click: () => this.atInternet.trackClick({
-        name: 'assistance::assistance_requests_created',
-        type: 'action',
-      }),
-    });
+          this.atInternet.trackClick({
+            name: 'assistance::create_assistance_request',
+            type: 'action',
+          });
 
-    // Telephony (External)
-    if (this.TARGET !== 'US') {
-      assistanceMenu.push({
+          if (_.isFunction(callback)) {
+            callback();
+          }
+        },
+        mustBeKept: !mustDisplayNewMenu,
+      },
+      {
+        title: this.$translate.instant('common_menu_support_ask_for_assistance'),
+        url: _.get(this.REDIRECT_URLS, 'support', ''),
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::assistance_requests_created',
+          type: 'action',
+        }),
+        mustBeKept: mustDisplayNewMenu && _.has(this.REDIRECT_URLS, 'support'),
+      },
+      {
+        title: this.$translate.instant('common_menu_support_list_ticket'),
+        url: _.get(this.REDIRECT_URLS, 'support', ''),
+        click: () => this.atInternet.trackClick({
+          name: 'assistance::assistance_requests_created',
+          type: 'action',
+        }),
+        mustBeKept: !mustDisplayNewMenu && _.has(this.REDIRECT_URLS, 'support'),
+      },
+      {
         title: this.$translate.instant('common_menu_support_telephony_contact'),
-        url: this.URLS.support_contact[locale] || this.URLS.support_contact.FR,
+        url: _.get(this.URLS, 'support_contact', {})[subsidiary] || _.get(this.URLS, 'support_contact.FR'),
         isExternal: true,
         click: () => this.atInternet.trackClick({
           name: 'assistance::helpline',
           type: 'action',
         }),
-      });
-    }
+        mustBeKept: this.TARGET !== 'US',
+      },
+    ];
 
     return {
       name: 'assistance',
@@ -389,7 +390,7 @@ class ManagerNavbarService {
         name: 'assistance',
         type: 'action',
       }),
-      subLinks: assistanceMenu,
+      subLinks: assistanceMenuItems.filter(menuItem => menuItem.mustBeKept),
     };
   }
 
@@ -667,8 +668,8 @@ class ManagerNavbarService {
     };
 
     this.asyncLoader.addTranslations(
-      import(`../../app/common/translations/Messages_${this.$translate.use()}.xml`)
-        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.xml`))
+      import(`../../app/common/translations/Messages_${this.$translate.use()}.json`)
+        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.json`))
         .then(x => x.default),
     );
 

@@ -1,3 +1,118 @@
+## [7.12.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.2...v7.12.3) (2019-01-04)
+
+
+### Bug Fixes
+
+* **cloud.privatenetwork:** apply right default loader state ([#1243](https://github.com/ovh-ux/ovh-manager-cloud/issues/1243)) ([00eb0b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/00eb0b2))
+
+
+
+## [7.12.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.1...v7.12.2) (2018-12-13)
+
+
+### Bug Fixes
+
+* **nasha:** typo in generated order url ([58ed337](https://github.com/ovh-ux/ovh-manager-cloud/commit/58ed337))
+
+
+
+## [7.12.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.0...v7.12.1) (2018-12-13)
+
+
+
+# [7.12.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.11.0...v7.12.0) (2018-12-13)
+
+
+### Bug Fixes
+
+* **deps:** ugrade ovh-angular-sidebar-menu to v7.2.2 ([bdd24ab](https://github.com/ovh-ux/ovh-manager-cloud/commit/bdd24ab))
+* align action menu ([72ac363](https://github.com/ovh-ux/ovh-manager-cloud/commit/72ac363))
+* **i18n:** add missing translations ([a0c94d9](https://github.com/ovh-ux/ovh-manager-cloud/commit/a0c94d9))
+* **i18n:** add missing translations ([6ea6255](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ea6255))
+* **i18n:** add missing translations ([272c922](https://github.com/ovh-ux/ovh-manager-cloud/commit/272c922))
+* **i18n:** add missing translations ([bcb1030](https://github.com/ovh-ux/ovh-manager-cloud/commit/bcb1030))
+* **i18n:** retrieve translations manually ([dd57a1a](https://github.com/ovh-ux/ovh-manager-cloud/commit/dd57a1a))
+* **nasha.order:** enable order ([4dec7da](https://github.com/ovh-ux/ovh-manager-cloud/commit/4dec7da))
+* **project.virtualmachine.add:** set blue region selection color ([f09b95a](https://github.com/ovh-ux/ovh-manager-cloud/commit/f09b95a))
+
+
+### Features
+
+* **i18n:** move xml files to json files ([c8d413b](https://github.com/ovh-ux/ovh-manager-cloud/commit/c8d413b))
+
+
+
+# [7.11.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.2...v7.11.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **cloud:** wrong guide url ([d144e6e](https://github.com/ovh-ux/ovh-manager-cloud/commit/d144e6e))
+* **deps:** upgrade npm-run-all to v4.1.5 ([d0ebbd8](https://github.com/ovh-ux/ovh-manager-cloud/commit/d0ebbd8))
+* **i18n:** retrieve translations ([e81731f](https://github.com/ovh-ux/ovh-manager-cloud/commit/e81731f))
+* **i18n:** submit translations ([05f21d9](https://github.com/ovh-ux/ovh-manager-cloud/commit/05f21d9))
+* **veeam.order:** ask for retranslating  text with issue ([5eb9d29](https://github.com/ovh-ux/ovh-manager-cloud/commit/5eb9d29))
+* **vps.upgrade:** previous state ([1fb1b02](https://github.com/ovh-ux/ovh-manager-cloud/commit/1fb1b02))
+
+
+### Features
+
+* **openstack:** openRC v3 file download ([bc58634](https://github.com/ovh-ux/ovh-manager-cloud/commit/bc58634))
+
+
+
+## [7.10.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.1...v7.10.2) (2018-11-26)
+
+
+### Bug Fixes
+
+* **cloud.project.rclone:** undefined content file ([4462b8e](https://github.com/ovh-ux/ovh-manager-cloud/commit/4462b8e))
+
+
+
+## [7.10.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.10.0...v7.10.1) (2018-11-20)
+
+
+### Bug Fixes
+
+* **deps:** add missing ovh-angular-apiv7 ([6f75d0d](https://github.com/ovh-ux/ovh-manager-cloud/commit/6f75d0d))
+
+
+
+# [7.10.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.3...v7.10.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update manager-webpack-config to v2.4.7 ([147cb16](https://github.com/ovh-ux/ovh-manager-cloud/commit/147cb16))
+* **deps:** upgrade manager-webpack-config to v3.0.0 ([00d3c25](https://github.com/ovh-ux/ovh-manager-cloud/commit/00d3c25))
+* **deps:** upgrade ovh-api-services to v3.24.0 ([be2eb5a](https://github.com/ovh-ux/ovh-manager-cloud/commit/be2eb5a))
+* **i18n:** retrieve translations ([f79d070](https://github.com/ovh-ux/ovh-manager-cloud/commit/f79d070))
+* **i18n:** retrieve translations ([cde6159](https://github.com/ovh-ux/ovh-manager-cloud/commit/cde6159))
+* **i18n:** retrieve translations ([d14ec26](https://github.com/ovh-ux/ovh-manager-cloud/commit/d14ec26))
+* **i18n:** submit translations ([422b1c3](https://github.com/ovh-ux/ovh-manager-cloud/commit/422b1c3))
+* **iplb:** wrong guides link ([57b70d0](https://github.com/ovh-ux/ovh-manager-cloud/commit/57b70d0))
+* **kube:** remove GPU instances  ([f46e442](https://github.com/ovh-ux/ovh-manager-cloud/commit/f46e442))
+* **load-balancer:** ssl certificate load  ([b128fa4](https://github.com/ovh-ux/ovh-manager-cloud/commit/b128fa4))
+
+
+### Features
+
+* **cloud.project:** Delete instance name ([aaa66b1](https://github.com/ovh-ux/ovh-manager-cloud/commit/aaa66b1))
+* **kube:** reset cluster ([43ef837](https://github.com/ovh-ux/ovh-manager-cloud/commit/43ef837))
+* **navbar.user:** add tracking on user menu ([67b4314](https://github.com/ovh-ux/ovh-manager-cloud/commit/67b4314))
+
+
+
+## [7.9.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.2...v7.9.3) (2018-11-20)
+
+
+### Bug Fixes
+
+* **cloud.project.vm:** random click image choice ([ffd5e21](https://github.com/ovh-ux/ovh-manager-cloud/commit/ffd5e21))
+
+
+
 ## [7.9.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.9.1...v7.9.2) (2018-11-16)
 
 

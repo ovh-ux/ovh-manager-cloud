@@ -8,7 +8,10 @@ angular.module('managerApp')
         templateUrl: 'app/nasha/order/nasha-order-complete.html',
         controller: 'NashaOrderCompleteCtrl',
         controllerAs: 'NashaOrderCompleteCtrl',
-        translations: ['../../common', '.', '..'],
+        translations: {
+          value: ['../../common', '.', '..'],
+          format: 'json',
+        },
         params: {
           orderUrl: null,
         },

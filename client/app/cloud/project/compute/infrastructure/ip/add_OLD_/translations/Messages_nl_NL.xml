@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpciip_add_title" qtlid="249328">IP's toevoegen</translation>
-   <translation id="cpciip_add_run_now" qtlid="249341">Nu toevoegen</translation>
-   <translation id="cpciip_add_geoloc" qtlid="249354">Kies uw locatie</translation>
-   <translation id="cpciip_add_geoloc_loading" qtlid="249367">Uploaden van beschikbare locaties.</translation>
-   <translation id="cpciip_add_post_ip_error" qtlid="249380">We kunnen geen nieuwe IP's aanmaken!</translation>
-</translations>

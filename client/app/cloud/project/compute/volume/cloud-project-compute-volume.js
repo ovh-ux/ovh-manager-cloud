@@ -11,6 +11,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'CloudProjectComputeVolumeCtrl',
       },
     },
-    translations: ['.'],
+    translations: {
+      value: ['.'],
+      format: 'json',
+    },
   });
 });

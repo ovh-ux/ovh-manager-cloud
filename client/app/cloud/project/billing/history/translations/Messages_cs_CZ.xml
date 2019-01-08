@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpbh_current_month" qtlid="364004">Vyúčtování za {{month}} {{year}}</translation>
-   <translation id="cpbh_next_month" qtlid="364017">Následující měsíc</translation>
-   <translation id="cpbh_previous_month" qtlid="364030">Předchozí měsíc</translation>
-</translations>

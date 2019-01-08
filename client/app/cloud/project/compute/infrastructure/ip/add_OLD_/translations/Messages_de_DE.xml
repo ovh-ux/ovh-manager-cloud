@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpciip_add_title" qtlid="249328">IP-Adressen hinzufügen</translation>
-   <translation id="cpciip_add_run_now" qtlid="249341">Jetzt hinzufügen</translation>
-   <translation id="cpciip_add_geoloc" qtlid="249354">Wahl der Lokalisierung</translation>
-   <translation id="cpciip_add_geoloc_loading" qtlid="249367">Verfügbare Lokalisierungen werden geladen.</translation>
-   <translation id="cpciip_add_post_ip_error" qtlid="249380">Es kann keine neue IP erstellt werden!</translation>
-</translations>

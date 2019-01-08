@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="cpci_volume_type" qtlid="2642">Typ</translation>
-   <translation id="cpci_volume_gb_price_month" qtlid="319206">Cena netto GB / m-c</translation>
-   <translation id="cpci_volume_gb_price_value_month" qtlid="319219">{{ price }} netto / GB / m-c</translation>
-   <translation id="cpci_volume_price_per_month" qtlid="270254">{{ price }} netto/m-c</translation>
-</translations>

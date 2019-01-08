@@ -1,0 +1,12 @@
+{
+ "ceph_common_error": "Došlo k neočekávané chybě:",
+ "cda_tab_home": "Přehled",
+ "cda_tab_user": "Uživatelé",
+ "cda_tab_ip": "IP Access Control",
+ "cda_tab_pool": "Pools",
+ "cda_guide_title": "Příručky",
+ "cda_guide_name": "Cloud Disk Array (CDA)",
+ "cda_guide_footer": "Všechny OVH příručky",
+ "cda_new_window": "Nové okno",
+ "cda_guide_retrieval_error": "Při načítání příručky pro Cloud Disk Array (CDA) došlo k chybě."
+}

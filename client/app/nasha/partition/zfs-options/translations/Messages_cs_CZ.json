@@ -1,0 +1,19 @@
+{
+ "nasha_partitions_zfs_title": "Nastavení Z File System (ZFS)",
+ "nasha_partitions_zfs_atime_label": "Aktualizace časů přístupu (atime)",
+ "nasha_partitions_zfs_atime_disable": "Deaktivovat",
+ "nasha_partitions_zfs_atime_description": "Zruší potřebu kernelu aktualizovat čas přístupu k souboru pokaždé, když je vyžádán.",
+ "nasha_partitions_zfs_recordsize_label": "ZFS recordsize",
+ "nasha_partitions_zfs_recordsize_default": "(Výchozí)",
+ "nasha_partitions_zfs_sync_label": "Sync",
+ "nasha_partitions_zfs_sync_standard": "Standard",
+ "nasha_partitions_zfs_sync_description_standard": "Zabezpečený profil: kombinuje stabilitu a odpovídající úroveň výkonu. Soubory jsou nejprve zapsány a následně jsou za účelem zajištění stability dat vymazány veškeré elementy. ",
+ "nasha_partitions_zfs_sync_always": "Always",
+ "nasha_partitions_zfs_sync_description_always": "Vysoce zabezpečený profil: vysoká stabilita datových přenosů na úkor výkonu.",
+ "nasha_partitions_zfs_sync_disabled": "Disabled",
+ "nasha_partitions_zfs_sync_description_disabled": "Nezabezpečený profil: velmi vysoký výkon na úkor bezpečnosti. ZFS v tomto režimu ignoruje požadavky na synchronní přenosy (BDD, NFS apod.).",
+ "nasha_partitions_zfs_sync_description_disabled_warning": "Administrátoři by měli tuto možnost zvolit pouze v takovém případě, že jsou s těmito riziky důkladně obeznámeni.",
+ "nasha_partitions_zfs_modal_success": "Úprava možností ZFS bude provedena během několika minut.",
+ "nasha_partitions_zfs_modal_fail": "Při úpravě možností ZFS došlo k neočekávané chybě.",
+ "nasha_partitions_zfs_modal_loading_fail": "Při načítání možností ZFS došlo k neočekávané chybě."
+}

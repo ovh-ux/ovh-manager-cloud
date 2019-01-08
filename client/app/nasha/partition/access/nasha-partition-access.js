@@ -12,6 +12,9 @@ angular.module('managerApp')
             controllerAs: 'NashaPartitionAccessCtrl',
           },
         },
-        translations: ['../../../common', '.'],
+        translations: {
+          value: ['../../../common', '.'],
+          format: 'json',
+        },
       });
   });

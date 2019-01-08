@@ -35,7 +35,7 @@ class IpLoadBalancerDashboardHeaderCtrl {
     this.guides.title = this.$translate.instant('iplb_guides');
     this.guides.list = [{
       name: this.$translate.instant('iplb_guides_title'),
-      url: this.ovhDocUrl.getDocUrl('iplb'),
+      url: this.ovhDocUrl.getDocUrl('load-balancer'),
       external: true,
     }];
     this.guides.footer = {

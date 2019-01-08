@@ -1,0 +1,14 @@
+{
+ "dbaasts_tab_tokens": "Klíče API",
+ "dbaasts_tab_quota": "Limit",
+ "dbaasts_tab_billing": "Využití",
+ "dbaasts_tab_settings": "Parametry",
+ "dbaasts_region": "Okres",
+ "dbaasts_ok": "OK",
+ "dbaasts_name": "Název",
+ "dtpds_name_error": "Attention, le nom doit respecter les conditions suivantes :",
+ "dtpds_name_error1": "- Minimum {{min}} caractères",
+ "dtpds_name_error2": "- Maximum {{max}} caractères",
+ "dtpds_name_error3": "- Aucun caractère accentué",
+ "dtpds_name_error4": "- Aucun caractère spécial à l'exception de . - et _."
+}

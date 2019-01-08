@@ -9,6 +9,9 @@ angular.module('managerApp')
           serviceName: $stateParams => $stateParams.serviceName,
         },
         redirectTo: 'paas.kube.service',
-        translations: ['.'],
+        translations: {
+          value: ['.'],
+          format: 'json',
+        },
       });
   });

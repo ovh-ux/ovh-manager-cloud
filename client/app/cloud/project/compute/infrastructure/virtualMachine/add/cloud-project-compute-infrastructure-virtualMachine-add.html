@@ -25,7 +25,8 @@
                                                data-picture="assets/images/cloud/os/{{ distribution }}_50.png"
                                                data-text="{{:: 'cpcivm_add_distribution_' + distribution | translate }}{{ imageType === 'windows' ? ' *' : '' }}"
                                                data-values="images"
-                                               data-on-change="$ctrl.onSelectChange()">
+                                               data-on-change="$ctrl.onSelectChange()"
+                                               data-variant="light">
                             </oui-select-picker>
                         </div>
                     </div>
@@ -49,7 +50,8 @@
                                                data-placeholder="{{ 'cpcivm_add_step1_distribution_choose' | translate }}"
                                                data-picture="assets/images/cloud/apps/{{ app.applications[0] || 'unknown' }}.png"
                                                data-text="{{ app.appName }}"
-                                               data-values="[app]">
+                                               data-values="[app]"
+                                               data-variant="light">
                             </oui-select-picker>
                         </div>
                     </div>
@@ -65,7 +67,8 @@
                                                data-name="snapshot"
                                                data-picture="fa fa-2x fa-{{ snapshot.type }}"
                                                data-text="{{ snapshot.name }}"
-                                               data-values="[snapshot]">
+                                               data-values="[snapshot]"
+                                               data-variant="light">
                             </oui-select-picker>
                         </div>
                     </div>
@@ -81,7 +84,8 @@
                                        data-name="imageTypeSelected"
                                        data-picture="assets/images/cloud/{{ $ctrl.model.imageType.apps ? 'apps/' + ($ctrl.model.imageType.applications[0] || 'unknown') : 'os/' + $ctrl.model.imageType.distribution + '_50' }}.png"
                                        data-text="{{:: $ctrl.model.imageType.apps ? $ctrl.model.imageType.appName : 'cpcivm_add_distribution_' + $ctrl.model.imageType.distribution | translate }}"
-                                       data-values="[$ctrl.model.imageType]">
+                                       data-values="[$ctrl.model.imageType]"
+                                       data-variant="light">
                     </oui-select-picker>
                     <oui-select-picker data-ng-if="$ctrl.CloudImageService.constructor.isSnapshot($ctrl.model.imageType)"
                                        data-match="name"
@@ -89,7 +93,8 @@
                                        data-name="snapshotSelected"
                                        data-picture="fa fa-2x fa-{{ $ctrl.model.imageType.type }}"
                                        data-text="{{ $ctrl.model.imageType.name }}"
-                                       data-values="[$ctrl.model.imageType]">
+                                       data-values="[$ctrl.model.imageType]"
+                                       data-variant="light">
                     </oui-select-picker>
                 </div>
             </div>
@@ -175,7 +180,8 @@
                                                data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
                                                data-placeholder="{{ 'cpcivm_add_step2_datacenter_choose' | translate }}"
                                                data-text="{{region.macroRegion.text}}"
-                                               data-values="region.dataCenters">
+                                               data-values="region.dataCenters"
+                                               data-variant="light">
                                 <span class="oui-select-picker__section text-center"
                                       data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
                                     <oui-button data-variant="link"
@@ -183,7 +189,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
@@ -205,7 +211,8 @@
                                                data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }} flag"
                                                data-placeholder="{{ 'cpcivm_add_step2_datacenter_choose' | translate }}"
                                                data-text="{{ region.macroRegion.text }}"
-                                               data-values="region.dataCenters">
+                                               data-values="region.dataCenters"
+                                               data-variant="light">
                                 <span class="oui-select-picker__section text-center"
                                       data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
                                     <oui-button data-variant="link"
@@ -213,7 +220,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
@@ -231,7 +238,8 @@
                                        data-name="regionSelected"
                                        data-picture="flag-icon flag-icon-{{ $ctrl.model.region.macroRegion.code | lowercase }} flag"
                                        data-text="{{ $ctrl.model.region.macroRegion.text }}"
-                                       data-values="[$ctrl.model.region]">
+                                       data-values="[$ctrl.model.region]"
+                                       data-variant="light">
                     </oui-select-picker>
                 </div>
             </div>
@@ -254,10 +262,11 @@
                         <div class="cui-grid-list">
                             <div class="cui-grid-list-item cui-grid-cell"
                                  data-ng-repeat="flavor in group.flavors track by flavor.id">
-                                <oui-radio data-id="flavor_{{ flavor.id }}"
-                                           data-disabled="flavor.disabled"
-                                           data-thumbnail
-                                           data-value="flavor">
+                                 <oui-radio data-id="flavor_{{ flavor.id }}"
+                                            data-disabled="flavor.disabled"
+                                            data-thumbnail
+                                            data-variant="light"
+                                            data-value="flavor">
                                     {{flavor.name}}
                                     <span class="oui-radio__section">
                                         <span class="d-flex flex-wrap">
@@ -332,7 +341,8 @@
                     <oui-radio data-model="$ctrl.model.flavor"
                                data-name="flavorSelected"
                                data-value="$ctrl.model.flavor"
-                               data-thumbnail>
+                               data-thumbnail
+                               data-variant="light">
                         {{$ctrl.model.flavor.name}}
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
@@ -463,7 +473,8 @@
                          data-ng-repeat="period in $ctrl.enums.billingPeriods track by $index">
                         <oui-radio data-id="period_{{period}}"
                                    data-thumbnail
-                                   data-value="period">
+                                   data-value="period"
+                                   data-variant="light">
                             {{:: 'cpcivm_add_step5_billing_period_' + period | translate}}
                             <span class="oui-radio__section"
                                   data-translate="cpci_vm_flavor_price"
@@ -485,7 +496,8 @@
                                data-model="$ctrl.model.billingPeriod"
                                data-name="billingPeriodSelected"
                                data-value="$ctrl.model.billingPeriod"
-                               data-thumbnail>
+                               data-thumbnail
+                               data-variant="light">
                         <span class="oui-radio__section"
                               data-translate="cpci_vm_flavor_price"
                               data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.price.value) | currency: $ctrl.currentCurrency: 3) || '?' }"
