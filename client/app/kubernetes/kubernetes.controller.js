@@ -1,5 +1,6 @@
 angular.module('managerApp').controller('KubernetesCtrl', class KubernetesCtrl {
-  constructor($stateParams, Kubernetes, KUBERNETES) {
+  constructor($scope, $stateParams, Kubernetes, KUBERNETES) {
+    this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
@@ -7,6 +8,10 @@ angular.module('managerApp').controller('KubernetesCtrl', class KubernetesCtrl {
 
   $onInit() {
     this.loading = true;
+
+    this.$scope.$on('changeKubernetesName', (event, displayName) => {
+      this.cluster.name = displayName;
+    });
 
     this.getCluster();
   }
