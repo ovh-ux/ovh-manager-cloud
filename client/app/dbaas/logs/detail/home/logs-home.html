@@ -65,7 +65,7 @@
                             </button>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <oui-tile-definition data-term="{{ctrl.accountDetails.data.graylogEntryPoint}}">
+                    <oui-tile-definition>
                         <oui-tile-description>
                             <a data-ng-href="{{ ctrl.accountDetails.data.graylogWebuiUrl }}"
                                class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
@@ -171,6 +171,10 @@
                                 data-on-click="ctrl.editTokens()">
                             </oui-action-menu-item>
                         </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{::'logs_home_cluster'|translate}}"
+                        data-description="{{ctrl.accountDetails.data.graylogEntryPoint}}">
                     </oui-tile-definition>
                     <oui-tile-definition
                         data-term="{{::'logs_home_service'|translate}}"
