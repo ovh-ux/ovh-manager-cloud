@@ -2,7 +2,8 @@
 
     <oui-back-button data-state="dbaas.logs.detail.streams"
         class="back_button_inline_text"
-        data-state-params="{ serviceName: ctrl.serviceName}">{{ ::'logs_streams_follow_live' | translate }}</oui-back-button>
+        data-state-params="{ serviceName: ctrl.serviceName}"
+        data-heading="{{ ::'logs_streams_follow_live' | translate }}"></oui-back-button>
 
     <p data-translate="logs_streams_follow_description"
        data-translate-values="{name:ctrl.stream.data.info.title}"></p>
