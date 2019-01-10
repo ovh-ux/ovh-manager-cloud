@@ -1,13 +1,5 @@
 .oui-slideshow {
-  width: rem-calc(650);
-
   &_pci {
-    &:not(.is-illustrated) .oui-slideshow__header {
-      .oui-modal__close-button {
-        color: @oui-color-white;
-      }
-    }
-
     .oui-slideshow__body,
     .oui-slideshow__content,
     .oui-slideshow__footer {
@@ -15,23 +7,32 @@
     }
 
     .oui-slideshow-panel__picture-container {
-      background-color: #889bb0;
+      background:
+        linear-gradient(
+          to bottom,
+          #fff 0%,
+          #fff 75%,
+          @oui-color-pacific 68%,
+          @oui-color-pacific 100%
+        );
       flex: 0 1 auto;
-      height: 100%;
       overflow: hidden;
     }
 
     .oui-slideshow-panel__picture {
-      height: 100%;
-      margin: 0 auto;
-      opacity: 0;
-      text-align: center;
-      transition: opacity 0.5s, width 0.6s;
-      transition-timing-function: ease-in;
-      transition-delay: 0s;
-      width: 30%;
-      background: center center no-repeat;
-      background-size: contain;
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 1em auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-border-radius: 99em;
+      -moz-border-radius: 99em;
+      border-radius: 99em;
+      border: 5px rgba(0, 0, 0, 0.3) solid;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+      background-clip: content-box;
     }
 
     .oui-slideshow-panel.next,
@@ -48,25 +49,17 @@
       }
     }
 
-    .oui-slideshow-panel.next.left,
-    .oui-slideshow-panel.prev.right,
-    .oui-slideshow-panel.active:not(.left):not(.right) {
-      .oui-slideshow-panel__picture {
-        opacity: 1;
-        width: 100%;
-      }
-    }
-
     .oui-slideshow-panel__container {
       align-items: center;
-      color: @oui-color-white;
+      color: #fff;
       display: flex;
       flex: 1 0 auto;
       flex-direction: column;
       justify-content: center;
-      min-height: 40%;
+      min-height: 43.5%;
       position: relative;
       text-align: center;
+      padding: 0 2rem 0;
     }
 
     .oui-slideshow-panel__title {
