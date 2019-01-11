@@ -120,7 +120,7 @@ class LogsHomeCtrl {
    * takes to options UI page if account is pro else shows offer upgrade required modal
    */
   goToOptionsPage() {
-    if (this.LogsHelperService.constructor.isBasicOffer(this.account.data)) {
+    if (this.LogsHelperService.isBasicOffer(this.account.data)) {
       return this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
     }
     return this.gotoState('dbaas.logs.detail.options');

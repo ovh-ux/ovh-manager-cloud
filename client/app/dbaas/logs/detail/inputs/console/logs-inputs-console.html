@@ -1,7 +1,7 @@
 <div class="cui-page__content inputs-logs">
-    <oui-back-button class="back_button_inline_text"></oui-back-button>
-    <span class="oui-header_3" data-translate="inputs_logs_title" data-translate-values="{inputTitle: ctrl.input.data.info.title}"></span>
-    
+
+    <oui-back-button>{{ 'inputs_logs_title' | translate: {inputTitle: ctrl.input.data.info.title} }}</oui-back-button>
+
     <div data-ng-if="!ctrl.logger.timer">
         <oui-spinner></oui-spinner>
     </div>

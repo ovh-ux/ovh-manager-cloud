@@ -53,14 +53,14 @@
             <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}">
                 <label for="kafkaCoalesce" class="oui-label" data-translate="inputs_logs_configure_messages_batch"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_2 d-flex">
+                    <div class="oui-field-control oui-field-control_4 d-flex">
                         <oui-numeric
                             data-ng-attr-id="kafkaCoalesce"
                             data-ng-attr-name="kafkaCoalesce"
                             class="numeric_without_bottom_margin"
                             data-ng-class="{'oui-input_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}"
                             model="ctrl.configuration.flowgger.kafkaCoalesce"
-                            min="0">
+                            min="1">
                         </oui-numeric>
                         <a class="oui-link" oui-tooltip="{{:: 'input_logs_configure_kafka_coalesce_tooltip' | translate}}">
                             <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
@@ -165,10 +165,16 @@
                 {{ ctrl.test.loading ? 'input_logs_configure_test_progress' : 'input_logs_configure_test' | translate }}
             </button>
             <div data-ng-if="!ctrl.input.loading && !ctrl.test.loading && ctrl.test.data.updatedAt">
-                <div class="oui-message m-0" data-ng-class="{'oui-message_success': ctrl.test.data.stdout, 'oui-message_error': ctrl.test.data.stderr}" role="alert">
+                <div class="oui-message m-0 mt-4" data-ng-class="{'oui-message_success': ctrl.test.data.stdout, 'oui-message_error': ctrl.test.data.stderr}" role="alert">
                     <i class="oui-icon oui-icon_bicolor" data-ng-class="{'oui-icon-success_circle': ctrl.test.data.stdout, 'oui-icon-error_circle': ctrl.test.data.stderr}" aria-hidden="true"></i>
-                    <p class="oui-message__body" data-translate="{{ ctrl.test.data.stdout ? 'input_logs_configure_test_success' : 'input_logs_configure_test_failure' }}"  data-translate-values="{ output: ctrl.test.data.stdout ? ctrl.test.data.stdout : ctrl.test.data.stderr }"></p>
-                    <p class="oui-message__body font-size-1" data-translate="input_logs_configure_test_timestamp" data-translate-values="{ timestamp: '{{ ctrl.test.data.updatedAt | amCalendar}}' }"></p>
+                    <div class="oui-message__body">
+                        <div data-ng-if="!ctrl.test.data.stdout">
+                            <p data-translate="logs_inputs_logstash_save_warning_unsuccessful"></p>
+                            <pre data-translate="input_logs_configure_test_failure" data-translate-values="{ output: ctrl.test.data.stdout ? ctrl.test.data.stdout : ctrl.test.data.stderr }"></pre>
+                        </div>
+                        <span data-ng-if="ctrl.test.data.stdout" data-translate="input_logs_configure_test_success" data-translate-values="{ output: ctrl.test.data.stdout ? ctrl.test.data.stdout : ctrl.test.data.stderr }"></span>
+                    </div>
+                    <p class="oui-message__body" data-translate="input_logs_configure_test_timestamp" data-translate-values="{ timestamp: '{{ ctrl.test.data.updatedAt | amCalendar}}' }"></p>
                 </div>
             </div>
 

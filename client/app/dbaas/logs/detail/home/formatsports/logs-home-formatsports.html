@@ -1,4 +1,4 @@
-<oui-modal data-title="{{ ::'logs_home_formatsports_title' | translate }}"
+<oui-modal data-title="{{ 'logs_home_formatsports_title' | translate : {entryPoint: ctrl.accountDetails.graylogEntryPoint} }}"
            data-on-dismiss="ctrl.cancel()">
     <oui-table class="table-without-pagination" data-rows="ctrl.accountDetails.portsAndMessages">
         <column title="'logs_home_formatsports_name' | translate" property="name"></column>

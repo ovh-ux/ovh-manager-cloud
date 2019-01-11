@@ -118,8 +118,8 @@ class LogsHelperService {
    * return true if account is of type basic, false otherwise
    * @param {accountDetails} account
    */
-  static isBasicOffer(account) {
-    return !account.offer.reference.startsWith('logs-pro');
+  isBasicOffer(account) {
+    return !account.offer.reference.startsWith(this.LogsConstants.LOGS_PRO);
   }
 
   isAccountDisabled(account) {
