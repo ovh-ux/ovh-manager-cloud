@@ -204,7 +204,7 @@ class LogsAliasesService {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_aliases_create_success', { aliasName: alias.suffix });
       })
-      .catch(err => this.LogsHelperService.handleError('logs_aliases_create_error', err, { streamName: alias.suffix }));
+      .catch(err => this.LogsHelperService.handleError('logs_aliases_create_error', err, { aliasName: alias.suffix }));
   }
 
   /**
