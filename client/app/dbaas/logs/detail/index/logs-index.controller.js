@@ -65,8 +65,7 @@ class LogsIndexCtrl {
   showDeleteConfirm(info) {
     this.CloudMessage.flushChildMessage();
     this.LogsIndexService.deleteModal(
-      this.serviceName,
-      info,
+      info.name,
     ).then(() => {
       this.delete = this.ControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info)
