@@ -1,7 +1,7 @@
 {
- "add_p8_alert_success": "Zapisałeś się do Lab Power8",
+ "add_p8_alert_success": "Gratulacje! Dołączyłeś do grupy testerów rozwiązania Power8.",
  "add_instance_ssh_key_help": "W usłudze Public Cloud nie używamy haseł administratorów (root). Dostęp do instancji GNU/Linux wymaga dodania klucza SSH. <a target=\"_blank\" href=\"https://www.ovh.pl/g1785.cloud\">Sprawdź, jak wygenerować klucz SSH.</a>",
- "add_instance_ssh_key_help_message": "Uwaga: aby dokończyć tworzenie instancji, musisz obowiązkowo dostarczyć klucz ssh.",
+ "add_instance_ssh_key_help_message": "Uwaga: aby dokończyć tworzenie instancji, musisz obowiązkowo wprowadzić klucz ssh.",
  "add_instance": "Serwer wirtualny",
  "add_storage": "Kontener obiektów",
  "add_storage2": "Dodanie kontenera obiektów",
