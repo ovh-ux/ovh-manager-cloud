@@ -1,0 +1,15 @@
+{
+  "pci_slideshow_heading1": "Bienvenue dans votre espace Public Cloud",
+  "pci_slideshow_heading2": "Gérez toute votre infrastructure en un lieu unique",
+  "pci_slideshow_heading3": "Gardez la main sur votre projet",
+  "pci_slideshow_heading4": "Pay as you Go",
+  "pci_slideshow_heading5": "Aller plus loin avec OpenStack",
+  "pci_slideshow_description_generic": "Découvrez la nouvelle organisation de vos projets",
+  "pci_slideshow_description_infra1": "<b>Compute</b> : Gestion des instances et disques additionnels",
+  "pci_slideshow_description_infra2": "<b>Storage</b> : Gestion du stockage objets et archive",
+  "pci_slideshow_description_payGo": "La souplesse du cloud vous permet d'avoir une facture qui correspond à vos besoins grâce à la facturation à l'heure",
+  "pci_slideshow_description_management1": "<b>Gestion technique</b> : Gérez vos utilisateurs OpenStack et quota de ressources",
+  "pci_slideshow_description_management2": "<b>Gestion administrative</b> : Retrouvez ici votre consommation et vos factures",
+  "pci_slideshow_description_openstack": "Retrouvez tous les outils d'automatisation et d'orchestration compatibles pour industrialiser vos déploiements",
+  "discover": "Découvrir"
+}
