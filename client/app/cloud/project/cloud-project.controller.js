@@ -36,20 +36,18 @@ angular.module('managerApp')
     function init() {
       self.loaders.project = true;
 
-      angular.element(() => {
-        ovhUserPref.getValue(onboardingKey)
-          .then(({ value }) => {
-            if (value) {
-              openOnboarding();
-            }
-          })
-          .catch((err) => {
-            // Check error status and if key is there in error message
-            if (err.status === 404 && err.data.message.indexOf(onboardingKey) > 0) {
-              openOnboarding();
-            }
-          });
-      });
+      ovhUserPref.getValue(onboardingKey)
+        .then(({ value }) => {
+          if (value) {
+            openOnboarding();
+          }
+        })
+        .catch((err) => {
+          // Check error status and if key is there in error message
+          if (err.status === 404 && err.data.message.includes(onboardingKey)) {
+            openOnboarding();
+          }
+        });
 
       // get current project
       if (serviceName) {
