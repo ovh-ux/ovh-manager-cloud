@@ -256,7 +256,9 @@
                          index="$index" heading="{{ 'cpcivm_add_step3_category_' + group.category | translate }}">
                     <p class="my-4"
                        data-ng-bind=":: 'cpcivm_add_step3_category_definition_' + group.category | translate"></p>
-
+                    <oui-checkbox data-model="$ctrl.hideUnavailableOptions">
+                        <span data-translate="cpcivm_add_step3_hide_unavailable"></span>
+                    </oui-checkbox>
                     <oui-radio-group data-model="$ctrl.model.flavor"
                                      data-name="flavor">
                         <div class="cui-grid-list">
@@ -264,6 +266,7 @@
                                  data-ng-repeat="flavor in group.flavors track by flavor.id">
                                  <oui-radio data-id="flavor_{{ flavor.id }}"
                                             data-disabled="flavor.disabled"
+                                            data-ng-if="!(flavor.disabled && $ctrl.hideUnavailableOptions)"
                                             data-thumbnail
                                             data-variant="light"
                                             data-value="flavor">

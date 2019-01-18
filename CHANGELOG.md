@@ -1,3 +1,12 @@
+## [7.12.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.3...v7.12.4) (2019-01-11)
+
+
+### Bug Fixes
+
+* **cloud.logs:** update some translations and improve ui ([#1249](https://github.com/ovh-ux/ovh-manager-cloud/issues/1249)) ([f60e3f6](https://github.com/ovh-ux/ovh-manager-cloud/commit/f60e3f6))
+
+
+
 ## [7.12.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.2...v7.12.3) (2019-01-04)
 
 
