@@ -3,15 +3,7 @@
  "cpc_tab_snapshot": "Snapshots",
  "cpc_tab_volume": "Zusätzliche Festplatten",
  "cpc_tab_ssh": "SSH Schlüssel",
- "cpc_tab_loadbalancer": "Loadbalancing-IP",
+ "cpc_tab_loadbalancer": "Loadbalancer",
  "cpc_tab_project": "Verwaltung und Verbrauch des Projekts",
- "cpb_tab_quota": "Quota",
- "cpc_message": "Die OVH Cloud ist jetzt auch in Deutschland verfügbar! <a href=\"http://superlienverslapage\">Entdecken Sie unser Rechenzentrum in Limburg.</a>",
- "cloud_message_pci_uk1": "Start unserer neuen Region UK1 in London!",
- "cloud_message_pci_uk1_link": "Was das für Sie bedeutet",
- "cloud_message_pci_de1": "Eröffnung unserer neuen Region DE1 in Frankfurt!",
- "cloud_message_pci_de1_link": "Was das für Sie bedeutet",
- "cloud_message_pci_g3": "Neu: Start unserer GPU Instanzen G3-30 und G3-120 für Ihre Data Science Machine Learning Projekte.",
- "cloud_message_pci_no_link": "Um mehr zu erfahren...",
- "cloud_message_pci_bandwitdh_xmas": "Vom 19. Dezember 2017 bis 08. Januar 2018 inklusive. Sichern Sie sich bis zu 10 Gbit/s Netzwerkbandbreite (insgesamt) für C2-120, B2-120, R2-240 und G3-120 Instanzen."
+ "cpb_tab_quota": "Quota"
 }
