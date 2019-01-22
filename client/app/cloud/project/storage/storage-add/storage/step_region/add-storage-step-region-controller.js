@@ -6,8 +6,7 @@ angular.module('managerApp').controller('RA.add.storage.stepRegionCtrl',
 
       $scope.model.region = null;
 
-      $scope.clickOnRegion = function (region) {
-        $scope.model.region = region;
+      $scope.clickOnRegion = function () {
         $scope.loadStep($scope.childStep);
       };
     },

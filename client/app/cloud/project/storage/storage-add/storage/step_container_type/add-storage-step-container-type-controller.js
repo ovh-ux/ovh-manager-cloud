@@ -46,8 +46,7 @@ angular.module('managerApp').controller('RA.add.storage.stepContainerTypeCtrl', 
       }],
     }];
 
-    $scope.clickOnContainerType = function (type) {
-      $scope.model.containerType = _.clone(type);
+    $scope.clickOnContainerType = function () {
       $scope.loadStep($scope.childStep);
     };
 
