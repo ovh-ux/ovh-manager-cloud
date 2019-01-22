@@ -7416,10 +7416,10 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-ovh-ui-angular@~2.23.0:
-  version "2.23.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.23.0.tgz#5171a8ffa191dde62eca9b6a2ebd6d8cdcb41da9"
-  integrity sha512-vbUQ4XWRrUvz9OHjEYin2gkHg8zw4yRXziq1jccxtp8qSPb8+8h2cjKrLdQ6YCmDFJnEiGSwJ7NTz9QpFHcqHA==
+ovh-ui-angular@~2.24.0:
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.24.1.tgz#5c62f88d0dc496eac1cb44a7492783458bd42adc"
+  integrity sha512-ePkKOY+8UOYPaqbYX5EnAY93d/9x4WYG6GhHBwdLIA/AuTjj4K0MFVb/xFsXrY9woEGDkgj+edcDrWKKVkssmw==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
@@ -7428,10 +7428,10 @@ ovh-ui-angular@~2.23.0:
     popper.js "^1.14.4"
     ui-select "^0.19.8"
 
-ovh-ui-kit@~2.23.0:
-  version "2.23.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.23.0.tgz#469e18ac4ff1ea2bdb1557c8e59b6703d6fa9f46"
-  integrity sha512-LQg5g3OpCMCK4YCZtmEnXwi6FU+aOjv6jyhtiuJ/OJ3JbodjrRXhPnxo+TTuRfQZXU6fQ7pnvM08pG0cCKWmDw==
+ovh-ui-kit@~2.24.0:
+  version "2.24.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.1.tgz#d56c8cbc7881655a9124b2300c3e1acea32c93e9"
+  integrity sha512-KlPg4dq1NqEEncAdlE5nGfihD16tfaRlyWiAJNhIpbZD/xfmSQchM5x39Y40kldatUR9t3HXch8D3dQ2e80ioA==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
@@ -7801,9 +7801,9 @@ popper.js@^1.14.1:
   integrity sha1-juwdj/AqWjoVLdQ0FKFce3n9abY=
 
 popper.js@^1.14.4:
-  version "1.14.5"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.5.tgz#98abcce7c7c34c4ee47fcbc6b3da8af2c0a127bc"
-  integrity sha512-fs4Sd8bZLgEzrk8aS7Em1qh+wcawtE87kRUJQhK6+LndyV1HerX7+LURzAylVaTyWIn5NTB/lyjnWqw/AZ6Yrw==
+  version "1.14.6"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.6.tgz#ab20dd4edf9288b8b3b6531c47c361107b60b4b0"
+  integrity sha512-AGwHGQBKumlk/MDfrSOf0JHhJCImdDMcGNoqKmKkU+68GFazv3CQ6q9r7Ja1sKDZmYWTckY/uLyEznheTDycnA==
 
 portfinder@^1.0.9:
   version "1.0.19"
