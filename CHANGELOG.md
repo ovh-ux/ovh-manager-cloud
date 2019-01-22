@@ -1,3 +1,13 @@
+## [7.12.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.4...v7.12.5) (2019-01-22)
+
+
+### Bug Fixes
+
+* **cloud.project.storage:** ui revamp ([5cf0780](https://github.com/ovh-ux/ovh-manager-cloud/commit/5cf0780))
+* **ie11:** bump [@ovh-ux](https://github.com/ovh-ux)/translate-async-loader ([94fdc2d](https://github.com/ovh-ux/ovh-manager-cloud/commit/94fdc2d))
+
+
+
 ## [7.12.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.3...v7.12.4) (2019-01-11)
 
 
