@@ -326,6 +326,8 @@
  "logs_streams_update_title": "Stream bearbeiten",
  "logs_streams_update_description": "Für den Stream <strong>{{ name }}</strong>",
  "logs_streams_select_options_placeholder": "Option auswählen",
+ "logs_streams_enable_indexing": "Aktivieren Sie die Indizierung",
+ "logs_streams_enable_indexing_description": "Durchsuchen Sie Ihre Protokolle auf Graylog und Elasticsearch.",
  "logs_streams_enable_websocket": "WebSocket-Übertragung aktivieren",
  "logs_streams_enable_websocket_description": "Verfolgen Sie den Empfang Ihrer Logs in Echtzeit über das WebSocket-Protokoll.",
  "logs_streams_enable_archieve": "Langzeitarchivierung aktivieren",

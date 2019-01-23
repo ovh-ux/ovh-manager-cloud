@@ -47,6 +47,17 @@
         <oui-field>
             <oui-checkbox
                 data-disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
+                id="stream_enable_indexing"
+                name="stream_enable_indexing"
+                data-text="{{'logs_streams_enable_indexing' | translate}}"
+                data-description="{{'logs_streams_enable_indexing_description' | translate}}"
+                data-model="ctrl.stream.data.indexingEnabled">
+            </oui-checkbox>
+        </oui-field>
+
+        <oui-field>
+            <oui-checkbox
+                data-disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
                 id="stream_enable_websocket"
                 name="stream_enable_websocket"
                 data-text="{{'logs_streams_enable_websocket' | translate}}"

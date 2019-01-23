@@ -326,6 +326,8 @@
  "logs_streams_update_title": "Modify data stream",
  "logs_streams_update_description": "For the <strong>{{ name }}</strong> data stream",
  "logs_streams_select_options_placeholder": "Choose an option",
+ "logs_streams_enable_indexing": "Enable indexing",
+ "logs_streams_enable_indexing_description": "Explore your logs on Graylog and Elasticsearch.",
  "logs_streams_enable_websocket": "Enable WebSocket broadcasting",
  "logs_streams_enable_websocket_description": "Monitor the logs you receive in real time, via the WebSocket protocol.",
  "logs_streams_enable_archieve": "Enable long-term storage",

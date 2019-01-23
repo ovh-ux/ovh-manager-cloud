@@ -326,6 +326,8 @@
  "logs_streams_update_title": "Modificar o fluxo",
  "logs_streams_update_description": "Para o fluxo <strong>{{ name }}</strong>",
  "logs_streams_select_options_placeholder": "Escolher uma opção",
+ "logs_streams_enable_indexing": "Ativar indexação",
+ "logs_streams_enable_indexing_description": "Explore dos logs no Graylog e no Elasticsearch.",
  "logs_streams_enable_websocket": "Ativar difusão WebSocket",
  "logs_streams_enable_websocket_description": "Monitorize a receção dos logs em tempo real através do protocolo WebSocket.",
  "logs_streams_enable_archieve": "Ativar armazenamento de longa duração",

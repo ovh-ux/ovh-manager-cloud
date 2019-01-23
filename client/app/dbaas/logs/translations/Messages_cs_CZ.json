@@ -326,6 +326,8 @@
  "logs_streams_update_title": "Upravit stream",
  "logs_streams_update_description": "Pro stream <strong>{{ name }}</strong>",
  "logs_streams_select_options_placeholder": "Zvolit možnost",
+ "logs_streams_enable_indexing": "Povolit indexování",
+ "logs_streams_enable_indexing_description": "Prozkoumejte své protokoly na Graylog a Elasticsearch.",
  "logs_streams_enable_websocket": "Aktivovat difúzi WebSocket",
  "logs_streams_enable_websocket_description": "Sledujte příjem svých logů v reálném čase prostřednictvím protokolu WebSocket.",
  "logs_streams_enable_archieve": "Aktivovat dlouhodobé ukládání",

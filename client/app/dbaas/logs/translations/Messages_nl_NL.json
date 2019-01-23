@@ -326,6 +326,8 @@
  "logs_streams_update_title": "Stream bewerken",
  "logs_streams_update_description": "Voor de <strong>{{ name }}</strong> stream",
  "logs_streams_select_options_placeholder": "Kies een optie",
+ "logs_streams_enable_indexing": "Schakel indexering in",
+ "logs_streams_enable_indexing_description": "Verken je logs op Graylog en Elasticsearch.",
  "logs_streams_enable_websocket": "WebSocket-verdeling inschakelen",
  "logs_streams_enable_websocket_description": "Volg real-time logs via het WebSocket-protocol.",
  "logs_streams_enable_archieve": "Langetermijnopslag inschakelen",
