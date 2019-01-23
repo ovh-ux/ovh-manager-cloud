@@ -50,11 +50,8 @@ class LogsInputsAddConfigureCtrl {
   }
 
   initFlowgger(configuration) {
-    this.configuration.flowgger.kafkaCoalesce = configuration.kafkaCoalesce;
     this.configuration.flowgger.logFormat = configuration.logFormat;
     this.configuration.flowgger.logFraming = configuration.logFraming;
-    this.configuration.flowgger.tlsMethod = configuration.tlsMethod;
-    this.configuration.flowgger.type = configuration.type;
   }
 
   static findRowLength(str) {
