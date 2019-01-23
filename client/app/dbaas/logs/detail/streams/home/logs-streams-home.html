@@ -33,6 +33,12 @@
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
+        <oui-column title="::'logs_streams_col_indexing' | translate" property="info.indexingEnabled" sortable type="string">
+            <span class="oui-status"
+                data-translate="{{ $row.info.indexingEnabled ? 'logs_streams_enabled' : 'logs_streams_disabled' }}"
+                data-ng-class="$row.info.indexingEnabled ? 'oui-status_success' : 'oui-status_warning'">
+            </span>
+        </oui-column>
         <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
