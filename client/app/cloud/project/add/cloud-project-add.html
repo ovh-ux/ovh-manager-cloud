@@ -143,11 +143,13 @@
                                                                     data-ng-model="CloudProjectAddCtrl.model.paymentMethod">
                                                                 {{"cpa_paymentmean_empty1" | translate}}
                                                             </label>
-                                                            <p class="bottom-space-m8" data-translate="cpa_paymentmean_empty2" ></p>
-                                                            <a class="btn btn-primary btn-lg bottom-space-m8"
-                                                                href="{{CloudProjectAddCtrl.paymentmeanUrl}}" target="_blank"
-                                                                a-disabled="CloudProjectAddCtrl.model.paymentMethod !== CloudProjectAddCtrl.model.noPaymentMethodEnum.MEAN"
-                                                                data-translate="cpa_paymentmean_empty_help_link"></a><br />
+                                                            <p class="bottom-space-m8" data-translate="cpa_paymentmean_empty2"></p>
+                                                            <button class="btn btn-primary btn-lg bottom-space-m8"
+                                                                type="button"
+                                                                data-ng-click="CloudProjectAddCtrl.paymentRegister()"
+                                                                data-translate="cpa_paymentmean_empty_help_link"
+                                                                data-disabled="CloudProjectAddCtrl.model.paymentMethod !== CloudProjectAddCtrl.model.noPaymentMethodEnum.MEAN">
+                                                            </button><br />
                                                         </div>
                                                     </div>
 
@@ -192,7 +194,10 @@
                                     <!-- submit -->
                                     <div class="cpa-box-footer text-center">
                                         <button type="submit" class="btn btn-primary btn-lg"
-                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating">
+                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating"
+                                            data-track-on="click"
+                                            data-track-name="pci-project_new-project-create"
+                                            data-track-click="action">
                                             {{(CloudProjectAddCtrl.data.projectsCount === 0 ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
                                         </button>
                                         <oui-spinner data-ng-if="CloudProjectAddCtrl.loaders.creating" size="s"></oui-spinner>
