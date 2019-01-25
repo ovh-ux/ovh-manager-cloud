@@ -13,7 +13,7 @@
             <span data-translate="logs_streams_update_description" data-translate-values="{name:ctrl.stream.data.title}"></span>
         </div>
 
-        <oui-field label="{{ ::'logs_streams_col_title' | translate }}" size="xl">
+        <oui-field label="{{:: 'logs_streams_col_title' | translate }}" size="xl">
             <input
                 type="text" id="stream_name" name="stream_name"
                 class="oui-input"
@@ -22,7 +22,7 @@
                 required />
         </oui-field>
 
-        <oui-field label="{{ ::'logs_streams_col_description' | translate }}" size="xl">
+        <oui-field label="{{:: 'logs_streams_col_description' | translate }}" size="xl">
             <textarea
                 id="stream_description" name="stream_description"
                 class="oui-textarea"
@@ -31,14 +31,14 @@
             </textarea>
         </oui-field>
 
-        <oui-field label="{{ ::'logs_select_options_title' | translate }}" size="xl">
+        <oui-field label="{{:: 'logs_select_options_title' | translate }}" size="xl">
             <div class="oui-select">
                 <select class="oui-select__input"
                     name="stream_option"
                     id="stream_option"
                     data-ng-model="ctrl.stream.data.optionId"
                     data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbStream+'/'+option.maxNbStream for option in ctrl.options.data">
-                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
+                    <option value="">{{:: 'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
                 </select>
                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </div>
@@ -49,8 +49,8 @@
                 data-disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
                 id="stream_enable_indexing"
                 name="stream_enable_indexing"
-                data-text="{{'logs_streams_enable_indexing' | translate}}"
-                data-description="{{'logs_streams_enable_indexing_description' | translate}}"
+                data-text="{{:: 'logs_streams_enable_indexing' | translate}}"
+                data-description="{{:: 'logs_streams_enable_indexing_description' | translate}}"
                 data-model="ctrl.stream.data.indexingEnabled">
             </oui-checkbox>
         </oui-field>
@@ -60,8 +60,8 @@
                 data-disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
                 id="stream_enable_websocket"
                 name="stream_enable_websocket"
-                data-text="{{'logs_streams_enable_websocket' | translate}}"
-                data-description="{{'logs_streams_enable_websocket_description' | translate}}"
+                data-text="{{:: 'logs_streams_enable_websocket' | translate}}"
+                data-description="{{:: 'logs_streams_enable_websocket_description' | translate}}"
                 data-model="ctrl.stream.data.webSocketEnabled">
             </oui-checkbox>
         </oui-field>
@@ -71,8 +71,8 @@
                 data-ng-if="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
                 id="stream_enable_compression"
                 name="stream_enable_compression"
-                data-text="{{'logs_streams_enable_archieve' | translate}}"
-                data-description="{{ ::'logs_streams_storage_basic_offer' | translate }}"
+                data-text="{{:: 'logs_streams_enable_archieve' | translate}}"
+                data-description="{{:: 'logs_streams_storage_basic_offer' | translate }}"
                 data-model="ctrl.stream.data.coldStorageEnabled"
                 data-disabled>
             </oui-checkbox>
@@ -80,14 +80,14 @@
                 data-ng-if="ctrl.mainOffer.data.planCode !== ctrl.LogsConstants.basicOffer"
                 id="stream_enable_compression"
                 name="stream_enable_compression"
-                data-text="{{'logs_streams_enable_archieve' | translate}}"
-                data-description="{{ ::'logs_streams_enable_archieve_description' | translate}} {{ 'streams_cold_storage_price' | translate }} {{ ctrl.coldStoragePrice.price }} {{ 'streams_cold_storage_price2' | translate }}"
+                data-text="{{:: 'logs_streams_enable_archieve' | translate}}"
+                data-description="{{:: 'logs_streams_enable_archieve_description' | translate}} {{ 'streams_cold_storage_price' | translate }} {{ ctrl.coldStoragePrice.price }} {{ 'streams_cold_storage_price2' | translate }}"
                 data-model="ctrl.stream.data.coldStorageEnabled">
             </oui-checkbox>
         </oui-field>
 
         <div data-ng-if="ctrl.stream.data.coldStorageEnabled">
-            <oui-field label="{{ ::'logs_streams_select_archieve_algorithm' | translate }}" size="xl">
+            <oui-field label="{{:: 'logs_streams_select_archieve_algorithm' | translate }}" size="xl">
                 <div class="oui-select">
                     <select class="oui-select__input"
                             name="stream_archive_algorithm"
@@ -99,7 +99,7 @@
                 </div>
             </oui-field>
 
-            <oui-field label="{{ ::'logs_streams_select_archieve_duration' | translate }}" size="xl">
+            <oui-field label="{{:: 'logs_streams_select_archieve_duration' | translate }}" size="xl">
                 <div class="oui-select">
                     <select class="oui-select__input"
                             name="stream_archive_duration"
@@ -111,7 +111,7 @@
                 </div>
             </oui-field>
 
-            <oui-field label="{{ ::'logs_streams_notification_title' | translate }}">
+            <oui-field label="{{:: 'logs_streams_notification_title' | translate }}">
                 <oui-checkbox
                     name="stream_notification"
                     id="stream_notification"
