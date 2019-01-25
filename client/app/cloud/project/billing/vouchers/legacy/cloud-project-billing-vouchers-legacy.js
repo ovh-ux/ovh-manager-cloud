@@ -1,11 +1,9 @@
-
-
 angular.module('managerApp').config(($stateProvider) => {
-  $stateProvider.state('iaas.pci-project.billing.vouchers', {
-    url: '/vouchers',
+  $stateProvider.state('iaas.pci-project.billing.vouchers.legacy', {
+    url: '',
     views: {
-      cloudProjectBilling: {
-        templateUrl: 'app/cloud/project/billing/vouchers/cloud-project-billing-vouchers.html',
+      cloudProjectBillingVouchers: {
+        templateUrl: 'app/cloud/project/billing/vouchers/legacy/cloud-project-billing-vouchers-legacy.html',
         controller: 'CloudprojectbillingvouchersCtrl',
         controllerAs: 'VouchersCtrl',
       },

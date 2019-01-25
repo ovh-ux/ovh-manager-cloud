@@ -11,7 +11,7 @@ angular.module('managerApp').config(($stateProvider) => {
       },
     },
     translations: {
-      value: ['../../../billing/vouchers/addCredit'],
+      value: ['../../../billing/vouchers/agora/addCredit'],
       format: 'json',
     },
   });

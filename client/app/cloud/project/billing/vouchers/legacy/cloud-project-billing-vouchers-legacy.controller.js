@@ -27,7 +27,7 @@ class CloudprojectbillingvouchersCtrl {
   openAddVoucher() {
     this.$uibModal.open({
       windowTopClass: 'cui-modal',
-      templateUrl: 'app/cloud/project/billing/vouchers/addVoucher/cloud-project-billing-vouchers-add.html',
+      templateUrl: 'app/cloud/project/billing/vouchers/legacy/addVoucher/cloud-project-billing-vouchers-add.html',
       controller: 'CloudProjectBillingVoucherAddCtrl',
       controllerAs: '$ctrl',
       resolve: {
@@ -39,7 +39,7 @@ class CloudprojectbillingvouchersCtrl {
   openAddCredit() {
     this.$uibModal.open({
       windowTopClass: 'cui-modal',
-      templateUrl: 'app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit.html',
+      templateUrl: 'app/cloud/project/billing/vouchers/legacy/addCredit/cloud-project-billing-vouchers-add-credit.html',
       controller: 'CloudProjectBillingVouchersAddcreditCtrl',
       controllerAs: 'CloudProjectBillingVouchersAddcreditCtrl',
     }).result.then((amount) => {

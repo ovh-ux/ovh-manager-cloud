@@ -46,7 +46,7 @@ class CloudProjectComputeInfrastructureService {
     if (this.TARGET === 'US') {
       return this.$uibModal.open({
         windowTopClass: 'cui-modal',
-        templateUrl: 'app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit-agora.html',
+        templateUrl: 'app/cloud/project/billing/vouchers/agora/addCredit/cloud-project-billing-vouchers-add-credit-agora.html',
         controller: 'CloudProjectBillingVouchersAddcreditAgoraCtrl',
         controllerAs: '$ctrl',
       }).result;
