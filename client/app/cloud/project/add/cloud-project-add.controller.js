@@ -52,6 +52,11 @@ angular.module('managerApp').controller('CloudProjectAddCtrl',
      * Launch project creation process
      */
     this.createProject = function () {
+      atInternet.trackClick({
+        name: 'pci-project_new-project-create',
+        type: 'action',
+      });
+
       let promiseContracts = true;
       const queue = [];
       self.loaders.creating = true;
