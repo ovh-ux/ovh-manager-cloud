@@ -388,7 +388,7 @@ angular.module('managerApp')
               currentCategory.flavors = _.filter(
                 category.flavors,
                 (flavor) => {
-                  const isRestricted = _.indexOf(restrictedFlavors, flavor.shortType) > -1;
+                  const isRestricted = _.includes(restrictedFlavors, flavor.shortType);
                   if (!selectedFlavourInFilterList
                     && isRestricted
                     && selectedFlavour.id === flavor.id) {
@@ -1479,7 +1479,7 @@ angular.module('managerApp')
           return true;
         }
         const flavorType = _.get(self.vmInEdition, 'flavor.shortType', null);
-        return _.indexOf(flavorTypes, flavorType) !== -1;
+        return _.includes(flavorTypes, flavorType);
       };
 
       self.getRealFlavor = function getRealFlavor(flavor, category) {
