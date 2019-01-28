@@ -10,7 +10,7 @@
  "veeam_update_offer_post_success": "Il buono d'ordine <a href=\"{{orderUrl}}\" target=\"_blank\">{{orderId}}</a> è stato creato correttamente.",
  "veeam_update_offer_post_error": "Errore durante la creazione del buono d'ordine.",
  "veeam_add_repository_pending": "Creazione dello spazio di storage in corso...",
- "veeam_add_repository_error": "Errore durante la creazione del tuo spazio di storage.",
+ "veeam_add_repository_error": "Errore durante la creazione dello spazio di storage.",
  "veeam_add_repository_success": "Il tuo spazio di storage è stato creato.",
  "veeam_infos_subscription_renew_manual_description": "Manuale",
  "veeam_infos_subscription_renew_automatic_description": "Automatico",
@@ -23,9 +23,9 @@
  "veeam_storage_update_quota_error": "Errore durante l'aggiornamento della quota di storage.",
  "veeam_storage_update_quota_success": "L'aggiornamento della quota di storage è stato completato.",
  "veeam_tasks_success": "Le modifiche sono state prese in carico.",
- "veeam_tasks_pending": "Task in corso ",
+ "veeam_tasks_pending": "Operazioni in corso ",
  "veeam_action_upgrade_offer_no_upgrade": "Al momento non è possibile effettuare un upgrade dell'offerta {{offer}}.",
  "veeam_action_add_storage_unavailable_offer": "Sull'offerta {{offer}} non può essere aggiunto spazio di storage.",
- "veeam_action_add_storage_unavailable_storage_number": "Hai raggiunto la quota massima di storage disponibile. Le operazioni di scrittura sono disattivate.",
+ "veeam_action_add_storage_unavailable_storage_number": "Hai raggiunto la quota massima di spazio di storage disponibile. Le operazioni di scrittura sono disattivate.",
  "veeam_action_add_storage_unavailable_usage_percentage": "Per poter aggiungere storage è necessario utilizzare almeno il {{usagePercentage}}% dello spazio disponibile."
 }
