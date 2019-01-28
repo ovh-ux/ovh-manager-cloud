@@ -1,0 +1,34 @@
+<div class="cloud-billing-vouchers">
+
+    <div class="cui-page__content">
+
+        <oui-back-button data-state="^">
+            <span data-translate="cpb_credit_balance_movements_title"
+                  data-translate-values="{ balanceName: $ctrl.balanceName }">
+            </span>
+        </oui-back-button>
+
+        <oui-datagrid data-rows="$ctrl.movements"
+                      data-row-loader="$ctrl.getMovement($row)">
+            <oui-column data-title=":: 'cpb_credit_balance_movements_header_date' | translate" data-property="creationDate" data-type="date" data-sortable>
+                    <span data-ng-bind="$row.creationDate | date:'mediumDate'"></span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_amount' | translate" data-property="amount.text"></oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_expiration_date' | translate" data-property="expirationDate">
+                <span data-ng-bind="$row.expirationDate ? ($row.expirationDate | date:'mediumDate') : '-'"></span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_movements_header_operation' | translate" data-property="amount.value">
+                <span data-ng-if="$row.amount.value >= 0"
+                      data-translate="cpb_credit_balance_movements_operation_credit">
+                </span>
+                <span data-ng-if="$row.amount.value < 0"
+                      data-translate="cpb_credit_balance_movements_operation_debit">
+                </span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_order' | translate" data-property="orderId">
+                <span data-ng-bind="$row.orderId || '-'"></span>
+            </oui-column>
+        </oui-datagrid>
+    </div>
+
+</div>

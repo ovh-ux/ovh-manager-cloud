@@ -1,0 +1,30 @@
+<div class="cloud-billing-vouchers">
+    <div class="cui-page__content">
+        <p>
+            <span data-translate="cpb_credit_explain_new"></span>
+            <span data-translate="cpb_credit_explain"></span>
+            <span data-translate="cpb_credit_transfered"></span>
+        </p>
+        <oui-datagrid data-rows="$ctrl.balances"
+                      data-row-loader="$ctrl.getBalance($row)"
+                      data-empty-placeholder="{{:: 'cpb_credits_none' | translate }}">
+            <oui-column data-title=":: 'cpb_credit_balance_header_name' | translate" data-property="balanceName" data-sortable="asc"></oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_creation_date' | translate" data-property="creationDate">
+                <span data-ng-bind="$row.creationDate | date:'mediumDate'"></span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_last_update_date' | translate" data-property="lastUpdate">
+                <span data-ng-bind="$row.lastUpdate | date:'mediumDate'"></span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_amount' | translate" data-property="amount.text"></oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_expiration_date' | translate" data-property="closestExpiringDetails.expirationDate">
+                <span data-ng-bind="$row.closestExpiringDetails.expirationDate | date:'mediumDate'"></span>
+            </oui-column>
+            <oui-column data-title=":: 'cpb_credit_balance_header_expiration_amount' | translate" data-property="closestExpiringDetails.amount.text"></oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-href="{{:: $ctrl.$state.href('iaas.pci-project.billing.vouchers.agora.operations', { balanceName: $row.balanceName }) }}">
+                    <span data-translate="cpb_credit_balance_see_movements"></span>
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
+    </div>
+</div>
