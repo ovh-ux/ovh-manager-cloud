@@ -1,19 +1,19 @@
 angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgoraCtrl', class CloudProjectBillingVouchersAddcreditAgoraCtrl {
-  constructor($http, $q, $translate, $uibModalInstance, $window, CloudMessage) {
+  constructor($http, $q, $translate, $uibModalInstance, $window,
+    CloudMessage,
+    CLOUD_PROJECT_CREDIT_ORDER) {
     this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.$window = $window;
     this.CloudMessage = CloudMessage;
-    this.orderLimits = {
-      min: 1,
-      max: 20000000,
-    };
+    this.CLOUD_PROJECT_CREDIT_ORDER = CLOUD_PROJECT_CREDIT_ORDER;
   }
 
   $onInit() {
-    this.amount = 10;
+    this.orderLimits = this.CLOUD_PROJECT_CREDIT_ORDER.orderLimits;
+    this.amount = this.CLOUD_PROJECT_CREDIT_ORDER.defaultAmount;
     this.loading = true;
     return this.$http.get('/order/catalog/formatted/cloud', {
       serviceType: 'apiv6',
