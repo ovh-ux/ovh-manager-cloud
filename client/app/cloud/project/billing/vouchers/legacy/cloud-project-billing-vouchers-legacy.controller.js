@@ -1,14 +1,23 @@
 class CloudprojectbillingvouchersCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, $uibModal, OvhApiMeBill,
-    ControllerHelper, CloudVouchersService, ServiceHelper, OvhApiOrderCloudProjectCredit) {
+  constructor(
+    $q,
+    $stateParams,
+    $translate,
+    $uibModal,
+    CloudMessage,
+    ControllerHelper,
+    OvhApiOrderCloudProjectCredit,
+    ServiceHelper,
+  ) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CloudMessage = CloudMessage;
     this.$uibModal = $uibModal;
-    this.OvhApiMeBill = OvhApiMeBill;
+    this.CloudMessage = CloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.CloudVouchersService = CloudVouchersService;
+    this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
     this.ServiceHelper = ServiceHelper;
     this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
 
