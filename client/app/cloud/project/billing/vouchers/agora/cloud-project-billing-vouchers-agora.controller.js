@@ -37,4 +37,13 @@ angular.module('managerApp')
             : this.CloudVouchersAgoraService.constructor.getClosestExpiringDetails(balance),
         }));
     }
+
+    addCredit() {
+      return this.$uibModal.open({
+        windowTopClass: 'cui-modal',
+        templateUrl: 'app/cloud/project/billing/vouchers/agora/addCredit/cloud-project-billing-vouchers-add-credit-agora.html',
+        controller: 'CloudProjectBillingVouchersAddcreditAgoraCtrl',
+        controllerAs: '$ctrl',
+      });
+    }
   });
