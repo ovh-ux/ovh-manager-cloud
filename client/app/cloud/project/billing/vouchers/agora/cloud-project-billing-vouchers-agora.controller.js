@@ -1,14 +1,24 @@
 angular.module('managerApp')
   .controller('CloudProjectBillingVouchersCtrl', class {
   /* @ngInject */
-    constructor($state, $translate, $uibModal,
-      CloudMessage, CloudVouchersAgoraService, ControllerHelper) {
+    constructor(
+      $state,
+      $stateParams,
+      $translate,
+      $uibModal,
+      CloudMessage,
+      CloudVouchersAgoraService,
+      ControllerHelper,
+      isProjectUsingAgora,
+    ) {
       this.$state = $state;
+      this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.$uibModal = $uibModal;
       this.CloudMessage = CloudMessage;
       this.CloudVouchersAgoraService = CloudVouchersAgoraService;
       this.ControllerHelper = ControllerHelper;
+      this.isProjectUsingAgora = isProjectUsingAgora;
     }
 
     $onInit() {
@@ -45,5 +55,18 @@ angular.module('managerApp')
         controller: 'CloudProjectBillingVouchersAddcreditAgoraCtrl',
         controllerAs: '$ctrl',
       });
+    }
+
+    addVoucher() {
+      return this.$uibModal.open({
+        windowTopClass: 'cui-modal',
+        templateUrl: 'app/cloud/project/billing/vouchers/addVoucher/cloud-project-billing-vouchers-add.html',
+        controller: 'CloudProjectBillingVoucherAddCtrl',
+        controllerAs: '$ctrl',
+        resolve: {
+          serviceName: () => this.$stateParams.projectId,
+          isProjectUsingAgora: this.isProjectUsingAgora,
+        },
+      }).result.then(() => this.$onInit());
     }
   });

@@ -5,21 +5,22 @@ class CloudprojectbillingvouchersCtrl {
     $translate,
     $uibModal,
     CloudMessage,
+    CloudVouchersService,
     ControllerHelper,
+    isProjectUsingAgora,
     OvhApiOrderCloudProjectCredit,
     ServiceHelper,
   ) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
     this.$uibModal = $uibModal;
     this.CloudMessage = CloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.CloudVouchersService = CloudVouchersService;
+    this.isProjectUsingAgora = isProjectUsingAgora;
     this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
     this.ServiceHelper = ServiceHelper;
-    this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
 
     this.vouchers = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudVouchersService.getVouchers($stateParams.projectId),
@@ -36,11 +37,12 @@ class CloudprojectbillingvouchersCtrl {
   openAddVoucher() {
     this.$uibModal.open({
       windowTopClass: 'cui-modal',
-      templateUrl: 'app/cloud/project/billing/vouchers/legacy/addVoucher/cloud-project-billing-vouchers-add.html',
+      templateUrl: 'app/cloud/project/billing/vouchers/addVoucher/cloud-project-billing-vouchers-add.html',
       controller: 'CloudProjectBillingVoucherAddCtrl',
       controllerAs: '$ctrl',
       resolve: {
         serviceName: () => this.$stateParams.projectId,
+        isProjectUsingAgora: this.isProjectUsingAgora,
       },
     }).result.then(() => this.$onInit());
   }

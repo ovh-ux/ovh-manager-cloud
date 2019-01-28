@@ -22,5 +22,11 @@
   "cpb_credit_balance_see_movements": "Voir les mouvements",
   "cpb_credit_explain_new": "Nous mettons en place un nouveau système de crédits.",
   "cpb_credit_explain": "Ceux-ci seront désormais associés à votre compte client et utilisables sur les projets cloud déjà migrés.",
-  "cpb_credit_transfered": "Vos crédits existants ont été transférés sur votre nouveau compte de crédit."
+  "cpb_credit_transfered": "Vos crédits existants ont été transférés sur votre nouveau compte de crédit.",
+  "cpb_vouchers_your_voucher": "Votre voucher",
+  "cpb_vouchers_your_voucher_add": "Ajouter mon voucher",
+  "cpb_vouchers_add_success": "Le voucher a été ajouté avec succès.",
+  "cpb_vouchers_add_error": "Oups, nous n'arrivons pas a ajouter ce voucher. Veuillez réessayer.",
+  "cpb_vouchers_add_error_no_longer_valid_or_already_used": "Ce voucher n'est plus valide ou a déjà été utilisé.",
+  "cpb_vouchers_add_error_not_found": "Ce voucher n'est pas valide."
 }
