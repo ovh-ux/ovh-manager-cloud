@@ -110,6 +110,23 @@ angular.module('managerApp')
       SN: 'https://www.ovh.sn/support/',
       TN: 'https://www.ovh.com/tn/support/',
     },
+    order: {
+      CZ: 'https://www.ovh.cz/order/express/#/express/',
+      DE: 'https://www.ovh.de/order/express/#/express/',
+      ES: 'https://www.ovh.es/order/express/#/express/',
+      FI: 'https://www.ovh-hosting.fi/order/express/#/express/',
+      FR: 'https://www.ovh.com/fr/order/express/#/express/',
+      GB: 'https://www.ovh.co.uk/order/express/#/express/',
+      IE: 'https://www.ovh.ie/order/express/#/express/',
+      IT: 'https://www.ovh.it/order/express/#/express/',
+      LT: 'https://www.ovh.lt/order/express/#/express/',
+      MA: 'https://www.ovh.ma/order/express/#/express/',
+      NL: 'https://www.ovh.nl/order/express/#/express/',
+      PL: 'https://www.ovh.pl/order/express/#/express/',
+      PT: 'https://www.ovh.pt/order/express/#/express/',
+      SN: 'https://www.ovh.sn/order/express/#/express/',
+      TN: 'https://www.ovh.com/tn/order/express/#/express/',
+    },
     website_order: {
       vps: {
         CZ: 'https://www.ovh.cz/vps/',

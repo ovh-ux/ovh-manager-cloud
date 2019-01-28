@@ -63,6 +63,9 @@ angular.module('managerApp')
     support_contact: {
       US: 'https://us.ovhcloud.com/support/',
     },
+    order: {
+      US: 'https://us.ovhcloud.com/order/express/#/express/',
+    },
     website_order: {
       'cloud-resell-eu': {
         US: projectName => `https://us.ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`,

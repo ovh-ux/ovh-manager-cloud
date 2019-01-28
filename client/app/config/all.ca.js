@@ -77,6 +77,15 @@ angular.module('managerApp')
       WE: 'https://www.ovh.com/ca/en/support/',
       WS: 'https://www.ovh.com/ca/en/support/',
     },
+    order: {
+      ASIA: 'https://ca.ovh.com/asia/order/express/#/express/',
+      AU: 'https://ca.ovh.com/au/order/express/#/express/',
+      CA: 'https://ca.ovh.com/en/order/express/#/express/',
+      QC: 'https://ca.ovh.com/fr/order/express/#/express/',
+      SG: 'https://ca.ovh.com/sg/order/express/#/express/',
+      WE: 'https://us.ovh.com/us/order/express/#/express/',
+      WS: 'https://us.ovh.com/es/order/express/#/express/',
+    },
     website_order: {
       vps: {
         ASIA: 'https://www.ovh.com/asia/vps/',
