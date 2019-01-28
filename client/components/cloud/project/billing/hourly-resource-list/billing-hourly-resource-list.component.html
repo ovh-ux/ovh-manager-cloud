@@ -82,4 +82,20 @@
             <archive-storage-list storages="$ctrl.resources.archiveStorages"></archive-storage-list>
         </uib-accordion-group>
     </uib-accordion>
+    <uib-accordion>
+        <uib-accordion-group data-is-open="$ctrl.toggle.accordions.outgoingTraffic" class="{{ $ctrl.toggle.accordions.outgoingTraffic ? 'active' : ''}}">
+            <uib-accordion-heading>
+                <button type="button" class="cloud-billing-accordion-heading" data-ng-click="$ctrl.toggleAccordion()">
+                    <span class="chevron-right">
+                        <span class="glyphicon pull-left" data-ng-class="{ 'glyphicon-chevron-down': $ctrl.toggle.accordions.outgoingTraffic, 'glyphicon-chevron-right': !$ctrl.toggle.accordions.outgoingTraffic }"></span>
+                    </span>
+                    <span class="cloud-billing-accordion-heading-title" data-translate="cpbc_hourly_instance_trafic_title"></span>
+                    <span class="cloud-billing-accordion-heading-price"
+                        data-ng-bind="$ctrl.resources.totals.hourly.bandwidth.toFixed(2) + ' ' + $ctrl.resources.totals.currencySymbol">
+                    </span>
+                </button>
+            </uib-accordion-heading>
+            <outgoing-trafic data-regions="$ctrl.resources.bandwidthByRegions"></outgoing-trafic>
+        </uib-accordion-group>
+    </uib-accordion>
 </div>

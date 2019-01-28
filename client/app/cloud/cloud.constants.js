@@ -90,6 +90,7 @@ angular.module('managerApp')
     instance: {
       EU: ['SBG1', 'GRA1', 'GRA3', 'GRA5', 'SBG3', 'SBG5', 'WAW1', 'DE1', 'UK1'],
       CA: ['BHS1', 'BHS3'],
+      APAC: ['SYD1', 'SGP1'],
     },
     user: {
       EU: ['CZ', 'DE', 'ES', 'EU', 'FI', 'FR', 'GB', 'IE', 'IT', 'LT', 'MA', 'NL', 'PL', 'PT', 'SN', 'TN'],
