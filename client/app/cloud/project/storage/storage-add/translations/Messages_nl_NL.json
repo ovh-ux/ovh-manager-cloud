@@ -59,7 +59,7 @@
  "add_instance_created": "De virtual server (instance) {{t0}} is aangemaakt",
  "add_container_selected_publicKey_create": "Naam van de SSH-key",
  "add_key_success": "SSH-key toegevoegd",
- "add_ok": "OK",
+ "add_ok": "‘OK’",
  "add_storage_storage_added": "Storage aangemaakt",
  "add_storage_storage_added_error": "Er is een fout opgetreden tijdens het aanmaken van de container.",
  "add_form_error_ssh_key_already_exist": "Een SSH-key bestaat al met die naam",
