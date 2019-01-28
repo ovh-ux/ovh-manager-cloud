@@ -1,14 +1,14 @@
 angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgoraCtrl', class CloudProjectBillingVouchersAddcreditAgoraCtrl {
   /* @ngInject */
-  constructor($http, $q, $translate, $uibModalInstance, $window,
-    CloudMessage, OvhApiMe,
+  constructor($q, $translate, $uibModalInstance, $window,
+    CloudMessage, CloudVouchersAgoraService, OvhApiMe,
     CLOUD_PROJECT_CREDIT_ORDER, URLS) {
-    this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.$window = $window;
     this.CloudMessage = CloudMessage;
+    this.CloudVouchersAgoraService = CloudVouchersAgoraService;
     this.OvhApiMe = OvhApiMe;
     this.CLOUD_PROJECT_CREDIT_ORDER = CLOUD_PROJECT_CREDIT_ORDER;
     this.URLS = URLS;
@@ -21,23 +21,15 @@ angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgo
     return this.OvhApiMe.v6().get().$promise
       .then(({ ovhSubsidiary }) => {
         this.subsidiary = ovhSubsidiary;
-        return this.$http.get('/order/catalog/formatted/cloud', {
-          serviceType: 'apiv6',
-          params: {
-            ovhSubsidiary,
-          },
-        });
+        return this.CloudVouchersAgoraService.getCloudCatalog(ovhSubsidiary);
       })
-      .then((result) => {
-        this.price = _.chain(result)
-          .get('data.plans')
-          .filter(p => p.planCode === 'credit' && p.pricingType === 'purchase')
-          .head()
-          .get('details.pricings.default')
-          .filter(p => p.capacities.indexOf('installation') >= 0)
-          .head()
-          .get('price')
-          .value();
+      .then(({ plans }) => {
+        const defaultCreditPrices = _.get(
+          plans.find(plan => plan.planCode === 'credit' && plan.pricingType === 'purchase'),
+          'details.pricings.default',
+        );
+        this.creditPrice = _.get(defaultCreditPrices.find(({ capacities }) => capacities.includes('installation')), 'price');
+        return this.creditPrice;
       }).catch((err) => {
         this.CloudMessage.error([this.$translate.instant('cpb_vouchers_add_credit_load_err'), _.get(err, 'data.message', '')].join(' '));
         this.$uibModalInstance.dismiss();
@@ -52,7 +44,7 @@ angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgo
       planCode: 'credit',
       productId: 'cloud',
       pricingMode: 'default',
-      quantity: Math.floor(this.amount / this.price.value),
+      quantity: Math.floor(this.amount / this.creditPrice.value),
       configuration: [{
         label: 'type',
         value: 'public_cloud',
