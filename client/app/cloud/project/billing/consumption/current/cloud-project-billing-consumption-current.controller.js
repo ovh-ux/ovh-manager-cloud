@@ -1,11 +1,17 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCtrl',
   class {
     /* @ngInject */
-    constructor($q, $translate, $stateParams, CucCloudMessage,
-      CloudProjectBillingLegacyService, OvhApiCloudProjectUsageCurrent) {
+    constructor(
+      $q,
+      $stateParams,
+      $translate,
+      CucCloudMessage,
+      CloudProjectBillingLegacyService,
+      OvhApiCloudProjectUsageCurrent,
+    ) {
       this.$q = $q;
-      this.$translate = $translate;
       this.$stateParams = $stateParams;
+      this.$translate = $translate;
       this.CucCloudMessage = CucCloudMessage;
       this.CloudProjectBillingLegacyService = CloudProjectBillingLegacyService;
       this.OvhApiCloudProjectUsageCurrent = OvhApiCloudProjectUsageCurrent;
