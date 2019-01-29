@@ -3,24 +3,25 @@ angular.module('managerApp')
     class {
       /* @ngInject */
       constructor(
+        $q,
         $stateParams,
-        $q, $translate,
-        OvhApiCloudProjectImage,
+        $translate,
         DetailsPopoverService,
+        OvhApiCloudProjectImage,
         OvhApiCloudProjectInstance,
-        Toast,
         OvhApiMe,
         OvhCloudPriceHelper,
+        Toast,
       ) {
-        this.$stateParams = $stateParams;
         this.$q = $q;
+        this.$stateParams = $stateParams;
         this.$translate = $translate;
-        this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
         this.DetailsPopoverService = DetailsPopoverService;
+        this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
         this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
-        this.Toast = Toast;
         this.OvhApiMe = OvhApiMe;
         this.OvhCloudPriceHelper = OvhCloudPriceHelper;
+        this.Toast = Toast;
       }
 
       $onInit() {
