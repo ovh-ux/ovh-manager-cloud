@@ -1,29 +1,33 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCtrl',
-  function CloudProjectBillingConsumptionCurrentCtrl($q, $translate, $stateParams, CucCloudMessage,
-    CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
-    const self = this;
-    self.data = {};
+  class {
+    /* @ngInject */
+    constructor($q, $translate, $stateParams, CucCloudMessage,
+      CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
+      this.$q = $q;
+      this.$translate = $translate;
+      this.$stateParams = $stateParams;
+      this.CucCloudMessage = CucCloudMessage;
+      this.CloudProjectBillingService = CloudProjectBillingService;
+      this.OvhApiCloudProjectUsageCurrent = OvhApiCloudProjectUsageCurrent;
+    }
 
-    function init() {
-      self.loading = true;
-
-      return OvhApiCloudProjectUsageCurrent.v6()
-        .get({ serviceName: $stateParams.projectId }).$promise
-        .then(billingInfo => CloudProjectBillingService.getConsumptionDetails(
+    $onInit() {
+      this.loading = true;
+      return this.OvhApiCloudProjectUsageCurrent.v6()
+        .get({ serviceName: this.$stateParams.projectId }).$promise
+        .then(billingInfo => this.CloudProjectBillingService.getConsumptionDetails(
           billingInfo,
           billingInfo,
         ))
         .then((data) => {
-          self.data = data;
+          this.data = data;
         })
         .catch((err) => {
-          CucCloudMessage.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
-          return $q.reject(err);
+          this.CucCloudMessage.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
+          return this.$q.reject(err);
         })
         .finally(() => {
-          self.loading = false;
+          this.loading = false;
         });
     }
-
-    init();
   });
