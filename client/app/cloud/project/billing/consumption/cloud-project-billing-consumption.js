@@ -10,6 +10,11 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'BillingConsumptionCtrl',
       },
     },
+    resolve: {
+      isProjectUsingAgora: ($transition$, OvhApiCloudProject) => OvhApiCloudProject
+        .v6().get({ serviceName: $transition$.params().projectId }).$promise
+        .then(({ planCode }) => planCode !== 'project.legacy' && planCode !== 'project.2018'),
+    },
     translations: {
       value: ['.'],
       format: 'json',
