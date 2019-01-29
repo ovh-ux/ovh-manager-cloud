@@ -10,7 +10,7 @@
  "cpc_loadbalancer_openstack_status_expired": "Abgelaufen",
  "cpc_loadbalancer_openstack_status_created": "Nicht konfiguriert",
  "cpc_loadbalancer_openstack_status_not_imported": "Nicht konfiguriert",
- "cpc_loadbalancer_status": "Status ",
+ "cpc_loadbalancer_status": "Status",
  "cpc_loadbalancer_actions": "Aktionen",
  "cpc_loadbalancer_actions_configure": "Konfigurieren",
  "cpc_loadbalancer_status_custom": "Erweiterte Konfiguration",
