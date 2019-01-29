@@ -7,7 +7,7 @@ angular.module('managerApp').config(($stateProvider) => {
       cloudProjectBillingConsumption: {
         templateUrl: 'app/cloud/project/billing/consumption/current/cloud-project-billing-consumption-current.html',
         controller: 'CloudProjectBillingConsumptionCurrentCtrl',
-        controllerAs: 'BillingConsumptionCurrentCtrl',
+        controllerAs: '$ctrl',
       },
     },
     translations: {
