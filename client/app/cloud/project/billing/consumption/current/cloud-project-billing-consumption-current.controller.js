@@ -57,12 +57,19 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
     getAgoraConsumption() {
       return this.CloudProjectBillingAgoraService.getProjectServiceInfos(this.serviceName)
         .then(({ serviceId }) => this.$q.all({
+          catalog: this.CloudProjectBillingAgoraService.getCloudCatalog(this.me.ovhSubsidiary),
           serviceConsumption: this.CloudProjectBillingAgoraService
             .getCurrentConsumption(serviceId),
         }))
-        .then(({ serviceConsumption }) => {
+        .then(({ catalog, serviceConsumption }) => {
+          const consumptionGroupByFamily = this.CloudProjectBillingAgoraService.constructor
+            .groupConsumptionByFamily(serviceConsumption.elements, catalog.plans);
           this.consumption = {
-            hourly: serviceConsumption,
+            hourly: {
+              ...this.CloudProjectBillingAgoraService
+                .formatHourlyConsumption(consumptionGroupByFamily, this.me.currency.symbol),
+              price: serviceConsumption.price,
+            },
           };
 
           return serviceConsumption;

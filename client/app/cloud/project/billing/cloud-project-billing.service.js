@@ -17,6 +17,9 @@ angular.module('managerApp')
     self.formatLegacyHourlyConsumption = function (consumption) {
       return {
         price: consumption.totals.hourly.total,
+        instance: {
+          price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
+        },
       };
     };
 

@@ -49,79 +49,9 @@ angular.module('managerApp')
         };
       }
 
-      formatInstanceHourlyConsumption(instanceConsumption, currencySymbol) {
-        if (!instanceConsumption) {
-          return this.constructor.formatEmptyConsumption(currencySymbol);
-        }
-
-        return ({
-          price: this.constructor.getTotalPrice(instanceConsumption, currencySymbol),
-          elements: _.flatten(instanceConsumption.map(
-            ({ details, planCode }) => details
-              .map(detail => ({
-                ...this.constructor.formatInstanceConsumptionMetadatas(detail),
-                type: planCode.replace(this.CLOUD_PROJECT_CONSUMPTION_SUFFIX, ''),
-              })),
-          )),
-        });
-      }
-
-      groupConsumptionByRegion(storageConsumption) {
-        return storageConsumption
-          .reduce((consumptionByRegion, { planCode, details }) => details
-            .reduce((regionsConsumption, { uniqueId, price, quantity }) => ({
-              ...regionsConsumption,
-              [uniqueId]: {
-                ...regionsConsumption[uniqueId],
-                [this.convertStoragePlanCode(planCode)]: {
-                  price,
-                  quantity,
-                },
-              },
-            }), consumptionByRegion), {});
-      }
-
-      convertStoragePlanCode(planCode) {
-        return _.findKey(
-          this.PLANCODE_CONVERSION, consumptionType => consumptionType.test(planCode),
-        );
-      }
-
-      formatStorageConsumption(storageConsumption, currencySymbol) {
-        return ({
-          price: this.constructor.getTotalPrice(storageConsumption, currencySymbol),
-          elements: this.groupConsumptionByRegion(storageConsumption),
-        });
-      }
-
-      static formatEmptyConsumption(currencySymbol) {
-        return ({
-          price: {
-            value: 0,
-            text: `0 ${currencySymbol}`,
-          },
-          elements: [],
-        });
-      }
-
-      static formatInstanceConsumptionMetadatas({ metadatas, price, quantity }) {
-        return {
-          ...metadatas.reduce(
-            (formattedMetadatas, { key, value }) => ({
-              ...formattedMetadatas,
-              [_.camelCase(key)]: value,
-            }),
-            {},
-          ),
-          price,
-          quantity,
-        };
-      }
-
-      getServiceInvoices(serviceId) {
-        return this.OvhApiServicesBillingInvoices.v6().query({
-          serviceId,
-          $expand: 1,
-        }).$promise;
+      formatHourlyConsumption(consumption, currencySymbol) {
+        return _.mapValues(consumption, planConsumption => ({
+          price: this.constructor.getTotalPrice(planConsumption, currencySymbol),
+        }));
       }
     });
