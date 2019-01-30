@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('CloudProjectAddCtrl',
-  function CloudProjectAddCtrl($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS,
+  function CloudProjectAddCtrl($q, $state, $translate, atInternet, Toast, REDIRECT_URLS,
     FeatureAvailabilityService, OvhApiCloud, OvhApiMe, OvhApiVrack, $window,
-    OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
+    OvhApiMePaymentMeanCreditCard, CloudProjectSidebar,
     CloudProjectAdd) {
     const self = this;
 
@@ -52,6 +52,11 @@ angular.module('managerApp').controller('CloudProjectAddCtrl',
      * Launch project creation process
      */
     this.createProject = function () {
+      atInternet.trackClick({
+        name: 'pci-project_new-project-create',
+        type: 'action',
+      });
+
       let promiseContracts = true;
       const queue = [];
       self.loaders.creating = true;
@@ -167,6 +172,14 @@ angular.module('managerApp').controller('CloudProjectAddCtrl',
         canCreate = angular.isDefined(self.data.defaultPaymentMean);
       }
       return canCreate;
+    };
+
+    this.paymentRegister = function () {
+      atInternet.trackClick({
+        name: 'pci-project_payment-means-register',
+        type: 'action',
+      });
+      $window.open(this.paymentmeanUrl, '_blank');
     };
 
     function initUserFidelityAccount() {

@@ -83,6 +83,7 @@
   "cpcivm_add_step3_network_none": "Aucun",
   "cpcivm_add_step3_flavor_prices_ERROR": "Impossible de récupérer les prix des offres disponibles : {{message}}",
   "cpcivm_add_step3_flavors_ERROR": "Impossible de récupérer la liste des offres disponibles : {{message}}",
+  "cpcivm_add_step3_hide_unavailable": "Masquer les options non disponibles",
   "cpcivm_add_step4_title": "Configurer votre instance",
   "cpcivm_add_step5_title": "Sélectionnez une période de facturation",
   "cpcivm_add_step5_message": "Le forfait mensuel est facturé dès le démarrage de l'instance et permet d'économiser 50% sur le prix des serveurs. Pour une utilisation sur de courtes périodes, il est recommandé de choisir la facturation à l'heure et de basculer au forfait mensuel par la suite.",

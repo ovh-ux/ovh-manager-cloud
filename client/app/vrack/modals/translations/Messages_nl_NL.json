@@ -1,6 +1,6 @@
 {
  "private_network_activate": "Activeren",
- "private_network_activate_new_vRack_description": "U wordt doorgestuurd naar de bestelling, zodat u de nieuwe vRack kunt inschakelen. U kunt het vervolgens aan uw diensten koppelen. De configuratie wordt binnen enkele seconden actief.",
+ "private_network_activate_new_vRack_description": "Een nieuwe vRack activeren en aansluiten op uw project.",
  "private_network_activate_title": "Privénetwerken inschakelen",
  "private_network_activate_existing": "Bestaand",
  "private_network_activate_new": "Nieuw",

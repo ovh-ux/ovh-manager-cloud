@@ -7,7 +7,7 @@
                        data-loading="$ctrl.loaders.step1"
                        data-navigation="!$ctrl.addingSshKey"
                        data-on-focus="$ctrl.resetStep1()"
-                       data-on-submit="$ctrl.submitted.step1 = true"
+                       data-on-submit="$ctrl.submitStep('step1', 'pci-project_vmadd_os')"
                        data-valid="$ctrl.isStep1Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step1">
                 <uib-tab index="$index" heading="{{ 'cpcivm_add_step1_tab_os_' + imageType | translate }}"
@@ -164,7 +164,7 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step2_title' | translate }}"
                        data-loading="$ctrl.loaders.step2"
                        data-on-focus="$ctrl.initRegionsAndDataCenters()"
-                       data-on-submit="$ctrl.submitted.step2 = true"
+                       data-on-submit="$ctrl.submitStep('step2', 'pci-project_vmadd_dc')"
                        data-valid="$ctrl.isStep2Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step2">
                 <uib-tab index="0" heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
@@ -189,7 +189,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
@@ -220,7 +220,7 @@
                                                 data-on-click="$ctrl.updateSshKeyRegion()"
                                                 data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
                                     </oui-button>
-                                    <span data-translate="'cpcivm_add_step2_disabled_' + region.disabled"
+                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
                                           data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
                                     </span>
                                 </span>
@@ -249,14 +249,16 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step3_title' | translate }}"
                        data-loading="$ctrl.loaders.step3"
                        data-on-focus="$ctrl.initInstances()"
-                       data-on-submit="$ctrl.submitted.step3 = true"
+                       data-on-submit="$ctrl.submitStep('step3', 'pci-project_vmadd_instance-select')"
                        data-valid="$ctrl.isStep3Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step3">
                 <uib-tab data-ng-repeat="group in $ctrl.groupedFlavors track by group.category"
                          index="$index" heading="{{ 'cpcivm_add_step3_category_' + group.category | translate }}">
                     <p class="my-4"
                        data-ng-bind=":: 'cpcivm_add_step3_category_definition_' + group.category | translate"></p>
-
+                    <oui-checkbox data-model="$ctrl.hideUnavailableOptions">
+                        <span data-translate="cpcivm_add_step3_hide_unavailable"></span>
+                    </oui-checkbox>
                     <oui-radio-group data-model="$ctrl.model.flavor"
                                      data-name="flavor">
                         <div class="cui-grid-list">
@@ -264,6 +266,7 @@
                                  data-ng-repeat="flavor in group.flavors track by flavor.id">
                                  <oui-radio data-id="flavor_{{ flavor.id }}"
                                             data-disabled="flavor.disabled"
+                                            data-ng-if="!(flavor.disabled && $ctrl.hideUnavailableOptions)"
                                             data-thumbnail
                                             data-variant="light"
                                             data-value="flavor">
@@ -384,7 +387,7 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step4_title' | translate }}"
                        data-loading="$ctrl.loaders.step4 || $ctrl.loaders.privateNetworks"
                        data-on-focus="$ctrl.initInstanceConfiguration()"
-                       data-on-submit="$ctrl.submitted.step4 = true"
+                       data-on-submit="$ctrl.submitStep('step4', 'pci-project_vmadd_instance-configure')"
                        data-valid="$ctrl.submitted.step3 && $ctrl.isStep4Valid()">
             <oui-field data-label="{{ 'cpcivm_add_step3_quantity_label' | translate }}"
                        data-label-popover="{{ 'cpcivm_add_step3_quantity_info' | translate }}">
@@ -461,7 +464,7 @@
                        data-navigation="$ctrl.model.billingPeriod && !$ctrl.loaders.adding"
                        data-on-cancel="$ctrl.cancel()"
                        data-on-focus="$ctrl.initBillingPeriod()"
-                       data-on-submit="$ctrl.submitted.step5 = true"
+                       data-on-submit="$ctrl.submitStep('step5', 'pci-project_vmadd_launch')"
                        data-submit-text="{{ 'cpcivm_add_button_completed_text' | translate }}"
                        data-valid="$ctrl.isStep5Valid()">
             <p data-translate="cpcivm_add_step5_message"></p>

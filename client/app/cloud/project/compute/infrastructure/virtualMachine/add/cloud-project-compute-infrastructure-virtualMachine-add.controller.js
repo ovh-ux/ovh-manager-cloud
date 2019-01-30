@@ -1,5 +1,5 @@
 class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
-  constructor($q, $state, $stateParams,
+  constructor($q, $state, $stateParams, atInternet,
     CloudFlavorService, CloudImageService, CloudProjectVirtualMachineAddService, CloudRegionService,
     OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
@@ -9,6 +9,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
+    this.atInternet = atInternet;
     this.CloudFlavorService = CloudFlavorService;
     this.CloudImageService = CloudImageService;
     this.OvhCloudPriceHelper = OvhCloudPriceHelper;
@@ -480,6 +481,14 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
         this.submitted.step4 = false;
         this.loaders.adding = false;
       });
+  }
+
+  submitStep(step, tag) {
+    this.submitted[step] = true;
+    this.atInternet.trackClick({
+      name: tag,
+      type: 'action',
+    });
   }
 }
 

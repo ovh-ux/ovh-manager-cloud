@@ -1,18 +1,37 @@
 class IpLoadBalancerConfigurationCtrl {
-  constructor($q, $scope, $stateParams, CloudMessage, CloudPoll, ControllerHelper,
-    IpLoadBalancerConfigurationService, ServiceHelper) {
+  constructor(
+    $q,
+    $scope,
+    $stateParams,
+    $translate,
+    CloudMessage,
+    CloudPoll,
+    ControllerHelper,
+    IpLoadBalancerConfigurationService,
+    ServiceHelper,
+  ) {
     this.$q = $q;
     this.$scope = $scope;
     this.$stateParams = $stateParams;
+    this.$translate = $translate;
+
     this.CloudMessage = CloudMessage;
     this.CloudPoll = CloudPoll;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.ServiceHelper = ServiceHelper;
+  }
+
+  $onInit() {
+    this.$scope.$on('$destroy', () => this.stopTaskPolling());
+    this.applications = {};
 
     this.initLoaders();
 
-    this.$scope.$on('$destroy', () => this.stopTaskPolling());
+    this.zones.load()
+      .then(() => {
+        this.startPolling();
+      });
   }
 
   initLoaders() {
@@ -22,46 +41,78 @@ class IpLoadBalancerConfigurationCtrl {
     });
   }
 
-  $onInit() {
-    this.zones.load()
-      .then(() => {
-        this.startPolling();
-      });
-
-    this.selectedZones = [];
-  }
-
-  onSelectionChange(selection) {
-    this.selectedZones = selection;
-  }
-
   applyChanges(zone) {
+    this.zones.loading = true;
     let promise = this.$q.resolve([]);
-    if (zone) {
-      promise = this.IpLoadBalancerConfigurationService
-        .refresh(this.$stateParams.serviceName, zone);
-    } else if (this.selectedZones.length === this.zones.length) {
+
+    const zoneData = _.has(this.zones, 'data') ? this.zones.data : this.zones;
+
+    const targets = _.isArray(zone)
+      ? zone
+      : [this.zones.data.find(({ id }) => id === zone)];
+
+    const targetsThatCantBeChanged = targets.filter(target => _.has(target, 'task.status') && _.get(target, 'task.status') !== 'done');
+
+    if (!_.isEmpty(targetsThatCantBeChanged)) {
+      const messageToDisplay = targetsThatCantBeChanged.length !== targets.length
+        ? `${this.$translate.instant(
+          'iplb_configuration_excludedZones_some',
+          {
+            datacenters: targetsThatCantBeChanged.map(target => target.name).join(','),
+          },
+        )} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`
+        : `${this.$translate.instant('iplb_configuration_excludedZones_all')} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`;
+
+      this.CloudMessage.success(messageToDisplay);
+    }
+
+    const targetsToApplyChangesTo = targets.filter(target => !_.has(target, 'task.status') || target.task.status === 'done');
+
+    if (targetsToApplyChangesTo.length === zoneData.length) {
       // All selected, just call the API with no zone.
       promise = this.IpLoadBalancerConfigurationService
         .refresh(this.$stateParams.serviceName, null);
-    } else if (this.selectedZones.length) {
+    } else if (targetsToApplyChangesTo.length) {
       promise = this.IpLoadBalancerConfigurationService
-        .batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, 'id'));
+        .batchRefresh(this.$stateParams.serviceName, _.map(targetsToApplyChangesTo, 'id'));
     }
 
-    promise.then(() => {
-      this.startPolling();
-      if (this.poller) {
-        this.poller.$promise.then(() => {
+    promise
+      .then(() => {
+        this.zones.data
+          .filter(currentZone => targetsToApplyChangesTo
+            .find(({ name }) => name === currentZone.name))
+          .forEach((target) => {
+            this.applications[target.id] = true;
+
+            if (!_.has(target, 'task')) {
+              Object.assign(target, { task: {} });
+            }
+
+            Object.assign(
+              target.task,
+              {
+                progress: 0,
+                status: 'todo',
+              },
+            );
+          });
+
+        this.startPolling();
+        if (this.poller) {
+          this.poller.$promise.then(() => {
           // check if at least one change remains
-          if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
-            this.CloudMessage.flushChildMessage();
-          } else {
-            this.CloudMessage.flushMessages();
-          }
-        });
-      }
-    });
+            if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
+              this.CloudMessage.flushChildMessage();
+            } else {
+              this.CloudMessage.flushMessages();
+            }
+          });
+        }
+      })
+      .finally(() => {
+        this.zones.loading = false;
+      });
 
     return promise;
   }
@@ -82,24 +133,8 @@ class IpLoadBalancerConfigurationCtrl {
       this.poller.kill();
     }
   }
-
-  static statusTemplate() {
-    return `
-      <span data-ng-if="$row.changes === 0" class="oui-status oui-status_success" data-translate="iplb_configuration_changes_0"></span>
-      <span data-ng-if="$row.changes === 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_1"></span>
-      <span data-ng-if="$row.changes > 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_count" data-translate-values="{ count: $row.changes }"></span>
-    `;
-  }
-
-  static actionTemplate() {
-    return `
-      <oui-action-menu data-align="end" data-compact>
-        <oui-action-menu-item
-          data-text="{{'iplb_configuration_action_apply' | translate}}"
-          data-on-click="ctrl.applyChanges($row.id)">
-        </oui-action-menu-item>
-      </oui-action-menu>`;
-  }
 }
 
-angular.module('managerApp').controller('IpLoadBalancerConfigurationCtrl', IpLoadBalancerConfigurationCtrl);
+angular
+  .module('managerApp')
+  .controller('IpLoadBalancerConfigurationCtrl', IpLoadBalancerConfigurationCtrl);

@@ -7,7 +7,7 @@
   "veeam_tiles_configuration_label_offer": "Offre",
   "veeam_tiles_configuration_label_stockage_number": "Nombre d'espaces de stockage",
   "veeam_tiles_configuration_label_vm_count": "Nombre de VM",
-  "veeam_tiles_configuration_label_datacenter": "Datacentre",
+  "veeam_tiles_configuration_label_datacenter": "Datacenter",
   "veeam_tiles_subscription_title": "Abonnement",
   "veeam_tiles_subscription_label_renewal_date": "Renouvellement automatique",
   "veeam_tiles_subscription_label_renewal_renew_link": "Gérer",

@@ -24,8 +24,8 @@
  "nasha_order_datacenter_bhs": "Beauharnois",
  "nasha_order_datacenter_sbg": "Strasburgo",
  "nasha_order_datacenter_gra": "Gravelines",
- "nasha_order_datacenter_unavailable": "Grazie all'enorme successo, al momento il servizio non è disponibile nel datacenter {{ region }}. Per ottenere performance simili, è possibile scegliere il datacenter di {{ fallback }}.",
- "nasha_order_validation_error": "Si è verificato un errore durante la conferma del tuo ordine.",
+ "nasha_order_datacenter_unavailable": "Grazie all'enorme successo, al momento il servizio non è disponibile nel datacenter {{ region }}. Per usufruire di performance simili è possibile scegliere il datacenter di {{ fallback }}.",
+ "nasha_order_validation_error": "Si è verificato un errore durante la conferma dell’ordine.",
  "nasha_order_error": "Si è verificato un errore durante il recupero del buono d'ordine.",
  "nasha_order_success": "L'ordine n. <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> del tuo NAS-HA è stato preso in carico correttamente.",
  "nasha_order_bc_price_HT": "Prezzo totale +IVA: <strong>{{priceHT}}</strong>",
@@ -33,6 +33,6 @@
  "nasha_order_guide_title": "Guide",
  "nasha_order_new_window": "Nuova finestra",
  "nasha_order_select_placeholder": "Seleziona...",
- "nasha_order_unavailable_subtitle": "Ce produit est momentanément en rupture de stock",
- "nasha_order_unavailable_explain": "Contactez nos experts Serveurs Dédiés pour de plus amples informations."
+ "nasha_order_unavailable_subtitle": "Questo prodotto al momento non è in stock.",
+ "nasha_order_unavailable_explain": "Contatta il nostro supporto per maggiori informazioni."
 }

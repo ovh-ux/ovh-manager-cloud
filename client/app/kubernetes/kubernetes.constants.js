@@ -7,7 +7,7 @@ angular.module('managerApp')
     kubeconfigFileName: 'kubeconfig',
     loadingStatus: ['INSTALLING', 'DELETING'],
     flavorTypes: ['balanced', 'cpu', 'ram'],
-
+    displayNameMaxLength: 255,
     urls: {
       kubectl: 'https://kubernetes.io/docs/reference/kubectl/overview/',
       kubeconfig: 'https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig',
