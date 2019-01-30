@@ -10,7 +10,7 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.instance.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <instance-list instances="$ctrl.resources.hourlyInstances"
+            <instance-list instances="$ctrl.resources.instance.elements"
                         instance-col-name="'cpbc_hourly_instance_col_name'"
                         instance-col-total="'cpbc_hourly_instance_col_consumption'"
                         instance-col-total-tooltip="'cpbc_hourly_instance_col_consumption_tooltip'"

@@ -96,12 +96,12 @@ angular.module('managerApp')
         const instanceConsumptionDetail = {};
         instanceConsumptionDetail.instanceId = billingDetail.instanceId;
         instanceConsumptionDetail.instanceName = billingDetail.instanceId;
-        instanceConsumptionDetail.total = `${billingDetail.totalPrice.toFixed(2)} ${this.currencySymbol}`;
+        instanceConsumptionDetail.total = billingDetail.price.text;
         instanceConsumptionDetail.region = billingDetail.region;
-        instanceConsumptionDetail.reference = billingDetail.reference;
+        instanceConsumptionDetail.reference = billingDetail.flavorName;
         instanceConsumptionDetail
-          .imageType = this.getImageTypeFromReference(billingDetail.reference);
-        instanceConsumptionDetail.vmType = billingDetail.reference ? billingDetail.reference.replace(this.windowsStringPattern, '').toUpperCase() : '';
+          .imageType = this.getImageTypeFromReference(billingDetail.flavorName);
+        instanceConsumptionDetail.vmType = billingDetail.flavorName ? billingDetail.flavorName.replace(this.windowsStringPattern, '').toUpperCase() : '';
 
         const instance = _.find(this.data.instances, { id: billingDetail.instanceId });
         if (instance) {

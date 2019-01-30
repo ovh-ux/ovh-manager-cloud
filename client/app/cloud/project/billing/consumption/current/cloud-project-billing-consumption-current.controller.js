@@ -32,6 +32,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
           this.data = consumption;
         })
         .catch((err) => {
+          console.log(err);
           this.CucCloudMessage.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
           return this.$q.reject(err);
         })
@@ -61,12 +62,15 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
         .then(({ serviceId }) => this.CloudProjectBillingService
           .getCurrentConsumption(serviceId))
         .then((serviceConsumption) => {
-          const consumptionGroupByFamily = this.CloudProjectBillingService.constructor
+          const { instance } = this.CloudProjectBillingService.constructor
             .groupConsumptionByFamily(serviceConsumption.elements);
           this.consumption = {
             hourly: {
-              ...this.CloudProjectBillingService
-                .formatHourlyConsumption(consumptionGroupByFamily, this.me.currency.symbol),
+              instance: this.CloudProjectBillingService
+                .formatHourlyConsumption(
+                  instance,
+                  this.me.currency.symbol,
+                ),
               price: serviceConsumption.price,
             },
           };
