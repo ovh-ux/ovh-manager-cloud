@@ -6,6 +6,20 @@ angular.module('managerApp')
       return Number((`${Math.round(`${number}e${decimals}`)}e-${decimals}`));
     }
 
+    function formatPrice(value, currencyCode) {
+      return {
+        value,
+        currencyCode,
+        text: `${roundNumber(value, 2)} ${currencyCode}`,
+      };
+    }
+
+    self.formatLegacyHourlyConsumption = function (consumption) {
+      return {
+        price: consumption.totals.hourly.total,
+      };
+    };
+
     function initHourlyInstanceList() {
       if (!_.get(self.data, 'hourlyBilling') || !_.get(self.data, 'hourlyBilling.hourlyUsage')) {
         return;
@@ -14,8 +28,8 @@ angular.module('managerApp')
         _.get(self.data, 'hourlyBilling.hourlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
-          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
-          return _.extend(newDetail, { reference: instance.reference, region: instance.region });
+          newDetail.price = formatPrice(newDetail.totalPrice, self.data.totals.currencySymbol);
+          return _.extend(newDetail, { flavorName: instance.reference, region: instance.region });
         }),
       ));
       self.data.hourlyInstances = hourlyInstances;
@@ -35,8 +49,8 @@ angular.module('managerApp')
         _.get(self.data, 'monthlyBilling.monthlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
-          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
-          return _.extend(newDetail, { reference: instance.reference, region: instance.region });
+          newDetail.price = formatPrice(newDetail.totalPrice, self.data.totals.currencySymbol);
+          return _.extend(newDetail, { flavorName: instance.reference, region: instance.region });
         }),
       ));
 
@@ -172,8 +186,7 @@ angular.module('managerApp')
               initInstanceBandwidth(),
             ])
             .then(() => {
-              self.data.totals.monthly.total = roundNumber(self.data.totals.monthly.instance, 2);
-              self.data.totals.hourly.total = roundNumber(
+              const hourlyTotal = roundNumber(
                 self.data.totals.hourly.instance
                 + self.data.totals.hourly.snapshot
                 + self.data.totals.hourly.objectStorage
@@ -182,10 +195,16 @@ angular.module('managerApp')
                 + self.data.totals.hourly.bandwidth,
                 2,
               );
+              self.data.totals.monthly.total = roundNumber(self.data.totals.monthly.instance, 2);
+              self.data.totals.hourly.total = formatPrice(
+                hourlyTotal,
+                self.data.totals.currencySymbol,
+              );
               self.data.totals.total = roundNumber(
-                self.data.totals.monthly.total + self.data.totals.hourly.total,
+                self.data.totals.monthly.total + hourlyTotal,
                 2,
               );
+
               return self.data;
             });
         });

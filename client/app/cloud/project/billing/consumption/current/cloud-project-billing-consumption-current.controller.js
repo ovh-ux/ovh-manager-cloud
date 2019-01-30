@@ -6,27 +6,29 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
       $stateParams,
       $translate,
       CucCloudMessage,
+      CloudProjectBillingAgoraService,
       CloudProjectBillingService,
+      isProjectUsingAgora,
+      me,
       OvhApiCloudProjectUsageCurrent,
     ) {
       this.$q = $q;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CucCloudMessage = CucCloudMessage;
+      this.CloudProjectBillingAgoraService = CloudProjectBillingAgoraService;
       this.CloudProjectBillingService = CloudProjectBillingService;
+      this.isProjectUsingAgora = isProjectUsingAgora;
+      this.me = me;
       this.OvhApiCloudProjectUsageCurrent = OvhApiCloudProjectUsageCurrent;
     }
 
     $onInit() {
+      this.serviceName = this.$stateParams.projectId;
       this.loading = true;
-      return this.OvhApiCloudProjectUsageCurrent.v6()
-        .get({ serviceName: this.$stateParams.projectId }).$promise
-        .then(billingInfo => this.CloudProjectBillingService.getConsumptionDetails(
-          billingInfo,
-          billingInfo,
-        ))
-        .then((data) => {
-          this.data = data;
+      return (this.isProjectUsingAgora ? this.getAgoraConsumption() : this.getLegacyConsumption())
+        .then((consumption) => {
+          this.data = consumption;
         })
         .catch((err) => {
           this.CucCloudMessage.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
@@ -34,6 +36,36 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
         })
         .finally(() => {
           this.loading = false;
+        });
+    }
+
+    getLegacyConsumption() {
+      return this.OvhApiCloudProjectUsageCurrent.v6()
+        .get({ serviceName: this.$stateParams.projectId }).$promise
+        .then(billingInfo => this.CloudProjectBillingService.getConsumptionDetails(
+          billingInfo,
+          billingInfo,
+        ))
+        .then((consumption) => {
+          this.consumption = {
+            hourly: this.CloudProjectBillingService.formatLegacyHourlyConsumption(consumption),
+          };
+          return consumption;
+        });
+    }
+
+    getAgoraConsumption() {
+      return this.CloudProjectBillingAgoraService.getProjectServiceInfos(this.serviceName)
+        .then(({ serviceId }) => this.$q.all({
+          serviceConsumption: this.CloudProjectBillingAgoraService
+            .getCurrentConsumption(serviceId),
+        }))
+        .then(({ serviceConsumption }) => {
+          this.consumption = {
+            hourly: serviceConsumption,
+          };
+
+          return serviceConsumption;
         });
     }
   });
