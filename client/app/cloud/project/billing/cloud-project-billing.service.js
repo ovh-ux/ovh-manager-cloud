@@ -19,6 +19,7 @@ angular.module('managerApp')
         price: consumption.totals.hourly.total,
         instance: {
           price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
+          elements: consumption.hourlyInstances,
         },
       };
     };

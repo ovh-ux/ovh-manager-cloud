@@ -62,12 +62,15 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
             .getCurrentConsumption(serviceId),
         }))
         .then(({ catalog, serviceConsumption }) => {
-          const consumptionGroupByFamily = this.CloudProjectBillingAgoraService.constructor
+          const { instance } = this.CloudProjectBillingAgoraService.constructor
             .groupConsumptionByFamily(serviceConsumption.elements, catalog.plans);
           this.consumption = {
             hourly: {
-              ...this.CloudProjectBillingAgoraService
-                .formatHourlyConsumption(consumptionGroupByFamily, this.me.currency.symbol),
+              instance: this.CloudProjectBillingAgoraService
+                .formatInstanceHourlyConsumption(
+                  instance,
+                  this.me.currency.symbol,
+                ),
               price: serviceConsumption.price,
             },
           };

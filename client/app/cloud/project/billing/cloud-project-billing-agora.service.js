@@ -49,9 +49,40 @@ angular.module('managerApp')
         };
       }
 
-      formatHourlyConsumption(consumption, currencySymbol) {
-        return _.mapValues(consumption, planConsumption => ({
-          price: this.constructor.getTotalPrice(planConsumption, currencySymbol),
-        }));
+      formatInstanceHourlyConsumption(instanceConsumption, currencySymbol) {
+        if (!instanceConsumption) {
+          return this.constructor.formatEmptyConsumption(currencySymbol);
+        }
+
+        return ({
+          price: this.constructor.getTotalPrice(instanceConsumption, currencySymbol),
+          elements: _.flatten(instanceConsumption.map(
+            ({ details }) => details
+              .map(detail => this.constructor.formatInstanceConsumptionMetadatas(detail)),
+          )),
+        });
+      }
+
+      static formatEmptyConsumption(currencySymbol) {
+        return ({
+          price: {
+            value: 0,
+            text: `0 ${currencySymbol}`,
+          },
+          elements: [],
+        });
+      }
+
+      static formatInstanceConsumptionMetadatas({ metadatas, price }) {
+        return {
+          ...metadatas.reduce(
+            (formattedMetadatas, { key, value }) => ({
+              ...formattedMetadatas,
+              [_.camelCase(key)]: value,
+            }),
+            {},
+          ),
+          price,
+        };
       }
     });
