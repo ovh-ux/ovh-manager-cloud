@@ -85,22 +85,24 @@ angular.module('managerApp')
       }
 
       getInstanceConsumptionDetails(billingDetail) {
-        const instanceConsumptionDetail = {};
-        instanceConsumptionDetail.instanceId = billingDetail.instanceId;
-        instanceConsumptionDetail.instanceName = billingDetail.instanceId;
-        instanceConsumptionDetail.total = billingDetail.price.text;
-        instanceConsumptionDetail.region = billingDetail.region;
-        instanceConsumptionDetail.reference = billingDetail.flavorName;
-        instanceConsumptionDetail
-          .imageType = this.getImageTypeFromReference(billingDetail.flavorName);
-        instanceConsumptionDetail.vmType = billingDetail.flavorName ? billingDetail.flavorName.replace(this.windowsStringPattern, '').toUpperCase() : '';
+        const instanceConsumptionDetail = {
+          instanceId: billingDetail.instanceId,
+          instanceName: billingDetail.instanceId,
+          total: billingDetail.price.text,
+          region: billingDetail.region,
+          reference: billingDetail.flavorName,
+          imageType: this.getImageTypeFromReference(billingDetail.flavorName),
+          vmType: billingDetail.flavorName ? billingDetail.flavorName.replace(this.windowsStringPattern, '').toUpperCase() : '',
+        };
 
         const instance = _.find(this.data.instances, { id: billingDetail.instanceId });
         if (instance) {
-          instanceConsumptionDetail.isDeleted = false;
-          instanceConsumptionDetail.instanceName = instance.name;
-          instanceConsumptionDetail.monthlyBilling = instance.monthlyBilling;
-          instanceConsumptionDetail.planCode = instance.planCode;
+          Object.assign(instanceConsumptionDetail, {
+            isDeleted: false,
+            instanceName: instance.name,
+            monthlyBilling: instance.monthlyBilling,
+            planCode: instance.planCode,
+          });
           const imageData = _.find(this.data.images, { id: instance.imageId });
           if (imageData) {
             instanceConsumptionDetail.imageType = imageData.type;
