@@ -2,13 +2,13 @@ angular.module('managerApp')
   .controller('BillingSnapshotListComponentCtrl',
     class {
       /* @ngInject */
-      constructor($q, $translate, $filter, OvhApiMe, Toast, RegionService) {
+      constructor($filter, $q, $translate, OvhApiMe, RegionService, Toast) {
+        this.$filter = $filter;
         this.$q = $q;
         this.$translate = $translate;
-        this.$filter = $filter;
         this.OvhApiMe = OvhApiMe;
-        this.Toast = Toast;
         this.RegionService = RegionService;
+        this.Toast = Toast;
       }
 
       $onInit() {
