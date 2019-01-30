@@ -40,7 +40,6 @@ angular.module('managerApp')
         };
 
         this.DetailsPopoverService = this.DetailsPopoverService;
-        this.currencySymbol = '';
 
         this.instanceToMonthly = null;
 
@@ -48,7 +47,6 @@ angular.module('managerApp')
           .all([
             this.initInstances(),
             this.initImages(),
-            this.initUserCurrency(),
           ])
           .then(() => {
             this.loadConsumptionDetails();
@@ -76,12 +74,6 @@ angular.module('managerApp')
           serviceName: this.$stateParams.projectId,
         }).$promise.then((result) => {
           this.data.images = result;
-        });
-      }
-
-      initUserCurrency() {
-        return this.OvhApiMe.v6().get().$promise.then((me) => {
-          this.currencySymbol = me.currency.symbol;
         });
       }
 
