@@ -7,7 +7,7 @@
                         <i class="glyphicon pull-left" data-ng-class="{ 'glyphicon-chevron-down': $ctrl.toggle.accordions.instance, 'glyphicon-chevron-right': !$ctrl.toggle.accordions.instance }"></i>
                     </span>
                     <span class="cloud-billing-accordion-heading-title" data-translate="cpbc_hourly_instance_detail_title"></span>
-                    <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.instance.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
+                    <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.instance.price.text"></span>
                 </button>
             </uib-accordion-heading>
             <instance-list instances="$ctrl.resources.hourlyInstances"

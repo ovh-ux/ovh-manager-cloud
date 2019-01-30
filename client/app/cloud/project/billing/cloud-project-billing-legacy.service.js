@@ -6,6 +6,23 @@ angular.module('managerApp')
       return Number((`${Math.round(`${number}e${decimals}`)}e-${decimals}`));
     }
 
+    function formatPrice(value, currencyCode) {
+      return {
+        value,
+        currencyCode,
+        text: `${roundNumber(value, 2)} ${currencyCode}`,
+      };
+    }
+
+    self.formatLegacyHourlyConsumption = function (consumption) {
+      return {
+        price: consumption.totals.hourly.total,
+        instance: {
+          price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
+        },
+      };
+    };
+
     function initHourlyInstanceList() {
       if (!_.get(self.data, 'hourlyBilling') || !_.get(self.data, 'hourlyBilling.hourlyUsage')) {
         return;
@@ -14,7 +31,7 @@ angular.module('managerApp')
         _.get(self.data, 'hourlyBilling.hourlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
-          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
+          newDetail.price = formatPrice(newDetail.totalPrice, self.data.totals.currencySymbol);
           return _.extend(newDetail, { reference: instance.reference, region: instance.region });
         }),
       ));
@@ -35,7 +52,7 @@ angular.module('managerApp')
         _.get(self.data, 'monthlyBilling.monthlyUsage.instance'),
         instance => _.map(instance.details, (detail) => {
           const newDetail = _.clone(detail);
-          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
+          newDetail.price = formatPrice(newDetail.totalPrice, self.data.totals.currencySymbol);
           return _.extend(newDetail, { reference: instance.reference, region: instance.region });
         }),
       ));
