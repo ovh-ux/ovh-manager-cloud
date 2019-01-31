@@ -1,65 +1,89 @@
 angular.module('managerApp')
-  .controller('BillingVolumeListComponentCtrl', function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe) {
-    const self = this;
-    self.DetailsPopoverService = DetailsPopoverService;
-    self.volumeConsumptionDetails = [];
-    self.currencySymbol = '';
-    self.loading = false;
-    self.data = {};
+  .controller('BillingVolumeListComponentCtrl',
+    class {
+      /* @ngInject */
+      constructor(
+        $filter,
+        $q,
+        $translate,
+        $stateParams,
+        DetailsPopoverService,
+        OvhApiCloudProjectVolume,
+        Toast,
+        OvhApiMe,
+      ) {
+        this.$filter = $filter;
+        this.$q = $q;
+        this.$translate = $translate;
+        this.$stateParams = $stateParams;
+        this.DetailsPopoverService = DetailsPopoverService;
+        this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
+        this.Toast = Toast;
+        this.OvhApiMe = OvhApiMe;
+      }
 
-    function getVolumesDetails() {
-      return OvhApiCloudProjectVolume.v6().query({
-        serviceName: $stateParams.projectId,
-      }).$promise.then(volumes => volumes);
-    }
+      $onInit() {
+        this.currencySymbol = '';
+        this.volumeConsumptionDetails = [];
+        this.data = {};
+        this.loading = true;
 
-    function updateVolumeConsumptionDetails(allProjectVolumes, volumeConsumptions) {
-      _.forEach(volumeConsumptions, (volumeConsumption) => {
-        const volumeConsumptionDetail = {};
-        volumeConsumptionDetail.totalPrice = `${volumeConsumption.totalPrice.toFixed(2)} ${self.currencySymbol}`;
-        volumeConsumptionDetail.volumeId = volumeConsumption.volumeId;
-        volumeConsumptionDetail.quantity = volumeConsumption.quantity.value;
-        volumeConsumptionDetail.region = volumeConsumption.region;
-        volumeConsumptionDetail.type = volumeConsumption.type;
+        this.initUserCurrency()
+          .then(() => this.initVolumes())
+          .catch((err) => {
+            this.Toast.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
+            this.$q.reject(err);
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+      }
 
-        volumeConsumptionDetail.amount = volumeConsumption.quantity.value;
 
-        const volumeDetail = _.find(allProjectVolumes, x => x.id === volumeConsumption.volumeId);
-        if (volumeDetail) {
-          volumeConsumptionDetail.name = volumeDetail.name;
-          volumeConsumptionDetail.size = volumeDetail.size;
-          volumeConsumptionDetail.status = volumeDetail.status;
-        } else {
-          volumeConsumptionDetail.name = volumeConsumption.volumeId;
-          volumeConsumptionDetail.status = 'deleted';
-        }
+      getVolumesDetails() {
+        return this.OvhApiCloudProjectVolume.v6().query({
+          serviceName: $stateParams.projectId,
+        }).$promise.then(volumes => volumes);
+      }
 
-        self.volumeConsumptionDetails.push(volumeConsumptionDetail);
-      });
-    }
+      updateVolumeConsumptionDetails(allProjectVolumes, volumeConsumptions) {
+        _.forEach(volumeConsumptions, (volumeConsumption) => {
+          const volumeConsumptionDetail = {};
+          volumeConsumptionDetail.totalPrice = `${volumeConsumption.totalPrice.toFixed(2)} ${this.currencySymbol}`;
+          volumeConsumptionDetail.volumeId = volumeConsumption.volumeId;
+          volumeConsumptionDetail.quantity = volumeConsumption.quantity.value;
+          volumeConsumptionDetail.region = volumeConsumption.region;
+          volumeConsumptionDetail.type = volumeConsumption.type;
 
-    function initVolumes() {
-      return getVolumesDetails()
-        .then(allProjectVolumes => updateVolumeConsumptionDetails(allProjectVolumes, self.volumes));
-    }
+          volumeConsumptionDetail.amount = volumeConsumption.quantity.value;
 
-    function initUserCurrency() {
-      return OvhApiMe.v6().get().$promise.then((me) => {
-        self.currencySymbol = me.currency.symbol;
-      });
-    }
+          const volumeDetail = _.find(allProjectVolumes, x => x.id === volumeConsumption.volumeId);
+          if (volumeDetail) {
+            volumeConsumptionDetail.name = volumeDetail.name;
+            volumeConsumptionDetail.size = volumeDetail.size;
+            volumeConsumptionDetail.status = volumeDetail.status;
+          } else {
+            volumeConsumptionDetail.name = volumeConsumption.volumeId;
+            volumeConsumptionDetail.status = 'deleted';
+          }
 
-    self.$onInit = () => {
-      self.loading = true;
-
-      initUserCurrency()
-        .then(() => initVolumes())
-        .catch((err) => {
-          Toast.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
-          $q.reject(err);
-        })
-        .finally(() => {
-          self.loading = false;
+          this.volumeConsumptionDetails.push(volumeConsumptionDetail);
         });
-    };
-  });
+      }
+
+      initVolumes() {
+        return this.getVolumesDetails()
+          .then(
+            allProjectVolumes => this.updateVolumeConsumptionDetails(
+              allProjectVolumes,
+              this.volumes,
+            ),
+          );
+      }
+
+      initUserCurrency() {
+        return this.OvhApiMe.v6().get().$promise.then((me) => {
+          this.currencySymbol = me.currency.symbol;
+        });
+      }
+    });
