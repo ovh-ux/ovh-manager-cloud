@@ -1,3 +1,20 @@
+# [7.14.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.13.0...v7.14.0) (2019-01-31)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([c478456](https://github.com/ovh-ux/ovh-manager-cloud/commit/c478456))
+* **i18n:** add missing translations ([bfd40ea](https://github.com/ovh-ux/ovh-manager-cloud/commit/bfd40ea))
+* **i18n:** add missing translations ([5982831](https://github.com/ovh-ux/ovh-manager-cloud/commit/5982831))
+* **i18n:** add missing translations ([f4d2e08](https://github.com/ovh-ux/ovh-manager-cloud/commit/f4d2e08))
+
+
+### Features
+
+* PCI menu entries revamp ([#1255](https://github.com/ovh-ux/ovh-manager-cloud/issues/1255)) ([232d837](https://github.com/ovh-ux/ovh-manager-cloud/commit/232d837))
+
+
+
 # [7.13.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.5...v7.13.0) (2019-01-31)
 
 
