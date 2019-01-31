@@ -1,9 +1,10 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, OvhApiCloud, CloudProjectRightService) {
+  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, ControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService) {
     const self = this;
     const serviceName = $stateParams.projectId;
+    const onboardingKey = 'SHOW_PCI_ONBOARDING';
 
     self.loaders = {
       project: false,
@@ -21,8 +22,32 @@ angular.module('managerApp')
     // reference to our rootScope state change listener
     let stateChangeListener = null;
 
+    function openOnboarding() {
+      ControllerHelper.modal.showModal({
+        modalConfig: {
+          templateUrl: 'app/cloud/project/onboarding/onboarding-pci.html',
+          controller: 'pciSlideshowCtrl',
+          controllerAs: '$ctrl',
+          backdrop: 'static',
+        },
+      });
+    }
+
     function init() {
       self.loaders.project = true;
+
+      ovhUserPref.getValue(onboardingKey)
+        .then(({ value }) => {
+          if (value) {
+            openOnboarding();
+          }
+        })
+        .catch((err) => {
+          // Check error status and if key is there in error message
+          if (err.status === 404 && err.data.message.includes(onboardingKey)) {
+            openOnboarding();
+          }
+        });
 
       // get current project
       if (serviceName) {
