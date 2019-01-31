@@ -61,15 +61,14 @@ angular.module('managerApp')
 
           const volumeDetail = _.find(allProjectVolumes, x => x.id === volumeConsumption.volumeId);
           if (volumeDetail) {
-            volumeConsumptionDetail.name = volumeDetail.name;
-            volumeConsumptionDetail.size = volumeDetail.size;
-            volumeConsumptionDetail.status = volumeDetail.status;
-          } else {
-            volumeConsumptionDetail.name = volumeConsumption.volumeId;
-            volumeConsumptionDetail.status = 'deleted';
+            Object.assign(volumeConsumptionDetail, {
+              name: volumeDetail.name,
+              size: volumeDetail.size,
+              status: volumeDetail.status,
+            });
           }
 
-          this.volumeConsumptionDetails.push(volumeConsumptionDetail);
+          return volumeConsumptionDetail;
         });
       }
 
