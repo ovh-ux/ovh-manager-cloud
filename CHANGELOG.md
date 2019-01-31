@@ -1,3 +1,53 @@
+# [7.13.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.5...v7.13.0) (2019-01-31)
+
+
+### Bug Fixes
+
+* replace all "datacentre" by "datacenter" ([d1a131b](https://github.com/ovh-ux/ovh-manager-cloud/commit/d1a131b))
+* **cloud.logs:** update some translations and improve ui ([#1249](https://github.com/ovh-ux/ovh-manager-cloud/issues/1249)) ([2d47019](https://github.com/ovh-ux/ovh-manager-cloud/commit/2d47019))
+* **cloud.virtualmachine.add:** add option to hide unavailable flavors ([#1256](https://github.com/ovh-ux/ovh-manager-cloud/issues/1256)) ([a4f9c0f](https://github.com/ovh-ux/ovh-manager-cloud/commit/a4f9c0f))
+* **components.openstreetmap:** add missing location for APAC regions ([#1262](https://github.com/ovh-ux/ovh-manager-cloud/issues/1262)) ([e639f77](https://github.com/ovh-ux/ovh-manager-cloud/commit/e639f77))
+* **dbaas.logs.detail.account:** trigger validation when pasting password ([2777402](https://github.com/ovh-ux/ovh-manager-cloud/commit/2777402))
+* **i18n:** add missing translations ([3106d75](https://github.com/ovh-ux/ovh-manager-cloud/commit/3106d75))
+* **i18n:** add missing translations ([2188e29](https://github.com/ovh-ux/ovh-manager-cloud/commit/2188e29))
+* **i18n:** add missing translations ([427b8eb](https://github.com/ovh-ux/ovh-manager-cloud/commit/427b8eb))
+* **i18n:** add missing translations ([7988862](https://github.com/ovh-ux/ovh-manager-cloud/commit/7988862))
+* **i18n:** add missing translations ([e8c38f7](https://github.com/ovh-ux/ovh-manager-cloud/commit/e8c38f7))
+* **i18n:** add missing translations ([b7a1b7f](https://github.com/ovh-ux/ovh-manager-cloud/commit/b7a1b7f))
+* **i18n:** add missing translations ([e80b524](https://github.com/ovh-ux/ovh-manager-cloud/commit/e80b524))
+* **i18n:** add missing translations ([ae2b7e1](https://github.com/ovh-ux/ovh-manager-cloud/commit/ae2b7e1))
+* **i18n:** add missing translations ([67b3d23](https://github.com/ovh-ux/ovh-manager-cloud/commit/67b3d23))
+* **i18n:** add missing translations ([f1314bd](https://github.com/ovh-ux/ovh-manager-cloud/commit/f1314bd))
+* **i18n:** add missing translations ([85d39f9](https://github.com/ovh-ux/ovh-manager-cloud/commit/85d39f9))
+* **i18n:** add missing translations ([66f0a39](https://github.com/ovh-ux/ovh-manager-cloud/commit/66f0a39))
+* **i18n:** add missing translations ([929781f](https://github.com/ovh-ux/ovh-manager-cloud/commit/929781f))
+* **i18n:** add missing translations ([c44fdd3](https://github.com/ovh-ux/ovh-manager-cloud/commit/c44fdd3))
+* **i18n:** add missing translations ([4bd1f58](https://github.com/ovh-ux/ovh-manager-cloud/commit/4bd1f58))
+* **i18n:** add missing translations ([ab30759](https://github.com/ovh-ux/ovh-manager-cloud/commit/ab30759))
+* **i18n:** add missing translations ([de46c19](https://github.com/ovh-ux/ovh-manager-cloud/commit/de46c19))
+* **i18n:** add missing translations ([22f1263](https://github.com/ovh-ux/ovh-manager-cloud/commit/22f1263))
+* **i18n:** add missing translations ([faef486](https://github.com/ovh-ux/ovh-manager-cloud/commit/faef486))
+* **i18n:** add missing translations ([9b077da](https://github.com/ovh-ux/ovh-manager-cloud/commit/9b077da))
+* **iplb:** handle datacenters without running tasks ([4990fe2](https://github.com/ovh-ux/ovh-manager-cloud/commit/4990fe2))
+* **iplb.configuration:** batch API calls correctly ([4e7dc2c](https://github.com/ovh-ux/ovh-manager-cloud/commit/4e7dc2c))
+* **iplb.configuration:** change oui-table to oui-datagrid ([778b12d](https://github.com/ovh-ux/ovh-manager-cloud/commit/778b12d))
+* **iplb.configuration:** display success message correctly ([0be4ad8](https://github.com/ovh-ux/ovh-manager-cloud/commit/0be4ad8))
+* **loadbalancer:** remove typo in text ([6f1f8b9](https://github.com/ovh-ux/ovh-manager-cloud/commit/6f1f8b9))
+
+
+### Features
+
+* support APAC region in PCI ([#1242](https://github.com/ovh-ux/ovh-manager-cloud/issues/1242)) ([64e9a1d](https://github.com/ovh-ux/ovh-manager-cloud/commit/64e9a1d))
+* **cloud.logs:** add optional and explicit indexation status ([#1260](https://github.com/ovh-ux/ovh-manager-cloud/issues/1260)) ([37b7cae](https://github.com/ovh-ux/ovh-manager-cloud/commit/37b7cae))
+* **cloud.project:** add tracking to server creation ([#1261](https://github.com/ovh-ux/ovh-manager-cloud/issues/1261)) ([6c18dba](https://github.com/ovh-ux/ovh-manager-cloud/commit/6c18dba))
+* **components.navbar:** remove some assistance menu items for FR ([ebcfa58](https://github.com/ovh-ux/ovh-manager-cloud/commit/ebcfa58))
+* **iplb.configuration:** enhance view features and texts ([e3787a6](https://github.com/ovh-ux/ovh-manager-cloud/commit/e3787a6))
+* **kubernetes:** rename option ([#1241](https://github.com/ovh-ux/ovh-manager-cloud/issues/1241)) ([4614b7c](https://github.com/ovh-ux/ovh-manager-cloud/commit/4614b7c))
+* **service-helper:** more choices to get error message ([a45f05b](https://github.com/ovh-ux/ovh-manager-cloud/commit/a45f05b))
+* **update-vrack-flow:** vrack automation ([#1240](https://github.com/ovh-ux/ovh-manager-cloud/issues/1240)) ([ddc9ff4](https://github.com/ovh-ux/ovh-manager-cloud/commit/ddc9ff4))
+
+
+
 ## [7.12.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.12.4...v7.12.5) (2019-01-22)
 
 
