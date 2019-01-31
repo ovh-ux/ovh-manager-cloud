@@ -28,8 +28,7 @@ angular.module('managerApp')
         this.data = {};
         this.loading = true;
 
-        this.initUserCurrency()
-          .then(() => this.initVolumes())
+        return this.initVolumes()
           .catch((err) => {
             this.Toast.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
             this.$q.reject(err);
@@ -80,11 +79,5 @@ angular.module('managerApp')
               this.volumes,
             ),
           );
-      }
-
-      initUserCurrency() {
-        return this.OvhApiMe.v6().get().$promise.then((me) => {
-          this.currencySymbol = me.currency.symbol;
-        });
       }
     });
