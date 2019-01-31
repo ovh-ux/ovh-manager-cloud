@@ -2,13 +2,12 @@ angular.module('managerApp')
   .controller('BillingObjectStorageListComponentCtrl',
     class {
       /* @ngInject */
-      constructor($q, $filter, $translate, OvhApiMe, Toast, RegionService) {
+      constructor($q, $translate, OvhApiMe, RegionService, Toast) {
         this.$q = $q;
-        this.$filter = $filter;
         this.$translate = $translate;
         this.OvhApiMe = OvhApiMe;
-        this.Toast = Toast;
         this.RegionService = RegionService;
+        this.Toast = Toast;
       }
 
       $onInit() {
