@@ -21,6 +21,10 @@ angular.module('managerApp')
           price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
           elements: consumption.hourlyInstances,
         },
+        volume: {
+          price: formatPrice(consumption.totals.hourly.volume, consumption.totals.currencySymbol),
+          elements: consumption.volumes,
+        },
       };
     };
 
@@ -129,7 +133,7 @@ angular.module('managerApp')
         self.data.hourlyBilling.hourlyUsage.volume,
         volume => _.map(volume.details, (detail) => {
           const newDetail = _.clone(detail);
-          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
+          newDetail.price = formatPrice(newDetail.totalPrice, self.data.totals.currencySymbol);
           return _.extend(newDetail, { type: volume.type, region: volume.region });
         }),
       ));

@@ -57,8 +57,11 @@ angular.module('managerApp')
         return ({
           price: this.constructor.getTotalPrice(instanceConsumption, currencySymbol),
           elements: _.flatten(instanceConsumption.map(
-            ({ details }) => details
-              .map(detail => this.constructor.formatInstanceConsumptionMetadatas(detail)),
+            ({ details, planCode }) => details
+              .map(detail => ({
+                ...this.constructor.formatInstanceConsumptionMetadatas(detail),
+                type: planCode,
+              })),
           )),
         });
       }
@@ -73,7 +76,7 @@ angular.module('managerApp')
         });
       }
 
-      static formatInstanceConsumptionMetadatas({ metadatas, price }) {
+      static formatInstanceConsumptionMetadatas({ metadatas, price, quantity }) {
         return {
           ...metadatas.reduce(
             (formattedMetadatas, { key, value }) => ({
@@ -83,6 +86,7 @@ angular.module('managerApp')
             {},
           ),
           price,
+          quantity,
         };
       }
     });

@@ -47,15 +47,17 @@ angular.module('managerApp')
       }
 
       updateVolumeConsumptionDetails(allProjectVolumes, volumeConsumptions) {
-        _.forEach(volumeConsumptions, (volumeConsumption) => {
-          const volumeConsumptionDetail = {};
-          volumeConsumptionDetail.totalPrice = `${volumeConsumption.totalPrice.toFixed(2)} ${this.currencySymbol}`;
-          volumeConsumptionDetail.volumeId = volumeConsumption.volumeId;
-          volumeConsumptionDetail.quantity = volumeConsumption.quantity.value;
-          volumeConsumptionDetail.region = volumeConsumption.region;
-          volumeConsumptionDetail.type = volumeConsumption.type;
-
-          volumeConsumptionDetail.amount = volumeConsumption.quantity.value;
+        this.volumeConsumptionDetails = volumeConsumptions.map((volumeConsumption) => {
+          const volumeConsumptionDetail = {
+            totalPrice: volumeConsumption.price.text,
+            volumeId: volumeConsumption.volumeId,
+            quantity: volumeConsumption.quantity,
+            region: volumeConsumption.region,
+            type: volumeConsumption.type,
+            amount: _.get(volumeConsumption, 'quantity.value', volumeConsumption.quantity),
+            name: volumeConsumption.volumeId,
+            status: 'deleted',
+          };
 
           const volumeDetail = _.find(allProjectVolumes, x => x.id === volumeConsumption.volumeId);
           if (volumeDetail) {
