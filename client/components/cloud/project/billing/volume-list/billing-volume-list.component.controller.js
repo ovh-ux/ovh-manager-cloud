@@ -5,21 +5,21 @@ angular.module('managerApp')
       constructor(
         $filter,
         $q,
-        $translate,
         $stateParams,
+        $translate,
         DetailsPopoverService,
         OvhApiCloudProjectVolume,
-        Toast,
         OvhApiMe,
+        Toast,
       ) {
         this.$filter = $filter;
         this.$q = $q;
-        this.$translate = $translate;
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.DetailsPopoverService = DetailsPopoverService;
         this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
-        this.Toast = Toast;
         this.OvhApiMe = OvhApiMe;
+        this.Toast = Toast;
       }
 
       $onInit() {
@@ -42,7 +42,7 @@ angular.module('managerApp')
 
       getVolumesDetails() {
         return this.OvhApiCloudProjectVolume.v6().query({
-          serviceName: $stateParams.projectId,
+          serviceName: this.$stateParams.projectId,
         }).$promise.then(volumes => volumes);
       }
 
