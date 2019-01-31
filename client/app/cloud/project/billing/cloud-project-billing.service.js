@@ -81,8 +81,11 @@ angular.module('managerApp')
         return ({
           price: this.constructor.getTotalPrice(instanceConsumption, currencySymbol),
           elements: _.flatten(instanceConsumption.map(
-            ({ details }) => details
-              .map(detail => this.constructor.formatInstanceConsumptionMetadatas(detail)),
+            ({ details, planCode }) => details
+              .map(detail => ({
+                ...this.constructor.formatInstanceConsumptionMetadatas(detail),
+                type: planCode,
+              })),
           )),
         });
       }

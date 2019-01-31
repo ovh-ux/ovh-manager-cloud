@@ -44,10 +44,10 @@
                         <i class="glyphicon pull-left" data-ng-class="{ 'glyphicon-chevron-down': $ctrl.toggle.accordions.volume, 'glyphicon-chevron-right': !$ctrl.toggle.accordions.volume }"></i>
                     </span>
                     <span class="cloud-billing-accordion-heading-title" data-translate="cpbc_volume_detail_title"></span>
-                    <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.volume.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
+                    <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.volume.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <volume-list volumes="$ctrl.resources.volumes"></volume-list>
+            <volume-list volumes="$ctrl.resources.volume.elements"></volume-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
