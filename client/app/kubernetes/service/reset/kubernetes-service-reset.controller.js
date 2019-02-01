@@ -13,6 +13,7 @@ class kubernetesResetCtrl {
 
   $onInit() {
     this.loading = false;
+    this.workerNodesPolicy = this.KUBERNETES.workerNodesPolicyDelete;
   }
 
   /**
@@ -34,7 +35,7 @@ class kubernetesResetCtrl {
     this.CloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.Kubernetes
-        .resetCluster(this.serviceName)
+        .resetCluster(this.serviceName, this.workerNodesPolicy)
         .then(() => this.CloudMessage.success(this.$translate.instant('kube_service_reset_success')))
         .catch(err => this.CloudMessage.error(this.$translate.instant('kube_service_reset_error', { message: _.get(err, 'data.message', '') })))
         .finally(() => {
