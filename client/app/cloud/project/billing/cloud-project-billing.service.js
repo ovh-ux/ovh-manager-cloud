@@ -84,7 +84,7 @@ angular.module('managerApp')
             ({ details, planCode }) => details
               .map(detail => ({
                 ...this.constructor.formatInstanceConsumptionMetadatas(detail),
-                type: planCode,
+                type: planCode.replace(this.CLOUD_PROJECT_CONSUMPTION_SUFFIX, ''),
               })),
           )),
         });

@@ -21,6 +21,13 @@ angular.module('managerApp')
           price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
           elements: consumption.hourlyInstances,
         },
+        snapshot: {
+          price: formatPrice(
+            consumption.totals.hourly.snapshot,
+            consumption.totals.currencySymbol,
+          ),
+          elements: consumption.snapshots,
+        },
         volume: {
           price: formatPrice(consumption.totals.hourly.volume, consumption.totals.currencySymbol),
           elements: consumption.volumes,

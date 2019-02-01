@@ -8,5 +8,6 @@ angular.module('managerApp')
       resources: '<',
       showSwitchToMonthlyBillingOption: '<',
       showAdditionalInstanceDetails: '<',
+      groupSnapshotsByRegion: '<',
     },
   });
