@@ -94,10 +94,6 @@ angular.module('managerApp', [
     // Fix security issue: https://github.com/angular-translate/angular-translate/issues/1418
     return $sanitize(translationId);
   })
-  .config(($urlRouterProvider, $locationProvider) => {
-    $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(false);
-  })
   .config((responsivePopoverProvider) => {
     // tell to the module that we consider a mobile device with at least 800px width
     responsivePopoverProvider.setMobileMediaQuery('(max-width: 800px)');

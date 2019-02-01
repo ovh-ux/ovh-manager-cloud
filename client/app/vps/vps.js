@@ -10,6 +10,17 @@ angular.module('managerApp').config(($stateProvider) => {
       url: '/vps',
       templateUrl: 'app/vps/vps.html',
       abstract: true,
+      resolve: {
+        stateVps: ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
+          serviceName: _.get($transition$.params(), 'serviceName'),
+        }).$promise
+          .catch((error) => {
+            if (error.status === 404) {
+              return $q.reject(_.merge({ code: 'LOADING_STATE_ERROR' }, error));
+            }
+            return true;
+          }),
+      },
       translations: {
         value: ['../common', '../vps'],
         format: 'json',
