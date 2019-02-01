@@ -1,3 +1,12 @@
+// Agora and legacies order views and controllers import
+// VPS upgrade legacy
+import legacyUpgradeTpl from './upgrade/legacy/vps-upgrade-legacy.html';
+import legacyUpgradeCtrl from './upgrade/legacy/vps-upgrade-legacy.controller';
+// VPS upgrade Agora
+// import agoraUpgradeTpl from './upgrade/vps-upgrade.html';
+// import agoraUpgradeCtrl from './upgrade/vps-upgrade.controller';
+
+
 angular.module('managerApp').config(($stateProvider) => {
   const vpsHeader = {
     templateUrl: 'app/vps/vps-header.html',
@@ -220,8 +229,9 @@ angular.module('managerApp').config(($stateProvider) => {
       views: {
         vpsHeader,
         vpsContent: {
-          templateUrl: 'app/vps/upgrade/vps-upgrade.html',
-          controller: 'VpsUpgradeCtrl',
+          templateProvider: /* @ngInject */ () => legacyUpgradeTpl,
+          controllerProvider: /* @ngInject */ () => legacyUpgradeCtrl,
+          // controller: ,
           controllerAs: '$ctrl',
         },
       },
