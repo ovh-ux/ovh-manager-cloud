@@ -19,7 +19,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
     this.loading = false;
 
     this.getPublicCloudProject()
-      .then(() => this.getNodes())
+      .then(() => this.getInfo())
       .then(() => this.loadMessages());
   }
 
@@ -32,12 +32,27 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
     this.messages = this.messageHandler.getMessages();
   }
 
-  getNodes() {
+  getCluster() {
+    return this.Kubernetes.getKubernetesCluster(this.serviceName)
+      .then((cluster) => { this.cluster = cluster; })
+      .catch((error) => {
+        this.cluster = { id: this.serviceName, name: this.serviceName };
+        this.CloudMessage.error(this.$translate.instant('kube_error', { message: _.get(error, 'data.message') }));
+      });
+  }
+
+  getInfo() {
     this.loading = true;
+    return this.$q.all(
+      this.getNodes(),
+      this.getCluster(),
+    ).finally(() => { this.loading = false; });
+  }
+
+  getNodes() {
     return this.Kubernetes.getNodes(this.serviceName)
       .then((nodes) => { this.nodes = nodes; })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('kube_nodes_error')))
-      .finally(() => { this.loading = false; });
+      .catch(() => this.CloudMessage.error(this.$translate.instant('kube_nodes_error')));
   }
 
   getAssociatedFlavor(node) {
@@ -115,7 +130,8 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   refreshNodes() {
+    this.Kubernetes.resetClusterCache();
     this.Kubernetes.resetNodesCache();
-    return this.getNodes();
+    return this.getInfo();
   }
 });
