@@ -5,7 +5,7 @@ import 'script-loader!jquery';
 import 'angular';
 import 'angular-animate';
 import 'angular-aria';
-import 'script-loader!angular-bootstrap/ui-bootstrap-tpls.js';
+import 'angular-ui-bootstrap';
 import 'angular-cookies';
 import 'script-loader!angular-dynamic-locale/src/tmhDynamicLocale.js';
 import 'angular-messages';
@@ -69,8 +69,6 @@ import 'script-loader!ovh-angular-browser-alert/dist/ovh-angular-browser-alert.j
 import 'ovh-angular-pagination-front';
 import 'ovh-angular-responsive-page-switcher';
 import 'ovh-angular-responsive-tabs';
-import 'ovh-angular-sso-auth';
-import 'ovh-angular-sso-auth-modal-plugin';
 import 'ovh-angular-swimming-poll';
 import 'ovh-angular-doc-url';
 import 'ovh-angular-apiv7';

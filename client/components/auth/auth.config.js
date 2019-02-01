@@ -9,7 +9,7 @@ angular.module('managerApp')
 
     ssoAuthenticationProvider.setConfig(CONFIG_API.apis);
 
-    $httpProvider.interceptors.push('ssoAuthInterceptor');
+    $httpProvider.interceptors.push('OvhSsoAuthInterceptor');
   })
   .run(($transitions, ssoAuthentication) => {
     ssoAuthentication.login();
