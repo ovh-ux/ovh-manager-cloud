@@ -6,13 +6,11 @@ angular.module('managerApp')
         OvhApiCloudProjectServiceInfos,
         OvhApiMeConsumption,
         OvhApiOrderCatalogFormatted,
-        CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION,
         CLOUD_PROJECT_CONSUMPTION_SUFFIX,
       ) {
         this.OvhApiCloudProjectServiceInfos = OvhApiCloudProjectServiceInfos;
         this.OvhApiMeConsumption = OvhApiMeConsumption;
         this.OvhApiOrderCatalogFormatted = OvhApiOrderCatalogFormatted;
-        this.PLANCODE_CONVERSION = CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION;
         this.CLOUD_PROJECT_CONSUMPTION_SUFFIX = CLOUD_PROJECT_CONSUMPTION_SUFFIX;
       }
 
@@ -60,7 +58,7 @@ angular.module('managerApp')
             ({ details, planCode }) => details
               .map(detail => ({
                 ...this.constructor.formatInstanceConsumptionMetadatas(detail),
-                type: planCode,
+                type: planCode.replace(this.CLOUD_PROJECT_CONSUMPTION_SUFFIX, ''),
               })),
           )),
         });
