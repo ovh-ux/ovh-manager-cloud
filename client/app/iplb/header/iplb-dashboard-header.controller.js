@@ -1,13 +1,12 @@
 class IpLoadBalancerDashboardHeaderCtrl {
   constructor($stateParams, $translate, ControllerHelper, IpLoadBalancerHomeService, ovhDocUrl,
-    SidebarMenu, TARGET, URLS) {
+    SidebarMenu, URLS) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
     this.ovhDocUrl = ovhDocUrl;
     this.SidebarMenu = SidebarMenu;
-    this.TARGET = TARGET;
     this.URLS = URLS;
     this.serviceName = $stateParams.serviceName;
 

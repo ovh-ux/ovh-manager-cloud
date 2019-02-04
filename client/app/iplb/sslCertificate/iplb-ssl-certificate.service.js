@@ -122,7 +122,12 @@ class IpLoadBalancerSslCertificateService {
     return this.OvhApiIpLoadBalancing.v6().freeCertificate({ serviceName }, { fqdn }).$promise
       .then(this.ServiceHelper.successHandler('iplb_ssl_order_success'))
       .then(() => this.Ssl.resetQueryCache())
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_order_error'));
+      .catch(error => this.ServiceHelper.errorHandler({
+        textToTranslate: 'iplb_ssl_order_error',
+        translateParams: {
+          message: _.get(error, 'data.message', ''),
+        },
+      }));
   }
 }
 
