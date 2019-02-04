@@ -28,7 +28,7 @@
                         <span class="oui-status"
                               data-ng-class="{
                                      'oui-status_success' : $ctrl.cluster.status === 'READY',
-                                     'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING',
+                                     'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING' || $ctrl.cluster.status === 'RESETTING',
                                      'oui-status_error' : $ctrl.cluster.status === 'ERROR'
                                      }"
                               data-translate="{{ 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
