@@ -920,6 +920,18 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
+"@ovh-ux/ng-ovh-sso-auth-modal-plugin@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-sso-auth-modal-plugin/-/ng-ovh-sso-auth-modal-plugin-3.0.0.tgz#0e314b412769d65862d3900ca3a06374ef47fc86"
+  integrity sha512-cyMBkp353CH+RPU4PKZoNTCXKrlwtvgXq7ETzD8CRiFmmZ4AhUfyBNVXno7vBHW4jsAJhWDtN5TThVZWUYdF7w==
+  dependencies:
+    lodash "~4.17.11"
+
+"@ovh-ux/ng-ovh-sso-auth@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-sso-auth/-/ng-ovh-sso-auth-4.0.0.tgz#f6c1027f5ef827d464ff3b0e702b1692ee279703"
+  integrity sha512-exPPBbg2WTXH4/LHu3dsqfHq073+NhBzB69WB97Dd75FKust3h/SUjyQyuFOn7h4Z0OI4/8db+6qpwjEIAAz6Q==
+
 "@ovh-ux/translate-async-loader@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@ovh-ux/translate-async-loader/-/translate-async-loader-1.0.8.tgz#7cbdc3dfed1042f511206ff6bb9f14c33b8406ba"
@@ -1248,10 +1260,6 @@ angular-aria@~1.6:
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.10.tgz#472bfff8682c4cfe634d4bfda0524443e07e3501"
   integrity sha512-QO+jSbsnGxLhULD8syFvfH0sQVCKCwDPDCd130ou11HYw4D8vAaU/NG6ufcmnh9XJHTcngAaBe3VVfZefMkiBA==
 
-angular-bootstrap@angular-ui/bootstrap-bower#~1.3:
-  version "1.3.3"
-  resolved "https://codeload.github.com/angular-ui/bootstrap-bower/tar.gz/5d53287668135dbc1acfc3a0d453cd94b5311c3c"
-
 angular-chart.js@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/angular-chart.js/-/angular-chart.js-1.1.1.tgz#49f0e18d081762b6d4c9791e487aff2fbb30f5ae"
@@ -1341,6 +1349,11 @@ angular-translate@^2.11.0, angular-translate@~2.18.1:
   integrity sha512-Mw0kFBqsv5j8ItL9IhRZunIlVmIRW6iFsiTmRs9wGr2QTt8z4rehYlWyHos8qnXc/kyOYJiW50iH50CSNHGB9A==
   dependencies:
     angular ">=1.2.26 <=1.7"
+
+angular-ui-bootstrap@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-1.3.3.tgz#4820f895d433c17abeb4ac7387f2f122cbf8c11c"
+  integrity sha1-SCD4ldQzwXq+tKxzh/LxIsv4wRw=
 
 angular-ui-router@^1.0.0:
   version "1.0.20"
@@ -6265,7 +6278,7 @@ lodash@^3.10.1, lodash@~3.10.1:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
   integrity sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.10, lodash@~4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -7377,14 +7390,6 @@ ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.2.2:
 ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2:
   version "0.2.3"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-slider/tar.gz/eeb148ccf526848c5d60c10dcba9e79a14d5fa91"
-
-ovh-angular-sso-auth-modal-plugin@ovh-ux/ovh-angular-sso-auth-modal-plugin#^1.0.15:
-  version "1.0.16"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth-modal-plugin/tar.gz/30c7d85fc98367c5b5ee0442e0f9b88a07ea14d7"
-
-ovh-angular-sso-auth@ovh-ux/ovh-angular-sso-auth#^3.1.2:
-  version "3.1.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sso-auth/tar.gz/f6034d10a1539c0658d60506720d3c1218b3231f"
 
 ovh-angular-stop-event@ovh-ux/ovh-angular-stop-event#^0.1.0:
   version "0.1.0"

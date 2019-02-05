@@ -18,5 +18,15 @@
                    data-ng-pattern="ctrl.KUBERNETES.resetConfirmationInput"
                    required>
         </oui-field>
+        <oui-field data-label="{{ ::'kube_service_reset_nodes' | translate }}">
+            <oui-radio-group data-model="ctrl.workerNodesPolicy">
+                <oui-radio data-value="ctrl.KUBERNETES.workerNodesPolicyDelete">
+                    <span data-translate="common_delete"></span>
+                </oui-radio>
+                <oui-radio data-value="ctrl.KUBERNETES.workerNodesPolicyReinstall">
+                    <span data-translate="common_reinstall"></span>
+                </oui-radio>
+            </oui-radio-group>
+        </oui-field>
    </oui-modal>
 </form>

@@ -95,8 +95,8 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     });
   }
 
-  resetCluster(serviceName) {
-    return this.OvhApiKube.v6().reset({ serviceName }, {}).$promise;
+  resetCluster(serviceName, workerNodesPolicy) {
+    return this.OvhApiKube.v6().reset({ serviceName }, { workerNodesPolicy }).$promise;
   }
 
   resetClusterCache() {
