@@ -1,3 +1,12 @@
+## [7.15.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.1...v7.15.2) (2019-02-05)
+
+
+### Bug Fixes
+
+* **i18n:** translations uses now fallback correctly ([4ec0aef](https://github.com/ovh-ux/ovh-manager-cloud/commit/4ec0aef))
+
+
+
 ## [7.15.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.0...v7.15.1) (2019-02-05)
 
 
