@@ -66,8 +66,8 @@ class CloudProjectVirtualMachineAddService {
   }
 
   /* eslint-disable no-nested-ternary */
-  getImageApps(images) {
-    return _.uniq(_.forEach(this.CloudImageService.constructor.getApps(images), (app) => {
+  getImageApps(images, region = null) {
+    return _.uniq(_.forEach(this.CloudImageService.constructor.getApps(images, region), (app) => {
       _.set(app, 'appName', _.get(app, 'name', '')
         .replace(/^[a-z0-9\s]+ - /ig, '')
         .replace(' - deprecated', ''));

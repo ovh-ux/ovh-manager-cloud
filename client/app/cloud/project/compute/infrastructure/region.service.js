@@ -19,12 +19,16 @@ class CloudRegionService {
     }
   }
 
-  static checkSshKey(region, sshKeyRegions) {
+  static checkSshKey(region, sshKeyRegions, image) {
+    if (_.get(image, 'type') === 'windows') {
+      _.set(region, 'disabled', false);
+      return;
+    }
     const found = _.indexOf(sshKeyRegions, _.get(region, 'microRegion.code'));
     if (!region.disabled && found === -1) {
       _.set(region, 'disabled', 'SSH_KEY');
     } else if (region.disabled === 'SSH_KEY' && found > -1) {
-      delete region.disabled; // eslint-disable-line
+      _.set(region, 'disabled', false);
     }
   }
 }

@@ -79,8 +79,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     } else {
       this.urls.guidesSshkey = this.ovhDocUrl.getDocUrl('g1769.creating_ssh_keys');
     }
-
-    this.initOsList();
+    this.initRegionsAndDataCenters();
   }
 
   cancel() {
@@ -91,12 +90,15 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.addVirtualMachine();
   }
 
-  /*----------------------------------
-     |  Step 1 : OS or SnapShot choice  |
-     ----------------------------------*/
+  /*-----------------------------------------
+     |  Step 1 : Region and DataCenter choice  |
+     -----------------------------------------*/
 
-  initOsList() {
+  initRegionsAndDataCenters() {
     this.loaders.step1 = true;
+    this.submitted.step1 = false;
+    this.resetStep1();
+
     return this.$q.all({
       images: this.OvhApiCloudProjectImage.v6().query({ serviceName: this.serviceName }).$promise
         .then((images) => {
@@ -105,33 +107,84 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.images = this.VirtualMachineAddService.getAugmentedImages(images);
         })
         .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_images_ERROR')),
+      regions: this.OvhApiCloudProjectRegion.v6().query({ serviceName: this.serviceName }).$promise,
+      quota: this.promiseQuota
+        .then((quota) => { this.quota = quota; })
+        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_quota_ERROR')),
+      sshKeys: this.OvhApiCloudProjectSshKey.v6().query({ serviceName: this.serviceName }).$promise,
+      instances: this.OvhApiCloudProjectInstance.v6()
+        .query({ serviceName: this.serviceName }).$promise,
+    }).then(({ regions, sshKeys, instances }) => {
+      this.displayedSshKeys = sshKeys;
+
+      this.mostRecentVm = this.VirtualMachineAddService.constructor.getMostRecentVm(instances);
+      if (this.mostRecentVm) {
+        this.model.sshKey = _.find(sshKeys, { id: this.mostRecentVm.sshKeyId });
+      }
+      this.regions = _.map(regions, region => this.RegionService.getRegion(region));
+      const regionsByImagetype = this.regions;
+      _.forEach(regionsByImagetype, (region) => {
+        // Add quota info
+        this.CloudRegionService.constructor.addOverQuotaInfos(region, this.quota);
+      });
+
+      this.displayedRegions = this.VirtualMachineAddService.constructor
+        .groupRegionsByDatacenter(regionsByImagetype);
+      this.groupedRegions = _.groupBy(this.displayedRegions, 'continent');
+    })
+      .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_regions_ERROR'))
+      .finally(() => {
+        this.loaders.step1 = false;
+      });
+  }
+
+  isStep1Valid() {
+    return this.model.region;
+  }
+
+  resetStep1() {
+    this.submitted.step1 = false;
+    this.model.imageType = null;
+    this.resetStep2();
+  }
+
+  /*----------------------------------
+     |  Step 2 : OS or SnapShot choice  |
+     ----------------------------------*/
+
+  initOsList() {
+    this.loaders.step2 = true;
+    this.resetStep2();
+    return this.$q.all({
       snapshots: this.OvhApiCloudProjectSnapshot.v6()
         .query({ serviceName: this.serviceName }).$promise
         .then((snapshots) => {
           this.snapshots = _.map(snapshots, snapshot => _.set(snapshot, 'distribution', _.get(snapshot, 'type', 'linux')));
         })
         .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_shapshots_ERROR')),
-      sshKeys: this.OvhApiCloudProjectSshKey.v6().query({ serviceName: this.serviceName }).$promise,
-      instances: this.OvhApiCloudProjectInstance.v6()
-        .query({ serviceName: this.serviceName }).$promise,
-    })
-      .then(({ sshKeys, instances }) => {
-        this.displayedSnapshots = _.filter(this.snapshots, { status: 'active' });
-        this.displayedImages = this.CloudImageService.groupImagesByType(
-          this.images,
-          this.enums.imagesTypes,
+    }).then(() => {
+      this.displayedSnapshots = _.filter(this.snapshots, { status: 'active' });
+      this.displayedApps = this.VirtualMachineAddService.getImageApps(
+        this.images,
+        this.model.region.microRegion.code,
+      );
+      this.displayedImages = this.CloudImageService.groupImagesByType(
+        this.images,
+        this.enums.imagesTypes,
+        this.model.region.microRegion.code,
+      );
+      // Check SSH Key opportunity
+      if (_.get(this.model, 'sshKey.regions', false)) {
+        this.CloudRegionService.constructor.checkSshKey(
+          this.model.region,
+          this.model.sshKey.regions,
+          this.model.imageType,
         );
-        this.displayedApps = this.VirtualMachineAddService.getImageApps(this.images);
-        this.displayedSshKeys = sshKeys;
-
-        this.mostRecentVm = this.VirtualMachineAddService.constructor.getMostRecentVm(instances);
-        if (this.mostRecentVm) {
-          this.model.sshKey = _.find(sshKeys, { id: this.mostRecentVm.sshKeyId });
-        }
-      })
+      }
+    })
       .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_general_ERROR'))
       .finally(() => {
-        this.loaders.step1 = false;
+        this.loaders.step2 = false;
       });
   }
 
@@ -139,15 +192,24 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     if (_.get(this.model, 'imageType.type') === 'windows') {
       this.addingSshKey = false;
     }
+    // Check SSH Key opportunity
+    if (_.get(this.model, 'sshKey.regions', false)) {
+      this.CloudRegionService.constructor.checkSshKey(
+        this.model.region,
+        this.model.sshKey.regions,
+        this.model.imageType,
+      );
+    }
+    this.setImageId();
   }
 
-  isStep1Valid() {
-    return this.model.imageType && !this.addingSshKey && (this.model.imageType.type !== 'linux' || this.model.sshKey);
+  isStep2Valid() {
+    return this.model.region && !this.model.region.disabled && this.model.imageType && !this.addingSshKey && (this.model.imageType.type !== 'linux' || this.model.sshKey);
   }
 
-  resetStep1() {
-    this.submitted.step1 = false;
-    this.resetStep2();
+  resetStep2() {
+    this.submitted.step2 = false;
+    this.resetStep3();
   }
 
   addSshKey() {
@@ -177,63 +239,6 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     return false;
   }
 
-  resetAddingSshKey() {
-    this.model.sshKey = null;
-    this.newSshKey.name = null;
-    this.newSshKey.publicKey = null;
-    this.addingSshKey = false;
-  }
-
-  /*-----------------------------------------
-     |  Step 2 : Region and DataCenter choice  |
-     -----------------------------------------*/
-
-  initRegionsAndDataCenters() {
-    this.loaders.step2 = true;
-    this.submitted.step2 = false;
-    this.resetStep3();
-
-    return this.$q.all({
-      regions: this.OvhApiCloudProjectRegion.v6().query({ serviceName: this.serviceName }).$promise
-        .then((regions) => {
-          this.regions = _.map(regions, region => this.RegionService.getRegion(region));
-          return this.VirtualMachineAddService.getRegionsByImageType(this.regions, this.images, _.get(this.model, 'imageType'));
-        }),
-      quota: this.promiseQuota
-        .then((quota) => { this.quota = quota; })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_quota_ERROR')),
-    })
-      .then(({ regions }) => {
-        _.forEach(regions, (region) => {
-          // Add quota info
-          this.CloudRegionService.constructor.addOverQuotaInfos(region, this.quota);
-
-          // Check SSH Key opportunity
-          if (_.get(this.model, 'sshKey.regions', false)) {
-            this.CloudRegionService.constructor.checkSshKey(region, this.model.sshKey.regions);
-          }
-        });
-
-        this.displayedRegions = this.VirtualMachineAddService.constructor
-          .groupRegionsByDatacenter(regions);
-        this.groupedRegions = _.groupBy(this.displayedRegions, 'continent');
-      })
-      .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_regions_ERROR'))
-      .finally(() => {
-        this.loaders.step2 = false;
-      });
-  }
-
-  isStep2Valid() {
-    return this.model.region && this.model.imageId;
-  }
-
-  resetStep2() {
-    this.submitted.step2 = false;
-    this.model.region = null;
-    this.resetStep3();
-  }
-
   setImageId() {
     if (this.CloudImageService.constructor.isSnapshot(this.model.imageType)) {
       this.model.imageId = this.model.imageType;
@@ -252,7 +257,11 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
   checkSshKeyByRegion(sshKeyRegions) {
     _.forEach(this.displayedRegions, (region) => {
       _.forEach(region.dataCenters, (dataCenter) => {
-        this.CloudRegionService.constructor.checkSshKey(dataCenter, sshKeyRegions);
+        this.CloudRegionService.constructor.checkSshKey(
+          dataCenter,
+          sshKeyRegions,
+          this.model.imageType,
+        );
       });
     });
   }
@@ -260,7 +269,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
   updateSshKeyRegion() {
     return this.VirtualMachineAddService.openSshKeyRegionModal(this.model.sshKey)
       .then(() => {
-        this.loaders.step2 = true;
+        this.loaders.step1 = true;
         return this.OvhApiCloudProjectSshKey.v6().remove({
           serviceName: this.serviceName,
           keyId: this.model.sshKey.id,
@@ -276,8 +285,15 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
         this.checkSshKeyByRegion(sshKey.regions);
       })
       .finally(() => {
-        this.loaders.step2 = false;
+        this.loaders.step1 = false;
       });
+  }
+
+  resetAddingSshKey() {
+    this.model.sshKey = null;
+    this.newSshKey.name = null;
+    this.newSshKey.publicKey = null;
+    this.addingSshKey = false;
   }
 
   /*---------------------

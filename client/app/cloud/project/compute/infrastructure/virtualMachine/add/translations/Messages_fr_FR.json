@@ -40,6 +40,7 @@
   "cpcivm_add_step2_disabled_QUOTA_RAM": "Quota de RAM atteint",
   "cpcivm_add_step2_disabled_QUOTA_VCPUS": "Quota de Core atteint",
   "cpcivm_add_step2_disabled_SSH_KEY": "Clé SSH non disponible",
+  "cpcivm_add_step2_SSH_KEY_ERROR": "La clé SSH {{sshKey}} n'est pas déployée dans la région {{region}}. Cliquez ici pour le déployer.",
   "cpcivm_add_step2_datacenter_choose": "Choisir votre data center",
   "cpcivm_add_step2_regions_ERROR": "Impossible de récupérer la liste des régions et des data centers disponibles : {{message}}",
   "cpcivm_add_step2_quota_ERROR": "Impossible de charger votre quota disponible : {{message}}",
