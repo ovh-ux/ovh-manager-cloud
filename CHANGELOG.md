@@ -1,3 +1,21 @@
+# [7.15.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.14.0...v7.15.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([1136bd6](https://github.com/ovh-ux/ovh-manager-cloud/commit/1136bd6))
+* **i18n:** add missing translations ([4b965b6](https://github.com/ovh-ux/ovh-manager-cloud/commit/4b965b6))
+* **i18n:** add missing translations ([c70d319](https://github.com/ovh-ux/ovh-manager-cloud/commit/c70d319))
+* **i18n:** add missing translations ([b646163](https://github.com/ovh-ux/ovh-manager-cloud/commit/b646163))
+* **navbar:** revamp style and texts ([#1237](https://github.com/ovh-ux/ovh-manager-cloud/issues/1237)) ([e2b0455](https://github.com/ovh-ux/ovh-manager-cloud/commit/e2b0455))
+
+
+### Features
+
+* **kubernetes:** woker nodes policy control addition ([#1268](https://github.com/ovh-ux/ovh-manager-cloud/issues/1268)) ([649e924](https://github.com/ovh-ux/ovh-manager-cloud/commit/649e924))
+
+
+
 # [7.14.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.13.0...v7.14.0) (2019-01-31)
 
 
