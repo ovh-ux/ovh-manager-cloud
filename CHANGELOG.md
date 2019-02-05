@@ -1,3 +1,12 @@
+## [7.15.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.0...v7.15.1) (2019-02-05)
+
+
+### Bug Fixes
+
+* **cloud.project.onboarding:** set right asset path ([2d2d533](https://github.com/ovh-ux/ovh-manager-cloud/commit/2d2d533))
+
+
+
 # [7.15.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.14.0...v7.15.0) (2019-02-05)
 
 
