@@ -1,5 +1,8 @@
 class ManagerNavbarService {
-  constructor($q,
+  /* @ngInject */
+  constructor(
+    $injector,
+    $q,
     $translate,
     atInternet,
     FeatureAvailabilityService,
@@ -15,7 +18,9 @@ class ManagerNavbarService {
     TARGET,
     TranslateService,
     URLS,
-    asyncLoader) {
+    asyncLoader,
+  ) {
+    this.$injector = $injector;
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
@@ -665,13 +670,6 @@ class ManagerNavbarService {
           managerLinks: this.getManagerLinks(),
         }));
     };
-
-
-    this.asyncLoader.addTranslations(
-      import(`../../app/common/translations/Messages_${this.$translate.use()}.json`)
-        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.json`))
-        .then(x => x.default),
-    );
 
     return this.loadTranslations()
       .then(() => this.sessionService.getUser())

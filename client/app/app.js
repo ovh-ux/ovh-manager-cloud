@@ -238,4 +238,5 @@ angular.module('managerApp', [
 
       removeOnSuccessHook();
     });
-  });
+  })
+  .run(/* @ngTranslationsInject:json ./common/translations */);
