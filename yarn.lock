@@ -935,10 +935,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz#54c5a964462be3d4d78af631363c18d6fa91ac26"
   integrity sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==
 
-"@ovh-ux/component-rollup-config@^5.0.0-beta.6":
-  version "5.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/component-rollup-config/-/component-rollup-config-5.0.0-beta.6.tgz#206c6ad7f1d2772e53c59c9482adab87236eae2d"
-  integrity sha512-BM1/r6h1xcbMOfQAIrJyWexMRs0bHXfU0iDtrmPMy5jhlGDDDr/fPHObd+g14sHjvuEGk1oljj+wCCpWCOdJIQ==
+"@ovh-ux/component-rollup-config@^5.0.0-beta.7":
+  version "5.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/component-rollup-config/-/component-rollup-config-5.0.0-beta.7.tgz#c4365e668496063c0ec435d5a0e837fc16eabde9"
+  integrity sha512-uuKR1u3B8SRAPc9QcXTCb13bVmNsCGLlcK4k24UAYCQSCzFJB2CZtWE8W767MHtv95+xa0wty68KFA37ENl1IA==
   dependencies:
     "@babel/core" "^7.1.2"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -964,17 +964,17 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
-"@ovh-ux/manager-webpack-config@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-3.0.2.tgz#5c31a73115cff471309e284f32579cfec6276786"
-  integrity sha512-IgcyFpxuwwliCqkNH11k6WTjcUwO1iTyJKKOTpXSRT8pgvKChsq1s6D2Jg+woDDgxLLQYdCG11Y5RsLgQYzNXA==
+"@ovh-ux/manager-webpack-config@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-3.0.3.tgz#423f03f79afaa49fc579b269c240db355d13101b"
+  integrity sha512-FH89ZneNbCP0eFd9XFZUV/9/R3cygBJugX4Myi4cZB4csw0YOkbqF/5hGtcBMA66YO5aH/7Sxqb0zU7dmPyURg==
   dependencies:
     "@babel/core" "^7.2.2"
     "@babel/generator" "^7.2.2"
     "@babel/parser" "^7.2.3"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-env" "^7.2.3"
-    "@ovh-ux/component-rollup-config" "^5.0.0-beta.6"
+    "@ovh-ux/component-rollup-config" "^5.0.0-beta.7"
     "@ovh-ux/manager-webpack-dev-server" "^2.0.3"
     acorn "^6.0.5"
     acorn-dynamic-import "^4.0.0"
