@@ -1,3 +1,12 @@
+## [7.15.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.3...v7.15.4) (2019-02-06)
+
+
+### Bug Fixes
+
+* **iplb:** ssl order are now displayed correctly ([5e52ebc](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e52ebc))
+
+
+
 ## [7.15.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.2...v7.15.3) (2019-02-06)
 
 
