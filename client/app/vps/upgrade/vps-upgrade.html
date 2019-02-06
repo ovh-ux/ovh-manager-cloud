@@ -1,0 +1,76 @@
+<section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
+    <oui-back-button data-heading="{{ ::'vps_configuration_upgradevps_title' | translate }}"
+                     data-aria-label="{{ ::'vps_configuration_upgradevps_button_title' | translate }}"
+                     data-state="iaas.vps.detail.dashboard">
+    </oui-back-button>
+
+    <div class="text-center"
+         data-ng-if="$ctrl.loading.init || $ctrl.loading.upgrade">
+        <oui-spinner></oui-spinner>
+    </div>
+
+    <form data-ng-if="!$ctrl.loading.init && !$ctrl.loading.upgrade"
+          data-name="upgradeForm"
+          data-ng-submit="$ctrl.onUpgradeFormSubmit()">
+        <fieldset>
+            <legend class="oui-stepper__title"
+                    data-translate="vps_configuration_upgradevps_choose_model">
+            </legend>
+
+            <div class="row"
+                 data-ng-repeat="chunkedOffers in $ctrl.chunkedAvailableUpgrade track by $index">
+                <div class="col-md-4"
+                     data-ng-repeat="offer in chunkedOffers track by $index">
+                    <oui-select-picker data-name="{{ 'offerChoice-' + $index }}"
+                                       data-model="$ctrl.model.offer"
+                                       data-label="{{ offer.offer.name }}"
+                                       data-variant="light"
+                                       data-disabled="offer.isCurrentOffer"
+                                       data-values="[offer]">
+                        <oui-select-picker-section>
+                            <dl class="d-flex flex-wrap">
+                                <!-- Vcore -->
+                                <dd class="w-50"
+                                    data-translate="vps_configuration_upgradevps_label_core">
+                                </dd>
+                                <dt class="w-50 text-right"
+                                    data-translate="{{ offer.vcore === 1 ? 'vps_configuration_upgradevps_vcore_single' : 'vps_configuration_upgradevps_vcore_multiple' }}"
+                                    data-translate-values="{ vcore: offer.vcore }">
+                                </dt> <!-- End of Vcore -->
+
+                                <!-- Ram -->
+                                <dd class="w-50"
+                                    data-translate="vps_configuration_upgradevps_label_ram">
+                                </dd>
+                                <dt class="w-50 text-right"
+                                    data-ng-bind="offer.memory | bytes:2:true:'MiB'">
+                                </dt> <!-- End of Ram -->
+
+                                <!-- Storage -->
+                                <dd class="w-50"
+                                    data-translate="vps_configuration_upgradevps_label_disk">
+                                </dd>
+                                <dt class="w-50 text-right"
+                                    data-ng-bind="offer.disk | bytes:2:true:'GiB'">
+                                </dt> <!-- End of Storage -->
+                            </dl>
+                        </oui-select-picker-section>
+                        <oui-select-picker-section>
+                            <strong class="d-block text-right"
+                                    data-translate="vps_configuration_upgradevps_ht_price_monthly"
+                                    data-translate-values="{ price: $ctrl.getMonthlyPrice(offer).price.text }">
+                            </strong>
+                        </oui-select-picker-section>
+                    </oui-select-picker>
+                </div>
+            </div>
+
+            <oui-button class="mt-5"
+                        data-type="submit"
+                        data-variant="primary"
+                        data-disabled="!$ctrl.model.offer">
+                <span data-translate="vps_configuration_upgradevps_order"></span>
+            </oui-button>
+        </fieldset>
+    </form>
+</section>

@@ -1,19 +1,12 @@
-// Agora and legacies order views and controllers import
-// VPS upgrade legacy
-import legacyUpgradeTpl from './upgrade/legacy/vps-upgrade-legacy.html';
-import legacyUpgradeCtrl from './upgrade/legacy/vps-upgrade-legacy.controller';
-// VPS upgrade Agora
-// import agoraUpgradeTpl from './upgrade/vps-upgrade.html';
-// import agoraUpgradeCtrl from './upgrade/vps-upgrade.controller';
+export const vpsHeader = {
+  templateUrl: 'app/vps/vps-header.html',
+  controller: 'VpsHeaderCtrl',
+  controllerAs: '$ctrl',
+};
 
+export default { vpsHeader };
 
 angular.module('managerApp').config(($stateProvider) => {
-  const vpsHeader = {
-    templateUrl: 'app/vps/vps-header.html',
-    controller: 'VpsHeaderCtrl',
-    controllerAs: '$ctrl',
-  };
-
   $stateProvider
     .state('iaas.vps', {
       url: '/vps',
@@ -220,18 +213,6 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsContent: {
           templateUrl: 'app/vps/windows-order/vps-windows-order.html',
           controller: 'VpsOrderWindowsCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.upgrade', {
-      url: '/upgrade',
-      views: {
-        vpsHeader,
-        vpsContent: {
-          templateProvider: /* @ngInject */ () => legacyUpgradeTpl,
-          controllerProvider: /* @ngInject */ () => legacyUpgradeCtrl,
-          // controller: ,
           controllerAs: '$ctrl',
         },
       },
