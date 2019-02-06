@@ -118,35 +118,6 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
     })
-    .state('iaas.vps.detail.additional-disk', {
-      url: '/additional-disk',
-      redirectTo: 'iaas.vps.detail.additional-disk.list',
-      views: {
-        vpsContent: {
-          template: '<div data-ui-view="vpsAdditionalDiskContent"></div>',
-        },
-      },
-    })
-    .state('iaas.vps.detail.additional-disk.list', {
-      url: '/',
-      views: {
-        vpsAdditionalDiskContent: {
-          templateUrl: 'app/vps/additional-disk/vps-additional-disk.html',
-          controller: 'VpsAdditionalDiskCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.additional-disk.order', {
-      url: '/order',
-      views: {
-        vpsAdditionalDiskContent: {
-          templateUrl: 'app/vps/additional-disk/order/vps-order-additional-disk.html',
-          controller: 'VpsOrderDiskCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
     .state('iaas.vps.detail.cloud-database', {
       url: '/cloud-database',
       redirectTo: 'iaas.vps.detail.cloud-database.list',

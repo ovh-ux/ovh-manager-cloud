@@ -1,4 +1,4 @@
-class VpsOrderDiskCtrl {
+export default class VpsOrderDiskLegacyCtrl {
   constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage,
     CloudNavigation, VpsService,
     ServiceHelper) {
@@ -85,5 +85,3 @@ class VpsOrderDiskCtrl {
     );
   }
 }
-
-angular.module('managerApp').controller('VpsOrderDiskCtrl', VpsOrderDiskCtrl);
