@@ -1,7 +1,7 @@
 export default class VpsUpgradeCtrl {
   /* @ngInject */
-  constructor($window, availableOffers, CloudMessage, connectedUser,
-    OvhApiOrder, OvhApiVps, stateVps, URLS) {
+  constructor($window, availableOffers, CloudMessage, connectedUser, OvhApiOrder, OvhApiVps,
+    stateVps) {
     // dependencies injections
     this.$window = $window;
     this.availableOffers = availableOffers;
@@ -10,7 +10,6 @@ export default class VpsUpgradeCtrl {
     this.OvhApiOrder = OvhApiOrder;
     this.OvhApiVps = OvhApiVps;
     this.stateVps = stateVps;
-    this.URLS = URLS;
 
     // other attributes used in view
     this.serviceName = this.stateVps.name;
@@ -19,11 +18,13 @@ export default class VpsUpgradeCtrl {
 
     this.loading = {
       init: false,
+      contracts: false,
       upgrade: false,
     };
 
     this.model = {
       offer: null,
+      contracts: false,
     };
   }
 
@@ -60,37 +61,66 @@ export default class VpsUpgradeCtrl {
   =            Events            =
   ============================== */
 
-  onUpgradeFormSubmit() {
-    this.loading.upgrade = true;
+  onContractsStepFormFocus() {
+    this.loading.contracts = true;
 
     return this.OvhApiOrder.Upgrade().Vps().v6().get({
       serviceName: this.serviceName,
       planCode: this.model.offer.offer.details.planCode,
     }).$promise
-      .then(() => {
-        // redirect to express order
-        const expressOrderUrl = _.get(
-          this.URLS.website_order.express_base,
-          this.connectedUser.ovhSubsidiary,
-        );
-
-        const order = {
-          planCode: 'vps_ssd',
-          serviceName: this.stateVps.name,
-          productId: 'vps',
-          option: [{
-            planCode: this.model.offer.offer.details.planCode,
-            duration: 'P1M',
-            pricingMode: 'default',
-            quantity: 1,
-          }],
-        };
-
-        this.$window.open(`${expressOrderUrl}?products=${JSURL.stringify([order])}`, '_blank');
+      .then((order) => {
+        this.order = order.order;
+        this.order.contracts = _.map(this.order.contracts, (contractParam, index) => {
+          const contract = contractParam;
+          contract.expanded = index === 0;
+          return contract;
+        });
       })
       .finally(() => {
-        this.loading.upgrade = false;
+        this.loading.contracts = false;
       });
+  }
+
+  toggleContractExpand(toggledContract) {
+    // if contract is not expanded
+    // hide all contracts
+    if (!toggledContract.expanded) {
+      this.order.contracts.forEach((contract) => {
+        _.set(contract, 'expanded', false);
+      });
+    }
+    // toggle expand state of contract
+    _.set(toggledContract, 'expanded', !toggledContract.expanded);
+  }
+
+  onUpgradeFormSubmit() {
+    this.loading.upgrade = true;
+
+    // return
+    //   .then(() => {
+    //     // redirect to express order
+    //     const expressOrderUrl = _.get(
+    //       this.URLS.website_order.express_base,
+    //       this.connectedUser.ovhSubsidiary,
+    //     );
+
+    //     const order = {
+    //       planCode: 'vps_ssd',
+    //       serviceName: this.stateVps.name,
+    //       productId: 'vps',
+    //       option: [{
+    //         planCode: this.model.offer.offer.details.planCode,
+    //         duration: 'P1M',
+    //         pricingMode: 'default',
+    //         quantity: 1,
+    //       }],
+    //     };
+
+    //     this.$window.open(`${expressOrderUrl}?products=${JSURL.stringify([order])}`, '_blank');
+    //   })
+    //   .finally(() => {
+    //     this.loading.upgrade = false;
+    //   });
   }
 
   /* -----  End of Events  ------ */

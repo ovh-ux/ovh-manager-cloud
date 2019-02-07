@@ -16,11 +16,15 @@
   "vps_configuration_upgradevps_step2_question": "Upgrade du VPS <span class=\"italic normal\">{{vpsName}}</span> en {{modelName}}",
   "vps_configuration_upgradevps_step2_price1": "Tarif jusqu'au {{duration}} :",
   "vps_configuration_upgradevps_step2_price2": "Ensuite, votre serveur sera facturé :",
-  "vps_configuration_upgradevps_step2_explication2": "Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'upgrade soit pris en compte dans votre Espace Client Web.",
+  "vps_configuration_upgradevps_step2_explication2": "Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'upgrade soit pris en compte dans votre Espace Client.",
   "vps_configuration_upgradevps_step2_explication3": "Un redémarrage sera nécessaire pour que la puissance de votre VPS soit augmentée.",
   "vps_configuration_upgradevps_step3_title": "Récapitulatif",
   "vps_configuration_upgradevps_fail": "Une erreur est survenue lors de la demande d'upgrade de votre VPS.",
   "vps_configuration_upgradevps_current": "Configuration actuelle",
   "vps_configuration_upgradevps_order": "Commander",
-  "vps_configuration_upgradevps_choose_model": "Choisissez votre modèle"
+  "vps_configuration_upgradevps_choose_model": "Choisissez votre modèle",
+  "vps_configuration_upgradevps_contracts_show": "{{ name }}: voir le contenu du contrat",
+  "vps_configuration_upgradevps_contracts_hide": "{{ name }}: cacher le contenu du contrat",
+  "vps_configuration_upgradevps_contracts_see_pdf": "(Visionner en PDF)",
+  "vps_configuration_upgradevps_contracts_see_pdf_title": "{{ name }}: visionner en PDF"
 }
