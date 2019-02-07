@@ -23,8 +23,12 @@
   "vps_configuration_upgradevps_current": "Configuration actuelle",
   "vps_configuration_upgradevps_order": "Commander",
   "vps_configuration_upgradevps_choose_model": "Choisissez votre modèle",
+  "vps_configuration_upgradevps_current_model": "(Modèle actuel)",
   "vps_configuration_upgradevps_contracts_show": "{{ name }}: voir le contenu du contrat",
   "vps_configuration_upgradevps_contracts_hide": "{{ name }}: cacher le contenu du contrat",
   "vps_configuration_upgradevps_contracts_see_pdf": "(Visionner en PDF)",
-  "vps_configuration_upgradevps_contracts_see_pdf_title": "{{ name }}: visionner en PDF"
+  "vps_configuration_upgradevps_contracts_see_pdf_title": "{{ name }}: visionner en PDF",
+  "vps_configuration_upgradevps_resume_selected_model": "Modèle sélectionné",
+  "vps_configuration_upgradevps_resume_explain1": "En cliquant sur le bouton \"Commander\", un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.",
+  "vps_configuration_upgradevps_success": "Le bon de commande numéro {{ orderId }} a bien été créé. Afin de finaliser votre commande, veuillez suivre les instructions de paiement dans le nouvel onglet qui s'est ouvert. Si aucun nouvel onglet ne s'est ouvert, veuillez cliquer sur <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">ce lien</a>."
 }

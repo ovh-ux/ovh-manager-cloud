@@ -1,10 +1,11 @@
 export default class VpsUpgradeCtrl {
   /* @ngInject */
-  constructor($window, availableOffers, CloudMessage, connectedUser, OvhApiOrder, OvhApiVps,
-    stateVps) {
+  constructor($q, $translate, $window, CloudMessage, connectedUser, OvhApiOrder,
+    OvhApiVps, stateVps) {
     // dependencies injections
+    this.$q = $q;
+    this.$translate = $translate;
     this.$window = $window;
-    this.availableOffers = availableOffers;
     this.CloudMessage = CloudMessage;
     this.connectedUser = connectedUser;
     this.OvhApiOrder = OvhApiOrder;
@@ -19,7 +20,7 @@ export default class VpsUpgradeCtrl {
     this.loading = {
       init: false,
       contracts: false,
-      upgrade: false,
+      order: false,
     };
 
     this.model = {
@@ -28,6 +29,9 @@ export default class VpsUpgradeCtrl {
     };
   }
 
+  /**
+   *  Parse the model version by extracting the year and the version into this year
+   */
   static parseModelVersion(modelVersion) {
     const parseRegexp = new RegExp(/(\d{4})v(\d+)/);
     if (parseRegexp.test(modelVersion)) {
@@ -41,7 +45,13 @@ export default class VpsUpgradeCtrl {
     throw new Error(`Provided modelVersion (${modelVersion}) is not supported.`);
   }
 
+  /**
+   *  Get the plan code for agora order from VPS model informations
+   */
   static findMatchingUpgradeOffer(modelType, modelName, modelVersion, availableOffers) {
+    // rules are :
+    // - if version year is less than 2018, agora version will be 2018v3
+    // - otherwise agora version will be 2018v4
     const versionInfos = VpsUpgradeCtrl.parseModelVersion(modelVersion);
     const destVersion = versionInfos.year < 2018 ? '2018v3' : '2018v4';
     const offerPlanCode = `vps_${modelType}_${modelName}_${destVersion}`;
@@ -51,6 +61,9 @@ export default class VpsUpgradeCtrl {
     });
   }
 
+  /**
+   *  Find the monthly price object of given offer
+   */
   static getMonthlyPrice(offer) {
     return _.find(offer.offer.details.prices, {
       duration: 'P1M',
@@ -76,6 +89,12 @@ export default class VpsUpgradeCtrl {
           return contract;
         });
       })
+      .catch((error) => {
+        this.CloudMessage.error([
+          this.$translate.instant('vps_configuration_upgradevps_fail'),
+          _.get(error, 'message'),
+        ].join(' '));
+      })
       .finally(() => {
         this.loading.contracts = false;
       });
@@ -93,34 +112,39 @@ export default class VpsUpgradeCtrl {
     _.set(toggledContract, 'expanded', !toggledContract.expanded);
   }
 
-  onUpgradeFormSubmit() {
-    this.loading.upgrade = true;
+  onStepperFinish() {
+    this.loading.order = true;
 
-    // return
-    //   .then(() => {
-    //     // redirect to express order
-    //     const expressOrderUrl = _.get(
-    //       this.URLS.website_order.express_base,
-    //       this.connectedUser.ovhSubsidiary,
-    //     );
+    return this.OvhApiOrder.Upgrade().Vps().v6().save({
+      serviceName: this.serviceName,
+      planCode: this.model.offer.offer.details.planCode,
+    }, {
+      quantity: 1,
+    }).$promise
+      .then((response) => {
+        // open order url
+        this.$window.open(response.order.url, '_blank');
 
-    //     const order = {
-    //       planCode: 'vps_ssd',
-    //       serviceName: this.stateVps.name,
-    //       productId: 'vps',
-    //       option: [{
-    //         planCode: this.model.offer.offer.details.planCode,
-    //         duration: 'P1M',
-    //         pricingMode: 'default',
-    //         quantity: 1,
-    //       }],
-    //     };
+        // display success message
+        this.CloudMessage.success({
+          textHtml: this.$translate.instant('vps_configuration_upgradevps_success', {
+            orderId: response.order.orderId,
+            url: response.order.url,
+          }),
+        });
 
-    //     this.$window.open(`${expressOrderUrl}?products=${JSURL.stringify([order])}`, '_blank');
-    //   })
-    //   .finally(() => {
-    //     this.loading.upgrade = false;
-    //   });
+        // reinit the form
+        return this.$onInit();
+      })
+      .catch((error) => {
+        this.CloudMessage.error([
+          this.$translate.instant('vps_configuration_upgradevps_fail'),
+          _.get(error, 'message'),
+        ].join(' '));
+      })
+      .finally(() => {
+        this.loading.order = false;
+      });
   }
 
   /* -----  End of Events  ------ */
@@ -132,11 +156,21 @@ export default class VpsUpgradeCtrl {
   $onInit() {
     this.loading.init = true;
 
-    return this.OvhApiVps.v6().availableUpgrade({
-      serviceName: this.serviceName,
-    }).$promise
-      .then((availableUpgradeParam) => {
-        const availableUpgrade = _.map(availableUpgradeParam, (upgradeParam) => {
+    this.model.offer = null;
+    this.model.contracts = false;
+
+    return this.$q.all({
+      availableUpgrades: this.OvhApiVps.v6().availableUpgrade({
+        serviceName: this.serviceName,
+      }).$promise,
+      availableOffers: this.OvhApiOrder.Upgrade().Vps().v6().getAvailableOffers({
+        serviceName: this.serviceName,
+      }).$promise,
+    })
+      .then(({ availableUpgrades, availableOffers }) => {
+        // map available upgrades by adding details with the informations
+        // provided by /order/upgrade/vps API response
+        const availableUpgrade = _.map(availableUpgrades, (upgradeParam) => {
           const upgrade = upgradeParam;
           upgrade.isCurrentOffer = false;
           upgrade.offer = {
@@ -145,12 +179,14 @@ export default class VpsUpgradeCtrl {
               this.stateVps.offerType,
               upgrade.name,
               upgrade.version,
-              this.availableOffers,
+              availableOffers,
             ),
           };
           return upgrade;
         });
 
+        // set current offer in available upgrade and concat with availabe ones
+        // then chunk the list for responsive display
         this.chunkedAvailableUpgrade = _.chunk([{
           isCurrentOffer: true,
           disk: this.stateVps.model.disk,
@@ -162,7 +198,7 @@ export default class VpsUpgradeCtrl {
               this.stateVps.offerType,
               this.stateVps.model.name,
               this.stateVps.model.version,
-              this.availableOffers,
+              availableOffers,
             ),
           },
           vcore: this.stateVps.model.vcore,

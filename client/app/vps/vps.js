@@ -12,6 +12,14 @@ angular.module('managerApp').config(($stateProvider) => {
       url: '/vps',
       templateUrl: 'app/vps/vps.html',
       abstract: true,
+      translations: {
+        value: ['../common', '../vps'],
+        format: 'json',
+      },
+    })
+    .state('iaas.vps.detail', {
+      url: '/{serviceName}',
+      redirectTo: 'iaas.vps.detail.dashboard',
       resolve: {
         stateVps: ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
           serviceName: _.get($transition$.params(), 'serviceName'),
@@ -23,14 +31,6 @@ angular.module('managerApp').config(($stateProvider) => {
             return true;
           }),
       },
-      translations: {
-        value: ['../common', '../vps'],
-        format: 'json',
-      },
-    })
-    .state('iaas.vps.detail', {
-      url: '/{serviceName}',
-      redirectTo: 'iaas.vps.detail.dashboard',
       views: {
         vpsHeader,
         vpsContainer: {

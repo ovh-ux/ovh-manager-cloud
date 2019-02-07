@@ -2,37 +2,29 @@ import { vpsHeader } from '../vps';
 
 // Agora and legacies order views and controllers import
 // VPS upgrade legacy
-import legacyUpgradeTpl from './legacy/vps-upgrade-legacy.html';
-import legacyUpgradeCtrl from './legacy/vps-upgrade-legacy.controller';
+import legacyTpl from './legacy/vps-upgrade-legacy.html';
+import legacyCtrl from './legacy/vps-upgrade-legacy.controller';
 // VPS upgrade Agora
-import agoraUpgradeTpl from './vps-upgrade.html';
-import agoraUpgradeCtrl from './vps-upgrade.controller';
+import agoraTpl from './vps-upgrade.html';
+import agoraCtrl from './vps-upgrade.controller';
 
 angular.module('managerApp').config(($stateProvider) => {
   $stateProvider.state('iaas.vps.detail.upgrade', {
     url: '/upgrade',
-    resolve: {
-      availableOffers: /* @ngInject */ (stateVps, OvhApiOrder) => {
-        const serviceName = stateVps.name;
-        return OvhApiOrder.Upgrade().Vps().v6().getAvailableOffers({
-          serviceName,
-        }).$promise;
-      },
-    },
     views: {
       vpsHeader,
       vpsContent: {
-        templateProvider: /* @ngInject */ (availableOffers) => {
-          if (!availableOffers.length) {
-            return legacyUpgradeTpl;
+        templateProvider: /* @ngInject */ (stateVps) => {
+          if (stateVps.model.version !== '2018v1') {
+            return legacyTpl;
           }
-          return agoraUpgradeTpl;
+          return agoraTpl;
         },
-        controllerProvider: /* @ngInject */ (availableOffers) => {
-          if (!availableOffers.length) {
-            return legacyUpgradeCtrl;
+        controllerProvider: /* @ngInject */ (stateVps) => {
+          if (stateVps.model.version !== '2018v1') {
+            return legacyCtrl;
           }
-          return agoraUpgradeCtrl;
+          return agoraCtrl;
         },
         controllerAs: '$ctrl',
       },

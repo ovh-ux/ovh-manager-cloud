@@ -5,12 +5,12 @@
     </oui-back-button>
 
     <div class="text-center"
-         data-ng-if="$ctrl.loading.init || $ctrl.loading.upgrade">
+         data-ng-if="$ctrl.loading.init || $ctrl.loading.order">
         <oui-spinner></oui-spinner>
     </div>
 
-    <div data-ng-if="!$ctrl.loading.init && !$ctrl.loading.upgrade">
-        <oui-stepper>
+    <div data-ng-if="!$ctrl.loading.init && !$ctrl.loading.order">
+        <oui-stepper data-on-finish="$ctrl.onStepperFinish()">
             <oui-step-form data-header="{{ :: 'vps_configuration_upgradevps_choose_model' | translate }}">
                 <div class="row"
                      data-ng-repeat="chunkedOffers in $ctrl.chunkedAvailableUpgrade track by $index">
@@ -18,7 +18,7 @@
                          data-ng-repeat="offer in chunkedOffers track by $index">
                         <oui-select-picker data-name="offerChoice"
                                            data-model="$ctrl.model.offer"
-                                           data-label="{{ offer.offer.name }}"
+                                           data-label="{{ offer.offer.name + (offer.isCurrentOffer ? ('vps_configuration_upgradevps_current_model' | translate) : '') }}"
                                            data-variant="light"
                                            data-disabled="offer.isCurrentOffer"
                                            data-values="[offer]"
@@ -65,7 +65,7 @@
             <oui-step-form data-header="{{ :: 'vps_configuration_upgradevps_step2_title' | translate }}"
                            data-loading="$ctrl.loading.contracts"
                            data-on-focus="$ctrl.onContractsStepFormFocus()">
-                <div class="mb-5">
+                <div class="mb-3">
                     <div class="oui-collapsible"
                          data-ng-attr-id="{{ 'collapsible-' + $index }}"
                          data-ng-repeat="contract in $ctrl.order.contracts track by $index">
@@ -103,14 +103,33 @@
             <oui-step-form data-header="{{ :: 'vps_configuration_upgradevps_step3_title' | translate }}"
                            data-submit-text="{{ :: 'vps_configuration_upgradevps_order' | translate }}">
 
-                <dl>
-                    <dt data-translate="common_price_ht"></dt>
-                    <dd data-ng-bind="$ctrl.order.prices.withoutTax.text"></dd>
+                <dl class="d-flex flex-wrap">
+                    <!-- Selected model -->
+                    <dt class="w-50" 
+                        data-translate="vps_configuration_upgradevps_resume_selected_model">
+                    </dt>
+                    <dd class="w-25 text-right" 
+                        data-ng-bind="$ctrl.model.offer.offer.name">
+                    </dd> <!-- End of Selected model -->
 
-                    <dt data-translate="common_price_ttc"></dt>
-                    <dd data-ng-bind="$ctrl.order.prices.withTax.text"></dd>
+                    <!-- HT Price -->
+                    <dt class="w-50" 
+                        data-translate="common_price_ht">
+                    </dt>
+                    <dd class="w-25 text-right" 
+                        data-ng-bind="$ctrl.order.prices.withoutTax.text">
+                    </dd> <!-- End of HT Price -->
+
+                    <!-- TTC Price -->
+                    <dt class="w-50"
+                        data-translate="common_price_ttc">
+                    </dt>
+                    <dd class="w-25 text-right" 
+                        data-ng-bind="$ctrl.order.prices.withTax.text">
+                    </dd> <!-- End of TTC Price -->
                 </dl>
 
+                <p data-translate="vps_configuration_upgradevps_resume_explain1"></p>
                 <p data-translate="vps_configuration_upgradevps_step2_explication2"></p>
                 <p data-translate="vps_configuration_upgradevps_step2_explication3"></p>
             </oui-step-form>
