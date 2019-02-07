@@ -1,3 +1,12 @@
+## [7.15.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.4...v7.15.5) (2019-02-07)
+
+
+### Bug Fixes
+
+* **i18n:** restore i18n fallback ([#1286](https://github.com/ovh-ux/ovh-manager-cloud/issues/1286)) ([2cc4ff6](https://github.com/ovh-ux/ovh-manager-cloud/commit/2cc4ff6))
+
+
+
 ## [7.15.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.3...v7.15.4) (2019-02-06)
 
 
