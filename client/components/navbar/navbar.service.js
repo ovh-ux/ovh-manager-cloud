@@ -1,10 +1,14 @@
 class ManagerNavbarService {
-  constructor($q,
+  /* @ngInject */
+  constructor(
+    $injector,
+    $q,
     $translate,
     atInternet,
     FeatureAvailabilityService,
     LANGUAGES,
     MANAGER_URLS,
+    NavbarBuilder,
     NavbarNotificationService,
     OtrsPopupService,
     ProductsService,
@@ -14,13 +18,16 @@ class ManagerNavbarService {
     TARGET,
     TranslateService,
     URLS,
-    asyncLoader) {
+    asyncLoader,
+  ) {
+    this.$injector = $injector;
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
     this.featureAvailabilityService = FeatureAvailabilityService;
     this.LANGUAGES = LANGUAGES;
     this.MANAGER_URLS = MANAGER_URLS;
+    this.NavbarBuilder = NavbarBuilder;
     this.navbarNotificationService = NavbarNotificationService;
     this.otrsPopupService = OtrsPopupService;
     this.productsService = ProductsService;
@@ -114,31 +121,10 @@ class ManagerNavbarService {
             return {
               name: service.serviceName,
               title: service.displayName,
-              subLinks: [{
-                title: this.$translate.instant('cloud_sidebar_pci_infrastructure'),
-                state: 'iaas.pci-project.compute',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_object_storage'),
-                state: 'iaas.pci-project.compute.storage',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_manage'),
-                state: 'iaas.pci-project.billing',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }, {
-                title: this.$translate.instant('cloud_sidebar_pci_openstack'),
-                state: 'iaas.pci-project.compute.openstack',
-                stateParams: {
-                  projectId: service.serviceName,
-                },
-              }],
+              state: 'iaas.pci-project.compute.infrastructure.diagram',
+              stateParams: {
+                projectId: service.serviceName,
+              },
             };
           case 'VPS':
             return {
@@ -382,16 +368,23 @@ class ManagerNavbarService {
       },
     ];
 
-    return {
-      name: 'assistance',
-      title: this.$translate.instant('common_menu_support_assistance'),
-      iconClass: 'icon-assistance',
-      onClick: () => this.atInternet.trackClick({
+    const useExpandedText = ['FR'].includes(subsidiary);
+
+    return (useExpandedText
+      ? this.NavbarBuilder.buildMenuHeader(this.$translate.instant('common_menu_support_assistance_expanded'))
+      : this.$q.when(this.$translate.instant('common_menu_support_assistance'))
+    )
+      .then(title => ({
         name: 'assistance',
-        type: 'action',
-      }),
-      subLinks: assistanceMenuItems.filter(menuItem => menuItem.mustBeKept),
-    };
+        title,
+        headerTitle: useExpandedText ? this.$translate.instant('common_menu_support_assistance_expanded') : title,
+        iconClass: 'icon-assistance',
+        onClick: () => this.atInternet.trackClick({
+          name: 'assistance',
+          type: 'action',
+        }),
+        subLinks: assistanceMenuItems.filter(menuItem => menuItem.mustBeKept),
+      }));
   }
 
   getLanguageMenu() {
@@ -430,162 +423,172 @@ class ManagerNavbarService {
   }
 
   getUserMenu(currentUser) {
-    return {
-      name: 'user',
-      title: currentUser.firstname,
-      iconClass: 'icon-user',
-      nichandle: currentUser.nichandle,
-      fullName: `${currentUser.firstname} ${currentUser.name}`,
-      subLinks: [
+    const useExpandedText = ['FR'].includes(currentUser.ovhSubsidiary);
+
+    return (useExpandedText
+      ? this.NavbarBuilder.buildMenuHeader(`
+      ${this.$translate.instant('common_menu_support_userAccount_1', { username: currentUser.firstname })}
+      <br>
+      ${this.$translate.instant('common_menu_support_userAccount_2')}
+    `)
+      : this.$q.when(currentUser.firstname))
+      .then(title => ({
+        name: 'user',
+        title,
+        iconClass: 'icon-user',
+        nichandle: currentUser.nichandle,
+        fullName: `${currentUser.firstname} ${currentUser.name}`,
+        subLinks: [
         // My Account
-        {
-          name: 'user.account',
-          title: this.$translate.instant('common_menu_account'),
-          url: this.REDIRECT_URLS.userInfos,
-          click: () => this.trackUserMenuSection('my_account', 'account'),
-          subLinks: [{
-            title: this.$translate.instant('common_menu_account_infos'),
+          {
+            name: 'user.account',
+            title: this.$translate.instant('common_menu_account'),
             url: this.REDIRECT_URLS.userInfos,
-          }, {
-            title: this.$translate.instant('common_menu_account_security'),
-            url: this.REDIRECT_URLS.userSecurity,
+            click: () => this.trackUserMenuSection('my_account', 'account'),
+            subLinks: [{
+              title: this.$translate.instant('common_menu_account_infos'),
+              url: this.REDIRECT_URLS.userInfos,
+            }, {
+              title: this.$translate.instant('common_menu_account_security'),
+              url: this.REDIRECT_URLS.userSecurity,
+            },
+            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+              title: this.$translate.instant('common_menu_account_emails'),
+              url: this.REDIRECT_URLS.userEmails,
+            },
+            (this.TARGET === 'EU') && {
+              title: this.$translate.instant('common_menu_account_subscriptions'),
+              url: this.REDIRECT_URLS.userSubscriptions,
+            }, {
+              title: this.$translate.instant('common_menu_account_ssh'),
+              url: this.REDIRECT_URLS.userSSH,
+            }, {
+              title: this.$translate.instant('common_menu_account_advanced'),
+              url: this.REDIRECT_URLS.userAdvanced,
+            }],
           },
-          (this.TARGET === 'EU' || this.TARGET === 'CA') && {
-            title: this.$translate.instant('common_menu_account_emails'),
-            url: this.REDIRECT_URLS.userEmails,
-          },
-          (this.TARGET === 'EU') && {
-            title: this.$translate.instant('common_menu_account_subscriptions'),
-            url: this.REDIRECT_URLS.userSubscriptions,
-          }, {
-            title: this.$translate.instant('common_menu_account_ssh'),
-            url: this.REDIRECT_URLS.userSSH,
-          }, {
-            title: this.$translate.instant('common_menu_account_advanced'),
-            url: this.REDIRECT_URLS.userAdvanced,
-          }],
-        },
 
-        // Billing
-        !currentUser.isEnterprise && {
-          name: 'user.billing',
-          title: this.$translate.instant('common_menu_billing'),
-          url: this.REDIRECT_URLS.billing,
-          click: () => this.trackUserMenuSection('my_facturation', 'billing'),
-          subLinks: [{
-            title: this.$translate.instant('common_menu_billing_history'),
+          // Billing
+          !currentUser.isEnterprise && {
+            name: 'user.billing',
+            title: this.$translate.instant('common_menu_billing'),
             url: this.REDIRECT_URLS.billing,
-          }, {
-            title: this.$translate.instant('common_menu_billing_payments'),
-            url: this.REDIRECT_URLS.billingPayments,
-          }],
-        },
+            click: () => this.trackUserMenuSection('my_facturation', 'billing'),
+            subLinks: [{
+              title: this.$translate.instant('common_menu_billing_history'),
+              url: this.REDIRECT_URLS.billing,
+            }, {
+              title: this.$translate.instant('common_menu_billing_payments'),
+              url: this.REDIRECT_URLS.billingPayments,
+            }],
+          },
 
-        // Services
-        (this.TARGET === 'EU' || this.TARGET === 'CA') && (!currentUser.isEnterprise ? {
-          name: 'user.services',
-          title: this.$translate.instant('common_menu_renew'),
-          url: this.REDIRECT_URLS.services,
-          click: () => this.trackUserMenuSection('my_services', 'services'),
-          subLinks: [{
-            title: this.$translate.instant('common_menu_renew_management'),
+          // Services
+          (this.TARGET === 'EU' || this.TARGET === 'CA') && (!currentUser.isEnterprise ? {
+            name: 'user.services',
+            title: this.$translate.instant('common_menu_renew'),
             url: this.REDIRECT_URLS.services,
-          }, {
+            click: () => this.trackUserMenuSection('my_services', 'services'),
+            subLinks: [{
+              title: this.$translate.instant('common_menu_renew_management'),
+              url: this.REDIRECT_URLS.services,
+            }, {
+              title: this.$translate.instant('common_menu_renew_agreements'),
+              url: this.REDIRECT_URLS.servicesAgreements,
+            }],
+          } : {
             title: this.$translate.instant('common_menu_renew_agreements'),
             url: this.REDIRECT_URLS.servicesAgreements,
-          }],
-        } : {
-          title: this.$translate.instant('common_menu_renew_agreements'),
-          url: this.REDIRECT_URLS.servicesAgreements,
-        }),
+          }),
 
-        // Payment
-        !currentUser.isEnterprise && {
-          name: 'user.payment',
-          title: this.$translate.instant('common_menu_means'),
-          url: this.REDIRECT_URLS.paymentMeans,
-          click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
-          subLinks: [{
-            title: this.$translate.instant('common_menu_means_mean'),
+          // Payment
+          !currentUser.isEnterprise && {
+            name: 'user.payment',
+            title: this.$translate.instant('common_menu_means'),
             url: this.REDIRECT_URLS.paymentMeans,
+            click: () => this.trackUserMenuSection('my_payment_types', 'payment_types'),
+            subLinks: [{
+              title: this.$translate.instant('common_menu_means_mean'),
+              url: this.REDIRECT_URLS.paymentMeans,
+            },
+            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+              title: this.$translate.instant('common_menu_means_ovhaccount'),
+              url: this.REDIRECT_URLS.ovhAccount,
+            },
+            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+              title: this.$translate.instant('common_menu_means_vouchers'),
+              url: this.REDIRECT_URLS.billingVouchers,
+            }, {
+              title: this.$translate.instant('common_menu_means_refunds'),
+              url: this.REDIRECT_URLS.billingRefunds,
+            },
+            (this.TARGET === 'EU') && {
+              title: this.$translate.instant('common_menu_means_fidelity'),
+              url: this.REDIRECT_URLS.billingFidelity,
+            }, {
+              title: this.$translate.instant('common_menu_means_credits'),
+              url: this.REDIRECT_URLS.billingCredits,
+            }],
           },
-          (this.TARGET === 'EU' || this.TARGET === 'CA') && {
-            title: this.$translate.instant('common_menu_means_ovhaccount'),
-            url: this.REDIRECT_URLS.ovhAccount,
+
+          // Orders
+          (!currentUser.isEnterprise && this.TARGET === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
+            title: this.$translate.instant('common_menu_orders'),
+            url: this.REDIRECT_URLS.orders,
+            click: () => this.trackUserMenuSection('my_orders', 'orders'),
           },
-          (this.TARGET === 'EU' || this.TARGET === 'CA') && {
-            title: this.$translate.instant('common_menu_means_vouchers'),
-            url: this.REDIRECT_URLS.billingVouchers,
-          }, {
-            title: this.$translate.instant('common_menu_means_refunds'),
-            url: this.REDIRECT_URLS.billingRefunds,
-          },
+
+          // Contacts
           (this.TARGET === 'EU') && {
-            title: this.$translate.instant('common_menu_means_fidelity'),
-            url: this.REDIRECT_URLS.billingFidelity,
-          }, {
-            title: this.$translate.instant('common_menu_means_credits'),
-            url: this.REDIRECT_URLS.billingCredits,
-          }],
-        },
-
-        // Orders
-        (!currentUser.isEnterprise && this.TARGET === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
-          title: this.$translate.instant('common_menu_orders'),
-          url: this.REDIRECT_URLS.orders,
-          click: () => this.trackUserMenuSection('my_orders', 'orders'),
-        },
-
-        // Contacts
-        (this.TARGET === 'EU') && {
-          title: this.$translate.instant('common_menu_contacts'),
-          url: this.REDIRECT_URLS.contacts,
-          click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
-        },
-
-        // Tickets
-        {
-          title: this.$translate.instant('common_menu_list_ticket'),
-          url: this.REDIRECT_URLS.support,
-          click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
-        },
-
-        // Logout
-        {
-          title: this.$translate.instant('global_logout'),
-          class: 'logout',
-          click: (callback) => {
-            this.ssoAuthentication.logout();
-
-            if (typeof callback === 'function') {
-              callback();
-            }
+            title: this.$translate.instant('common_menu_contacts'),
+            url: this.REDIRECT_URLS.contacts,
+            click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
           },
-        },
-      ],
-    };
+
+          // Tickets
+          {
+            title: this.$translate.instant('common_menu_list_ticket'),
+            url: this.REDIRECT_URLS.support,
+            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
+          },
+
+          // Logout
+          {
+            title: this.$translate.instant('global_logout'),
+            class: 'logout',
+            click: (callback) => {
+              this.ssoAuthentication.logout();
+
+              if (typeof callback === 'function') {
+                callback();
+              }
+            },
+          },
+        ],
+      }));
   }
 
   getInternalLinks(currentUser, notificationsMenu) {
-    // Return login link if user not logged
-    if (!currentUser) {
-      return [{
+    return (currentUser
+      ? this.$q.all([
+        this.getLanguageMenu(),
+        this.getAssistanceMenu(currentUser.ovhSubsidiary),
+        this.getUserMenu(currentUser),
+      ])
+      : this.$q.when([{
         title: this.$translate.instant('common_login'),
         click: () => this.ssoAuthentication.logout(),
-      }];
-    }
+      }])
+    )
+      .then((menuLinks) => {
+        const menu = menuLinks;
 
-    const menu = [
-      this.getLanguageMenu(), // Language
-      this.getAssistanceMenu(currentUser.ovhSubsidiary), // Assistance
-      this.getUserMenu(currentUser), // User
-    ];
+        if (notificationsMenu.show) {
+          menu.splice(1, 0, notificationsMenu);
+        }
 
-    if (notificationsMenu.show) {
-      menu.splice(1, 0, notificationsMenu);
-    }
-
-    return menu;
+        return menu;
+      });
   }
 
   getManagersNames() {
@@ -649,36 +652,29 @@ class ManagerNavbarService {
     const getBaseNavbar = (user, notifications) => {
       this.locale = user.ovhSubsidiary;
 
-      return {
-        // Set OVH Logo
-        brand: {
-          label: this.$translate.instant('common_menu_cloud'),
-          url: managerUrls.cloud,
-          iconAlt: 'OVH',
-          iconClass: 'navbar-logo',
-          iconSrc: 'assets/images/navbar/icon-logo-ovh.svg',
-        },
+      return this.getInternalLinks(user, notifications)
+        .then(internalLinks => ({
+          // Set OVH Logo
+          brand: {
+            label: this.$translate.instant('common_menu_cloud'),
+            url: managerUrls.cloud,
+            iconAlt: 'OVH',
+            iconClass: 'navbar-logo',
+            iconSrc: 'assets/images/navbar/icon-logo-ovh.svg',
+          },
 
-        // Set Internal Links
-        internalLinks: this.getInternalLinks(user, notifications),
+          // Set Internal Links
+          internalLinks,
 
-        // Set Manager Links
-        managerLinks: this.getManagerLinks(),
-      };
+          // Set Manager Links
+          managerLinks: this.getManagerLinks(),
+        }));
     };
 
-    this.asyncLoader.addTranslations(
-      import(`../../app/common/translations/Messages_${this.$translate.use()}.json`)
-        .catch(() => import(`../../app/common/translations/Messages_${this.$translate.fallbackLanguage()}.json`))
-        .then(x => x.default),
-    );
-
-    return this.$q.all({
-      translate: this.loadTranslations(),
-      user: this.sessionService.getUser(),
-      notifications: this.navbarNotificationService.getNavbarContent(),
-    })
-      .then(({ user, notifications }) => getBaseNavbar(user, notifications))
+    return this.loadTranslations()
+      .then(() => this.sessionService.getUser())
+      .then(user => this.navbarNotificationService.getNavbarContent(user)
+        .then(notifications => getBaseNavbar(user, notifications)))
       .catch(() => getBaseNavbar());
   }
 }

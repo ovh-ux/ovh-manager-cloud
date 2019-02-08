@@ -3,40 +3,8 @@
     <div data-ng-if="CloudProjectComputeCtrl.loading" class="text-center" style="margin-top: 200px;">
         <oui-spinner size="l"></oui-spinner>
     </div>
-    <div class="cloud-project-compute-content" data-ng-if="!CloudProjectComputeCtrl.loading">
-        <cui-page-header data-cloud-project-title="CloudProjectComputeCtrl.serviceName"
-                         data-subtitle-text="CloudProjectComputeCtrl.serviceName">
-            <cui-tabs>
-                <cui-tab data-text="'cpc_tab_infra'|translate"
-                         data-state="iaas.pci-project.compute.infrastructure.diagram"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cpc_tab_snapshot'|translate"
-                         data-state="iaas.pci-project.compute.snapshot"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cpc_tab_volume'|translate"
-                         data-state="iaas.pci-project.compute.volume"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cpc_tab_ssh'|translate"
-                         data-state="iaas.pci-project.compute.ssh"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-ng-if="CloudProjectComputeCtrl.FeatureAvailabilityService.hasFeature('iplb', 'sidebarOrder')"
-                         data-text="'cpc_tab_loadbalancer'|translate"
-                         data-state="iaas.pci-project.compute.loadbalancer"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cpb_tab_quota' | translate"
-                         data-state="iaas.pci-project.compute.quota"></cui-tab>
-                <cui-tab data-text="'cloud_sidebar_pci_object_storage'|translate"
-                         data-state="iaas.pci-project.compute.storage"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cloud_sidebar_pci_openstack'|translate"
-                         data-state="iaas.pci-project.compute.openstack"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-                <cui-tab data-text="'cloud_sidebar_pci_regions'|translate"
-                         data-state="iaas.pci-project.compute.regions"
-                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
-            </cui-tabs>
-        </cui-page-header>
 
+    <div class="cloud-project-compute-content" data-ng-if="!CloudProjectComputeCtrl.loading">
         <div class="cloud-compute-content-ctnr-responsive">
             <div>
                 <cui-message-container data-messages="CloudProjectComputeCtrl.messages"
@@ -45,7 +13,6 @@
             </div>
             <div data-ui-view="cloudProjectCompute"></div>
         </div>
-
     </div>
 
 </div>

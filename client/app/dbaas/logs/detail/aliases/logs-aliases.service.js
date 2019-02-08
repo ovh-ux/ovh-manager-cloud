@@ -231,6 +231,8 @@ class LogsAliasesService {
       .then(operation => this.LogsHelperService.handleOperation(
         serviceName,
         operation.data || operation,
+        stream.indexingEnabled ? null : 'logs_aliases_attach_stream_not_indexed',
+        { streamName: stream.title },
       ))
       .catch(err => this.LogsHelperService.handleError('logs_aliases_attach_stream_error', err, { streamName: stream.title }));
   }
