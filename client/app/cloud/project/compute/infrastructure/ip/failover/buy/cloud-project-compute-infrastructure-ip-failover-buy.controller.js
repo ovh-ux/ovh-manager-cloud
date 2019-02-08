@@ -130,8 +130,8 @@ angular.module('managerApp')
           const flavor = _.first(_.filter(self.form.flavors, { id: instance.flavorId }));
           if (flavor) {
             const limit = +CLOUD_IPFO_ORDER_LIMIT[flavor.type];
-            if (_.isNumber(limit) && _.isNumber(limit)) {
-              self.form.maxIp += limit;
+            if (_.isNumber(limit) && !_.isEmpty(limit)) {
+              self.form.maxIp = limit;
             }
           }
         });
