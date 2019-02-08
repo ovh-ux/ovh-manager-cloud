@@ -95,6 +95,7 @@
                 </div>
 
                 <oui-checkbox data-model="$ctrl.model.contracts"
+                              name="contractAccept"
                               data-required>
                     <span data-translate="{{ $ctrl.order.contracts.length === 1 ? 'contract_agree' : 'contracts_agree' }}"></span>
                 </oui-checkbox>
@@ -103,30 +104,18 @@
             <oui-step-form data-header="{{ :: 'vps_configuration_upgradevps_step3_title' | translate }}"
                            data-submit-text="{{ :: 'vps_configuration_upgradevps_order' | translate }}">
 
-                <dl class="d-flex flex-wrap">
+                <dl>
                     <!-- Selected model -->
-                    <dt class="w-50" 
-                        data-translate="vps_configuration_upgradevps_resume_selected_model">
-                    </dt>
-                    <dd class="w-25 text-right" 
-                        data-ng-bind="$ctrl.model.offer.offer.name">
-                    </dd> <!-- End of Selected model -->
+                    <dt data-translate="vps_configuration_upgradevps_resume_selected_model"></dt>
+                    <dd data-ng-bind="$ctrl.model.offer.offer.name"></dd> <!-- End of Selected model -->
 
                     <!-- HT Price -->
-                    <dt class="w-50" 
-                        data-translate="common_price_ht">
-                    </dt>
-                    <dd class="w-25 text-right" 
-                        data-ng-bind="$ctrl.order.prices.withoutTax.text">
-                    </dd> <!-- End of HT Price -->
+                    <dt data-translate="common_price_ht"></dt>
+                    <dd data-ng-bind="$ctrl.order.prices.withoutTax.text"></dd> <!-- End of HT Price -->
 
                     <!-- TTC Price -->
-                    <dt class="w-50"
-                        data-translate="common_price_ttc">
-                    </dt>
-                    <dd class="w-25 text-right" 
-                        data-ng-bind="$ctrl.order.prices.withTax.text">
-                    </dd> <!-- End of TTC Price -->
+                    <dt data-translate="common_price_ttc"></dt>
+                    <dd data-ng-bind="$ctrl.order.prices.withTax.text"></dd> <!-- End of TTC Price -->
                 </dl>
 
                 <p data-translate="vps_configuration_upgradevps_resume_explain1"></p>

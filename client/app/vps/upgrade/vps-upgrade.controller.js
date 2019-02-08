@@ -1,3 +1,5 @@
+import { OFFER_AGORA_MAPPING } from './vps-upgrade.constants';
+
 export default class VpsUpgradeCtrl {
   /* @ngInject */
   constructor($q, $translate, $window, CloudMessage, connectedUser, OvhApiOrder,
@@ -54,7 +56,8 @@ export default class VpsUpgradeCtrl {
     // - otherwise agora version will be 2018v4
     const versionInfos = VpsUpgradeCtrl.parseModelVersion(modelVersion);
     const destVersion = versionInfos.year < 2018 ? '2018v3' : '2018v4';
-    const offerPlanCode = `vps_${modelType}_${modelName}_${destVersion}`;
+    const mappedType = _.get(OFFER_AGORA_MAPPING, modelType, modelType);
+    const offerPlanCode = `vps_${mappedType}_${modelName}_${destVersion}`;
 
     return _.find(availableOffers, {
       planCode: offerPlanCode,
@@ -76,6 +79,7 @@ export default class VpsUpgradeCtrl {
 
   onContractsStepFormFocus() {
     this.loading.contracts = true;
+    this.model.contracts = false;
 
     return this.OvhApiOrder.Upgrade().Vps().v6().get({
       serviceName: this.serviceName,
@@ -92,7 +96,7 @@ export default class VpsUpgradeCtrl {
       .catch((error) => {
         this.CloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
-          _.get(error, 'message'),
+          _.get(error, 'data.message'),
         ].join(' '));
       })
       .finally(() => {
@@ -139,7 +143,7 @@ export default class VpsUpgradeCtrl {
       .catch((error) => {
         this.CloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
-          _.get(error, 'message'),
+          _.get(error, 'data.message'),
         ].join(' '));
       })
       .finally(() => {
@@ -157,7 +161,6 @@ export default class VpsUpgradeCtrl {
     this.loading.init = true;
 
     this.model.offer = null;
-    this.model.contracts = false;
 
     return this.$q.all({
       availableUpgrades: this.OvhApiVps.v6().availableUpgrade({
@@ -208,7 +211,7 @@ export default class VpsUpgradeCtrl {
       .catch((error) => {
         this.CloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
-          _.get(error, 'message'),
+          _.get(error, 'data.message'),
         ].join(' '));
       })
       .finally(() => {
