@@ -8,9 +8,5 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: '$ctrl',
       },
     },
-    translations: {
-      value: ['./'],
-      format: 'json',
-    },
   });
 });

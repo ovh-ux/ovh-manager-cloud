@@ -10,14 +10,14 @@ angular.module('managerApp').config(($stateProvider) => {
   $stateProvider.state('iaas.vps.detail.additional-disk.order', {
     url: '/order',
     templateProvider: /* @ngInject */ (stateVps) => {
-      if (stateVps.model.version === '2018v1') {
+      if (stateVps.model.version !== '2018v1') {
         return legacyTpl;
       }
 
       return agoraTpl;
     },
     controllerProvider: /* @ngInject */ (stateVps) => {
-      if (stateVps.model.version === '2018v1') {
+      if (stateVps.model.version !== '2018v1') {
         return legacyCtrl;
       }
 
