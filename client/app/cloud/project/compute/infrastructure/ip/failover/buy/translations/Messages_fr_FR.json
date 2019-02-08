@@ -1,5 +1,6 @@
 {
   "cpciif_buy_title": "Acheter des IPs Failover Cloud",
+  "cpciif_buy_max_ip_reached": "Vous avez atteint le nombre maximum d'adresses IP failover.",
   "cpciif_buy_cloud_info": "Les adresses IPs Failover Cloud sont déplaçables d'un serveur à l'autre au sein d'un même projet Cloud et d'un même continent.",
   "cpciif_buy_quantity_select": "Sélectionnez le nombre d'IP Failover Cloud que vous souhaitez commander :",
   "cpciif_buy_instance_select": "Sélectionnez le serveur sur lequel l'IP Failover Cloud sera connectée (Cette IP Failover sera prochainement routable vers les autres produits OVH) :",

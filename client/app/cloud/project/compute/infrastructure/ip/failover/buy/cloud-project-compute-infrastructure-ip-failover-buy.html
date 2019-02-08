@@ -12,6 +12,11 @@
         </div>
         <div class="oui-modal__body-text" data-ng-if="!CPCIIpFailoverBuyCtrl.loaders.init && !CIIpFailoverBuyCtrl.loaders.buying">
             <h2 class="oui-modal__title" data-translate="cpciif_buy_title"></h2>
+            <div class="oui-modal__body-title" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp <= 0">
+                <oui-message data-type="warning">
+                    <span data-translate="cpciif_buy_max_ip_reached"></span>
+                </oui-message>
+            </div>
             <div class="oui-modal__body-title" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
                 <p class="oui-modal__text">
                     <i class="fa fa-info-circle"></i>
