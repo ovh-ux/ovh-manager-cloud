@@ -88,7 +88,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
 
   addNode() {
     this.loading = true;
-    return this.Kubernetes.addNode(this.serviceName, this.selectedFlavor.name)
+    return this.Kubernetes.addNode(this.serviceName, this.nodeName, this.selectedFlavor.name)
       .then(() => this.$uibModalInstance.close())
       .catch(error => this.$uibModalInstance.dismiss(this.$translate.instant('kube_nodes_add_error', { message: _.get(error, 'data.message', '') })))
       .finally(() => { this.loading = false; });

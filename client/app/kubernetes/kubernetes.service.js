@@ -54,8 +54,11 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Node().v6().query({ serviceName }).$promise;
   }
 
-  addNode(serviceName, flavorName) {
-    return this.OvhApiKube.PublicCloud().Node().v6().save({ serviceName }, { flavorName }).$promise;
+  addNode(serviceName, name, flavorName) {
+    return this.OvhApiKube.PublicCloud().Node().v6().save(
+      { serviceName },
+      { name, flavorName },
+    ).$promise;
   }
 
   changeMenuTitle(serviceName, name) {
