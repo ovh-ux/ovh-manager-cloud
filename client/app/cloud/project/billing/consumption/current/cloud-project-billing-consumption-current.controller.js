@@ -66,9 +66,10 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
           .getCurrentConsumption(serviceId))
         .then((serviceConsumption) => {
           const {
-            instance, snapshot, volume,
+            instance, snapshot, storage, volume,
           } = this.CloudProjectBillingService.constructor
-            .groupConsumptionByFamily(serviceConsumption.elements);
+            .groupConsumptionByFamily(_.get(serviceConsumption, 'elements', []));
+
           this.consumption = {
             hourly: {
               instance: this.CloudProjectBillingService
@@ -86,7 +87,18 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
                   snapshot,
                   this.me.currency.symbol,
                 ),
-              price: serviceConsumption.price,
+              objectStorage: storage ? this.CloudProjectBillingService
+                .formatStorageConsumption(
+                  storage.filter(({ planCode }) => planCode.includes('storage')),
+                  this.me.currency.symbol,
+                ) : this.CloudProjectBillingService.constructor
+                .formatEmptyConsumption(this.me.currency.symbol),
+              price: _.get(
+                serviceConsumption,
+                'price',
+                this.CloudProjectBillingService
+                  .formatEmptyConsumption(this.me.currency.symbol).price,
+              ),
             },
           };
 

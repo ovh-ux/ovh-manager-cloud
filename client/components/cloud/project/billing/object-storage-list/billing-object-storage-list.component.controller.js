@@ -13,7 +13,8 @@ angular.module('managerApp')
       $onInit() {
         this.loading = true;
         this.currencySymbol = '';
-        return this.$q.all([this.initUserCurrency()])
+
+        return this.initUserCurrencySymbol()
           .catch((err) => {
             this.Toast.error([this.$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
             return this.$q.reject(err);
@@ -23,24 +24,27 @@ angular.module('managerApp')
           });
       }
 
-      initUserCurrency() {
+      initUserCurrencySymbol() {
         return this.OvhApiMe.v6().get().$promise.then((me) => {
           this.currencySymbol = me.currency.symbol;
         });
       }
 
+      getPrice(consumptionType) {
+        return `${_.get(consumptionType, 'price.value', 0).toFixed(2)} ${this.currencySymbol}`;
+      }
 
       getStorageVolumeInfoTooltip(storage) {
         return this.$translate.instant('cpbc_object_storage_consumption_info_part1')
           .concat(this.$translate.instant('cpbc_object_storage_consumption_info_part2', {
-            amount: (storage.stored ? storage.stored.quantity.value : 0),
+            amount: _.get(storage, 'stored.quantity.value', 0),
           }));
       }
 
       getStorageBandwidthInfoTooltip(storage) {
         return this.$translate.instant('cpbc_object_storage_output_traffic_info_part1')
           .concat(this.$translate.instant('cpbc_object_storage_output_traffic_info_part2', {
-            amount: storage.outgoingBandwidth.quantity.value,
+            amount: _.get(storage, 'outgoingBandwidth.quantity.value', 0),
           }));
       }
     });

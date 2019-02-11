@@ -109,4 +109,40 @@ angular.module('managerApp')
           price,
         };
       }
+
+      groupConsumptionByRegion(storageConsumption) {
+        return _.map(storageConsumption
+          .reduce((consumptionByRegion, { planCode, details }) => details
+            .reduce((regionsConsumption, {
+              metadatas, price, quantity,
+            }) => {
+              const region = _.get(metadatas.find(({ key }) => key === 'region'), 'value');
+              return ({
+                ...regionsConsumption,
+                [region]: {
+                  ...regionsConsumption[region],
+                  [this.convertStoragePlanCode(planCode)]: {
+                    price,
+                    quantity: {
+                      value: quantity,
+                    },
+                  },
+                },
+              });
+            }, consumptionByRegion), {}),
+        (consumption, region) => ({ ...consumption, region }));
+      }
+
+      convertStoragePlanCode(planCode) {
+        return _.findKey(
+          this.PLANCODE_CONVERSION, consumptionType => consumptionType.test(planCode),
+        );
+      }
+
+      formatStorageConsumption(storageConsumption, currencySymbol) {
+        return ({
+          price: this.constructor.getTotalPrice(storageConsumption, currencySymbol),
+          elements: this.groupConsumptionByRegion(storageConsumption),
+        });
+      }
     });
