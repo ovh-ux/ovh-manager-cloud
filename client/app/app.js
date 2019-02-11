@@ -56,7 +56,6 @@ angular.module('managerApp', [
   'atInternetUiRouterPlugin',
   'matchmedia-ng',
   'ovh-angular-user-pref',
-  'ovh-angular-doc-url',
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',
