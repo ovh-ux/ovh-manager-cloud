@@ -32,6 +32,13 @@ angular.module('managerApp')
           price: formatPrice(consumption.totals.hourly.volume, consumption.totals.currencySymbol),
           elements: consumption.volumes,
         },
+        objectStorage: {
+          price: formatPrice(
+            consumption.totals.hourly.objectStorage,
+            consumption.totals.currencySymbol,
+          ),
+          elements: consumption.objectStorages,
+        },
       };
     };
 
@@ -84,6 +91,7 @@ angular.module('managerApp')
       }
       _.each(self.data.hourlyBilling.hourlyUsage.objectStorage, (objectStorage) => {
         _.set(objectStorage, 'totalPrice', roundNumber(objectStorage.totalPrice, 2));
+        _.set(objectStorage, 'price', formatPrice(objectStorage.totalPrice, self.data.totals.currencySymbol));
       });
 
       self.data.objectStorages = _.reject(self.data.hourlyBilling.hourlyUsage.storage, { type: 'pca' });

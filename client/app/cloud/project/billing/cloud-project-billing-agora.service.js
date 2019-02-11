@@ -6,11 +6,13 @@ angular.module('managerApp')
         OvhApiCloudProjectServiceInfos,
         OvhApiMeConsumption,
         OvhApiOrderCatalogFormatted,
+        CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION,
         CLOUD_PROJECT_CONSUMPTION_SUFFIX,
       ) {
         this.OvhApiCloudProjectServiceInfos = OvhApiCloudProjectServiceInfos;
         this.OvhApiMeConsumption = OvhApiMeConsumption;
         this.OvhApiOrderCatalogFormatted = OvhApiOrderCatalogFormatted;
+        this.PLANCODE_CONVERSION = CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION;
         this.CLOUD_PROJECT_CONSUMPTION_SUFFIX = CLOUD_PROJECT_CONSUMPTION_SUFFIX;
       }
 
@@ -61,6 +63,40 @@ angular.module('managerApp')
                 type: planCode.replace(this.CLOUD_PROJECT_CONSUMPTION_SUFFIX, ''),
               })),
           )),
+        });
+      }
+
+      groupConsumptionByRegion(storageConsumption) {
+        return _.map(storageConsumption
+          .reduce((consumptionByRegion, { planCode, details }) => details
+            .reduce((regionsConsumption, { metadatas, price, quantity }) => {
+              const region = metadatas.find(({ key }) => key === 'region').value;
+              return ({
+                ...regionsConsumption,
+                [region]: {
+                  ...regionsConsumption[region],
+                  [this.convertStoragePlanCode(planCode)]: {
+                    price,
+                    quantity: {
+                      value: quantity,
+                    },
+                  },
+                },
+              });
+            }, consumptionByRegion), {}),
+        (consumption, region) => ({ ...consumption, region }));
+      }
+
+      convertStoragePlanCode(planCode) {
+        return _.findKey(
+          this.PLANCODE_CONVERSION, consumptionType => consumptionType.test(planCode),
+        );
+      }
+
+      formatStorageConsumption(storageConsumption, currencySymbol) {
+        return ({
+          price: this.constructor.getTotalPrice(storageConsumption, currencySymbol),
+          elements: this.groupConsumptionByRegion(storageConsumption),
         });
       }
 
