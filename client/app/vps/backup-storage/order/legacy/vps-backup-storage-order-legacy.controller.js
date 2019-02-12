@@ -1,4 +1,5 @@
-class VpsOrderBackupStorageCtrl {
+export default class VpsBackupStorageOrderLegacyCtrl {
+  /* |ngInject */
   constructor($stateParams, $translate, $window, CloudMessage, CloudNavigation, ServiceHelper,
     VpsService) {
     this.$translate = $translate;
@@ -42,5 +43,3 @@ class VpsOrderBackupStorageCtrl {
     this.previousState.go();
   }
 }
-
-angular.module('managerApp').controller('VpsOrderBackupStorageCtrl', VpsOrderBackupStorageCtrl);
