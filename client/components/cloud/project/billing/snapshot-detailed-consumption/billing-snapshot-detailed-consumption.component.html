@@ -10,9 +10,10 @@
     </oui-column>
     <oui-column data-title=":: 'cpbc_snapshot_col_usage' | translate" data-property="price.text">
         <span data-ng-bind="$row.price.text"></span>
-        <i class="fa fa-question-circle left-space-m4"
-           data-uib-tooltip="{{ :: $ctrl.getSnapshotPriceInfoTooltip($row) }}"
-           data-tooltip-placement="left">
-        </i>
+        <span class="fa fa-question-circle left-space-m4"
+           data-uib-popover="{{ :: $ctrl.getSnapshotPriceInfoTooltip($row) }}"
+           data-popover-placement="left"
+           aria-label="cpbc_consumption_display">
+        </span>
     </oui-column>
 </oui-datagrid>

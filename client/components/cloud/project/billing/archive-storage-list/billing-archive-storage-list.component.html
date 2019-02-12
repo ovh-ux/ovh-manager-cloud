@@ -28,26 +28,29 @@
                 <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_archive_storage_col_location' | translate }}">
                     <span data-ng-bind=":: $ctrl.RegionService.getTranslatedMicroRegion(storage.region)"></span>
                 </td>
-                <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_archive_storage_col_consumption' | translate }}">
+                <td class="oui-datagrid__cell text-right" data-title="{{ :: 'cpbc_archive_storage_col_consumption' | translate }}">
                     <span data-ng-bind="$ctrl.getPrice(storage.stored)"></span>
-                    <i class="fa fa-question-circle left-space-m4"
-                       data-uib-tooltip="{{ :: $ctrl.getStorageVolumeInfoTooltip(storage) }}"
-                       tooltip-placement="left">
-                    </i>
+                    <span class="fa fa-question-circle left-space-m4"
+                          data-uib-popover="{{ :: $ctrl.getStorageVolumeInfoTooltip(storage) }}"
+                          data-popover-placement="left"
+                          aria-label="cpbc_consumption_display">
+                    </span>
                 </td>
                 <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_archive_storage_col_input_traffic' | translate }}">
                     <span data-ng-bind="$ctrl.getPrice(storage.incomingBandwidth)"></span>
-                    <i class="fa fa-question-circle left-space-m4"
-                       data-uib-tooltip="{{:: $ctrl.getStorageIncomingBandwidthInfoTooltip(storage) }}"
-                       tooltip-placement="left">
-                    </i>
+                    <span class="fa fa-question-circle left-space-m4"
+                          data-uib-popover="{{:: $ctrl.getStorageIncomingBandwidthInfoTooltip(storage) }}"
+                          data-popover-placement="left"
+                          aria-label="cpbc_consumption_display">
+                    </span>
                 </td>
                 <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_archive_storage_col_output_traffic' | translate }}">
                     <span data-ng-bind="$ctrl.getPrice(storage.outgoingBandwidth)"></span>
-                    <i class="fa fa-question-circle left-space-m4"
-                       data-uib-tooltip="{{:: $ctrl.getStorageOutgoingBandwidthInfoTooltip(storage) }}"
-                       tooltip-placement="left">
-                    </i>
+                    <span class="fa fa-question-circle left-space-m4"
+                          data-uib-popover="{{:: $ctrl.getStorageOutgoingBandwidthInfoTooltip(storage) }}"
+                          data-popover-placement="left"
+                          aria-label="cpbc_consumption_display">
+                    </span>
                 </td>
             </tr>
         </tbody>
