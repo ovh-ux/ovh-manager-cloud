@@ -94,6 +94,7 @@
     "ovh-angular-apiv7": "^1.2.8",
     "ovh-angular-browser-alert": "ovh-ux/ovh-angular-browser-alert#^1.0.0",
     "ovh-angular-checkbox-table": "ovh-ux/ovh-angular-checkbox-table#^0.1.2",
+    "ovh-angular-doc-url": "ovh-ux/ovh-angular-doc-url#^0.0.7",
     "ovh-angular-form-flat": "ovh-ux/ovh-angular-form-flat#^3.2.2",
     "ovh-angular-jquery-ui-droppable": "ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1",
     "ovh-angular-jsplumb": "ovh-ux/ovh-angular-jsplumb#^3.0.5",
