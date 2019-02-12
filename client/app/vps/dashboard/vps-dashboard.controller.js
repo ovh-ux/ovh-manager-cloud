@@ -136,7 +136,7 @@ class VpsDashboardCtrl {
       },
       order: {
         text: this.$translate.instant('common_order'),
-        callback: () => this.$state.go('iaas.vps.detail.snapshot-order', { serviceName: this.serviceName }),
+        callback: () => this.$state.go('iaas.vps.detail.snapshot.order', { serviceName: this.serviceName }),
         isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionAvailable,
       },
       restore: {

@@ -24,6 +24,12 @@ angular.module('managerApp').config(($stateProvider) => {
         stateVps: ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
           serviceName: _.get($transition$.params(), 'serviceName'),
         }).$promise
+          .then(stateVps => OvhApiVps.v6().version({
+            serviceName: _.get($transition$.params(), 'serviceName'),
+          }).$promise.then((response) => {
+            _.set(stateVps, 'isFullAgora', response.version === 2);
+            return stateVps;
+          }))
           .catch((error) => {
             if (error.status === 404) {
               return $q.reject(_.merge({ code: 'LOADING_STATE_ERROR' }, error));
@@ -162,17 +168,6 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsContent: {
           templateUrl: 'app/vps/monitoring/vps-monitoring.html',
           controller: 'VpsMonitoringCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.snapshot-order', {
-      url: '/snapshot-order',
-      views: {
-        vpsHeader,
-        vpsContent: {
-          templateUrl: 'app/vps/snapshot-order/vps-snapshot-order.html',
-          controller: 'VpsOrderSnapshotCtrl',
           controllerAs: '$ctrl',
         },
       },

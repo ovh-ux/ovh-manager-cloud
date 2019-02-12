@@ -1,13 +1,13 @@
 // Agora and legacies order views and controllers import
 // VPS upgrade legacy
-import legacyTpl from './legacy/vps-order-additional-disk-order-legacy.html';
-import legacyCtrl from './legacy/vps-order-additional-disk-order-legacy.controller';
+import legacyTpl from './legacy/vps-snapshot-order-legacy.html';
+import legacyCtrl from './legacy/vps-snapshot-order-legacy.controller';
 // VPS upgrade agora
-import agoraTpl from './vps-order-additional-disk-order.html';
-import agoraCtrl from './vps-order-additional-disk-order.controller';
+import agoraTpl from './vps-snapshot-order.html';
+import agoraCtrl from './vps-snapshot-order.controller';
 
 angular.module('managerApp').config(($stateProvider) => {
-  $stateProvider.state('iaas.vps.detail.additional-disk.order', {
+  $stateProvider.state('iaas.vps.detail.snapshot.order', {
     url: '/order',
     templateProvider: /* @ngInject */ (stateVps) => {
       if (!stateVps.isFullAgora) {

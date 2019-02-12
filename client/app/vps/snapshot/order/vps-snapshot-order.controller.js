@@ -1,7 +1,8 @@
-export default class VpsOrderDiskCtrl {
+export default class VpsSnapshotOrderCtrl {
   /* @ngInject */
-  constructor($translate, $window, CloudMessage, connectedUser, OvhApiOrder, stateVps, URLS) {
+  constructor($q, $translate, $window, CloudMessage, connectedUser, OvhApiOrder, stateVps, URLS) {
     // dependencies injections
+    this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
     this.CloudMessage = CloudMessage;
@@ -11,20 +12,17 @@ export default class VpsOrderDiskCtrl {
     this.URLS = URLS;
 
     // other attributes used in view
-    this.chunkedDiskOptions = null;
-    this.getDiskMonthlyPrice = VpsOrderDiskCtrl.getDiskMonthlyPrice;
+    this.snapshotOption = null;
+    this.getSnapshotMonthlyPrice = VpsSnapshotOrderCtrl.getSnapshotMonthlyPrice;
+    this.hasInitError = false;
 
     this.loading = {
       init: false,
     };
-
-    this.model = {
-      disk: null,
-    };
   }
 
-  static getDiskMonthlyPrice(disk) {
-    const price = _.find(disk.prices, {
+  static getSnapshotMonthlyPrice(snapshot) {
+    const price = _.find(snapshot.prices, {
       duration: 'P1M',
     });
     return _.get(price, 'price');
@@ -34,7 +32,7 @@ export default class VpsOrderDiskCtrl {
   =            EVENTS            =
   ============================== */
 
-  onAdditionalDiskOrderStepperFinish() {
+  onSnapshotOrderStepperFinish() {
     let expressOrderUrl = _.get(
       this.URLS,
       `website_order.express_base.${this.connectedUser.ovhSubsidiary}`,
@@ -42,7 +40,7 @@ export default class VpsOrderDiskCtrl {
     const expressParams = {
       productId: 'vps',
       serviceName: this.stateVps.name,
-      planCode: this.model.disk.planCode,
+      planCode: this.snapshotOption.planCode,
       duration: 'P1M',
       pricingMode: 'default',
       quantity: 1,
@@ -52,7 +50,7 @@ export default class VpsOrderDiskCtrl {
     this.$window.open(expressOrderUrl, '_blank');
 
     this.CloudMessage.success({
-      textHtml: this.$translate.instant('vps_order_additional_disk_success', {
+      textHtml: this.$translate.instant('vps_configuration_activate_snapshot_success', {
         url: expressOrderUrl,
       }),
     });
@@ -68,36 +66,31 @@ export default class VpsOrderDiskCtrl {
 
   $onInit() {
     this.loading.init = true;
-    this.model.disk = null;
+    this.hasInitError = false;
 
     return this.OvhApiOrder.CartServiceOption().Vps().v6().get({
       serviceName: this.stateVps.name,
     }).$promise
       .then((response) => {
-        // first take the options from additionalDisk family
-        let diskOptions = _.filter(response, {
-          family: 'additionalDisk',
+        // take the snapshot option from the list
+        this.snapshotOption = _.find(response, {
+          family: 'snapshot',
         });
 
-        // then map the filtered options by adding a capacity attribute
-        // this attribute is calculated from the planCode of the options
-        diskOptions = _.map(diskOptions, (diskOption) => {
-          _.set(diskOption, 'capacity', {
-            value: parseInt(diskOption.planCode.replace(/[a-zA-Z-]*/g, ''), 10),
-            unit: 'Go',
+        if (!this.snapshotOption) {
+          this.hasInitError = true;
+          return this.$q.reject({
+            data: {
+              message: this.$translate.instant('vps_configuration_activate_snapshot_load_error_none'),
+            },
           });
-          return diskOption;
-        });
+        }
 
-        // order disk by their size
-        diskOptions = _.sortBy(diskOptions, 'capacity.value');
-
-        // set chunked disk options to use in view
-        this.chunkedDiskOptions = _.chunk(diskOptions, 3);
+        return this.snapshotOption;
       })
       .catch((error) => {
         this.CloudMessage.error([
-          this.$translate.instant('vps_order_additional_disk_load_error'),
+          this.$translate.instant('vps_configuration_activate_snapshot_load_error'),
           _.get(error, 'data.message'),
         ].join(' '));
       })

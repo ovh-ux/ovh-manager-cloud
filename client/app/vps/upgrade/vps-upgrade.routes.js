@@ -15,13 +15,13 @@ angular.module('managerApp').config(($stateProvider) => {
       vpsHeader,
       vpsContent: {
         templateProvider: /* @ngInject */ (stateVps) => {
-          if (stateVps.model.version !== '2018v1') {
+          if (!stateVps.isFullAgora) {
             return legacyTpl;
           }
           return agoraTpl;
         },
         controllerProvider: /* @ngInject */ (stateVps) => {
-          if (stateVps.model.version !== '2018v1') {
+          if (!stateVps.isFullAgora) {
             return legacyCtrl;
           }
           return agoraCtrl;

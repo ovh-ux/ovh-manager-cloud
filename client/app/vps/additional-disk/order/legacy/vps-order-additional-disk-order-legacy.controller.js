@@ -1,4 +1,5 @@
 export default class VpsOrderDiskLegacyCtrl {
+  /* @ngInject */
   constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage,
     CloudNavigation, VpsService,
     ServiceHelper) {

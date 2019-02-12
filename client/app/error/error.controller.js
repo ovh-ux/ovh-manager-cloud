@@ -1,4 +1,5 @@
 export default class ErrorCtrl {
+  /* @ngInject */
   constructor($transition$) {
     this.$transition$ = $transition$;
   }
