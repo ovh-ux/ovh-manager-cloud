@@ -60,6 +60,14 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
         });
     }
 
+    getStorageConsumptionByType(storageConsumption, storageType) {
+      return storageConsumption
+        ? this.CloudProjectBillingService.formatStorageConsumption(
+          storageConsumption.filter(({ planCode }) => planCode.includes(storageType)),
+          this.me.currency.symbol,
+        ) : this.CloudProjectBillingService.formatEmptyConsumption(this.me.currency.symbol);
+    }
+
     getAgoraConsumption() {
       return this.CloudProjectBillingService.getProjectServiceInfos(this.serviceName)
         .then(({ serviceId }) => this.CloudProjectBillingService
@@ -87,12 +95,8 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
                   snapshot,
                   this.me.currency.symbol,
                 ),
-              objectStorage: storage ? this.CloudProjectBillingService
-                .formatStorageConsumption(
-                  storage.filter(({ planCode }) => planCode.includes('storage')),
-                  this.me.currency.symbol,
-                ) : this.CloudProjectBillingService.constructor
-                .formatEmptyConsumption(this.me.currency.symbol),
+              objectStorage: this.getStorageConsumptionByType(storage, 'storage'),
+              archiveStorage: this.getStorageConsumptionByType(storage, 'archive'),
               price: _.get(
                 serviceConsumption,
                 'price',

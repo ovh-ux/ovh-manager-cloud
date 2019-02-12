@@ -77,10 +77,10 @@
                     <i class="glyphicon pull-left" data-ng-class="{ 'glyphicon-chevron-down': $ctrl.toggle.accordions.archiveStorage, 'glyphicon-chevron-right': !$ctrl.toggle.accordions.archiveStorage }"></i>
                 </span>
                     <span class="cloud-billing-accordion-heading-title" data-translate="cpbc_archive_storage_detail_title"></span>
-                    <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.archiveStorage.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
+                    <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.archiveStorage.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <archive-storage-list storages="$ctrl.resources.archiveStorages"></archive-storage-list>
+            <archive-storage-list storages="$ctrl.resources.archiveStorage.elements"></archive-storage-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
