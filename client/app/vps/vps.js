@@ -21,7 +21,7 @@ angular.module('managerApp').config(($stateProvider) => {
       url: '/{serviceName}',
       redirectTo: 'iaas.vps.detail.dashboard',
       resolve: {
-        stateVps: ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
+        stateVps: /* @ngInject */ ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
           serviceName: _.get($transition$.params(), 'serviceName'),
         }).$promise
           .then(stateVps => OvhApiVps.v6().version({
