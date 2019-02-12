@@ -10,12 +10,12 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.instance.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <instance-list instances="$ctrl.resources.instance.elements"
-                        instance-col-name="'cpbc_hourly_instance_col_name'"
-                        instance-col-total="'cpbc_hourly_instance_col_consumption'"
-                        instance-col-total-tooltip="'cpbc_hourly_instance_col_consumption_tooltip'"
-                        show-switch-to-monthly-billing-option="$ctrl.showSwitchToMonthlyBillingOption"
-                        show-additional-instance-details="$ctrl.showAdditionalInstanceDetails"></instance-list>
+            <instance-list data-instances="$ctrl.resources.instance.elements"
+                        data-instance-col-name="'cpbc_hourly_instance_col_name'"
+                        data-instance-col-total="'cpbc_hourly_instance_col_consumption'"
+                        data-instance-col-total-tooltip="'cpbc_hourly_instance_col_consumption_tooltip'"
+                        data-show-switch-to-monthly-billing-option="$ctrl.showSwitchToMonthlyBillingOption"
+                        data-show-additional-instance-details="$ctrl.showAdditionalInstanceDetails"></instance-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -31,7 +31,7 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.snapshot.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <snapshot-list snapshots="$ctrl.resources.snapshot.elements" data-ng-if="$ctrl.groupSnapshotsByRegion"></snapshot-list>
+            <snapshot-list data-snapshots="$ctrl.resources.snapshot.elements" data-ng-if="$ctrl.groupSnapshotsByRegion"></snapshot-list>
             <snapshot-detailed-consumption data-snapshots="$ctrl.resources.snapshot.elements" data-ng-if="!$ctrl.groupSnapshotsByRegion"></snapshot-detailed-consumption>
         </uib-accordion-group>
     </uib-accordion>
@@ -48,7 +48,7 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.volume.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <volume-list volumes="$ctrl.resources.volume.elements"></volume-list>
+            <volume-list data-volumes="$ctrl.resources.volume.elements"></volume-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -64,7 +64,7 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.objectStorage.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <object-storage-list storages="$ctrl.resources.objectStorage.elements"></object-storage-list>
+            <object-storage-list data-storages="$ctrl.resources.objectStorage.elements"></object-storage-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -80,7 +80,7 @@
                     <span class="cloud-billing-accordion-heading-price" data-ng-bind="$ctrl.resources.archiveStorage.price.text"></span>
                 </button>
             </uib-accordion-heading>
-            <archive-storage-list storages="$ctrl.resources.archiveStorage.elements"></archive-storage-list>
+            <archive-storage-list data-storages="$ctrl.resources.archiveStorage.elements"></archive-storage-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
