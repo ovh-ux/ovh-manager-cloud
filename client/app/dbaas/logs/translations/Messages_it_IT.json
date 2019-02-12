@@ -645,7 +645,7 @@
  "logs_aliases_total_used": "alias utilizzati",
  "logs_aliases_increase_quota": "aumenta la quota",
  "logs_aliases_add": "Aggiungi un alias",
- "logs_aliases_name": "Alias:",
+ "logs_aliases_name": "Alias",
  "logs_aliases_col_title": "Nome",
  "logs_aliases_col_description": "Descrizione",
  "logs_aliases_col_shared": "Alias condiviso",
