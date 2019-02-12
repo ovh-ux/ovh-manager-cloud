@@ -1,19 +1,19 @@
 <div class="row cloud-billing-estimate-content">
     <section class="cloud-billing-estimate-summary col-sm-6 col-lg-6">
         <header>
-            <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: BillingConsumptionEstimateCtrl.constructor.getNextMonth().format('MMMM')}"/>
-            <p data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast" class="center-block text-center">{{ BillingConsumptionEstimateCtrl.data.estimateTotals.total.toFixed(2) }} {{ BillingConsumptionEstimateCtrl.data.estimateTotals.currencySymbol }}</p>
+            <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: $ctrl.constructor.getNextMonth().format('MMMM')}"/>
+            <p data-ng-if="!$ctrl.loaders.forecast" class="center-block text-center">{{ $ctrl.data.estimateTotals.total.toFixed(2) }} {{ $ctrl.data.estimateTotals.currencySymbol }}</p>
         </header>
-        <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.forecast">
+        <div class="text-center" data-ng-show="$ctrl.loaders.forecast">
             <oui-spinner></oui-spinner>
         </div>
-        <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast">
+        <div data-ng-if="!$ctrl.loaders.forecast">
             <p data-translate="cpbe_estimate_summary_renew_monthly_sub_label"
-               data-translate-values="{ total: BillingConsumptionEstimateCtrl.data.estimateTotals.monthly.total.toFixed(2) + ' ' + BillingConsumptionEstimateCtrl.data.estimateTotals.currencySymbol }"></p>
+               data-translate-values="{ total: $ctrl.data.estimateTotals.monthly.total.toFixed(2) + ' ' + $ctrl.data.estimateTotals.currencySymbol }"></p>
             <p data-translate="cpbe_estimate_summary_hourly_consumption_label"
                data-translate-values="{
-                   month: BillingConsumptionEstimateCtrl.constructor.getCurrentMonth().format('MMMM'),
-                   total: BillingConsumptionEstimateCtrl.data.estimateTotals.hourly.total.toFixed(2) + ' ' +  BillingConsumptionEstimateCtrl.data.estimateTotals.currencySymbol
+                   month: $ctrl.constructor.getCurrentMonth().format('MMMM'),
+                   total: $ctrl.data.estimateTotals.hourly.total.toFixed(2) + ' ' +  $ctrl.data.estimateTotals.currencySymbol
                }"></p>
         </div>
     </section>
@@ -22,15 +22,15 @@
             <h4 data-translate="cpbe_estimate_alert_header_title" class="text-center top-space-p12"></h4>
             <p data-translate="cpbe_estimate_alert_header_description"></p>
         </header>
-        <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.alert">
+        <div class="text-center" data-ng-show="$ctrl.loaders.alert">
             <oui-spinner></oui-spinner>
         </div>
-        <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && !BillingConsumptionEstimateCtrl.data.alert">
+        <div data-ng-if="!$ctrl.loaders.alert && !$ctrl.data.alert">
             <div class="text-center">
             <button
                 class="oui-button oui-button_primary"
                 type="button"
-                data-ng-click="BillingConsumptionEstimateCtrl.openAlertAddModal()"
+                data-ng-click="$ctrl.openAlertAddModal()"
                 data-ng-disabled="false"
                 title="{{ :: cpbe_estimate_alert_create | translate }}"
                 write-right-required>
@@ -39,25 +39,25 @@
             </button>
             </div>
         </div>
-        <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && BillingConsumptionEstimateCtrl.data.alert">
+        <div data-ng-if="!$ctrl.loaders.alert && $ctrl.data.alert">
             <div class="consumption-chart">
-                <consumption-chart model="BillingConsumptionEstimateCtrl.consumptionChartData"></consumption-chart>
+                <consumption-chart model="$ctrl.consumptionChartData"></consumption-chart>
             </div>
             <div class="text-center top-space-p20" write-right-required>
                 <oui-spinner size="s"
-                    data-ng-if="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></oui-spinner>
+                    data-ng-if="$ctrl.loaders.deleteAlert"></oui-spinner>
                 <button
                     class="oui-button oui-button_secondary"
                     type="button"
-                    data-ng-click="BillingConsumptionEstimateCtrl.openAlertAddModal()"
-                    data-ng-disabled="BillingConsumptionEstimateCtrl.loaders.deleteAlert"
+                    data-ng-click="$ctrl.openAlertAddModal()"
+                    data-ng-disabled="$ctrl.loaders.deleteAlert"
                     title="{{ :: cpbe_estimate_alert_edit | translate }}">
                     <span translate="cpbe_estimate_alert_edit"></span>
                 </button>
                 <button class="oui-button oui-button_secondary"
                         type="button"
-                        data-ng-click="BillingConsumptionEstimateCtrl.deleteAlert()"
-                        data-ng-disabled="BillingConsumptionEstimateCtrl.loaders.deleteAlert">
+                        data-ng-click="$ctrl.deleteAlert()"
+                        data-ng-disabled="$ctrl.loaders.deleteAlert">
                     <span data-translate="cpbe_estimate_alert_delete"></span>
                 </button>
             </div>
