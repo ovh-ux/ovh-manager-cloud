@@ -95,35 +95,6 @@ angular.module('managerApp').config(($stateProvider) => {
         },
       },
     })
-    .state('iaas.vps.detail.veeam', {
-      url: '/veeam',
-      redirectTo: 'iaas.vps.detail.veeam.list',
-      views: {
-        vpsContent: {
-          template: '<div data-ui-view="vpsVeeamContent"></div>',
-        },
-      },
-    })
-    .state('iaas.vps.detail.veeam.list', {
-      url: '/',
-      views: {
-        vpsVeeamContent: {
-          templateUrl: 'app/vps/veeam/vps-veeam.html',
-          controller: 'VpsVeeamCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.veeam.order', {
-      url: '/order',
-      views: {
-        vpsVeeamContent: {
-          templateUrl: 'app/vps/veeam/order/vps-order-veeam.html',
-          controller: 'VpsOrderVeeamCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
     .state('iaas.vps.detail.cloud-database', {
       url: '/cloud-database',
       redirectTo: 'iaas.vps.detail.cloud-database.list',
