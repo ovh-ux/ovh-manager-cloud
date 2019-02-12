@@ -93,7 +93,7 @@ angular.module('managerApp')
         );
       }
 
-      formatStorageConsumption(storageConsumption, currencySymbol) {
+      formatConsumptionByRegion(storageConsumption, currencySymbol) {
         return ({
           price: this.constructor.getTotalPrice(storageConsumption, currencySymbol),
           elements: this.groupConsumptionByRegion(storageConsumption),
