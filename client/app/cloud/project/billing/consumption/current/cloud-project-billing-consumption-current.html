@@ -15,7 +15,7 @@
                 <h3 data-translate="cpbc_hourly_header"></h3>
                 <span class="cloud-billing-total" data-ng-bind="$ctrl.consumption.hourly.price.text"></span>
             </header>
-            <hourly-resource-list resources="$ctrl.data"
+            <hourly-resource-list resources="$ctrl.consumption.hourly"
                                   show-switch-to-monthly-billing-option="true"
                                   data-group-snapshots-by-region="!$ctrl.projectUsesAgora">
             </hourly-resource-list>
