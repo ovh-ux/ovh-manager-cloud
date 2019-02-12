@@ -260,7 +260,7 @@ class VpsDashboardCtrl {
       },
       orderWindows: {
         text: this.$translate.instant('common_order'),
-        callback: () => this.$state.go('iaas.vps.detail.windows-order', { serviceName: this.serviceName }),
+        callback: () => this.$state.go('iaas.vps.detail.windows.order', { serviceName: this.serviceName }),
         isAvailable: () => !this.summary.loading && !this.summary.windowsActivated,
       },
       reboot: {

@@ -1,17 +1,5 @@
 {
   "vps_order_windows_title": "Options Windows",
-  "vps_order_windows_step1_title": "Sélection de la durée",
-  "vps_order_windows_step2_title": "Acceptation des conditions d'utilisation",
-  "vps_order_windows_step3_title": "Récapitulatif",
-  "vps_order_windows_info": "Cette option vous permettera d'installer une OS de type windows sur votre vps.",
-  "vps_order_windows_price_error": "Une erreur est survenue lors de la récupération des prix.",
-  "vps_order_windows_order_error": "Une erreur est survenue lors de la création du bon de commande.",
-  "vps_order_windows_order_select_duration": "Sélectionnez la durée :",
-  "vps_order_windows_order_resume": "Résumé de votre commande",
-  "vps_order_windows_order_price_HT": "Prix total HT :",
-  "vps_order_windows_order_price_TTC": "Prix total TTC :",
-  "vps_order_windows_order_final_txt": "Cliquez sur le bouton \"Valider\" afin de confirmer votre commande.",
-  "vps_order_windows_order_final_txt2": "Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.",
   "vps_order_windows_button_title": "Option Windows",
   "vps_configuration_rebootVm_polling_done": "Votre VPS a bien été redémarré",
   "vps_configuration_rebootVm_polling_fail": "Une erreur est survenue lors du redémarrage de votre VPS",
@@ -485,5 +473,6 @@
   "vps_dashboard_product": "Modèle",
   "vps_configuration_sla_title_enable": "Activer le monitoring SLA pour ce serveur ?",
   "vps_configuration_sla_title_disable": "Désactiver le monitoring SLA pour ce serveur ?",
-  "vps_service_expired": "Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté."
+  "vps_service_expired": "Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.",
+  "vps_back_to_configuration": "Retour à la configuration de mon VPS"
 }
