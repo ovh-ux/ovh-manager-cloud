@@ -6,7 +6,7 @@
             <th class="oui-datagrid__header">
                 <span data-translate="cpbc_volume_col_name"></span>
             </th>
-            <th class="oui-datagrid__header text-right">
+            <th class="oui-datagrid__header">
                 <span data-translate="cpbc_volume_col_consumption"></span>
             </th>
         </thead>
@@ -29,12 +29,13 @@
                     data-ng-click="$ctrl.DetailsPopoverService.setCurrentDetails(volume)">
                     <span data-ng-bind=" ::  volume.name"></span>
                 </td>
-                <td class="oui-datagrid__cell text-right" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
+                <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
                     <span data-ng-bind=" ::  volume.totalPrice"></span>
-                    <i class="fa fa-question-circle left-space-m4"
-                       data-uib-tooltip="{{ :: 'cpbc_volume_consumption_tooltip_part1' | translate }}{{ :: 'cpbc_volume_consumption_tooltip_part2' | translate : {amount: volume.amount} }}"
-                       tooltip-placement="left">
-                    </i>
+                    <span class="fa fa-question-circle left-space-m4"
+                       data-uib-popover="{{ :: 'cpbc_volume_consumption_tooltip_part1' | translate }}{{ :: 'cpbc_volume_consumption_tooltip_part2' | translate : {amount: volume.amount} }}"
+                       data-popover-placement="left"
+                       aria-label="cpbc_consumption_display">
+                    </span>
                 </td>
             </tr>
         </tbody>
