@@ -469,6 +469,8 @@
  "add_alert_constraint_type_max": "Maksymalnie",
  "add_alert_constraint_type_sum": "Suma",
  "add_alert_constraint_type_stddev": "Standardowe odchylenie",
+ "add_alert_value_query_filter": "Wyszukiwana fraza",
+ "add_alert_value_query_filter_description": "Ciąg zapytania, który powinien być używany do filtrowania wiadomości w strumieniu.",
  "add_alert_value_field": "Wartość",
  "add_alert_value_field_description": "Wartość musi być porównana z wartością pola.",
  "streams_alerts_add_success": "Alert {{alertName}} został utworzony",

@@ -469,6 +469,8 @@
  "add_alert_constraint_type_max": "Massimo",
  "add_alert_constraint_type_sum": "Somma",
  "add_alert_constraint_type_stddev": "Tipo di soglia",
+ "add_alert_value_query_filter": "Query di ricerca",
+ "add_alert_value_query_filter_description": "Stringa di query da utilizzare per filtrare i messaggi nello stream.",
  "add_alert_value_field": "Valore",
  "add_alert_value_field_description": "Valore da confrontare con quello indicato nel campo.",
  "streams_alerts_add_success": "L'alert {{alertName}} è stato creato correttamente",

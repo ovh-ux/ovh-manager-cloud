@@ -469,6 +469,8 @@
   "add_alert_constraint_type_max": "Maximum",
   "add_alert_constraint_type_sum": "Suma",
   "add_alert_constraint_type_stddev": "Desviación estándar",
+  "add_alert_value_query_filter": "Consulta de busqueda",
+  "add_alert_value_query_filter_description": "Cadena de consulta que se debe utilizar para filtrar mensajes en la ruta.",
   "add_alert_value_field": "Valeur",
   "add_alert_value_field_description": "Valor que debe compararse con el del campo.",
   "streams_alerts_add_success": "La alerta {{alertName}} se ha creado correctamente.",

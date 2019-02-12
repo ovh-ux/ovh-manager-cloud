@@ -462,6 +462,8 @@
  "add_alert_notification_field_description": "Toto políčko zaškrtněte, pokud si přejete dostat notifikaci pokaždé, když jsou naplněny podmínky upozornění, nezávisle na jeho stavu.",
  "add_alert_field_field": "Pole",
  "add_alert_field_field_description": "Název pole k ověření.",
+ "add_alert_value_query_filter": "Vyhledávací dotaz",
+ "add_alert_value_query_filter_description": "Řetězec dotazu, který by měl být použit pro filtrování zpráv v streamu.",
  "add_alert_constraint_type_field": "Typ agregace",
  "add_alert_constraint_type_field_description": "Nastavte podmínku, která aktivuje upozornění: počet zpráv je vyšší nebo nižší než definovaný práh.",
  "add_alert_constraint_type_mean": "Průměr",

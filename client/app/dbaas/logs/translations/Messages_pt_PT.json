@@ -469,6 +469,8 @@
  "add_alert_constraint_type_max": "Máximo ",
  "add_alert_constraint_type_sum": "Soma",
  "add_alert_constraint_type_stddev": "Desvio-tipo",
+ "add_alert_value_query_filter": "Consulta de pesquisa",
+ "add_alert_value_query_filter_description": "Cadeia de consulta que deve ser usada para filtrar mensagens no fluxo.",
  "add_alert_value_field": "Valor",
  "add_alert_value_field_description": "Valor que irá ser comparado ao valor inserido num campo.",
  "streams_alerts_add_success": "O alerta {{alertName}} foi criado com êxito",

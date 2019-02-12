@@ -464,6 +464,8 @@
  "add_alert_field_field_description": "Name des Feldes, das zu überprüfen ist.",
  "add_alert_constraint_type_field": "Aggregationstyp",
  "add_alert_constraint_type_field_description": "Legen Sie die Bedingung fest, die den Alarm aktiviert: wenn der Wert geringer oder höher ist als der festgelegte Schwellenwert.",
+ "add_alert_value_query_filter": "Suchanfrage",
+ "add_alert_value_query_filter_description": "Abfragezeichenfolge, die zum Filtern von Nachrichten im Stream verwendet werden soll.",
  "add_alert_constraint_type_mean": "Durchschnitt",
  "add_alert_constraint_type_min": "Minimum",
  "add_alert_constraint_type_max": "Maximum",
