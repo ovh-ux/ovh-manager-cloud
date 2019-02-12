@@ -4,7 +4,7 @@
             <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: $ctrl.constructor.getNextMonth().format('MMMM')}"/>
             <p data-ng-if="!$ctrl.loaders.forecast" class="center-block text-center" data-ng-bind="$ctrl.data.estimateTotals.total.toFixed(2) + $ctrl.data.estimateTotals.currencySymbol"></p>
         </header>
-        <div class="text-center" data-ng-show="$ctrl.loaders.forecast">
+        <div class="text-center" data-ng-if="$ctrl.loaders.forecast">
             <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loaders.forecast">
@@ -22,7 +22,7 @@
             <h4 data-translate="cpbe_estimate_alert_header_title" class="text-center top-space-p12"></h4>
             <p data-translate="cpbe_estimate_alert_header_description"></p>
         </header>
-        <div class="text-center" data-ng-show="$ctrl.loaders.alert">
+        <div class="text-center" data-ng-if="$ctrl.loaders.alert">
             <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loaders.alert && !$ctrl.data.alert">
