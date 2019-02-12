@@ -33,18 +33,17 @@
                 data-ng-click="$ctrl.openAlertAddModal()"
                 data-ng-disabled="false"
                 title="{{ :: cpbe_estimate_alert_create | translate }}"
-                write-right-required>
-                <i class="fa fa-bell"></i>
+                data-write-right-required>
                 <span translate="cpbe_estimate_alert_create"></span>
             </button>
             </div>
         </div>
         <div data-ng-if="!$ctrl.loaders.alert && $ctrl.data.alert">
             <div class="consumption-chart">
-                <consumption-chart model="$ctrl.consumptionChartData"></consumption-chart>
+                <consumption-chart data-model="$ctrl.consumptionChartData"></consumption-chart>
             </div>
-            <div class="text-center top-space-p20" write-right-required>
-                <oui-spinner size="s"
+            <div class="text-center top-space-p20" data-write-right-required>
+                <oui-spinner data-size="s"
                     data-ng-if="$ctrl.loaders.deleteAlert"></oui-spinner>
                 <button
                     class="oui-button oui-button_secondary"
@@ -52,7 +51,7 @@
                     data-ng-click="$ctrl.openAlertAddModal()"
                     data-ng-disabled="$ctrl.loaders.deleteAlert"
                     title="{{ :: cpbe_estimate_alert_edit | translate }}">
-                    <span translate="cpbe_estimate_alert_edit"></span>
+                    <span data-translate="cpbe_estimate_alert_edit"></span>
                 </button>
                 <button class="oui-button oui-button_secondary"
                         type="button"
