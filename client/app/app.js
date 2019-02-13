@@ -1,6 +1,7 @@
 import '@uirouter/angularjs';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
+import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
 
@@ -20,6 +21,7 @@ angular.module('managerApp', [
 
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  ngOvhStopEvent,
   ngOvhCloudUniverseComponents,
   'ovh-angular-apiv7',
   'ovh-api-services',
@@ -27,7 +29,6 @@ angular.module('managerApp', [
   'ovh-angular-checkbox-table',
   'ovh-angular-form-flat',
   'ovh-angular-q-allSettled',
-  'ovh-angular-stop-event',
   'angularMoment',
   'ovh-angular-toaster',
   'ovh-angular-swimming-poll',
