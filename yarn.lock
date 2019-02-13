@@ -4853,6 +4853,9 @@ har-validator@~4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/har-validator/-/har-validator-4.2.1.tgz#33481d0f1bbff600dd203d75812a6a5fba002e2a"
   integrity sha1-M0gdDxu/9gDdID11gSpqX7oALio=
+  dependencies:
+    ajv "^4.9.1"
+    har-schema "^1.0.5"
 
 har-validator@~5.1.0:
   version "5.1.0"
@@ -7609,10 +7612,6 @@ osenv@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/osenv/-/osenv-0.0.3.tgz#cd6ad8ddb290915ad9e22765576025d411f29cb6"
   integrity sha1-zWrY3bKQkVrZ4idlV2Al1BHynLY=
-
-ovh-angular-a-disabled@ovh-ux/ovh-angular-a-disabled#^0.1.1:
-  version "0.1.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-a-disabled/tar.gz/8d8b104dbeb12cde43e643409d2cc0d484409422"
 
 ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0:
   version "3.2.0"

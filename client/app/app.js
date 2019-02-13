@@ -24,7 +24,6 @@ angular.module('managerApp', [
   'ovh-angular-form-flat',
   'ovh-angular-q-allSettled',
   'ovh-angular-stop-event',
-  'ovh-angular-a-disabled',
   'angularMoment',
   'ovh-angular-toaster',
   'ovh-angular-swimming-poll',
