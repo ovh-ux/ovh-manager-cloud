@@ -9,10 +9,10 @@ angular.module('managerApp').run(($translate, asyncLoader) => {
 });
 angular.module('managerApp')
   .run(($q, $translate, Toast, SidebarMenu, SidebarOrderService, SidebarContentService,
-    ProductsService, SessionService) => {
+    CucProductsService, SessionService) => {
     const promise = $q.all({
       user: SessionService.getUser(),
-      products: ProductsService.getProducts(),
+      products: CucProductsService.getProducts(),
       translate: $translate.refresh(),
     }).catch((err) => {
       Toast.error(`${$translate.instant('cloud_sidebar_error')} ${err.data.message}`);
