@@ -1,7 +1,7 @@
 angular.module('managerApp').constant('IpLoadBalancerConstant', {
   metricsUrl: {
     default: 'https://opentsdb-in.gra1-ovh.metrics.ovh.net/api',
-    US: 'https://warp10.bhs1.metrics.ovh.net/api/v0',
+    US: 'https://opentsdb.bhs1.metrics.ovh.net/api',
   },
   graphs: [
     'conn',
