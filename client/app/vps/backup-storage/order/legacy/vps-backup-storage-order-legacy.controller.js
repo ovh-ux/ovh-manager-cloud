@@ -1,5 +1,5 @@
 export default class VpsBackupStorageOrderLegacyCtrl {
-  /* |ngInject */
+  /* @ngInject */
   constructor($stateParams, $translate, $window, CloudMessage, CloudNavigation, ServiceHelper,
     VpsService) {
     this.$translate = $translate;
