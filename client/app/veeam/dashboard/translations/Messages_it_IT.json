@@ -14,5 +14,5 @@
  "veeam_tiles_subscription_label_renewal_warning": "Il tuo servizio verrà disattivato tra {{remainingDays}} giorni.",
  "veeam_tiles_subscription_label_renewal_warning_link": "Upgrade dell'offerta",
  "veeam_tiles_subscription_label_creation_date": "Data di creazione",
- "veeam_message_product_disabled": "L'offerta \"demo\" è scaduta, il tuo servizio verrà disattivato."
+ "veeam_message_product_disabled": "L'offerta \"demo\" è scaduta, il tuo servizio è stato disattivato."
 }

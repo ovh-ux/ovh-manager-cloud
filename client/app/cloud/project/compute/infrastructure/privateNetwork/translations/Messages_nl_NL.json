@@ -12,5 +12,6 @@
  "cpci_private_network_remove_vrack_error": "Er is een fout opgetreden tijdens het uitschakelen van privénetwerken.",
  "cpci_private_network_add_vrack_success": "Privénetwerken zijn ingeschakeld.",
  "cpci_private_network_remove_vrack_success": "Privénetwerken zijn uitgeschakeld.",
- "private_network_deactivate_confirmation_vlans": "Alle vLANs zijn verwijderd. "
+ "private_network_deactivate_confirmation_vlans": "Alle vLANs zijn verwijderd. ",
+ "cpci_private_network_activateVrack_loading": "Uw vRack wordt momenteel geactiveerd. De operatie kan enkele minuten duren."
 }

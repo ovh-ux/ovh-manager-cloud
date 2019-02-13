@@ -1,3 +1,5 @@
+import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
+import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
@@ -13,8 +15,8 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
-  'ovh-angular-sso-auth',
-  'ovh-angular-sso-auth-modal-plugin',
+  ngOvhSsoAuth,
+  ngOvhSsoAuthModalPlugin,
   'ovh-angular-apiv7',
   'ovh-api-services',
   'ovh-common-style',
@@ -236,4 +238,5 @@ angular.module('managerApp', [
 
       removeOnSuccessHook();
     });
-  });
+  })
+  .run(/* @ngTranslationsInject:json ./common/translations */);

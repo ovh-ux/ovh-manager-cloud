@@ -7,7 +7,7 @@
                        data-loading="$ctrl.loaders.step1"
                        data-navigation="!$ctrl.addingSshKey"
                        data-on-focus="$ctrl.resetStep1()"
-                       data-on-submit="$ctrl.submitted.step1 = true"
+                       data-on-submit="$ctrl.submitStep('step1', 'pci-project_vmadd_os')"
                        data-valid="$ctrl.isStep1Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step1">
                 <uib-tab index="$index" heading="{{ 'cpcivm_add_step1_tab_os_' + imageType | translate }}"
@@ -164,7 +164,7 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step2_title' | translate }}"
                        data-loading="$ctrl.loaders.step2"
                        data-on-focus="$ctrl.initRegionsAndDataCenters()"
-                       data-on-submit="$ctrl.submitted.step2 = true"
+                       data-on-submit="$ctrl.submitStep('step2', 'pci-project_vmadd_dc')"
                        data-valid="$ctrl.isStep2Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step2">
                 <uib-tab index="0" heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
@@ -249,7 +249,7 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step3_title' | translate }}"
                        data-loading="$ctrl.loaders.step3"
                        data-on-focus="$ctrl.initInstances()"
-                       data-on-submit="$ctrl.submitted.step3 = true"
+                       data-on-submit="$ctrl.submitStep('step3', 'pci-project_vmadd_instance-select')"
                        data-valid="$ctrl.isStep3Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step3">
                 <uib-tab data-ng-repeat="group in $ctrl.groupedFlavors track by group.category"
@@ -387,7 +387,7 @@
         <oui-step-form data-header="{{ 'cpcivm_add_step4_title' | translate }}"
                        data-loading="$ctrl.loaders.step4 || $ctrl.loaders.privateNetworks"
                        data-on-focus="$ctrl.initInstanceConfiguration()"
-                       data-on-submit="$ctrl.submitted.step4 = true"
+                       data-on-submit="$ctrl.submitStep('step4', 'pci-project_vmadd_instance-configure')"
                        data-valid="$ctrl.submitted.step3 && $ctrl.isStep4Valid()">
             <oui-field data-label="{{ 'cpcivm_add_step3_quantity_label' | translate }}"
                        data-label-popover="{{ 'cpcivm_add_step3_quantity_info' | translate }}">
@@ -464,7 +464,7 @@
                        data-navigation="$ctrl.model.billingPeriod && !$ctrl.loaders.adding"
                        data-on-cancel="$ctrl.cancel()"
                        data-on-focus="$ctrl.initBillingPeriod()"
-                       data-on-submit="$ctrl.submitted.step5 = true"
+                       data-on-submit="$ctrl.submitStep('step5', 'pci-project_vmadd_launch')"
                        data-submit-text="{{ 'cpcivm_add_button_completed_text' | translate }}"
                        data-valid="$ctrl.isStep5Valid()">
             <p data-translate="cpcivm_add_step5_message"></p>

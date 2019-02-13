@@ -271,6 +271,7 @@ class LogsStreamsService {
         coldStorageNotifyEnabled: true,
         coldStorageEnabled: false,
         webSocketEnabled: true,
+        indexingEnabled: true,
       },
       loading: false,
     };
@@ -285,7 +286,7 @@ class LogsStreamsService {
    */
   getStreamGraylogUrl(stream) {
     const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
-    if (!url) {
+    if (stream.indexingEnabled && !url) {
       this.CloudMessage.error(this.$translate.instant('logs_streams_get_graylog_url_error', { stream: stream.info.title }));
     }
     return url;

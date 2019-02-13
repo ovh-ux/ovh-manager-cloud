@@ -15,6 +15,15 @@
   z-index: @cloud-project-sidebar-zindex;
 }
 
+/* Overriding header tab active color */
+.cloud-project-compute-content {
+  .oui-header-tabs__item_active {
+    .oui-button_dropdown {
+      border-bottom-color: @UNIVERS;
+    }
+  }
+}
+
 @media (max-width: @screen-md-min) {
   .cloud-project-sidebar {
     position: static;

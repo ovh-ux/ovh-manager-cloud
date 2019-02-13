@@ -25,7 +25,7 @@
  "iplb_frontend_add_protocol_https": "HTTPS",
  "iplb_frontend_add_protocol_tcp": "TCP",
  "iplb_frontend_add_protocol_tls": "SSL TCP (TLS)",
- "iplb_frontend_add_protocol_udp": "UDP",
+ "iplb_frontend_add_protocol_udp": "UDP.",
  "iplb_frontend_add_port": "Port",
  "iplb_frontend_add_port_tip": "Ports weergegeven door de front-end. 1 tot {{portMax}}, formaat: enkel (bijv.: 80), bereik (bijv .: 1000-1200), multi (bijv.: 80.443).",
  "iplb_frontend_add_datacenter": "Datacenter",

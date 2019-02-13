@@ -17,7 +17,8 @@
     <oui-spinner data-ng-show="ctrl.alertIds.loading"></oui-spinner>
     <oui-datagrid data-ng-if="!ctrl.alertIds.loading"
         rows-loader="ctrl.loadAlerts($config)"
-        page-size="25">
+        data-page-size="25"
+        class="mt-5">
         <extra-top>
             <oui-spinner data-ng-if="ctrl.delete.loading"></oui-spinner>
         </extra-top>

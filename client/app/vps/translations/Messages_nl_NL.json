@@ -343,7 +343,7 @@
  "vps_tab_summary": "Overzicht van de opties",
  "vps_tab_SUMMARY_ftpbackup": "Backup storage:",
  "vps_tab_SUMMARY_snapshot": "Snapshot:",
- "vps_tab_snapshot": "Snapshot",
+ "vps_tab_snapshot": "Snapshot:",
  "vps_tab_SUMMARY_veeam": "Automatische backups:",
  "vps_tab_veeam": "Automatische backup",
  "vps_tab_SUMMARY_snapshot_creationdate": "uitgevoerd op:",

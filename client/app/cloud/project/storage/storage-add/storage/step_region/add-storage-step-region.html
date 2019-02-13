@@ -1,27 +1,21 @@
-<div data-ng-controller="RA.add.storage.stepRegionCtrl"
-     data-scroll-here="">
-
+<div data-ng-controller="RA.add.storage.stepRegionCtrl" data-scroll-here="">
     <h3 id="step_region"
         class="counter-step"
         data-translate="add_storage_region_step_title">
     </h3>
 
-    <div class="row step_panel">
-        <ul class="row option-list list-unstyled list-inline">
-            <li class="storage-region"
-                data-ng-repeat="region in regions track by $index"
-                data-ng-click="clickOnRegion(region)"
-                data-ng-class="{ 'selected': model.region === region}">
-                <flat-radio>
-                    <input type="radio" data-ng-model="model.region" data-ng-value="region">
-                </flat-radio>
-                <div class="storage-region-summary">
-                    <i class="storage-region-flag flag-icon {{:: regionService.getRegionIconFlag(region) }} flag"></i>
-                    <p class="storage-region-title" data-ng-bind="::regionService.getTranslatedMicroRegion(region)"></p>
-                    <p class="storage-region-description" data-ng-bind="::regionService.getTranslatedMicroRegionLocation(region)"></p>
-                </div>
-            </li>
-        </ul>
+    <div class="cui-grid-list">
+        <div class="cui-grid-list-item cui-grid-cell"
+             data-ng-repeat="region in regions track by $index">
+            <oui-select-picker data-id="region_{{ region }}"
+                               data-name="region_{{ region }}"
+                               data-model="model.region"
+                               data-values="[region]"
+                               data-picture="storage-region-flag flag-icon {{:: regionService.getRegionIconFlag(region) }} flag"
+                               data-text="{{:: regionService.getTranslatedMicroRegion(region)}}"
+                               data-on-change="clickOnRegion(region)"
+                               data-variant="light">
+            </oui-select-picker>
+        </div>
     </div>
-
 </div>

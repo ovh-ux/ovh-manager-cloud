@@ -1,7 +1,7 @@
 {
-  "cpc_tab_infra": "Infra.",
+  "cpc_tab_infra": "Instances",
   "cpc_tab_snapshot": "Snapshots",
-  "cpc_tab_volume": "Disques suppl.",
+  "cpc_tab_volume": "Disques supplémentaires",
   "cpc_tab_ssh": "Clés SSH",
   "cpc_tab_loadbalancer": "Load Balancer",
   "cpc_tab_project": "Gestion et conso. du projet",
