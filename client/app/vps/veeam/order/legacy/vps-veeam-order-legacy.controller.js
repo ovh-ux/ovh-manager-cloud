@@ -1,4 +1,5 @@
 class VpsOrderVeeamCtrl {
+  /* @ngInject */
   constructor($scope, $stateParams, $translate, $window,
     atInternet, CloudMessage, CloudNavigation, VpsService, ServiceHelper) {
     this.$scope = $scope;

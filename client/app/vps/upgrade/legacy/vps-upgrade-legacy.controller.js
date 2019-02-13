@@ -1,4 +1,5 @@
 export default class VpsUpgradeLegacyCtrl {
+  /* @ngInject */
   constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation,
     ControllerHelper, VpsService) {
     this.$filter = $filter;
