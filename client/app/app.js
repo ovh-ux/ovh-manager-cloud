@@ -1,4 +1,5 @@
 import '@uirouter/angularjs';
+import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
@@ -18,6 +19,7 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
+  ngOvhDocUrl,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhCloudUniverseComponents,
@@ -59,7 +61,6 @@ angular.module('managerApp', [
   'atInternetUiRouterPlugin',
   'matchmedia-ng',
   'ovh-angular-user-pref',
-  'ovh-angular-doc-url',
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',
