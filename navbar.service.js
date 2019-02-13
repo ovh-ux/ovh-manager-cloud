@@ -11,7 +11,7 @@ class ManagerNavbarService {
     NavbarBuilder,
     NavbarNotificationService,
     OtrsPopupService,
-    ProductsService,
+    CucProductsService,
     REDIRECT_URLS,
     SessionService,
     ssoAuthentication,
@@ -30,7 +30,7 @@ class ManagerNavbarService {
     this.NavbarBuilder = NavbarBuilder;
     this.navbarNotificationService = NavbarNotificationService;
     this.otrsPopupService = OtrsPopupService;
-    this.productsService = ProductsService;
+    this.productsService = CucProductsService;
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.sections = {
       iaas: ['PROJECT', 'VPS', 'SERVER', 'DEDICATED_CLOUD', 'HOUSING'],
