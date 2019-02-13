@@ -87,9 +87,9 @@ export default class VpsUpgradeCtrl {
     }).$promise
       .then((order) => {
         this.order = order.order;
-        this.order.contracts = _.map(this.order.contracts, (contractParam, index) => {
+        this.order.contracts = _.map(this.order.contracts, (contractParam) => {
           const contract = contractParam;
-          contract.expanded = index === 0;
+          contract.expanded = false;
           return contract;
         });
       })
