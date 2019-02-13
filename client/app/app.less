@@ -83,6 +83,10 @@
 
 @table-header-background-color : @UNIVERS_SECONDARY;
 
+:not(.oui-header-tabs__dropdown-container) > .oui-header-tabs__item_active > a {
+  border-bottom-color: @UNIVERS;
+}
+
 .table {
   &.table-pretty {
     thead {
@@ -351,7 +355,6 @@ html {
 @import "ui-components/table/_normalize.less";
 @import "ui-components/table/_variables.less";
 @import "ui-components/table/table.less";
-@import "ui-components/tabs/tabs.less";
 //@import "ui-components/tile/_mixins.less";
 //@import "ui-components/tile/_variables.less";
 //@import "ui-components/tile/custom/definition/cui-tile-definition-description-region.less";

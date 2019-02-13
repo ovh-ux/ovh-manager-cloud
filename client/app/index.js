@@ -22,7 +22,6 @@ import 'script-loader!angular-strap/dist/modules/popover.min.js';
 import 'script-loader!angular-strap/dist/modules/popover.tpl.min.js';
 import 'angular-translate';
 import 'angular-translate-loader-partial';
-import 'angular-ui-router';
 import 'script-loader!angular-websocket/dist/angular-websocket.js';
 import 'script-loader!jquery-ui/ui/minified/core.min.js';
 import 'script-loader!jquery-ui/ui/minified/widget.min.js';

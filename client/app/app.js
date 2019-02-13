@@ -1,6 +1,9 @@
+import '@uirouter/angularjs';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
 angular.module('managerApp', [
@@ -17,6 +20,7 @@ angular.module('managerApp', [
 
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  ngOvhCloudUniverseComponents,
   'ovh-angular-apiv7',
   'ovh-api-services',
   'ovh-common-style',
