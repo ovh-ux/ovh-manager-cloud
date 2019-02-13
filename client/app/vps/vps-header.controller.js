@@ -8,7 +8,7 @@ class VpsHeaderCtrl {
     VpsNotificationIpv6,
     STOP_NOTIFICATION_USER_PREF,
     VpsService,
-    ProductsService,
+    CucProductsService,
   ) {
     this.$rootScope = $rootScope;
     this.$stateParams = $stateParams;
@@ -20,7 +20,7 @@ class VpsHeaderCtrl {
     this.serviceName = $stateParams.serviceName;
     this.description = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ProductsService = ProductsService;
+    this.CucProductsService = CucProductsService;
 
     this.loaders = {
       init: false,
@@ -56,7 +56,7 @@ class VpsHeaderCtrl {
       })
       .catch(() => this.CloudMessage.error(this.$translate.instant('vps_dashboard_loading_error')))
       .finally(() => { this.loaders.init = false; });
-    this.description = this.ProductsService.getDisplayName('VPS', this.serviceName);
+    this.description = this.CucProductsService.getDisplayName('VPS', this.serviceName);
   }
 
   checkMessages(vps) {
