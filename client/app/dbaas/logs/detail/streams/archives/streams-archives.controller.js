@@ -1,11 +1,11 @@
 class LogsStreamsArchivesCtrl {
-  constructor($interval, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
+  constructor($interval, $state, $stateParams, $translate, CucCloudMessage, ControllerHelper,
     LogsStreamsService, LogsConstants, LogsStreamsArchivesService) {
     this.$interval = $interval;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsConstants = LogsConstants;

@@ -1,11 +1,11 @@
 class LogsStreamsFollowService {
   constructor($websocket, $translate, OvhApiDbaas, LogsStreamsService,
-    ControllerHelper, CloudMessage, ServiceHelper, UrlHelper, LogsConstants) {
+    ControllerHelper, CucCloudMessage, ServiceHelper, UrlHelper, LogsConstants) {
     this.$websocket = $websocket;
     this.$translate = $translate;
     this.LogsStreamsService = LogsStreamsService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ServiceHelper = ServiceHelper;
     this.UrlHelper = UrlHelper;
     this.LogsAapiService = OvhApiDbaas.Logs().Aapi();
@@ -89,16 +89,16 @@ class LogsStreamsFollowService {
   copyWebSocketAddress(stream) {
     const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
     if (!url) {
-      this.CloudMessage.error(this.$translate.instant('logs_streams_follow_get_websocket_error', { stream: stream.info.title }));
+      this.CucCloudMessage.error(this.$translate.instant('logs_streams_follow_get_websocket_error', { stream: stream.info.title }));
     } else {
       const error = this.ControllerHelper.constructor.copyToClipboard(url);
       if (error) {
-        this.CloudMessage.error(this.$translate.instant('logs_streams_follow_copy_websocket_error', {
+        this.CucCloudMessage.error(this.$translate.instant('logs_streams_follow_copy_websocket_error', {
           stream: stream.info.title,
           url,
         }));
       } else {
-        this.CloudMessage.info(this.$translate.instant('logs_streams_follow_copy_websocket_success'));
+        this.CucCloudMessage.info(this.$translate.instant('logs_streams_follow_copy_websocket_success'));
       }
     }
   }
@@ -203,13 +203,13 @@ class LogsStreamsFollowService {
 
   handleCommandCopyStatus(error, stream, command, type) {
     if (error) {
-      this.CloudMessage.error(this.$translate.instant('logs_streams_follow_copy_command_error', {
+      this.CucCloudMessage.error(this.$translate.instant('logs_streams_follow_copy_command_error', {
         stream: stream.info.title,
         command,
         type,
       }));
     } else {
-      this.CloudMessage.info(this.$translate.instant('logs_streams_follow_copy_command_success', { type }));
+      this.CucCloudMessage.info(this.$translate.instant('logs_streams_follow_copy_command_success', { type }));
     }
   }
 
@@ -253,7 +253,7 @@ class LogsStreamsFollowService {
       });
 
       this.webSocket.onError((err) => {
-        this.CloudMessage.error(this.$translate.instant('logs_streams_follow_connection_error', { message: err }));
+        this.CucCloudMessage.error(this.$translate.instant('logs_streams_follow_connection_error', { message: err }));
       });
 
       this.webSocket.onClose(() => {
@@ -268,7 +268,7 @@ class LogsStreamsFollowService {
         this.totalMessages = 0;
       });
     } else {
-      this.CloudMessage.error(this.$translate.instant('logs_streams_follow_get_websocket_error', { stream: stream.info.title }));
+      this.CucCloudMessage.error(this.$translate.instant('logs_streams_follow_get_websocket_error', { stream: stream.info.title }));
     }
   }
 }

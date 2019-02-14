@@ -1,8 +1,8 @@
 class MetricService {
-  constructor($q, $translate, CloudMessage, OvhApiMetrics) {
+  constructor($q, $translate, CucCloudMessage, OvhApiMetrics) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.metrics = OvhApiMetrics;
   }
 
@@ -109,7 +109,7 @@ class MetricService {
     return this.$q.resolve({
       status: 'OK',
       data,
-      message: this.CloudMessage.success(message),
+      message: this.CucCloudMessage.success(message),
     });
   }
 
@@ -117,7 +117,7 @@ class MetricService {
     return this.$q.reject({
       status: 'ERROR',
       data,
-      message: this.CloudMessage.error(message),
+      message: this.CucCloudMessage.error(message),
     });
   }
 }

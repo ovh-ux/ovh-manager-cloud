@@ -1,9 +1,9 @@
 class LogsIndexService {
-  constructor($q, $translate, CloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas,
+  constructor($q, $translate, CucCloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas,
     ServiceHelper, LogsOptionsService, LogsConstants) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.ServiceHelper = ServiceHelper;
     this.ControllerHelper = ControllerHelper;
     this.LogsHelperService = LogsHelperService;

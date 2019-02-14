@@ -1,5 +1,5 @@
 class LogsStreamsAlertsAddCtrl {
-  constructor($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, LogsConstants,
+  constructor($q, $state, $stateParams, $window, CucCloudMessage, ControllerHelper, LogsConstants,
     LogsStreamsAlertsService) {
     this.$q = $q;
     this.$state = $state;
@@ -9,7 +9,7 @@ class LogsStreamsAlertsAddCtrl {
     this.alertType = $stateParams.type;
     this.editMode = Boolean(this.alertId);
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsConstants = LogsConstants;
@@ -42,7 +42,7 @@ class LogsStreamsAlertsAddCtrl {
       return this.$q.reject();
     }
 
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.savingAlert = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editMode
         ? this.LogsStreamsAlertsService

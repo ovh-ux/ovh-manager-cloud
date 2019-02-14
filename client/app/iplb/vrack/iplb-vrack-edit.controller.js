@@ -1,11 +1,11 @@
 class IpLoadBalancerVrackEditCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, CloudNavigation, ControllerHelper,
+  constructor($q, $stateParams, $translate, CucCloudMessage, CucCloudNavigation, ControllerHelper,
     IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
@@ -18,7 +18,7 @@ class IpLoadBalancerVrackEditCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.creationRules.load();
     this.privateNetwork.load()
       .then(() => {
@@ -56,7 +56,7 @@ class IpLoadBalancerVrackEditCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return (!this.editing() ? this.addNetwork() : this.editNetwork())
       .then(() => this.previousState.go())
       .finally(() => { this.saving = false; });

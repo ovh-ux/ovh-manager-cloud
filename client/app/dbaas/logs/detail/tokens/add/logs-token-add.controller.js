@@ -1,13 +1,13 @@
 class LogsTokenAddCtrl {
   constructor($q, $stateParams, $uibModalInstance, LogsTokensService, ControllerHelper,
-    CloudMessage) {
+    CucCloudMessage) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsTokensService = LogsTokensService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.initLoaders();
   }
 
@@ -36,7 +36,7 @@ class LogsTokenAddCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsTokensService.createToken(this.serviceName, this.token.data)
         .finally(() => {

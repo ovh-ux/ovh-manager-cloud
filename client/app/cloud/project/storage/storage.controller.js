@@ -8,11 +8,11 @@ angular.module('managerApp').controller('RA.storageCtrl', [
   'CloudStorageContainer',
   'CloudStorageContainers',
   'CloudStorageContainerTasksRunner',
-  'CloudMessage',
+  'CucCloudMessage',
   'ovhDocUrl',
   'RegionService',
   function ($filter, $rootScope, $scope, $stateParams, $translate, $uibModal, CloudStorageContainer,
-    CloudStorageContainers, CloudStorageContainerTasksRunner, CloudMessage, ovhDocUrl,
+    CloudStorageContainers, CloudStorageContainerTasksRunner, CucCloudMessage, ovhDocUrl,
     RegionService) {
     $scope.projectId = $stateParams.projectId;
     $scope.loaders = {
@@ -59,8 +59,8 @@ angular.module('managerApp').controller('RA.storageCtrl', [
     }
 
     function loadMessage() {
-      CloudMessage.unSubscribe('iaas.pci-project.compute.storage');
-      $scope.messageHandler = CloudMessage.subscribe('iaas.pci-project.compute.storage', { onMessage: () => refreshMessage() });
+      CucCloudMessage.unSubscribe('iaas.pci-project.compute.storage');
+      $scope.messageHandler = CucCloudMessage.subscribe('iaas.pci-project.compute.storage', { onMessage: () => refreshMessage() });
     }
 
     // Do things on page change...
@@ -168,9 +168,9 @@ angular.module('managerApp').controller('RA.storageCtrl', [
 
       function checkResult() {
         if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-          CloudMessage.error($translate.instant('storage_delete_error'));
+          CucCloudMessage.error($translate.instant('storage_delete_error'));
         } else {
-          CloudMessage.success($translate.instant('storage_delete_success'));
+          CucCloudMessage.success($translate.instant('storage_delete_success'));
         }
       }
 
@@ -218,7 +218,7 @@ angular.module('managerApp').controller('RA.storageCtrl', [
           $scope.orderStorages($scope.order.by);
         })
         .catch(() => {
-          CloudMessage.error($translate.instant('storage_load_error'));
+          CucCloudMessage.error($translate.instant('storage_load_error'));
         })
         .finally(() => {
           $scope.loaders.storages = false;

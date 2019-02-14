@@ -1,6 +1,6 @@
 (() => {
   class MetricsDashboardCtrl {
-    constructor($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper,
+    constructor($scope, $stateParams, $q, $translate, CucCloudMessage, ControllerHelper,
       FeatureAvailabilityService, MetricService, METRICS_ENDPOINTS,
       RegionService, SidebarMenu) {
       this.$scope = $scope;
@@ -9,7 +9,7 @@
       this.$translate = $translate;
       this.serviceName = $stateParams.serviceName;
       this.ControllerHelper = ControllerHelper;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.FeatureAvailabilityService = FeatureAvailabilityService;
       this.MetricService = MetricService;
       this.graphs = METRICS_ENDPOINTS.graphs;
@@ -81,13 +81,13 @@
         this.usage.conso.mads,
         this.usage.quota.mads,
       ) > this.limit.warning) {
-        this.CloudMessage.warning(this.$translate.instant('metrics_quota_mads_warning_message'));
+        this.CucCloudMessage.warning(this.$translate.instant('metrics_quota_mads_warning_message'));
       }
       if (this.constructor.computeUsage(
         this.usage.conso.ddp,
         this.usage.quota.ddp,
       ) > this.limit.warning) {
-        this.CloudMessage.warning(this.$translate.instant('metrics_quota_ddp_warning_message'));
+        this.CucCloudMessage.warning(this.$translate.instant('metrics_quota_ddp_warning_message'));
       }
     }
 

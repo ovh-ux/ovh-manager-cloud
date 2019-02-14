@@ -1,5 +1,5 @@
 class IpLoadBalancerHomeCtrl {
-  constructor($state, $stateParams, $translate, ControllerHelper, CloudMessage,
+  constructor($state, $stateParams, $translate, ControllerHelper, CucCloudMessage,
     FeatureAvailabilityService, IpLoadBalancerActionService, IpLoadBalancerConstant,
     IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
     IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
@@ -9,7 +9,7 @@ class IpLoadBalancerHomeCtrl {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;

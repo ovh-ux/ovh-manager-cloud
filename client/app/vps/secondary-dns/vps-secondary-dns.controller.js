@@ -1,7 +1,7 @@
 class VpsSecondaryDnsCtrl {
-  constructor($stateParams, CloudMessage, VpsActionService, VpsService) {
+  constructor($stateParams, CucCloudMessage, VpsActionService, VpsService) {
     this.serviceName = $stateParams.serviceName;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
 
@@ -27,7 +27,7 @@ class VpsSecondaryDnsCtrl {
         this.secondaryDns = data;
         return data.list.results;
       })
-      .catch(err => this.CloudMessage.error(err));
+      .catch(err => this.CucCloudMessage.error(err));
   }
 
   add() {

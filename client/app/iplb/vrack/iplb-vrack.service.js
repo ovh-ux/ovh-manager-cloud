@@ -1,13 +1,13 @@
 class IpLoadBalancerVrackService {
   constructor($q, IpLoadBalancerServerFarmService, OvhApiIpLoadBalancing,
     IpLoadBalancerTaskService, OvhApiVrack,
-    CloudPoll, ServiceHelper) {
+    CucCloudPoll, ServiceHelper) {
     this.$q = $q;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.OvhApiVrack = OvhApiVrack;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.ServiceHelper = ServiceHelper;
   }
 
@@ -63,7 +63,7 @@ class IpLoadBalancerVrackService {
 
   pollNetworkTask(serviceName, tasks) {
     const tasksObject = _.map(tasks, task => ({ id: task }));
-    return this.CloudPoll.pollArray({
+    return this.CucCloudPoll.pollArray({
       items: tasksObject,
       pollFunction: task => this.IpLoadBalancerTaskService.getTask(serviceName, task.id)
         .catch(() => ({ status: 'done' })),

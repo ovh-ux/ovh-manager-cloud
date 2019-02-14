@@ -1,13 +1,13 @@
 class LogsDashboardsCtrl {
   constructor($state, $stateParams, $translate, LogsDashboardsService,
-    ControllerHelper, CloudMessage, LogsConstants, ControllerModalHelper) {
+    ControllerHelper, CucCloudMessage, LogsConstants, ControllerModalHelper) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
     this.LogsDashboardsService = LogsDashboardsService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.ControllerModalHelper = ControllerModalHelper;
 
@@ -79,7 +79,7 @@ class LogsDashboardsCtrl {
    * @memberof LogsDashboardsCtrl
    */
   showDeleteConfirm(dashboard) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_dashboards_delete_title'),
       textHtml: this.$translate.instant('logs_dashboards_delete_message', { dashboardName: dashboard.title }),

@@ -1,6 +1,6 @@
 class LogsAliasesHomeCtrl {
   constructor($state, $stateParams, $translate, LogsAliasesService, ControllerHelper,
-    CloudMessage) {
+    CucCloudMessage) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
@@ -8,7 +8,7 @@ class LogsAliasesHomeCtrl {
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
 
     this.initLoaders();
   }
@@ -76,7 +76,7 @@ class LogsAliasesHomeCtrl {
    * @memberof LogsAliasesHomeCtrl
    */
   showDeleteConfirm(alias) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_aliases_delete_title'),
       textHtml: this.$translate.instant('logs_alias_delete_message', { alias: alias.name }),

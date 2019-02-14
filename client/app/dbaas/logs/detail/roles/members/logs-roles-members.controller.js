@@ -1,11 +1,11 @@
 class LogsRolesMembersCtrl {
-  constructor($stateParams, ControllerHelper, CloudMessage, LogsRolesService) {
+  constructor($stateParams, ControllerHelper, CucCloudMessage, LogsRolesService) {
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.roleId = this.$stateParams.roleId;
     this.ControllerHelper = ControllerHelper;
     this.LogsRolesService = LogsRolesService;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
 
     this.initLoaders();
   }
@@ -24,7 +24,7 @@ class LogsRolesMembersCtrl {
   }
 
   add() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.ControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/roles/members/add/add-members.html',
@@ -40,7 +40,7 @@ class LogsRolesMembersCtrl {
   }
 
   revoke(info) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsRolesService.deleteMemberModal(info.username).then(() => {
       this.delete = this.ControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsRolesService

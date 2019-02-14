@@ -1,12 +1,12 @@
 class IpLoadBalancerFrontendsEditCtrl {
-  constructor($q, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, $translate, CucCloudMessage, ControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerFailoverIpService,
     IpLoadBalancerFrontendsService, IpLoadBalancerZoneService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
@@ -251,7 +251,7 @@ class IpLoadBalancerFrontendsEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerFrontendsService
       .createFrontend(this.type, this.$stateParams.serviceName, this.getCleanFrontend())
       .then(() => this.$state.go('network.iplb.detail.frontends'))
@@ -265,7 +265,7 @@ class IpLoadBalancerFrontendsEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerFrontendsService
       .updateFrontend(
         this.type,

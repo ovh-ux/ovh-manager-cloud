@@ -1,5 +1,5 @@
 class LogsRolesService {
-  constructor($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService,
+  constructor($q, $translate, CucCloudPoll, ControllerHelper, LogsAliasesService,
     LogsDashboardsService, LogsHelperService, LogsIndexService, LogsOptionsService,
     LogsConstants, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
     this.$q = $q;
@@ -14,7 +14,7 @@ class LogsRolesService {
     this.LogsHelperService = LogsHelperService;
 
     this.LogsConstants = LogsConstants;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.LogsApiService = OvhApiDbaas.Logs().v6();
     this.MembersApiService = OvhApiDbaas.Logs().Role().Member().v6();
     this.PermissionsApiService = OvhApiDbaas.Logs().Role().Permission().v6();

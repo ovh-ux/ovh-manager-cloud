@@ -1,12 +1,12 @@
 class LogsRolesPermissionsCtrl {
-  constructor($q, $stateParams, CloudMessage, ControllerHelper, LogsRolesService) {
+  constructor($q, $stateParams, CucCloudMessage, ControllerHelper, LogsRolesService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.roleId = this.$stateParams.roleId;
     this.ControllerHelper = ControllerHelper;
     this.LogsRolesService = LogsRolesService;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.initLoaders();
   }
 
@@ -111,7 +111,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   attachAlias(item) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saveAlias = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
@@ -121,7 +121,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   attachIndex(item) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saveIndex = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
@@ -131,7 +131,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   attachStream(item) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saveStream = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
@@ -141,7 +141,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   attachDashboard(item) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService
         .addDashboard(this.serviceName, this.roleId, item[0]),
@@ -152,7 +152,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   removePermission(permission) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.deletePermission = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService
         .removePermission(this.serviceName, this.roleId, permission),

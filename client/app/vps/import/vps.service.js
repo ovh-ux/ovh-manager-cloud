@@ -256,7 +256,7 @@ angular.module('managerApp').service('VpsService', [
           return response.data;
         })
         .catch(ServiceHelper.errorHandler('vps_configuration_reinstall_fail'))
-        .finally(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_reinstall_success', { serviceName: this.serviceName })));
+        .finally(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_reinstall_success', { serviceName: this.serviceName })));
     };
 
     /*

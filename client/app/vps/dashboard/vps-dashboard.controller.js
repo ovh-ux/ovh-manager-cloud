@@ -1,5 +1,5 @@
 class VpsDashboardCtrl {
-  constructor($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage,
+  constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
     ControllerHelper, RegionService, SidebarMenu, VpsActionService, VpsService) {
     this.$filter = $filter;
     this.$q = $q;
@@ -8,7 +8,7 @@ class VpsDashboardCtrl {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.RegionService = RegionService;
     this.serviceName = $stateParams.serviceName;
     this.SidebarMenu = SidebarMenu;
@@ -96,7 +96,7 @@ class VpsDashboardCtrl {
           });
       })
       .catch((error) => {
-        this.CloudMessage.error(error || this.$translate.instant('vps_additional_disk_info_fail'));
+        this.CucCloudMessage.error(error || this.$translate.instant('vps_additional_disk_info_fail'));
         return this.$q.reject(error);
       })
       .finally(() => { this.loaders.disk = false; });
@@ -194,9 +194,9 @@ class VpsDashboardCtrl {
         const menuItem = this.SidebarMenu.getItemById(this.serviceName);
         menuItem.title = newDisplayName;
 
-        this.CloudMessage.success(this.$translate.instant('vps_setting_name_updated'));
+        this.CucCloudMessage.success(this.$translate.instant('vps_setting_name_updated'));
       })
-      .catch(err => this.CloudMessage.error(err))
+      .catch(err => this.CucCloudMessage.error(err))
       .finally(() => this.vps.load());
   }
 

@@ -1,9 +1,9 @@
 class VpsAdditionalDiskCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+  constructor($q, $stateParams, $translate, CucCloudMessage, VpsActionService, VpsService) {
     this.$q = $q;
     this.serviceName = $stateParams.serviceName;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
 
@@ -43,7 +43,7 @@ class VpsAdditionalDiskCtrl {
           });
       })
       .catch((error) => {
-        this.CloudMessage.error(this.$translate.instant('vps_additional_disk_info_fail'));
+        this.CucCloudMessage.error(this.$translate.instant('vps_additional_disk_info_fail'));
         return this.$q.reject(error);
       })
       .finally(() => { this.loaders.disk = false; });

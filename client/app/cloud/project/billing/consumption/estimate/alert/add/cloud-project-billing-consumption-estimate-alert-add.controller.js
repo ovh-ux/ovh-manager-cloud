@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateAlertAddCtrl',
   function CloudProjectBillingConsumptionEstimateAlertAddCtrl($uibModalInstance, $stateParams,
-    $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, CloudMessage, dataContext) {
+    $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, CucCloudMessage, dataContext) {
     const self = this;
 
     self.model = {
@@ -52,7 +52,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateA
         email: self.model.email,
         monthlyThreshold: self.model.threshold,
       }).$promise.then(() => {
-        CloudMessage.success($translate.instant('cpbea_estimate_alert_success'));
+        CucCloudMessage.success($translate.instant('cpbea_estimate_alert_success'));
       });
     }
 
@@ -66,7 +66,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateA
         monthlyThreshold: self.model.threshold,
       }).$promise.then(() => {
         $uibModalInstance.close();
-        CloudMessage.success($translate.instant('cpbea_estimate_alert_success'));
+        CucCloudMessage.success($translate.instant('cpbea_estimate_alert_success'));
       });
     }
 
@@ -74,7 +74,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateA
       this.loaders.saveAlert = true;
       (!self.alerting.id ? createAlert() : editAlert(self.alerting.id))
         .catch((err) => {
-          CloudMessage.error([$translate.instant('cpbea_estimate_alert_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpbea_estimate_alert_error'), (err.data && err.data.message) || ''].join(' '));
         }).finally(() => {
           $uibModalInstance.close();
           self.loaders.saveAlert = false;

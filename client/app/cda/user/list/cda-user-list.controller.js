@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CdaUserListCtrl', function ($q, $state, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
+  .controller('CdaUserListCtrl', function ($q, $state, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CucCloudMessage, CdaService) {
     const self = this;
 
     self.datas = {
@@ -31,7 +31,7 @@ angular.module('managerApp')
     }
 
     function displayError(error) {
-      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+      CucCloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
     }
 
     function init() {

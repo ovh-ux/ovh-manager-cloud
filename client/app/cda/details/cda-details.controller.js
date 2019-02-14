@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CdaDetailsCtrl', function ($stateParams, $translate, CdaService, CloudMessage, URLS, OvhApiMe) {
+  .controller('CdaDetailsCtrl', function ($stateParams, $translate, CdaService, CucCloudMessage, URLS, OvhApiMe) {
     const self = this;
 
     self.CdaService = CdaService;
@@ -21,8 +21,8 @@ angular.module('managerApp')
     };
 
     self.loadMessage = function () {
-      CloudMessage.unSubscribe('paas.cda');
-      self.messageHandler = CloudMessage.subscribe('paas.cda', { onMessage: () => self.refreshMessage() });
+      CucCloudMessage.unSubscribe('paas.cda');
+      self.messageHandler = CucCloudMessage.subscribe('paas.cda', { onMessage: () => self.refreshMessage() });
     };
 
     self.loadGuides = function () {
@@ -32,7 +32,7 @@ angular.module('managerApp')
           self.guides.list[0].url = `${URLS.guides.home[me.ovhSubsidiary]}${URLS.guides.cda}`;
         })
         .catch((error) => {
-          CloudMessage.error(`${$translate.instant('cda_guide_retrieval_error')} ${_(error).get('data.message', '')}`);
+          CucCloudMessage.error(`${$translate.instant('cda_guide_retrieval_error')} ${_(error).get('data.message', '')}`);
         });
     };
 

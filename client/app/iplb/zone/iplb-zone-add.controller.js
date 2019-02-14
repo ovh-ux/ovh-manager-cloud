@@ -1,10 +1,10 @@
 class IpLoadBalancerZoneAddCtrl {
-  constructor($q, $translate, $stateParams, CloudMessage, CloudNavigation, ControllerHelper,
+  constructor($q, $translate, $stateParams, CucCloudMessage, CucCloudNavigation, ControllerHelper,
     IpLoadBalancerZoneAddService) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
 
@@ -15,7 +15,7 @@ class IpLoadBalancerZoneAddCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.zones.load();
   }
 
@@ -25,7 +25,7 @@ class IpLoadBalancerZoneAddCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerZoneAddService.addZones(this.serviceName, this.model.zones.value)
       .then(() => {
         this.previousState.go();

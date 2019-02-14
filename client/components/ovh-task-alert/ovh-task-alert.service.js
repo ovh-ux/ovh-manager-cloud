@@ -1,10 +1,10 @@
 class OvhTaskAlertsService {
-  constructor($translate, ControllerHelper, CloudMessage, OvhApiMeAlertsAapi, $http,
+  constructor($translate, ControllerHelper, CucCloudMessage, OvhApiMeAlertsAapi, $http,
     TranslateService) {
     this.$translate = $translate;
     this.$http = $http;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.UserAlertsAapi = OvhApiMeAlertsAapi;
     this.TranslateService = TranslateService;
   }
@@ -45,7 +45,7 @@ class OvhTaskAlertsService {
         text: this.$translate.instant('ovh_task_follow_button'),
       };
     }
-    return this.CloudMessage.warning(message, 'index');
+    return this.CucCloudMessage.warning(message, 'index');
   }
 
   getOvhTaskAlerts() {

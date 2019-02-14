@@ -1,6 +1,6 @@
 
 
-angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpFailoverBuyAgoraCtrl', function ($http, $q, $stateParams, $translate, $uibModalInstance, $window, CloudMessage, OvhApiCloudProjectInstance) {
+angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpFailoverBuyAgoraCtrl', function ($http, $q, $stateParams, $translate, $uibModalInstance, $window, CucCloudMessage, OvhApiCloudProjectInstance) {
   const self = this;
 
   function getIpfoCatalog() {
@@ -36,7 +36,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpFail
       self.country = _.first(self.getCountries(self.product));
       self.instance = _.first(self.instances);
     }).catch((err) => {
-      CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
+      CucCloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
       $uibModalInstance.dismiss();
       return $q.reject(err);
     }).finally(() => {

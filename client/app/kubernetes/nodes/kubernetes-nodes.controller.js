@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesNodesCtrl {
   constructor(
     $q, $state, $stateParams, $timeout, $translate, $uibModal,
-    CloudMessage, Kubernetes,
+    CucCloudMessage, Kubernetes,
     KUBERNETES,
   ) {
     this.$q = $q;
@@ -10,7 +10,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
   }
@@ -24,8 +24,8 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   loadMessages() {
-    this.CloudMessage.unSubscribe('paas.kube.nodes');
-    this.messageHandler = this.CloudMessage.subscribe('paas.kube.nodes', { onMessage: () => this.refreshMessages() });
+    this.CucCloudMessage.unSubscribe('paas.kube.nodes');
+    this.messageHandler = this.CucCloudMessage.subscribe('paas.kube.nodes', { onMessage: () => this.refreshMessages() });
   }
 
   refreshMessages() {
@@ -37,7 +37,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       .then((cluster) => { this.cluster = cluster; })
       .catch((error) => {
         this.cluster = { id: this.serviceName, name: this.serviceName };
-        this.CloudMessage.error(this.$translate.instant('kube_error', { message: _.get(error, 'data.message') }));
+        this.CucCloudMessage.error(this.$translate.instant('kube_error', { message: _.get(error, 'data.message') }));
       });
   }
 
@@ -52,7 +52,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   getNodes() {
     return this.Kubernetes.getNodes(this.serviceName)
       .then((nodes) => { this.nodes = nodes; })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('kube_nodes_error')));
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('kube_nodes_error')));
   }
 
   getAssociatedFlavor(node) {
@@ -74,7 +74,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
         this.project = project;
       })
       .catch(() => {
-        this.CloudMessage.error(this.$translate.instant('kube_nodes_project_error'));
+        this.CucCloudMessage.error(this.$translate.instant('kube_nodes_project_error'));
       });
   }
 
@@ -96,7 +96,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       })
       .catch((error) => {
         if (error) {
-          this.CloudMessage.error(this.$translate.instant('kube_nodes_delete_error', { message: error }));
+          this.CucCloudMessage.error(this.$translate.instant('kube_nodes_delete_error', { message: error }));
         }
       });
   }
@@ -119,14 +119,14 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       })
       .catch((error) => {
         if (error) {
-          this.CloudMessage.error(error);
+          this.CucCloudMessage.error(error);
         }
       });
   }
 
   displaySuccessMessage(message) {
-    this.CloudMessage.success(this.$translate.instant(message));
-    this.$timeout(() => this.CloudMessage.flushMessages(), 3000);
+    this.CucCloudMessage.success(this.$translate.instant(message));
+    this.$timeout(() => this.CucCloudMessage.flushMessages(), 3000);
   }
 
   refreshNodes() {

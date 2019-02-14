@@ -1,10 +1,10 @@
 class LogsHomeAccountCtrl {
-  constructor($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper,
+  constructor($location, $stateParams, $uibModalInstance, CucCloudMessage, ControllerHelper,
     LogsHomeService, LogsConstants) {
     this.$location = $location;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.ControllerHelper = ControllerHelper;
     this.LogsHomeService = LogsHomeService;
@@ -48,7 +48,7 @@ class LogsHomeAccountCtrl {
       return this.$q.reject();
     }
 
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService
         .updateDisplayName(this.serviceName, this.accountDetails.data.service.displayName)

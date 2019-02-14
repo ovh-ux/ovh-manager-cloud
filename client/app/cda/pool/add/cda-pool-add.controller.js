@@ -1,10 +1,17 @@
 class CdaPoolAddCtrl {
-  constructor($q, $translate, $uibModalInstance, $stateParams, CloudMessage, OvhApiDedicatedCeph) {
+  constructor(
+    $q,
+    $translate,
+    $uibModalInstance,
+    $stateParams,
+    CucCloudMessage,
+    OvhApiDedicatedCeph,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = $stateParams.serviceName;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiDedicatedCeph = OvhApiDedicatedCeph;
 
     this.model = {
@@ -26,8 +33,8 @@ class CdaPoolAddCtrl {
   }
 
   loadMessage() {
-    this.CloudMessage.unSubscribe(this.messageContainerName);
-    this.messageHandler = this.CloudMessage.subscribe(
+    this.CucCloudMessage.unSubscribe(this.messageContainerName);
+    this.messageHandler = this.CucCloudMessage.subscribe(
       this.messageContainerName,
       { onMessage: () => this.refreshMessage() },
     );
@@ -46,10 +53,10 @@ class CdaPoolAddCtrl {
     }).$promise
       .then((result) => {
         this.$uibModalInstance.close({ poolName: this.model.poolName, taskId: result.data });
-        this.CloudMessage.success(this.$translate.instant('cda_pool_add_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cda_pool_add_success'));
       })
       .catch((error) => {
-        this.CloudMessage.error(`${this.$translate.instant('ceph_common_error')} ${(error.data && error.data.message) || ''}`, this.messageContainerName);
+        this.CucCloudMessage.error(`${this.$translate.instant('ceph_common_error')} ${(error.data && error.data.message) || ''}`, this.messageContainerName);
       })
       .finally(() => { this.saving = false; });
   }

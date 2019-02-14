@@ -1,14 +1,14 @@
 class RegionsCtrl {
   constructor(
     $stateParams,
-    CloudMessage,
+    CucCloudMessage,
     ServiceHelper,
     ControllerHelper,
     OvhApiCloudProjectRegion,
     CloudProjectVirtualMachineAddService,
     RegionService,
   ) {
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
     this.RegionService = RegionService;
@@ -96,7 +96,7 @@ class RegionsCtrl {
   }
 
   addRegions() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.addRegion = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.v6()
         .addRegion({ serviceName: this.serviceName },

@@ -1,10 +1,10 @@
 class IpLoadBalancerFrontendsCtrl {
-  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper,
+  constructor($state, $stateParams, $translate, CucCloudMessage, ControllerHelper,
     IpLoadBalancerActionService, IpLoadBalancerFrontendsService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
     this.IpLoadBalancerFrontendService = IpLoadBalancerFrontendsService;

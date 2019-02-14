@@ -1,6 +1,6 @@
 angular.module('managerApp')
   .controller('CloudProjectOpenstackUsersTokenCtrl', function CloudProjectOpenstackUsersTokenCtrl(
-    $q, $uibModalInstance, $stateParams, CloudMessage, $translate, OvhApiCloudProjectUser,
+    $q, $uibModalInstance, $stateParams, CucCloudMessage, $translate, OvhApiCloudProjectUser,
     openstackUser, OpenstackUsersToken, URLS, OvhApiMe,
   ) {
     const self = this;
@@ -43,7 +43,7 @@ angular.module('managerApp')
             OpenstackUsersToken.put(self.projectId, self.openstackUser.id, openstackToken);
             self.generateToken.tokens = openstackToken;
           }, (err) => {
-            CloudMessage.error([$translate.instant('cpou_token_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpou_token_error'), (err.data && err.data.message) || ''].join(' '));
           }),
           OvhApiMe.v6().get().$promise.then((me) => {
             // set guide lang

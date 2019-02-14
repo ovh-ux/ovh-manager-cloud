@@ -1,10 +1,10 @@
 class VpsReinstallCtrl {
-  constructor($scope, $translate, $uibModalInstance, CloudMessage, serviceName, SidebarMenu,
+  constructor($scope, $translate, $uibModalInstance, CucCloudMessage, serviceName, SidebarMenu,
     VpsReinstallService, VpsService) {
     this.$scope = $scope;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.SidebarMenu = SidebarMenu;
     this.VpsReinstallService = VpsReinstallService;
@@ -46,7 +46,7 @@ class VpsReinstallCtrl {
     if (!tasks || !tasks.length) {
       this.VpsService.getTemplates(this.serviceName)
         .then((data) => { this.templates = data.results; })
-        .catch(err => this.$uibModalInstance.dismiss(this.CloudMessage.error(err.message || this.$translate.instant('vps_configuration_polling_fail'))))
+        .catch(err => this.$uibModalInstance.dismiss(this.CucCloudMessage.error(err.message || this.$translate.instant('vps_configuration_polling_fail'))))
         .finally(() => { this.loaders.template = false; });
     }
   }
@@ -58,7 +58,7 @@ class VpsReinstallCtrl {
         this.userSshKeys = data;
         return this.userSshKeys;
       })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_reinstall_loading_sshKeys_error')))
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_reinstall_loading_sshKeys_error')))
       .finally(() => { this.loaders.sshKeys = false; });
   }
 
@@ -66,7 +66,7 @@ class VpsReinstallCtrl {
     this.loaders.summary = true;
     this.VpsService.getTabSummary(this.serviceName, true)
       .then((data) => { this.summary = data; })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_reinstall_loading_summary_error')))
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_reinstall_loading_summary_error')))
       .finally(() => { this.loaders.summary = false; });
   }
 

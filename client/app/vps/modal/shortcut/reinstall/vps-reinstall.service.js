@@ -1,9 +1,9 @@
 class VpsReinstallService {
-  constructor($http, $q, $translate, CloudMessage, OvhApiMe) {
+  constructor($http, $q, $translate, CucCloudMessage, OvhApiMe) {
     this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiMe = OvhApiMe;
   }
 

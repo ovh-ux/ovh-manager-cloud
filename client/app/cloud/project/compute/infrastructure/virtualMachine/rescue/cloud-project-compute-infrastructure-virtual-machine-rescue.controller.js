@@ -2,7 +2,7 @@
   class CloudProjectComputeInfrastructureVirtualmachineRescueCtrl {
     constructor(
       $scope, $stateParams, $uibModalInstance, $translate,
-      params, CloudMessage, CloudProjectComputeInfrastructureOrchestrator,
+      params, CucCloudMessage, CloudProjectComputeInfrastructureOrchestrator,
       OvhApiCloudProjectImage, ServiceHelper,
     ) {
       this.$scope = $scope;
@@ -10,7 +10,7 @@
       this.$uibModalInstance = $uibModalInstance;
       this.$translate = $translate;
       this.params = params;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
       this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
       this.ServiceHelper = ServiceHelper;
@@ -41,7 +41,7 @@
           const pwdKey = this.data.selectedImage ? '' : 'pwd_';
           const user = this.data.selectedImage ? this.data.selectedImage.user : 'root';
           const messageName = `cpc_rescue_mode_success_${pwdKey}${typeKey}`;
-          this.CloudMessage.info({
+          this.CucCloudMessage.info({
             textHtml: this.$translate.instant(messageName, {
               vmName: this.data.vm.name,
               user,

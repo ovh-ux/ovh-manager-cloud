@@ -1,6 +1,6 @@
 class CloudProjectComputeInfrastructureListCtrl {
   constructor($scope, $q, $stateParams, $translate, $timeout, atInternet,
-    CloudMessage, CloudNavigation, CloudProjectOrchestrator,
+    CucCloudMessage, CucCloudNavigation, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
     OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
     this.$scope = $scope;
@@ -9,8 +9,8 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.atInternet = atInternet;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.InfrastructureService = CloudProjectComputeInfrastructureService;
     this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
@@ -22,7 +22,7 @@ class CloudProjectComputeInfrastructureListCtrl {
   $onInit() {
     this.serviceName = this.$stateParams.projectId;
 
-    this.CloudNavigation.init({
+    this.CucCloudNavigation.init({
       state: 'iaas.pci-project.compute.infrastructure.list',
       stateParams: {
         serviceName: this.serviceName,
@@ -93,7 +93,7 @@ class CloudProjectComputeInfrastructureListCtrl {
         .then((instances) => { this.table.items = instances; });
     }).catch((err) => {
       this.table.items = [];
-      this.CloudMessage.error(`${this.$translate.instant('cpci_errors_init_title')} : ${_.get(err, 'data.message', '')}`);
+      this.CucCloudMessage.error(`${this.$translate.instant('cpci_errors_init_title')} : ${_.get(err, 'data.message', '')}`);
       return this.$q.reject(err);
     }).finally(() => {
       this.loaders.infra = false;

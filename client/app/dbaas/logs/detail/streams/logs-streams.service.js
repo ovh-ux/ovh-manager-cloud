@@ -1,7 +1,19 @@
 class LogsStreamsService {
-  constructor($q, $translate, CloudMessage, ControllerHelper, LogsHomeService, LogsOptionsService,
-    LogsStreamsAlertsService, LogsStreamsArchivesService, LogsOrderService, LogsConstants,
-    OvhApiDbaas, UrlHelper, LogsHelperService) {
+  constructor(
+    $q,
+    $translate,
+    CucCloudMessage,
+    ControllerHelper,
+    LogsHomeService,
+    LogsOptionsService,
+    LogsStreamsAlertsService,
+    LogsStreamsArchivesService,
+    LogsOrderService,
+    LogsConstants,
+    OvhApiDbaas,
+    UrlHelper,
+    LogsHelperService,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
     this.LogsApiService = OvhApiDbaas.Logs().v6();
@@ -16,7 +28,7 @@ class LogsStreamsService {
     this.ControllerHelper = ControllerHelper;
     this.LogsOrderService = LogsOrderService;
     this.UrlHelper = UrlHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.LogsHelperService = LogsHelperService;
 
@@ -287,7 +299,7 @@ class LogsStreamsService {
   getStreamGraylogUrl(stream) {
     const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
     if (stream.indexingEnabled && !url) {
-      this.CloudMessage.error(this.$translate.instant('logs_streams_get_graylog_url_error', { stream: stream.info.title }));
+      this.CucCloudMessage.error(this.$translate.instant('logs_streams_get_graylog_url_error', { stream: stream.info.title }));
     }
     return url;
   }
@@ -304,12 +316,12 @@ class LogsStreamsService {
     if (token) {
       const error = this.ControllerHelper.constructor.copyToClipboard(token);
       if (error) {
-        this.CloudMessage.error(this.$translate.instant('logs_streams_copy_token_error', {
+        this.CucCloudMessage.error(this.$translate.instant('logs_streams_copy_token_error', {
           stream: stream.info.title,
           token_value: token,
         }));
       } else {
-        this.CloudMessage.info(this.$translate.instant('logs_streams_copy_token_success'));
+        this.CucCloudMessage.info(this.$translate.instant('logs_streams_copy_token_success'));
       }
     }
   }
@@ -323,7 +335,7 @@ class LogsStreamsService {
   getStreamToken(stream) {
     const token = this.findStreamTokenValue(stream);
     if (!token) {
-      this.CloudMessage.error(this.$translate.instant('logs_streams_find_token_error', { stream: stream.info.title }));
+      this.CucCloudMessage.error(this.$translate.instant('logs_streams_find_token_error', { stream: stream.info.title }));
     }
     return token;
   }

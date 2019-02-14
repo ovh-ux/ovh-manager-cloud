@@ -1,11 +1,11 @@
 angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgoraCtrl', class CloudProjectBillingVouchersAddcreditAgoraCtrl {
-  constructor($http, $q, $translate, $uibModalInstance, $window, CloudMessage) {
+  constructor($http, $q, $translate, $uibModalInstance, $window, CucCloudMessage) {
     this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.orderLimits = {
       min: 1,
       max: 20000000,
@@ -31,7 +31,7 @@ angular.module('managerApp').controller('CloudProjectBillingVouchersAddcreditAgo
         .get('price')
         .value();
     }).catch((err) => {
-      this.CloudMessage.error([this.$translate.instant('cpb_vouchers_add_credit_load_err'), _.get(err, 'data.message', '')].join(' '));
+      this.CucCloudMessage.error([this.$translate.instant('cpb_vouchers_add_credit_load_err'), _.get(err, 'data.message', '')].join(' '));
       this.$uibModalInstance.dismiss();
       return this.$q.reject(err);
     }).finally(() => {

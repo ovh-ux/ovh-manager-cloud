@@ -5,12 +5,12 @@
   const defaultOrderErrorMessage = 'common_order_error';
 
   class ServiceHelper {
-    constructor($q, $translate, $window, CloudMessage) {
+    constructor($q, $translate, $window, CucCloudMessage) {
       this.$q = $q;
       this.$translate = $translate;
       this.$window = $window;
 
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
     }
 
     errorHandler(messageInput, containerName, pathsToGetErrorMessage) {
@@ -46,7 +46,7 @@
 
           const message = this.buildErrorMessage(errorMessageConfig);
 
-          this.CloudMessage.error(message, containerName);
+          this.CucCloudMessage.error(message, containerName);
 
           return this.$q.reject(currentError);
         });
@@ -89,7 +89,7 @@
             : message;
         }
 
-        this.CloudMessage.success(messageToWrite, containerName);
+        this.CucCloudMessage.success(messageToWrite, containerName);
 
         return datum;
       });
@@ -141,7 +141,7 @@
     }
 
     orderSuccessMessage({ orderUrl, orderId }, message = defaultOrderSuccessMessage) {
-      this.CloudMessage.success({
+      this.CucCloudMessage.success({
         textHtml: this.$translate.instant(message, {
           orderUrl,
           orderId,

@@ -1,6 +1,6 @@
 class LogsInputsAddConfigureCtrl {
   constructor($q, $state, $stateParams, $translate, ControllerModalHelper, ControllerHelper,
-    LogsInputsService, LogsConstants, CloudMessage) {
+    LogsInputsService, LogsConstants, CucCloudMessage) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -11,7 +11,7 @@ class LogsInputsAddConfigureCtrl {
     this.ControllerHelper = ControllerHelper;
     this.LogsInputsService = LogsInputsService;
     this.LogsConstants = LogsConstants;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.configuration = {
       engineType: '',
       flowgger: {},
@@ -75,7 +75,7 @@ class LogsInputsAddConfigureCtrl {
   }
 
   executeTest() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.test = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.logstashForm.$dirty
         ? this.LogsInputsService.updateLogstash(
@@ -97,7 +97,7 @@ class LogsInputsAddConfigureCtrl {
     } if (!this.flowggerForm.$dirty) {
       return this.goToNetworkPage();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .updateFlowgger(this.serviceName, this.input.data, this.configuration.flowgger)
@@ -118,7 +118,7 @@ class LogsInputsAddConfigureCtrl {
     } if (!this.logstashForm.$dirty) {
       return this.goToNetworkPage();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)

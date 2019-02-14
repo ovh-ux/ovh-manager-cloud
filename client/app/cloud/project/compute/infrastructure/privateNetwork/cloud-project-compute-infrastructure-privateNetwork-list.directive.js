@@ -1,15 +1,15 @@
 class PrivateNetworkListCtrl {
   constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal,
     CloudProjectComputeInfrastructurePrivateNetworkService, OvhApiCloudProjectNetworkPrivate,
-    OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack,
-    VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
+    OvhApiCloudProject, REDIRECT_URLS, CucCloudMessage, OvhApiMe, URLS, OvhApiVrack,
+    VrackSectionSidebarService, VrackService, CucCloudPoll, ControllerHelper) {
     this.resources = {
       privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
       project: OvhApiCloudProject.v6(),
       aapi: OvhApiVrack.Aapi(),
       modal: $uibModal,
     };
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.$translate = $translate;
     this.serviceName = null;
     this.service = CloudProjectComputeInfrastructurePrivateNetworkService;
@@ -19,7 +19,7 @@ class PrivateNetworkListCtrl {
     this.$stateParams = $stateParams;
     this.User = OvhApiMe;
     this.URLS = URLS;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.VrackService = VrackService;
     this.ControllerHelper = ControllerHelper;
 
@@ -67,7 +67,7 @@ class PrivateNetworkListCtrl {
   $onInit() {
     this.resources.privateNetwork.resetAllCache();
     if (angular.isUndefined(this.$stateParams.projectId)) {
-      this.CloudMessage.error(this.$translate.instant('cpci_private_network_list_context_error'));
+      this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_list_context_error'));
     } else {
       this.serviceName = this.$stateParams.projectId;
     }
@@ -112,11 +112,11 @@ class PrivateNetworkListCtrl {
     this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName).$promise
       .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
       .then(() => {
-        this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
       })
       .catch((err) => {
         if (err !== 'cancel') {
-          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+          this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
         }
       })
       .finally(() => {
@@ -129,7 +129,7 @@ class PrivateNetworkListCtrl {
       .then(({ id }) => {
         this.pollOperationStatus(id);
       }).catch(() => {
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+        this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
         this.loaders.vrack.link = false;
       });
   }
@@ -158,12 +158,12 @@ class PrivateNetworkListCtrl {
   pollOperationStatus(id) {
     this.startOperationPolling(id).$promise
       .then(() => {
-        this.CloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cpci_private_network_add_vrack_success'));
         this.fetchVrack();
       })
       .catch((err) => {
         if (err !== 'cancel') {
-          this.CloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
+          this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_add_vrack_error'));
         }
       })
       .finally(() => {
@@ -178,7 +178,7 @@ class PrivateNetworkListCtrl {
       id: taskId,
     };
 
-    this.poller = this.CloudPoll.poll({
+    this.poller = this.CucCloudPoll.poll({
       item: taskToPoll,
       pollFunction: task => this.VrackService.getOperation(this.serviceName, task.id)
         .then((res) => {
@@ -208,11 +208,11 @@ class PrivateNetworkListCtrl {
       .then(() => {
         this.models.vrack = null;
         this.collections.privateNetworks = [];
-        this.CloudMessage.success(this.$translate.instant('cpci_private_network_remove_vrack_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cpci_private_network_remove_vrack_success'));
       })
       .catch((err) => {
         if (err !== 'cancel') {
-          this.CloudMessage.error(this.$translate.instant('cpci_private_network_remove_vrack_error'));
+          this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_remove_vrack_error'));
         }
       })
       .finally(() => {
@@ -227,7 +227,7 @@ class PrivateNetworkListCtrl {
       id: taskId,
     };
 
-    this.poller = this.CloudPoll.poll({
+    this.poller = this.CucCloudPoll.poll({
       item: taskToPoll,
       pollFunction: task => this.VrackService.getTask(vrack, task.id),
       stopCondition: task => !task || _.includes(['done', 'error'], task.status),
@@ -302,7 +302,7 @@ class PrivateNetworkListCtrl {
         });
       }).catch(() => {
         this.collections.privateNetworks = [];
-        this.CloudMessage.error(this.$translate.instant('cpci_private_network_list_private_network_query_error'));
+        this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_list_private_network_query_error'));
       }).finally(() => { this.loaders.privateNetworks.query = false; });
   }
 

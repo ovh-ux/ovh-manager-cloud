@@ -1,4 +1,4 @@
-angular.module('managerApp').controller('NashaPartitionAddCtrl', function ($stateParams, $scope, $q, $uibModalInstance, $translate, OvhApiDedicatedNasha, CloudMessage) {
+angular.module('managerApp').controller('NashaPartitionAddCtrl', function ($stateParams, $scope, $q, $uibModalInstance, $translate, OvhApiDedicatedNasha, CucCloudMessage) {
   const self = this;
 
   self.nasha = null;
@@ -41,10 +41,10 @@ angular.module('managerApp').controller('NashaPartitionAddCtrl', function ($stat
         tasks: [result.data.taskId],
         isNew: true,
       });
-      CloudMessage.success($translate.instant('nasha_partitions_action_add_success', { partitionName: self.newPartition.name }));
+      CucCloudMessage.success($translate.instant('nasha_partitions_action_add_success', { partitionName: self.newPartition.name }));
     }).catch(() => {
       $uibModalInstance.dismiss();
-      CloudMessage.error($translate.instant('nasha_partitions_action_add_failure', { partitionName: self.newPartition.name }));
+      CucCloudMessage.error($translate.instant('nasha_partitions_action_add_failure', { partitionName: self.newPartition.name }));
     }).finally(() => {
       self.loading = false;
     });

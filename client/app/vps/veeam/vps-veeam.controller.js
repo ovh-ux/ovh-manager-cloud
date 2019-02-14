@@ -1,10 +1,10 @@
 class VpsVeeamCtrl {
-  constructor($scope, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService,
+  constructor($scope, $stateParams, $translate, CucCloudMessage, ControllerHelper, VpsActionService,
     VpsService) {
     this.$scope = $scope;
     this.serviceName = $stateParams.serviceName;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.serviceName = $stateParams.serviceName;
     this.VpsActionService = VpsActionService;
@@ -71,7 +71,7 @@ class VpsVeeamCtrl {
           this.veeam.data.state = 'MOUNTING';
         }
       })
-      .catch(err => this.CloudMessage.error(err))
+      .catch(err => this.CucCloudMessage.error(err))
       .finally(() => { this.veeamTab.loading = false; });
   }
 

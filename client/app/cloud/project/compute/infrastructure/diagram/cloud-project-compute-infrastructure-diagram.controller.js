@@ -1,7 +1,7 @@
 (() => {
   class CloudProjectComputeInfrastructureDiagramCtrl {
     constructor($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout,
-      $transitions, $translate, $uibModal, $window, CloudMessage, CloudNavigation,
+      $transitions, $translate, $uibModal, $window, CucCloudMessage, CucCloudNavigation,
       CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
       CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
       OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
@@ -22,8 +22,8 @@
       this.$uibModal = $uibModal;
       this.$window = $window;
 
-      this.CloudMessage = CloudMessage;
-      this.CloudNavigation = CloudNavigation;
+      this.CucCloudMessage = CucCloudMessage;
+      this.CucCloudNavigation = CucCloudNavigation;
       this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
       this.InfrastructureService = CloudProjectComputeInfrastructureService;
       this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
@@ -56,7 +56,7 @@
       this.serviceName = null;
       this.sortInterval = null;
 
-      this.CloudNavigation.init({
+      this.CucCloudNavigation.init({
         state: 'iaas.pci-project.compute.infrastructure.diagram',
         stateParams: {
           serviceName: this.serviceName,
@@ -519,11 +519,11 @@
             }).then(() => {
               // On success: the IP should be in the /cloud/.../ip/failover list.
               this.CloudProjectComputeInfrastructureOrchestrator.pollIps('failover');
-              this.CloudMessage.success(this.$translate.instant('cpci_ipfo_import_success', { ip }));
+              this.CucCloudMessage.success(this.$translate.instant('cpci_ipfo_import_success', { ip }));
             }).catch((err) => {
               if (err && err.status) {
                 // On error: remove the IP from list
-                this.CloudMessage.error(this.$translate.instant('cpci_ipfo_import_error', { ip }));
+                this.CucCloudMessage.error(this.$translate.instant('cpci_ipfo_import_error', { ip }));
               }
             });
           }
@@ -613,7 +613,7 @@
           this.CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
         })
         .catch((err) => {
-          this.CloudMessage.error(`${this.$translate.instant('cpci_volume_add_from_snapshot_error')} ${_.get(err, 'data.message', '')}`);
+          this.CucCloudMessage.error(`${this.$translate.instant('cpci_volume_add_from_snapshot_error')} ${_.get(err, 'data.message', '')}`);
         });
     }
 
@@ -660,7 +660,7 @@
       _.set(vm, 'confirmLoading', true);
       this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
         .catch((err) => {
-          this.CloudMessage.error(`${this.$translate.instant('cpci_vm_delete_submit_error')} ${_.get(err, 'data.message', '')}`);
+          this.CucCloudMessage.error(`${this.$translate.instant('cpci_vm_delete_submit_error')} ${_.get(err, 'data.message', '')}`);
         })
         .finally(() => {
           _.set(vm, 'confirmLoading', false);
@@ -968,10 +968,10 @@
                       })}`,
                     };
                   }
-                  this.CloudMessage.success(successMessage);
+                  this.CucCloudMessage.success(successMessage);
                 })
                 .catch((err) => {
-                  this.CloudMessage.error(`${this.$translate.instant('cpci_ip_attach_error', { ip: connectedIp.ip, instance: connectedVm.name })} ${_.get(err, 'data.message', '')}`);
+                  this.CucCloudMessage.error(`${this.$translate.instant('cpci_ip_attach_error', { ip: connectedIp.ip, instance: connectedVm.name })} ${_.get(err, 'data.message', '')}`);
                   return this.$q.reject(err);
                 })
                 .finally(() => {
@@ -1037,7 +1037,7 @@
 
                 this.$rootScope.$broadcast('highlighed-element.show', `compute,vm-ACTIVE-${_.get(this.model, 'currentLinkEdit.connectedIp.continentCode', '')}`);
               } else {
-                this.CloudMessage.error(this.$translate.instant('cpci_ipfo_attach_error'));
+                this.CucCloudMessage.error(this.$translate.instant('cpci_ipfo_attach_error'));
               }
             }
           },
@@ -1140,7 +1140,7 @@
               .query({ serviceName: this.serviceName }).$promise
               .then((snapshots) => {
                 if (_.find(snapshots, { volumeId: volume.id })) {
-                  this.CloudMessage.error({
+                  this.CucCloudMessage.error({
                     textHtml: this.$translate.instant('cpci_volume_snapshotted_delete_info', {
                       url: this.$state.href('iaas.pci-project.compute.snapshot'),
                     }),
@@ -1152,7 +1152,7 @@
                 }
               })
               .catch((err) => {
-                this.CloudMessage.error(`${this.$translate.instant('cpci_volume_snapshot_error')} ${_.get(err, 'data.message', '')}`);
+                this.CucCloudMessage.error(`${this.$translate.instant('cpci_volume_snapshot_error')} ${_.get(err, 'data.message', '')}`);
               });
           },
           cancel: () => {
@@ -1167,7 +1167,7 @@
                 this.$rootScope.$broadcast('highlighed-element.hide');
               })
               .catch((err) => {
-                this.CloudMessage.error(`${this.$translate.instant('cpci_volume_delete_error')} ${_.get(err, 'data.message', '')}`);
+                this.CucCloudMessage.error(`${this.$translate.instant('cpci_volume_delete_error')} ${_.get(err, 'data.message', '')}`);
               })
               .finally(() => {
                 this.loaders.volumeActionConfirm = false;
@@ -1204,11 +1204,11 @@
             this.CloudProjectComputeVolumesOrchestrator.moveVolume(this.volumeEdit.volume.id, this.volumeEdit.targetVm ? this.volumeEdit.targetVm.id : 'unlinked')
               .then(() => {
                 if (this.volumeEdit.targetVm && this.volumeEdit.targetVm.image && this.volumeEdit.targetVm.image.type === 'windows') {
-                  this.CloudMessage.info(this.$translate.instant('cpci_volume_confirm_attach_windows_info'));
+                  this.CucCloudMessage.info(this.$translate.instant('cpci_volume_confirm_attach_windows_info'));
                 }
               })
               .catch((err) => {
-                this.CloudMessage.error(`${this.$translate.instant('cpci_volume_confirm_detach_error')} ${_.get(err, 'data.message', '')}`);
+                this.CucCloudMessage.error(`${this.$translate.instant('cpci_volume_confirm_detach_error')} ${_.get(err, 'data.message', '')}`);
               })
               .finally(() => {
                 this.loaders.volumeActionConfirm = false;
@@ -1236,7 +1236,7 @@
                 this.$rootScope.$broadcast('highlighed-element.show', `compute,vm-ACTIVE-${volume.region}`);
               }, 100);
             } else {
-              this.CloudMessage.error(this.$translate.instant('cpci_volume_attach_error'));
+              this.CucCloudMessage.error(this.$translate.instant('cpci_volume_attach_error'));
             }
           },
           cancel: () => {
@@ -1363,7 +1363,7 @@
         })
         .catch((err) => {
           this.collections.privateNetwork = [];
-          this.CloudMessage.error(this.$translate.instant('cpci_private_network_query_error', {
+          this.CucCloudMessage.error(this.$translate.instant('cpci_private_network_query_error', {
             message: _.get(err, 'data.message', ''),
           }));
         })

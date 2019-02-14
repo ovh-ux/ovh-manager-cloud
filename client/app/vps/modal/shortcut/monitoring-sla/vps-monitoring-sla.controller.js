@@ -1,9 +1,17 @@
 class VpsMonitoringSlaCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, preview, serviceName,
-    state, VpsService) {
+  constructor(
+    $translate,
+    $uibModalInstance,
+    ControllerHelper,
+    CucCloudMessage,
+    preview,
+    serviceName,
+    state,
+    VpsService,
+  ) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.preview = preview;
     this.state = state;
@@ -24,7 +32,7 @@ class VpsMonitoringSlaCtrl {
     this.selectedVps = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)
         .then((vps) => { this.vps = vps; })
-        .catch(err => this.CloudMessage.error(err)),
+        .catch(err => this.CucCloudMessage.error(err)),
     });
     return this.selectedVps.load();
   }
@@ -36,8 +44,8 @@ class VpsMonitoringSlaCtrl {
   confirm() {
     this.save = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.update(this.serviceName, { slaMonitoring: this.state })
-        .then(() => this.CloudMessage.success(this.$translate.instant(`vps_configuration_monitoring_sla_ok_${this.state}`)))
-        .catch(() => this.CloudMessage.error(this.$translate.instant(`vps_configuration_monitoring_sla_error_${this.state}`)))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant(`vps_configuration_monitoring_sla_ok_${this.state}`)))
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant(`vps_configuration_monitoring_sla_error_${this.state}`)))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.save.load();
