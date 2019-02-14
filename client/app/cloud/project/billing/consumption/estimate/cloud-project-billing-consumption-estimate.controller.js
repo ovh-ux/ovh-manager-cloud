@@ -33,7 +33,9 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       total: null,
       currencySymbol: this.me.currency.symbol,
       alert: null,
-      currentTotals: null,
+    };
+    this.consumption = {
+      hourly: null,
     };
     this.loaders = {
       alert: false,
@@ -84,15 +86,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
           this.forecast.monthly.value + this.forecast.hourly.value,
           this.forecast.currencySymbol,
         );
-        this.forecast.currentTotals = {
-          total: billForecast.price.value + consumption.price.value,
-          hourly: {
-            total: consumption.price.value,
-          },
-          monthly: {
-            total: billForecast.price.value,
-          },
-        };
+        this.consumption.hourly = _.get(consumption, 'price', this.CloudProjectBillingAgoraService.formatEmptyPrice(this.forecast.currencySymbol));
       });
   }
 
@@ -127,7 +121,10 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         billingInfo,
       ))
       .then((data) => {
-        this.forecast.currentTotals = data.totals;
+        this.consumption.hourly = this.CloudProjectBillingAgoraService.constructor.formatPrice(
+          data.totals.hourly.total,
+          this.forecast.currencySymbol,
+        );
       })
       .finally(() => {
         this.loaders.current = false;
@@ -161,7 +158,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     this.consumptionChartData = {
       estimate: {
         now: {
-          value: this.forecast.currentTotals.hourly.total,
+          value: this.consumption.hourly.value,
           currencyCode: this.forecast.currencySymbol,
           label: labelNow,
         },
