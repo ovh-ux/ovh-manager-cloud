@@ -55,7 +55,6 @@ import 'ovh-common-style';
 import 'script-loader!ovh-angular-form-flat/dist/ovh-angular-form-flat.min.js';
 import 'ovh-angular-q-allsettled';
 import 'ovh-angular-slider';
-import 'ovh-angular-stop-event';
 import 'ovh-angular-proxy-request';
 import 'ovh-angular-user-pref';
 import 'ovh-angular-tail-logs';
