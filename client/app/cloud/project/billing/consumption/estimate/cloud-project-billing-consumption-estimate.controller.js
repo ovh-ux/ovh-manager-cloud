@@ -29,6 +29,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     this.loading = false;
     this.forecast = {
       hourly: null,
+      total: null,
       currencySymbol: null,
       alert: null,
       estimateTotals: null,
@@ -77,7 +78,12 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         consumption: this.CloudProjectBillingAgoraService.getCurrentConsumption(serviceId),
       }))
       .then(({ billForecast, hourlyForecast, consumption }) => {
+        this.forecast.currencySymbol = hourlyForecast.price.currencyCode;
         this.forecast.hourly = _.get(hourlyForecast, 'price', this.CloudProjectBillingAgoraService.formatEmptyPrice(this.forecast.currencySymbol));
+        this.forecast.total = this.CloudProjectBillingAgoraService.constructor.formatPrice(
+          billForecast.prices.withoutTax.value + this.forecast.hourly.value,
+          this.forecast.currencySymbol,
+        );
         this.forecast.currentTotals = {
           total: billForecast.price.value + consumption.price.value,
           hourly: {
@@ -88,12 +94,10 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
           },
         };
         this.forecast.estimateTotals = {
-          total: billForecast.price.value + consumption.price.value,
           monthly: {
             total: billForecast.price.value,
           },
         };
-        this.forecast.currencySymbol = hourlyForecast.price.currencyCode;
       });
   }
 
@@ -107,6 +111,8 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         .then((data) => {
           this.forecast.hourly = this.CloudProjectBillingAgoraService.constructor
             .formatPrice(data.totals.hourly.total, data.totals.currencySymbol);
+          this.forecast.total = this.CloudProjectBillingAgoraService.constructor
+            .formatPrice(data.totals.total, data.totals.currencySymbol);
           this.forecast.estimateTotals = data.totals;
           this.forecast.currencySymbol = this.forecast.estimateTotals.currencySymbol;
         })
