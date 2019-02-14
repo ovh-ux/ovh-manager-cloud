@@ -2,7 +2,7 @@
     <section class="cloud-billing-estimate-summary col-sm-6 col-lg-6">
         <header>
             <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: $ctrl.constructor.getNextMonth().format('MMMM')}"/>
-            <p data-ng-if="!$ctrl.loaders.forecast" class="center-block text-center" data-ng-bind="$ctrl.forecast.estimateTotals.total.toFixed(2) + $ctrl.forecast.estimateTotals.currencySymbol"></p>
+            <p data-ng-if="!$ctrl.loaders.forecast" class="center-block text-center" data-ng-bind="$ctrl.forecast.total.text"></p>
         </header>
         <div class="text-center" data-ng-if="$ctrl.loaders.forecast">
             <oui-spinner></oui-spinner>
