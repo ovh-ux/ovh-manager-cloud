@@ -183,21 +183,39 @@ class LogsHomeService {
    * Updates the current display name information
    *
    * @param {any} serviceName
-   * @param {string} displayName
+   * @param {service} service
    * @returns promise which will resolve or reject once the operation is complete
    * @memberof LogsHomeService
    */
-  updateDisplayName(serviceName, displayName) {
-    return this.LogsLexiService.update({ serviceName }, { displayName })
+  updateDisplayName(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_display_name_update_success', { })
           .then((res) => {
-            this.changeMenuTitle(serviceName, displayName || serviceName);
+            this.changeMenuTitle(serviceName, service.displayName || serviceName);
             return res;
           });
       })
       .catch(err => this.LogsHelperService.handleError('logs_home_display_name_update_error', err, { }));
+  }
+
+  /**
+   * Updates the current capped plan settings
+   *
+   * @param {any} serviceName
+   * @param {service} service
+   * @returns promise which will resolve or reject once the operation is complete
+   * @memberof LogsHomeService
+   */
+  updateCappedPlan(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
+      .$promise.then((operation) => {
+        this.resetAllCache();
+        return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { })
+          .then(res => res);
+      })
+      .catch(err => this.LogsHelperService.handleError('logs_home_capped_update_error', err, { }));
   }
 
   /**

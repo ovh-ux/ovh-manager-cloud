@@ -1,10 +1,10 @@
-class LogsHomeAccountCtrl {
-  constructor($location, $stateParams, $uibModalInstance, CucCloudMessage, ControllerHelper,
+class LogsHomeCappedCtrl {
+  constructor($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper,
     LogsHomeService, LogsConstants) {
     this.$location = $location;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
-    this.CucCloudMessage = CucCloudMessage;
+    this.CloudMessage = CloudMessage;
     this.LogsConstants = LogsConstants;
     this.ControllerHelper = ControllerHelper;
     this.LogsHomeService = LogsHomeService;
@@ -16,42 +16,45 @@ class LogsHomeAccountCtrl {
       .then(() => {
         this.service = this.accountDetails.data.service;
       });
+    this.account.load()
+      .then(() => {
+        this.offer = this.account.data.offer.reference;
+      });
   }
 
   /**
    * initializes the account details and contacts
    *
-   * @memberof LogsHomeAccountCtrl
+   * @memberof LogsHomeCappedCtrl
    */
   initLoaders() {
     this.accountDetails = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName),
+    });
+    this.account = this.ControllerHelper.request.getHashLoader({
+      loaderFunction: () => this.LogsHomeService.getAccount(this.serviceName),
     });
   }
 
   /**
    * Closes the info pop-up
    *
-   * @memberof LogsHomeAccountCtrl
+   * @memberof LogsHomeCappedCtrl
    */
   cancel() {
     this.$uibModalInstance.dismiss();
   }
 
   /**
-   * Updates the contact
+   * Updates the capped plan settings
    *
-   * @memberof LogsHomeAccountCtrl
+   * @memberof LogsHomeCappedCtrl
    */
-  updateDisplayName() {
-    if (this.form.$invalid) {
-      return this.$q.reject();
-    }
-
-    this.CucCloudMessage.flushChildMessage();
+  updateCappedPlan() {
+    this.CloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService
-        .updateDisplayName(this.serviceName, this.service)
+        .updateCappedPlan(this.serviceName, this.service)
         .finally(() => {
           this.ControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close();
@@ -61,4 +64,4 @@ class LogsHomeAccountCtrl {
   }
 }
 
-angular.module('managerApp').controller('LogsHomeAccountCtrl', LogsHomeAccountCtrl);
+angular.module('managerApp').controller('LogsHomeCappedCtrl', LogsHomeCappedCtrl);
