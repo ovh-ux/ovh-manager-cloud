@@ -35,4 +35,15 @@ angular.module('managerApp')
         return this.OvhApiServiceRenewForecast.v6()
           .get({ serviceId, includeOptions: true }).$promise;
       }
+
+      static formatPrice(value, currencyCode) {
+        return ({
+          value,
+          text: `${value.toFixed(2)} ${currencyCode}`,
+        });
+      }
+
+      formatEmptyPrice(currencyCode) {
+        return this.constructor.formatPrice(0, currencyCode);
+      }
     });
