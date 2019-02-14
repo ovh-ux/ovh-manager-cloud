@@ -27,7 +27,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
   $onInit() {
     this.serviceName = this.$stateParams.projectId;
     this.loading = false;
-    this.data = {
+    this.forecast = {
       currencySymbol: null,
       alert: null,
       estimateTotals: null,
@@ -41,7 +41,9 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     };
 
     return this.CloudProjectBillingAgoraService.getIfProjectUsesAgora(this.serviceName)
-      .then(projectUsesAgora => (projectUsesAgora ? this.getAgoraForecast() : this.getLegacyForecast()))
+      .then(projectUsesAgora => (projectUsesAgora
+        ? this.getAgoraForecast()
+        : this.getLegacyForecast()))
       .then(() => this.initAlert())
       .catch((err) => {
         this.CucCloudMessage.error([this.$translate.instant('cpbe_estimate_price_error_message'), (err.data && err.data.message) || ''].join(' '));
@@ -74,7 +76,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         consumption: this.CloudProjectBillingAgoraService.getCurrentConsumption(serviceId),
       }))
       .then(({ billForecast, hourlyForecast, consumption }) => {
-        this.data.currentTotals = {
+        this.forecast.currentTotals = {
           total: billForecast.price.value + consumption.price.value,
           hourly: {
             total: consumption.price.value,
@@ -83,7 +85,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
             total: billForecast.price.value,
           },
         };
-        this.data.estimateTotals = {
+        this.forecast.estimateTotals = {
           total: billForecast.price.value + consumption.price.value,
           hourly: {
             total: hourlyForecast.price.value,
@@ -92,7 +94,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
             total: billForecast.price.value,
           },
         };
-        this.data.currencySymbol = hourlyForecast.price.currencyCode;
+        this.forecast.currencySymbol = hourlyForecast.price.currencyCode;
       });
   }
 
@@ -104,8 +106,8 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       .then(billingInfo => this.CloudProjectBillingService
         .getConsumptionDetails(billingInfo, billingInfo)
         .then((data) => {
-          this.data.estimateTotals = data.totals;
-          this.data.currencySymbol = this.data.estimateTotals.currencySymbol;
+          this.forecast.estimateTotals = data.totals;
+          this.forecast.currencySymbol = this.forecast.estimateTotals.currencySymbol;
         })
         .finally(() => {
           this.loaders.forecast = false;
@@ -123,7 +125,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         billingInfo,
       ))
       .then((data) => {
-        this.data.currentTotals = data.totals;
+        this.forecast.currentTotals = data.totals;
       })
       .finally(() => {
         this.loaders.current = false;
@@ -144,7 +146,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     }).$promise
       .catch(() => {
         // We dont rethrow or show a message to hide an API glitch.
-        this.data.alert = null;
+        this.forecast.alert = null;
         return null;
       });
   }
@@ -157,25 +159,25 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     this.consumptionChartData = {
       estimate: {
         now: {
-          value: this.data.currentTotals.hourly.total,
-          currencyCode: this.data.estimateTotals.currencySymbol,
+          value: this.forecast.currentTotals.hourly.total,
+          currencyCode: this.forecast.estimateTotals.currencySymbol,
           label: labelNow,
         },
         endOfMonth: {
-          value: this.data.estimateTotals.hourly.total,
-          currencyCode: this.data.estimateTotals.currencySymbol,
+          value: this.forecast.estimateTotals.hourly.total,
+          currencyCode: this.forecast.estimateTotals.currencySymbol,
           label: labelFuture,
         },
       },
       threshold: {
         now: {
-          value: this.data.alert.monthlyThreshold,
-          currencyCode: this.data.estimateTotals.currencySymbol,
+          value: this.forecast.alert.monthlyThreshold,
+          currencyCode: this.forecast.estimateTotals.currencySymbol,
           label: labelLimit,
         },
         endOfMonth: {
-          value: this.data.alert.monthlyThreshold,
-          currencyCode: this.data.estimateTotals.currencySymbol,
+          value: this.forecast.alert.monthlyThreshold,
+          currencyCode: this.forecast.estimateTotals.currencySymbol,
           label: labelLimit,
         },
       },
@@ -192,7 +194,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         return this.getAlert(_.first(alertIds));
       })
       .then((alertObject) => {
-        this.data.alert = alertObject;
+        this.forecast.alert = alertObject;
         if (!_.isNull(alertObject)) {
           this.initConsumptionChart();
         }
@@ -208,7 +210,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       controller: 'CloudProjectBillingConsumptionEstimateAlertAddCtrl',
       controllerAs: 'CloudProjectBillingConsumptionEstimateAlertAddCtrl',
       resolve: {
-        dataContext: () => this.data,
+        dataContext: () => this.forecast,
       },
     });
 
