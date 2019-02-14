@@ -1,12 +1,12 @@
 class VpsTaskService {
-  constructor($http, $q, $rootScope, $translate, CloudMessage, OvhPoll) {
+  constructor($http, $q, $rootScope, $translate, CucCloudMessage, CucOvhPoll) {
     this.$http = $http;
     this.$q = $q;
     this.$rootScope = $rootScope;
 
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.OvhPoll = OvhPoll;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucOvhPoll = CucOvhPoll;
 
     this.COMPLETED_TASK_PROGRESS = 100;
   }
@@ -37,7 +37,7 @@ class VpsTaskService {
   startTaskPolling(serviceName, containerName, tasks) {
     this.stopTaskPolling();
 
-    this.poller = this.OvhPoll.pollArray({
+    this.poller = this.CucOvhPoll.pollArray({
       items: tasks,
       pollFunction: task => this.getTask(serviceName, task.id),
       stopCondition: task => _.includes(['done', 'error'], task.state),
@@ -55,7 +55,7 @@ class VpsTaskService {
   manageSuccess(serviceName, containerName) {
     this.flushMessages(containerName);
     this.$rootScope.$broadcast('tasks.success', serviceName);
-    this.CloudMessage.success(this.$translate.instant('vps_dashboard_task_finish'));
+    this.CucCloudMessage.success(this.$translate.instant('vps_dashboard_task_finish'));
   }
 
   manageMessage(containerName, task) {
@@ -66,7 +66,7 @@ class VpsTaskService {
   }
 
   createMessage(containerName, task) {
-    this.CloudMessage.warning({
+    this.CucCloudMessage.warning({
       id: task.id,
       class: 'task',
       title: this.messageType(task.type),
@@ -76,7 +76,7 @@ class VpsTaskService {
   }
 
   flushMessages(containerName, task) {
-    _.forEach(this.CloudMessage.getMessages(containerName), (message) => {
+    _.forEach(this.CucCloudMessage.getMessages(containerName), (message) => {
       if (message.class === 'task') {
         _.set(message, 'dismissed', true);
       }

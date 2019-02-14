@@ -1,11 +1,11 @@
 class CloudProjectComputeInfrastructureService {
-  constructor($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref,
+  constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CloudUserPref,
     CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper, TARGET) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.CloudUserPref = CloudUserPref;
     this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
     this.ControllerHelper = ControllerHelper;
@@ -167,7 +167,7 @@ class CloudProjectComputeInfrastructureService {
     _.set(vm, 'status', 'RESUMING');
     return this.CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm)
       .catch((err) => {
-        this.CloudMessage.error(`${this.$translate.instant('cpci_vm_resume_submit_error')} ${_.get(err, 'data.message', '')}`);
+        this.CucCloudMessage.error(`${this.$translate.instant('cpci_vm_resume_submit_error')} ${_.get(err, 'data.message', '')}`);
         _.set(vm, 'status', oldStatus);
       });
   }

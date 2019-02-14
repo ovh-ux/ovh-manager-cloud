@@ -1,6 +1,6 @@
 angular.module('managerApp')
   .controller('CloudProjectOpenstackUsersCtrl',
-    function CloudProjectOpenstackUsersCtrl(OvhApiCloud, $translate, CloudMessage, $stateParams,
+    function CloudProjectOpenstackUsersCtrl(OvhApiCloud, $translate, CucCloudMessage, $stateParams,
       Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken, $filter, $q, ControllerHelper,
       $window, REDIRECT_URLS) {
       const self = this;
@@ -136,7 +136,7 @@ angular.module('managerApp')
           }, (err) => {
             if (err && err.status) {
               self.table.user = null;
-              CloudMessage.error([$translate.instant('openstackusers_users_userlist_error'), (err.data && err.data.message) || ''].join(' '));
+              CucCloudMessage.error([$translate.instant('openstackusers_users_userlist_error'), (err.data && err.data.message) || ''].join(' '));
             }
           }, (userList) => {
             updateUserList(userList);
@@ -163,9 +163,9 @@ angular.module('managerApp')
               user => user.username === currentUser.username,
             );
             OpenstackUsersPassword.put(self.projectId, currentUserFound.id, newUser.password);
-            CloudMessage.success($translate.instant('openstackusers_users_regeneratepassword_success', currentUser));
+            CucCloudMessage.success($translate.instant('openstackusers_users_regeneratepassword_success', currentUser));
           }, (err) => {
-            CloudMessage.error([$translate.instant('openstackusers_users_regeneratepassword_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('openstackusers_users_regeneratepassword_error'), (err.data && err.data.message) || ''].join(' '));
           }).finally(() => {
             self.loaders.regeneratePassword = false;
           });
@@ -239,9 +239,9 @@ angular.module('managerApp')
           },
           successHandler: () => {
             self.removeFromList(currentUser);
-            CloudMessage.success($translate.instant('openstackusers_users_delete_success', currentUser));
+            CucCloudMessage.success($translate.instant('openstackusers_users_delete_success', currentUser));
           },
-          errorHandler: err => CloudMessage.error([$translate.instant('openstackusers_users_delete_error'), (err.data && err.data.message) || ''].join(' ')),
+          errorHandler: err => CucCloudMessage.error([$translate.instant('openstackusers_users_delete_error'), (err.data && err.data.message) || ''].join(' ')),
         });
       };
 

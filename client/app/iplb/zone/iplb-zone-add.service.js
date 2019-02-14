@@ -1,10 +1,10 @@
 class IpLoadBalancerZoneAddService {
-  constructor($q, $translate, $window, CloudMessage, OrderHelperService, OvhApiIpLoadBalancing,
+  constructor($q, $translate, $window, CucCloudMessage, OrderHelperService, OvhApiIpLoadBalancing,
     RegionService, ServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OrderHelperService = OrderHelperService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;

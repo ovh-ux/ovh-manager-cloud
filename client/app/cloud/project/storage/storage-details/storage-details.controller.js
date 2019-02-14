@@ -11,11 +11,11 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
     "CloudStorageContainer",
     "CloudStorageContainerTasksRunner",
     "CloudStorageContainersConfiguration",
-    "CloudMessage",
+    "CucCloudMessage",
     "ovhDocUrl",
     function ($interval, $rootScope, $scope, $stateParams, $translate, $uibModal, $window, CLOUD_PCA_FILE_STATE,
               OvhApiCloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
-              CloudStorageContainersConfiguration, CloudMessage, ovhDocUrl) {
+              CloudStorageContainersConfiguration, CucCloudMessage, ovhDocUrl) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -56,8 +56,8 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
         }
 
         function loadMessage () {
-            CloudMessage.unSubscribe("iaas.pci-project.compute.storage.details");
-            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.compute.storage.details", { onMessage: () => refreshMessage() });
+            CucCloudMessage.unSubscribe("iaas.pci-project.compute.storage.details");
+            $scope.messageHandler = CucCloudMessage.subscribe("iaas.pci-project.compute.storage.details", { onMessage: () => refreshMessage() });
         }
 
         $scope.computeStorageSize = function () {
@@ -201,7 +201,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
 
             queuePromise.then(function () {
                 if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-                    CloudMessage.error($translate.instant("storage_object_upload_error"));
+                    CucCloudMessage.error($translate.instant("storage_object_upload_error"));
                 }
             });
 
@@ -243,7 +243,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
             var queuePromise = CloudStorageContainerTasksRunner.addTask("upload_" + $scope.projectId + "_" + $stateParams.storageId, createDeleteTask(elem));
             queuePromise.then(function () {
                 if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-                    CloudMessage.error($translate.instant("storage_object_delete_error"));
+                    CucCloudMessage.error($translate.instant("storage_object_delete_error"));
                 }
             });
             return queuePromise;

@@ -1,14 +1,14 @@
 class NavbarNotificationService {
   constructor(
     $interval, $q, $translate,
-    atInternet, CloudMessage, NavbarBuilder, OvhApiNotificationAapi,
+    atInternet, CucCloudMessage, NavbarBuilder, OvhApiNotificationAapi,
     TARGET, UNIVERSE,
   ) {
     this.$interval = $interval;
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.NavbarBuilder = NavbarBuilder;
     this.OvhApiNotificationAapi = OvhApiNotificationAapi;
     this.TARGET = TARGET;
@@ -23,7 +23,7 @@ class NavbarNotificationService {
       target: this.TARGET,
       universe: this.UNIVERSE,
     }).$promise.catch((error) => {
-      this.CloudMessage.error({ textHtml: error.message }, 'index');
+      this.CucCloudMessage.error({ textHtml: error.message }, 'index');
       throw error;
     }));
   }

@@ -1,9 +1,9 @@
 class IpLoadBalancerZoneDeleteCtrl {
-  constructor($q, $stateParams, CloudMessage, CloudNavigation, ControllerHelper,
+  constructor($q, $stateParams, CucCloudMessage, CucCloudNavigation, ControllerHelper,
     IpLoadBalancerZoneDeleteService) {
     this.$q = $q;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerZoneDeleteService = IpLoadBalancerZoneDeleteService;
 
@@ -14,7 +14,7 @@ class IpLoadBalancerZoneDeleteCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.zones.load();
   }
 
@@ -24,7 +24,7 @@ class IpLoadBalancerZoneDeleteCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerZoneDeleteService
       .deleteZones(this.serviceName, this.model.zones.value)
       .then(() => {

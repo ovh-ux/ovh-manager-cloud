@@ -1,13 +1,13 @@
 class LogsAliasesAddCtrl {
   constructor($q, $stateParams, $uibModalInstance, LogsAliasesService, ControllerHelper,
-    CloudMessage) {
+    CucCloudMessage) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.isEdit = false;
 
     this.initLoaders();
@@ -62,7 +62,7 @@ class LogsAliasesAddCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .updateAlias(this.$stateParams.serviceName, this.alias.data)
@@ -83,7 +83,7 @@ class LogsAliasesAddCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .createAlias(this.$stateParams.serviceName, this.alias.data)

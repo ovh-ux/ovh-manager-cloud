@@ -1,10 +1,10 @@
 class LogsOptionsManageCtrl {
-  constructor($state, $stateParams, $window, CloudMessage, ControllerHelper, LogsOptionsService,
+  constructor($state, $stateParams, $window, CucCloudMessage, ControllerHelper, LogsOptionsService,
     LogsOptionsManageService, CurrencyService, OrderHelperService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsOptionsManageService = LogsOptionsManageService;
@@ -79,7 +79,7 @@ class LogsOptionsManageCtrl {
   }
 
   deactivate(option) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsOptionsService.terminateModal(
       option,
     ).then(() => {

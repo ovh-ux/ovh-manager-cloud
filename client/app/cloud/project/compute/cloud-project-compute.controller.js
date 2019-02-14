@@ -1,6 +1,6 @@
 class CloudProjectComputeCtrl {
   constructor(
-    $q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudMessage,
+    $q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CucCloudMessage,
     CloudProjectOrchestrator,
     CloudUserPref, FeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS,
   ) {
@@ -11,7 +11,7 @@ class CloudProjectComputeCtrl {
     this.$translate = $translate;
     this.$window = $window;
     this.OvhApiCloudProject = OvhApiCloudProject;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
     this.OvhApiMe = OvhApiMe;
@@ -31,8 +31,8 @@ class CloudProjectComputeCtrl {
   }
 
   loadMessage() {
-    this.CloudMessage.unSubscribe('iaas.pci-project.compute');
-    this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project.compute', { onMessage: () => this.refreshMessage() });
+    this.CucCloudMessage.unSubscribe('iaas.pci-project.compute');
+    this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project.compute', { onMessage: () => this.refreshMessage() });
   }
 
   refreshMessage() {
@@ -100,7 +100,7 @@ class CloudProjectComputeCtrl {
           ovhSubsidiary,
         ),
       );
-      _.forEach(messages, message => this.CloudMessage.info(message));
+      _.forEach(messages, message => this.CucCloudMessage.info(message));
     });
   }
 

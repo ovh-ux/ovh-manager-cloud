@@ -1,12 +1,12 @@
 class LogsStreamsFollowCtrl {
-  constructor($scope, $stateParams, $translate, ControllerHelper, UrlHelper, CloudMessage,
+  constructor($scope, $stateParams, $translate, ControllerHelper, UrlHelper, CucCloudMessage,
     LogsStreamsService, LogsStreamsFollowService, LogsConstants) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.ControllerHelper = ControllerHelper;
     this.UrlHelper = UrlHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsStreamsFollowService = LogsStreamsFollowService;
     this.LogsConstants = LogsConstants;
@@ -57,12 +57,12 @@ class LogsStreamsFollowCtrl {
   }
 
   closeConnection() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsStreamsFollowService.closeConnection();
   }
 
   openConnection() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsStreamsFollowService.openConnection(this.stream.data);
   }
 
@@ -75,7 +75,7 @@ class LogsStreamsFollowCtrl {
   }
 
   copyAddress() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsStreamsFollowService.copyWebSocketAddress(this.stream.data);
   }
 

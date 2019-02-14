@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CdaDetailsHomeCtrl', function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
+  .controller('CdaDetailsHomeCtrl', function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, OvhApiDedicatedCeph, CucCloudMessage, CdaService) {
     const self = this;
     let taskPoll;
 
@@ -48,7 +48,7 @@ angular.module('managerApp')
     }
 
     function displayError(error) {
-      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+      CucCloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
     }
 
     function initTasks() {
@@ -88,7 +88,7 @@ angular.module('managerApp')
               state: 'paas.cda.cda-details.cda-user.cda-user-list',
             },
           };
-          CloudMessage.info(message);
+          CucCloudMessage.info(message);
         }
         return users;
       });

@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('CloudProjectBillingHistoryDetailsCtrl',
   function CloudProjectBillingHistoryDetailsCtrl($state, $q, $translate, $stateParams, validParams,
-    CloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageHistory,
+    CucCloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageHistory,
     OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
     const self = this;
     self.year = null;
@@ -80,7 +80,7 @@ angular.module('managerApp').controller('CloudProjectBillingHistoryDetailsCtrl',
 
       initConsumptionHistory()
         .catch((err) => {
-          CloudMessage.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
           return $q.reject(err);
         })
         .finally(() => {

@@ -1,10 +1,10 @@
 class LogsHelperService {
-  constructor($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper,
+  constructor($translate, $state, OvhApiDbaas, ServiceHelper, CucCloudPoll, ControllerModalHelper,
     LogsConstants, ovhDocUrl, URLS) {
     this.$translate = $translate;
     this.$state = $state;
     this.ServiceHelper = ServiceHelper;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.ControllerModalHelper = ControllerModalHelper;
     this.LogsConstants = LogsConstants;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
@@ -29,7 +29,7 @@ class LogsHelperService {
    */
   pollOperation(serviceName, operation) {
     this.killPoller();
-    return this.CloudPoll.poll({
+    return this.CucCloudPoll.poll({
       item: operation,
       pollFunction: opn => this.OperationApiService
         .get({ serviceName, operationId: opn.operationId }).$promise,

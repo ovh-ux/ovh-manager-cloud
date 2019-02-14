@@ -1,10 +1,10 @@
 class CloudProjectComputeInfrastructurePrivateNetworkService {
-  constructor($q, $timeout, $translate, CloudMessage, URLS, OvhApiMe, OvhApiCloudProjectRegion,
+  constructor($q, $timeout, $translate, CucCloudMessage, URLS, OvhApiMe, OvhApiCloudProjectRegion,
     OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
     this.$q = $q;
     this.$timeout = $timeout;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.URLS = URLS;
     this.User = OvhApiMe;
     this.Region = OvhApiCloudProjectRegion;
@@ -76,7 +76,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     return this.OvhApiCloudProjectNetworkPrivate.v6().query({
       serviceName,
-    }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_networks_error')))
+    }).$promise.catch(() => this.CucCloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_networks_error')))
       .finally(() => { this.loaders.privateNetwork.query = false; });
   }
 
@@ -91,7 +91,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     return this.OvhApiCloudProjectNetworkPrivate.v6().get({
       serviceName,
       networkId: id,
-    }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_network_error')))
+    }).$promise.catch(() => this.CucCloudMessage.error(this.$translate.instant('cpcipnd_fetch_private_network_error')))
       .finally(() => { this.loaders.privateNetwork.get = false; });
   }
 
@@ -105,7 +105,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     return this.Region.v6().query({
       serviceName,
     }).$promise
-      .catch(() => this.CloudMessage.error(this.$translate.instant('cpcipnd_fetch_regions_error')))
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('cpcipnd_fetch_regions_error')))
       .finally(() => { this.loaders.region.query = false; });
   }
 
@@ -155,12 +155,12 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         onSuccess(network, options);
       }, (error) => {
         this.loaders.save = false;
-        this.CloudMessage.error(this.$translate.instant('cpcipnd_poll_error', {
+        this.CucCloudMessage.error(this.$translate.instant('cpcipnd_poll_error', {
           message: error.data.message || JSON.stringify(error),
         }));
       });
     }).catch((error) => {
-      this.CloudMessage.error(this.$translate.instant('cpcipnd_save_error', {
+      this.CucCloudMessage.error(this.$translate.instant('cpcipnd_save_error', {
         message: error.data.message || JSON.stringify(error),
       }));
       this.loaders.save = false;
@@ -196,7 +196,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
       networkId,
     }, subnet).$promise
       .catch((error) => {
-        this.CloudMessage.error(this.$translate.instant('cpcipnd_save_error', {
+        this.CucCloudMessage.error(this.$translate.instant('cpcipnd_save_error', {
           message: error.data.message || JSON.stringify(error),
         }));
       }).finally(() => {

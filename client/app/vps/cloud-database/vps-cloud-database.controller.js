@@ -5,7 +5,7 @@ class VpsCloudDatabaseCtrl {
     $timeout,
     $translate,
     $window,
-    CloudMessage,
+    CucCloudMessage,
     ControllerHelper,
     OvhApiHostingPrivateDatabase,
     VpsService,
@@ -15,7 +15,7 @@ class VpsCloudDatabaseCtrl {
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
     this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
@@ -84,7 +84,7 @@ class VpsCloudDatabaseCtrl {
         }, database,
       )))
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_fetch_error'),
           _(error).get('data.message', ''),
         ].join(' '));
@@ -112,12 +112,12 @@ class VpsCloudDatabaseCtrl {
     ).$promise
       .then(() => {
         this.$timeout(() => {
-          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
+          this.CucCloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
           this.refresh();
         }, 2000);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_whitelist_add_error'),
           _(error).get('data.message', ''),
         ].join(' '));
@@ -129,12 +129,12 @@ class VpsCloudDatabaseCtrl {
     return this.ApiWhitelist.deleteIp({ serviceName }, { ip: this.ipv4 }).$promise
       .then(() => {
         this.$timeout(() => {
-          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
+          this.CucCloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
           this.refresh();
         }, 2000);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_whitelist_remove_error'),
           _(error).get('data.message', ''),
         ].join(' '));

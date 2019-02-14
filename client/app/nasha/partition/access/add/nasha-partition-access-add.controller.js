@@ -1,4 +1,4 @@
-angular.module('managerApp').controller('NashaPartitionAccessAddCtrl', function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, CloudMessage) {
+angular.module('managerApp').controller('NashaPartitionAccessAddCtrl', function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, CucCloudMessage) {
   const self = this;
 
   self.loading = false;
@@ -27,7 +27,7 @@ angular.module('managerApp').controller('NashaPartitionAccessAddCtrl', function 
         });
         self.data.accessAvailable = result;
       }).catch(() => {
-        CloudMessage.success($translate.instant('nasha_partitions_access_loading_error'));
+        CucCloudMessage.success($translate.instant('nasha_partitions_access_loading_error'));
       }).finally(() => {
         self.loading = false;
       });
@@ -50,10 +50,10 @@ angular.module('managerApp').controller('NashaPartitionAccessAddCtrl', function 
         task: result.data.taskId,
         isNew: true,
       });
-      CloudMessage.success($translate.instant('nasha_access_action_add_success', { accessIp: self.data.accessToAdd.ip }));
+      CucCloudMessage.success($translate.instant('nasha_access_action_add_success', { accessIp: self.data.accessToAdd.ip }));
     }).catch(() => {
       $uibModalInstance.dismiss();
-      CloudMessage.error($translate.instant('nasha_access_action_add_failure', { accessIp: self.data.accessToAdd.ip }));
+      CucCloudMessage.error($translate.instant('nasha_access_action_add_failure', { accessIp: self.data.accessToAdd.ip }));
     }).finally(() => {
       self.loading = false;
     });

@@ -125,7 +125,7 @@ class CloudProjectComputeLoadbalancerService {
       );
       return { servers, attachedServers: activeServers };
     }).catch((err) => {
-      this.CloudMessage.error([this.$translate.instant('cpc_server_error'), (err.data && err.data.message) || ''].join(' '));
+      this.CucCloudMessage.error([this.$translate.instant('cpc_server_error'), (err.data && err.data.message) || ''].join(' '));
     });
   }
 }

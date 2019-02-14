@@ -1,11 +1,11 @@
 class LogsInputsHomeCtrl {
-  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsConstants,
+  constructor($state, $stateParams, $translate, CucCloudMessage, ControllerHelper, LogsConstants,
     LogsInputsService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsInputsService = LogsInputsService;
@@ -110,7 +110,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   add() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.inputs.addwizard.add', {
       serviceName: this.serviceName,
     });
@@ -123,7 +123,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   edit(input) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.inputs.editwizard.edit', {
       serviceName: this.serviceName,
       inputId: input.info.inputId,
@@ -137,7 +137,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   info(input) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.ControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/inputs/home/info/logs-inputs-home-info.html',
@@ -158,7 +158,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   showDeleteConfirm(input) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('inputs_delete'),
       textHtml: this.$translate.instant('inputs_delete_message', { input: input.info.title }),
@@ -172,7 +172,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   restartInput(input) {
-    this.CloudMessage.info(this.$translate.instant('inputs_restarting', { inputTitle: input.info.title }));
+    this.CucCloudMessage.info(this.$translate.instant('inputs_restarting', { inputTitle: input.info.title }));
     this.executeAction(input, 'restartInput');
   }
 
@@ -183,7 +183,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   standardOutput(input) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.inputs.console', {
       serviceName: this.serviceName,
       inputId: input.info.inputId,
@@ -197,7 +197,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   startInput(input) {
-    this.CloudMessage.info(this.$translate.instant('inputs_starting', { inputTitle: input.info.title }));
+    this.CucCloudMessage.info(this.$translate.instant('inputs_starting', { inputTitle: input.info.title }));
     this.executeAction(input, 'startInput');
   }
 
@@ -208,7 +208,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   stopInput(input) {
-    this.CloudMessage.info(this.$translate.instant('inputs_stopping', { inputTitle: input.info.title }));
+    this.CucCloudMessage.info(this.$translate.instant('inputs_stopping', { inputTitle: input.info.title }));
     this.executeAction(input, 'stopInput');
   }
 }

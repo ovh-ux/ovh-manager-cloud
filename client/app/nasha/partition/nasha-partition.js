@@ -12,7 +12,7 @@ angular.module('managerApp')
             controllerAs: 'PartitionCtrl',
           },
         },
-        onEnter: CloudMessage => CloudMessage.flushMessages(),
+        onEnter: CucCloudMessage => CucCloudMessage.flushMessages(),
         translations: {
           value: [
             '../../common',

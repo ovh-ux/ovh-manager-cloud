@@ -1,10 +1,10 @@
 class IpLoadBalancerServerEditCtrl {
-  constructor($q, $state, $stateParams, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, CucCloudMessage, ControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerServerService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerServerService = IpLoadBalancerServerService;
@@ -92,7 +92,7 @@ class IpLoadBalancerServerEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerService.create(
       this.farmType,
       this.$stateParams.serviceName,
@@ -113,7 +113,7 @@ class IpLoadBalancerServerEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerService.update(
       this.farmType,
       this.$stateParams.serviceName,

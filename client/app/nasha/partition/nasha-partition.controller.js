@@ -1,5 +1,5 @@
 angular.module('managerApp').controller('PartitionCtrl', function PartitionCtrl($state, $rootScope,
-  $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, CloudMessage) {
+  $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, CucCloudMessage) {
   const self = this;
 
   self.trackedTaskStatus = ['todo', 'doing'];
@@ -115,7 +115,7 @@ angular.module('managerApp').controller('PartitionCtrl', function PartitionCtrl(
             self.data.partitionsTasks[task.partitionName].splice(taskIndex, 1);
           }
         }).catch((err) => {
-          CloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
+          CucCloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
           return $q.reject(err);
         });
       });
@@ -184,7 +184,7 @@ angular.module('managerApp').controller('PartitionCtrl', function PartitionCtrl(
         self.data.table.refresh = !self.data.table.refresh;
       }
     }).catch((err) => {
-      CloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
+      CucCloudMessage.error($translate.instant('nasha_partitions_no_data_error'));
       return $q.reject(err);
     })
       .finally(() => {

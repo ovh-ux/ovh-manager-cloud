@@ -1,12 +1,12 @@
 class LogsInputsAddEditCtrl {
-  constructor($q, $state, $stateParams, CloudMessage, ControllerHelper, LogsConstants,
+  constructor($q, $state, $stateParams, CucCloudMessage, ControllerHelper, LogsConstants,
     LogsInputsService, LogsStreamsService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsInputsService = LogsInputsService;
@@ -69,7 +69,7 @@ class LogsInputsAddEditCtrl {
     } if (!this.form.$dirty) {
       return this.gotToNextStep(this.inputId);
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.inputAddEdit = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editMode
         ? this.LogsInputsService.updateInput(this.serviceName, this.input.data)

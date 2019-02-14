@@ -1,13 +1,20 @@
 class LogsStreamsHomeCtrl {
-  constructor($state, $stateParams, $translate, LogsStreamsService, ControllerHelper, CloudMessage,
-    UrlHelper) {
+  constructor(
+    $state,
+    $stateParams,
+    $translate,
+    LogsStreamsService,
+    ControllerHelper,
+    CucCloudMessage,
+    UrlHelper,
+  ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsStreamsService = LogsStreamsService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.UrlHelper = UrlHelper;
     this.initLoaders();
   }
@@ -69,7 +76,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   showDeleteConfirm(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_stream_delete_title'),
       textHtml: this.$translate.instant('logs_stream_delete_message', { stream: stream.info.title }),
@@ -98,7 +105,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   manageAlerts(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.alerts', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,
@@ -112,7 +119,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   gotoArchives(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.archives', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,
@@ -126,7 +133,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   followLive(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.follow', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,

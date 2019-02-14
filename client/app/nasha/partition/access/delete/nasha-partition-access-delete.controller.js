@@ -1,4 +1,4 @@
-angular.module('managerApp').controller('NashaPartitionAccessDeleteCtrl', function ($scope, $translate, $uibModalInstance, OvhApiDedicatedNasha, CloudMessage) {
+angular.module('managerApp').controller('NashaPartitionAccessDeleteCtrl', function ($scope, $translate, $uibModalInstance, OvhApiDedicatedNasha, CucCloudMessage) {
   const self = this;
   self.loading = false;
   self.toRemove = {
@@ -15,10 +15,10 @@ angular.module('managerApp').controller('NashaPartitionAccessDeleteCtrl', functi
       ip: self.toRemove.access.ip,
     }).$promise.then((result) => {
       $uibModalInstance.close({ access: self.toRemove.access, task: result.data.taskId });
-      CloudMessage.success($translate.instant('nasha_access_action_delete_success', { accessIp: self.toRemove.access.ip }));
+      CucCloudMessage.success($translate.instant('nasha_access_action_delete_success', { accessIp: self.toRemove.access.ip }));
     }).catch(() => {
       $uibModalInstance.dismiss();
-      CloudMessage.error($translate.instant('nasha_access_action_delete_failure', { accessIp: self.toRemove.access.ip }));
+      CucCloudMessage.error($translate.instant('nasha_access_action_delete_failure', { accessIp: self.toRemove.access.ip }));
     }).finally(() => {
       self.loading = false;
     });

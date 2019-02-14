@@ -1,11 +1,11 @@
 class NashaCtrl {
-  constructor($q, $state, $stateParams, $translate, CloudMessage, OvhApiDedicatedNasha,
+  constructor($q, $state, $stateParams, $translate, CucCloudMessage, OvhApiDedicatedNasha,
     ovhDocUrl, REDIRECT_URLS) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiDedicatedNasha = OvhApiDedicatedNasha;
     this.ovhDocUrl = ovhDocUrl;
     this.REDIRECT_URLS = REDIRECT_URLS;
@@ -59,10 +59,10 @@ class NashaCtrl {
           .replace('{serviceName}', this.data.nasha.serviceName);
 
         if (this.data.information.status === 'expired') {
-          this.CloudMessage.error(this.$translate.instant('nasha_expired'));
+          this.CucCloudMessage.error(this.$translate.instant('nasha_expired'));
         }
       })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('nasha_dashboard_loading_error')))
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('nasha_dashboard_loading_error')))
       .finally(() => {
         this.loading = false;
       });
@@ -89,19 +89,19 @@ class NashaCtrl {
       }).$promise
         .then(() => {
           this.monitoring.loading = false;
-          this.CloudMessage.success(this.$translate.instant(`nasha_dashboard_update_success_${state ? 'enabled' : 'disabled'}`));
+          this.CucCloudMessage.success(this.$translate.instant(`nasha_dashboard_update_success_${state ? 'enabled' : 'disabled'}`));
         })
         .catch((error) => {
           this.monitoring.loading = false;
           this.monitoring.enabled = !state;
-          this.CloudMessage.error(`${this.$translate.instant('nasha_dashboard_update_error')} ${error.message}`);
+          this.CucCloudMessage.error(`${this.$translate.instant('nasha_dashboard_update_error')} ${error.message}`);
         });
     }
   }
 
   loadMessages() {
-    this.CloudMessage.unSubscribe(this.stateName);
-    this.messageHandler = this.CloudMessage.subscribe(this.stateName, {
+    this.CucCloudMessage.unSubscribe(this.stateName);
+    this.messageHandler = this.CucCloudMessage.subscribe(this.stateName, {
       onMessage: () => this.refreshMessage(),
     });
   }

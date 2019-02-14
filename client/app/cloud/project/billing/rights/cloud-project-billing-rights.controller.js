@@ -1,6 +1,6 @@
 angular.module('managerApp')
   .controller('CloudProjectBillingRightsCtrl',
-    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CloudMessage,
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CucCloudMessage,
       ControllerHelper, $translate, REDIRECT_URLS, $window) {
       const self = this;
       const serviceName = $stateParams.projectId;
@@ -147,10 +147,10 @@ angular.module('managerApp')
         })
           .then(() => {
             self.getRights(true);
-            CloudMessage.success($translate.instant('cpb_rights_table_rights_add_success'));
+            CucCloudMessage.success($translate.instant('cpb_rights_table_rights_add_success'));
           })
           .catch((err) => {
-            CloudMessage.error([$translate.instant('cpb_rights_add_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_add_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;
@@ -170,7 +170,7 @@ angular.module('managerApp')
           })
           .catch((err) => {
             self.data.rights = [];
-            CloudMessage.error([$translate.instant('cpb_rights_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;
@@ -191,10 +191,10 @@ angular.module('managerApp')
           }).$promise)
           .then(() => {
             self.getRights(true);
-            CloudMessage.success($translate.instant('cpb_rights_table_rights_remove_success'));
+            CucCloudMessage.success($translate.instant('cpb_rights_table_rights_remove_success'));
           })
           .catch((err) => {
-            CloudMessage.error([$translate.instant('cpb_rights_remove_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_remove_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;

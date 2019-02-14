@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateCtrl',
   function CloudProjectBillingConsumptionEstimateCtrl($q, $uibModal, $stateParams, $translate,
-    OvhApiCloudProjectAlerting, CloudMessage, OvhApiCloudProjectUsageForecast,
+    OvhApiCloudProjectAlerting, CucCloudMessage, OvhApiCloudProjectUsageForecast,
     OvhApiCloudProjectUsageCurrent, CloudProjectBillingService) {
     const self = this;
     self.loading = false;
@@ -135,7 +135,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateC
 
     function init() {
       initForecast().then(() => initCurrent()).then(() => initAlert()).catch((err) => {
-        CloudMessage.error([$translate.instant('cpbe_estimate_price_error_message'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cpbe_estimate_price_error_message'), (err.data && err.data.message) || ''].join(' '));
       });
     }
 
@@ -168,12 +168,12 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionEstimateC
             serviceName: $stateParams.projectId,
             alertId: _.first(alertIds),
           }).$promise.then(() => {
-            CloudMessage.success($translate.instant('cpbe_estimate_alert_delete_success'));
+            CucCloudMessage.success($translate.instant('cpbe_estimate_alert_delete_success'));
           });
         }
         return $q.reject({ data: { message: 'Alert not found' } });
       }).catch((err) => {
-        CloudMessage.error([$translate.instant('cpbe_estimate_alert_delete_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cpbe_estimate_alert_delete_error'), (err.data && err.data.message) || ''].join(' '));
         return $q.reject(err);
       }).finally(() => {
         self.loaders.deleteAlert = false;

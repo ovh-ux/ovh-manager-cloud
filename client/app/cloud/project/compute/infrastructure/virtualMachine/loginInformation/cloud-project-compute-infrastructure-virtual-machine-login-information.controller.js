@@ -1,14 +1,14 @@
 (() => {
   class CloudProjectComputeInfrastructureVirtualMachineLoginInformationCtrl {
     constructor(
-      $uibModalInstance, params, $q, $state, $translate, CloudMessage, Poller,
+      $uibModalInstance, params, $q, $state, $translate, CucCloudMessage, Poller,
       OvhApiCloudProjectInstance, CloudImageService,
     ) {
       this.$uibModalInstance = $uibModalInstance;
       this.$q = $q;
       this.$state = $state;
       this.$translate = $translate;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.Poller = Poller;
       this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
       this.CloudImageService = CloudImageService;
@@ -30,7 +30,7 @@
       this.loading = true;
       this.getLoginInfo()
         .catch((error) => {
-          this.CloudMessage.error(`${this.$translate.instant('login_information_error')} ${error.data.message}`);
+          this.CucCloudMessage.error(`${this.$translate.instant('login_information_error')} ${error.data.message}`);
         })
         .then(() => {
           this.data.hasApplication = this.data.image.apps;
@@ -96,7 +96,7 @@
         const readonly = error.statusText === 'ReadonlySession';
         this.readOnlyError = readonly;
         if (!readonly) {
-          this.CloudMessage.error(`${this.$translate.instant('login_information_error')} ${error.data.message}`);
+          this.CucCloudMessage.error(`${this.$translate.instant('login_information_error')} ${error.data.message}`);
         }
       }).finally(() => {
         this.poller = false;
