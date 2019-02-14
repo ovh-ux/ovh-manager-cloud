@@ -19,9 +19,22 @@ angular.module('managerApp')
       .state('paas.kube.service.reset', {
         url: '/reset',
         views: {
-          kubernetesResetView: {
+          kubernetesPopUpView: {
             controller: 'kubernetesResetModalCtrl',
             controllerAs: 'ctrl',
+          },
+        },
+        translations: {
+          value: ['..'],
+          format: 'json',
+        },
+      })
+      .state('paas.kube.service.update', {
+        url: '/update',
+        views: {
+          kubernetesPopUpView: {
+            controller: 'kubernetesUpdateModalCtrl',
+            controllerAs: '$ctrl',
           },
         },
         translations: {

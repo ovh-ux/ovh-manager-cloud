@@ -1,10 +1,10 @@
 class kubernetesUpgradePolicyCtrl {
-  constructor($stateParams, $translate, $uibModalInstance, CloudMessage,
+  constructor($stateParams, $translate, $uibModalInstance, CucCloudMessage,
     ControllerHelper, Kubernetes, upgradePolicy) {
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.Kubernetes = Kubernetes;
     this.selectedUpgradePolicy = upgradePolicy;
@@ -26,14 +26,14 @@ class kubernetesUpgradePolicyCtrl {
    * @memberof kubernetesUpgradePolicyCtrl
    */
   updateUpgradePolicy() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.save = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.Kubernetes
         .updateKubernetesUpgradePolicy(this.serviceName, this.selectedUpgradePolicy)
-        .then(() => this.CloudMessage.success(
+        .then(() => this.CucCloudMessage.success(
           this.$translate.instant('kube_service_upgrade_policy_success'),
         ))
-        .catch(err => this.CloudMessage.error(this.$translate.instant('kube_service_upgrade_policy_error', { message: _.get(err, 'data.message', '') })))
+        .catch(err => this.CucCloudMessage.error(this.$translate.instant('kube_service_upgrade_policy_error', { message: _.get(err, 'data.message', '') })))
         .finally(() => {
           this.ControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close(this.selectedUpgradePolicy);

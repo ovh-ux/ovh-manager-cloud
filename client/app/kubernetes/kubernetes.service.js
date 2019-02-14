@@ -73,6 +73,10 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Node().v6().delete({ serviceName, nodeId }).$promise;
   }
 
+  isProcessing(status) {
+    return this.KUBERNETES.processingStatus.includes(status);
+  }
+
   resetNodesCache() {
     this.OvhApiKube.PublicCloud().Node().v6().resetCache();
     this.OvhApiKube.PublicCloud().Node().v6().resetQueryCache();
@@ -152,5 +156,13 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
 
   getSchema() {
     return this.OvhApiKube.v6().getSchema().$promise;
+  }
+
+  updateKubernetesVersion(serviceName) {
+    return this.OvhApiKube.v6().updateVersion({ serviceName }, {}).$promise
+      .then((res) => {
+        this.resetClusterCache();
+        return res;
+      });
   }
 });
