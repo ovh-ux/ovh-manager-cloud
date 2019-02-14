@@ -1,10 +1,10 @@
 class CloudMainController {
-  constructor($document, $interval, $rootScope, $translate, ProductsService) {
+  constructor($document, $interval, $rootScope, $translate, CucProductsService) {
     this.$document = $document;
     this.$interval = $interval;
     this.$rootScope = $rootScope;
     this.$translate = $translate;
-    this.ProductsService = ProductsService;
+    this.CucProductsService = CucProductsService;
   }
 
   $onInit() {
@@ -18,8 +18,8 @@ class CloudMainController {
   }
 
   init() {
-    this.ProductsService.getProducts()
-      .then(() => this.ProductsService.getProductsOfType('PROJECT'))
+    this.CucProductsService.getProducts()
+      .then(() => this.CucProductsService.getProductsOfType('PROJECT'))
       .then(products => products.filter(product => product.expiration))
       .then((products) => {
         if (products && products.length) {

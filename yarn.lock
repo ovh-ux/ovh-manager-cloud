@@ -1018,10 +1018,10 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.0":
-  version "0.1.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.0.tgz#7775ccb377427b33a0eacef1d7443051fe69eb34"
-  integrity sha512-SjtiZkqGFcBonh13TtDZ4V31cIF1H3oZtprSiq2eJNXbZFGArAG4YWUUt/bIRsj11awoUx3Y5fi2ub9MTIBiMQ==
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.1":
+  version "0.1.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.1.tgz#1877e319871bb85cdab9d8ec07950f206d3a5d76"
+  integrity sha512-wwaWI77W+Y/71eqP4vpYP/W3kS4WTEHLxHmG4eLqsovuObdG5IVmeD78dq1f1/wbrHLlh0TppWkXaV7h785b6Q==
   dependencies:
     lodash "^4.17.11"
 
@@ -4881,9 +4881,6 @@ har-validator@~4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/har-validator/-/har-validator-4.2.1.tgz#33481d0f1bbff600dd203d75812a6a5fba002e2a"
   integrity sha1-M0gdDxu/9gDdID11gSpqX7oALio=
-  dependencies:
-    ajv "^4.9.1"
-    har-schema "^1.0.5"
 
 har-validator@~5.1.0:
   version "5.1.0"
@@ -7748,10 +7745,10 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-ovh-api-services@^3.33.1:
-  version "3.33.1"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.33.1.tgz#c6be547f18d297e210d9d79b0a21d8166a2ba45d"
-  integrity sha512-7VCSqe9/uGaa42537vRc2KdD0yGGHUmCX44hebQb4Agtr91Zpgk2vZnzHb0zQnHXjv1kTJDNNud+GQanb6/dmA==
+ovh-api-services@^3.35.0:
+  version "3.35.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.35.0.tgz#3bdd250507457fbf2b6116e075bba5ae8b7d999e"
+  integrity sha512-Udy9QlIS3s4PKhmlAnKJXXq9Z310c6RandPALkY7tcI9P61g7g+S491UwUTkn5VX6NiVUzLd8HYVQ+D6JewCKg==
   dependencies:
     lodash "^3.10.1"
 
