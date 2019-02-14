@@ -119,7 +119,7 @@
  "logs_home_shortcuts_all_dashboard": "Visualizza tutte le dashboard",
  "logs_home_shortcuts_graylog": "Graylog",
  "logs_home_shortcuts_graylog_api": "API Graylog",
- "logs_home_shortcuts_elasticsearch": "ElasticSearch",
+ "logs_home_shortcuts_elasticsearch": "Elasticsearch",
  "logs_home_shortcuts_elasticsearch_help": "Per accedere alle API Elasticsearch è necessario disporre di un alias o un indice.",
  "logs_home_usage": "Utilizzo",
  "logs_home_configuration": "Configurazione",

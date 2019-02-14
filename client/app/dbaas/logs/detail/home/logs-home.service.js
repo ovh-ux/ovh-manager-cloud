@@ -247,25 +247,25 @@ class LogsHomeService {
   }
 
   /**
-   * Gets the Greylog API url from the object
+   * Gets the Graylog API url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog API url
+   * @returns the Graylog API url
    * @memberof LogsHomeService
    */
-  getGreyLogApiUrl(object) {
+  getGrayLogApiUrl(object) {
     _.set(object, 'graylogApiUrl', this.constructor.findUrl(object.urls, this.LogsConstants.URLS.GRAYLOG_API));
     return object;
   }
 
   /**
-   * Gets the Greylog url from the object
+   * Gets the Graylog url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog url
+   * @returns the Graylog url
    * @memberof LogsHomeService
    */
-  getGreyLogUrl(object) {
+  getGrayLogUrl(object) {
     _.set(object, 'graylogWebuiUrl', this.constructor.findUrl(
       object.urls,
       this.LogsConstants.URLS.GRAYLOG_WEBUI,
@@ -334,15 +334,15 @@ class LogsHomeService {
     _.set(accountDetails, 'email', accountDetails.service.contact
       ? accountDetails.service.contact.email
       : accountDetails.me.email);
-    this.getGreyLogUrl(accountDetails);
-    this.getGreyLogApiUrl(accountDetails);
+    this.getGrayLogUrl(accountDetails);
+    this.getGrayLogApiUrl(accountDetails);
     _.set(accountDetails, 'graylogApiUrl', `${accountDetails.graylogApiUrl}/api-browser`);
     _.set(accountDetails, 'graylogEntryPoint', accountDetails.graylogWebuiUrl
       .replace('https://', '')
       .replace('/api', ''));
     this.getElasticSearchApiUrl(accountDetails);
-    if (accountDetails.last_stream) { this.getGreyLogUrl(accountDetails.last_stream); }
-    if (accountDetails.last_dashboard) { this.getGreyLogUrl(accountDetails.last_dashboard); }
+    if (accountDetails.last_stream) { this.getGrayLogUrl(accountDetails.last_stream); }
+    if (accountDetails.last_dashboard) { this.getGrayLogUrl(accountDetails.last_dashboard); }
     _.set(accountDetails, 'portsAndMessages', this.getPortsAndMessages(accountDetails));
     return accountDetails;
   }
