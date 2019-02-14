@@ -29,10 +29,10 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     this.loading = false;
     this.forecast = {
       hourly: null,
+      monthly: null,
       total: null,
-      currencySymbol: null,
+      currencySymbol: this.me.currency.symbol,
       alert: null,
-      estimateTotals: null,
       currentTotals: null,
     };
     this.loaders = {
@@ -78,10 +78,10 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         consumption: this.CloudProjectBillingAgoraService.getCurrentConsumption(serviceId),
       }))
       .then(({ billForecast, hourlyForecast, consumption }) => {
-        this.forecast.currencySymbol = hourlyForecast.price.currencyCode;
         this.forecast.hourly = _.get(hourlyForecast, 'price', this.CloudProjectBillingAgoraService.formatEmptyPrice(this.forecast.currencySymbol));
+        this.forecast.monthly = billForecast.prices.withoutTax;
         this.forecast.total = this.CloudProjectBillingAgoraService.constructor.formatPrice(
-          billForecast.prices.withoutTax.value + this.forecast.hourly.value,
+          this.forecast.monthly.value + this.forecast.hourly.value,
           this.forecast.currencySymbol,
         );
         this.forecast.currentTotals = {
@@ -89,11 +89,6 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
           hourly: {
             total: consumption.price.value,
           },
-          monthly: {
-            total: billForecast.price.value,
-          },
-        };
-        this.forecast.estimateTotals = {
           monthly: {
             total: billForecast.price.value,
           },
@@ -111,10 +106,10 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
         .then((data) => {
           this.forecast.hourly = this.CloudProjectBillingAgoraService.constructor
             .formatPrice(data.totals.hourly.total, data.totals.currencySymbol);
+          this.forecast.monthly = this.CloudProjectBillingAgoraService.constructor
+            .formatPrice(data.totals.monthly.total, data.totals.currencySymbol);
           this.forecast.total = this.CloudProjectBillingAgoraService.constructor
             .formatPrice(data.totals.total, data.totals.currencySymbol);
-          this.forecast.estimateTotals = data.totals;
-          this.forecast.currencySymbol = this.forecast.estimateTotals.currencySymbol;
         })
         .finally(() => {
           this.loaders.forecast = false;
@@ -167,25 +162,24 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       estimate: {
         now: {
           value: this.forecast.currentTotals.hourly.total,
-          currencyCode: this.forecast.estimateTotals.currencySymbol,
+          currencyCode: this.forecast.currencySymbol,
           label: labelNow,
         },
         endOfMonth: {
           value: this.forecast.hourly.value,
-          currencyCode: this.forecast.estimateTotals.currencySymbol,
+          currencyCode: this.forecast.currencySymbol,
           label: labelFuture,
         },
       },
-
       threshold: {
         now: {
           value: this.forecast.alert.monthlyThreshold,
-          currencyCode: this.forecast.estimateTotals.currencySymbol,
+          currencyCode: this.forecast.currencySymbol,
           label: labelLimit,
         },
         endOfMonth: {
           value: this.forecast.alert.monthlyThreshold,
-          currencyCode: this.forecast.estimateTotals.currencySymbol,
+          currencyCode: this.forecast.currencySymbol,
           label: labelLimit,
         },
       },
