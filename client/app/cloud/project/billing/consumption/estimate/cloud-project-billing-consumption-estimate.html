@@ -9,7 +9,7 @@
         </div>
         <div data-ng-if="!$ctrl.loaders.forecast">
             <p data-translate="cpbe_estimate_summary_renew_monthly_sub_label"
-               data-translate-values="{ total: $ctrl.forecast.estimateTotals.monthly.total.toFixed(2) + ' ' + $ctrl.forecast.estimateTotals.currencySymbol }"></p>
+               data-translate-values="{ total: $ctrl.forecast.monthly.text }"></p>
             <p data-translate="cpbe_estimate_summary_hourly_consumption_label"
                data-translate-values="{
                    month: $ctrl.constructor.getCurrentMonth().format('MMMM'),

@@ -10,6 +10,9 @@ angular.module('managerApp').config(($stateProvider) => {
         controllerAs: 'BillingConsumptionCtrl',
       },
     },
+    resolve: {
+      me: /* @ngInject */ OvhApiMe => OvhApiMe.v6().get().$promise,
+    },
     translations: {
       value: ['.'],
       format: 'json',
