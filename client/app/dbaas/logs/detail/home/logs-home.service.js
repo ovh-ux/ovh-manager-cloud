@@ -212,8 +212,7 @@ class LogsHomeService {
     return this.LogsLexiService.update({ serviceName }, service)
       .$promise.then((operation) => {
         this.resetAllCache();
-        return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { })
-          .then(res => res);
+        return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { });
       })
       .catch(err => this.LogsHelperService.handleError('logs_home_capped_update_error', err, { }));
   }
