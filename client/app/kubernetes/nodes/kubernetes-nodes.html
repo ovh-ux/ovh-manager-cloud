@@ -9,6 +9,11 @@
             <span data-translate="kube_nodes_description_project_2"></span>
         </p>
         <oui-datagrid data-rows="$ctrl.nodes" data-row-loader="$ctrl.getAssociatedFlavor($row)">
+            <oui-column data-title=":: 'cloud_common_name' | translate"
+                        data-property="name"
+                        data-type="string"
+                        data-searchable
+                        data-filterable></oui-column>
             <oui-column data-title=":: 'kube_nodes_node' | translate"
                         data-property="id"
                         data-type="string"

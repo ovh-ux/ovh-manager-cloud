@@ -9,6 +9,18 @@
                data-on-dismiss="$ctrl.dismiss()"
                data-loading="$ctrl.loading">
         <p data-translate="kube_nodes_add_region"></p>
+        <oui-field data-label="{{:: 'kube_nodes_add_node_name' | translate }}"
+                   data-error-messages="{ pattern: ('kube_nodes_add_node_name_validation_error' | translate) }"
+                   data-size="auto">
+            <input class="oui-input"
+                   type="text"
+                   id="nodename"
+                   name="nodename"
+                   required
+                   maxlength="50"
+                   data-ng-model="$ctrl.nodeName"
+                   data-ng-pattern="/^[a-z0-9]([-\.a-z0-9]*[a-z0-9])?$/">
+        </oui-field>
         <div class="oui-field"
              data-ng-class="{ 'oui-field_error': kubeNodesAdd.$submitted && !$ctrl.flavorFamily }">
             <label id="flavorFamily" class="oui-label" data-translate="kube_nodes_add_flavor_family"></label>
