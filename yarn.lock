@@ -1018,13 +1018,15 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.2":
-  version "0.1.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.2.tgz#a5afc28e0e8f45a102c10e1e87d2adfcb96b2408"
-  integrity sha512-a2CKWPhngQng+Mwv10NWAoytSq1OOH5BDEnxvGuTFcB1gyXuUNgpbWhQ7GSxhcUVEjsT97w9Nzd2tOCR6FfReg==
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.3":
+  version "0.1.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.3.tgz#16c86157f224624c46c054a9c8499764ad50dade"
+  integrity sha512-CnvDGhR7Z8Cqt06jM7sYzrv5Ggu2XqUlHdPSxTJxIgFVuz0Du9jHR2fb1hwfRwlAUeSHtT/eWrGyh/zGByslCw==
   dependencies:
+    bootstrap "~3.3.0"
     lodash "^4.17.11"
     moment "^2.24.0"
+    ovh-ui-kit "^2.24.2"
 
 "@ovh-ux/ng-ovh-doc-url@^1.0.0":
   version "1.0.0"
@@ -7785,6 +7787,13 @@ ovh-ui-angular@~2.24.0:
     flatpickr "^4.5.2"
     popper.js "^1.14.4"
     ui-select "^0.19.8"
+
+ovh-ui-kit@^2.24.2:
+  version "2.24.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.2.tgz#27e7c945c81f22745657d4eeb8b6a96022a87828"
+  integrity sha512-yLdyZskNlDUnx29XCYY5SppcJYaVBrNOpa682D+rw1s79Y9/dwAlF6qWD47NWDRK2XzgJR8U7xTjvbersuGBwg==
+  dependencies:
+    less-plugin-remcalc "^0.1.0"
 
 ovh-ui-kit@~2.24.0:
   version "2.24.1"
