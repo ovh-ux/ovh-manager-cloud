@@ -1018,12 +1018,14 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.1":
-  version "0.1.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.1.tgz#1877e319871bb85cdab9d8ec07950f206d3a5d76"
-  integrity sha512-wwaWI77W+Y/71eqP4vpYP/W3kS4WTEHLxHmG4eLqsovuObdG5IVmeD78dq1f1/wbrHLlh0TppWkXaV7h785b6Q==
+"@ovh-ux/ng-ovh-cloud-universe-components@git+ssh://git@github.com/ovh-ux/ng-ovh-cloud-universe-components.git#feat/cui-page":
+  version "0.1.0-alpha.2"
+  resolved "git+ssh://git@github.com/ovh-ux/ng-ovh-cloud-universe-components.git#733766b4aaae7d90cb5577ff233ec20a26e92792"
   dependencies:
+    bootstrap "~3.3.0"
     lodash "^4.17.11"
+    moment "^2.24.0"
+    ovh-ui-kit "^2.24.2"
 
 "@ovh-ux/ng-ovh-sso-auth-modal-plugin@^3.0.0":
   version "3.0.0"
@@ -4860,6 +4862,9 @@ har-validator@~4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/har-validator/-/har-validator-4.2.1.tgz#33481d0f1bbff600dd203d75812a6a5fba002e2a"
   integrity sha1-M0gdDxu/9gDdID11gSpqX7oALio=
+  dependencies:
+    ajv "^4.9.1"
+    har-schema "^1.0.5"
 
 har-validator@~5.1.0:
   version "5.1.0"
@@ -7018,6 +7023,11 @@ moment-duration-format@^1.3:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
 
+moment@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
 mout@~0.9.0:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/mout/-/mout-0.9.1.tgz#84f0f3fd6acc7317f63de2affdcc0cee009b0477"
@@ -7751,6 +7761,13 @@ ovh-ui-angular@~2.24.0:
     flatpickr "^4.5.2"
     popper.js "^1.14.4"
     ui-select "^0.19.8"
+
+ovh-ui-kit@^2.24.2:
+  version "2.24.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.2.tgz#27e7c945c81f22745657d4eeb8b6a96022a87828"
+  integrity sha512-yLdyZskNlDUnx29XCYY5SppcJYaVBrNOpa682D+rw1s79Y9/dwAlF6qWD47NWDRK2XzgJR8U7xTjvbersuGBwg==
+  dependencies:
+    less-plugin-remcalc "^0.1.0"
 
 ovh-ui-kit@~2.24.0:
   version "2.24.1"
