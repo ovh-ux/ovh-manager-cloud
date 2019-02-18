@@ -14,6 +14,7 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     this.OvhApiCloudProjectQuota = OvhApiCloudProjectQuota;
     this.SidebarMenu = SidebarMenu;
     this.KUBERNETES = KUBERNETES;
+    this.initializeUpgradePolicies();
   }
 
   getKubernetesCluster(serviceName) {
@@ -109,5 +110,37 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
         this.changeMenuTitle(serviceName, kubernetes.name);
         return res;
       });
+  }
+
+  updateKubernetesUpgradePolicy(serviceName, upgradePolicy) {
+    return this.OvhApiKube.v6().updatePolicy(
+      { serviceName },
+      { updatePolicy: upgradePolicy },
+    ).$promise;
+  }
+
+  getUpgradePolicies() {
+    return this.upgradePolicies;
+  }
+
+  initializeUpgradePolicies() {
+    const upgradePolicyEnum = _.indexBy(this.KUBERNETES.upgradePolicies);
+    this.upgradePolicies = [
+      {
+        value: upgradePolicyEnum.NEVER_UPDATE,
+        localizationKey: 'kube_service_upgrade_policy_NEVER_UPDATE',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_NEVER_UPDATE',
+      },
+      {
+        value: upgradePolicyEnum.MINIMAL_DOWNTIME,
+        localizationKey: 'kube_service_upgrade_policy_MINIMAL_DOWNTIME',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_MINIMAL_DOWNTIME',
+      },
+      {
+        value: upgradePolicyEnum.ALWAYS_UPDATE,
+        localizationKey: 'kube_service_upgrade_policy_ALWAYS_UPDATE',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_ALWAYS_UPDATE',
+      },
+    ];
   }
 });
