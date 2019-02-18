@@ -1,3 +1,22 @@
+## [7.15.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.5...v7.15.6) (2019-02-18)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** add new translations for APAC traffic limit ([#1281](https://github.com/ovh-ux/ovh-manager-cloud/issues/1281)) ([bb88931](https://github.com/ovh-ux/ovh-manager-cloud/commit/bb88931))
+* **deps:** remove ovh-angular-a-disabled from dependency ([f989711](https://github.com/ovh-ux/ovh-manager-cloud/commit/f989711)), closes [ovh-ux/manager#200](https://github.com/ovh-ux/manager/issues/200)
+* **i18n:** add missing translations ([cef1dc9](https://github.com/ovh-ux/ovh-manager-cloud/commit/cef1dc9))
+* **i18n:** add missing translations ([6490784](https://github.com/ovh-ux/ovh-manager-cloud/commit/6490784))
+* **i18n:** add missing translations ([286e1dd](https://github.com/ovh-ux/ovh-manager-cloud/commit/286e1dd))
+
+
+### Features
+
+* **cloud:** show bandwidth usage along with price group by region ([#1291](https://github.com/ovh-ux/ovh-manager-cloud/issues/1291)) ([094c914](https://github.com/ovh-ux/ovh-manager-cloud/commit/094c914))
+* **kubernetes:** add name field to the node add pop-up ([#1290](https://github.com/ovh-ux/ovh-manager-cloud/issues/1290)) ([038e502](https://github.com/ovh-ux/ovh-manager-cloud/commit/038e502))
+
+
+
 ## [7.15.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.4...v7.15.5) (2019-02-07)
 
 
