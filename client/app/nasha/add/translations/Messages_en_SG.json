@@ -18,7 +18,7 @@
  "nasha_order_nasha_nas-ha-19200g": "Hybrid HA-NAS 19.2 TB",
  "nasha_order_nasha_nas-ha-26400g": "Hybrid HA-NAS 26.4 TB",
  "nasha_order_name": "Type of HA-NAS",
- "nasha_order_price": "Price ex. GST (1 month)",
+ "nasha_order_price": "Price ex. VAT (1 month)",
  "nasha_order_datacenter": "Choose your datacentre:",
  "nasha_order_datacenter_rbx": "Roubaix",
  "nasha_order_datacenter_bhs": "Beauharnois",
@@ -28,11 +28,11 @@
  "nasha_order_validation_error": "An error has occurred validating your request.  ",
  "nasha_order_error": "An error has occurred retrieving the purchase order.",
  "nasha_order_success": "The order number <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> of your HA-NAS has been registered.",
- "nasha_order_bc_price_HT": "Total price ex. GST: <strong>{{priceHT}}</strong>",
- "nasha_order_bc_price_TTC": "Total price incl. GST: <strong>{{priceTTC}}</strong>",
+ "nasha_order_bc_price_HT": "Total price ex. VAT: <strong>{{priceHT}}</strong>",
+ "nasha_order_bc_price_TTC": "Total price incl. VAT: <strong>{{priceTTC}}</strong>",
  "nasha_order_guide_title": "Guides",
  "nasha_order_new_window": "New window",
  "nasha_order_select_placeholder": "Selecting...",
- "nasha_order_unavailable_subtitle": "Ce produit est momentanément en rupture de stock",
- "nasha_order_unavailable_explain": "Contactez nos experts Serveurs Dédiés pour de plus amples informations."
+ "nasha_order_unavailable_subtitle": "This product is temporarily out of stock",
+ "nasha_order_unavailable_explain": "Contact our Dedicated Server experts for more information"
 }
