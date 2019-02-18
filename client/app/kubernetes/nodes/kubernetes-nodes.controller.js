@@ -42,6 +42,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   getInfo() {
+    this.loading = true;
     return this.$q.all(
       this.getNodes(),
       this.getCluster(),

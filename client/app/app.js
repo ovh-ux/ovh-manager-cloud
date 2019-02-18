@@ -1,6 +1,11 @@
+import '@uirouter/angularjs';
+import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
+import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
 angular.module('managerApp', [
@@ -15,16 +20,17 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
+  ngOvhDocUrl,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
+  ngOvhStopEvent,
+  ngOvhCloudUniverseComponents,
   'ovh-angular-apiv7',
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-checkbox-table',
   'ovh-angular-form-flat',
   'ovh-angular-q-allSettled',
-  'ovh-angular-stop-event',
-  'ovh-angular-a-disabled',
   'angularMoment',
   'ovh-angular-toaster',
   'ovh-angular-swimming-poll',
@@ -56,7 +62,6 @@ angular.module('managerApp', [
   'atInternetUiRouterPlugin',
   'matchmedia-ng',
   'ovh-angular-user-pref',
-  'ovh-angular-doc-url',
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',

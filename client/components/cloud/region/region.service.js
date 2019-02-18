@@ -27,6 +27,8 @@ class RegionService {
       DE: this.$translate.instant('cloud_common_region_DE'),
       UK: this.$translate.instant('cloud_common_region_UK'),
       US: this.$translate.instant('cloud_common_region_US'),
+      SYD: this.$translate.instant('cloud_common_region_SYD'),
+      SGP: this.$translate.instant('cloud_common_region_SGP'),
     };
   }
 

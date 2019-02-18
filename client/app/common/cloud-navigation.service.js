@@ -1,8 +1,8 @@
 class CloudNavigation {
-  constructor($transitions, $state, $stateParams, TabsService) {
+  constructor($transitions, $state, $stateParams, CuiTabsService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.TabsService = TabsService;
+    this.CuiTabsService = CuiTabsService;
 
     this.rootElement = undefined;
 
@@ -49,7 +49,7 @@ class CloudNavigation {
   }
 
   getActiveTabState() {
-    return this.TabsService.getActiveTab();
+    return this.CuiTabsService.getActiveTab();
   }
 
   findInHistory(stateToFind) {
