@@ -9,6 +9,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
     this.ControllerHelper = ControllerHelper;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
+    this.upgradePolicy = null;
   }
 
   $onInit() {
@@ -56,6 +57,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
       .then((cluster) => {
         this.cluster = cluster;
         _.set(this.cluster, 'region', this.KUBERNETES.region);
+        this.setUpgradePolicy();
       })
       .catch(() => { this.displayError = true; })
       .finally(() => { this.loaders.cluster = false; });
@@ -96,6 +98,29 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
   resetCluster() {
     return this.$state.go('paas.kube.service.reset', {
       cluster: this.cluster,
+    });
+  }
+
+  setUpgradePolicy() {
+    this.upgradePolicy = _.find(this.Kubernetes.getUpgradePolicies(),
+      policy => policy.value === this.cluster.updatePolicy);
+  }
+
+  showUgradePolicy() {
+    this.ControllerHelper.modal.showModal({
+      modalConfig: {
+        templateUrl: 'app/kubernetes/service/upgrade-policy/kubernetes-service-upgrade-policy.html',
+        controller: 'kubernetesUpgradePolicyCtrl',
+        controllerAs: '$ctrl',
+        backdrop: 'static',
+        resolve: {
+          upgradePolicy: () => this.cluster.updatePolicy,
+        },
+      },
+      successHandler: (newUpdatePolicy) => {
+        this.cluster.updatePolicy = newUpdatePolicy;
+        this.setUpgradePolicy();
+      },
     });
   }
 });
