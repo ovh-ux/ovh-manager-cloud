@@ -72,7 +72,7 @@ export default class VpsBackupStorageOrderCtrl {
       serviceName: this.stateVps.name,
     }).$promise
       .then((response) => {
-        // take the windows option from the list
+        // take the ftpbackup option from the list
         this.ftpBackupOption = _.find(response, {
           family: 'ftpbackup',
         });

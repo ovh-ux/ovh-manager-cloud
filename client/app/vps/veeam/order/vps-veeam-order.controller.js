@@ -73,7 +73,7 @@ export default class VpsVeeamOrderCtrl {
       serviceName: this.stateVps.name,
     }).$promise
       .then((response) => {
-        // take the windows option from the list
+        // take the automatedBackup option from the list
         this.veeamOption = _.find(response, {
           family: 'automatedBackup',
         });
