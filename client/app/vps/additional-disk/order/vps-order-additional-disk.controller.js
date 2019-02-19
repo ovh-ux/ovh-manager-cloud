@@ -1,13 +1,13 @@
 class VpsOrderDiskCtrl {
-  constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage,
-    CloudNavigation, VpsService,
+  constructor($filter, $stateParams, $state, $translate, $q, $window, CucCloudMessage,
+    CucCloudNavigation, VpsService,
     ServiceHelper) {
     this.$filter = $filter;
     this.$translate = $translate;
     this.$q = $q;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsService = VpsService;
     this.ServiceHelper = ServiceHelper;
@@ -29,14 +29,14 @@ class VpsOrderDiskCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
   }
 
   getAdditionalDiskPrices() {
     this.loaders.capacity = true;
     this.VpsService.getAdditionalDiskPrices(this.serviceName)
       .then((data) => { this.capacityArray = data; })
-      .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
+      .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
       .finally(() => { this.loaders.capacity = false; });
   }
 
@@ -48,10 +48,10 @@ class VpsOrderDiskCtrl {
         this.VpsService
           .getAdditionalDiskFinalPrice(this.serviceName, this.model.capacity, this.model.duration)
           .then((offer) => { this.offer = offer; })
-          .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
+          .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
           .finally(() => { this.loaders.offer = false; });
       })
-      .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')));
+      .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')));
   }
 
   orderAdditionalDiskOption() {

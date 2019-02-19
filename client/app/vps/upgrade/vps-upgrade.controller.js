@@ -1,12 +1,22 @@
 class VpsUpgradeCtrl {
-  constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation,
-    ControllerHelper, VpsService) {
+  constructor(
+    $filter,
+    $stateParams,
+    $state,
+    $translate,
+    $q,
+    $window,
+    CucCloudMessage,
+    CucCloudNavigation,
+    ControllerHelper,
+    VpsService,
+  ) {
     this.$filter = $filter;
     this.$translate = $translate;
     this.$q = $q;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.ControllerHelper = ControllerHelper;
     this.serviceName = $stateParams.serviceName;
     this.Vps = VpsService;
@@ -26,7 +36,7 @@ class VpsUpgradeCtrl {
   }
 
   gotoPreviousState() {
-    return this.CloudNavigation.getPreviousState().go();
+    return this.CucCloudNavigation.getPreviousState().go();
   }
 
   getCurrentModel() {
@@ -55,9 +65,9 @@ class VpsUpgradeCtrl {
       }).catch((err) => {
         this.$q.reject(err);
         if (err.message) {
-          this.CloudMessage.error(err.message);
+          this.CucCloudMessage.error(err.message);
         } else {
-          this.CloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
+          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
         }
         this.gotoPreviousState();
       }).finally(() => {
@@ -94,9 +104,9 @@ class VpsUpgradeCtrl {
       .catch((err) => {
         this.$q.reject(err);
         if (err.message) {
-          this.CloudMessage.error(err.message);
+          this.CucCloudMessage.error(err.message);
         } else {
-          this.CloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
+          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
         }
       })
       .finally(() => {

@@ -1,11 +1,11 @@
 (() => {
   class MetricsDetailCtrl {
-    constructor($filter, $q, $scope, $stateParams, CloudMessage, MetricService) {
+    constructor($filter, $q, $scope, $stateParams, CucCloudMessage, MetricService) {
       this.$filter = $filter;
       this.$q = $q;
       this.$scope = $scope;
       this.$stateParams = $stateParams;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.serviceName = $stateParams.serviceName;
       this.MetricService = MetricService;
       this.service = {};
@@ -31,8 +31,8 @@
     }
 
     loadMessage() {
-      this.CloudMessage.unSubscribe('dbaas.metrics.detail');
-      this.messageHandler = this.CloudMessage.subscribe('dbaas.metrics.detail', { onMessage: () => this.refreshMessage() });
+      this.CucCloudMessage.unSubscribe('dbaas.metrics.detail');
+      this.messageHandler = this.CucCloudMessage.subscribe('dbaas.metrics.detail', { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage() {

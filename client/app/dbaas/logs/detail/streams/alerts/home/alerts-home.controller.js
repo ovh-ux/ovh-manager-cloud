@@ -1,10 +1,18 @@
 class LogsStreamsAlertsHomeCtrl {
-  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService,
-    LogsConstants, LogsStreamsAlertsService) {
+  constructor(
+    $state,
+    $stateParams,
+    $translate,
+    CucCloudMessage,
+    ControllerHelper,
+    LogsStreamsService,
+    LogsConstants,
+    LogsStreamsAlertsService,
+  ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsConstants = LogsConstants;
@@ -82,7 +90,7 @@ class LogsStreamsAlertsHomeCtrl {
      * @memberof LogsStreamsAlertsHomeCtrl
      */
   showDeleteConfirm(alert) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('streams_alerts_delete'),
       textHtml: this.$translate.instant('streams_alerts_delete_message', { alert: alert.title }),

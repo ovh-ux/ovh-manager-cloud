@@ -1,10 +1,10 @@
 class IpLoadBalancerConfigurationService {
-  constructor($q, $state, $translate, CloudMessage, OvhApiIpLoadBalancing, RegionService,
+  constructor($q, $state, $translate, CucCloudMessage, OvhApiIpLoadBalancing, RegionService,
     ServiceHelper) {
     this.$q = $q;
     this.$state = $state;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;
     this.ServiceHelper = ServiceHelper;
@@ -115,7 +115,7 @@ class IpLoadBalancerConfigurationService {
   }
 
   showRefreshWarning() {
-    this.CloudMessage.warning({
+    this.CucCloudMessage.warning({
       text: this.$translate.instant('iplb_configuration_pending_changes'),
       link: {
         type: 'state',

@@ -1,11 +1,11 @@
 class CloudProjectComputeInfrastructureOpenstackClientCtrl {
-  constructor($interval, $q, $stateParams, $translate, CloudMessage,
+  constructor($interval, $q, $stateParams, $translate, CucCloudMessage,
     CloudProjectComputeInfrastructureOpenstackClientService, ControllerHelper,
     OvhApiCloudProjectOpenstackClient, OvhApiCloudProjectRegion) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.Service = CloudProjectComputeInfrastructureOpenstackClientService;
     this.ControllerHelper = ControllerHelper;
     this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
@@ -68,8 +68,8 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
 
   $onInit() {
     this.initWithConfig(this.$stateParams.hTerm);
-    this.CloudMessage.unSubscribe('iaas.pci-project.compute.openstack-console');
-    this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project.compute.openstack-console', { onMessage: () => this.refreshMessages() });
+    this.CucCloudMessage.unSubscribe('iaas.pci-project.compute.openstack-console');
+    this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project.compute.openstack-console', { onMessage: () => this.refreshMessages() });
   }
 
   refreshMessages() {

@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CloudProjectRenameController', function CloudProjectRenameController($rootScope, $q, $translate, $uibModal, CloudMessage, OvhApiCloudProject, SidebarMenu) {
+  .controller('CloudProjectRenameController', function CloudProjectRenameController($rootScope, $q, $translate, $uibModal, CucCloudMessage, OvhApiCloudProject, SidebarMenu) {
     const self = this;
 
     self.loader = {
@@ -20,7 +20,7 @@ angular.module('managerApp')
       }).$promise.then((data) => {
         self.model.description = data.description;
       }).catch((err) => {
-        CloudMessage.error([$translate.instant('cloud_project_rename_loading_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cloud_project_rename_loading_error'), (err.data && err.data.message) || ''].join(' '));
       });
     }
 
@@ -43,7 +43,7 @@ angular.module('managerApp')
           menuItem.title = self.editing.description;
         }
       }).catch((err) => {
-        CloudMessage.error([$translate.instant('cloud_project_rename_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cloud_project_rename_error'), (err.data && err.data.message) || ''].join(' '));
       }).finally(() => {
         self.loader.save = false;
         self.editing.description = null;

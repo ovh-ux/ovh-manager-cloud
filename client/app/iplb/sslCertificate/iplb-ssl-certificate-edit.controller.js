@@ -1,9 +1,9 @@
 class IpLoadBalancerSslCertificateEditCtrl {
-  constructor($q, $state, $stateParams, CloudMessage, IpLoadBalancerSslCertificateService) {
+  constructor($q, $state, $stateParams, CucCloudMessage, IpLoadBalancerSslCertificateService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
   }
 
@@ -12,7 +12,7 @@ class IpLoadBalancerSslCertificateEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerSslCertificateService.create(this.$stateParams.serviceName, this.ssl)
       .then(() => {
         this.$state.go('network.iplb.detail.ssl-certificate');

@@ -7,9 +7,9 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
   '$translate',
   'OvhApiCloudProjectRegion',
   'CloudStorageContainers',
-  'CloudMessage',
+  'CucCloudMessage',
   function storageCtrl($q, $scope, $state, $stateParams, $timeout, $translate,
-    OvhApiCloudProjectRegion, CloudStorageContainers, CloudMessage) {
+    OvhApiCloudProjectRegion, CloudStorageContainers, CucCloudMessage) {
     $scope.projectId = $stateParams.projectId;
 
     $scope.model = {};
@@ -41,8 +41,8 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
     }
 
     function loadMessage() {
-      CloudMessage.unSubscribe('iaas.pci-project.compute.storage');
-      $scope.messageHandler = CloudMessage.subscribe('iaas.pci-project.compute.storage', { onMessage: () => refreshMessage() });
+      CucCloudMessage.unSubscribe('iaas.pci-project.compute.storage');
+      $scope.messageHandler = CucCloudMessage.subscribe('iaas.pci-project.compute.storage', { onMessage: () => refreshMessage() });
     }
 
     $scope.loadStep = function (step) {
@@ -68,12 +68,12 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
       )
         .then((resp) => {
           if (!resp || !resp.id) {
-            CloudMessage.error($translate.instant('add_storage_storage_added_error'));
+            CucCloudMessage.error($translate.instant('add_storage_storage_added_error'));
             return $q.reject(resp);
           }
 
           return $timeout(() => {
-            CloudMessage.success($translate.instant('add_storage_storage_added'));
+            CucCloudMessage.success($translate.instant('add_storage_storage_added'));
             $state.go('iaas.pci-project.compute.storage.detail-container', { projectId: $scope.projectId, storageId: resp.id });
           }, 3000)
             .then(() => resp);

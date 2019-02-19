@@ -1,15 +1,18 @@
 class HomeCtrl {
-  constructor($q, DocsService, FeatureAvailabilityService) {
+  constructor($q, DocsService, FeatureAvailabilityService, ovhUserPref) {
     this.$q = $q;
     this.DocsService = DocsService;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.ovhUserPref = ovhUserPref;
   }
 
   $onInit() {
     this.defaultSections = ['PROJECT', 'VPS'];
     this.guides = {};
     this.guides.all = this.DocsService.getAllGuidesLink();
-
+    this.newRegionsAvailableMessageKey = 'NOTIFY_APAC_REGIONS_AVAILABILITY';
+    this.showNewRegionsAvailableMessage = false;
+    this.initNewRegionsAvailableMessage(this.newRegionsAvailableMessageKey);
     return this.setSections();
   }
 
@@ -24,6 +27,43 @@ class HomeCtrl {
           .value();
         return this.guides.sections;
       });
+  }
+
+  onNewRegionsAvailableMessageDismiss() {
+    this.dismissNewRegionsAvailableKey(this.newRegionsAvailableMessageKey);
+  }
+
+  initNewRegionsAvailableMessage(key) {
+    this.getNewRegionsAvailableKey(key)
+      .then((newRegionsAvailableValue) => {
+        if (_.isEmpty(newRegionsAvailableValue)) {
+          // user visiting first time, show the message
+          this.showNewRegionsAvailableMessage = true;
+        } else if (!newRegionsAvailableValue.dismissed) {
+          // user has not dismissed the info message, show it
+          this.showNewRegionsAvailableMessage = true;
+        }
+      });
+  }
+
+  getNewRegionsAvailableKey(key) {
+    return this.ovhUserPref.getValue(key)
+      .catch((err) => {
+        // check if key not found
+        if (err.status === 404 && _.includes(err.data.message, key)) {
+          // key is not found, add it
+          this.addNewRegionsAvailableKey(key);
+        }
+        return null;
+      });
+  }
+
+  addNewRegionsAvailableKey(key) {
+    return this.ovhUserPref.create(key, { dismissed: false });
+  }
+
+  dismissNewRegionsAvailableKey(key) {
+    return this.ovhUserPref.assign(key, { dismissed: true });
   }
 }
 

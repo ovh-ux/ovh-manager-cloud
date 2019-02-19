@@ -1,10 +1,10 @@
 class IpLoadBalancerTaskCtrl {
-  constructor($scope, $stateParams, ControllerHelper, CloudPoll, IpLoadBalancerTaskService,
+  constructor($scope, $stateParams, ControllerHelper, CucCloudPoll, IpLoadBalancerTaskService,
     ServiceHelper) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.ControllerHelper = ControllerHelper;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
     this.ServiceHelper = ServiceHelper;
 
@@ -25,7 +25,7 @@ class IpLoadBalancerTaskCtrl {
   startTaskPolling() {
     this.stopTaskPolling();
 
-    this.poller = this.CloudPoll.pollArray({
+    this.poller = this.CucCloudPoll.pollArray({
       items: this.tasks.data,
       pollFunction: task => this.IpLoadBalancerTaskService.getTask(this.serviceName, task.id),
       stopCondition: task => _.includes(['done', 'error'], task.status),

@@ -1,12 +1,12 @@
 class LogsInputsAddNetworksCtrl {
-  constructor($q, $stateParams, ControllerHelper, LogsInputsService, CloudMessage) {
+  constructor($q, $stateParams, ControllerHelper, LogsInputsService, CucCloudMessage) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
     this.ControllerHelper = ControllerHelper;
     this.LogsInputsService = LogsInputsService;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.editMode = Boolean(this.inputId);
 
     this.initLoaders();
@@ -29,7 +29,7 @@ class LogsInputsAddNetworksCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .addNetwork(this.serviceName, this.input.data, network)
@@ -40,7 +40,7 @@ class LogsInputsAddNetworksCtrl {
   }
 
   removeNetwork(network) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .removeNetwork(this.serviceName, this.input.data, network)

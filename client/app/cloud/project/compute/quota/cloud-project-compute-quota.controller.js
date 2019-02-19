@@ -3,7 +3,7 @@
 angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
   function CloudProjectComputeQuotaCtrl(
     $q, $stateParams, $translate, REDIRECT_URLS,
-    OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CloudMessage, OtrsPopupService,
+    OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CucCloudMessage, OtrsPopupService,
     RegionService, TARGET,
   ) {
     // ---------VARIABLE DECLARATION---------
@@ -90,7 +90,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
             && self.datas.quota[0].maxRam === 2048;
         }
       }, (err) => {
-        CloudMessage.error([
+        CucCloudMessage.error([
           $translate.instant('cpb_quota_loading_error'),
           (err.data && err.data.message) || '',
         ].join(' '));
@@ -109,9 +109,9 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
         init();
       }, (err) => {
         if (err.status === 403) {
-          CloudMessage.error($translate.instant('cpb_quota_already_unleashed'));
+          CucCloudMessage.error($translate.instant('cpb_quota_already_unleashed'));
         } else {
-          CloudMessage.error($translate.instant('cpb_quota_unleash_error'));
+          CucCloudMessage.error($translate.instant('cpb_quota_unleash_error'));
         }
         init();
       }).finally(() => {

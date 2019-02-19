@@ -1,6 +1,6 @@
 class LogsTokensCtrl {
   constructor($q, $state, $stateParams, $translate, LogsTokensService, ControllerHelper,
-    CloudMessage) {
+    CucCloudMessage) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -8,7 +8,7 @@ class LogsTokensCtrl {
     this.$translate = $translate;
     this.LogsTokensService = LogsTokensService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
 
     this.initLoaders();
   }
@@ -50,7 +50,7 @@ class LogsTokensCtrl {
    * @memberof LogsTokensCtrl
    */
   showDeleteConfirm(token) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.ControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_tokens_delete_title'),
       textHtml: this.$translate.instant('logs_tokens_delete_message', { tokenName: token.name }),

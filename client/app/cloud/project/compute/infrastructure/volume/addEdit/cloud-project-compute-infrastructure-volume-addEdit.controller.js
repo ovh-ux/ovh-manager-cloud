@@ -3,7 +3,7 @@ angular.module('managerApp')
     function CloudProjectComputeInfrastructureVolumeAddEditCtrl(
       $scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout,
       OvhApiCloudProjectRegion, $translate,
-      CloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota,
+      CucCloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota,
       $location, atInternet, OvhApiMe, RegionService,
       CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA,
     ) {
@@ -115,7 +115,7 @@ angular.module('managerApp')
           }
           editWithParam();
         }, (err) => {
-          CloudMessage.error([$translate.instant('cpci_volume_addedit_get_quota_error'), err.data.message || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpci_volume_addedit_get_quota_error'), err.data.message || ''].join(' '));
           self.cancelVolume();
         }).finally(() => {
           self.loaders.quota = false;
@@ -207,7 +207,7 @@ angular.module('managerApp')
             self.panelsData.regions = regionsList;
           }, (err) => {
             self.panelsData.regions = null;
-            CloudMessage.error([$translate.instant('cpci_volume_addedit_image_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpci_volume_addedit_image_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.panelsData.regions = false;
           });
@@ -274,7 +274,7 @@ angular.module('managerApp')
               orderId: self.volumeInEdition.id,
             });
           }, (err) => {
-            CloudMessage.error([$translate.instant('cpci_volume_addedit_post_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpci_volume_addedit_post_error'), (err.data && err.data.message) || ''].join(' '));
             self.loaders.launch = false;
           });
         } else {
@@ -283,7 +283,7 @@ angular.module('managerApp')
             $rootScope.$broadcast('highlighed-element.hide');
             CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition();
           }, (err) => {
-            CloudMessage.error([$translate.instant('cpci_volume_addedit_put_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpci_volume_addedit_put_error'), (err.data && err.data.message) || ''].join(' '));
             self.loaders.launch = false;
           });
         }

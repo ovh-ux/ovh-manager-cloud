@@ -1,10 +1,10 @@
 class VpsKvmCtrl {
-  constructor($sce, $translate, $uibModalInstance, ControllerHelper, CloudMessage, noVNC,
+  constructor($sce, $translate, $uibModalInstance, ControllerHelper, CucCloudMessage, noVNC,
     serviceName, VpsService) {
     this.$sce = $sce;
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.noVNC = noVNC;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
@@ -28,7 +28,7 @@ class VpsKvmCtrl {
         .then((data) => {
           this.consoleUrl = this.$sce.trustAsResourceUrl(data);
         })
-        .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_kvm_fail'))),
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_kvm_fail'))),
     });
     return this.kvmUrlLoader.load();
   }
@@ -37,7 +37,7 @@ class VpsKvmCtrl {
     this.kvmLoader = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getKVMAccess(this.serviceName)
         .then((data) => { this.kvm = data; })
-        .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_kvm_fail'))),
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_kvm_fail'))),
     });
     return this.kvmLoader.load();
   }

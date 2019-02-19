@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CdaUserDetailsPermissionListEditCtrl', function ($q, $stateParams, $translate, $state, CloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
+  .controller('CdaUserDetailsPermissionListEditCtrl', function ($q, $stateParams, $translate, $state, CucCloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
     const self = this;
 
     self.loading = false;
@@ -48,7 +48,7 @@ angular.module('managerApp')
     }
 
     function displayError(error) {
-      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+      CucCloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
     }
 
     function init() {
@@ -87,7 +87,7 @@ angular.module('managerApp')
       }, {
         permissions: permissionsToSave,
       }).$promise.then(() => {
-        CloudMessage.success($translate.instant('cda_user_details_permissions_list_edit_success'));
+        CucCloudMessage.success($translate.instant('cda_user_details_permissions_list_edit_success'));
         $state.go(self.states.permissionList);
       }).catch((error) => {
         displayError(error);

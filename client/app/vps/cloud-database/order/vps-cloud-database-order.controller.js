@@ -5,7 +5,7 @@ class VpsCloudDatabaseOrderCtrl {
     $translate,
     $window,
     atInternet,
-    CloudMessage,
+    CucCloudMessage,
     OvhApiHostingPrivateDatabase,
     OvhApiOrderPrivateDatabase,
     OvhApiMe,
@@ -15,7 +15,7 @@ class VpsCloudDatabaseOrderCtrl {
     this.$translate = $translate;
     this.$window = $window;
     this.atInternet = atInternet;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
     this.ApiOrderDb = OvhApiOrderPrivateDatabase.v6();
     this.ApiMe = OvhApiMe.v6();
@@ -66,7 +66,7 @@ class VpsCloudDatabaseOrderCtrl {
           name: this.$translate.instant(`common_datacenter_${datacenter}`),
         }));
       })
-      .catch(error => this.CloudMessage.error([
+      .catch(error => this.CucCloudMessage.error([
         this.$translate.instant('vps_tab_cloud_database_order_fetch_capacities_failed'),
         _(error).get('data.message', error),
       ].join(' ')));
@@ -92,7 +92,7 @@ class VpsCloudDatabaseOrderCtrl {
         // we run this in parallel, so no return
         this.getPricesForEachDuration(this.durations, version, ram, datacenter);
       })
-      .catch(error => this.CloudMessage.error([
+      .catch(error => this.CucCloudMessage.error([
         this.$translate.instant('vps_tab_cloud_database_order_fetch_duration_failed'),
         _(error).get('data.message', error),
       ].join(' ')))
@@ -115,7 +115,7 @@ class VpsCloudDatabaseOrderCtrl {
     return this.$q.all(_.map(
       durations,
       duration => this.getPrices(duration, version, ram, datacenter),
-    )).catch(error => this.CloudMessage.error([
+    )).catch(error => this.CucCloudMessage.error([
       this.$translate.instant('vps_tab_cloud_database_order_fetch_prices_failed'),
       _(error).get('data.message', error),
     ].join(' ')));
@@ -160,7 +160,7 @@ class VpsCloudDatabaseOrderCtrl {
           this.openPurchaseOrder(false);
         }, 5000);
       })
-      .catch(error => this.CloudMessage.error([
+      .catch(error => this.CucCloudMessage.error([
         this.$translate.instant('vps_tab_cloud_database_order_failed'),
         _(error).get('data.message', error),
       ].join(' ')))

@@ -1,10 +1,10 @@
 class CloudprojectbillingvouchersCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, $uibModal, OvhApiMeBill,
+  constructor($q, $stateParams, $translate, CucCloudMessage, $uibModal, OvhApiMeBill,
     ControllerHelper, CloudVouchersService, ServiceHelper, OvhApiOrderCloudProjectCredit) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.$uibModal = $uibModal;
     this.OvhApiMeBill = OvhApiMeBill;
     this.ControllerHelper = ControllerHelper;
@@ -14,7 +14,7 @@ class CloudprojectbillingvouchersCtrl {
 
     this.vouchers = this.ControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudVouchersService.getVouchers($stateParams.projectId),
-      errorHandler: err => this.CloudMessage.error({
+      errorHandler: err => this.CucCloudMessage.error({
         text: `${this.$translate.instant('cpb_vouchers_get_error')} ${err.data}`,
       }),
     });
@@ -45,7 +45,7 @@ class CloudprojectbillingvouchersCtrl {
     }).result.then((amount) => {
       this.ServiceHelper.loadOnNewPage(this.addCredit(amount), {
         successMessage: (data) => {
-          this.CloudMessage.success({
+          this.CucCloudMessage.success({
             textHtml: this.$translate.instant('cpb_vouchers_add_credit_success', {
               url: data.orderUrl,
               amount,

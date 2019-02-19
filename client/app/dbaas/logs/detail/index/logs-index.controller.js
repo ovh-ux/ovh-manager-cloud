@@ -1,10 +1,10 @@
 class LogsIndexCtrl {
-  constructor($stateParams, bytesFilter, CloudMessage, ControllerHelper, LogsIndexService,
+  constructor($stateParams, bytesFilter, CucCloudMessage, ControllerHelper, LogsIndexService,
     LogsConstants) {
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsIndexService = LogsIndexService;
     this.LogsConstants = LogsConstants;
     this.suffixPattern = this.LogsConstants.suffixPattern;
@@ -31,7 +31,7 @@ class LogsIndexCtrl {
   }
 
   add(info) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.ControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/index/add/logs-index-add.html',
@@ -63,7 +63,7 @@ class LogsIndexCtrl {
   }
 
   showDeleteConfirm(info) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsIndexService.deleteModal(
       info.name,
     ).then(() => {

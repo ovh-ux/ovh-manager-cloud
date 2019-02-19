@@ -1,13 +1,13 @@
 class LogsDetailCtrl {
-  constructor($stateParams, CloudMessage) {
+  constructor($stateParams, CucCloudMessage) {
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.messages = [];
   }
 
   $onInit() {
-    this.CloudMessage.unSubscribe('dbaas.logs.detail');
-    this.messageHandler = this.CloudMessage.subscribe('dbaas.logs.detail', { onMessage: () => this.refreshMessage() });
+    this.CucCloudMessage.unSubscribe('dbaas.logs.detail');
+    this.messageHandler = this.CucCloudMessage.subscribe('dbaas.logs.detail', { onMessage: () => this.refreshMessage() });
   }
 
   refreshMessage() {

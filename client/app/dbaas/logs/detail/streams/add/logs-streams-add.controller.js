@@ -1,5 +1,5 @@
 class LogsStreamsAddCtrl {
-  constructor($q, $state, $stateParams, LogsStreamsService, ControllerHelper, CloudMessage,
+  constructor($q, $state, $stateParams, LogsStreamsService, ControllerHelper, CucCloudMessage,
     LogsConstants) {
     this.$q = $q;
     this.$state = $state;
@@ -7,7 +7,7 @@ class LogsStreamsAddCtrl {
     this.serviceName = this.$stateParams.serviceName;
     this.LogsStreamsService = LogsStreamsService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.isEdit = false;
     this.compressionAlgorithms = this.LogsStreamsService.getCompressionAlgorithms();
@@ -82,7 +82,7 @@ class LogsStreamsAddCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.updateStream(this.serviceName, this.stream.data)
         .then(() => this.$state.go('dbaas.logs.detail.streams'))
@@ -100,7 +100,7 @@ class LogsStreamsAddCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.createStream(this.serviceName, this.stream.data)
         .then(() => this.$state.go('dbaas.logs.detail.streams'))

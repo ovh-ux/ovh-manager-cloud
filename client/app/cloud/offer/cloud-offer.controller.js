@@ -1,12 +1,12 @@
 (() => {
   class CloudOfferCtrl {
     constructor($q, $stateParams, $translate, FeatureAvailabilityService, CloudProjectAdd,
-      CloudMessage, OvhApiMe, TARGET, URLS) {
+      CucCloudMessage, OvhApiMe, TARGET, URLS) {
       this.$q = $q;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CloudProjectAdd = CloudProjectAdd;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.User = OvhApiMe;
       this.FeatureAvailabilityService = FeatureAvailabilityService;
       this.TARGET = TARGET;
@@ -101,8 +101,8 @@
     }
 
     loadMessage() {
-      this.CloudMessage.unSubscribe('iaas.pci-project-onboarding');
-      this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project-onboarding', { onMessage: () => this.refreshMessage() });
+      this.CucCloudMessage.unSubscribe('iaas.pci-project-onboarding');
+      this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project-onboarding', { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage() {
@@ -144,7 +144,7 @@
       });
       return this.$q.all(agreements)
         .catch((err) => {
-          this.CloudMessage.error(this.$translate.instant('cpa_error') + (err.data && err.data.message ? ` (${err.data.message})` : ''));
+          this.CucCloudMessage.error(this.$translate.instant('cpa_error') + (err.data && err.data.message ? ` (${err.data.message})` : ''));
           this.loaders.start = false;
         });
     }

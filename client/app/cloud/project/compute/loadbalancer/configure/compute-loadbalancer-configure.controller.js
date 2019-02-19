@@ -2,8 +2,8 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
   constructor(
     $anchorScroll, $scope, $state, $stateParams, $q, $location, $window, $translate,
     CloudProjectComputeLoadbalancerService, OvhApiIpLoadBalancing, OvhApiCloudProjectIplb,
-    OvhApiCloudProject, ovhDocUrl, CloudMessage, IpLoadBalancerTaskService,
-    ControllerHelper, CloudPoll, ServiceHelper,
+    OvhApiCloudProject, ovhDocUrl, CucCloudMessage, IpLoadBalancerTaskService,
+    ControllerHelper, CucCloudPoll, ServiceHelper,
   ) {
     this.$anchorScroll = $anchorScroll;
     this.$scope = $scope;
@@ -17,10 +17,10 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     this.OvhApiCloudProjectIplb = OvhApiCloudProjectIplb;
     this.OvhApiCloudProject = OvhApiCloudProject;
     this.ovhDocUrl = ovhDocUrl;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudPoll = CucCloudPoll;
     this.ServiceHelper = ServiceHelper;
 
     this.serviceName = $stateParams.projectId;
@@ -75,7 +75,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
           this.$location.search('validate', null);
           this.toggle.updatedMessage = true;
         })
-        .catch(err => this.CloudMessage.error([
+        .catch(err => this.CucCloudMessage.error([
           this.$translate.instant('cpc_loadbalancer_error'),
           (err.data && err.data.message) || '',
         ].join(' ')))
@@ -248,7 +248,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     }
     return configurePromise.then(() => {
       this.toggle.updatedMessage = true;
-    }).catch(err => this.CloudMessage.error([
+    }).catch(err => this.CucCloudMessage.error([
       this.$translate.instant('cpc_loadbalancer_error'),
       (err.data && err.data.message) || '',
     ].join(' '))).finally(() => {
@@ -285,7 +285,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
       .then(() => this.getServerList())
       .catch((err) => {
         this.loadbalancer = null;
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('cpc_loadbalancer_error'),
           (err.data && err.data.message) || '',
         ].join(' '));
@@ -295,7 +295,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
   startTaskPolling() {
     this.stopTaskPolling();
 
-    this.poller = this.CloudPoll.pollArray({
+    this.poller = this.CucCloudPoll.pollArray({
       items: this.tasks.data,
       pollFunction: task => this.IpLoadBalancerTaskService.getTask(this.loadbalancerId, task.id),
       stopCondition: (task) => {

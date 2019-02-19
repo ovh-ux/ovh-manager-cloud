@@ -1,5 +1,5 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCtrl',
-  function CloudProjectBillingConsumptionCurrentCtrl($q, $translate, $stateParams, CloudMessage,
+  function CloudProjectBillingConsumptionCurrentCtrl($q, $translate, $stateParams, CucCloudMessage,
     CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
     const self = this;
     self.data = {};
@@ -17,7 +17,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
           self.data = data;
         })
         .catch((err) => {
-          CloudMessage.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpb_error_message'), (err.data && err.data.message) || ''].join(' '));
           return $q.reject(err);
         })
         .finally(() => {

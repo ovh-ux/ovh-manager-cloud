@@ -1,9 +1,9 @@
 class VpsOptionTerminateCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, serviceName,
     VpsService, vpsOption) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
     this.ControllerHelper = ControllerHelper;
@@ -26,7 +26,7 @@ class VpsOptionTerminateCtrl {
           this.expirationDate = moment(vps.expiration);
           return this.expirationDate;
         })
-        .catch(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_cancel_option_cancel_error'))),
+        .catch(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_cancel_option_cancel_error'))),
     });
     this.selectedVps.load();
   }
@@ -36,11 +36,11 @@ class VpsOptionTerminateCtrl {
   }
 
   confirm() {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.terminate = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.cancelOption(this.serviceName, this.vpsOption)
-        .then(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_cancel_option_cancel_success')))
-        .catch(err => this.CloudMessage.error(err.message || this.$translate.instant('vps_configuration_cancel_option_cancel_error')))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_cancel_option_cancel_success')))
+        .catch(err => this.CucCloudMessage.error(err.message || this.$translate.instant('vps_configuration_cancel_option_cancel_error')))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.terminate.load();

@@ -4,8 +4,8 @@ class IpLoadBalancerConfigurationCtrl {
     $scope,
     $stateParams,
     $translate,
-    CloudMessage,
-    CloudPoll,
+    CucCloudMessage,
+    CucCloudPoll,
     ControllerHelper,
     IpLoadBalancerConfigurationService,
     ServiceHelper,
@@ -15,8 +15,8 @@ class IpLoadBalancerConfigurationCtrl {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
 
-    this.CloudMessage = CloudMessage;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudPoll = CucCloudPoll;
     this.ControllerHelper = ControllerHelper;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.ServiceHelper = ServiceHelper;
@@ -63,7 +63,7 @@ class IpLoadBalancerConfigurationCtrl {
         )} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`
         : `${this.$translate.instant('iplb_configuration_excludedZones_all')} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`;
 
-      this.CloudMessage.success(messageToDisplay);
+      this.CucCloudMessage.success(messageToDisplay);
     }
 
     const targetsToApplyChangesTo = targets.filter(target => !_.has(target, 'task.status') || target.task.status === 'done');
@@ -103,9 +103,9 @@ class IpLoadBalancerConfigurationCtrl {
           this.poller.$promise.then(() => {
           // check if at least one change remains
             if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
-              this.CloudMessage.flushChildMessage();
+              this.CucCloudMessage.flushChildMessage();
             } else {
-              this.CloudMessage.flushMessages();
+              this.CucCloudMessage.flushMessages();
             }
           });
         }
@@ -120,7 +120,7 @@ class IpLoadBalancerConfigurationCtrl {
   startPolling() {
     this.stopTaskPolling();
 
-    this.poller = this.CloudPoll.pollArray({
+    this.poller = this.CucCloudPoll.pollArray({
       items: this.zones.data,
       pollFunction: zone => this.IpLoadBalancerConfigurationService
         .getZoneChanges(this.$stateParams.serviceName, zone.id),

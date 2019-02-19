@@ -1,8 +1,8 @@
 class LogsListCtrl {
-  constructor($state, CloudMessage, LogsListService, ControllerHelper, LogsConstants,
+  constructor($state, CucCloudMessage, LogsListService, ControllerHelper, LogsConstants,
     LogsHelperService, OrderHelperService) {
     this.$state = $state;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsListService = LogsListService;
     this.ControllerHelper = ControllerHelper;
     this.LogsConstants = LogsConstants;
@@ -14,8 +14,8 @@ class LogsListCtrl {
   }
 
   $onInit() {
-    this.CloudMessage.unSubscribe('dbaas.logs.list');
-    this.messageHandler = this.CloudMessage.subscribe('dbaas.logs.list', { onMessage: () => this.refreshMessage() });
+    this.CucCloudMessage.unSubscribe('dbaas.logs.list');
+    this.messageHandler = this.CucCloudMessage.subscribe('dbaas.logs.list', { onMessage: () => this.refreshMessage() });
     this.OrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
       .then((url) => {
         this.orderURL = url;

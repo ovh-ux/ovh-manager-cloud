@@ -1,11 +1,19 @@
 class LogsInputsService {
-  constructor($q, CloudMessage, CloudPoll, LogsHelperService, LogsConstants, LogsOptionsService,
-    OvhApiDbaas, ServiceHelper) {
+  constructor(
+    $q,
+    CucCloudMessage,
+    CucCloudPoll,
+    LogsHelperService,
+    LogsConstants,
+    LogsOptionsService,
+    OvhApiDbaas,
+    ServiceHelper,
+  ) {
     this.$q = $q;
     this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
     this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
-    this.CloudMessage = CloudMessage;
-    this.CloudPoll = CloudPoll;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudPoll = CucCloudPoll;
     this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
     this.InputsApiLexiService = OvhApiDbaas.Logs().Input().v6();
     this.LogsConstants = LogsConstants;

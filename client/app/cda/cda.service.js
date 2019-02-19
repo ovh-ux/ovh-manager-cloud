@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .service('CdaService', function ($q, $translate, OvhApiDedicatedCeph, SidebarMenu, CloudMessage) {
+  .service('CdaService', function ($q, $translate, OvhApiDedicatedCeph, SidebarMenu, CucCloudMessage) {
     const self = this;
 
     self.currentService = {};
@@ -18,7 +18,7 @@ angular.module('managerApp')
           self.currentService = cda;
           return cda;
         }).catch((error) => {
-          CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
         });
       }
       return $q.when(self.currentService);

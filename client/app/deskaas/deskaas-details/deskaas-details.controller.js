@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('DeskaasDetailsCtrl',
   function DeskaasDetailsCtrl(OvhApiDeskaasService, $stateParams, $scope, ControllerHelper,
-    CloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal, OvhApiMe, deskaasSidebar,
+    CucCloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal, OvhApiMe, deskaasSidebar,
     DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService, ServiceHelper) {
     const self = this;
 
@@ -67,8 +67,8 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
 
 
     self.loadMessage = function () {
-      CloudMessage.unSubscribe('deskaas.details');
-      self.messageHandler = CloudMessage.subscribe('deskaas.details', { onMessage: () => self.refreshMessage() });
+      CucCloudMessage.unSubscribe('deskaas.details');
+      self.messageHandler = CucCloudMessage.subscribe('deskaas.details', { onMessage: () => self.refreshMessage() });
     };
 
     self.refreshMessage = function () {
@@ -163,9 +163,9 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
 
     function onTaskError(taskDetails) {
       if (!_.isEmpty(taskDetails)) {
-        CloudMessage.error($translate.instant('vdi_task_error', taskDetails));
+        CucCloudMessage.error($translate.instant('vdi_task_error', taskDetails));
       } else {
-        CloudMessage.error($translate.instant('common_api_error'));
+        CucCloudMessage.error($translate.instant('common_api_error'));
       }
 
       self.flags.restoring = false;
@@ -179,41 +179,41 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
       switch (taskDetails.name) {
         case DESKAAS_ACTIONS.RESTORE:
           self.flags.restoring = false;
-          CloudMessage.success($translate.instant('vdi_restored'));
+          CucCloudMessage.success($translate.instant('vdi_restored'));
           break;
 
         case DESKAAS_ACTIONS.REBOOT:
           self.flags.rebooting = false;
-          CloudMessage.success($translate.instant('vdi_rebooted'));
+          CucCloudMessage.success($translate.instant('vdi_rebooted'));
           break;
 
         case DESKAAS_ACTIONS.DELETE:
           self.flags.deleting = false;
-          CloudMessage.success($translate.instant('vdi_deleted'));
+          CucCloudMessage.success($translate.instant('vdi_deleted'));
           break;
 
         case DESKAAS_ACTIONS.UPGRADE:
           self.flags.upgrading = false;
-          CloudMessage.success($translate.instant('vdi_upgraded'));
+          CucCloudMessage.success($translate.instant('vdi_upgraded'));
           break;
 
         case DESKAAS_ACTIONS.UPDATE_USER_PWD:
           self.flags.resettingPassword = false;
-          CloudMessage.success($translate.instant('vdi_pwd_resetted'));
+          CucCloudMessage.success($translate.instant('vdi_pwd_resetted'));
           break;
 
         case DESKAAS_ACTIONS.UPDATE_ALIAS:
           self.flags.changingAlias = false;
-          CloudMessage.success($translate.instant('vdi_alias_changed'));
+          CucCloudMessage.success($translate.instant('vdi_alias_changed'));
           break;
 
         case DESKAAS_ACTIONS.UPDATE_USERNAME:
           self.flags.changingUsername = false;
-          CloudMessage.success($translate.instant('vdi_username_changed'));
+          CucCloudMessage.success($translate.instant('vdi_username_changed'));
           break;
 
         case DESKAAS_ACTIONS.CONSOLE_ACCESS:
-          CloudMessage.success($translate.instant('vdi_console_done'));
+          CucCloudMessage.success($translate.instant('vdi_console_done'));
           break;
         default:
           break;
@@ -370,7 +370,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
         .then(success)
         .catch((err) => {
           const msg = _.get(err, 'data.message', '');
-          CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+          CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
           return $q.reject(err);
         });
     }
@@ -381,7 +381,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
       return handleMethodCall(
         promise,
         (response) => {
-          CloudMessage.success(successMessage);
+          CucCloudMessage.success(successMessage);
           return response;
         },
       )
@@ -418,7 +418,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
         .then(() => {
           getConsole().catch((err) => {
             const msg = _.get(err, 'data.message', '');
-            CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+            CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
           });
         });
     };
@@ -483,7 +483,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
         resetPassword(modalValues)
           .catch((err) => {
             const msg = _.get(err, 'data.message', '');
-            CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+            CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
           });
       });
     };
@@ -582,7 +582,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
         .then((newDisplayName) => {
           changeAlias(newDisplayName).catch((err) => {
             const msg = _.get(err, 'data.message', '');
-            CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+            CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
           });
         });
     };
@@ -633,7 +633,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
       modal.result.then((modalData) => {
         changeUsername(modalData).catch((err) => {
           const msg = _.get(err, 'data.message', '');
-          CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+          CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
         });
       });
     };
@@ -681,7 +681,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
         .then((modalData) => {
           confirmTerminate(modalData).catch((err) => {
             const msg = _.get(err, 'data.message', '');
-            CloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
+            CucCloudMessage.error([$translate.instant('common_api_error'), msg].join(' '));
           });
         });
     };

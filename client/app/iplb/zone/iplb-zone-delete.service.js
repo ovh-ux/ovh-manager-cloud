@@ -1,8 +1,15 @@
 class IpLoadBalancerZoneDeleteService {
-  constructor($q, $translate, CloudMessage, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+  constructor(
+    $q,
+    $translate,
+    CucCloudMessage,
+    OvhApiIpLoadBalancing,
+    RegionService,
+    ServiceHelper,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;
     this.ServiceHelper = ServiceHelper;

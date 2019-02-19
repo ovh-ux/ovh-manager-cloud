@@ -1,13 +1,13 @@
 class LogsDashboardsCrudCtrl {
   constructor($q, $state, $stateParams, $uibModalInstance, LogsDashboardsService,
-    ControllerHelper, CloudMessage, LogsStreamsService) {
+    ControllerHelper, CucCloudMessage, LogsStreamsService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsDashboardsService = LogsDashboardsService;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsStreamsService = LogsStreamsService;
     this.isEdit = false;
     this.isDuplicate = $state.$current.name === 'dbaas.logs.detail.dashboards.duplicate';
@@ -87,7 +87,7 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .updateDashboard(this.serviceName, this.dashboard.data)
@@ -108,7 +108,7 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .createDashboard(this.serviceName, this.dashboard.data)
@@ -129,7 +129,7 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .duplicateDashboard(this.serviceName, this.dashboard.data, this.$stateParams.dashboardId)

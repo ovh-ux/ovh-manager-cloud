@@ -1,12 +1,12 @@
 class LogsAccountSetupCtrl {
-  constructor($q, $state, $stateParams, ControllerHelper, CloudMessage, LogsAccountService,
+  constructor($q, $state, $stateParams, ControllerHelper, CucCloudMessage, LogsAccountService,
     LogsHomeService, LogsDetailService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsAccountService = LogsAccountService;
     this.LogsHomeService = LogsHomeService;
     this.LogsDetailService = LogsDetailService;
@@ -53,7 +53,7 @@ class LogsAccountSetupCtrl {
     if (this.form.$invalid || !this.passwordValid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAccountService
         .changePassword(

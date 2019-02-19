@@ -1,8 +1,8 @@
 class NashaAddCtrl {
-  constructor($translate, $state, CloudMessage, ControllerHelper, NashaAddService) {
+  constructor($translate, $state, CucCloudMessage, ControllerHelper, NashaAddService) {
     this.$translate = $translate;
     this.$state = $state;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.ControllerHelper = ControllerHelper;
     this.NashaAddService = NashaAddService;
 
@@ -55,11 +55,11 @@ class NashaAddCtrl {
 
   loadMessages() {
     const stateName = 'paas.nasha-add';
-    this.CloudMessage.unSubscribe(stateName);
-    this.messageHandler = this.CloudMessage.subscribe(stateName, {
+    this.CucCloudMessage.unSubscribe(stateName);
+    this.messageHandler = this.CucCloudMessage.subscribe(stateName, {
       onMessage: () => this.refreshMessage(),
     });
-    this.CloudMessage.info(this.$translate.instant('nasha_order_datacenter_unavailable', { region: this.$translate.instant('nasha_order_datacenter_gra'), fallback: this.$translate.instant('nasha_order_datacenter_rbx') }));
+    this.CucCloudMessage.info(this.$translate.instant('nasha_order_datacenter_unavailable', { region: this.$translate.instant('nasha_order_datacenter_gra'), fallback: this.$translate.instant('nasha_order_datacenter_rbx') }));
   }
 }
 
