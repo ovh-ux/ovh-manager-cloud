@@ -1,10 +1,10 @@
 class IpLoadBalancerVrackCtrl {
-  constructor($state, $stateParams, $translate, ControllerHelper, IpLoadBalancerVrackService,
+  constructor($state, $stateParams, $translate, CucControllerHelper, IpLoadBalancerVrackService,
     IpLoadBalancerVrackHelper, VrackService, OvhApiIpLoadBalancing) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
     this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
@@ -32,12 +32,12 @@ class IpLoadBalancerVrackCtrl {
   }
 
   initLoaders() {
-    this.creationRules = this.ControllerHelper.request.getHashLoader({
+    this.creationRules = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getNetworkCreationRules(this.serviceName),
     });
 
-    this.privateNetworks = this.ControllerHelper.request.getArrayLoader({
+    this.privateNetworks = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService.getPrivateNetworks(this.serviceName),
     });
   }
@@ -75,7 +75,7 @@ class IpLoadBalancerVrackCtrl {
       },
       deletePrivateNetwork: {
         text: this.$translate.instant('common_delete'),
-        callback: network => this.ControllerHelper.modal.showDeleteModal({
+        callback: network => this.CucControllerHelper.modal.showDeleteModal({
           titleText: this.$translate.instant('iplb_vrack_private_network_delete_title'),
           text: this.$translate.instant('iplb_vrack_private_network_delete_text', { network: network.displayName }),
         })

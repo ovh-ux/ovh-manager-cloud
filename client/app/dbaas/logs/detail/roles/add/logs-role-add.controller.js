@@ -1,9 +1,9 @@
 class LogsRoleAddModalCtrl {
-  constructor($q, $stateParams, $uibModalInstance, ControllerHelper, LogsRolesService, options,
+  constructor($q, $stateParams, $uibModalInstance, CucControllerHelper, LogsRolesService, options,
     quota, roleInfo) {
     this.$stateParams = $stateParams;
     this.$q = $q;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.options = options;
     this.quota = quota;
     this.roleInfo = roleInfo;
@@ -56,11 +56,11 @@ class LogsRoleAddModalCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsRolesService.addRole(this.serviceName, this.role)
         .then(response => this.$uibModalInstance.close(response))
         .catch(response => this.$uibModalInstance.dismiss(response))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }
@@ -69,12 +69,12 @@ class LogsRoleAddModalCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsRolesService
         .updateRole(this.serviceName, this.roleInfo.roleId, this.role)
         .then(response => this.$uibModalInstance.close(response))
         .catch(response => this.$uibModalInstance.dismiss(response))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }

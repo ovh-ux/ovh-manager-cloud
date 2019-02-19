@@ -1,13 +1,13 @@
 (() => {
   class VeeamStorageCtrl {
-    constructor($stateParams, $translate, ControllerHelper, RegionService, VeeamService) {
+    constructor($stateParams, $translate, CucControllerHelper, RegionService, VeeamService) {
       this.$stateParams = $stateParams;
       this.$translate = $translate;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.RegionService = RegionService;
       this.VeeamService = VeeamService;
 
-      this.storageInfos = ControllerHelper.request.getArrayLoader({
+      this.storageInfos = CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.VeeamService.getStorages(this.$stateParams.serviceName),
         errorHandler: response => this.VeeamService.unitOfWork.messages.push({
           text: response.message,
@@ -15,11 +15,11 @@
         }),
       });
 
-      this.actions = this.ControllerHelper.request.getArrayLoader({
+      this.actions = this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.VeeamService.getActions(this.$stateParams.serviceName),
       });
 
-      this.capabilities = this.ControllerHelper.request.getHashLoader({
+      this.capabilities = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.VeeamService.getCapabilities(this.$stateParams.serviceName),
       });
     }
@@ -30,7 +30,7 @@
 
     addStorage() {
       if (this.actions.data.addStorage.available) {
-        this.ControllerHelper.modal.showModal({
+        this.CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/veeam/storage/add/veeam-storage-add.html',
             controller: 'VeeamStorageAddCtrl',
@@ -49,7 +49,7 @@
             type: 'error',
           }));
       } else {
-        this.ControllerHelper.modal.showWarningModal({
+        this.CucControllerHelper.modal.showWarningModal({
           title: this.$translate.instant('common_action_unavailable'),
           message: this.actions.data.addStorage.reason,
         });
@@ -57,7 +57,7 @@
     }
 
     updateQuota(inventoryName) {
-      this.ControllerHelper.modal.showModal({
+      this.CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/veeam/storage/update-quota/veeam-storage-update-quota.html',
           controller: 'VeeamStorageUpdateQuotaCtrl',

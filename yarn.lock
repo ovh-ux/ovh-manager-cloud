@@ -1018,10 +1018,9 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.3":
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#feat/helper":
   version "0.1.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.3.tgz#16c86157f224624c46c054a9c8499764ad50dade"
-  integrity sha512-CnvDGhR7Z8Cqt06jM7sYzrv5Ggu2XqUlHdPSxTJxIgFVuz0Du9jHR2fb1hwfRwlAUeSHtT/eWrGyh/zGByslCw==
+  resolved "git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#28c98768783508cee7b4b118ef1c529c9c0c9ae0"
   dependencies:
     bootstrap "~3.3.0"
     lodash "^4.17.11"
@@ -1053,6 +1052,11 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-stop-event/-/ng-ovh-stop-event-1.0.0.tgz#08e9470ec08b263c7ca7370dab9b23d9b6044aef"
   integrity sha512-M8vEiHK5WytqeNBPnVY4cDR+RhwISD+wRKPpNRHiXLsewLqwx99ebtSiQWzXYK++poSbBoYwq9xnCVoh1VzjbQ==
 
+"@ovh-ux/ng-translate-async-loader@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
+  integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
+
 "@ovh-ux/rollup-plugin-less-tilde-importer@^1.0.0-beta.0":
   version "1.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/rollup-plugin-less-tilde-importer/-/rollup-plugin-less-tilde-importer-1.0.0-beta.0.tgz#eaf065c6e1fd039db0ddfb2f30955aec987e0c63"
@@ -1060,11 +1064,6 @@
   dependencies:
     magic-string "^0.25.1"
     rollup-pluginutils "^2.3.3"
-
-"@ovh-ux/translate-async-loader@^1.0.7":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/translate-async-loader/-/translate-async-loader-1.0.8.tgz#7cbdc3dfed1042f511206ff6bb9f14c33b8406ba"
-  integrity sha512-8yEhPeRTSxtEO9ODXRYZw6pzRQiV5ULCTi8mIzt39m/b9N2TcIF4ILTPsaa8xpE4npHKa/iYgL9z0HJUFi2LGQ==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

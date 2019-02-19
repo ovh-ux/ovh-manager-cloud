@@ -8,7 +8,7 @@ class VpsUpgradeCtrl {
     $window,
     CucCloudMessage,
     CucCloudNavigation,
-    ControllerHelper,
+    CucControllerHelper,
     VpsService,
   ) {
     this.$filter = $filter;
@@ -17,7 +17,7 @@ class VpsUpgradeCtrl {
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
     this.CucCloudNavigation = CucCloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.serviceName = $stateParams.serviceName;
     this.Vps = VpsService;
 
@@ -48,7 +48,7 @@ class VpsUpgradeCtrl {
       const title = this.$translate.instant('vps_warning_title');
       const message = this.$translate.instant('vps_configuration_upgradevps_step1_warning');
 
-      this.ControllerHelper.modal.showWarningModal({ title, message });
+      this.CucControllerHelper.modal.showWarningModal({ title, message });
       throw new Error(message);
     } else {
       this.completed.step1 = true;

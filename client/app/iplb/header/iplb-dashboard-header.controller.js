@@ -1,9 +1,9 @@
 class IpLoadBalancerDashboardHeaderCtrl {
-  constructor($stateParams, $translate, ControllerHelper, IpLoadBalancerHomeService, ovhDocUrl,
+  constructor($stateParams, $translate, CucControllerHelper, IpLoadBalancerHomeService, ovhDocUrl,
     SidebarMenu, URLS) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
     this.ovhDocUrl = ovhDocUrl;
     this.SidebarMenu = SidebarMenu;
@@ -11,7 +11,7 @@ class IpLoadBalancerDashboardHeaderCtrl {
     this.serviceName = $stateParams.serviceName;
 
     //  No error handling since we don't want to break anything for a title.
-    this.configuration = this.ControllerHelper.request.getHashLoader({
+    this.configuration = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService.getConfiguration(this.serviceName),
       successHandler: () => { this.menuItem.title = this.configuration.data.displayName; },
     });

@@ -1,9 +1,9 @@
 class LogsInputsConsoleCtrl {
-  constructor($stateParams, ControllerHelper, LogsInputsService, OvhTailLogs) {
+  constructor($stateParams, CucControllerHelper, LogsInputsService, OvhTailLogs) {
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsInputsService = LogsInputsService;
     this.OvhTailLogs = OvhTailLogs;
     this.initLoaders();
@@ -24,10 +24,10 @@ class LogsInputsConsoleCtrl {
    * @memberof LogsInputsConsoleCtrl
    */
   initLoaders() {
-    this.inputLogUrl = this.ControllerHelper.request.getHashLoader({
+    this.inputLogUrl = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getInputLogUrl(this.serviceName, this.inputId),
     });
-    this.input = this.ControllerHelper.request.getHashLoader({
+    this.input = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId),
     });
   }

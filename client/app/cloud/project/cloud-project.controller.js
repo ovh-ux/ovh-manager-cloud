@@ -1,7 +1,7 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, ControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService) {
+  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, CucControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService) {
     const self = this;
     const serviceName = $stateParams.projectId;
     const onboardingKey = 'SHOW_PCI_ONBOARDING';
@@ -23,7 +23,7 @@ angular.module('managerApp')
     let stateChangeListener = null;
 
     function openOnboarding() {
-      ControllerHelper.modal.showModal({
+      CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/cloud/project/onboarding/onboarding-pci.html',
           controller: 'pciSlideshowCtrl',

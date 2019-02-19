@@ -1,9 +1,9 @@
 class AddBackupStorageCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.serviceName = serviceName;
     this.CucCloudMessage = CucCloudMessage;
     this.VpsService = VpsService;
@@ -35,7 +35,7 @@ class AddBackupStorageCtrl {
   }
 
   loadAvailableIpBlocks() {
-    this.ipBlocks = this.ControllerHelper.request.getHashLoader({
+    this.ipBlocks = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getBackupStorageAuthorizableBlocks(this.serviceName)
         .then((data) => { this.available = data; })
         .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_backup_storage_access_add_ip_failure')))
@@ -53,7 +53,7 @@ class AddBackupStorageCtrl {
       return this.cancel();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.addStorage = this.ControllerHelper.request.getHashLoader({
+    this.addStorage = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService
         .postBackupStorageAccess(
           this.serviceName,

@@ -1,13 +1,13 @@
 class IpLoadBalancerConfigurationService {
   constructor($q, $state, $translate, CucCloudMessage, OvhApiIpLoadBalancing, RegionService,
-    ServiceHelper) {
+    CucServiceHelper) {
     this.$q = $q;
     this.$state = $state;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getPendingChanges(serviceName) {
@@ -30,7 +30,7 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_configuration_info_error'));
   }
 
   getZoneChanges(serviceName, zone) {
@@ -47,7 +47,7 @@ class IpLoadBalancerConfigurationService {
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_info_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_configuration_info_error'));
   }
 
   static getLastUndoneTask(tasks, zone) {
@@ -70,8 +70,8 @@ class IpLoadBalancerConfigurationService {
       }, {
         zone,
       }).$promise
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
+      .then(this.CucServiceHelper.successHandler('iplb_configuration_apply_success'))
+      .catch(this.CucServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
   batchRefresh(serviceName, zones) {
@@ -85,9 +85,9 @@ class IpLoadBalancerConfigurationService {
     return this.$q
       .all(promises)
       .then((refreshResults) => {
-        refreshResults.forEach(this.ServiceHelper.successHandler('iplb_configuration_apply_success'));
+        refreshResults.forEach(this.CucServiceHelper.successHandler('iplb_configuration_apply_success'));
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
   getRefreshTasks(serviceName, statuses) {

@@ -1,7 +1,7 @@
 angular.module('managerApp')
   .controller('CloudProjectBillingRightsCtrl',
     function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CucCloudMessage,
-      ControllerHelper, $translate, REDIRECT_URLS, $window) {
+      CucControllerHelper, $translate, REDIRECT_URLS, $window) {
       const self = this;
       const serviceName = $stateParams.projectId;
 
@@ -135,7 +135,7 @@ angular.module('managerApp')
          */
 
       self.showAddRight = function () {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/billing/rights/addRights/cloud-project-billing-rights-add.html',
             controller: 'CloudProjectBillingRightsAddCtrl',
@@ -181,7 +181,7 @@ angular.module('managerApp')
         self.loader = true;
         self.removeRight.accountId = account.accountId;
 
-        return ControllerHelper.modal.showConfirmationModal({
+        return CucControllerHelper.modal.showConfirmationModal({
           titleText: $translate.instant('cpb_rights_delete_title'),
           text: $translate.instant('cpb_rights_delete_question', { nickname: account.accountId }),
         })

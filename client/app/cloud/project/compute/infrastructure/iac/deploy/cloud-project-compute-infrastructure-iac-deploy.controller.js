@@ -1,13 +1,13 @@
 class CloudProjectComputeInfrastructureIacDeployCtrl {
   constructor($q, $state, $stateParams, CloudProjectComputeInfrastructureOpenstackClientService,
-    OvhApiCloudProjectStack, OvhApiMe, ServiceHelper) {
+    OvhApiCloudProjectStack, OvhApiMe, CucServiceHelper) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.Service = CloudProjectComputeInfrastructureOpenstackClientService;
     this.OvhApiCloudProjectStack = OvhApiCloudProjectStack;
     this.OvhApiMe = OvhApiMe;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   $onInit() {
@@ -52,7 +52,7 @@ class CloudProjectComputeInfrastructureIacDeployCtrl {
             },
           }));
       })
-      .catch(this.ServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
+      .catch(this.CucServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
   }
 
   getUser() {
@@ -62,7 +62,7 @@ class CloudProjectComputeInfrastructureIacDeployCtrl {
         this.user = user;
         return user;
       })
-      .catch(this.ServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
+      .catch(this.CucServiceHelper.errorHandler('cpciiac_view_deployment_ERROR'));
   }
 
   cancel() {

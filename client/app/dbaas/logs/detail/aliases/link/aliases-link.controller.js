@@ -1,16 +1,16 @@
 class LogsAliasesLinkCtrl {
-  constructor($q, $stateParams, $translate, LogsAliasesService, ControllerHelper,
-    LogsStreamsService, LogsIndexService, CucCloudMessage, ServiceHelper) {
+  constructor($q, $stateParams, $translate, LogsAliasesService, CucControllerHelper,
+    LogsStreamsService, LogsIndexService, CucCloudMessage, CucServiceHelper) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsIndexService = LogsIndexService;
     this.CucCloudMessage = CucCloudMessage;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.initLoaders();
   }
@@ -26,7 +26,7 @@ class LogsAliasesLinkCtrl {
     this.availableIndices = this.$q.defer();
     this.attachedIndices = this.$q.defer();
 
-    this.alias = this.ControllerHelper.request.getHashLoader({
+    this.alias = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .getAliasWithStreamsAndIndices(this.serviceName, this.$stateParams.aliasId)
         .then((alias) => {
@@ -42,12 +42,12 @@ class LogsAliasesLinkCtrl {
     });
     this.alias.load();
 
-    this.streams = this.ControllerHelper.request.getArrayLoader({
+    this.streams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName),
     });
     this.streams.load();
 
-    this.indices = this.ControllerHelper.request.getArrayLoader({
+    this.indices = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName),
     });
     this.indices.load();
@@ -89,7 +89,7 @@ class LogsAliasesLinkCtrl {
 
   attachStream(items) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveStream = this.ControllerHelper.request.getHashLoader({
+    this.saveStream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .attachStream(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
@@ -102,7 +102,7 @@ class LogsAliasesLinkCtrl {
 
   detachStream(items) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveStream = this.ControllerHelper.request.getHashLoader({
+    this.saveStream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .detachStream(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
@@ -115,7 +115,7 @@ class LogsAliasesLinkCtrl {
 
   attachIndex(items) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveIndex = this.ControllerHelper.request.getHashLoader({
+    this.saveIndex = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .attachIndex(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
@@ -128,7 +128,7 @@ class LogsAliasesLinkCtrl {
 
   detachIndex(items) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveIndex = this.ControllerHelper.request.getHashLoader({
+    this.saveIndex = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .detachIndex(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {

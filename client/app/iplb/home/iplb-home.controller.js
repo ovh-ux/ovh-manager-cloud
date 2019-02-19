@@ -1,5 +1,5 @@
 class IpLoadBalancerHomeCtrl {
-  constructor($state, $stateParams, $translate, ControllerHelper, CucCloudMessage,
+  constructor($state, $stateParams, $translate, CucControllerHelper, CucCloudMessage,
     FeatureAvailabilityService, IpLoadBalancerActionService, IpLoadBalancerConstant,
     IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
     IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
@@ -8,7 +8,7 @@ class IpLoadBalancerHomeCtrl {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
@@ -23,6 +23,7 @@ class IpLoadBalancerHomeCtrl {
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.RegionService = RegionService;
     this.VrackService = VrackService;
+
 
     this.serviceName = this.$stateParams.serviceName;
 
@@ -65,38 +66,38 @@ class IpLoadBalancerHomeCtrl {
   }
 
   initLoaders() {
-    this.information = this.ControllerHelper.request.getHashLoader({
+    this.information = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService.getInformations(this.serviceName),
     });
 
-    this.configuration = this.ControllerHelper.request.getHashLoader({
+    this.configuration = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService.getConfiguration(this.serviceName),
       successHandler: () => this.getRegionsGroup(this.configuration.data.zone),
     });
 
-    this.vrackCreationRules = this.ControllerHelper.request.getHashLoader({
+    this.vrackCreationRules = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getNetworkCreationRules(this.serviceName),
     });
 
-    this.subscription = this.ControllerHelper.request.getHashLoader({
+    this.subscription = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService.getSubscription(this.serviceName),
     });
 
-    this.iplbStatus = this.ControllerHelper.request.getArrayLoader({
+    this.iplbStatus = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerHomeStatusService
         .getIPLBStatus(this.serviceName, { toArray: true }),
     });
 
-    this.usage = this.ControllerHelper.request.getArrayLoader({
+    this.usage = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService.getUsage(this.serviceName),
     });
 
-    this.orderableZones = this.ControllerHelper.request.getArrayLoader({
+    this.orderableZones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName),
     });
 
-    this.deletableZones = this.ControllerHelper.request.getArrayLoader({
+    this.deletableZones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneDeleteService
         .getDeletableZones(this.serviceName),
     });
@@ -112,7 +113,7 @@ class IpLoadBalancerHomeCtrl {
       },
       changeName: {
         text: this.$translate.instant('common_edit'),
-        callback: () => this.ControllerHelper.modal.showNameChangeModal({
+        callback: () => this.CucControllerHelper.modal.showNameChangeModal({
           serviceName: this.serviceName,
           displayName: this.configuration.data.displayName,
           onSave: newDisplayName => this.IpLoadBalancerHomeService
@@ -156,12 +157,12 @@ class IpLoadBalancerHomeCtrl {
       },
       manageAutorenew: {
         text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl('renew', { serviceName: this.serviceName, serviceType: 'IP_LOADBALANCER' }),
+        href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'renew'), { serviceName: this.serviceName, serviceType: 'IP_LOADBALANCER' }),
         isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors,
       },
       manageContact: {
         text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl('contacts', { serviceName: this.serviceName }),
+        href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
         isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage') && !this.subscription.loading && !this.subscription.hasErrors,
       },
       addZone: {
@@ -182,7 +183,7 @@ class IpLoadBalancerHomeCtrl {
   }
 
   updateQuotaAlert(quota) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/home/updateQuota/iplb-update-quota.html',
         controller: 'IpLoadBalancerUpdateQuotaCtrl',

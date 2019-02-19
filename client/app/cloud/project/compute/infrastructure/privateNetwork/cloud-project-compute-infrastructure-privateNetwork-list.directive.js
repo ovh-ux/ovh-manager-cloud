@@ -2,7 +2,7 @@ class PrivateNetworkListCtrl {
   constructor($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal,
     CloudProjectComputeInfrastructurePrivateNetworkService, OvhApiCloudProjectNetworkPrivate,
     OvhApiCloudProject, REDIRECT_URLS, CucCloudMessage, OvhApiMe, URLS, OvhApiVrack,
-    VrackSectionSidebarService, VrackService, CucCloudPoll, ControllerHelper) {
+    VrackSectionSidebarService, VrackService, CucCloudPoll, CucControllerHelper) {
     this.resources = {
       privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
       project: OvhApiCloudProject.v6(),
@@ -21,7 +21,7 @@ class PrivateNetworkListCtrl {
     this.URLS = URLS;
     this.CucCloudPoll = CucCloudPoll;
     this.VrackService = VrackService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.loaders = {
       privateNetworks: {

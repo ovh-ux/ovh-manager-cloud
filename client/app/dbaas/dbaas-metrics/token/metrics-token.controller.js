@@ -1,11 +1,11 @@
 (() => {
   class MetricsTokenCtrl {
-    constructor($scope, $stateParams, $translate, ControllerHelper, MetricService, ovhDocUrl) {
+    constructor($scope, $stateParams, $translate, CucControllerHelper, MetricService, ovhDocUrl) {
       this.scope = $scope;
       this.$stateParams = $stateParams;
       this.serviceName = $stateParams.serviceName;
       this.$translate = $translate;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.MetricService = MetricService;
       this.ovhDocUrl = ovhDocUrl;
 
@@ -35,7 +35,7 @@
     }
 
     showPreview(tokenID) {
-      this.ControllerHelper.modal.showModal({
+      this.CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/dbaas/dbaas-metrics/token/preview/metrics-token-preview.html',
           controller: 'MetricsTokenPreviewCtrl',
@@ -49,7 +49,7 @@
     }
 
     edit(tokenID, desc) {
-      this.ControllerHelper.modal.showModal({
+      this.CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/dbaas/dbaas-metrics/token/edit/metrics-token-edit.html',
           controller: 'MetricsTokenEditCtrl',
@@ -66,7 +66,7 @@
     }
 
     delete(tokenID) {
-      this.ControllerHelper.modal.showModal({
+      this.CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/dbaas/dbaas-metrics/token/delete/metrics-token-delete.html',
           controller: 'MetricsTokenDeleteCtrl',

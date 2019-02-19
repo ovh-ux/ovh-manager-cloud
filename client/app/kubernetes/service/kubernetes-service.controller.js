@@ -1,12 +1,12 @@
 angular.module('managerApp').controller('KubernetesServiceCtrl', class KubernetesServiceCtrl {
-  constructor($scope, $state, $stateParams, $translate, CucCloudMessage, ControllerHelper,
+  constructor($scope, $state, $stateParams, $translate, CucCloudMessage, CucControllerHelper,
     Kubernetes, KUBERNETES) {
     this.$scope = $scope;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
   }
@@ -33,7 +33,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
   }
 
   changeClusterName() {
-    this.ControllerHelper.modal.showNameChangeModal({
+    this.CucControllerHelper.modal.showNameChangeModal({
       serviceName: this.serviceName,
       displayName: this.cluster.name,
       onSave: newDisplayName => this.rename(newDisplayName)
@@ -90,7 +90,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
 
   downloadConfigFile() {
     // Set yml extension manually as there is no MIME type yet
-    this.ControllerHelper.constructor.downloadContent({ fileContent: this.kubernetesConfig.content, fileName: `${this.kubernetesConfig.fileName}.yml` });
+    this.CucControllerHelper.constructor.downloadContent({ fileContent: this.kubernetesConfig.content, fileName: `${this.kubernetesConfig.fileName}.yml` });
   }
 
   resetCluster() {

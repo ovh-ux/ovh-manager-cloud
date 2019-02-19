@@ -1,6 +1,6 @@
 class VpsOrderVeeamCtrl {
   constructor($scope, $stateParams, $translate, $window,
-    atInternet, CucCloudMessage, CucCloudNavigation, VpsService, ServiceHelper) {
+    atInternet, CucCloudMessage, CucCloudNavigation, VpsService, CucServiceHelper) {
     this.$scope = $scope;
     this.$translate = $translate;
     this.$window = $window;
@@ -9,7 +9,7 @@ class VpsOrderVeeamCtrl {
     this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
 
     $scope.model = {
@@ -44,7 +44,7 @@ class VpsOrderVeeamCtrl {
 
   orderOption() {
     if (this.$scope.model.optionDetails && this.$scope.model.contractsValidated) {
-      this.ServiceHelper
+      this.CucServiceHelper
         .loadOnNewPage(this.VpsService
           .orderVeeamOption(this.serviceName, this.$scope.model.optionDetails.duration.duration))
         .then(({ url }) => {
