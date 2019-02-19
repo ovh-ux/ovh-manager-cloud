@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.15.7",
+  "version": "7.16.0",
   "private": true,
   "description": "OVH Cloud control panel",
   "keywords": [
@@ -38,8 +38,8 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-cloud-universe-components": "^0.1.0-alpha.2",
+    "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth-modal-plugin": "^3.0.0",
     "@ovh-ux/ng-ovh-stop-event": "^1.0.0",

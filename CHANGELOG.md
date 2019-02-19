@@ -1,3 +1,21 @@
+# [7.16.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.7...v7.16.0) (2019-02-19)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([ff24344](https://github.com/ovh-ux/ovh-manager-cloud/commit/ff24344))
+* **i18n:** add missing translations ([15e149d](https://github.com/ovh-ux/ovh-manager-cloud/commit/15e149d))
+* **i18n:** add missing translations ([593914c](https://github.com/ovh-ux/ovh-manager-cloud/commit/593914c))
+* **i18n:** add missing translations ([0f96a79](https://github.com/ovh-ux/ovh-manager-cloud/commit/0f96a79))
+
+
+### Features
+
+* **home:** add traffic apac guide ([12b3690](https://github.com/ovh-ux/ovh-manager-cloud/commit/12b3690))
+* **info:** show new DC available info message ([a59f115](https://github.com/ovh-ux/ovh-manager-cloud/commit/a59f115)), closes [#MBE-247](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBE-247)
+
+
+
 ## [7.15.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.6...v7.15.7) (2019-02-18)
 
 
