@@ -5,5 +5,6 @@
  "homepage_type_of_guide_vps": "VPS",
  "homepage_type_of_guide_pci": "Public Cloud",
  "homepage_scheduled_maintenance_operation": "Er is onderhoud gepland voor de BHS1-regio op 19 september 2018 tussen 3:00 en 8:00 UTC-4. Er is geen storing te verwachten op uw instances, slechts enkele API's van deze regio zijn tijdens de duur van de bewerking onbereikbaar",
- "homepage_scheduled_maintenance_operation_more_detail": "Meer informatie over travaux task:"
+ "homepage_scheduled_maintenance_operation_more_detail": "Meer informatie over travaux task:",
+ "homepage_apac_regions_availability_message": "Nieuwe Public Cloud regio's beschikbaar: Singapore (SGP) en Sydney, Australië (SYD)"
 }
