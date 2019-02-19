@@ -1,12 +1,12 @@
 class LogsInputsHomeCtrl {
-  constructor($state, $stateParams, $translate, CucCloudMessage, ControllerHelper, LogsConstants,
+  constructor($state, $stateParams, $translate, CucCloudMessage, CucControllerHelper, LogsConstants,
     LogsInputsService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsInputsService = LogsInputsService;
     this.initLoaders();
@@ -23,9 +23,9 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   delete(input) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.deleteInput(this.serviceName, input)
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load().then(() => this.runLoaders());
   }
@@ -39,9 +39,9 @@ class LogsInputsHomeCtrl {
    */
   executeAction(input, actionFn) {
     this.setInputToProcessing(input);
-    this.processInput = this.ControllerHelper.request.getHashLoader({
+    this.processInput = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService[actionFn](this.serviceName, input)
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.processInput.load().finally(() => this.reloadInputDetail(input.info.inputId));
   }
@@ -52,10 +52,10 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   initLoaders() {
-    this.inputs = this.ControllerHelper.request.getArrayLoader({
+    this.inputs = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsInputsService.getInputs(this.serviceName),
     });
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getQuota(this.serviceName),
     });
   }
@@ -68,7 +68,7 @@ class LogsInputsHomeCtrl {
    * @memberof LogsInputsCtrl
    */
   reloadInputDetail(inputId) {
-    this.inputReload = this.ControllerHelper.request.getHashLoader({
+    this.inputReload = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getInputDetail(this.serviceName, inputId),
     });
 
@@ -138,7 +138,7 @@ class LogsInputsHomeCtrl {
    */
   info(input) {
     this.CucCloudMessage.flushChildMessage();
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/inputs/home/info/logs-inputs-home-info.html',
         controller: 'LogsInputsHomeInfoModalCtrl',
@@ -159,7 +159,7 @@ class LogsInputsHomeCtrl {
    */
   showDeleteConfirm(input) {
     this.CucCloudMessage.flushChildMessage();
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('inputs_delete'),
       textHtml: this.$translate.instant('inputs_delete_message', { input: input.info.title }),
     }).then(() => this.delete(input));

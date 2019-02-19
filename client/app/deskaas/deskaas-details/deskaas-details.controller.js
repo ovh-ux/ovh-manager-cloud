@@ -1,7 +1,8 @@
 angular.module('managerApp').controller('DeskaasDetailsCtrl',
-  function DeskaasDetailsCtrl(OvhApiDeskaasService, $stateParams, $scope, ControllerHelper,
+  function DeskaasDetailsCtrl(OvhApiDeskaasService, $stateParams, $scope, CucControllerHelper,
     CucCloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal, OvhApiMe, deskaasSidebar,
-    DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService, ServiceHelper) {
+    DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService, CucServiceHelper,
+    REDIRECT_URLS) {
     const self = this;
 
     self.services = {};
@@ -11,7 +12,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     self.upgradeOptions = [];
     self.selectedUpgrade = '';
     self.tasksHandler = null;
-    self.ServiceHelper = ServiceHelper;
+    self.CucServiceHelper = CucServiceHelper;
 
     self.references = DESKAAS_REFERENCES;
 
@@ -55,12 +56,12 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
       },
       manageAutorenew: {
         text: $translate.instant('common_manage'),
-        href: ControllerHelper.navigation.getUrl('renew', { serviceName: $stateParams.serviceName, serviceType: 'DESKAAS' }),
+        href: CucControllerHelper.navigation.constructor.getUrl(_.get(REDIRECT_URLS, 'renew'), { serviceName: $stateParams.serviceName, serviceType: 'DESKAAS' }),
         isAvailable: () => true,
       },
       manageContact: {
         text: $translate.instant('common_manage'),
-        href: ControllerHelper.navigation.getUrl('contacts', { serviceName: $stateParams.serviceName }),
+        href: CucControllerHelper.navigation.constructor.getUrl(_.get(REDIRECT_URLS, 'contacts'), { serviceName: $stateParams.serviceName }),
         isAvailable: () => FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
       },
     };
@@ -406,7 +407,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     }
 
     self.getConsole = function () {
-      return ControllerHelper.modal.showModal({
+      return CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/deskaas/deskaas-get-console-access/deskaas-get-console-access.html',
           controller: 'DeskaasGetConsoleAccessCtrl',
@@ -424,7 +425,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     };
 
     self.deleteService = function () {
-      return ControllerHelper.modal.showConfirmationModal({
+      return CucControllerHelper.modal.showConfirmationModal({
         titleText: $translate.instant('vdi_btn_delete'),
         text: $translate.instant('vdi_confirm_delete'),
       })
@@ -489,7 +490,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     };
 
     self.restoreService = function () {
-      return ControllerHelper.modal.showConfirmationModal({
+      return CucControllerHelper.modal.showConfirmationModal({
         titleText: $translate.instant('vdi_btn_restore'),
         text: $translate.instant('vdi_confirm_restore'),
       })
@@ -509,7 +510,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     };
 
     self.rebootService = function () {
-      return ControllerHelper.modal.showConfirmationModal({
+      return CucControllerHelper.modal.showConfirmationModal({
         titleText: $translate.instant('vdi_btn_reboot'),
         text: $translate.instant('vdi_confirm_reboot'),
       })
@@ -575,7 +576,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     }
 
     self.changeAlias = function () {
-      ControllerHelper.modal.showNameChangeModal({
+      CucControllerHelper.modal.showNameChangeModal({
         serviceName: self.details.serviceName,
         displayName: self.details.alias !== 'noAlias' ? self.details.alias : '',
       })
@@ -665,7 +666,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
     }
 
     self.confirmTerminate = function () {
-      return ControllerHelper.modal.showModal({
+      return CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/deskaas/deskaas-confirm-terminate/deskaas-confirm-terminate.html',
           controller: 'DeskaasConfirmTerminateCtrl',

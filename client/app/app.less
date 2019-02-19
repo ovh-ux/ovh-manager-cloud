@@ -87,6 +87,37 @@
   border-bottom-color: @UNIVERS;
 }
 
+.cui-modal {
+  .modal-content {
+    .oui-modal {
+      background-color: white;
+
+      .oui-list__header {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+
+      .oui-list__link {
+        color: inherit;
+        font-size: inherit;
+        text-decoration: underline;
+        display: initial;
+      }
+
+      .oui-list__items {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        margin-bottom: 8.5px;
+        list-style-type: disc;
+      }
+    }
+
+    .oui-checkbox__label {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 .table {
   &.table-pretty {
     thead {
@@ -342,7 +373,6 @@ html {
 @import "ui-components/inline-adder/inline-adder.less";
 @import "ui-components/input/key-value.less";
 //@import "ui-components/labels/labels.less";
-@import "ui-components/modal/modal.less";
 @import "ui-components/panel/panel.less";
 @import "ui-components/preview-list/_variables.less";
 @import "ui-components/preview-list/preview-list.less";

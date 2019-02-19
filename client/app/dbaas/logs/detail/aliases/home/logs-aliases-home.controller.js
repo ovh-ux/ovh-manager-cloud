@@ -1,5 +1,5 @@
 class LogsAliasesHomeCtrl {
-  constructor($state, $stateParams, $translate, LogsAliasesService, ControllerHelper,
+  constructor($state, $stateParams, $translate, LogsAliasesService, CucControllerHelper,
     CucCloudMessage) {
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -7,7 +7,7 @@ class LogsAliasesHomeCtrl {
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
 
     this.initLoaders();
@@ -19,10 +19,10 @@ class LogsAliasesHomeCtrl {
    * @memberof LogsAliasesHomeCtrl
    */
   initLoaders() {
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService.getQuota(this.serviceName),
     });
-    this.aliases = this.ControllerHelper.request.getArrayLoader({
+    this.aliases = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsAliasesService.getAliases(this.serviceName),
     });
     this.quota.load();
@@ -77,7 +77,7 @@ class LogsAliasesHomeCtrl {
    */
   showDeleteConfirm(alias) {
     this.CucCloudMessage.flushChildMessage();
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_aliases_delete_title'),
       textHtml: this.$translate.instant('logs_alias_delete_message', { alias: alias.name }),
     }).then(() => this.delete(alias));
@@ -90,10 +90,10 @@ class LogsAliasesHomeCtrl {
    * @memberof LogsAliasesHomeCtrl
    */
   delete(alias) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService.deleteAlias(this.serviceName, alias)
         .then(() => this.initLoaders())
-        .catch(() => this.ControllerHelper.scrollPageToTop()),
+        .catch(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load();
   }

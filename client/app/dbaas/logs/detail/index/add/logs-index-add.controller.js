@@ -1,9 +1,9 @@
 class LogsIndexAddModalCtrl {
-  constructor($q, $stateParams, $uibModalInstance, ControllerHelper, indexInfo, options, quota,
+  constructor($q, $stateParams, $uibModalInstance, CucControllerHelper, indexInfo, options, quota,
     LogsIndexService) {
     this.$stateParams = $stateParams;
     this.$q = $q;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.indexInfo = indexInfo;
     this.options = options;
     this.quota = quota;
@@ -56,11 +56,11 @@ class LogsIndexAddModalCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsIndexService.createIndex(this.serviceName, this.index)
         .then(response => this.$uibModalInstance.close(response))
         .catch(response => this.$uibModalInstance.dismiss(response))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }
@@ -69,12 +69,12 @@ class LogsIndexAddModalCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsIndexService
         .updateIndex(this.serviceName, this.indexInfo, this.index)
         .then(response => this.$uibModalInstance.close(response))
         .catch(response => this.$uibModalInstance.dismiss(response))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }

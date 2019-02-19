@@ -1,13 +1,13 @@
 (() => {
   class VeeamStorageUpdateQuotaCtrl {
-    constructor($uibModalInstance, inventoryName, serviceName, ControllerHelper, VeeamService) {
+    constructor($uibModalInstance, inventoryName, serviceName, CucControllerHelper, VeeamService) {
       this.$uibModalInstance = $uibModalInstance;
       this.inventoryName = inventoryName;
       this.serviceName = serviceName;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.VeeamService = VeeamService;
 
-      this.capabilities = this.ControllerHelper.request.getHashLoader({
+      this.capabilities = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.VeeamService.getCapabilities(this.serviceName),
       });
     }
@@ -17,7 +17,7 @@
     }
 
     confirm() {
-      this.updateQuota = this.ControllerHelper.request.getHashLoader({
+      this.updateQuota = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.VeeamService
           .updateRepositoryQuota(this.serviceName, this.inventoryName, this.newQuota)
           .then(response => this.$uibModalInstance.close(response))

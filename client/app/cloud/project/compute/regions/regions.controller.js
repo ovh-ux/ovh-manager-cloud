@@ -2,17 +2,17 @@ class RegionsCtrl {
   constructor(
     $stateParams,
     CucCloudMessage,
-    ServiceHelper,
-    ControllerHelper,
+    CucServiceHelper,
+    CucControllerHelper,
     OvhApiCloudProjectRegion,
     CloudProjectVirtualMachineAddService,
     RegionService,
   ) {
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.serviceName = $stateParams.projectId;
   }
@@ -34,18 +34,18 @@ class RegionsCtrl {
   }
 
   initRegions() {
-    this.regions = this.ControllerHelper.request.getHashLoader({
+    this.regions = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.v6()
         .query({ serviceName: this.serviceName })
         .$promise
         .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region)))
-        .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_get_regions_error')(error)),
+        .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_get_regions_error')(error)),
     });
     return this.regions.load();
   }
 
   initRegionsByDatacenter() {
-    this.regionsByDatacenter = this.ControllerHelper.request.getHashLoader({
+    this.regionsByDatacenter = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.regions
         .promise
         .then(regions => this.VirtualMachineAddService.constructor.groupRegionsByDatacenter(
@@ -56,7 +56,7 @@ class RegionsCtrl {
   }
 
   initRegionsByContinent() {
-    this.regionsByContinent = this.ControllerHelper.request.getHashLoader({
+    this.regionsByContinent = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.regionsByDatacenter
         .promise
         .then(regions => _.groupBy(regions, 'continent')),
@@ -65,18 +65,18 @@ class RegionsCtrl {
   }
 
   initAvailableRegions() {
-    this.availableRegions = this.ControllerHelper.request.getHashLoader({
+    this.availableRegions = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.AvailableRegions().v6()
         .query({ serviceName: this.serviceName })
         .$promise
         .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region.name)))
-        .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+        .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
     });
     return this.availableRegions.load();
   }
 
   initAvailableRegionsByDatacenter() {
-    this.availableRegionsByDatacenter = this.ControllerHelper.request.getHashLoader({
+    this.availableRegionsByDatacenter = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.availableRegions
         .promise
         .then(regions => this.VirtualMachineAddService.constructor.groupRegionsByDatacenter(
@@ -87,7 +87,7 @@ class RegionsCtrl {
   }
 
   initAvailableRegionsByContinent() {
-    this.availableRegionsByContinent = this.ControllerHelper.request.getHashLoader({
+    this.availableRegionsByContinent = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.availableRegionsByDatacenter
         .promise
         .then(regions => _.groupBy(regions, 'continent')),
@@ -97,18 +97,18 @@ class RegionsCtrl {
 
   addRegions() {
     this.CucCloudMessage.flushChildMessage();
-    this.addRegion = this.ControllerHelper.request.getHashLoader({
+    this.addRegion = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectRegion.v6()
         .addRegion({ serviceName: this.serviceName },
           { region: this.availableRegionToAdd.microRegion.code })
         .$promise
         .then(() => this.OvhApiCloudProjectRegion.AvailableRegions().v6().resetQueryCache())
         .then(() => this.initLoaders())
-        .then(() => this.ServiceHelper.successHandler('cpci_add_regions_add_region_success')({
+        .then(() => this.CucServiceHelper.successHandler('cpci_add_regions_add_region_success')({
           code: this.availableRegionToAdd.microRegion.code,
         }))
-        .catch(error => this.ServiceHelper.errorHandler('cpci_add_regions_add_region_error')(error))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_add_region_error')(error))
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.addRegion.load();
   }

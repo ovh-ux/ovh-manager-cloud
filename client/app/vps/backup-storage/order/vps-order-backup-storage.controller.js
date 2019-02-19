@@ -1,12 +1,12 @@
 class VpsOrderBackupStorageCtrl {
-  constructor($stateParams, $translate, $window, CucCloudMessage, CucCloudNavigation, ServiceHelper,
-    VpsService) {
+  constructor($stateParams, $translate, $window, CucCloudMessage, CucCloudNavigation,
+    CucServiceHelper, VpsService) {
     this.$translate = $translate;
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
     this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.VpsService = VpsService;
 
 
@@ -32,7 +32,7 @@ class VpsOrderBackupStorageCtrl {
   }
 
   orderOption() {
-    this.ServiceHelper.loadOnNewPage(this.VpsService.orderOption(this.serviceName, 'ftpbackup', this.model.optionDetails.duration.duration))
+    this.CucServiceHelper.loadOnNewPage(this.VpsService.orderOption(this.serviceName, 'ftpbackup', this.model.optionDetails.duration.duration))
       .then(({ url }) => {
         this.model.url = url;
       });

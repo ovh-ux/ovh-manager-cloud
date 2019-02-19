@@ -1,8 +1,8 @@
 class LogsOrderService {
-  constructor($q, OvhApiDbaas, ServiceHelper, LogsOfferService) {
+  constructor($q, OvhApiDbaas, CucServiceHelper, LogsOfferService) {
     this.$q = $q;
     this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.LogsOfferService = LogsOfferService;
   }
 
@@ -21,7 +21,7 @@ class LogsOrderService {
           const sortedList = list.sort((a, b) => a.renewalPrice.value - b.renewalPrice.value);
           return sortedList;
         });
-      }).catch(this.ServiceHelper.errorHandler('logs_order_get_error'));
+      }).catch(this.CucServiceHelper.errorHandler('logs_order_get_error'));
   }
 
   static getRenewalPrice(item) {
@@ -34,11 +34,11 @@ class LogsOrderService {
       planCode: offerDetail.selectedOffer,
     }, {
       quantity: offerDetail.quantity,
-    }).$promise.catch(this.ServiceHelper.errorHandler('logs_order_save_order'));
+    }).$promise.catch(this.CucServiceHelper.errorHandler('logs_order_save_order'));
   }
 
   getOrderCatalog(ovhSubsidiary) {
-    return this.OvhApiDbaasLogsOrder.getCatalog({ ovhSubsidiary }).$promise.catch(this.ServiceHelper.errorHandler('logs_order_get_error'));
+    return this.OvhApiDbaasLogsOrder.getCatalog({ ovhSubsidiary }).$promise.catch(this.CucServiceHelper.errorHandler('logs_order_get_error'));
   }
 }
 

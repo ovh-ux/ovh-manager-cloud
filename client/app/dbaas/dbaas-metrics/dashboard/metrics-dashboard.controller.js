@@ -1,20 +1,21 @@
 (() => {
   class MetricsDashboardCtrl {
-    constructor($scope, $stateParams, $q, $translate, CucCloudMessage, ControllerHelper,
+    constructor($scope, $stateParams, $q, $translate, CucCloudMessage, CucControllerHelper,
       FeatureAvailabilityService, MetricService, METRICS_ENDPOINTS,
-      RegionService, SidebarMenu) {
+      RegionService, SidebarMenu, REDIRECT_URLS) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.$q = $q;
       this.$translate = $translate;
       this.serviceName = $stateParams.serviceName;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.CucCloudMessage = CucCloudMessage;
       this.FeatureAvailabilityService = FeatureAvailabilityService;
       this.MetricService = MetricService;
       this.graphs = METRICS_ENDPOINTS.graphs;
       this.RegionService = RegionService;
       this.SidebarMenu = SidebarMenu;
+      this.REDIRECT_URLS = REDIRECT_URLS;
 
       this.loading = {};
       this.limit = {
@@ -95,12 +96,12 @@
       this.actions = {
         autorenew: {
           text: this.$translate.instant('common_manage'),
-          href: this.ControllerHelper.navigation.getUrl('renew', { serviceName: this.serviceName, serviceType: 'METRICS' }),
+          href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'renew'), { serviceName: this.serviceName, serviceType: 'METRICS' }),
           isAvailable: () => true,
         },
         contacts: {
           text: this.$translate.instant('common_manage'),
-          href: this.ControllerHelper.navigation.getUrl('contacts', { serviceName: this.serviceName }),
+          href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
           isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
         },
         editName: {
@@ -151,7 +152,7 @@
     }
 
     showEditName(name) {
-      this.ControllerHelper.modal.showNameChangeModal({
+      this.CucControllerHelper.modal.showNameChangeModal({
         serviceName: this.serviceName,
         displayName: name,
         onSave: newDisplayName => this.updateName(newDisplayName),

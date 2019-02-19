@@ -3,7 +3,7 @@
     constructor(
       $scope, $stateParams, $uibModalInstance, $translate,
       params, CucCloudMessage, CloudProjectComputeInfrastructureOrchestrator,
-      OvhApiCloudProjectImage, ServiceHelper,
+      OvhApiCloudProjectImage, CucServiceHelper,
     ) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
@@ -13,7 +13,7 @@
       this.CucCloudMessage = CucCloudMessage;
       this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
       this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
-      this.ServiceHelper = ServiceHelper;
+      this.CucServiceHelper = CucServiceHelper;
     }
 
     $onInit() {
@@ -50,7 +50,7 @@
             }),
           });
         })
-        .catch(this.ServiceHelper.errorHandler('cpc_rescue_mode_error'))
+        .catch(this.CucServiceHelper.errorHandler('cpc_rescue_mode_error'))
         .finally(() => {
           this.loaders.action = false;
           this.$uibModalInstance.close();

@@ -1,5 +1,5 @@
 class VpsPasswordCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, ovhDocUrl,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, ovhDocUrl,
     serviceName, VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
@@ -7,7 +7,7 @@ class VpsPasswordCtrl {
     this.ovhDocUrl = ovhDocUrl;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.selected = {
       rescue: true,
@@ -16,7 +16,7 @@ class VpsPasswordCtrl {
 
   $onInit() {
     this.guide = this.ovhDocUrl.getDocUrl('vps/root-password');
-    this.tasks = this.ControllerHelper.request.getHashLoader({
+    this.tasks = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getTaskInError(this.serviceName)
         .then((tasks) => {
           if (_(tasks).isArray() && !_(tasks).isEmpty()) {
@@ -33,7 +33,7 @@ class VpsPasswordCtrl {
   }
 
   confirm() {
-    this.save = this.ControllerHelper.request.getHashLoader({
+    this.save = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.reboot(this.serviceName, this.selected.rescue)
         .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_reboot_rescue_success', { serviceName: this.serviceName })))
         .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_reinitpassword_fail')))

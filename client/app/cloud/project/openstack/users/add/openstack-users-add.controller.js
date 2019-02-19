@@ -1,9 +1,9 @@
 class CloudProjectOpenStackUserAddCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage,
     OpenstackUsersPassword, OvhApiCloud, serviceName) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.OpenstackUsersPassword = OpenstackUsersPassword;
     this.OvhApiCloud = OvhApiCloud;
@@ -20,7 +20,7 @@ class CloudProjectOpenStackUserAddCtrl {
 
   confirm() {
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloud.Project().User().v6().save({
         serviceName: this.serviceName,
       }, {

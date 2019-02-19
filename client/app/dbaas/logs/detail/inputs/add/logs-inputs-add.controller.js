@@ -1,10 +1,10 @@
 class LogsInputsAddCtrl {
-  constructor($state, $stateParams, ControllerHelper, LogsInputsService) {
+  constructor($state, $stateParams, CucControllerHelper, LogsInputsService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsInputsService = LogsInputsService;
     this.editMode = Boolean(this.inputId);
     this.initLoaders();
@@ -25,7 +25,7 @@ class LogsInputsAddCtrl {
    */
   initLoaders() {
     if (this.editMode) {
-      this.input = this.ControllerHelper.request.getHashLoader({
+      this.input = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId),
       });
     }

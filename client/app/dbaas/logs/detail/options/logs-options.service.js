@@ -1,11 +1,11 @@
 class LogsOptionsService {
-  constructor($translate, $window, ControllerHelper, LogsHelperService,
-    OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogsOfferService, LogsConstants) {
-    this.ControllerHelper = ControllerHelper;
+  constructor($translate, $window, CucControllerHelper, LogsHelperService,
+    OvhApiOrderCartServiceOption, CucServiceHelper, OvhApiDbaas, LogsOfferService, LogsConstants) {
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
     this.LogsHelperService = LogsHelperService;
-    this.ServiceHelper = ServiceHelper;
-    this.ControllerHelper = ControllerHelper;
+    this.CucServiceHelper = CucServiceHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.$translate = $translate;
     this.$window = $window;
     this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
@@ -41,8 +41,8 @@ class LogsOptionsService {
       .then((response) => {
         _.each(response, option => this.transformOption(option));
         return response.sort((optionA, optionB) => (optionA.type === optionB.type
-          ? this.ControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
-          : this.ControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
+          ? this.CucControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
+          : this.CucControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
       })
       .catch(err => this.LogsHelperService.handleError('logs_options_options_loading_error', err, {}));
   }
@@ -81,7 +81,7 @@ class LogsOptionsService {
   getManagedOptions(serviceName) {
     return this.getSubscribedOptions(serviceName)
       .then(response => _.map(response.options, option => this.transformManagedOptions(option)))
-      .catch(this.ServiceHelper.errorHandler('logs_options_manage_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_options_manage_get_error'));
   }
 
   /**
@@ -152,8 +152,8 @@ class LogsOptionsService {
           option => this.transformSubscribedOption(option, optionsCountMap),
         )
           .sort((optionA, optionB) => (optionA.type === optionB.type
-            ? this.ControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
-            : this.ControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
+            ? this.CucControllerHelper.constructor.naturalCompare(optionA.detail, optionB.detail)
+            : this.CucControllerHelper.constructor.naturalCompare(optionA.type, optionB.type)));
       });
   }
 
@@ -178,7 +178,7 @@ class LogsOptionsService {
         }, {});
         return Object.keys(groupedOptionsMap)
           .map(groupedOptionsName => groupedOptionsMap[groupedOptionsName])
-          .sort((optionA, optionB) => this.ControllerHelper.constructor.naturalCompare(
+          .sort((optionA, optionB) => this.CucControllerHelper.constructor.naturalCompare(
             optionA.type,
             optionB.type,
           ));
@@ -266,14 +266,14 @@ class LogsOptionsService {
   }
 
   showReactivateInfo(option) {
-    this.ControllerHelper.modal.showWarningModal({
+    this.CucControllerHelper.modal.showWarningModal({
       title: this.$translate.instant('logs_options_modal_reactivate_title'),
       message: this.$translate.instant('logs_options_modal_reactivate_description', { optionType: `${option.type}, ${option.detail}` }),
     });
   }
 
   terminateModal(option) {
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       submitButtonText: this.$translate.instant('logs_options_action_disable'),
       titleText: this.$translate.instant('logs_options_manage_terminate_title'),
       textHtml: this.$translate.instant('logs_options_manage_terminate_question', { optionType: `${option.type}, ${option.detail}` }),

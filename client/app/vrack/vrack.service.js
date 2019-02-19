@@ -1,11 +1,12 @@
 class VrackService {
-  constructor($q, $translate, ControllerHelper, OvhApiCloudProject, OvhApiVrack) {
+  constructor($q, $translate, CucControllerHelper, OvhApiCloudProject, OvhApiVrack, URLS) {
     this.$q = $q;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiVrack = OvhApiVrack;
     this.OvhApiCloudProject = OvhApiCloudProject;
     this.OvhApiCloudProjectV6 = OvhApiCloudProject.v6();
+    this.URLS = URLS;
   }
 
   static getGroupedServiceTypes() {
@@ -28,11 +29,11 @@ class VrackService {
   }
 
   getOrderUrl() {
-    return this.ControllerHelper.navigation.getConstant('website_order.vrack');
+    return this.CucControllerHelper.navigation.getConstant(_.get(this.URLS, 'website_order.vrack', ''));
   }
 
   selectVrackModal(vRacks, orderUrl) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vrack/modals/selectVrack.html',
         controller: 'SelectVrackCtrl',
@@ -77,7 +78,7 @@ class VrackService {
   }
 
   unlinkVrackModal(text) {
-    return this.ControllerHelper.modal.showConfirmationModal({
+    return this.CucControllerHelper.modal.showConfirmationModal({
       submitButtonText: this.$translate.instant('common_deactivate'),
       titleText: this.$translate.instant('private_network_deactivate'),
       text: text || this.$translate.instant('private_network_deactivate_confirmation'),

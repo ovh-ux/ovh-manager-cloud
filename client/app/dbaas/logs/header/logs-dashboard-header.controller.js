@@ -1,7 +1,8 @@
 class LogsDashboardHeaderCtrl {
-  constructor($stateParams, ControllerHelper, LogsDetailService, SidebarMenu, LogsHelperService) {
+  constructor($stateParams, CucControllerHelper, LogsDetailService, SidebarMenu,
+    LogsHelperService) {
     this.$stateParams = $stateParams;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsDetailService = LogsDetailService;
     this.SidebarMenu = SidebarMenu;
     this.serviceName = $stateParams.serviceName;
@@ -23,7 +24,7 @@ class LogsDashboardHeaderCtrl {
 
   initLoaders() {
     //  No error handling since we don't want to break anything for a title.
-    this.configuration = this.ControllerHelper.request.getHashLoader({
+    this.configuration = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName),
       successHandler: () => {
         this.title = this.configuration.data.displayName || this.configuration.data.serviceName;
