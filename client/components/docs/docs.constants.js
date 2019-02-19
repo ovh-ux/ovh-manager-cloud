@@ -51,6 +51,11 @@ angular.module('managerApp')
           atInternetClickTag: 'TopGuide-PublicCloud-all',
           isExternal: true,
           href: 'https://docs.ovh.com/fr/public-cloud/',
+        }, {
+          text: 'guide_project_apac_trafic',
+          atInternetClickTag: 'TopGuide-PublicCloud-traffic-apac',
+          isExternal: true,
+          href: 'https://www.ovh.com/fr/public-cloud/faq/#trafficAPAC',
         }],
       },
       VPS: {
@@ -136,6 +141,11 @@ angular.module('managerApp')
           atInternetClickTag: 'TopGuide-PublicCloud-all',
           isExternal: true,
           href: 'https://docs.ovh.com/gb/en/public-cloud/',
+        }, {
+          text: 'guide_project_apac_trafic',
+          atInternetClickTag: 'TopGuide-PublicCloud-traffic-apac',
+          isExternal: true,
+          href: 'https://www.ovh.co.uk/public-cloud/faq/#trafficAPAC',
         }],
       },
       VPS: {
@@ -210,6 +220,11 @@ angular.module('managerApp')
           text: 'guide_project_all',
           atInternetClickTag: 'TopGuide-PublicCloud-all',
           href: 'https://docs.ovh.com/asia/en/public-cloud/',
+        }, {
+          text: 'guide_project_apac_trafic',
+          atInternetClickTag: 'TopGuide-PublicCloud-traffic-apac',
+          isExternal: true,
+          href: 'https://www.ovh.com/asia/public-cloud/faq/#trafficAPAC',
         }],
       },
       VPS: {
@@ -276,6 +291,11 @@ angular.module('managerApp')
           text: 'guide_project_all',
           atInternetClickTag: 'TopGuide-PublicCloud-all',
           href: 'https://docs.ovh.com/au/en/public-cloud/',
+        }, {
+          text: 'guide_project_apac_trafic',
+          atInternetClickTag: 'TopGuide-PublicCloud-traffic-apac',
+          isExternal: true,
+          href: 'https://www.ovh.com.au/public-cloud/faq/#trafficAPAC',
         }],
       },
       VPS: {
@@ -342,6 +362,11 @@ angular.module('managerApp')
           text: 'guide_project_all',
           atInternetClickTag: 'TopGuide-PublicCloud-all',
           href: 'https://docs.ovh.com/sg/en/public-cloud/',
+        }, {
+          text: 'guide_project_apac_trafic',
+          atInternetClickTag: 'TopGuide-PublicCloud-traffic-apac',
+          isExternal: true,
+          href: 'https://www.ovh.com/sg/public-cloud/faq/#trafficAPAC',
         }],
       },
       VPS: {
