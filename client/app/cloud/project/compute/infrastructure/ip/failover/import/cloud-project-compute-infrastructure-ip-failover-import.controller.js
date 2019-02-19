@@ -2,8 +2,8 @@
 
 angular.module('managerApp')
   .controller('CloudProjectComputeInfrastructureIpFailoverImportCtrl', function CloudProjectComputeInfrastructureIpFailoverImportCtrl(
-    $scope, $uibModalInstance, OvhApiIp, $translate, CucCloudMessage, OvhApiCloudProjectInstance,
-    $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps,
+    $q, $scope, $stateParams, $translate, $uibModalInstance, atInternet, CucCloudMessage,
+    pendingImportIps, OvhApiCloudProjectInstance, OvhApiIp, OvhApiMe,
   ) {
     const self = this;
 
@@ -116,6 +116,10 @@ angular.module('managerApp')
     // ---------MODAL---------
 
     self.confirm = function () {
+      atInternet.trackClick({
+        name: 'confirm_import_failover_ips_ovh',
+        type: 'action',
+      });
       if (!self.loaders.table.importIpsFo) {
         const listPromise = [];
 

@@ -1,11 +1,14 @@
 class CloudProjectComputeLoadbalancerCtrl {
   constructor(
-    $q, $translate, $state, $stateParams, CloudProjectComputeLoadbalancerService,
+    $q, $translate, $state, $stateParams, atInternet, CloudProjectComputeLoadbalancerService,
     OvhApiCloudProjectIplb, OvhApiIpLoadBalancing, CucCloudMessage, OvhApiMe, URLS,
   ) {
     this.$q = $q;
     this.$translate = $translate;
     this.$state = $state;
+    this.$window = $window;
+
+    this.atInternet = atInternet;
     this.CloudProjectComputeLoadbalancerService = CloudProjectComputeLoadbalancerService;
     this.OvhApiCloudProjectIplb = OvhApiCloudProjectIplb;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
@@ -49,6 +52,15 @@ class CloudProjectComputeLoadbalancerCtrl {
     this.$state.go('network.iplb.detail.home', {
       serviceName,
     });
+  }
+
+  buyLoadBalancer() {
+    this.atInternet.trackClick({
+      name: 'order_load_balancer',
+      type: 'action',
+    });
+
+    this.$window.location.href = this.urls.website_order.load_balancer[this.locale];
   }
 
   getLoadbalancers(clearCache) {

@@ -7,11 +7,9 @@
     </cui-page-content-title>
 
     <div data-ng-if="storages !== null">
-        <a class="oui-button oui-button_secondary"
-           data-ui-sref="iaas.pci-project.compute.storage.add-container"
-           write-right-required>
-            {{ 'storage_add_button'|translate }}
-        </a>
+        <oui-button data-variant="secondary" data-on-click="createContainer()">
+            <span data-translate="storage_add_button"></span>
+        </oui-button>
         <div class="pull-right" data-ng-if="storages.length > 0">
             <input type="search"
             class="oui-input"

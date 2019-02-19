@@ -2,6 +2,7 @@ class CloudProjectBillingRightsAddCtrl {
   constructor(
     $stateParams,
     $uibModalInstance,
+    atInternet,
     CucControllerHelper,
     CucCloudMessage,
     model,
@@ -9,6 +10,7 @@ class CloudProjectBillingRightsAddCtrl {
   ) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
+    this.atInternet = atInternet;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.model = model;
@@ -20,6 +22,10 @@ class CloudProjectBillingRightsAddCtrl {
   }
 
   validateAddRight() {
+    this.atInternet.trackClick({
+      name: 'validation_add_contact',
+      type: 'action',
+    });
     this.CucCloudMessage.flushChildMessage();
     this.loader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloud.Project().Acl().v6().add({

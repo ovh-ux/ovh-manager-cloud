@@ -46,7 +46,10 @@
                         class="oui-button oui-button_link oui-button_icon-right btn-margin"
                         title="{{:: 'cpb_rights_modify' | translate}}"
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
-                        data-ng-click="BillingRightsCtrl.openContacts()">
+                        data-ng-click="BillingRightsCtrl.openContacts()"
+                        data-track-on="click"
+                        data-track-name="modification_contact_admin"
+                        data-track-click="action">
                         <span data-translate="cpb_rights_modify"></span>
                         <i class="fa fa-external-link"></i>
                     </button>
@@ -91,7 +94,10 @@
                         class="oui-button oui-button_link oui-button_icon-right btn-margin"
                         title="{{:: 'cpb_rights_modify' | translate}}"
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
-                        data-ng-click="BillingRightsCtrl.openContacts()">
+                        data-ng-click="BillingRightsCtrl.openContacts()"
+                        data-track-on="click"
+                        data-track-name="modification_contact_facturation"
+                        data-track-click="action">
                         <span data-translate="cpb_rights_modify"></span>
                         <i class="fa fa-external-link"></i>
                     </button>
@@ -111,8 +117,10 @@
         <button data-ng-click="BillingRightsCtrl.showAddRight()"
             class="oui-button oui-button_secondary mb-3"
             data-ng-disabled="BillingRightsCtrl.loader.rights || BillingRightsCtrl.data.rightIds === null"
-            data-ng-if="BillingRightsCtrl.model.isAdmin"
-            data-ng-class="{'visibility-hide' : BillingRightsCtrl.toggle.addUser}">
+            data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.toggle.addUser"
+            data-track-on="click"
+            data-track-name="add_contact"
+            data-track-click="action">
             <span translate="common_add"></span>
         </button>
 

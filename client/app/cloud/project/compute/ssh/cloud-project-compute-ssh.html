@@ -35,6 +35,9 @@
                 class="oui-button oui-button_secondary"
                 data-ng-disabled="$ctrl.keys.loading || $ctrl.table.ssh === null"
                 data-ng-class="{'visibility-hide' : $ctrl.toggle.openAddSsh}"
+                data-track-on="click"
+                data-track-name="add_ssh_key"
+                data-track-click="action"
                 write-right-required>
             <span translate="cpc_ssh_add_button"></span>
         </button>

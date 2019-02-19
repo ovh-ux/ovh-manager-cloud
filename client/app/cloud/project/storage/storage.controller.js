@@ -2,18 +2,20 @@ angular.module('managerApp').controller('RA.storageCtrl', [
   '$filter',
   '$rootScope',
   '$scope',
+  '$state',
   '$stateParams',
   '$translate',
   '$uibModal',
+  'atInternet',
   'CloudStorageContainer',
   'CloudStorageContainers',
   'CloudStorageContainerTasksRunner',
   'CucCloudMessage',
   'ovhDocUrl',
   'RegionService',
-  function ($filter, $rootScope, $scope, $stateParams, $translate, $uibModal, CloudStorageContainer,
-    CloudStorageContainers, CloudStorageContainerTasksRunner, CucCloudMessage, ovhDocUrl,
-    RegionService) {
+  function ($filter, $rootScope, $scope, $state, $stateParams, $translate, $uibModal, atInternet,
+    CloudStorageContainer, CloudStorageContainers, CloudStorageContainerTasksRunner,
+    CucCloudMessage, ovhDocUrl, RegionService) {
     $scope.projectId = $stateParams.projectId;
     $scope.loaders = {
       storages: true,
@@ -205,6 +207,14 @@ angular.module('managerApp').controller('RA.storageCtrl', [
       }).result.then(() => {
         deleteContainer(container);
       });
+    };
+
+    $scope.createContainer = function () {
+      atInternet.trackClick({
+        name: 'create_container',
+        type: 'action',
+      });
+      return $state.go('iaas.pci-project.compute.storage.add-container');
     };
 
     function getStorages() {

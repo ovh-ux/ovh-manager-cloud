@@ -65,7 +65,10 @@
                     <li>
                         <button type="button" class="btn fs14"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.importIpFailover()"
-                                data-ng-bind=":: 'cpci_import_ip_failover' | translate">
+                                data-ng-bind=":: 'cpci_import_ip_failover' | translate"
+                                data-at-internet-click="{
+                                    name: 'cloud-project::cloud-project-compute::import_failover_ips_ovh'
+                                }">
                         </button>
                     </li>
                     <li>

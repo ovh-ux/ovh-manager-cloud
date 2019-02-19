@@ -262,6 +262,10 @@ angular.module('managerApp')
 
       self.putPostVolume = function putPostVolume() {
         self.loaders.launch = true;
+        atInternet.trackClick({
+          name: 'payment_add_disk',
+          type: 'action',
+        });
         // POST
         if (self.volumeInEdition.status === 'DRAFT') {
           CloudProjectComputeVolumesOrchestrator.saveNewVolume(self.volumeInEdition).then(() => {

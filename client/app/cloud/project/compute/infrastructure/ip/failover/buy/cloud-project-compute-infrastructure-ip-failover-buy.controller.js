@@ -189,6 +189,10 @@ angular.module('managerApp')
     }
 
     self.confirm = function confirm() {
+      atInternet.trackClick({
+        name: 'bc_failover_ips_ovh',
+        type: 'action',
+      });
       buyIps();
     };
 

@@ -5,7 +5,10 @@
         data-ng-class="{
             'visibility-hide' : CloudProjectOpenstackUsersCtrl.toggle.openAddUser
         }"
-        write-right-required>
+        data-write-right-required
+        data-track-on="click"
+        data-track-name="add_user"
+        data-track-click="action">
     <span translate="openstackusers_users_add_button"></span>
 </button>
 

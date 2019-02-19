@@ -53,6 +53,9 @@
                     data-ng-if="CloudProjectComputeQuotaCtrl.TARGET !== 'US'"
                     data-ng-disabled="!CloudProjectComputeQuotaCtrl.datas.quota || (CloudProjectComputeQuotaCtrl.datas.quota && CloudProjectComputeQuotaCtrl.datas.quota.length === 0)"
                     data-ng-click="CloudProjectComputeQuotaCtrl.openSupport()"
+                    data-track-on="click"
+                    data-track-name="improve_limits"
+                    data-track-click="action"
                     write-right-required
                     data-translate="cpb_quota_protect_more_btn">
             </button>

@@ -1,12 +1,15 @@
 class CloudProjectComputeSshCtrl {
-  constructor(OvhApiCloudProjectSshKey, CloudProjectSSHKeyService, $translate,
-    CucControllerHelper, CucCloudMessage, $stateParams, ovhDocUrl) {
-    this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
-    this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
+  constructor($stateParams, $translate, atInternet, CucControllerHelper, CucCloudMessage,
+    CloudProjectSSHKeyService, OvhApiCloudProjectSshKey,
+    ovhDocUrl) {
+    this.$stateParams = $stateParams;
     this.$translate = $translate;
+
+    this.atInternet = atInternet;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
-    this.$stateParams = $stateParams;
+    this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
+    this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
     this.ovhDocUrl = ovhDocUrl;
 
     this.serviceName = $stateParams.projectId;
@@ -76,6 +79,10 @@ class CloudProjectComputeSshCtrl {
       this.CucCloudMessage.error(this.$translate.instant('cpc_ssh_add_submit_name_error'));
       return;
     }
+    this.atInternet.trackClick({
+      name: 'validation_add_ssh_key',
+      type: 'action',
+    });
     this.createKey.load();
   }
 

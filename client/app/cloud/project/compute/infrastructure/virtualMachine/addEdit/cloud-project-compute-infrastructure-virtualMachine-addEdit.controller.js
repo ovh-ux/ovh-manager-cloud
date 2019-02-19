@@ -877,6 +877,10 @@ angular.module('managerApp')
       };
 
       self.putPostVM = function putPostVM() {
+        atInternet.trackClick({
+          name: 'payment_add_serveur',
+          type: 'action',
+        });
         self.loaders.launch = true;
         self.backToMenu();
 
