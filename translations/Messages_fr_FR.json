@@ -80,5 +80,15 @@
   "kube_containers_description": "Vous pourrez bientôt retrouver ici tous les conteneurs et services hébergés par votre cluster Kubernetes.",
   "kube_containers_description_dashboard": "Nous vous invitons à utiliser l'outil en ligne de commande \"kubectl\" ou installer le Daskboard Kubernetes. Il s'agit d'une interface utilisateur web maintenue par la communauté Kubernetes, elle-même exposée en tant que service au sein de votre cluster.",
   "kube_containers_description_dashboard_link": "Suivez <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">ce tutoriel<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a> pour installer le dashboard Kubernetes.",
-  "kube_containers_description_documentation": "Pendant la phase bêta, vous trouverez de la documentation (comment orchestrer et exposer vos services sur Internet…) dans la <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">section Kubernetes du site labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>"
+  "kube_containers_description_documentation": "Pendant la phase bêta, vous trouverez de la documentation (comment orchestrer et exposer vos services sur Internet…) dans la <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">section Kubernetes du site labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
+  "kube_service_upgrade_policy": "Politique de mise à niveau",
+  "kube_service_upgrade_policy_NEVER_UPDATE": "Ne pas mettre à jour",
+  "kube_service_upgrade_policy_MINIMAL_DOWNTIME": "Indisponibilité minimale",
+  "kube_service_upgrade_policy_ALWAYS_UPDATE": "Sécurité Maximale",
+  "kube_service_upgrade_policy_description_NEVER_UPDATE": "Nous vous déconseillons ce choix. OVH se réserve la possibilité de mettre à jour exceptionnellement des composants Kubernetes ou vos nœuds, dans des cas critiques limitant la sécurité de notre infrastructure.",
+  "kube_service_upgrade_policy_description_MINIMAL_DOWNTIME": "Mettre à jour les composants versions mineures de mon service Kubernetes, pour garantir la sécurité et stabilité du service. Si nous ne pouvons effectuer une mise à jour roulante de vos nœuds sans arrêt de service, celle-ci est reportée. Nous vous conseillons de dimensionner votre cluster pour garantir une mise à jour à tout moment.",
+  "kube_service_upgrade_policy_description_ALWAYS_UPDATE": "Mettre à jour les composants versions mineures de mon service Kubernetes, pour garantir la sécurité et stabilité du service. La mise à jour entrainera possiblement une indisponibilité de quelques minutes lors de la mise à jour roulante de vos nœuds.",
+  "kube_service_upgrade_policy_model_title": "Modifier la politique de mise à niveau",
+  "kube_service_upgrade_policy_success": "La 'politique de mise à niveau' a été modifiée",
+  "kube_service_upgrade_policy_error": "Échec de la modification de la 'politique de mise à niveau': {{ message }}"
 }
