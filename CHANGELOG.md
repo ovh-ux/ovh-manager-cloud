@@ -1,3 +1,17 @@
+# [7.17.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.16.0...v7.17.0) (2019-02-20)
+
+
+### Bug Fixes
+
+* replace region add success message ([5e8f8d4](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e8f8d4))
+
+
+### Features
+
+* **cloud.project.compute.infrastructure:** support NVIDIA GPU OS ([#1277](https://github.com/ovh-ux/ovh-manager-cloud/issues/1277)) ([0196991](https://github.com/ovh-ux/ovh-manager-cloud/commit/0196991))
+
+
+
 # [7.16.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.7...v7.16.0) (2019-02-19)
 
 
