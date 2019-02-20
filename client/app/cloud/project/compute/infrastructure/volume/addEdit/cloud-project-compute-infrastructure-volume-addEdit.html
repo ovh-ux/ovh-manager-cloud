@@ -39,7 +39,7 @@
                                            data-ng-model="VolumeAddEditCtrl.volumeInEdition.name"
                                            required
                                            ng-maxlength="255"
-                                           autofocus autoselect
+                                           cuc-autofocus cuc-autoselect
                                            data-ng-keyup="VolumeAddEditCtrl.toggleEditVolumeName(true, $event)">
                                     <span class="input-group-btn">
                                         <button type="reset" class="btn"
@@ -324,7 +324,7 @@
                                     class="pointer"
                                     role="button"
                                     tabindex="0"
-                                    click-enter-on-keypress>
+                                    cuc-click-enter-on-keypress>
                                     <!-- RADIO CELL -->
                                     <td style="30px;">
                                         <flat-radio>
@@ -439,7 +439,7 @@
 
                                     <tr data-ng-repeat="region in VolumeAddEditCtrl.panelsData.regions"
                                         data-ng-click="VolumeAddEditCtrl.volumeInEdition.region = region"
-                                        class="pointer" role="button" tabindex="0" click-enter-on-keypress>
+                                        class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress>
 
                                         <td style="width: 50px; vertical-align: middle">
                                             <flat-radio>

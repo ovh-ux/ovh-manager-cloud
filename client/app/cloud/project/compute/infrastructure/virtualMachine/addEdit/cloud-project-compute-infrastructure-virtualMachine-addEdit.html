@@ -8,7 +8,7 @@
     -->
     <div data-responsive-switch
          data-responsive-switch-match-media="(max-width: 800px)"
-         data-smooth-scroll-here="{ delay: 500, offset: -100 }"
+         data-cuc-smooth-scroll-here="{ delay: 500, offset: -100 }"
          data-responsive-switch-pages-width="450"
          data-responsive-switch-active-page-index="{{ VmAddEditCtrl.activeSwitchPageIndex }}">
 
@@ -49,7 +49,7 @@
                                            data-ng-model="VmAddEditCtrl.vmInEdition.name"
                                            required
                                            ng-maxlength="255"
-                                           autofocus autoselect
+                                           cuc-autofocus cuc-autoselect
                                            keep-label-when-empty="true"
                                            data-ng-keyup="VmAddEditCtrl.toggleEditVmName(true, $event)">
                                     <span class="input-group-btn">
@@ -836,7 +836,7 @@
                                                         data-ng-click="VmAddEditCtrl.selectFlavor(categoryObject.category, flavor)"
                                                         data-ng-mouseenter="VmAddEditCtrl.onMouseEnterFlavor(categoryObject.category, flavor)"
                                                         data-ng-class="{'disabled opacity5': flavor.disabled || flavor.deprecated || !flavor.available}"
-                                                        class="pointer" role="button" tabindex="0" click-enter-on-keypress
+                                                        class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                                         data-uib-tooltip="{{:: flavor.disabled ? ('cpcivm_addedit_flavor_disabled_' + flavor.disabled | translate) : (flavor.deprecated ? ('cpcivm_addedit_flavor_deprecated' | translate) : '') }}">
                                                         <td class="text-center">
                                                             <flat-radio>
@@ -983,7 +983,7 @@
                                         <tr data-ng-repeat="image in images track by image.id"
                                             data-ng-click="VmAddEditCtrl.model.imageId = (image.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(image)) ? VmAddEditCtrl.model.imageId : image.id"
                                             data-ng-class="{'disabled opacity5': image.disabled || image.deprecated || !VmAddEditCtrl.isImageSelectableInEditMode(app) }"
-                                            class="pointer" role="button" tabindex="0" click-enter-on-keypress
+                                            class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: image.disabled ? ('cpcivm_addedit_image_disabled_' + image.disabled | translate) : (image.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
                                             <td style="width: 50px;">
@@ -1034,7 +1034,7 @@
                                         <tr data-ng-repeat="app in VmAddEditCtrl.displayData.apps track by app.id"
                                             data-ng-click="VmAddEditCtrl.model.imageId = (app.disabled || !VmAddEditCtrl.isImageSelectableInEditMode(app)) ? VmAddEditCtrl.model.imageId : app.id"
                                             data-ng-class="{'disabled opacity5': app.disabled || app.deprecated || !VmAddEditCtrl.isImageSelectableInEditMode(app) }"
-                                            class="pointer" role="button" tabindex="0" click-enter-on-keypress
+                                            class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: app.disabled ? ('cpcivm_addedit_image_disabled_' + app.disabled | translate) : (app.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
                                             <td style="width: 50px;">
@@ -1091,7 +1091,7 @@
                                         <tr data-ng-repeat="snapshot in VmAddEditCtrl.displayData.snapshots track by snapshot.id"
                                             data-ng-click="VmAddEditCtrl.model.imageId = snapshot.disabled ? VmAddEditCtrl.model.imageId : snapshot.id"
                                             data-ng-class="{'disabled opacity5': snapshot.disabled || snapshot.deprecated }"
-                                            class="pointer" role="button" tabindex="0" click-enter-on-keypress
+                                            class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: snapshot.disabled ? ('cpcivm_addedit_image_disabled_' + snapshot.disabled | translate) : (snapshot.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
                                             <td style="width: 50px;">
@@ -1186,7 +1186,7 @@
 
                                         <tr data-ng-repeat="region in VmAddEditCtrl.panelsData.regions"
                                             data-ng-click="VmAddEditCtrl.model.region = region"
-                                            class="pointer" role="button" tabindex="0" click-enter-on-keypress>
+                                            class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress>
 
                                             <td style="width: 50px;">
                                                 <flat-radio>
@@ -1386,7 +1386,7 @@
                                            required
                                            ng-pattern="/^[\w\-\s]+$/"
                                            ng-maxlength="255"
-                                           autofocus>
+                                           cuc-autofocus>
                                 </div>
 
                                 <div class="left-space-p8 right-space-p8" ng-messages="sshKeyFormAdd.sshKeyAddName.$error" data-ng-if="sshKeyFormAdd.sshKeyAddName.$dirty">
@@ -1517,7 +1517,7 @@
                                                 <span translate="cpcivm_addedit_sshkey_delete_cancel"></span>
                                             </button>
                                             <button class="btn btn-danger" type="submit"
-                                                data-ovh-stop-event="click" autofocus
+                                                data-ovh-stop-event="click" cuc-autofocus
                                                 data-ng-click="VmAddEditCtrl.deleteSshKey(sshKey.id)">
                                                 <i data-ng-hide="VmAddEditCtrl.loaders.sshKey.remove" class="glyphicon glyphicon-trash right-space-m8"></i>
                                                 <spinner name="bubbles-fff-d34936-16" data-ng-if="VmAddEditCtrl.loaders.sshKey.remove"></spinner>

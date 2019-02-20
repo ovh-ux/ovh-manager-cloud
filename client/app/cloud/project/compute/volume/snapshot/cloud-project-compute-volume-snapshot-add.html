@@ -31,8 +31,8 @@
             <input type="text" class="oui-input" id="volumeSnapshotName" name="volumeSnapshotName"
                 placeholder="{{:: 'cpcv_snapshot_name' | translate }}"
                 data-ng-model="CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.name"
-                autoselect
-                autofocus
+                cuc-autoselect
+                cuc-autofocus
                 required
                 ng-maxlength="255">
             <div data-ng-messages="volumeSnapshotCreationForm.volumeSnapshotName.$error"
