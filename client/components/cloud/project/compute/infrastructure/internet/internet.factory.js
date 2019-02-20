@@ -1,5 +1,5 @@
 angular.module('managerApp').factory('CloudProjectComputeInfraInternetFactory',
-  (CloudProjectComputeInfraIpFactory, OrderedHashFactory) => {
+  (CloudProjectComputeInfraIpFactory, CucOrderedHashFactory) => {
     /**
      *  Defines a cloud project compute infrastructure internet
      *
@@ -18,7 +18,8 @@ angular.module('managerApp').factory('CloudProjectComputeInfraInternetFactory',
         }
 
         this.serviceName = options.serviceName || null;
-        this.ipList = new OrderedHashFactory(); // TODO : make it an array of OrderedHashFactory
+        // TODO : make it an array of CucOrderedHashFactory
+        this.ipList = new CucOrderedHashFactory();
 
         // Init le internet
         if (options.ipList && options.ipList.length) {

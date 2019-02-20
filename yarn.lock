@@ -1025,10 +1025,10 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.4":
-  version "0.1.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.4.tgz#d247b1d1765b25d24b6b2b04d6d15140cd9c2f05"
-  integrity sha512-bFFF41SmVgY0yePo4dMwBEqRkrZfRYdrwMqXChjSoRIzNw2tJOP/VYOKA1hLuPiDL7wiPJZdd9ZyaBY8nHSq4A==
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.5":
+  version "0.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.5.tgz#436c3e3ffe669740c75943d21aa24b5655f5ddc7"
+  integrity sha512-5AUq2gg9dh/4vy4aG/u+Y4sbW7iESF7l1GI5ZfkeBYIW3fyXNXzCAkmcpocfrZ77xU6YjoJfjQxXza2dLA5f3g==
   dependencies:
     bootstrap "~3.3.0"
     lodash "^4.17.11"
