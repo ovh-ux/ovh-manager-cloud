@@ -90,6 +90,7 @@
   "cpci_vm_flavor_month": "{{price}} HT/mois",
   "cpci_price_month_btn": "({{price}} HT/mois)",
   "cpci_vm_private_ip": "IP privée",
+<<<<<<< HEAD
   "cpci_vm_flavor_category_ks-1": "KS-1",
   "cpci_vm_flavor_category_ks-2": "KS-2",
   "cpci_vm_flavor_category_vps-ssd-1": "VPS-SSD-1",
@@ -282,6 +283,8 @@
   "cpci_vm_flavor_category_win-g3-60": "G3-60",
   "cpci_vm_flavor_category_win-g3-120": "G3-120",
   "cpci_vm_flavor_category_win-g3-240": "G3-240",
+=======
+>>>>>>> fix(translation): t1-180 flaviour
   "cpci_vm_alert_cpu": "Votre cpu a atteint plus de {{percentage}} de la puissance allouée au cours des 7 derniers jours.",
   "cpci_vm_alert_ram": "Votre ram a atteint plus de {{percentage}} de l'espace utilisé au cours des 7 derniers jours.",
   "cpci_vm_flavor_category_ra_intel_sb_m": "M",

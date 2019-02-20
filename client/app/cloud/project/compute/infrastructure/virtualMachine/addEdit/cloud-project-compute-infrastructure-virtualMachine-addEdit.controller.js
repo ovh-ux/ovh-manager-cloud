@@ -100,6 +100,7 @@ angular.module('managerApp')
       ovhDocUrl,
       CucRegionService,
       CLOUD_FLAVOR_SPECIFIC_IMAGE,
+      CLOUD_FLAVOR_TYPES,
       CLOUD_FLAVORTYPE_CATEGORY,
       CLOUD_INSTANCE_CPU_FREQUENCY,
       CLOUD_INSTANCE_DEFAULT_FALLBACK,
@@ -1927,6 +1928,10 @@ angular.module('managerApp')
 
       self.showCeph = function showCeph(category) {
         return _.includes(['balanced', 'cpu', 'ram'], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], 'ceph', false) !== undefined;
+      };
+
+      self.getFlavorDisplayName = function getFlavorDisplayName(name) {
+        return CLOUD_FLAVOR_TYPES[name] || name;
       };
     });
 /* eslint-disable no-use-before-define, consistent-return */
