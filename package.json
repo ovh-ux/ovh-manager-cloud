@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@ovh-ux/ng-ovh-apiv7": "^2.0.0",
-    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.1.0-alpha.4",
+    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.1.0-alpha.5",
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth-modal-plugin": "^3.0.0",
