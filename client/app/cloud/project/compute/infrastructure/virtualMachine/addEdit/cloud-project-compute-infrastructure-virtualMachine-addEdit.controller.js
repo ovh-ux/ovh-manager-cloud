@@ -376,6 +376,38 @@ angular.module('managerApp')
             self.states.hasOldFlavors = true;
           }
         });
+        // Remove flavors if OS has any restrictions,
+        // for example NVIDIA OS can only be deployed on t1 or t2 instances/flavours
+        const restrictedFlavors = _.get(self.vmInEdition, 'image.flavorType', []);
+        const selectedFlavour = _.get(self.vmInEdition, 'flavor');
+        let selectedFlavourInFilterList = false;
+        if (!_.isEmpty(restrictedFlavors)) {
+          self.displayData.categories = _.filter(
+            self.displayData.categories,
+            (category) => {
+              const currentCategory = category;
+              currentCategory.flavors = _.filter(
+                category.flavors,
+                (flavor) => {
+                  const isRestricted = _.includes(restrictedFlavors, flavor.shortType);
+                  if (!selectedFlavourInFilterList
+                    && isRestricted
+                    && selectedFlavour.id === flavor.id) {
+                    selectedFlavourInFilterList = true;
+                  }
+                  return isRestricted;
+                },
+              );
+              return currentCategory.flavors.length > 0;
+            },
+          );
+          // check if previously selected instance is available in filtered list
+          // set flavour/instance to empty if
+          // previously selefcted flavour is not available in filtered list
+          if (!selectedFlavourInFilterList) {
+            _.set(self.vmInEdition, 'flavor', null);
+          }
+        }
         self.displayData.categories = _.sortBy(self.displayData.categories, 'order');
       }
 
@@ -1434,6 +1466,21 @@ angular.module('managerApp')
 
       self.hasGuaranteedRessources = function hasGuaranteedRessources(flavorType) {
         return _.find(CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, elem => elem === flavorType);
+      };
+
+      /**
+       * We dont support OS and flavour change at same time.
+       * NVIDIA OS supported only in t1 and t2 instances.
+       * If previous flavour is not t1 or t2, dont allow to select NVIDIA.
+       * This is also applicable for other images with restricted flavours.
+       */
+      self.isImageSelectableInEditMode = function isImageSelectableInEditMode(image) {
+        const flavorTypes = _.get(image, 'flavorType', []);
+        if (self.vmInEdition.status === 'DRAFT' || _.isEmpty(flavorTypes)) {
+          return true;
+        }
+        const flavorType = _.get(self.vmInEdition, 'flavor.shortType', null);
+        return _.includes(flavorTypes, flavorType);
       };
 
       self.getRealFlavor = function getRealFlavor(flavor, category) {
