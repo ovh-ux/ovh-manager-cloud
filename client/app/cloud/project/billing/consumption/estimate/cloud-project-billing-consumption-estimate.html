@@ -1,7 +1,7 @@
 <div class="row cloud-billing-estimate-content">
     <section class="cloud-billing-estimate-summary col-sm-6 col-lg-6">
         <header>
-            <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: $ctrl.constructor.getNextMonth().format('MMMM')}"/>
+            <h3 data-translate="cpbe_estimate_summary_header" data-translate-values="{ month: $ctrl.constructor.getNextMonthDate().format('MMMM')}"/>
             <p data-ng-if="!$ctrl.loaders.forecast" class="center-block text-center" data-ng-bind="$ctrl.forecast.total.text"></p>
         </header>
         <div class="text-center" data-ng-if="$ctrl.loaders.forecast">
@@ -12,7 +12,7 @@
                data-translate-values="{ total: $ctrl.forecast.monthly.text }"></p>
             <p data-translate="cpbe_estimate_summary_hourly_consumption_label"
                data-translate-values="{
-                   month: $ctrl.constructor.getCurrentMonth().format('MMMM'),
+                   month: $ctrl.constructor.getCurrentDate().format('MMMM'),
                    total: $ctrl.forecast.hourly.text
                }"></p>
         </div>
