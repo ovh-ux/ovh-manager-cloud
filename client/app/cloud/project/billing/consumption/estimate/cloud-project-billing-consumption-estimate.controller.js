@@ -6,8 +6,8 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     $translate,
     $uibModal,
     CucCloudMessage,
-    CloudProjectBillingAgoraService,
     CloudProjectBillingService,
+    CloudProjectBillingLegacyService,
     OvhApiCloudProjectAlerting,
     OvhApiCloudProjectUsageCurrent,
     OvhApiCloudProjectUsageForecast,
@@ -17,8 +17,8 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.CucCloudMessage = CucCloudMessage;
-    this.CloudProjectBillingAgoraService = CloudProjectBillingAgoraService;
     this.CloudProjectBillingService = CloudProjectBillingService;
+    this.CloudProjectBillingLegacyService = CloudProjectBillingLegacyService;
     this.OvhApiCloudProjectAlerting = OvhApiCloudProjectAlerting;
     this.OvhApiCloudProjectUsageCurrent = OvhApiCloudProjectUsageCurrent;
     this.OvhApiCloudProjectUsageForecast = OvhApiCloudProjectUsageForecast;
@@ -44,11 +44,11 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       deleteAlert: false,
     };
 
-    return this.CloudProjectBillingAgoraService.getIfProjectUsesAgora(this.serviceName)
-      .then(projectUsesAgora => (projectUsesAgora
-        ? this.getAgoraForecast()
-        : this.getLegacyForecast()))
-      .then(() => this.initAlert())
+    return this.CloudProjectBillingService.getIfProjectUsesAgora(this.serviceName)
+      .then(projectUsesAgora => this.$q.all({
+        alert: this.initAlert(),
+        forecast: (projectUsesAgora ? this.getAgoraForecast() : this.getLegacyForecast()),
+      }))
       .catch((err) => {
         this.CucCloudMessage.error([this.$translate.instant('cpbe_estimate_price_error_message'), (err.data && err.data.message) || ''].join(' '));
       })
@@ -73,20 +73,20 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
   }
 
   getAgoraForecast() {
-    return this.CloudProjectBillingAgoraService.getProjectServiceInfos(this.serviceName)
+    return this.CloudProjectBillingService.getProjectServiceInfos(this.serviceName)
       .then(({ serviceId }) => this.$q.all({
-        billForecast: this.CloudProjectBillingAgoraService.getBillForecast(serviceId),
-        hourlyForecast: this.CloudProjectBillingAgoraService.getCurrentForecast(serviceId),
-        consumption: this.CloudProjectBillingAgoraService.getCurrentConsumption(serviceId),
+        billForecast: this.CloudProjectBillingService.getBillForecast(serviceId),
+        hourlyForecast: this.CloudProjectBillingService.getCurrentForecast(serviceId),
+        consumption: this.CloudProjectBillingService.getCurrentConsumption(serviceId),
       }))
       .then(({ billForecast, hourlyForecast, consumption }) => {
-        this.forecast.hourly = _.get(hourlyForecast, 'price', this.CloudProjectBillingAgoraService.formatEmptyPrice(this.forecast.currencySymbol));
+        this.forecast.hourly = _.get(hourlyForecast, 'price', this.CloudProjectBillingService.formatEmptyPrice(this.forecast.currencySymbol));
         this.forecast.monthly = billForecast.prices.withoutTax;
-        this.forecast.total = this.CloudProjectBillingAgoraService.constructor.formatPrice(
+        this.forecast.total = this.CloudProjectBillingService.constructor.formatPrice(
           this.forecast.monthly.value + this.forecast.hourly.value,
           this.forecast.currencySymbol,
         );
-        this.consumption.hourly = _.get(consumption, 'price', this.CloudProjectBillingAgoraService.formatEmptyPrice(this.forecast.currencySymbol));
+        this.consumption.hourly = _.get(consumption, 'price', this.CloudProjectBillingService.formatEmptyPrice(this.forecast.currencySymbol));
       });
   }
 
@@ -95,14 +95,14 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       .get({
         serviceName: this.$stateParams.projectId,
       }).$promise
-      .then(billingInfo => this.CloudProjectBillingService
+      .then(billingInfo => this.CloudProjectBillingLegacyService
         .getConsumptionDetails(billingInfo, billingInfo)
         .then((data) => {
-          this.forecast.hourly = this.CloudProjectBillingAgoraService.constructor
+          this.forecast.hourly = this.CloudProjectBillingService.constructor
             .formatPrice(data.totals.hourly.total, data.totals.currencySymbol);
-          this.forecast.monthly = this.CloudProjectBillingAgoraService.constructor
+          this.forecast.monthly = this.CloudProjectBillingService.constructor
             .formatPrice(data.totals.monthly.total, data.totals.currencySymbol);
-          this.forecast.total = this.CloudProjectBillingAgoraService.constructor
+          this.forecast.total = this.CloudProjectBillingService.constructor
             .formatPrice(data.totals.total, data.totals.currencySymbol);
         })
         .finally(() => {
@@ -116,12 +116,12 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       .get({
         serviceName: this.$stateParams.projectId,
       }).$promise
-      .then(billingInfo => this.CloudProjectBillingService.getConsumptionDetails(
+      .then(billingInfo => this.CloudProjectBillingLegacyService.getConsumptionDetails(
         billingInfo,
         billingInfo,
       ))
       .then((data) => {
-        this.consumption.hourly = this.CloudProjectBillingAgoraService.constructor.formatPrice(
+        this.consumption.hourly = this.CloudProjectBillingService.constructor.formatPrice(
           data.totals.total,
           this.forecast.currencySymbol,
         );

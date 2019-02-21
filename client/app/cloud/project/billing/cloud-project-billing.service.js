@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .service('CloudProjectBillingService', function ($q, OvhApiMe) {
+  .service('CloudProjectBillingLegacyService', function ($q, OvhApiMe) {
     const self = this;
 
     function roundNumber(number, decimals) {

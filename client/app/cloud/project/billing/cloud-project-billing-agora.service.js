@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .service('CloudProjectBillingAgoraService',
+  .service('CloudProjectBillingService',
     class {
       /* @ngInject */
       constructor(
