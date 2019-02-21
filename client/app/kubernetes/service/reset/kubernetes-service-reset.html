@@ -7,7 +7,7 @@
                data-secondary-action="ctrl.cancel()"
                data-secondary-label="{{ ::'common_cancel' | translate }}"
                data-on-dismiss="ctrl.cancel()"
-               data-loading="ctrl.loading"
+               data-loading="ctrl.loading.init || ctrl.loading.reset"
                data-type="warning">
         <p class="oui-paragraph" data-translate="kube_service_reset_message"></p>
         <oui-field data-label="{{:: 'kube_service_reset_enter' | translate }}">
@@ -27,6 +27,19 @@
                     <span data-translate="common_reinstall"></span>
                 </oui-radio>
             </oui-radio-group>
+        </oui-field>
+        <oui-field data-label="{{ ::'kube_service_reset_version' | translate }}">
+            <label class="oui-select">
+                <select class="oui-select__input"
+                        id="resetVersion" name="resetVersion"
+                        data-ng-model="ctrl.model.version"
+                        data-ng-options="version for version in ctrl.availableVersions">
+                    <option value="">&nbsp;</option>
+                </select>
+                <span class="oui-icon oui-icon-chevron-down"
+                      aria-hidden="true">
+                </span>
+            </label>
         </oui-field>
    </oui-modal>
 </form>
