@@ -1,6 +1,6 @@
 import { PCI_LEGACY_PLANCODES } from './cloud-project-billing.constant';
 
-export default class CloudProjectBillingAgoraService {
+export default class CloudProjectBillingService {
   /* @ngInject */
   constructor(
     OvhApiCloudProject,
@@ -48,4 +48,4 @@ export default class CloudProjectBillingAgoraService {
   }
 }
 
-angular.module('managerApp').service('CloudProjectBillingAgoraService', CloudProjectBillingAgoraService);
+angular.module('managerApp').service('CloudProjectBillingService', CloudProjectBillingService);

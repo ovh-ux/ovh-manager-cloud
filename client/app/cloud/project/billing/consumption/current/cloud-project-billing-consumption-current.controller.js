@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCtrl',
   function CloudProjectBillingConsumptionCurrentCtrl($q, $translate, $stateParams, CucCloudMessage,
-    CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
+    CloudProjectBillingLegacyService, OvhApiCloudProjectUsageCurrent) {
     const self = this;
     self.data = {};
 
@@ -9,7 +9,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
 
       return OvhApiCloudProjectUsageCurrent.v6()
         .get({ serviceName: $stateParams.projectId }).$promise
-        .then(billingInfo => CloudProjectBillingService.getConsumptionDetails(
+        .then(billingInfo => CloudProjectBillingLegacyService.getConsumptionDetails(
           billingInfo,
           billingInfo,
         ))
