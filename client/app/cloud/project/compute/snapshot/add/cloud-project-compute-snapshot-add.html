@@ -21,8 +21,8 @@
             <input type="text" class="oui-input" id="snapshotname" name="snapshotname"
                 placeholder="{{ ::'cpc_snapshot_add_name' | translate}}"
                 data-ng-model="CloudProjectComputeSnapshotAddCtrl.snapshot.name"
-                autoselect
-                autofocus
+                cuc-autoselect
+                cuc-autofocus
                 required
                 ng-maxlength="255">
             <div data-ng-messages="snapshotCreationForm.snapshotname.$error" data-ng-if="snapshotCreationForm.snapshotname.$dirty">

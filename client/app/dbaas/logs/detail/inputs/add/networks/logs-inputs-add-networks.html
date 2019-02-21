@@ -23,13 +23,13 @@
                         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}">
                             <label for="inputIpAddress{{$index}}" class="oui-label" data-translate="inputs_logs_networks_ip_address"></label>
                             <div class="oui-field-content">
-                                    <input type="text" 
-                                            id="inputIpAddress{{$index}}" 
+                                    <input type="text"
+                                            id="inputIpAddress{{$index}}"
                                             name="inputIpAddress{{$index}}"
                                             class="oui-input" data-ng-model="item.network"
                                             data-ng-disabled="item.allowedNetworkId"
                                             data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
-                                            autofocus
+                                            cuc-autofocus
                                             required />
                                     <p data-ng-if="!item.allowedNetworkId" class="input-network__example_text">
                                         <span> {{::'inputs_logs_networks_ip_address_example' | translate}} </span>
