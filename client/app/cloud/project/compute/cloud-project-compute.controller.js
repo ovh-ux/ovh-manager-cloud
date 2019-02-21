@@ -2,7 +2,7 @@ class CloudProjectComputeCtrl {
   constructor(
     $q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CucCloudMessage,
     CloudProjectOrchestrator,
-    CloudUserPref, FeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS,
+    CloudUserPref, CucFeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS,
   ) {
     this.$q = $q;
     this.$scope = $scope;
@@ -15,7 +15,7 @@ class CloudProjectComputeCtrl {
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
     this.OvhApiMe = OvhApiMe;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.CloudUserPref = CloudUserPref;
     this.moment = moment;
     this.messages = [];

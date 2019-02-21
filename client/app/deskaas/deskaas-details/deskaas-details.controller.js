@@ -1,8 +1,8 @@
 angular.module('managerApp').controller('DeskaasDetailsCtrl',
   function DeskaasDetailsCtrl(OvhApiDeskaasService, $stateParams, $scope, CucControllerHelper,
     CucCloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal, OvhApiMe, deskaasSidebar,
-    DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService, CucServiceHelper,
-    REDIRECT_URLS) {
+    DeskaasService, DESKAAS_REFERENCES, SidebarMenu, CucFeatureAvailabilityService,
+    CucServiceHelper, REDIRECT_URLS) {
     const self = this;
 
     self.services = {};
@@ -62,7 +62,7 @@ angular.module('managerApp').controller('DeskaasDetailsCtrl',
       manageContact: {
         text: $translate.instant('common_manage'),
         href: CucControllerHelper.navigation.constructor.getUrl(_.get(REDIRECT_URLS, 'contacts'), { serviceName: $stateParams.serviceName }),
-        isAvailable: () => FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
+        isAvailable: () => CucFeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
       },
     };
 

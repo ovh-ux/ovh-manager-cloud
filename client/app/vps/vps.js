@@ -145,8 +145,8 @@ angular.module('managerApp').config(($stateProvider) => {
       resolve: {
         shouldNotBeCA: [
           '$q',
-          'FeatureAvailabilityService',
-          ($q, FeatureAvailabilityService) => FeatureAvailabilityService
+          'CucFeatureAvailabilityService',
+          ($q, CucFeatureAvailabilityService) => CucFeatureAvailabilityService
             .hasFeaturePromise('VPS', 'cloudDatabase')
             .then(hasFeature => (hasFeature ? $q.when() : $q.reject('Not authorized'))),
         ],
