@@ -1018,10 +1018,17 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.3":
-  version "0.1.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.3.tgz#16c86157f224624c46c054a9c8499764ad50dade"
-  integrity sha512-CnvDGhR7Z8Cqt06jM7sYzrv5Ggu2XqUlHdPSxTJxIgFVuz0Du9jHR2fb1hwfRwlAUeSHtT/eWrGyh/zGByslCw==
+"@ovh-ux/ng-ovh-apiv7@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-apiv7/-/ng-ovh-apiv7-2.0.0.tgz#838e6c224bb37928de84b4a0eb8c0c8a6713f1d7"
+  integrity sha512-EnJEEmoNCTjnCv/501GDZjxYt17YgGbVBr6BfqF6kD4FSf+TQpsP2sOKEXDLIj0oJUYRhU4z5d97AjX9zFSrFg==
+  dependencies:
+    lodash "^4.17.11"
+
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.4":
+  version "0.1.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.4.tgz#d247b1d1765b25d24b6b2b04d6d15140cd9c2f05"
+  integrity sha512-bFFF41SmVgY0yePo4dMwBEqRkrZfRYdrwMqXChjSoRIzNw2tJOP/VYOKA1hLuPiDL7wiPJZdd9ZyaBY8nHSq4A==
   dependencies:
     bootstrap "~3.3.0"
     lodash "^4.17.11"
@@ -7665,11 +7672,6 @@ ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0:
   version "3.2.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/b63ed0d2dbefc915b0bb18dc426ea7b83cc00c50"
 
-ovh-angular-apiv7@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/ovh-angular-apiv7/-/ovh-angular-apiv7-1.2.8.tgz#5ae631d70029b3313a3aa47fb1901b168693d5e9"
-  integrity sha1-WuYx1wApszE6OqR/sZAbFoaT1ek=
-
 ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
   version "1.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
@@ -7757,10 +7759,10 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-ovh-api-services@^3.36.0:
-  version "3.36.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.36.0.tgz#22060e5b595e5da57a733ad344342195f11d403c"
-  integrity sha512-IstGlgZsnusYkQQUmIHG1mVf6izJbuJSxzOPqgo63kWD9affdNGetJZCtNsrCZ0d6NarsO26efMj9v9zdnQCOg==
+ovh-api-services@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.0.0.tgz#0337fd28ed29337b1e60e8eafa6bcb6a9fea426e"
+  integrity sha512-GE2Z40rOXqAwM2Zvaxr4a+jaldQDgNN3sWpY0aQBzbvuYeZIf6K10XESB9YytYk/51qHkV6CmTFZf52vqVfcQQ==
   dependencies:
     lodash "^3.10.1"
 
