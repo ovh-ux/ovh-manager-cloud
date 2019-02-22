@@ -92,11 +92,11 @@
                     </span>
                     <span class="cloud-billing-accordion-heading-title" data-translate="cpbc_hourly_instance_trafic_title"></span>
                     <span class="cloud-billing-accordion-heading-price"
-                        data-ng-bind="$ctrl.resources.totals.hourly.bandwidth.toFixed(2) + ' ' + $ctrl.resources.totals.currencySymbol">
+                        data-ng-bind="$ctrl.resources.bandwidthInstance.price.text">
                     </span>
                 </button>
             </uib-accordion-heading>
-            <outgoing-trafic data-regions="$ctrl.resources.bandwidthByRegions"></outgoing-trafic>
+            <outgoing-trafic data-regions="$ctrl.resources.bandwidthInstance.elements"></outgoing-trafic>
         </uib-accordion-group>
     </uib-accordion>
 </div>

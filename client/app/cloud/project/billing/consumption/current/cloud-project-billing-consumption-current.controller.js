@@ -62,7 +62,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
 
     getStorageConsumptionByType(storageConsumption, storageType) {
       return storageConsumption
-        ? this.CloudProjectBillingService.formatStorageConsumption(
+        ? this.CloudProjectBillingService.formatConsumptionByRegion(
           storageConsumption.filter(({ planCode }) => planCode.includes(storageType)),
           this.me.currency.symbol,
         ) : this.CloudProjectBillingService.formatEmptyConsumption(this.me.currency.symbol);
@@ -74,7 +74,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
           .getCurrentConsumption(serviceId))
         .then((serviceConsumption) => {
           const {
-            instance, snapshot, storage, volume,
+            bandwidthInstance, instance, snapshot, storage, volume,
           } = this.CloudProjectBillingService.constructor
             .groupConsumptionByFamily(_.get(serviceConsumption, 'elements', []));
 
@@ -85,6 +85,10 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
                   instance,
                   this.me.currency.symbol,
                 ),
+              bandwidthInstance: bandwidthInstance ? this.CloudProjectBillingService
+                .formatConsumptionByRegion(bandwidthInstance, this.me.currency.symbol)
+                : this.CloudProjectBillingService
+                  .formatEmptyConsumption(this.me.currency.symbol),
               volume: this.CloudProjectBillingService
                 .formatHourlyConsumption(
                   volume,

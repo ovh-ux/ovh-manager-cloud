@@ -139,10 +139,10 @@ angular.module('managerApp')
         );
       }
 
-      formatStorageConsumption(storageConsumption, currencySymbol) {
+      formatConsumptionByRegion(consumption, currencySymbol) {
         return ({
-          price: this.constructor.getTotalPrice(storageConsumption, currencySymbol),
-          elements: this.groupConsumptionByRegion(storageConsumption),
+          price: this.constructor.getTotalPrice(consumption, currencySymbol),
+          elements: this.groupConsumptionByRegion(consumption),
         });
       }
     });
