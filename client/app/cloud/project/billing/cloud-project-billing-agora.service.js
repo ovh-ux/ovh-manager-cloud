@@ -6,12 +6,14 @@ angular.module('managerApp')
         OvhApiCloudProjectServiceInfos,
         OvhApiMeConsumption,
         OvhApiOrderCatalogFormatted,
+        OvhApiServicesBillingInvoicesIceberg,
         CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION,
         CLOUD_PROJECT_CONSUMPTION_SUFFIX,
       ) {
         this.OvhApiCloudProjectServiceInfos = OvhApiCloudProjectServiceInfos;
         this.OvhApiMeConsumption = OvhApiMeConsumption;
         this.OvhApiOrderCatalogFormatted = OvhApiOrderCatalogFormatted;
+        this.OvhApiServicesBillingInvoicesIceberg = OvhApiServicesBillingInvoicesIceberg;
         this.PLANCODE_CONVERSION = CLOUD_PROJECT_CONSUMPTION_PLANCODE_CONVERSION;
         this.CLOUD_PROJECT_CONSUMPTION_SUFFIX = CLOUD_PROJECT_CONSUMPTION_SUFFIX;
       }
@@ -63,6 +65,17 @@ angular.module('managerApp')
                 type: planCode.replace(this.CLOUD_PROJECT_CONSUMPTION_SUFFIX, ''),
               })),
           )),
+        });
+      }
+
+      formatInstanceMonthlyProrata(instanceMonthlyProrata, currencySymbol) {
+        if (_.isEmpty(instanceMonthlyProrata)) {
+          return this.constructor.formatEmptyConsumption(currencySymbol);
+        }
+
+        return ({
+          price: this.constructor.getTotalPrice(instanceMonthlyProrata, currencySymbol),
+          elements: instanceMonthlyProrata,
         });
       }
 
@@ -122,5 +135,15 @@ angular.module('managerApp')
           price,
           quantity,
         };
+      }
+
+      getInvoices(serviceId, month) {
+        const monthBeginning = moment().month(month).startOf('month').toISOString();
+        const monthEnd = moment().month(month).endOf('month').toISOString();
+        return this.OvhApiServicesBillingInvoicesIceberg.query()
+          .expand('CachedObjectList-Pages')
+          .addFilter('date', 'ge', monthBeginning)
+          .addFilter('date', 'le', monthEnd)
+          .execute({ serviceId }).$promise;
       }
     });

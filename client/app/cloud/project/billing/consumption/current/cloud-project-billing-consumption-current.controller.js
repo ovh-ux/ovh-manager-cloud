@@ -49,6 +49,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
         .then((consumption) => {
           this.consumption = {
             hourly: this.CloudProjectBillingService.formatLegacyHourlyConsumption(consumption),
+            monthly: this.CloudProjectBillingService.formatLegacyMonthlyProrata(consumption),
           };
           return consumption;
         });
@@ -64,47 +65,64 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
     }
 
     getAgoraConsumption() {
+      const currentMonth = moment().month();
       return this.CloudProjectBillingAgoraService.getProjectServiceInfos(this.serviceName)
         .then(({ serviceId }) => this.$q.all({
           catalog: this.CloudProjectBillingAgoraService.getCloudCatalog(this.me.ovhSubsidiary),
           serviceConsumption: this.CloudProjectBillingAgoraService
             .getCurrentConsumption(serviceId),
+          invoices: this.CloudProjectBillingAgoraService
+            .getInvoices(serviceId, currentMonth),
         }))
-        .then(({ catalog, serviceConsumption }) => {
-          const {
-            instance, snapshot, storage, volume,
-          } = this.CloudProjectBillingAgoraService.constructor
-            .groupConsumptionByFamily(_.get(serviceConsumption, 'elements', []), catalog.plans);
-
+        .then(({ catalog, serviceConsumption, invoices }) => {
           this.consumption = {
-            hourly: {
-              instance: this.CloudProjectBillingAgoraService
-                .formatInstanceHourlyConsumption(
-                  instance,
-                  this.me.currency.symbol,
-                ),
-              volume: this.CloudProjectBillingAgoraService
-                .formatInstanceHourlyConsumption(
-                  volume,
-                  this.me.currency.symbol,
-                ),
-              snapshot: this.CloudProjectBillingAgoraService
-                .formatInstanceHourlyConsumption(
-                  snapshot,
-                  this.me.currency.symbol,
-                ),
-              objectStorage: this.getStorageConsumptionByType(storage, 'storage'),
-              archiveStorage: this.getStorageConsumptionByType(storage, 'archive'),
-              price: _.get(
-                serviceConsumption,
-                'price',
-                this.CloudProjectBillingAgoraService.constructor
-                  .formatEmptyConsumption(this.me.currency.symbol).price,
-              ),
-            },
+            hourly: this.getHourlyConsumption(serviceConsumption, catalog),
+            monthly: this.getMonthlyProrata(invoices),
           };
 
           return serviceConsumption;
         });
+    }
+
+    getHourlyConsumption(serviceConsumption, catalog) {
+      const {
+        instance, snapshot, storage, volume,
+      } = this.CloudProjectBillingAgoraService.constructor
+        .groupConsumptionByFamily(_.get(serviceConsumption, 'elements', []), catalog.plans);
+      return ({
+        instance: this.CloudProjectBillingAgoraService
+          .formatInstanceHourlyConsumption(
+            instance,
+            this.me.currency.symbol,
+          ),
+        volume: this.CloudProjectBillingAgoraService
+          .formatInstanceHourlyConsumption(
+            volume,
+            this.me.currency.symbol,
+          ),
+        snapshot: this.CloudProjectBillingAgoraService
+          .formatInstanceHourlyConsumption(
+            snapshot,
+            this.me.currency.symbol,
+          ),
+        objectStorage: this.getStorageConsumptionByType(storage, 'storage'),
+        archiveStorage: this.getStorageConsumptionByType(storage, 'archive'),
+        price: _.get(
+          serviceConsumption,
+          'price',
+          this.CloudProjectBillingAgoraService.constructor
+            .formatEmptyConsumption(this.me.currency.symbol).price,
+        ),
+      });
+    }
+
+    getMonthlyProrata(invoices) {
+      const monthlyInstances = _.flatten(invoices.map(({ lines }) => lines)).filter(({ type }) => type === 'creation');
+      const instance = this.CloudProjectBillingAgoraService
+        .formatInstanceMonthlyProrata(monthlyInstances, this.me.currency.symbol);
+      return ({
+        price: instance.price,
+        instance,
+      });
     }
   });

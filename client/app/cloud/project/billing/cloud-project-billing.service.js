@@ -49,6 +49,19 @@ angular.module('managerApp')
       };
     };
 
+    self.formatLegacyMonthlyProrata = function (consumption) {
+      return {
+        price: formatPrice(consumption.totals.monthly.total, consumption.totals.currencySymbol),
+        instance: {
+          price: formatPrice(
+            consumption.totals.monthly.instance,
+            consumption.totals.currencySymbol,
+          ),
+          elements: consumption.monthlyInstances,
+        },
+      };
+    };
+
     function initHourlyInstanceList() {
       if (!_.get(self.data, 'hourlyBilling') || !_.get(self.data, 'hourlyBilling.hourlyUsage')) {
         return;

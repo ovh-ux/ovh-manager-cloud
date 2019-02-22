@@ -6,9 +6,9 @@
         <section class="col-lg-5 cloud-billing-consumption-monthly">
             <header>
                 <h3 data-translate="cpbc_monthly_header"></h3>
-                <span class="cloud-billing-total">{{ $ctrl.data.totals.monthly.total.toFixed(2) + " " + $ctrl.data.totals.currencySymbol }}</span>
+                <span class="cloud-billing-total" data-ng-bind="$ctrl.consumption.monthly.price.text"></span>
             </header>
-            <monthly-resource-list data-resources="$ctrl.data"></monthly-resource-list>
+            <monthly-resource-list data-resources="$ctrl.consumption.monthly"></monthly-resource-list>
         </section>
         <section class="col-lg-6 cloud-billing-consumption-hourly">
             <header>
