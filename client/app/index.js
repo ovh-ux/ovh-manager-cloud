@@ -52,7 +52,6 @@ import 'script-loader!jsplumb/dist/js/jquery.jsPlumb-1.7.4-min.js';
 import 'script-loader!ovh-angular-jsplumb/dist/ovh-angular-jsplumb.min.js';
 import 'ovh-angular-checkbox-table';
 import 'ovh-common-style';
-import 'script-loader!ovh-angular-form-flat/dist/ovh-angular-form-flat.min.js';
 import 'ovh-angular-q-allsettled';
 import 'ovh-angular-slider';
 import 'ovh-angular-proxy-request';

@@ -313,7 +313,14 @@
         tr:active,
         tr:focus {
           input:not(:disabled) {
-            .flat-radio-input-hover;    // from ovh-form-flat
+            ~ .flat-radio-off,
+            ~ .flat-radio-on {
+              border-color: #009fe3;
+            }
+
+            ~ .flat-radio-on {
+              background-color: #009fe3;
+            }
           }
         }
       }
