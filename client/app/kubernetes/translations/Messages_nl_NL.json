@@ -36,6 +36,8 @@
  "kube_service_rename_description": "De naam van de kubernetes dienst wijzigen",
  "kube_service_rename_success": "De naam is gewijzigd",
  "kube_service_rename_error": "Er is een fout opgetreden bij het bewerken van de naam: {{message}}",
+ "kube_service_reset_version": "Version de Kubernetes",
+ "kube_service_reset_load_error": "Er is een fout opgetreden tijdens het laden van de beschikbare Kubernetes-versies: {{ message }}",
  "kube_nodes": "Nodes",
  "kube_nodes_add": "Add node",
  "kube_nodes_add_region": "During beta stage, your nodes will be spwawned in GRA5. We will allow you to change this in the future.",
@@ -80,5 +82,15 @@
  "kube_containers_description": "You will see here all containers and services running in your kubernetes cluster.",
  "kube_containers_description_dashboard": "In the meantime, we invite you to use either the `kubectl` command line interface or setup the \"Kubernetes Dashboard\" in your cluster. Kubernetes Dashboard is a community project consisting in a web UI, that is itself a service exposed in your cluster.",
  "kube_containers_description_dashboard_link": "Follow <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">this guide<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a> to install Kubernetes Dashboard",
- "kube_containers_description_documentation": "During the beta phase, please find documentation, including how to orchestrate your services and expose them on the internet on the <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">Kubernetes section on labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>"
+ "kube_containers_description_documentation": "During the beta phase, please find documentation, including how to orchestrate your services and expose them on the internet on the <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">Kubernetes section on labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
+ "kube_service_upgrade_policy": "Upgrade policy",
+ "kube_service_upgrade_policy_NEVER_UPDATE": "Niet updaten",
+ "kube_service_upgrade_policy_MINIMAL_DOWNTIME": "Minimale onbeschikbaarheid",
+ "kube_service_upgrade_policy_ALWAYS_UPDATE": "Maximale veiligheid",
+ "kube_service_upgrade_policy_description_NEVER_UPDATE": "Wij raden deze keuze niet aan. OVH behoudt zich het recht voor om bij wijze van uitzondering Kubernetes-componenten of uw knooppunten bij te werken, in kritieke gevallen die de veiligheid van onze infrastructuur beperken.",
+ "kube_service_upgrade_policy_description_MINIMAL_DOWNTIME": "Update de kleine onderdelen van mijn Kubernetes service, om de veiligheid en stabiliteit van de service te garanderen. Als we geen rolling update van uw knooppunten kunnen uitvoeren zonder onderbreking van de service, wordt deze uitgesteld. Wij raden u aan om uw cluster zo groot mogelijk te maken, zodat het te allen tijde wordt bijgewerkt.",
+ "kube_service_upgrade_policy_description_ALWAYS_UPDATE": "Update de kleine onderdelen van mijn Kubernetes service, om de veiligheid en stabiliteit van de service te garanderen. De update kan leiden tot een onbeschikbaarheid van enkele minuten tijdens de doorlopende update van uw knooppunten.",
+ "kube_service_upgrade_policy_model_title": "Upgrade policy wijzigen",
+ "kube_service_upgrade_policy_success": "Het 'upgrade policy' is gewijzigd",
+ "kube_service_upgrade_policy_error": "Failure to change the 'upgrade policy: {{ message }}"
 }

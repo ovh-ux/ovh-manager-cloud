@@ -13,7 +13,7 @@
  "cpbc_hourly_instance_pass_to_monthly_error": "Oops, we could not add this instance to monthly billing. ",
  "cpbc_hourly_instance_pass_to_monthly_price_error": "Oops. We were unable to retrieve the amount for the monthly fixed rate.",
  "cpbc_hourly_instance_pass_to_monthly_info": "You will be charged right away, on a pro-rata basis, for the days remaining in the current month.",
- "cpbc_hourly_instance_pass_to_monthly_button": "Switch to monthly billing ({{price}} exc. GST/month)",
+ "cpbc_hourly_instance_pass_to_monthly_button": "Switch to monthly billing ({{price}} exc. VAT/month)",
  "cpbc_hourly_instance_deleted": "Instance deleted",
  "cpbc_hourly_instance_pass_to_monthly": "Switch the instance to monthly billing",
  "cpbc_object_storage_detail_title": "Object storage",
@@ -57,5 +57,11 @@
  "cpbc_server_details_popover_image_type": "Type",
  "cpbc_server_details_popover_vm_type": "Server type",
  "cpbc_server_details_popover_imagetype_linux": "Linux",
- "cpbc_server_details_popover_imagetype_windows": "Windows"
+ "cpbc_server_details_popover_imagetype_windows": "Windows",
+ "cpbc_hourly_instance_trafic_title": "Outgoing public traffic of the instance",
+ "cpbc_hourly_instance_trafic_region": "Region",
+ "cpbc_hourly_instance_trafic_trafic": "Traffic",
+ "cpbc_hourly_instance_trafic_price": "Price",
+ "cpbc_hourly_instance_trafic_unlimitted": "Unlimited",
+ "cpbc_hourly_instance_trafic_included": "Included"
 }

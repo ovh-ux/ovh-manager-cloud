@@ -57,5 +57,11 @@
  "cpbc_server_details_popover_image_type": "Type",
  "cpbc_server_details_popover_vm_type": "Server type",
  "cpbc_server_details_popover_imagetype_linux": "Linux",
- "cpbc_server_details_popover_imagetype_windows": "Windows"
+ "cpbc_server_details_popover_imagetype_windows": "Windows",
+ "cpbc_hourly_instance_trafic_title": "Uitgaande publiek dataverkeer instances",
+ "cpbc_hourly_instance_trafic_region": "Regio",
+ "cpbc_hourly_instance_trafic_trafic": "Dataverkeer",
+ "cpbc_hourly_instance_trafic_price": "Prijs",
+ "cpbc_hourly_instance_trafic_unlimitted": "verkeer",
+ "cpbc_hourly_instance_trafic_included": "Inbegrepen"
 }
