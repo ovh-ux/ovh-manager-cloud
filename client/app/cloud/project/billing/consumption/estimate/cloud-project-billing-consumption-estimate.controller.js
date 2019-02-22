@@ -234,6 +234,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
           alertId: _.first(alertIds),
         }).$promise.then(() => {
           this.CucCloudMessage.success(this.$translate.instant('cpbe_estimate_alert_delete_success'));
+          this.forecast.alert = null;
         });
       }
       return this.$q.reject({ data: { message: 'Alert not found' } });
@@ -243,9 +244,6 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     }).finally(() => {
       this.loaders.deleteAlert = false;
     });
-
-    return this.initAlert()
-      .then(() => this.initConsumptionChart());
   }
 }
 
