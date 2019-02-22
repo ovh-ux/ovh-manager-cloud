@@ -7759,10 +7759,10 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-ovh-api-services@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.0.0.tgz#0337fd28ed29337b1e60e8eafa6bcb6a9fea426e"
-  integrity sha512-GE2Z40rOXqAwM2Zvaxr4a+jaldQDgNN3sWpY0aQBzbvuYeZIf6K10XESB9YytYk/51qHkV6CmTFZf52vqVfcQQ==
+ovh-api-services@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.2.0.tgz#6b85f990aefae1fbf5233718f856aa051dab98c5"
+  integrity sha512-IippIziLZplEJe6kX8SCZaaR7lLYm+iFbleL/G8x7zMkQeHDIwmKAiHWgAubXXoMyj/GgigBGlrYHiK8eNRAqg==
   dependencies:
     lodash "^3.10.1"
 
