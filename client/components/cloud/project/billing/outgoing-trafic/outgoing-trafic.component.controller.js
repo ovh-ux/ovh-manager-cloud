@@ -1,4 +1,4 @@
-class OutgoingTraficComponentCtrl {
+export default class OutgoingTraficComponentCtrl {
   constructor($translate, ControllerHelper,
     OvhApiMe, RegionService, ServiceHelper, CLOUD_GEOLOCALISATION, CLOUD_UNIT_CONVERSION) {
     this.$translate = $translate;
