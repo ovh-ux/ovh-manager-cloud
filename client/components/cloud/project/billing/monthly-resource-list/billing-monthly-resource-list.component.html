@@ -12,11 +12,11 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.monthly.instance.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
-            <instance-list instances="$ctrl.resources.monthlyInstances"
-                        instance-col-name="'cpbc_monthly_instance_col_name'"
-                        instance-col-total="'cpbc_monthly_instance_col_total'"
-                        instance-col-total-tooltip="'cpbc_monthly_instance_col_total_tooltip'"
-                        show-switch-to-monthly-billing-option="false"></instance-list>
+            <instance-list data-instances="$ctrl.resources.monthlyInstances"
+                        data-instance-col-name="'cpbc_monthly_instance_col_name'"
+                        data-instance-col-total="'cpbc_monthly_instance_col_total'"
+                        data-instance-col-total-tooltip="'cpbc_monthly_instance_col_total_tooltip'"
+                        data-show-switch-to-monthly-billing-option="false"></instance-list>
         </uib-accordion-group>
     </uib-accordion>
 </div>
