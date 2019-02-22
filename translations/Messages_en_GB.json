@@ -36,6 +36,8 @@
  "kube_service_rename_description": "Change the name of the kubernetes service",
  "kube_service_rename_success": "The name has been modified",
  "kube_service_rename_error": "An error has occurred modifying the name: {{message}}",
+ "kube_service_reset_version": "Version of Kubernetes",
+ "kube_service_reset_load_error": "An error occurred while loading the available Kubernetes versions: {{ message }}",
  "kube_nodes": "Nodes",
  "kube_nodes_add": "Add node",
  "kube_nodes_add_region": "During the beta stage, your nodes will be based in GRA5. You will be able to change this region in the future.",
@@ -80,5 +82,15 @@
  "kube_containers_description": "Soon, you will be able to see all of the containers and services running in your Kubernetes cluster here.",
  "kube_containers_description_dashboard": "In the meantime, we recommend using either the `kubectl` command line interface or setting up the \"Kubernetes Dashboard\" in your cluster. The Kubernetes Dashboard is a web UI maintained by the Kubernetes community, and is displayed as a service in your cluster.",
  "kube_containers_description_dashboard_link": "Follow <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">this guide<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a> to install the Kubernetes Dashboard.",
- "kube_containers_description_documentation": "During the beta phase, you can find documentation (including how to orchestrate your services and expose them on the internet) in the <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">Kubernetes section on labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>"
+ "kube_containers_description_documentation": "During the beta phase, you can find documentation (including how to orchestrate your services and expose them on the internet) in the <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">Kubernetes section on labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
+ "kube_service_upgrade_policy": "Upgrade policy",
+ "kube_service_upgrade_policy_NEVER_UPDATE": "Do not update",
+ "kube_service_upgrade_policy_MINIMAL_DOWNTIME": "Minimum unavailability",
+ "kube_service_upgrade_policy_ALWAYS_UPDATE": "Maximum security",
+ "kube_service_upgrade_policy_description_NEVER_UPDATE": "We do not recommend this choice. OVH reserves the right to update Kubernetes components or your nodes on an exceptional basis, in critical cases that limit the security of our infrastructure.",
+ "kube_service_upgrade_policy_description_MINIMAL_DOWNTIME": "Update the minor version components of my Kubernetes service, to guarantee the security and stability of the service. If we cannot perform a rolling update of your nodes without a service interruption, it is postponed. We recommend that you size your cluster to ensure that it is updated at all times.",
+ "kube_service_upgrade_policy_description_ALWAYS_UPDATE": "Update the minor version components of my Kubernetes service, to guarantee the security and stability of the service. The update may result in an unavailability of a few minutes during the rolling update of your nodes.",
+ "kube_service_upgrade_policy_model_title": "Modify the upgrade policy",
+ "kube_service_upgrade_policy_success": "The 'upgrading policy' has been modified",
+ "kube_service_upgrade_policy_error": "Failure to change the 'upgrading policy': {{ message }}"
 }
