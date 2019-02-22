@@ -86,7 +86,7 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
 
     getHourlyConsumption(serviceConsumption, catalog) {
       const {
-        instance, snapshot, storage, volume,
+        bandwidthInstance, instance, snapshot, storage, volume,
       } = this.CloudProjectBillingAgoraService.constructor
         .groupConsumptionByFamily(_.get(serviceConsumption, 'elements', []), catalog.plans);
       return ({
@@ -95,6 +95,10 @@ angular.module('managerApp').controller('CloudProjectBillingConsumptionCurrentCt
             instance,
             this.me.currency.symbol,
           ),
+        bandwidthInstance: bandwidthInstance ? this.CloudProjectBillingAgoraService
+          .formatConsumptionByRegion(bandwidthInstance, this.me.currency.symbol)
+          : this.CloudProjectBillingAgoraService.constructor
+            .formatEmptyConsumption(this.me.currency.symbol),
         volume: this.CloudProjectBillingAgoraService
           .formatInstanceHourlyConsumption(
             volume,

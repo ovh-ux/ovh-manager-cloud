@@ -21,6 +21,13 @@ angular.module('managerApp')
           price: formatPrice(consumption.totals.hourly.instance, consumption.totals.currencySymbol),
           elements: consumption.hourlyInstances,
         },
+        bandwidthInstance: {
+          price: formatPrice(
+            consumption.totals.hourly.bandwidth,
+            consumption.totals.currencySymbol,
+          ),
+          elements: consumption.bandwidthByRegions,
+        },
         snapshot: {
           price: formatPrice(
             consumption.totals.hourly.snapshot,
@@ -194,6 +201,10 @@ angular.module('managerApp')
           newBandwidthByRegion.outgoingBandwidth.totalPrice = roundNumber(
             newBandwidthByRegion.outgoingBandwidth.totalPrice,
             2,
+          );
+          newBandwidthByRegion.outgoingBandwidth.price = formatPrice(
+            newBandwidthByRegion.outgoingBandwidth.totalPrice,
+            self.data.totals.currencySymbol,
           );
           if (newBandwidthByRegion.outgoingBandwidth.quantity.value > 0) {
             newBandwidthByRegion.outgoingBandwidth.quantity.value = roundNumber(

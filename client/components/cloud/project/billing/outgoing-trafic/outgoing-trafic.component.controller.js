@@ -31,6 +31,10 @@ export default class OutgoingTraficComponentCtrl {
     return this.currency.load();
   }
 
+  getEmptyConsumption() {
+    return `0.00 ${this.currency.data.symbol}`;
+  }
+
   isAPACRegion(region) {
     return _.includes(this.apacRegions, region);
   }
@@ -51,10 +55,7 @@ export default class OutgoingTraficComponentCtrl {
     if (this.isAPACRegion(regionByBandwidth.region)) {
       const bandwidthUsedInTb = regionByBandwidth.outgoingBandwidth.quantity.value;
       if (bandwidthUsedInTb > 1) {
-        const totalPrice = regionByBandwidth.outgoingBandwidth
-          ? regionByBandwidth.outgoingBandwidth.totalPrice
-          : 0;
-        return `${totalPrice} ${this.currency.data.symbol}`;
+        return _.get(regionByBandwidth, 'outgoingBandwidth.price.text', this.getEmptyConsumption());
       }
     }
     return this.$translate.instant('cpbc_hourly_instance_trafic_included');
