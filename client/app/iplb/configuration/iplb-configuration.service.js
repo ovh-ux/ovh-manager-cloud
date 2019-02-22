@@ -70,7 +70,9 @@ class IpLoadBalancerConfigurationService {
       }, {
         zone,
       }).$promise
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
+      .then(() => {
+        this.ServiceHelper.successHandler('iplb_configuration_apply_success')(null);
+      })
       .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 

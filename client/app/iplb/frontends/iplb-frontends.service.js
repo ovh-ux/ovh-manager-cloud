@@ -192,7 +192,9 @@ class IpLoadBalancerFrontendsService {
       disabled: frontend.disabled,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_toggle_success'))
+      .then(() => {
+        this.ServiceHelper.successHandler('iplb_frontend_toggle_success')(null);
+      })
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_frontend_toggle_error'));
