@@ -50,6 +50,11 @@
         CA: allCanadianSubsidiaries,
       },
     },
+    KUBE: {
+      sidebarOrder: {
+        EU: allEuropeanSubsidiaries,
+      },
+    },
     DEDICATED_CLOUD: {
       sidebarMenu: {
         EU: allEuropeanSubsidiaries,

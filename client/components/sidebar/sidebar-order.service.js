@@ -2,13 +2,14 @@ class SidebarOrderService {
   constructor(atInternet, FeatureAvailabilityService, SidebarMenu, CloudProjectSidebar,
     VpsSidebar, DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar, NashaSidebar,
     VeeamSidebar, VeeamEnterpriseSidebar, DBaasTsSidebar, VrackSidebar, DeskaasSidebar,
-    IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar) {
+    IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar, KubernetesSidebar) {
     this.FeatureAvailabilityService = FeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
     this.atInternet = atInternet;
 
     // In order of appearance in the actions menu
     this.productsToOrder = [
+      KubernetesSidebar,
       CloudProjectSidebar,
       VpsSidebar,
       DedicatedServerSidebar,
