@@ -99,8 +99,11 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     });
   }
 
-  resetCluster(serviceName, workerNodesPolicy) {
-    return this.OvhApiKube.v6().reset({ serviceName }, { workerNodesPolicy }).$promise;
+  resetCluster(serviceName, { workerNodesPolicy, version }) {
+    return this.OvhApiKube.v6().reset({ serviceName }, {
+      workerNodesPolicy,
+      version,
+    }).$promise;
   }
 
   resetClusterCache() {
@@ -145,5 +148,9 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
         localizationDescriptionKey: 'kube_service_upgrade_policy_description_NEVER_UPDATE',
       },
     ];
+  }
+
+  getSchema() {
+    return this.OvhApiKube.v6().getSchema().$promise;
   }
 });

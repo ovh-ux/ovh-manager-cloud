@@ -1,6 +1,7 @@
 class kubernetesResetCtrl {
   constructor($rootScope, $stateParams, $translate, $uibModalInstance, CucCloudMessage,
     ControllerHelper, Kubernetes, KUBERNETES) {
+    // dependencies injections
     this.$rootScope = $rootScope;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
@@ -9,11 +10,43 @@ class kubernetesResetCtrl {
     this.ControllerHelper = ControllerHelper;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
+
+    // other attributes used in view
+    this.availableVersions = null;
+
+    this.model = {
+      version: null,
+    };
+
+    this.loading = {
+      init: false,
+      reset: false,
+    };
   }
 
   $onInit() {
-    this.loading = false;
+    this.loading.init = true;
+
+    // reset models and loading
+    this.loading.reset = false;
     this.workerNodesPolicy = this.KUBERNETES.workerNodesPolicyDelete;
+
+    // get the available options value for versions
+    return this.Kubernetes.getSchema()
+      .then((kubeSchema) => {
+        this.availableVersions = _.get(kubeSchema, 'models[\'kube.Version\'].enum');
+      })
+      .catch((error) => {
+        this.CucCloudMessage.error(
+          this.$translate.instant('kube_service_reset_load_error', {
+            message: _.get(error, 'data.message', ''),
+          }),
+        );
+        this.$uibModalInstance.close();
+      })
+      .finally(() => {
+        this.loading.init = false;
+      });
   }
 
   /**
@@ -31,15 +64,18 @@ class kubernetesResetCtrl {
    * @memberof kubernetesResetCtrl
    */
   reset() {
-    this.loading = true;
+    this.loading.reset = true;
     this.CucCloudMessage.flushChildMessage();
     this.saving = this.ControllerHelper.request.getHashLoader({
       loaderFunction: () => this.Kubernetes
-        .resetCluster(this.serviceName, this.workerNodesPolicy)
+        .resetCluster(this.serviceName, {
+          workerNodesPolicy: this.workerNodesPolicy,
+          version: this.model.version,
+        })
         .then(() => this.CucCloudMessage.success(this.$translate.instant('kube_service_reset_success')))
         .catch(err => this.CucCloudMessage.error(this.$translate.instant('kube_service_reset_error', { message: _.get(err, 'data.message', '') })))
         .finally(() => {
-          this.loading = false;
+          this.loading.reset = false;
           this.ControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close();
           this.Kubernetes.resetClusterCache();
