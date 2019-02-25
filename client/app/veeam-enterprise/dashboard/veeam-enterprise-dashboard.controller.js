@@ -1,10 +1,10 @@
 class VeeamEnterpriseDashboardCtrl {
-  constructor($stateParams, $translate, CucControllerHelper, FeatureAvailabilityService,
+  constructor($stateParams, $translate, CucControllerHelper, CucFeatureAvailabilityService,
     VeeamEnterpriseService, REDIRECT_URLS) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CucControllerHelper = CucControllerHelper;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.VeeamEnterpriseService = VeeamEnterpriseService;
     this.REDIRECT_URLS = REDIRECT_URLS;
 

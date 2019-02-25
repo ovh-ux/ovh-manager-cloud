@@ -1,11 +1,11 @@
 (() => {
   class VeeamDashboardCtrl {
-    constructor($stateParams, $translate, CucControllerHelper, FeatureAvailabilityService,
+    constructor($stateParams, $translate, CucControllerHelper, CucFeatureAvailabilityService,
       RegionService, VeeamService, REDIRECT_URLS) {
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CucControllerHelper = CucControllerHelper;
-      this.FeatureAvailabilityService = FeatureAvailabilityService;
+      this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
       this.RegionService = RegionService;
       this.VeeamService = VeeamService;
       this.REDIRECT_URLS = REDIRECT_URLS;
@@ -77,7 +77,7 @@
         manageContact: {
           text: this.$translate.instant('common_manage'),
           href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
-          isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
+          isAvailable: () => this.CucFeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
         },
       };
     }

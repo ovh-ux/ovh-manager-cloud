@@ -1025,6 +1025,16 @@
   dependencies:
     lodash "^4.17.11"
 
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/feat-feature-availability-kube":
+  version "0.1.0"
+  resolved "git+https://github.com/ovh-ux/manager.git#53a55bec81a0b386428d38839aa3c6f4528557cb"
+  dependencies:
+    bootstrap "~3.3.0"
+    jsurl "^0.1.5"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    ovh-ui-kit "^2.24.2"
+
 "@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#feat/vrack":
   version "0.1.0-alpha.3"
   resolved "git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#7dc1437aed0111b709221cb72cf40d662458606c"
@@ -6060,7 +6070,7 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jsurl@0.1.5:
+jsurl@0.1.5, jsurl@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/jsurl/-/jsurl-0.1.5.tgz#2a5c8741de39cacafc12f448908bf34e960dcee8"
   integrity sha1-KlyHQd45ysr8EvRIkIvzTpYNzug=

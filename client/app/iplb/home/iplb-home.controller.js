@@ -1,6 +1,6 @@
 class IpLoadBalancerHomeCtrl {
   constructor($state, $stateParams, $translate, CucControllerHelper, CucCloudMessage,
-    FeatureAvailabilityService, IpLoadBalancerActionService, IpLoadBalancerConstant,
+    CucFeatureAvailabilityService, IpLoadBalancerActionService, IpLoadBalancerConstant,
     IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
     IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
     IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, RegionService,
@@ -10,7 +10,7 @@ class IpLoadBalancerHomeCtrl {
     this.$translate = $translate;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
@@ -163,7 +163,7 @@ class IpLoadBalancerHomeCtrl {
       manageContact: {
         text: this.$translate.instant('common_manage'),
         href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
-        isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage') && !this.subscription.loading && !this.subscription.hasErrors,
+        isAvailable: () => this.CucFeatureAvailabilityService.hasFeature('CONTACTS', 'manage') && !this.subscription.loading && !this.subscription.hasErrors,
       },
       addZone: {
         text: this.$translate.instant('common_add'),
