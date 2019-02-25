@@ -16,11 +16,12 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   $onInit() {
-    this.loading = false;
+    this.loading = true;
 
     this.getPublicCloudProject()
       .then(() => this.getInfo())
-      .then(() => this.loadMessages());
+      .then(() => this.loadMessages())
+      .finally(() => { this.loading = false; });
   }
 
   loadMessages() {
@@ -42,11 +43,10 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   getInfo() {
-    this.loading = true;
-    return this.$q.all(
+    return this.$q.all([
       this.getNodes(),
       this.getCluster(),
-    ).finally(() => { this.loading = false; });
+    ]);
   }
 
   getNodes() {
@@ -130,8 +130,10 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   refreshNodes() {
+    this.loading = true;
     this.Kubernetes.resetClusterCache();
     this.Kubernetes.resetNodesCache();
-    return this.getInfo();
+    return this.getInfo()
+      .finally(() => { this.loading = false; });
   }
 });
