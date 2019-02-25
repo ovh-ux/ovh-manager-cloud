@@ -123,4 +123,10 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
       },
     });
   }
+
+  updateCluster() {
+    return this.$state.go('paas.kube.service.update', {
+      cluster: this.cluster,
+    });
+  }
 });
