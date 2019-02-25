@@ -57,5 +57,11 @@
  "cpbc_server_details_popover_image_type": "Type",
  "cpbc_server_details_popover_vm_type": "Server type",
  "cpbc_server_details_popover_imagetype_linux": "Linux",
- "cpbc_server_details_popover_imagetype_windows": "Windows"
+ "cpbc_server_details_popover_imagetype_windows": "Windows",
+ "cpbc_hourly_instance_trafic_title": "Outgoing public traffic of the instance",
+ "cpbc_hourly_instance_trafic_region": "Region",
+ "cpbc_hourly_instance_trafic_trafic": "Traffic",
+ "cpbc_hourly_instance_trafic_price": "Price",
+ "cpbc_hourly_instance_trafic_unlimitted": "Unlimited",
+ "cpbc_hourly_instance_trafic_included": "Included"
 }

@@ -1,5 +1,5 @@
 angular.module('managerApp').factory('CloudProjectComputeInfraVrackFactory',
-  (CloudProjectComputeInfraVrackVmFactory, OrderedHashFactory) => {
+  (CloudProjectComputeInfraVrackVmFactory, CucOrderedHashFactory) => {
     /**
      *  Defines a cloud project compute infrastructure vrack
      *
@@ -18,7 +18,7 @@ angular.module('managerApp').factory('CloudProjectComputeInfraVrackFactory',
         }
 
         this.serviceName = options.serviceName || null;
-        this.publicCloud = new OrderedHashFactory();
+        this.publicCloud = new CucOrderedHashFactory();
 
         // init public cloud
         if (options.publicCloud && options.publicCloud.length) {

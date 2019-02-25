@@ -5,7 +5,15 @@ angular.module('managerApp')
     deleteConfirmationInput: /^DELETE$/,
     resetConfirmationInput: /^RESET$/,
     kubeconfigFileName: 'kubeconfig',
-    loadingStatus: ['INSTALLING', 'DELETING'],
+    processingStatus: ['INSTALLING', 'DELETING', 'UPDATING', 'RESETTING'],
+    status: {
+      READY: 'READY',
+      INSTALLING: 'INSTALLING',
+      DELETING: 'DELETING',
+      UPDATING: 'UPDATING',
+      RESETTING: 'RESETTING',
+      ERROR: 'ERROR',
+    },
     flavorTypes: ['balanced', 'cpu', 'ram'],
     displayNameMaxLength: 255,
     workerNodesPolicyDelete: 'delete',
@@ -16,4 +24,5 @@ angular.module('managerApp')
       kubernetesDoc: 'https://labs.ovh.com/kubernetes-k8s/documentation',
       kubernetesDashboard: 'https://labs.ovh.com/kubernetes-k8s/documentation/dashboard-installation',
     },
+    upgradePolicies: ['NEVER_UPDATE', 'MINIMAL_DOWNTIME', 'ALWAYS_UPDATE'],
   });

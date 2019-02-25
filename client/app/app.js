@@ -1,4 +1,5 @@
 import '@uirouter/angularjs';
+import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
@@ -20,12 +21,12 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
+  ngOvhApiv7,
   ngOvhDocUrl,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
   ngOvhCloudUniverseComponents,
-  'ovh-angular-apiv7',
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-checkbox-table',

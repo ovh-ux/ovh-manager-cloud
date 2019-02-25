@@ -1018,13 +1018,22 @@
     request "^2.88.0"
     webpack-dev-server "^3.1.9"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.2":
-  version "0.1.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.2.tgz#a5afc28e0e8f45a102c10e1e87d2adfcb96b2408"
-  integrity sha512-a2CKWPhngQng+Mwv10NWAoytSq1OOH5BDEnxvGuTFcB1gyXuUNgpbWhQ7GSxhcUVEjsT97w9Nzd2tOCR6FfReg==
+"@ovh-ux/ng-ovh-apiv7@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-apiv7/-/ng-ovh-apiv7-2.0.0.tgz#838e6c224bb37928de84b4a0eb8c0c8a6713f1d7"
+  integrity sha512-EnJEEmoNCTjnCv/501GDZjxYt17YgGbVBr6BfqF6kD4FSf+TQpsP2sOKEXDLIj0oJUYRhU4z5d97AjX9zFSrFg==
   dependencies:
     lodash "^4.17.11"
+
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.5":
+  version "0.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.5.tgz#436c3e3ffe669740c75943d21aa24b5655f5ddc7"
+  integrity sha512-5AUq2gg9dh/4vy4aG/u+Y4sbW7iESF7l1GI5ZfkeBYIW3fyXNXzCAkmcpocfrZ77xU6YjoJfjQxXza2dLA5f3g==
+  dependencies:
+    bootstrap "~3.3.0"
+    lodash "^4.17.11"
     moment "^2.24.0"
+    ovh-ui-kit "^2.24.2"
 
 "@ovh-ux/ng-ovh-doc-url@^1.0.0":
   version "1.0.0"
@@ -7663,11 +7672,6 @@ ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0:
   version "3.2.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/b63ed0d2dbefc915b0bb18dc426ea7b83cc00c50"
 
-ovh-angular-apiv7@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/ovh-angular-apiv7/-/ovh-angular-apiv7-1.2.8.tgz#5ae631d70029b3313a3aa47fb1901b168693d5e9"
-  integrity sha1-WuYx1wApszE6OqR/sZAbFoaT1ek=
-
 ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
   version "1.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
@@ -7755,10 +7759,10 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-ovh-api-services@^3.35.0:
-  version "3.35.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-3.35.0.tgz#3bdd250507457fbf2b6116e075bba5ae8b7d999e"
-  integrity sha512-Udy9QlIS3s4PKhmlAnKJXXq9Z310c6RandPALkY7tcI9P61g7g+S491UwUTkn5VX6NiVUzLd8HYVQ+D6JewCKg==
+ovh-api-services@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.2.0.tgz#6b85f990aefae1fbf5233718f856aa051dab98c5"
+  integrity sha512-IippIziLZplEJe6kX8SCZaaR7lLYm+iFbleL/G8x7zMkQeHDIwmKAiHWgAubXXoMyj/GgigBGlrYHiK8eNRAqg==
   dependencies:
     lodash "^3.10.1"
 
@@ -7785,6 +7789,13 @@ ovh-ui-angular@~2.24.0:
     flatpickr "^4.5.2"
     popper.js "^1.14.4"
     ui-select "^0.19.8"
+
+ovh-ui-kit@^2.24.2:
+  version "2.24.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.2.tgz#27e7c945c81f22745657d4eeb8b6a96022a87828"
+  integrity sha512-yLdyZskNlDUnx29XCYY5SppcJYaVBrNOpa682D+rw1s79Y9/dwAlF6qWD47NWDRK2XzgJR8U7xTjvbersuGBwg==
+  dependencies:
+    less-plugin-remcalc "^0.1.0"
 
 ovh-ui-kit@~2.24.0:
   version "2.24.1"
