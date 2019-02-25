@@ -1,9 +1,8 @@
 class KubernetesSidebar {
-  constructor($translate, OvhApiMe, SidebarMenu, URLS) {
+  constructor($translate, OvhApiMe, SidebarMenu) {
     this.$translate = $translate;
     this.User = OvhApiMe;
     this.SidebarMenu = SidebarMenu;
-    this.URLS = URLS;
 
     this.type = 'KUBE';
     this.locale = null;
@@ -11,35 +10,6 @@ class KubernetesSidebar {
       .then((user) => {
         this.locale = user.ovhSubsidiary;
       });
-  }
-
-  addOrder(locale) {
-    const orderParams = [{
-      productId: 'cloud',
-      planCode: 'project.2018',
-      configuration: [{
-        label: 'description',
-        values: ['Kubernetes project'],
-      }],
-    }, {
-      productId: 'kubernetes',
-      planCode: 'kubernetes-managed-cluster',
-      configuration: [{
-        label: 'name',
-        values: ['Kubernetes cluster+'],
-      }],
-    }];
-
-    const orderUrl = `${_.get(this.URLS, `website_order.express_review_base.${locale}`)}?products=${JSURL.stringify(orderParams)}`;
-
-    return {
-      id: 'order-kube',
-      title: this.$translate.instant('cloud_sidebar_actions_menu_kube'),
-      icon: 'ovh-font ovh-font-kubernetes',
-      href: orderUrl,
-      target: '_blank',
-      external: true,
-    };
   }
 
   loadIntoSection(section, services) {
