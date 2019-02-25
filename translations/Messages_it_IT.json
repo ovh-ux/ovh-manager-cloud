@@ -6,7 +6,7 @@
  "kube_service_name": "Nome",
  "kube_service_description_information": "Qui sotto visualizzi le informazioni relative al tuo servizio Kubernetes, che ti permetteranno di effettuare l'accesso utilizzando il tool <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">kubetcl<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>.",
  "kube_service_description_reset": "È possibile ripristinare la configurazione del tuo cluster Kubernetes in qualsiasi momento.",
- "kube_service_offer_beta": "Servizio gestito Kubernetes Beta (gratuito)",
+ "kube_service_offer_beta": "Servizio gestito Kubernetes (gratuito)",
  "kube_service_file": "File kubeconfig",
  "kube_service_file_error": "Si è verificato un errore durante il caricamento del file di configurazione",
  "kube_service_file_help": "Il file kubeconfig contiene i dati che consentono allo strumento da riga di comando kubectl di comunicare con l'API del tuo cluster.",
