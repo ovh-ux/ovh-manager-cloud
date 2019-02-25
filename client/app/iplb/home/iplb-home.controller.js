@@ -4,7 +4,7 @@ class IpLoadBalancerHomeCtrl {
     IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
     IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
     IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, RegionService,
-    VrackService) {
+    CucVrackService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
@@ -22,7 +22,7 @@ class IpLoadBalancerHomeCtrl {
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.RegionService = RegionService;
-    this.VrackService = VrackService;
+    this.VrackService = CucVrackService;
 
 
     this.serviceName = this.$stateParams.serviceName;
