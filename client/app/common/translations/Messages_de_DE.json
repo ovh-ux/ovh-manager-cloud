@@ -98,6 +98,7 @@
  "common_modify": "Ändern",
  "common_select": "Auswählen",
  "common_add": "Hinzufügen",
+ "common_update": "Update",
  "common_save": "Speichern",
  "common_delete": "Löschen",
  "common_reinstall": "Reinstallieren",
@@ -626,5 +627,6 @@
  "guide_project_6": "Start a first cloud server within 3 minutes",
  "guide_project_7": "Prepare the environment for using the OpenStack API",
  "guide_project_8": "Create and configure an additional disk on an instance",
- "guide_project_all": "Zu den Public Cloud Anleitungen"
+ "guide_project_all": "Zu den Public Cloud Anleitungen",
+ "guide_project_apac_trafic": "Wie wird der Traffic meiner in Sydney und Singapur gehosteten Instanzen abgerechnet?"
 }
