@@ -5,7 +5,7 @@
  "kube_service": "Služba",
  "kube_service_description_information": "You will find here general information about your managed Kubernetes service, and how to access it using the<a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">Kubectl tool.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
  "kube_service_description_reset": "You can reset you cluster at any time.",
- "kube_service_offer_beta": "Beta Managed Kubernetes Service (free)",
+ "kube_service_offer_beta": "Managed Kubernetes Service (free)",
  "kube_service_file": "Kubeconfig file",
  "kube_service_file_error": "An error has occurred loading the kubeconfig file",
  "kube_service_file_help": "The kubectl command-line tool uses kubeconfig files to find the information it needs to choose a cluster and communicate with the API server of a cluster.",
