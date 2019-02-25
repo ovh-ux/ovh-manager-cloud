@@ -1,6 +1,6 @@
 class IpLoadBalancerVrackCtrl {
   constructor($state, $stateParams, $translate, CucControllerHelper, IpLoadBalancerVrackService,
-    IpLoadBalancerVrackHelper, VrackService, OvhApiIpLoadBalancing) {
+    IpLoadBalancerVrackHelper, CucVrackService, OvhApiIpLoadBalancing) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
@@ -8,7 +8,7 @@ class IpLoadBalancerVrackCtrl {
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
     this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.VrackService = VrackService;
+    this.VrackService = CucVrackService;
 
     this.serviceName = $stateParams.serviceName;
 

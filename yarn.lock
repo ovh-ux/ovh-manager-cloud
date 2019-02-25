@@ -1025,9 +1025,9 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#feat/helper":
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#feat/vrack":
   version "0.1.0-alpha.3"
-  resolved "git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#28c98768783508cee7b4b118ef1c529c9c0c9ae0"
+  resolved "git+https://github.com/ovh-ux/ng-ovh-cloud-universe-components.git#7dc1437aed0111b709221cb72cf40d662458606c"
   dependencies:
     bootstrap "~3.3.0"
     lodash "^4.17.11"

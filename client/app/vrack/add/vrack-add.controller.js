@@ -7,7 +7,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
     $state,
     $rootScope,
     CucCloudMessage,
-    VrackService,
+    CucVrackService,
     OvhApiOrder,
     TARGET,
   ) {
@@ -56,7 +56,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
       self.vrackOrderUrl = null;
 
       const promise = {
-        vrackOrderUrl: VrackService.getOrderUrl(),
+        vrackOrderUrl: CucVrackService.getOrderUrl(),
       };
 
       if (self.TARGET !== 'US') {
