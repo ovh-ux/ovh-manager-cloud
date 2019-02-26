@@ -98,6 +98,7 @@
  "common_modify": "Zmień",
  "common_select": "Wybierz",
  "common_add": "Dodaj",
+ "common_update": "Aktualizuj",
  "common_save": "Zapisz",
  "common_delete": "Usuń",
  "common_reinstall": "Reinstalacja",
@@ -626,5 +627,6 @@
  "guide_project_6": "Uruchom swoją pierwszą instancję w chmurze w ciągu 3 minut",
  "guide_project_7": "Przygotowanie środowiska do korzystania z API OpenStack",
  "guide_project_8": "Utworzenie i konfiguracja dodatkowego dysku dla instancji",
- "guide_project_all": "Zobacz wszystkie przewodniki Public Cloud"
+ "guide_project_all": "Zobacz wszystkie przewodniki Public Cloud",
+ "guide_project_apac_trafic": "Jaka opłata naliczana jest za ruch wychodzący z instancji hostowanych w Sydney i Singapurze?"
 }
