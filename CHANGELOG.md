@@ -1,3 +1,7 @@
+## [7.18.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.0...v7.18.1) (2019-02-26)
+
+
+
 # [7.18.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.17.1...v7.18.0) (2019-02-25)
 
 
