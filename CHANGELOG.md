@@ -1,3 +1,12 @@
+## [7.18.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.1...v7.18.2) (2019-02-26)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([d86ff56](https://github.com/ovh-ux/ovh-manager-cloud/commit/d86ff56))
+
+
+
 ## [7.18.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.0...v7.18.1) (2019-02-26)
 
 
