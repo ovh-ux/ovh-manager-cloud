@@ -1,6 +1,6 @@
 class LogsOptionsManageCtrl {
   constructor($state, $stateParams, $window, CucCloudMessage, CucControllerHelper,
-    LogsOptionsService, LogsOptionsManageService, CurrencyService, CucOrderHelperService) {
+    LogsOptionsService, LogsOptionsManageService, CucCurrencyService, CucOrderHelperService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$window = $window;
@@ -8,7 +8,7 @@ class LogsOptionsManageCtrl {
     this.CucControllerHelper = CucControllerHelper;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsOptionsManageService = LogsOptionsManageService;
-    this.CurrencyService = CurrencyService;
+    this.CucCurrencyService = CucCurrencyService;
     this.CucOrderHelperService = CucOrderHelperService;
 
     this.serviceName = this.$stateParams.serviceName;
