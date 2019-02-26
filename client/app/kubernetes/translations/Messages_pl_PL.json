@@ -90,7 +90,7 @@
  "kube_containers_description_dashboard_link": "Aby zainstalować dashboard Kubernetesa, postępuj zgodnie z <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">tym tutorialem<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
  "kube_containers_description_documentation": "W fazie beta możesz korzystać z dokumentacji (Jak zarządzać usługami i umieszczać je w Internecie, etc...) dostępnej w <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">sekcji Kubernetes na stronie labs.ovh.com.<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a>",
  "kube_service_upgrade_policy": "Polityka aktualizacji",
- "kube_service_upgrade_policy_NEVER_UPDATE": "Nie do aktualizacji",
+ "kube_service_upgrade_policy_NEVER_UPDATE": "Nie aktualizuj",
  "kube_service_upgrade_policy_MINIMAL_DOWNTIME": "Minimalna niedostępność",
  "kube_service_upgrade_policy_ALWAYS_UPDATE": "Pełne bezpieczeństwo",
  "kube_service_upgrade_policy_description_NEVER_UPDATE": "Nie zalecamy tego wyboru. OVH zastrzega sobie prawo do wyjątkowych aktualizacji komponentów Kubernetes lub Twoich węzłów w krytycznych przypadkach, w których może to spowodować ograniczenie bezpieczeństwa naszej infrastruktury.",
