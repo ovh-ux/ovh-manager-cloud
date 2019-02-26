@@ -159,4 +159,7 @@ angular.module('managerApp')
     openstack_add_user: 'openstack_add_user',
     storage_create_container: 'create_container',
     storage_create_container_validation: 'validation_create_container',
+    pci_infra_view_switch: 'pci_infrastructure_view',
+    pci_list_view_switch: 'pci_list_view',
+    cloud_infra_action_monitor: 'pci_display_monitoring',
   });

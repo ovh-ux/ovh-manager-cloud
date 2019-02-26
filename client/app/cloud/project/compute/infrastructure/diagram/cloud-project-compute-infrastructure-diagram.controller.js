@@ -8,7 +8,7 @@
       OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
       OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot, OvhApiIp, OvhApiMe,
       jsPlumbService, Poller, RegionService,
-      CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, TARGET, URLS) {
+      CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, TARGET, TRACKING_CLOUD, URLS) {
       this.$rootScope = $rootScope;
       this.$scope = $scope;
       this.$document = $document;
@@ -49,6 +49,7 @@
       this.CLOUD_MONITORING = CLOUD_MONITORING;
       this.REDIRECT_URLS = REDIRECT_URLS;
       this.TARGET = TARGET;
+      this.TRACKING_CLOUD = TRACKING_CLOUD;
       this.URLS = URLS;
     }
 

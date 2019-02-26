@@ -1,16 +1,19 @@
 class CloudProjectComputeInfrastructureService {
-  constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CloudUserPref,
-    CloudProjectComputeInfrastructureOrchestrator, CucControllerHelper, CucServiceHelper, TARGET) {
+  constructor($rootScope, $state, $translate, $uibModal, atInternet, CucCloudMessage,
+    CloudUserPref, CloudProjectComputeInfrastructureOrchestrator, CucControllerHelper, CucServiceHelper,
+    TARGET, TRACKING_CLOUD) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
+    this.atInternet = atInternet;
     this.CucCloudMessage = CucCloudMessage;
     this.CloudUserPref = CloudUserPref;
     this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
     this.CucControllerHelper = CucControllerHelper;
     this.CucServiceHelper = CucServiceHelper;
     this.TARGET = TARGET;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
   }
 
   buyIpFailOver() {
@@ -212,6 +215,10 @@ class CloudProjectComputeInfrastructureService {
   }
 
   monitorVirtualMachine(vmId) {
+    this.atInternet.trackClick({
+      name: this.TRACKING_CLOUD.cloud_infra_action_monitor,
+      type: 'action',
+    });
     return this.$state.go('iaas.pci-project.compute.infrastructure.diagram', {
       createNewVm: false,
       createNewVolume: false,
