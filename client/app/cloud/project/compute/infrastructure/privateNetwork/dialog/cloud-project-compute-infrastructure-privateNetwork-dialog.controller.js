@@ -51,7 +51,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
       ]).then(() => {
         self.presetNetwork(self.userInput.vlanId);
       }).finally(() => {
-        $rootScope.$broadcast('highlighed-element.show', 'compute');
+        $rootScope.$broadcast('cuc-highlighted-element.show', 'compute');
       });
 
       if (!self.service.areUrlsLoading()) {

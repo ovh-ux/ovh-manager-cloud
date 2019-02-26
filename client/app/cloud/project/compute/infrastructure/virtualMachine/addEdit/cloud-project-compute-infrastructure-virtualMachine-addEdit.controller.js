@@ -701,7 +701,7 @@ angular.module('managerApp')
           });
         }, 99);
 
-        $rootScope.$broadcast('highlighed-element.show', `compute,${self.vmInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.show', `compute,${self.vmInEdition.id}`);
       }
 
       function editWithParam() {
@@ -902,7 +902,7 @@ angular.module('managerApp')
             CloudProjectComputeInfrastructureOrchestrator
               .saveMultipleNewVms(self.vmInEdition, self.model.vmCount)
               .then(() => {
-                $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+                $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
                 CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
                   false,
                   self.vmInEdition,
@@ -924,7 +924,7 @@ angular.module('managerApp')
              */
           } else {
             CloudProjectComputeInfrastructureOrchestrator.saveNewVm(self.vmInEdition).then(() => {
-              $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+              $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
               CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
                 false,
                 self.vmInEdition,
@@ -947,7 +947,7 @@ angular.module('managerApp')
         } else {
         // PUT
           CloudProjectComputeInfrastructureOrchestrator.saveEditedVm(self.vmInEdition).then(() => {
-            $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+            $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
             CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
           }, (err) => {
             if (err && err.status === 409) {
@@ -967,7 +967,7 @@ angular.module('managerApp')
         if (self.vmInEdition.status === 'DRAFT') {
           CloudProjectComputeInfrastructureOrchestrator.deleteVm(self.vmInEdition);
         }
-        $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
         CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
       };
 

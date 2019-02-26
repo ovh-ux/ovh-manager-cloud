@@ -108,9 +108,9 @@
 
       this.InfrastructureService.setPreferredView('diagram');
 
-      // Hide highlighted-element on change state
+      // Hide cuc-highlighted-element on change state
       const hook = this.$transitions.onStart({ from: 'iaas.pci-project.compute.infrastructure.diagram' }, () => {
-        this.$rootScope.$broadcast('highlighed-element.hide');
+        this.$rootScope.$broadcast('cuc-highlighted-element.hide');
       });
 
       this.$scope.$on('$destroy', hook);
@@ -194,8 +194,8 @@
                   action: 'attach',
                 });
 
-                this.$rootScope.$broadcast('highlighed-element.show', `compute,${connectedIp.id},${connectedVmId}`);
-                this.model.currentLinkEdit.connection.addClass('highlighed-element highlighed-element-active');
+                this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,${connectedIp.id},${connectedVmId}`);
+                this.model.currentLinkEdit.connection.addClass('cuc-highlighted-element cuc-highlighted-element-active');
               } else {
                 this.ipEdit.attach.confirm(connectedVm, connectedIp)
                   .catch(() => {
@@ -685,7 +685,7 @@
     toggleVmEditionState(vm, param) {
       if (vm.openDetail) {
         this.CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
-        this.$rootScope.$broadcast('highlighed-element.hide');
+        this.$rootScope.$broadcast('cuc-highlighted-element.hide');
       } else {
         if (param) {
           this.CloudProjectComputeInfrastructureOrchestrator.setEditVmParam(param);
@@ -879,14 +879,14 @@
             const id = $(this).attr('elid');
             const vm = this.infra.vrack.getVmById(id);
             if (vm) {
-              this.$rootScope.$broadcast('highlighed-element.show', `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
+              this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
             }
           },
           stop: () => {
             const id = $(this).attr('elid');
             const vm = this.infra.vrack.getVmById(id);
             if (vm) {
-              this.$rootScope.$broadcast('highlighed-element.hide', `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
+              this.$rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
             }
           },
         },
@@ -925,14 +925,14 @@
             const id = $(this).attr('elid');
             const ip = this.infra.internet.getIpById(id);
             if (ip) {
-              this.$rootScope.$broadcast('highlighed-element.show', `compute,${_.get(ip, 'id', '')},vm-ACTIVE-${_.get(ip, 'continentCode', '')}`);
+              this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,${_.get(ip, 'id', '')},vm-ACTIVE-${_.get(ip, 'continentCode', '')}`);
             }
           },
           stop: () => {
             const id = $(this).attr('elid');
             const ip = this.infra.internet.getIpById(id);
             if (ip) {
-              this.$rootScope.$broadcast('highlighed-element.hide', `compute,${_.get(ip, 'id', '')},vm-ACTIVE-${_.get(ip, 'continentCode', '')}`);
+              this.$rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${_.get(ip, 'id', '')},vm-ACTIVE-${_.get(ip, 'continentCode', '')}`);
             }
           },
         },
@@ -954,7 +954,7 @@
               return this.CloudProjectComputeInfrastructureOrchestrator
                 .attachIptoVm(connectedIp, connectedVm)
                 .then(() => {
-                  this.$rootScope.$broadcast('highlighed-element.hide');
+                  this.$rootScope.$broadcast('cuc-highlighted-element.hide');
                   this.model.currentLinkEdit = null;
                   let successMessage = {
                     text: this.$translate.instant('cpci_ip_attach_success', { ip: connectedIp.ip, instance: connectedVm.name }),
@@ -991,10 +991,10 @@
               if (this.model.currentLinkEdit.connectionCurrent) {
                 // this.model.currentLinkEdit.connectionCurrent
                 //   .setHoverPaintStyle({ lineWidth : 8 });
-                this.model.currentLinkEdit.connectionCurrent.removeClass('highlighed-element highlighed-element-active');
+                this.model.currentLinkEdit.connectionCurrent.removeClass('cuc-highlighted-element cuc-highlighted-element-active');
               }
 
-              this.$rootScope.$broadcast('highlighed-element.hide');
+              this.$rootScope.$broadcast('cuc-highlighted-element.hide');
               this.model.currentLinkEdit = null;
             }
           },
@@ -1032,10 +1032,10 @@
                 // If there are a connection already, highlight it
                 if (this.model.currentLinkEdit.connectionCurrent) {
                   this.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth: 4 });
-                  this.model.currentLinkEdit.connectionCurrent.addClass('highlighed-element highlighed-element-active');
+                  this.model.currentLinkEdit.connectionCurrent.addClass('cuc-highlighted-element cuc-highlighted-element-active');
                 }
 
-                this.$rootScope.$broadcast('highlighed-element.show', `compute,vm-ACTIVE-${_.get(this.model, 'currentLinkEdit.connectedIp.continentCode', '')}`);
+                this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,vm-ACTIVE-${_.get(this.model, 'currentLinkEdit.connectedIp.continentCode', '')}`);
               } else {
                 this.CucCloudMessage.error(this.$translate.instant('cpci_ipfo_attach_error'));
               }
@@ -1062,7 +1062,7 @@
 
               // set connection style
               this.model.currentLinkEdit.connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(this.model.currentLinkEdit.connectedIp.type), lineWidth: 8, dashstyle: '2 1' });
-              this.model.currentLinkEdit.connection.addClass('highlighed-element highlighed-element-active');
+              this.model.currentLinkEdit.connection.addClass('cuc-highlighted-element cuc-highlighted-element-active');
             } else if (this.model.currentLinkEdit.connectionCurrent) {
               this.model.currentLinkEdit.connectionCurrent.setPaintStyle({
                 strokeStyle: this.constructor
@@ -1148,7 +1148,7 @@
                 } else {
                   this.volumeEdit.action = 'remove';
                   this.volumeEdit.volume = volume;
-                  this.$rootScope.$broadcast('highlighed-element.show', `compute,${volume.id}`);
+                  this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,${volume.id}`);
                 }
               })
               .catch((err) => {
@@ -1157,14 +1157,14 @@
           },
           cancel: () => {
             this.volumeEdit.reInit();
-            this.$rootScope.$broadcast('highlighed-element.hide');
+            this.$rootScope.$broadcast('cuc-highlighted-element.hide');
           },
           confirm: () => {
             this.loaders.volumeActionConfirm = true;
             this.CloudProjectComputeVolumesOrchestrator.deleteVolume(this.volumeEdit.volume.id)
               .then(() => {
                 this.volumeEdit.reInit();
-                this.$rootScope.$broadcast('highlighed-element.hide');
+                this.$rootScope.$broadcast('cuc-highlighted-element.hide');
               })
               .catch((err) => {
                 this.CucCloudMessage.error(`${this.$translate.instant('cpci_volume_delete_error')} ${_.get(err, 'data.message', '')}`);
@@ -1183,13 +1183,13 @@
 
             // set overlay
             this.$timeout(() => { // otherwise LAG
-              this.$rootScope.$broadcast('highlighed-element.show', `compute,${targetVm ? targetVm.id : 'unlinked_volumes'}`);
+              this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,${targetVm ? targetVm.id : 'unlinked_volumes'}`);
             }, 100);
           },
           cancel: () => {
             this.initDragDropHelper(); // :-/
             this.volumeEdit.reInit();
-            this.$rootScope.$broadcast('highlighed-element.hide');
+            this.$rootScope.$broadcast('cuc-highlighted-element.hide');
           },
           confirm: () => {
             // Open volumes of VM target
@@ -1213,7 +1213,7 @@
               .finally(() => {
                 this.loaders.volumeActionConfirm = false;
                 this.volumeEdit.reInit();
-                this.$rootScope.$broadcast('highlighed-element.hide');
+                this.$rootScope.$broadcast('cuc-highlighted-element.hide');
               });
           },
         },
@@ -1233,7 +1233,7 @@
 
               // set overlay
               this.$timeout(() => { // otherwise LAG
-                this.$rootScope.$broadcast('highlighed-element.show', `compute,vm-ACTIVE-${volume.region}`);
+                this.$rootScope.$broadcast('cuc-highlighted-element.show', `compute,vm-ACTIVE-${volume.region}`);
               }, 100);
             } else {
               this.CucCloudMessage.error(this.$translate.instant('cpci_volume_attach_error'));
@@ -1275,7 +1275,7 @@
         this.CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volume);
       } else {
         this.CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition(true);
-        this.$rootScope.$broadcast('highlighed-element.hide');
+        this.$rootScope.$broadcast('cuc-highlighted-element.hide');
       }
     }
 

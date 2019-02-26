@@ -69,7 +69,7 @@ angular.module('managerApp')
           self.slider.min = self.volumeInEdition.size || self.slider.min;
         }
 
-        $rootScope.$broadcast('highlighed-element.show', `compute, ${self.volumeInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.show', `compute, ${self.volumeInEdition.id}`);
 
         // Tab loop into the popover
         $timeout(() => {
@@ -265,7 +265,7 @@ angular.module('managerApp')
         // POST
         if (self.volumeInEdition.status === 'DRAFT') {
           CloudProjectComputeVolumesOrchestrator.saveNewVolume(self.volumeInEdition).then(() => {
-            $rootScope.$broadcast('highlighed-element.hide');
+            $rootScope.$broadcast('cuc-highlighted-element.hide');
             CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition();
             atInternet.trackOrder({
               name: `[VOLUME]::${self.volumeInEdition.type.replace(/[\W_]+/g, '')}[${self.volumeInEdition.type}-${self.volumeInEdition.size}]`,
@@ -280,7 +280,7 @@ angular.module('managerApp')
         } else {
           // PUT
           CloudProjectComputeVolumesOrchestrator.saveEditedVolume(self.volumeInEdition).then(() => {
-            $rootScope.$broadcast('highlighed-element.hide');
+            $rootScope.$broadcast('cuc-highlighted-element.hide');
             CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition();
           }, (err) => {
             CucCloudMessage.error([$translate.instant('cpci_volume_addedit_put_error'), (err.data && err.data.message) || ''].join(' '));
@@ -293,7 +293,7 @@ angular.module('managerApp')
         if (self.volumeInEdition.status === 'DRAFT') {
           CloudProjectComputeVolumesOrchestrator.deleteVolume(self.volumeInEdition.id);
         }
-        $rootScope.$broadcast('highlighed-element.hide', `compute,${self.volumeInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.volumeInEdition.id}`);
         CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition(true);
         $rootScope.$broadcast('infra.refresh.links.delayed');
       };

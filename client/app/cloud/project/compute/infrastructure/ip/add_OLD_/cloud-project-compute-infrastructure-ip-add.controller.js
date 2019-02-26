@@ -53,7 +53,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpAddC
     self.cancelIpAdd = function () {
       $rootScope.$broadcast('ip.add.cancel');
       // reset overlay
-      $rootScope.$broadcast('highlighed-element.hide');
+      $rootScope.$broadcast('cuc-highlighted-element.hide');
     };
 
     self.launchIpCreation = function () {
@@ -86,7 +86,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpAddC
         $('.cloud-ip-popover').find(':tabbable:first').focus();
       }, 99);
       // set overlay
-      $rootScope.$broadcast('highlighed-element.show', 'compute,draft-ip');
+      $rootScope.$broadcast('cuc-highlighted-element.show', 'compute,draft-ip');
       // get possible geolocs
       self.locLoader = true;
       return OvhApiCloud.v6().schema().$promise.then((schema) => {
