@@ -68,7 +68,7 @@ angular.module('managerApp')
 
       self.close = function close() {
         self.vm.stopMonitoring();
-        $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vm.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vm.id}`);
       };
 
       self.openVmFlavorEditionState = function openVmFlavorEditionState() {
@@ -299,7 +299,7 @@ angular.module('managerApp')
 
       function init() {
         self.vm = CloudProjectComputeInfrastructureOrchestrator.getMonitoredVm();
-        $rootScope.$broadcast('highlighed-element.show', `compute,${self.vm.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.show', `compute,${self.vm.id}`);
 
         $(document).on('keyup', closeOnEscapeKey);
         $scope.$on('$destroy', () => {

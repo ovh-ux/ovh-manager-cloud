@@ -6,7 +6,7 @@ import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
-import translateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
+import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
@@ -69,7 +69,7 @@ angular.module('managerApp', [
   'angular-websocket',
   'angular-translate-loader-pluggable',
 
-  translateAsyncLoader,
+  ngTranslateAsyncLoader,
   cloudUniverseComponents,
 ])
   .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider,

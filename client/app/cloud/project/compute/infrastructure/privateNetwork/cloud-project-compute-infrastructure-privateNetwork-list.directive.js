@@ -360,7 +360,7 @@ class PrivateNetworkListCtrl {
 
   hideDialog() {
     this.states.dialog.visible = false;
-    this.$rootScope.$broadcast('highlighed-element.hide', 'compute');
+    this.$rootScope.$broadcast('cuc-highlighted-element.hide', 'compute');
   }
 
   toggleDialog() {
