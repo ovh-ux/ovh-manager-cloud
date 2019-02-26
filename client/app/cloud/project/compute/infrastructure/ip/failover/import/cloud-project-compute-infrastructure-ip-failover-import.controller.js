@@ -3,7 +3,7 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeInfrastructureIpFailoverImportCtrl', function CloudProjectComputeInfrastructureIpFailoverImportCtrl(
     $q, $scope, $stateParams, $translate, $uibModalInstance, atInternet, CucCloudMessage,
-    pendingImportIps, OvhApiCloudProjectInstance, OvhApiIp, OvhApiMe,
+    pendingImportIps, OvhApiCloudProjectInstance, OvhApiIp, OvhApiMe, TRACKING_CLOUD,
   ) {
     const self = this;
 
@@ -117,7 +117,7 @@ angular.module('managerApp')
 
     self.confirm = function () {
       atInternet.trackClick({
-        name: 'confirm_import_failover_ips_ovh',
+        name: TRACKING_CLOUD.compute_failover_buy_confirm,
         type: 'action',
       });
       if (!self.loaders.table.importIpsFo) {

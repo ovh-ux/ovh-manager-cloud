@@ -1,10 +1,10 @@
 angular.module('managerApp')
   .controller('CloudProjectBillingRightsCtrl',
     function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CucCloudMessage,
-      CucControllerHelper, $translate, REDIRECT_URLS, $window) {
+      CucControllerHelper, $translate, REDIRECT_URLS, $window, TRACKING_CLOUD) {
       const self = this;
       const serviceName = $stateParams.projectId;
-
+      self.TRACKING_CLOUD = TRACKING_CLOUD;
       self.model = {
         owner: '',
         billing: '',

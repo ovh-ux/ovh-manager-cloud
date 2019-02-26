@@ -1,7 +1,8 @@
 class CloudProjectComputeLoadbalancerCtrl {
   constructor(
-    $q, $translate, $state, $stateParams, atInternet, CloudProjectComputeLoadbalancerService,
-    OvhApiCloudProjectIplb, OvhApiIpLoadBalancing, CucCloudMessage, OvhApiMe, URLS,
+    $q, $translate, $state, $stateParams, $window, atInternet,
+    CloudProjectComputeLoadbalancerService, CucCloudMessage, OvhApiCloudProjectIplb,
+    OvhApiIpLoadBalancing, OvhApiMe, URLS, TRACKING_CLOUD,
   ) {
     this.$q = $q;
     this.$translate = $translate;
@@ -14,6 +15,7 @@ class CloudProjectComputeLoadbalancerCtrl {
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.CucCloudMessage = CucCloudMessage;
     this.OvhApiMe = OvhApiMe;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.serviceName = $stateParams.projectId;
 
@@ -56,7 +58,7 @@ class CloudProjectComputeLoadbalancerCtrl {
 
   buyLoadBalancer() {
     this.atInternet.trackClick({
-      name: 'order_load_balancer',
+      name: this.TRACKING_CLOUD.order_load_balancer,
       type: 'action',
     });
 

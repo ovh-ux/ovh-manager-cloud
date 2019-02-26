@@ -1,8 +1,9 @@
 class CloudProjectBillingVouchersAddcreditCtrl {
-  constructor($uibModalInstance, atInternet, CucControllerHelper, OvhApiMe) {
+  constructor($uibModalInstance, atInternet, CucControllerHelper, TRACKING_CLOUD, OvhApiMe) {
     this.$uibModalInstance = $uibModalInstance;
     this.atInternet = atInternet;
     this.CucControllerHelper = CucControllerHelper;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiMe = OvhApiMe;
     this.credit = {
       amount: 10,
@@ -19,7 +20,7 @@ class CloudProjectBillingVouchersAddcreditCtrl {
 
   addCredit() {
     this.atInternet.trackClick({
-      name: 'bc_credit_cloud',
+      name: this.TRACKING_CLOUD.billing_rights_add_credit,
       type: 'action',
     });
     this.$uibModalInstance.close(this.credit.amount);

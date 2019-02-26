@@ -1,7 +1,6 @@
 class CloudProjectComputeSshCtrl {
   constructor($stateParams, $translate, atInternet, CucControllerHelper, CucCloudMessage,
-    CloudProjectSSHKeyService, OvhApiCloudProjectSshKey,
-    ovhDocUrl) {
+    CloudProjectSSHKeyService, OvhApiCloudProjectSshKey, ovhDocUrl, TRACKING_CLOUD) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
 
@@ -11,6 +10,7 @@ class CloudProjectComputeSshCtrl {
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
     this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
     this.ovhDocUrl = ovhDocUrl;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.serviceName = $stateParams.projectId;
     this.addSshKeyForm = null;
@@ -80,7 +80,7 @@ class CloudProjectComputeSshCtrl {
       return;
     }
     this.atInternet.trackClick({
-      name: 'validation_add_ssh_key',
+      name: this.TRACKING_CLOUD.compute_ssh_validation,
       type: 'action',
     });
     this.createKey.load();

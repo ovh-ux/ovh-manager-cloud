@@ -1,11 +1,12 @@
 class CloudProjectBillingVoucherAddCtrl {
   constructor($translate, $uibModalInstance, atInternet, CucControllerHelper, CucCloudMessage,
-    OvhApiCloudProjectCredit, serviceName) {
+    OvhApiCloudProjectCredit, serviceName, TRACKING_CLOUD) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.atInternet = atInternet;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiCloudProjectCredit = OvhApiCloudProjectCredit;
     this.serviceName = serviceName;
 
@@ -21,7 +22,7 @@ class CloudProjectBillingVoucherAddCtrl {
   confirm() {
     this.CucCloudMessage.flushChildMessage();
     this.atInternet.trackClick({
-      name: 'confirmation_activation_voucher',
+      name: this.TRACKING_CLOUD.billing_rights_activate_voucher,
       type: 'action',
     });
     this.saving = this.CucControllerHelper.request.getHashLoader({

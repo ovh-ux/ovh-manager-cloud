@@ -106,6 +106,7 @@ angular.module('managerApp')
       CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES,
       REDIRECT_URLS,
       TARGET,
+      TRACKING_CLOUD,
       URLS,
     ) {
       const self = this;
@@ -878,7 +879,7 @@ angular.module('managerApp')
 
       self.putPostVM = function putPostVM() {
         atInternet.trackClick({
-          name: 'payment_add_serveur',
+          name: TRACKING_CLOUD.payment_add_server,
           type: 'action',
         });
         self.loaders.launch = true;

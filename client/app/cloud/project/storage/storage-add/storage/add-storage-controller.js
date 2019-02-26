@@ -8,10 +8,11 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
   'OvhApiCloudProjectRegion',
   'CloudStorageContainers',
   'CucCloudMessage',
+  'TRACKING_CLOUD',
   function storageCtrl($q, $scope, $state, $stateParams, $timeout, $translate,
-    OvhApiCloudProjectRegion, CloudStorageContainers, CucCloudMessage) {
+    OvhApiCloudProjectRegion, CloudStorageContainers, CucCloudMessage, TRACKING_CLOUD) {
     $scope.projectId = $stateParams.projectId;
-
+    $scope.TRACKING_CLOUD = TRACKING_CLOUD;
     $scope.model = {};
     $scope.steps = {
       region: {

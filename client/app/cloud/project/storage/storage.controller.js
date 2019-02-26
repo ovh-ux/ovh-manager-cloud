@@ -13,9 +13,10 @@ angular.module('managerApp').controller('RA.storageCtrl', [
   'CucCloudMessage',
   'ovhDocUrl',
   'RegionService',
+  'TRACKING_CLOUD',
   function ($filter, $rootScope, $scope, $state, $stateParams, $translate, $uibModal, atInternet,
     CloudStorageContainer, CloudStorageContainers, CloudStorageContainerTasksRunner,
-    CucCloudMessage, ovhDocUrl, RegionService) {
+    CucCloudMessage, ovhDocUrl, RegionService, TRACKING_CLOUD) {
     $scope.projectId = $stateParams.projectId;
     $scope.loaders = {
       storages: true,
@@ -211,7 +212,7 @@ angular.module('managerApp').controller('RA.storageCtrl', [
 
     $scope.createContainer = function () {
       atInternet.trackClick({
-        name: 'create_container',
+        name: TRACKING_CLOUD.storage_create_container,
         type: 'action',
       });
       return $state.go('iaas.pci-project.compute.storage.add-container');

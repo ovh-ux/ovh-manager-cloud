@@ -106,7 +106,7 @@
                 data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.table.volume || CloudProjectComputeVolumeCtrl.table.volume === null"
                 data-ng-click="CloudProjectComputeVolumeCtrl.createNewVolume()"
                 data-track-on="click"
-                data-track-name="add_disk"
+                data-track-name="{{CloudProjectComputeVolumeCtrl.TRACKING_CLOUD.compute_volume_add_disk}}"
                 data-track-click="action"
                 write-right-required>
             {{:: 'cpc_volume_search_add'|translate }}

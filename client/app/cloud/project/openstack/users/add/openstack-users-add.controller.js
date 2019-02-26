@@ -1,6 +1,6 @@
 class CloudProjectOpenStackUserAddCtrl {
   constructor($translate, $uibModalInstance, atInternet, CucControllerHelper, CucCloudMessage,
-    OpenstackUsersPassword, OvhApiCloud, serviceName) {
+    OpenstackUsersPassword, OvhApiCloud, serviceName, TRACKING_CLOUD) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.atInternet = atInternet;
@@ -9,6 +9,7 @@ class CloudProjectOpenStackUserAddCtrl {
     this.OpenstackUsersPassword = OpenstackUsersPassword;
     this.OvhApiCloud = OvhApiCloud;
     this.serviceName = serviceName;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.model = {
       value: undefined,
@@ -21,7 +22,7 @@ class CloudProjectOpenStackUserAddCtrl {
 
   confirm() {
     this.atInternet.trackClick({
-      name: 'confirmation_add_user',
+      name: this.TRACKING_CLOUD.openstack_add_user_confirm,
       type: 'action',
     });
     this.CucCloudMessage.flushChildMessage();

@@ -7,7 +7,7 @@
                 data-ng-click="VouchersCtrl.openAddVoucher()"
                 data-ng-disabled="VouchersCtrl.vouchers.loading"
                 data-track-on="click"
-                data-track-name="activation_voucher"
+                data-track-name="{{VouchersCtrl.TRACKING_CLOUD.billing_voucher_activation}}"
                 data-track-click="action"
                 write-right-required>
             <span data-translate="cpb_vouchers_add_button"></span>
@@ -18,7 +18,7 @@
                 data-ng-click="VouchersCtrl.openAddCredit()"
                 data-ng-disabled="VouchersCtrl.vouchers.loading"
                 data-track-on="click"
-                data-track-name="buy_credit_cloud"
+                data-track-name="{{VouchersCtrl.TRACKING_CLOUD.billing_voucher_credit}}"
                 data-track-click="action"
                 write-right-required>
             <span data-translate="cpb_vouchers_add_credit_button"></span>

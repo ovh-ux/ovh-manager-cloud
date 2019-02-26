@@ -1,6 +1,7 @@
 class CloudprojectbillingvouchersCtrl {
   constructor($q, $stateParams, $translate, CucCloudMessage, $uibModal, OvhApiMeBill,
-    CucControllerHelper, CloudVouchersService, CucServiceHelper, OvhApiOrderCloudProjectCredit) {
+    CucControllerHelper, CloudVouchersService, CucServiceHelper,
+    OvhApiOrderCloudProjectCredit, TRACKING_CLOUD) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
@@ -10,6 +11,7 @@ class CloudprojectbillingvouchersCtrl {
     this.CucControllerHelper = CucControllerHelper;
     this.CloudVouchersService = CloudVouchersService;
     this.CucServiceHelper = CucServiceHelper;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
 
     this.vouchers = this.CucControllerHelper.request.getArrayLoader({

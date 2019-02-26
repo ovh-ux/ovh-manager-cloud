@@ -2,12 +2,13 @@ angular.module('managerApp')
   .controller('CloudProjectOpenstackUsersCtrl',
     function CloudProjectOpenstackUsersCtrl(OvhApiCloud, $translate, CucCloudMessage, $stateParams,
       Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken, $filter, $q, CucControllerHelper,
-      $window, REDIRECT_URLS) {
+      $window, REDIRECT_URLS, TRACKING_CLOUD) {
       const self = this;
       const orderBy = $filter('orderBy');
       const pollingInterval = 5000;
 
       self.projectId = $stateParams.projectId;
+      self.TRACKING_CLOUD = TRACKING_CLOUD;
 
       self.table = {
         users: {},

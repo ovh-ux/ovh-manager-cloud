@@ -6,6 +6,7 @@ class CloudProjectBillingRightsAddCtrl {
     CucControllerHelper,
     CucCloudMessage,
     model,
+    TRACKING_CLOUD,
     OvhApiCloud,
   ) {
     this.$stateParams = $stateParams;
@@ -14,6 +15,7 @@ class CloudProjectBillingRightsAddCtrl {
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.model = model;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiCloud = OvhApiCloud;
 
     this.right = {
@@ -23,7 +25,7 @@ class CloudProjectBillingRightsAddCtrl {
 
   validateAddRight() {
     this.atInternet.trackClick({
-      name: 'validation_add_contact',
+      name: this.TRACKING_CLOUD.billing_rights_validate_contact,
       type: 'action',
     });
     this.CucCloudMessage.flushChildMessage();

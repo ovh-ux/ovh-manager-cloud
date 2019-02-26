@@ -48,7 +48,7 @@
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
                         data-ng-click="BillingRightsCtrl.openContacts()"
                         data-track-on="click"
-                        data-track-name="modification_contact_admin"
+                        data-track-name="{{BillingRightsCtrl.TRACKING_CLOUD.modification_contact_admin}}"
                         data-track-click="action">
                         <span data-translate="cpb_rights_modify"></span>
                         <i class="fa fa-external-link"></i>
@@ -96,7 +96,7 @@
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
                         data-ng-click="BillingRightsCtrl.openContacts()"
                         data-track-on="click"
-                        data-track-name="modification_contact_facturation"
+                        data-track-name="{{BillingRightsCtrl.TRACKING_CLOUD.modification_contact_facturation}}"
                         data-track-click="action">
                         <span data-translate="cpb_rights_modify"></span>
                         <i class="fa fa-external-link"></i>
@@ -119,7 +119,7 @@
             data-ng-disabled="BillingRightsCtrl.loader.rights || BillingRightsCtrl.data.rightIds === null"
             data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.toggle.addUser"
             data-track-on="click"
-            data-track-name="add_contact"
+            data-track-name="{{BillingRightsCtrl.TRACKING_CLOUD.billing_rights_add_contact}}"
             data-track-click="action">
             <span translate="common_add"></span>
         </button>

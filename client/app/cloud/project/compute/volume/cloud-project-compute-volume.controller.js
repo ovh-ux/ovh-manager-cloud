@@ -1,9 +1,12 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, CucControllerHelper,
-    CloudProjectOrchestrator, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-    OvhApiCloudProjectInstance, CucCloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
+  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl(
+    $q, $filter, $scope, $state, $stateParams, $timeout, $translate, CucControllerHelper,
+    CloudProjectOrchestrator, CucCloudMessage, OvhApiCloudProjectVolume,
+    OvhApiCloudProjectVolumeSnapshot, OvhApiCloudProjectInstance, RegionService,
+    CLOUD_UNIT_CONVERSION, TRACKING_CLOUD,
+  ) {
     const self = this;
 
 
@@ -55,6 +58,7 @@ angular.module('managerApp')
     };
 
     self.GIBIBYTE_TO_BYTE = CLOUD_UNIT_CONVERSION.GIBIBYTE_TO_BYTE;
+    self.TRACKING_CLOUD = TRACKING_CLOUD;
 
     function initSearchBar() {
       self.search = {

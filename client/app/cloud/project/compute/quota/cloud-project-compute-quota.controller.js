@@ -4,11 +4,12 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
   function CloudProjectComputeQuotaCtrl(
     $q, $stateParams, $translate, REDIRECT_URLS,
     OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CucCloudMessage, OtrsPopupService,
-    RegionService, TARGET,
+    RegionService, TARGET, TRACKING_CLOUD,
   ) {
     // ---------VARIABLE DECLARATION---------
 
     const self = this;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
     const serviceName = $stateParams.projectId;
 
     this.loader = {

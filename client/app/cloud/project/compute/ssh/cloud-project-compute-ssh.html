@@ -36,7 +36,7 @@
                 data-ng-disabled="$ctrl.keys.loading || $ctrl.table.ssh === null"
                 data-ng-class="{'visibility-hide' : $ctrl.toggle.openAddSsh}"
                 data-track-on="click"
-                data-track-name="add_ssh_key"
+                data-track-name="{{$ctrl.TRACKING_CLOUD.compute_ssh_key_add}}"
                 data-track-click="action"
                 write-right-required>
             <span translate="cpc_ssh_add_button"></span>

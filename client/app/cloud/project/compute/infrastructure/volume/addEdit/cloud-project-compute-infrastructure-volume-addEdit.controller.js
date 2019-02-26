@@ -1,12 +1,10 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeInfrastructureVolumeAddEditCtrl',
-    function CloudProjectComputeInfrastructureVolumeAddEditCtrl(
-      $scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout,
-      OvhApiCloudProjectRegion, $translate,
-      CucCloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota,
-      $location, atInternet, OvhApiMe, RegionService,
-      CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA,
-    ) {
+    function CloudProjectComputeInfrastructureVolumeAddEditCtrl($location, $rootScope, $scope,
+      $stateParams, $timeout, $translate, atInternet, CloudProjectComputeVolumesOrchestrator,
+      CucCloudMessage, RegionService, OvhApiMe, OvhApiCloudProjectQuota, OvhApiCloudProjectRegion,
+      CLOUD_VOLUME_TYPES, CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE,
+      CLOUD_VOLUME_UNLIMITED_QUOTA, TRACKING_CLOUD) {
       const self = this;
 
       const serviceName = $stateParams.projectId;
@@ -263,7 +261,7 @@ angular.module('managerApp')
       self.putPostVolume = function putPostVolume() {
         self.loaders.launch = true;
         atInternet.trackClick({
-          name: 'payment_add_disk',
+          name: TRACKING_CLOUD.payment_add_disk,
           type: 'action',
         });
         // POST
