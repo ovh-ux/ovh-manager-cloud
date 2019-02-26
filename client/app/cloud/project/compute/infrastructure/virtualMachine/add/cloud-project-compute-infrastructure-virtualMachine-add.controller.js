@@ -4,8 +4,8 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
     OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
-    OvhApiCloudProjectSshKey, CurrencyService, RegionService, CucServiceHelper, ovhDocUrl, TARGET,
-    URLS) {
+    OvhApiCloudProjectSshKey, CucCurrencyService, RegionService, CucServiceHelper, ovhDocUrl,
+    TARGET, URLS) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -23,7 +23,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
     this.OvhApiCloudProjectSnapshot = OvhApiCloudProjectSnapshot;
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
-    this.CurrencyService = CurrencyService;
+    this.CucCurrencyService = CucCurrencyService;
     this.RegionService = RegionService;
     this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
@@ -34,7 +34,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
 
   $onInit() {
     this.serviceName = this.$stateParams.projectId;
-    this.currentCurrency = this.CurrencyService.getCurrentCurrency();
+    this.currentCurrency = this.CucCurrencyService.getCurrentCurrency();
     this.loaders = {
       adding: false,
     };

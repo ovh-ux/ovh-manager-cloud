@@ -1,12 +1,12 @@
 class LogsOptionsCtrl {
   constructor($state, $stateParams, $window, CucControllerHelper, LogsConstants, LogsOfferService,
-    LogsOptionsService, CurrencyService, CucOrderHelperService, LogsDetailService) {
+    LogsOptionsService, CucCurrencyService, CucOrderHelperService, LogsDetailService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$window = $window;
     this.CucControllerHelper = CucControllerHelper;
     this.LogsOptionsService = LogsOptionsService;
-    this.CurrencyService = CurrencyService;
+    this.CucCurrencyService = CucCurrencyService;
     this.CucOrderHelperService = CucOrderHelperService;
     this.LogsDetailService = LogsDetailService;
     this.LogsConstants = LogsConstants;
@@ -86,7 +86,7 @@ class LogsOptionsCtrl {
    * @memberof LogsOptionsCtrl
    */
   getCurrentCurrency() {
-    return this.CurrencyService.getCurrentCurrency();
+    return this.CucCurrencyService.getCurrentCurrency();
   }
 
   /**
