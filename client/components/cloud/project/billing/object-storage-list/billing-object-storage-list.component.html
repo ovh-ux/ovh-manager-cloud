@@ -32,7 +32,7 @@
                        aria-label="cpbc_consumption_display">
                     </span>
                 </td>
-                <td class="oui-datagrid__cell text-right" data-title="{{ :: 'cpbc_object_storage_col_output_traffic' | translate }}">
+                <td class="oui-datagrid__cell" data-title="{{ :: 'cpbc_object_storage_col_output_traffic' | translate }}">
                     <span data-ng-bind="$ctrl.getPrice(storage.outgoingBandwidth)"></span>
                     <span class="fa fa-question-circle left-space-m4"
                        data-uib-popover="{{:: $ctrl.getStorageBandwidthInfoTooltip(storage) }}"
