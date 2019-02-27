@@ -6,12 +6,12 @@ class RegionsCtrl {
     CucControllerHelper,
     OvhApiCloudProjectRegion,
     CloudProjectVirtualMachineAddService,
-    RegionService,
+    CucRegionService,
   ) {
     this.CucCloudMessage = CucCloudMessage;
     this.CucControllerHelper = CucControllerHelper;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.serviceName = $stateParams.projectId;
@@ -38,7 +38,7 @@ class RegionsCtrl {
       loaderFunction: () => this.OvhApiCloudProjectRegion.v6()
         .query({ serviceName: this.serviceName })
         .$promise
-        .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region)))
+        .then(regionIds => _.map(regionIds, region => this.CucRegionService.getRegion(region)))
         .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_get_regions_error')(error)),
     });
     return this.regions.load();
@@ -69,7 +69,7 @@ class RegionsCtrl {
       loaderFunction: () => this.OvhApiCloudProjectRegion.AvailableRegions().v6()
         .query({ serviceName: this.serviceName })
         .$promise
-        .then(regionIds => _.map(regionIds, region => this.RegionService.getRegion(region.name)))
+        .then(regionIds => _.map(regionIds, region => this.CucRegionService.getRegion(region.name)))
         .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
     });
     return this.availableRegions.load();

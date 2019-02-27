@@ -4,14 +4,14 @@ class IpLoadBalancerZoneDeleteService {
     $translate,
     CucCloudMessage,
     OvhApiIpLoadBalancing,
-    RegionService,
+    CucRegionService,
     CucServiceHelper,
   ) {
     this.$q = $q;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
   }
 
@@ -29,7 +29,7 @@ class IpLoadBalancerZoneDeleteService {
           value: zone.state !== 'released',
           reason: zone.state === 'released' ? this.$translate.instant('iplb_zone_delete_unavailable_already_released') : '',
         },
-      }, this.RegionService.getRegion(zone.name))))
+      }, this.CucRegionService.getRegion(zone.name))))
       .catch(this.CucServiceHelper.errorHandler('iplb_zone_delete_loading_error'));
   }
 

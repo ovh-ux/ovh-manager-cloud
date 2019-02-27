@@ -2,7 +2,7 @@
   class MetricsDashboardCtrl {
     constructor($scope, $stateParams, $q, $translate, CucCloudMessage, CucControllerHelper,
       CucFeatureAvailabilityService, MetricService, METRICS_ENDPOINTS,
-      RegionService, SidebarMenu, REDIRECT_URLS) {
+      CucRegionService, SidebarMenu, REDIRECT_URLS) {
       this.$scope = $scope;
       this.$stateParams = $stateParams;
       this.$q = $q;
@@ -13,7 +13,7 @@
       this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
       this.MetricService = MetricService;
       this.graphs = METRICS_ENDPOINTS.graphs;
-      this.RegionService = RegionService;
+      this.CucRegionService = CucRegionService;
       this.SidebarMenu = SidebarMenu;
       this.REDIRECT_URLS = REDIRECT_URLS;
 
@@ -136,7 +136,7 @@
     }
 
     transformRegion(regionCode) {
-      const region = this.RegionService.getRegion(regionCode);
+      const region = this.CucRegionService.getRegion(regionCode);
       return { name: region.microRegion.text, country: region.country, flag: region.icon };
     }
 

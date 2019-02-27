@@ -1,12 +1,12 @@
 angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivateNetworkDialogCtrl',
   function ($rootScope, $scope, $q, $timeout, $translate, $stateParams,
-    CloudProjectComputeInfrastructurePrivateNetworkDialogService, RegionService) {
+    CloudProjectComputeInfrastructurePrivateNetworkDialogService, CucRegionService) {
     const self = this;
 
     self.projectId = $stateParams.projectId;
 
     self.service = CloudProjectComputeInfrastructurePrivateNetworkDialogService;
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
 
     self.form = null;
 

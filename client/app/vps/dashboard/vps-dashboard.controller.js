@@ -1,6 +1,6 @@
 class VpsDashboardCtrl {
   constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
-    CucControllerHelper, RegionService, SidebarMenu, VpsActionService, VpsService, URLS,
+    CucControllerHelper, CucRegionService, SidebarMenu, VpsActionService, VpsService, URLS,
     REDIRECT_URLS) {
     this.$filter = $filter;
     this.$q = $q;
@@ -10,7 +10,7 @@ class VpsDashboardCtrl {
     this.$translate = $translate;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.serviceName = $stateParams.serviceName;
     this.SidebarMenu = SidebarMenu;
     this.VpsActionService = VpsActionService;
@@ -310,8 +310,8 @@ class VpsDashboardCtrl {
     this.regionsGroup = [];
     if (regions) {
       this.detailedRegions = !_.isArray(regions)
-        ? [this.RegionService.getRegion(regions)]
-        : _.map(regions, region => this.RegionService.getRegion(region));
+        ? [this.CucRegionService.getRegion(regions)]
+        : _.map(regions, region => this.CucRegionService.getRegion(region));
     }
     this.regionsGroup = _.groupBy(this.detailedRegions, 'country');
   }

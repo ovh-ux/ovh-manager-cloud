@@ -1,8 +1,8 @@
 angular.module('managerApp')
-  .controller('BillingArchiveStorageListComponentCtrl', function BillingArchiveStorageListComponentCtrl($q, $filter, $translate, OvhApiMe, Toast, RegionService) {
+  .controller('BillingArchiveStorageListComponentCtrl', function BillingArchiveStorageListComponentCtrl($q, $filter, $translate, OvhApiMe, Toast, CucRegionService) {
     const self = this;
 
-    self.RegionService = RegionService;
+    self.CucRegionService = CucRegionService;
 
     self.currencySymbol = '';
 

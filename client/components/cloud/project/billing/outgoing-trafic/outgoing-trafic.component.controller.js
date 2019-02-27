@@ -1,10 +1,10 @@
 class OutgoingTraficComponentCtrl {
   constructor($translate, CucControllerHelper,
-    OvhApiMe, RegionService, CucServiceHelper, CLOUD_GEOLOCALISATION, CLOUD_UNIT_CONVERSION) {
+    OvhApiMe, CucRegionService, CucServiceHelper, CLOUD_GEOLOCALISATION, CLOUD_UNIT_CONVERSION) {
     this.$translate = $translate;
     this.CucControllerHelper = CucControllerHelper;
     this.OvhApiMe = OvhApiMe;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
     this.apacRegions = CLOUD_GEOLOCALISATION.instance.APAC;
     this.CLOUD_UNIT_CONVERSION = CLOUD_UNIT_CONVERSION;

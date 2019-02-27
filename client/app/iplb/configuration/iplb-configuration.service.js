@@ -1,12 +1,12 @@
 class IpLoadBalancerConfigurationService {
-  constructor($q, $state, $translate, CucCloudMessage, OvhApiIpLoadBalancing, RegionService,
+  constructor($q, $state, $translate, CucCloudMessage, OvhApiIpLoadBalancing, CucRegionService,
     CucServiceHelper) {
     this.$q = $q;
     this.$state = $state;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
   }
 
@@ -25,7 +25,7 @@ class IpLoadBalancerConfigurationService {
         const pending = _.find(pendingChanges, { zone });
         return {
           id: zone,
-          name: this.RegionService.getRegion(zone).microRegion.text,
+          name: this.CucRegionService.getRegion(zone).microRegion.text,
           changes: pending ? pending.number : 0,
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };
@@ -42,7 +42,7 @@ class IpLoadBalancerConfigurationService {
         const pending = _.find(pendingChanges, { zone });
         return {
           id: zone,
-          name: this.RegionService.getRegion(zone).microRegion.text,
+          name: this.CucRegionService.getRegion(zone).microRegion.text,
           changes: pending ? pending.number : 0,
           task: this.constructor.getLastUndoneTask(tasks, zone),
         };

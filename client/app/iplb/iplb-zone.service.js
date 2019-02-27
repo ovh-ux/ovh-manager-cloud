@@ -1,8 +1,8 @@
 class IpLoadBalancerZoneService {
-  constructor($translate, OvhApiIpLoadBalancing, RegionService) {
+  constructor($translate, OvhApiIpLoadBalancing, CucRegionService) {
     this.$translate = $translate;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
   }
 
   getIPLBZones(serviceName) {
@@ -11,7 +11,7 @@ class IpLoadBalancerZoneService {
     }).$promise
       .then(zones => zones.map(zone => ({
         id: zone,
-        name: this.RegionService.getRegion(zone).microRegion.text,
+        name: this.CucRegionService.getRegion(zone).microRegion.text,
       })));
   }
 
@@ -29,7 +29,7 @@ class IpLoadBalancerZoneService {
   }
 
   humanizeZone(zone) {
-    return this.RegionService.getRegion(zone).microRegion.text;
+    return this.CucRegionService.getRegion(zone).microRegion.text;
   }
 }
 

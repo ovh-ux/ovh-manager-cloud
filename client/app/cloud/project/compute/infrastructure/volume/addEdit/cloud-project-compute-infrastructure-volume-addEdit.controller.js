@@ -4,14 +4,14 @@ angular.module('managerApp')
       $scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout,
       OvhApiCloudProjectRegion, $translate,
       CucCloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota,
-      $location, atInternet, OvhApiMe, RegionService,
+      $location, atInternet, OvhApiMe, CucRegionService,
       CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA,
     ) {
       const self = this;
 
       const serviceName = $stateParams.projectId;
 
-      self.regionService = RegionService;
+      self.regionService = CucRegionService;
       self.activeSwitchPageIndex = 0;
 
       self.volumeInEditionParam = null;

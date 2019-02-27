@@ -3,7 +3,7 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, CucControllerHelper,
     CloudProjectOrchestrator, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-    OvhApiCloudProjectInstance, CucCloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
+    OvhApiCloudProjectInstance, CucCloudMessage, CucRegionService, CLOUD_UNIT_CONVERSION) {
     const self = this;
 
 
@@ -11,7 +11,7 @@ angular.module('managerApp')
 
 
     const orderBy = $filter('orderBy');
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
     // Datas
     self.table = {
       volume: [],

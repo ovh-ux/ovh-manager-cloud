@@ -1,9 +1,9 @@
 //     THIS IS CODE IS OBSOLETE
 angular.module('managerApp').controller('CloudProjectComputeInfrastructureIpAddCtrl',
   function ($rootScope, $scope, $timeout, $translate, $q, OvhApiCloud,
-    CloudProjectComputeInfrastructureOrchestrator, RegionService) {
+    CloudProjectComputeInfrastructureOrchestrator, CucRegionService) {
     const self = this;
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
 
     // -------------- QUANTITY AND GEOLOC CHANGES
 

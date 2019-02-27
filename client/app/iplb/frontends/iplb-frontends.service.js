@@ -1,13 +1,13 @@
 class IpLoadBalancerFrontendsService {
   constructor($q, $translate, IpLoadBalancerConfigurationService, IpLoadBalancerZoneService,
     OvhApiIpLoadBalancing,
-    RegionService, CucServiceHelper) {
+    CucRegionService, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
 
     this.Frontend = {
@@ -65,7 +65,7 @@ class IpLoadBalancerFrontendsService {
         },
       });
     } else {
-      _.set(frontend, 'region', this.RegionService.getRegion(frontend.zone));
+      _.set(frontend, 'region', this.CucRegionService.getRegion(frontend.zone));
     }
 
     // Needed to trigger row loading with datagrid.
@@ -116,7 +116,7 @@ class IpLoadBalancerFrontendsService {
     return this.IpLoadBalancerZoneService.getIPLBZones()
       .then(zones => zones.reduce((zonesMapParam, zoneName) => {
         const zonesMap = zonesMapParam;
-        zonesMap[zoneName] = this.RegionService.getRegion(zoneName).microRegion.text;
+        zonesMap[zoneName] = this.CucRegionService.getRegion(zoneName).microRegion.text;
         return zonesMap;
       }, {}))
       .then((zones) => {
