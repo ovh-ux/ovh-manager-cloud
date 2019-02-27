@@ -1090,6 +1090,13 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
   integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
 
+"@ovh-ux/ng-ovh-swimming-poll@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-swimming-poll/-/ng-ovh-swimming-poll-4.0.0.tgz#16e071b283fed0ab2fe3e2287819793cbf0f159a"
+  integrity sha512-kZDL0SFo2SK6yFDHhyMT7A3r8Q8czQlCKI914vMB5OQrRucX3dCNABnBaft5GKvTmDlBmCdH8ixT/H9IV9vdbA==
+  dependencies:
+    lodash "^4.17.11"
+
 "@ovh-ux/rollup-plugin-less-tilde-importer@^1.0.0-beta.0":
   version "1.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/rollup-plugin-less-tilde-importer/-/rollup-plugin-less-tilde-importer-1.0.0-beta.0.tgz#eaf065c6e1fd039db0ddfb2f30955aec987e0c63"
@@ -7736,10 +7743,6 @@ ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2:
   version "0.2.3"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-slider/tar.gz/eeb148ccf526848c5d60c10dcba9e79a14d5fa91"
 
-ovh-angular-swimming-poll@ovh-ux/ovh-angular-swimming-poll#^3.0.1:
-  version "3.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-swimming-poll/tar.gz/dfb6d59e8748084171fc34b169401e6183e2fe38"
-
 ovh-angular-tail-logs@ovh-ux/ovh-angular-tail-logs#^1.1.2:
   version "1.1.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-tail-logs/tar.gz/46b1735714dbf22c6d90fd2b469fd42904f9a5ff"
@@ -7748,10 +7751,10 @@ ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0:
   version "0.8.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-toaster/tar.gz/06d24889e94b8d816afee8e94185697cf68f2338"
 
-ovh-api-services@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-4.2.0.tgz#6b85f990aefae1fbf5233718f856aa051dab98c5"
-  integrity sha512-IippIziLZplEJe6kX8SCZaaR7lLYm+iFbleL/G8x7zMkQeHDIwmKAiHWgAubXXoMyj/GgigBGlrYHiK8eNRAqg==
+ovh-api-services@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-5.0.0.tgz#781660d36327feba683a99332d426096f67100d3"
+  integrity sha512-E+KrKuR0dnfEiS4Q7RvEsv4LFb0kWCc9kEN+x9Qm3d6OG1+yhbjOvVXjGlrdhdiGKAlj3AF5Clzl91IiXmoMxQ==
   dependencies:
     lodash "^3.10.1"
 

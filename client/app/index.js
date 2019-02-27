@@ -62,7 +62,6 @@ import 'script-loader!ovh-angular-browser-alert/dist/ovh-angular-browser-alert.j
 import 'ovh-angular-pagination-front';
 import 'ovh-angular-responsive-page-switcher';
 import 'ovh-angular-responsive-tabs';
-import 'ovh-angular-swimming-poll';
 import 'ovh-api-services';
 import 'ovh-angular-otrs';
 import 'script-loader!chart.js/dist/Chart.js';
