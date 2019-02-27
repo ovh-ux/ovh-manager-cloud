@@ -12,7 +12,6 @@ angular.module('managerApp')
       DELETING: 'DELETING',
       UPDATING: 'UPDATING',
       RESETTING: 'RESETTING',
-      ERROR: 'ERROR',
     },
     flavorTypes: ['balanced', 'cpu', 'ram'],
     displayNameMaxLength: 255,
