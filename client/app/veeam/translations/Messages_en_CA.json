@@ -23,7 +23,7 @@
  "veeam_storage_update_quota_error": "Error while updating storage quota. ",
  "veeam_storage_update_quota_success": "Storage quota updated. ",
  "veeam_tasks_success": "The modifications have been registered. ",
- "veeam_tasks_pending": "Tasks in progress",
+ "veeam_tasks_pending": "Ongoing tasks ",
  "veeam_action_upgrade_offer_no_upgrade": "The {{offer}} solution can not be increased currently.",
  "veeam_action_add_storage_unavailable_offer": "The {{offer}} solution does not allow you to add storage. ",
  "veeam_action_add_storage_unavailable_storage_number": "You have reached the maximum storage volume you can add. You can no longer add storage. ",

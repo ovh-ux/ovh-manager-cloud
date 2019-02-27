@@ -40,7 +40,7 @@
  "add_instance_name": "Server name",
  "add_container_image": "Image",
  "add_instance_choose": "Select...",
- "add_container_region": "Data centre",
+ "add_container_region": "Datacentre",
  "add_container_flavor": "Type",
  "add_container_ssh": "SSH key",
  "add_instance_new_ssh": "Create an SSH key",
@@ -103,5 +103,5 @@
  "storage_details_guide_title": "Guides",
  "storage_details_guide_pca": "Public Cloud Archive (PCA)",
  "storage_details_guide_pcs": "Public Cloud Storage (PCS)",
- "storage_details_guide_footer": "All the OVH guides "
+ "storage_details_guide_footer": "All OVH guides "
 }
