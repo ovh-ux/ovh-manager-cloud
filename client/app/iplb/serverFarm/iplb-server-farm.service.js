@@ -74,7 +74,7 @@ class IpLoadBalancerServerFarmService {
   create(type, serviceName, farm) {
     return this.Farm[type].post({ serviceName }, farm)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_farm_add_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_farm_add_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_farm_add_error'));
@@ -86,7 +86,7 @@ class IpLoadBalancerServerFarmService {
       farmId,
     }, farm)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_farm_update_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_farm_update_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_farm_update_error'));
@@ -98,7 +98,7 @@ class IpLoadBalancerServerFarmService {
       farmId,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_farm_delete_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_farm_delete_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_farm_delete_error'));

@@ -70,7 +70,7 @@ class IpLoadBalancerConfigurationService {
       }, {
         zone,
       }).$promise
-      .then(this.ServiceHelper.successHandler('iplb_configuration_apply_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_configuration_apply_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }
 
@@ -85,7 +85,7 @@ class IpLoadBalancerConfigurationService {
     return this.$q
       .all(promises)
       .then((refreshResults) => {
-        refreshResults.forEach(this.ServiceHelper.successHandler('iplb_configuration_apply_success'));
+        refreshResults.forEach(() => this.ServiceHelper.successHandler('iplb_configuration_apply_success')());
       })
       .catch(this.ServiceHelper.errorHandler('iplb_configuration_apply_error'));
   }

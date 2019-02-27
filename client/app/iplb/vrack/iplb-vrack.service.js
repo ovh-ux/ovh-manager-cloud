@@ -118,7 +118,7 @@ class IpLoadBalancerVrackService {
         this.OvhApiIpLoadBalancing.Farm().Http().v6().resetCache();
         return response;
       })
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_add_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_vrack_private_network_add_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_add_error'));
   }
 
@@ -138,7 +138,7 @@ class IpLoadBalancerVrackService {
         this.OvhApiIpLoadBalancing.Farm().Http().v6().resetCache();
         return response;
       })
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_edit_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_vrack_private_network_edit_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_edit_error'));
   }
 
@@ -147,7 +147,7 @@ class IpLoadBalancerVrackService {
       .updateFarmId({ serviceName, vrackNetworkId: networkId }, { farmId: [] }).$promise
       .then(() => this.OvhApiIpLoadBalancing.Vrack().v6()
         .delete({ serviceName, vrackNetworkId: networkId }).$promise)
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_delete_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_vrack_private_network_delete_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_delete_error'));
   }
 

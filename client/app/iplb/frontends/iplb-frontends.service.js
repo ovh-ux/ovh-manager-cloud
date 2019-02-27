@@ -154,7 +154,7 @@ class IpLoadBalancerFrontendsService {
   createFrontend(type, serviceName, frontend) {
     return this.Frontend[type].post({ serviceName }, frontend)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_add_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_frontend_add_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_frontend_add_error'));
@@ -166,7 +166,7 @@ class IpLoadBalancerFrontendsService {
       frontendId,
     }, frontend)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_update_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_frontend_update_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_frontend_update_error'));
@@ -178,7 +178,7 @@ class IpLoadBalancerFrontendsService {
       frontendId,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_delete_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_frontend_delete_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_frontend_delete_error'));
@@ -192,7 +192,7 @@ class IpLoadBalancerFrontendsService {
       disabled: frontend.disabled,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_toggle_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_frontend_toggle_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.ServiceHelper.errorHandler('iplb_frontend_toggle_error'));

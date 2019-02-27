@@ -23,7 +23,7 @@ class IpLoadBalancerSslCertificateService {
   create(serviceName, ssl) {
     return this.Ssl.post({ serviceName }, ssl)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_add_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_ssl_add_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_ssl_add_error'));
   }
 
@@ -33,7 +33,7 @@ class IpLoadBalancerSslCertificateService {
       sslId,
     }, ssl)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_update_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_ssl_update_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_ssl_update_error'));
   }
 
@@ -43,7 +43,7 @@ class IpLoadBalancerSslCertificateService {
       sslId,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_delete_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_ssl_delete_success')())
       .catch(this.ServiceHelper.errorHandler('iplb_ssl_delete_error'));
   }
 
@@ -120,7 +120,7 @@ class IpLoadBalancerSslCertificateService {
 
   orderFreeCertificate(serviceName, fqdn) {
     return this.OvhApiIpLoadBalancing.v6().freeCertificate({ serviceName }, { fqdn }).$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_order_success'))
+      .then(() => this.ServiceHelper.successHandler('iplb_ssl_order_success')())
       .then(() => this.Ssl.resetQueryCache())
       .catch(this.ServiceHelper.errorHandler('iplb_ssl_order_error'));
   }
