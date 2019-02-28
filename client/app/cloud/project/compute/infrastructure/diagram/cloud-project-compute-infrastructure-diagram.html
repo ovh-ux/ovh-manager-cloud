@@ -39,13 +39,13 @@
                     <li>
                         <button type="button" class="btn fs14"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.addVirtualMachine()"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                                at-internet-click="{ name : 'cloud::dedicated_serveurs::infrastructure::add_serveur' }"
                                 data-ng-bind=":: 'cpci_add_server' | translate">
                         </button>
                     </li>
                     <li>
                         <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
+                                at-internet-click="{ name : 'cloud::dedicated_serveurs::infrastructure::add_disk' }"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.addVolume()"
                                 data-ng-bind=":: 'cpci_volume_add' | translate">
                         </button>
@@ -66,7 +66,7 @@
                         <button type="button" class="btn fs14"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.importIpFailover()"
                                 data-at-internet-click="{
-                                    name: 'cloud-project::cloud-project-compute::import_failover_ips_ovh'
+                                    name: 'cloud::dedicated_serveurs::infrastructure::import_failover_ips_ovh'
                                 }">
                                 <span data-translate="cpci_import_ip_failover"></span>
                         </button>
@@ -74,7 +74,7 @@
                     <li>
                         <button type="button" class="btn fs14"
                                 data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.buyIpFailOver()"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
+                                at-internet-click="{ name : 'cloud::dedicated_serveurs::infrastructure::buy_failover_ips_ovh' }"
                                 data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
                         </button>
                     </li>
@@ -106,6 +106,7 @@
                       data-translate="cpci_menu_view_label"></span>
                 <nav class="oui-button-group align-middle mb-0">
                     <button
+                        type="button"
                         class="oui-button oui-button_primary"
                         data-track-on="click"
                         data-track-name="{{ComputeInfrastructureDiagramCtrl.TRACKING_CLOUD.pci_infra_view_switch}}"

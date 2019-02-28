@@ -13,6 +13,7 @@ class CloudprojectbillingvouchersCtrl {
     this.CucServiceHelper = CucServiceHelper;
     this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiOrderCloudProjectCredit = OvhApiOrderCloudProjectCredit;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.vouchers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudVouchersService.getVouchers($stateParams.projectId),

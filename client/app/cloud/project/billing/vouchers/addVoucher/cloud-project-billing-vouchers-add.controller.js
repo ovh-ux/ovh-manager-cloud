@@ -6,9 +6,9 @@ class CloudProjectBillingVoucherAddCtrl {
     this.atInternet = atInternet;
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
-    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiCloudProjectCredit = OvhApiCloudProjectCredit;
     this.serviceName = serviceName;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.model = {
       value: undefined,

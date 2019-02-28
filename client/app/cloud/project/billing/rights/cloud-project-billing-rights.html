@@ -43,6 +43,7 @@
                 </div>
                 <div class="col-sm-4">
                     <button
+                        type="button"
                         class="oui-button oui-button_link oui-button_icon-right btn-margin"
                         title="{{:: 'cpb_rights_modify' | translate}}"
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
@@ -91,6 +92,7 @@
                 </div>
                 <div class="col-sm-4">
                     <button
+                        type="button"
                         class="oui-button oui-button_link oui-button_icon-right btn-margin"
                         title="{{:: 'cpb_rights_modify' | translate}}"
                         data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
@@ -114,7 +116,9 @@
         <!-- RIGHTS TABLE -->
 
         <!-- ADD -->
-        <button data-ng-click="BillingRightsCtrl.showAddRight()"
+        <button
+            type="button"
+            data-ng-click="BillingRightsCtrl.showAddRight()"
             class="oui-button oui-button_secondary mb-3"
             data-ng-disabled="BillingRightsCtrl.loader.rights || BillingRightsCtrl.data.rightIds === null"
             data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.toggle.addUser"

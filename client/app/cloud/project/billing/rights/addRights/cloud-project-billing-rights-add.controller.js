@@ -6,8 +6,8 @@ class CloudProjectBillingRightsAddCtrl {
     CucControllerHelper,
     CucCloudMessage,
     model,
-    TRACKING_CLOUD,
     OvhApiCloud,
+    TRACKING_CLOUD,
   ) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
@@ -15,8 +15,8 @@ class CloudProjectBillingRightsAddCtrl {
     this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.model = model;
-    this.TRACKING_CLOUD = TRACKING_CLOUD;
     this.OvhApiCloud = OvhApiCloud;
+    this.TRACKING_CLOUD = TRACKING_CLOUD;
 
     this.right = {
       type: 'readOnly',
