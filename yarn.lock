@@ -964,6 +964,10 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
+"@ovh-ux/manager-cloud-styles@git+https://github.com/ovh-ux/manager.git#split-manager-cloud-styles/fix-cloud-styles-rem":
+  version "0.0.0"
+  resolved "git+https://github.com/ovh-ux/manager.git#3012eb10593b86056a2813a906e2ce63a707b459"
+
 "@ovh-ux/manager-webpack-config@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-3.0.4.tgz#e6e4066c9696abd58aded6125e292c7e86e0fd2b"
@@ -1032,12 +1036,12 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.5":
-  version "0.1.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.5.tgz#436c3e3ffe669740c75943d21aa24b5655f5ddc7"
-  integrity sha512-5AUq2gg9dh/4vy4aG/u+Y4sbW7iESF7l1GI5ZfkeBYIW3fyXNXzCAkmcpocfrZ77xU6YjoJfjQxXza2dLA5f3g==
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-cuc-rems":
+  version "0.3.0"
+  resolved "git+https://github.com/ovh-ux/manager.git#5a8d75c8f6fd465f77730711bde84a887b193a9f"
   dependencies:
     bootstrap "~3.3.0"
+    jsurl "^0.1.5"
     lodash "^4.17.11"
     moment "^2.24.0"
     ovh-ui-kit "^2.24.2"
@@ -1055,6 +1059,11 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-form-flat/-/ng-ovh-form-flat-4.0.0.tgz#d3da130cca543ddc60713e47a3a7c6c74fc97636"
   integrity sha512-8WXu3DHEih5cqVB9srvvIkMnnpBA7oAIL1sH6v3SQZdhR9VIPTYYMPKnOQe2zQ0zjcQVpbpHQdNv2v7hzd9YRQ==
 
+"@ovh-ux/ng-ovh-proxy-request@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-proxy-request/-/ng-ovh-proxy-request-1.0.0-beta.0.tgz#45e2397515326f6c43f99221f746401509b7db1d"
+  integrity sha512-JtCQLoxNfl7T1kz/draSsfH/dGjKQ7cwN2ArMsuYlZ9MVPaPlhf4PQz11WHSAQXxCcvZKsJ/AYmWUCKZlzI94w==
+
 "@ovh-ux/ng-ovh-sso-auth-modal-plugin@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-sso-auth-modal-plugin/-/ng-ovh-sso-auth-modal-plugin-3.0.0.tgz#0e314b412769d65862d3900ca3a06374ef47fc86"
@@ -1071,6 +1080,18 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-stop-event/-/ng-ovh-stop-event-1.0.0.tgz#08e9470ec08b263c7ca7370dab9b23d9b6044aef"
   integrity sha512-M8vEiHK5WytqeNBPnVY4cDR+RhwISD+wRKPpNRHiXLsewLqwx99ebtSiQWzXYK++poSbBoYwq9xnCVoh1VzjbQ==
+
+"@ovh-ux/ng-ovh-user-pref@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-user-pref/-/ng-ovh-user-pref-1.0.0.tgz#fd5035855e09758de6f5e886bff78011f44bd0f9"
+  integrity sha512-EmVfYGu8zjjqOfh/R7a291sswbpcbtt2IEmGAorETgUMZIB/CnAQvD5ELzf4NseUJHjG6G0W9HFyJ6u9jkFJRA==
+  dependencies:
+    lodash "^4.17.11"
+
+"@ovh-ux/ng-translate-async-loader@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
+  integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
 
 "@ovh-ux/rollup-plugin-less-tilde-importer@^1.0.0-beta.0":
   version "1.0.0-beta.0"
@@ -6063,7 +6084,7 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jsurl@0.1.5:
+jsurl@0.1.5, jsurl@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/jsurl/-/jsurl-0.1.5.tgz#2a5c8741de39cacafc12f448908bf34e960dcee8"
   integrity sha1-KlyHQd45ysr8EvRIkIvzTpYNzug=
@@ -7773,6 +7794,11 @@ ovh-ui-angular@~2.24.0:
     flatpickr "^4.5.2"
     popper.js "^1.14.4"
     ui-select "^0.19.8"
+
+ovh-ui-kit-bs@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit-bs/-/ovh-ui-kit-bs-2.1.1.tgz#bf9c5b035041797091b1a4c50f759bef7501dcef"
+  integrity sha512-gjWYjnGmS75nrEpYoYIvJ/wh7K8zzm4k5x2+mICOCmEOKbU7iWy642iXxvDI1TYR+61TDTRjtshnXsGVtUtu7g==
 
 ovh-ui-kit@^2.24.2:
   version "2.24.2"

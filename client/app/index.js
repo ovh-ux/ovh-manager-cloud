@@ -77,6 +77,8 @@ import 'script-loader!xterm/dist/addons/fit/fit.js';
 import 'ovh-ui-angular';
 import 'script-loader!popper.js/dist/umd/popper.js';
 import 'angular-translate-loader-pluggable';
+import '@ovh-ux/manager-cloud-styles';
+import 'ovh-ui-kit-bs/dist/ovh-ui-kit-bs.css';
 
 import './app.scss';
 import './app.less';
