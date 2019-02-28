@@ -183,21 +183,38 @@ class LogsHomeService {
    * Updates the current display name information
    *
    * @param {any} serviceName
-   * @param {string} displayName
+   * @param {service} service
    * @returns promise which will resolve or reject once the operation is complete
    * @memberof LogsHomeService
    */
-  updateDisplayName(serviceName, displayName) {
-    return this.LogsLexiService.update({ serviceName }, { displayName })
+  updateDisplayName(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_display_name_update_success', { })
           .then((res) => {
-            this.changeMenuTitle(serviceName, displayName || serviceName);
+            this.changeMenuTitle(serviceName, service.displayName || serviceName);
             return res;
           });
       })
       .catch(err => this.LogsHelperService.handleError('logs_home_display_name_update_error', err, { }));
+  }
+
+  /**
+   * Updates the current capped plan settings
+   *
+   * @param {any} serviceName
+   * @param {service} service
+   * @returns promise which will resolve or reject once the operation is complete
+   * @memberof LogsHomeService
+   */
+  updateCappedPlan(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
+      .$promise.then((operation) => {
+        this.resetAllCache();
+        return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { });
+      })
+      .catch(err => this.LogsHelperService.handleError('logs_home_capped_update_error', err, { }));
   }
 
   /**
@@ -229,25 +246,25 @@ class LogsHomeService {
   }
 
   /**
-   * Gets the Greylog API url from the object
+   * Gets the Graylog API url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog API url
+   * @returns the Graylog API url
    * @memberof LogsHomeService
    */
-  getGreyLogApiUrl(object) {
+  getGrayLogApiUrl(object) {
     _.set(object, 'graylogApiUrl', this.constructor.findUrl(object.urls, this.LogsConstants.URLS.GRAYLOG_API));
     return object;
   }
 
   /**
-   * Gets the Greylog url from the object
+   * Gets the Graylog url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog url
+   * @returns the Graylog url
    * @memberof LogsHomeService
    */
-  getGreyLogUrl(object) {
+  getGrayLogUrl(object) {
     _.set(object, 'graylogWebuiUrl', this.constructor.findUrl(
       object.urls,
       this.LogsConstants.URLS.GRAYLOG_WEBUI,
@@ -316,15 +333,15 @@ class LogsHomeService {
     _.set(accountDetails, 'email', accountDetails.service.contact
       ? accountDetails.service.contact.email
       : accountDetails.me.email);
-    this.getGreyLogUrl(accountDetails);
-    this.getGreyLogApiUrl(accountDetails);
+    this.getGrayLogUrl(accountDetails);
+    this.getGrayLogApiUrl(accountDetails);
     _.set(accountDetails, 'graylogApiUrl', `${accountDetails.graylogApiUrl}/api-browser`);
     _.set(accountDetails, 'graylogEntryPoint', accountDetails.graylogWebuiUrl
       .replace('https://', '')
       .replace('/api', ''));
     this.getElasticSearchApiUrl(accountDetails);
-    if (accountDetails.last_stream) { this.getGreyLogUrl(accountDetails.last_stream); }
-    if (accountDetails.last_dashboard) { this.getGreyLogUrl(accountDetails.last_dashboard); }
+    if (accountDetails.last_stream) { this.getGrayLogUrl(accountDetails.last_stream); }
+    if (accountDetails.last_dashboard) { this.getGrayLogUrl(accountDetails.last_dashboard); }
     _.set(accountDetails, 'portsAndMessages', this.getPortsAndMessages(accountDetails));
     return accountDetails;
   }

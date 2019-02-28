@@ -119,6 +119,7 @@ class LogsStreamsAlertsService {
         backlog: 1,
         repeatNotificationsEnabled: false,
         constraintType,
+        queryFilter: '*',
       },
       loading: false,
     });

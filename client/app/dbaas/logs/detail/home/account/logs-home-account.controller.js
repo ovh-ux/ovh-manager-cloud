@@ -14,7 +14,7 @@ class LogsHomeAccountCtrl {
   $onInit() {
     this.accountDetails.load()
       .then(() => {
-        this.displayName = this.accountDetails.data.service.displayName;
+        this.service = this.accountDetails.data.service;
       });
   }
 
@@ -51,7 +51,7 @@ class LogsHomeAccountCtrl {
     this.CucCloudMessage.flushChildMessage();
     this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService
-        .updateDisplayName(this.serviceName, this.accountDetails.data.service.displayName)
+        .updateDisplayName(this.serviceName, this.service)
         .finally(() => {
           this.CucControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close();

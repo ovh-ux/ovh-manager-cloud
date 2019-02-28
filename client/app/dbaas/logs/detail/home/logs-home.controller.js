@@ -100,6 +100,10 @@ class LogsHomeCtrl {
     };
   }
 
+  editCappedPlan() {
+    return this.gotoState('dbaas.logs.detail.home.capped');
+  }
+
   changeName() {
     return this.gotoState('dbaas.logs.detail.home.account');
   }
