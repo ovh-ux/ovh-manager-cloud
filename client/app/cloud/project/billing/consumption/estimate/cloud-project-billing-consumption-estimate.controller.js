@@ -36,6 +36,7 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
     };
     this.consumption = {
       hourly: null,
+      lastUpdate: null,
     };
     this.loaders = {
       alert: true,
@@ -91,7 +92,12 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
           this.forecast.currencySymbol,
         );
         this.consumption.hourly = _.get(consumption, 'price', this.CloudProjectBillingService.formatEmptyPrice(this.forecast.currencySymbol));
+        this.initLastConsumptionUpdate(consumption);
       });
+  }
+
+  initLastConsumptionUpdate({ lastUpdate }) {
+    this.consumption.lastUpdate = moment(lastUpdate).format('LLL');
   }
 
   initForecast() {
@@ -120,10 +126,13 @@ export default class CloudProjectBillingConsumptionEstimateCtrl {
       .get({
         serviceName: this.$stateParams.projectId,
       }).$promise
-      .then(billingInfo => this.CloudProjectBillingLegacyService.getConsumptionDetails(
-        billingInfo,
-        billingInfo,
-      ))
+      .then((billingInfo) => {
+        this.initLastConsumptionUpdate(billingInfo);
+        return this.CloudProjectBillingLegacyService.getConsumptionDetails(
+          billingInfo,
+          billingInfo,
+        );
+      })
       .then((data) => {
         this.consumption.hourly = this.CloudProjectBillingService.constructor.formatPrice(
           data.totals.hourly.total,

@@ -2,6 +2,7 @@
   "cpbe_estimate_summary_header": "Si votre consommation reste la même, le 1er {{ month }} vous devriez payer:",
   "cpbe_estimate_summary_renew_monthly_sub_label": "Renouvellement de vos forfaits mensuels: <strong>{{ total }}</strong>",
   "cpbe_estimate_summary_hourly_consumption_label": "Consommation à la demande en {{ month }}: <strong>{{ total }}</strong>",
+  "cpbe_estimate_summary_hourly_consumption_last_update": "Dernière mise à jour de la consommation: {{ lastUpdate }}",
   "cpbe_estimate_alert_header_title": "Alerte consommation à la demande",
   "cpbe_estimate_alert_header_description": "Cette alerte est basée sur la projection en fin de mois",
   "cpbe_estimate_alert_create": "Créer l'alerte",

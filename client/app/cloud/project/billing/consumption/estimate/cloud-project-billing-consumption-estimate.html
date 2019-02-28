@@ -15,6 +15,10 @@
                    month: $ctrl.constructor.getCurrentDate().format('MMMM'),
                    total: $ctrl.forecast.hourly.text
                }"></p>
+            <p data-translate="cpbe_estimate_summary_hourly_consumption_last_update"
+               data-translate-values="{
+                   lastUpdate: '<strong>' + $ctrl.consumption.lastUpdate + '</strong>',
+               }"></p>
         </div>
     </section>
     <section class="cloud-billing-estimate-alert left-space-p8 col-sm-6 col-lg-4 bottom-space-p20">
