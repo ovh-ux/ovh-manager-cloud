@@ -100,7 +100,6 @@ angular.module('managerApp')
       ovhDocUrl,
       CucRegionService,
       CLOUD_FLAVOR_SPECIFIC_IMAGE,
-      CLOUD_FLAVOR_TYPES,
       CLOUD_FLAVORTYPE_CATEGORY,
       CLOUD_INSTANCE_CPU_FREQUENCY,
       CLOUD_INSTANCE_DEFAULT_FALLBACK,
@@ -410,6 +409,10 @@ angular.module('managerApp')
           }
         }
         self.displayData.categories = _.sortBy(self.displayData.categories, 'order');
+        // if selected flavor is not available, set to null
+        if (!_.has(selectedFlavour, 'available')) {
+          _.set(self.vmInEdition, 'flavor', null);
+        }
       }
 
       function getDisplayImages(flavorType) {
@@ -1137,6 +1140,10 @@ angular.module('managerApp')
             OvhApiCloudProjectFlavor.v6().query({
               serviceName,
             }).$promise.then((flavorsList) => {
+              // clear cache only on success of function
+              OvhApiCloudProjectFlavor.v6().resetQueryCache();
+              OvhApiCloudProjectFlavor.v6().resetCache();
+
               const modifiedFlavorsList = flavorsList
                 .map(flavor => CloudFlavorService.augmentFlavor(flavor));
 
@@ -1160,7 +1167,6 @@ angular.module('managerApp')
                 });
               }
               self.panelsData.flavors = modifiedFlavorsList;
-
               if (!self.vmInEdition.flavor) { // this is a snapshot           to review
                 recalculateFlavor();
               }
@@ -1928,10 +1934,6 @@ angular.module('managerApp')
 
       self.showCeph = function showCeph(category) {
         return _.includes(['balanced', 'cpu', 'ram'], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], 'ceph', false) !== undefined;
-      };
-
-      self.getFlavorDisplayName = function getFlavorDisplayName(name) {
-        return CLOUD_FLAVOR_TYPES[name] || name;
       };
     });
 /* eslint-disable no-use-before-define, consistent-return */
