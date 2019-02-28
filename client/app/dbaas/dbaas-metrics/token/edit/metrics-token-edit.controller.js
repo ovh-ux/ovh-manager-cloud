@@ -1,9 +1,9 @@
 (() => {
   class MetricsTokenEditCtrl {
-    constructor($uibModalInstance, ControllerHelper, metricsValue, metricsType, serviceName,
+    constructor($uibModalInstance, CucControllerHelper, metricsValue, metricsType, serviceName,
       tokenID, MetricService) {
       this.$uibModalInstance = $uibModalInstance;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.MetricService = MetricService;
       this.serviceName = serviceName;
       this.tokenID = tokenID;
@@ -13,7 +13,7 @@
 
     confirm() {
       if (this.type === 'name') {
-        this.deleteToken = this.ControllerHelper.request.getHashLoader({
+        this.deleteToken = this.CucControllerHelper.request.getHashLoader({
           loaderFunction: () => this.MetricService.updateToken(
             this.serviceName,
             this.tokenID,

@@ -1,9 +1,9 @@
 class IpLoadBalancerTaskService {
-  constructor($q, $translate, OvhApiIpLoadBalancing, ServiceHelper) {
+  constructor($q, $translate, OvhApiIpLoadBalancing, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getTasks(serviceName) {
@@ -13,7 +13,7 @@ class IpLoadBalancerTaskService {
         const promises = _.map(response, taskId => this.getTask(serviceName, taskId));
         return this.$q.all(promises);
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_task_list_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_task_list_loading_error'));
   }
 
   getTask(serviceName, taskId) {

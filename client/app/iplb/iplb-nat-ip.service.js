@@ -1,13 +1,13 @@
 class IpLoadBalancerNatIpService {
-  constructor($translate, OvhApiIpLoadBalancing, ServiceHelper) {
+  constructor($translate, OvhApiIpLoadBalancing, CucServiceHelper) {
     this.$translate = $translate;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getNatIps(serviceName) {
     return this.IpLoadBalancing.v6().natIp({ serviceName }).$promise
-      .catch(this.ServiceHelper.errorHandler('iplb_nat_ip_detail_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_nat_ip_detail_loading_error'));
   }
 }
 

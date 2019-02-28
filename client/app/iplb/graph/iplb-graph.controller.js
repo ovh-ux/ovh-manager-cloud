@@ -1,21 +1,21 @@
 class IpLoadBalancerGraphCtrl {
-  constructor($stateParams, ControllerHelper, IpLoadBalancerConstant,
+  constructor($stateParams, CucControllerHelper, IpLoadBalancerConstant,
     IpLoadBalancerMetricsService, moment) {
     this.$stateParams = $stateParams;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
     this.moment = moment;
   }
 
   $onInit() {
-    this.connLoader = this.ControllerHelper.request.getHashLoader({
+    this.connLoader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.getData('conn'),
     });
-    this.reqmLoader = this.ControllerHelper.request.getHashLoader({
+    this.reqmLoader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.getData('reqm'),
     });
-    this.offerLoader = this.ControllerHelper.request.getHashLoader({
+    this.offerLoader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerMetricsService
         .getService(this.$stateParams.serviceName),
     });

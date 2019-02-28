@@ -1,9 +1,9 @@
 class NashaAddCtrl {
-  constructor($translate, $state, CucCloudMessage, ControllerHelper, NashaAddService) {
+  constructor($translate, $state, CucCloudMessage, CucControllerHelper, NashaAddService) {
     this.$translate = $translate;
     this.$state = $state;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.NashaAddService = NashaAddService;
 
     this.data = {};
@@ -40,15 +40,15 @@ class NashaAddCtrl {
   }
 
   initLoaders() {
-    this.datacenters = this.ControllerHelper.request.getArrayLoader({
+    this.datacenters = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getAvailableRegions(),
     });
 
-    this.offers = this.ControllerHelper.request.getArrayLoader({
+    this.offers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getOffers(),
     });
 
-    this.durations = this.ControllerHelper.request.getArrayLoader({
+    this.durations = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getDurations(),
     });
   }

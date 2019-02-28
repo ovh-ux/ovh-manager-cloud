@@ -1,8 +1,8 @@
 class IpLoadBalancerSslCertificateCtrl {
-  constructor($stateParams, ControllerHelper, IpLoadBalancerActionService,
+  constructor($stateParams, CucControllerHelper, IpLoadBalancerActionService,
     IpLoadBalancerSslCertificateService) {
     this.$stateParams = $stateParams;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
     this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
   }
@@ -35,7 +35,7 @@ class IpLoadBalancerSslCertificateCtrl {
   }
 
   preview(ssl) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/sslCertificate/preview/iplb-ssl-certificate-preview.html',
         controller: 'IpLoadBalancerSslCertificatePreviewCtrl',

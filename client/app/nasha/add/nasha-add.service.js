@@ -1,18 +1,18 @@
 class NashaAddService {
-  constructor($q, $translate, OrderHelperService, OvhApiMe, OvhApiOrder, ServiceHelper) {
+  constructor($q, $translate, CucOrderHelperService, OvhApiMe, OvhApiOrder, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
-    this.OrderHelperService = OrderHelperService;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.OvhApiMe = OvhApiMe;
     this.OvhApiOrder = OvhApiOrder;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getAvailableRegions() {
     return this.OvhApiOrder.v6().schema()
       .$promise
       .then(response => _.filter(response.models['dedicated.NasHAZoneEnum'].enum, datacenter => datacenter !== 'gra'))
-      .catch(this.ServiceHelper.errorHandler('nasha_order_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('nasha_order_loading_error'));
   }
 
   getOffers() {
@@ -32,7 +32,7 @@ class NashaAddService {
 
         return response.offers;
       })
-      .catch(this.ServiceHelper.errorHandler('nasha_order_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('nasha_order_loading_error'));
   }
 
   getDurations() {
@@ -52,7 +52,7 @@ class NashaAddService {
   }
 
   order(model) {
-    return this.OrderHelperService.getExpressOrderUrl({
+    return this.CucOrderHelperService.getExpressOrderUrl({
       productId: 'nasha',
       duration: `P${model.selectedDuration}M`,
       planCode: model.selectedModel,
@@ -64,7 +64,7 @@ class NashaAddService {
       }],
     })
       .then(response => ({ url: response }))
-      .catch(this.ServiceHelper.errorHandler('nasha_order_validation_error'));
+      .catch(this.CucServiceHelper.errorHandler('nasha_order_validation_error'));
   }
 }
 

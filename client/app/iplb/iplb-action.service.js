@@ -1,10 +1,10 @@
 class IpLoadBalancerActionService {
-  constructor(ControllerHelper) {
-    this.ControllerHelper = ControllerHelper;
+  constructor(CucControllerHelper) {
+    this.CucControllerHelper = CucControllerHelper;
   }
 
   showFailoverIpDetail(serviceName) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/modal/failover-ip/iplb-failover-ip-detail.html',
         controller: 'IpLoadBalancerFailoverIpDetailCtrl',
@@ -17,7 +17,7 @@ class IpLoadBalancerActionService {
   }
 
   showNatIpDetail(serviceName) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/modal/nat-ip/iplb-nat-ip-detail.html',
         controller: 'IpLoadBalancerNatIpDetailCtrl',
@@ -30,7 +30,7 @@ class IpLoadBalancerActionService {
   }
 
   cipherChange(serviceName, successHandler) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/modal/cipher/iplb-cipher-change.html',
         controller: 'IpLoadBalancerCipherChangeCtrl',
@@ -44,7 +44,7 @@ class IpLoadBalancerActionService {
   }
 
   deleteFrontend(serviceName, frontend) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/frontends/delete/iplb-frontends-delete.html',
         controller: 'IpLoadBalancerFrontendDeleteCtrl',
@@ -59,7 +59,7 @@ class IpLoadBalancerActionService {
   }
 
   deleteFarm(serviceName, farm) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/serverFarm/delete/iplb-server-farm-delete.html',
         controller: 'IpLoadBalancerServerFarmDeleteCtrl',
@@ -74,7 +74,7 @@ class IpLoadBalancerActionService {
   }
 
   deleteServer(serviceName, farm, server) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/server/delete/iplb-server-delete.html',
         controller: 'IpLoadBalancerServerDeleteCtrl',
@@ -90,7 +90,7 @@ class IpLoadBalancerActionService {
   }
 
   updateCertificate(serviceName, ssl) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/sslCertificate/update/iplb-ssl-certificate-update.html',
         controller: 'IpLoadBalancerSslCertificateUpdateCtrl',
@@ -104,7 +104,7 @@ class IpLoadBalancerActionService {
   }
 
   deleteCertificate(serviceName, ssl) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/sslCertificate/delete/iplb-ssl-certificate-delete.html',
         controller: 'IpLoadBalancerSslCertificateDeleteCtrl',

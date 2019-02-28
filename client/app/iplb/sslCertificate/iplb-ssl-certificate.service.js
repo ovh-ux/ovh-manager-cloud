@@ -1,18 +1,18 @@
 class IpLoadBalancerSslCertificateService {
-  constructor($q, OvhApiIpLoadBalancing, OvhApiMe, OvhApiOrder, ServiceHelper) {
+  constructor($q, OvhApiIpLoadBalancing, OvhApiMe, OvhApiOrder, CucServiceHelper) {
     this.$q = $q;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.Ssl = OvhApiIpLoadBalancing.Ssl().v6();
     this.User = OvhApiMe;
     this.OvhApiOrder = OvhApiOrder;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getCertificates(serviceName) {
     return this.Ssl.query({ serviceName })
       .$promise
       .then(sslIds => this.$q.all(sslIds.map(sslId => this.getCertificate(serviceName, sslId))))
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_list_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_list_error'));
   }
 
   getCertificate(serviceName, sslId) {
@@ -23,8 +23,8 @@ class IpLoadBalancerSslCertificateService {
   create(serviceName, ssl) {
     return this.Ssl.post({ serviceName }, ssl)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_add_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_add_error'));
+      .then(this.CucServiceHelper.successHandler('iplb_ssl_add_success'))
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_add_error'));
   }
 
   update(serviceName, sslId, ssl) {
@@ -33,8 +33,8 @@ class IpLoadBalancerSslCertificateService {
       sslId,
     }, ssl)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_update_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_update_error'));
+      .then(this.CucServiceHelper.successHandler('iplb_ssl_update_success'))
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_update_error'));
   }
 
   delete(serviceName, sslId) {
@@ -43,8 +43,8 @@ class IpLoadBalancerSslCertificateService {
       sslId,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_delete_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_delete_error'));
+      .then(this.CucServiceHelper.successHandler('iplb_ssl_delete_success'))
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_delete_error'));
   }
 
   getCertificateProducts(serviceName) {
@@ -59,7 +59,7 @@ class IpLoadBalancerSslCertificateService {
         _.set(option, 'prices', option.prices.filter(price => price.interval === 12));
         return option;
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_order_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_order_loading_error'));
   }
 
   /**
@@ -103,7 +103,7 @@ class IpLoadBalancerSslCertificateService {
           this.OvhApiOrder.Cart().v6().delete({ cartId });
         }
 
-        this.ServiceHelper.errorHandler('iplb_ssl_order_error')(err);
+        this.CucServiceHelper.errorHandler('iplb_ssl_order_error')(err);
       });
   }
 
@@ -120,9 +120,9 @@ class IpLoadBalancerSslCertificateService {
 
   orderFreeCertificate(serviceName, fqdn) {
     return this.OvhApiIpLoadBalancing.v6().freeCertificate({ serviceName }, { fqdn }).$promise
-      .then(this.ServiceHelper.successHandler('iplb_ssl_order_success'))
+      .then(this.CucServiceHelper.successHandler('iplb_ssl_order_success'))
       .then(() => this.Ssl.resetQueryCache())
-      .catch(this.ServiceHelper.errorHandler('iplb_ssl_order_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_ssl_order_error'));
   }
 }
 

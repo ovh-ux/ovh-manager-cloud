@@ -1,10 +1,10 @@
 class VpsActionService {
-  constructor(ControllerHelper) {
-    this.ControllerHelper = ControllerHelper;
+  constructor(CucControllerHelper) {
+    this.CucControllerHelper = CucControllerHelper;
   }
 
   rescue(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/password/vps-password.html',
         controller: 'VpsPasswordCtrl',
@@ -17,7 +17,7 @@ class VpsActionService {
   }
 
   reboot(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/reboot/vps-reboot.html',
         controller: 'VpsRebootCtrl',
@@ -30,7 +30,7 @@ class VpsActionService {
   }
 
   reinstall(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/reinstall/vps-reinstall.html',
         controller: 'VpsReinstallCtrl',
@@ -43,7 +43,7 @@ class VpsActionService {
   }
 
   kvm(serviceName, noVNC) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/kvm/vps-kvm.html',
         controller: 'VpsKvmCtrl',
@@ -57,7 +57,7 @@ class VpsActionService {
   }
 
   monitoringSla(serviceName, state, preview) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/monitoring-sla/vps-monitoring-sla.html',
         controller: 'VpsMonitoringSlaCtrl',
@@ -72,7 +72,7 @@ class VpsActionService {
   }
 
   displayIps(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/display-ips/vps-display-ips.html',
         controller: 'VpsDisplayIpsCtrl',
@@ -85,7 +85,7 @@ class VpsActionService {
   }
 
   reverseDns(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/shortcut/reverse-dns/vps-reverse-dns.html',
         controller: 'VpsReverseDnsCtrl',
@@ -98,7 +98,7 @@ class VpsActionService {
   }
 
   deleteSecondaryDns(serviceName, domain) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/secondary-dns/delete-secondary-dns.html',
         controller: 'DeleteSecondaryDnsCtrl',
@@ -112,7 +112,7 @@ class VpsActionService {
   }
 
   addSecondaryDns(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/secondary-dns/add-secondary-dns.html',
         controller: 'AddSecondaryDnsCtrl',
@@ -125,7 +125,7 @@ class VpsActionService {
   }
 
   deleteBackupStorage(serviceName, access) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/backup-storage/delete-backup-storage.html',
         controller: 'DeleteBackupStorageCtrl',
@@ -139,7 +139,7 @@ class VpsActionService {
   }
 
   addBackupStorage(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/backup-storage/add-backup-storage.html',
         controller: 'AddBackupStorageCtrl',
@@ -152,7 +152,7 @@ class VpsActionService {
   }
 
   resetPasswordBackupStorage(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/backup-storage/password-backup-storage.html',
         controller: 'PasswordBackupStorageCtrl',
@@ -165,7 +165,7 @@ class VpsActionService {
   }
 
   editBackupStorage(serviceName, row) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/backup-storage/edit-backup-storage.html',
         controller: 'EditBackupStorageCtrl',
@@ -179,7 +179,7 @@ class VpsActionService {
   }
 
   restore(serviceName, restorePoint) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/veeam/restore/vps-restore.html',
         controller: 'VpsRestoreCtrl',
@@ -193,7 +193,7 @@ class VpsActionService {
   }
 
   mount(serviceName, restorePoint) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/veeam/mount/vps-mount.html',
         controller: 'VpsMountCtrl',
@@ -208,7 +208,7 @@ class VpsActionService {
   }
 
   unmount(serviceName, restorePoint) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/veeam/mount/vps-mount.html',
         controller: 'VpsMountCtrl',
@@ -223,7 +223,7 @@ class VpsActionService {
   }
 
   orderAdditionalDisk() {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/additional-disk/order-disk.html',
         controller: 'OrderAdditionalDiskCtrl',
@@ -233,7 +233,7 @@ class VpsActionService {
   }
 
   deleteSnapshot(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/snapshot/snapshot-delete.html',
         controller: 'VpsDeleteSnapshotCtrl',
@@ -246,7 +246,7 @@ class VpsActionService {
   }
 
   takeSnapshot(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/snapshot/snapshot-take.html',
         controller: 'VpsTakeSnapshotCtrl',
@@ -259,7 +259,7 @@ class VpsActionService {
   }
 
   restoreSnapshot(serviceName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/snapshot/snapshot-restore.html',
         controller: 'VpsRestoreSnapshotCtrl',
@@ -272,7 +272,7 @@ class VpsActionService {
   }
 
   terminateOption(serviceName, optionName) {
-    return this.ControllerHelper.modal.showModal({
+    return this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/vps/modal/option/vps-option-terminate.html',
         controller: 'VpsOptionTerminateCtrl',

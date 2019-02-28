@@ -1,18 +1,18 @@
 class CloudProjectOpenstackUsersRcloneService {
-  constructor($httpParamSerializer, $q, CONFIG_API, OvhApiCloud, RegionService, ServiceHelper) {
+  constructor($httpParamSerializer, $q, CONFIG_API, OvhApiCloud, RegionService, CucServiceHelper) {
     this.$httpParamSerializer = $httpParamSerializer;
     this.$q = $q;
     this.CONFIG_API = CONFIG_API;
     this.OvhApiCloud = OvhApiCloud;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getValidRcloneRegions(projectId) {
     return this.OvhApiCloud.Project().Region().v6().query({ serviceName: projectId })
       .$promise
       .then(regions => _.map(regions, region => this.RegionService.getRegion(region)))
-      .catch(this.ServiceHelper.errorHandler('cpou_rclone_modal_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('cpou_rclone_modal_loading_error'));
   }
 
   getRcloneFileInfo(projectId, userId, region) {

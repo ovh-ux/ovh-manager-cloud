@@ -2,14 +2,14 @@ class CloudProjectBillingRightsAddCtrl {
   constructor(
     $stateParams,
     $uibModalInstance,
-    ControllerHelper,
+    CucControllerHelper,
     CucCloudMessage,
     model,
     OvhApiCloud,
   ) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.model = model;
     this.OvhApiCloud = OvhApiCloud;
@@ -21,7 +21,7 @@ class CloudProjectBillingRightsAddCtrl {
 
   validateAddRight() {
     this.CucCloudMessage.flushChildMessage();
-    this.loader = this.ControllerHelper.request.getHashLoader({
+    this.loader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloud.Project().Acl().v6().add({
         serviceName: this.$stateParams.projectId,
       }, {

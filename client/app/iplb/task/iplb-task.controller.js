@@ -1,16 +1,16 @@
 class IpLoadBalancerTaskCtrl {
-  constructor($scope, $stateParams, ControllerHelper, CucCloudPoll, IpLoadBalancerTaskService,
-    ServiceHelper) {
+  constructor($scope, $stateParams, CucControllerHelper, CucCloudPoll, IpLoadBalancerTaskService,
+    CucServiceHelper) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudPoll = CucCloudPoll;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.serviceName = this.$stateParams.serviceName;
 
-    this.tasks = this.ControllerHelper.request.getArrayLoader({
+    this.tasks = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerTaskService.getTasks(this.serviceName),
       successHandler: () => this.startTaskPolling(),
     });
@@ -39,7 +39,7 @@ class IpLoadBalancerTaskCtrl {
   }
 
   showTaskPreview(task) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/task/preview/iplb-task-preview.html',
         controller: 'IpLoadBalancerTaskPreviewCtrl',

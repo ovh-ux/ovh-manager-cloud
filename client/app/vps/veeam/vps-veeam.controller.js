@@ -1,11 +1,11 @@
 class VpsVeeamCtrl {
-  constructor($scope, $stateParams, $translate, CucCloudMessage, ControllerHelper, VpsActionService,
-    VpsService) {
+  constructor($scope, $stateParams, $translate, CucCloudMessage, CucControllerHelper,
+    VpsActionService, VpsService) {
     this.$scope = $scope;
     this.serviceName = $stateParams.serviceName;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.serviceName = $stateParams.serviceName;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
@@ -24,14 +24,14 @@ class VpsVeeamCtrl {
   }
 
   initLoaders() {
-    this.veeam = this.ControllerHelper.request.getHashLoader({
+    this.veeam = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getVeeam(this.serviceName),
     });
-    this.veeamTab = this.ControllerHelper.request.getHashLoader({
+    this.veeamTab = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getTabVeeam(this.serviceName, 'available', true)
         .then(data => data.map(id => ({ id }))),
     });
-    this.vps = this.ControllerHelper.request.getHashLoader({
+    this.vps = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
     });
   }

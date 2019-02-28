@@ -1,8 +1,9 @@
 class IpLoadBalancerUpdateQuotaCtrl {
-  constructor($stateParams, $uibModalInstance, ControllerHelper, IpLoadBalancerHomeService, quota) {
+  constructor($stateParams, $uibModalInstance, CucControllerHelper, IpLoadBalancerHomeService,
+    quota) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
     this.quota = Object.assign({}, quota);
 
@@ -13,7 +14,7 @@ class IpLoadBalancerUpdateQuotaCtrl {
   }
 
   updateQuota() {
-    this.update = this.ControllerHelper.request.getHashLoader({
+    this.update = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerHomeService
         .updateQuota(this.$stateParams.serviceName, this.quota.zone, this.alert * Math.pow(1000, 3)) // eslint-disable-line
         .then(response => this.$uibModalInstance.close(response))

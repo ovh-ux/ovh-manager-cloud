@@ -6,9 +6,10 @@ class VpsCloudDatabaseCtrl {
     $translate,
     $window,
     CucCloudMessage,
-    ControllerHelper,
+    CucControllerHelper,
     OvhApiHostingPrivateDatabase,
     VpsService,
+    REDIRECT_URLS,
   ) {
     this.$q = $q;
     this.$stateParams = $stateParams;
@@ -16,10 +17,11 @@ class VpsCloudDatabaseCtrl {
     this.$translate = $translate;
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
     this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
     this.VpsService = VpsService;
+    this.REDIRECT_URLS = REDIRECT_URLS;
   }
 
   $onInit() {
@@ -143,7 +145,10 @@ class VpsCloudDatabaseCtrl {
 
   goToCloudDatabase(database) {
     const { serviceName } = database;
-    this.$window.open(this.ControllerHelper.navigation.getUrl('privateDatabase', { serviceName }));
+    this.$window.open(this.CucControllerHelper.navigation.constructor.getUrl(
+      _.get(this.REDIRECT_URLS, 'privateDatabase'),
+      { serviceName },
+    ));
   }
 }
 

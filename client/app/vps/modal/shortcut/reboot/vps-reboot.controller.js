@@ -1,12 +1,12 @@
 class VpsRebootCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.loader = {
       init: false,
@@ -40,7 +40,7 @@ class VpsRebootCtrl {
   }
 
   confirm() {
-    this.save = this.ControllerHelper.request.getHashLoader({
+    this.save = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.reboot(this.serviceName, this.selected.rescue)
         .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_reboot_success', { serviceName: this.serviceName })))
         .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_reboot_fail')))
