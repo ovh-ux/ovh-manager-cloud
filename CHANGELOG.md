@@ -1,3 +1,21 @@
+## [7.18.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.3...v7.18.4) (2019-02-28)
+
+
+### Bug Fixes
+
+* **kube:** remove beta message ([d7580df](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7580df))
+
+
+
+## [7.18.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.2...v7.18.3) (2019-02-28)
+
+
+### Bug Fixes
+
+* **pci:** translations issues ([36bd4cc](https://github.com/ovh-ux/ovh-manager-cloud/commit/36bd4cc))
+
+
+
 ## [7.18.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.1...v7.18.2) (2019-02-26)
 
 

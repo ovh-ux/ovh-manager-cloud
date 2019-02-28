@@ -1,6 +1,8 @@
 import '@uirouter/angularjs';
 import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
+import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
@@ -22,15 +24,15 @@ angular.module('managerApp', [
   'ui.sortable',
 
   ngOvhApiv7,
+  ngOvhCheckboxTable,
   ngOvhDocUrl,
+  ngOvhFormFlat,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
   ngOvhCloudUniverseComponents,
   'ovh-api-services',
   'ovh-common-style',
-  'ovh-angular-checkbox-table',
-  'ovh-angular-form-flat',
   'ovh-angular-q-allSettled',
   'angularMoment',
   'ovh-angular-toaster',
