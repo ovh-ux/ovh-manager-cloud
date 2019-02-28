@@ -5,7 +5,7 @@ class ManagerNavbarService {
     $q,
     $translate,
     atInternet,
-    FeatureAvailabilityService,
+    CucFeatureAvailabilityService,
     LANGUAGES,
     MANAGER_URLS,
     NavbarBuilder,
@@ -24,7 +24,7 @@ class ManagerNavbarService {
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
-    this.featureAvailabilityService = FeatureAvailabilityService;
+    this.featureAvailabilityService = CucFeatureAvailabilityService;
     this.LANGUAGES = LANGUAGES;
     this.MANAGER_URLS = MANAGER_URLS;
     this.NavbarBuilder = NavbarBuilder;
