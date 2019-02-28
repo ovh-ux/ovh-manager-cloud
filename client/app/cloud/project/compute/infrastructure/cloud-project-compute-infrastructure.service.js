@@ -124,7 +124,7 @@ class CloudProjectComputeInfrastructureService {
       titleText: type === 'hard' ? this.$translate.instant('cpci_vm_action_reboot_hard') : this.$translate.instant('cpci_vm_action_reboot'),
       text: this.$translate.instant('cpci_vm_confirm_reboot', { name: vm.name || '' }),
     }).then(() => this.CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type)
-      .then(this.CucServiceHelper.successHandler('cpci_vm_reboot_submit_success'))
+      .then(() => this.CucServiceHelper.successHandler('cpci_vm_reboot_submit_success')())
       .catch(this.CucServiceHelper.errorHandler('cpci_vm_reboot_submit_error')));
   }
 

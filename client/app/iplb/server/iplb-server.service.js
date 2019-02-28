@@ -30,7 +30,7 @@ class IpLoadBalancerServerService {
       farmId,
     }, server)
       .$promise
-      .then(this.CucServiceHelper.successHandler('iplb_server_add_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_add_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.CucServiceHelper.errorHandler('iplb_server_add_error'));
   }
@@ -42,7 +42,7 @@ class IpLoadBalancerServerService {
       serverId,
     }, server)
       .$promise
-      .then(this.CucServiceHelper.successHandler('iplb_server_update_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_update_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.CucServiceHelper.errorHandler('iplb_server_update_error'));
   }
@@ -54,7 +54,7 @@ class IpLoadBalancerServerService {
         farmId,
         serverId,
       }).$promise)
-      .then(this.CucServiceHelper.successHandler('iplb_server_delete_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_delete_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
       .catch(this.CucServiceHelper.errorHandler('iplb_server_delete_error'));
   }
