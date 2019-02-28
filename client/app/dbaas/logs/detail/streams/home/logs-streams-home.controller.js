@@ -4,18 +4,18 @@ class LogsStreamsHomeCtrl {
     $stateParams,
     $translate,
     LogsStreamsService,
-    ControllerHelper,
+    CucControllerHelper,
     CucCloudMessage,
-    UrlHelper,
+    CucUrlHelper,
   ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsStreamsService = LogsStreamsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
-    this.UrlHelper = UrlHelper;
+    this.CucUrlHelper = CucUrlHelper;
     this.initLoaders();
   }
 
@@ -25,10 +25,10 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   initLoaders() {
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.getQuota(this.serviceName),
     });
-    this.streams = this.ControllerHelper.request.getArrayLoader({
+    this.streams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName),
     });
     this.quota.load();
@@ -77,7 +77,7 @@ class LogsStreamsHomeCtrl {
    */
   showDeleteConfirm(stream) {
     this.CucCloudMessage.flushChildMessage();
-    this.ControllerHelper.modal.showDeleteModal({
+    this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_stream_delete_title'),
       textHtml: this.$translate.instant('logs_stream_delete_message', { stream: stream.info.title }),
     }).then(() => this.remove(stream));
@@ -90,10 +90,10 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   remove(stream) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.deleteStream(this.serviceName, stream.info)
         .then(() => this.initLoaders())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load();
   }
@@ -153,7 +153,7 @@ class LogsStreamsHomeCtrl {
 
   copyToken(stream) {
     this.LogsStreamsService.copyStreamToken(stream);
-    this.ControllerHelper.scrollPageToTop();
+    this.CucControllerHelper.scrollPageToTop();
   }
 }
 

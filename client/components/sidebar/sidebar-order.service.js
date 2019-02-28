@@ -1,9 +1,9 @@
 class SidebarOrderService {
-  constructor(atInternet, FeatureAvailabilityService, SidebarMenu, CloudProjectSidebar,
+  constructor(atInternet, CucFeatureAvailabilityService, SidebarMenu, CloudProjectSidebar,
     VpsSidebar, DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar, NashaSidebar,
     VeeamSidebar, VeeamEnterpriseSidebar, DBaasTsSidebar, VrackSidebar, DeskaasSidebar,
     IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar, KubernetesSidebar) {
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
     this.atInternet = atInternet;
 
@@ -31,7 +31,7 @@ class SidebarOrderService {
 
   buildSidebarMenuActions(locale) {
     _.forEach(this.productsToOrder, (product) => {
-      if (!this.FeatureAvailabilityService.hasFeature(product.type, 'sidebarOrder', locale)) {
+      if (!this.CucFeatureAvailabilityService.hasFeature(product.type, 'sidebarOrder', locale)) {
         return;
       }
       const orderItem = product.addOrder(locale);

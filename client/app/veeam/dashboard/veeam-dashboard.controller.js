@@ -1,13 +1,14 @@
 (() => {
   class VeeamDashboardCtrl {
-    constructor($stateParams, $translate, ControllerHelper, FeatureAvailabilityService,
-      RegionService, VeeamService) {
+    constructor($stateParams, $translate, CucControllerHelper, CucFeatureAvailabilityService,
+      RegionService, VeeamService, REDIRECT_URLS) {
       this.$stateParams = $stateParams;
       this.$translate = $translate;
-      this.ControllerHelper = ControllerHelper;
-      this.FeatureAvailabilityService = FeatureAvailabilityService;
+      this.CucControllerHelper = CucControllerHelper;
+      this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
       this.RegionService = RegionService;
       this.VeeamService = VeeamService;
+      this.REDIRECT_URLS = REDIRECT_URLS;
 
       this.serviceName = this.$stateParams.serviceName;
 
@@ -21,14 +22,14 @@
         type: 'error',
       });
 
-      this.configurationInfos = this.ControllerHelper.request.getHashLoader({
+      this.configurationInfos = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.VeeamService.getConfigurationInfos(this.serviceName),
         successHandler: () => this.getRegion(this.configurationInfos.data.location
           .macroRegion.code),
         errorHandler,
       });
 
-      this.subscriptionInfos = this.ControllerHelper.request.getHashLoader({
+      this.subscriptionInfos = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.VeeamService.getSubscriptionInfos(this.serviceName),
         successHandler: () => {
           if (this.subscriptionInfos.data.isOnTrial) {
@@ -51,11 +52,11 @@
         errorHandler,
       });
 
-      this.actions = this.ControllerHelper.request.getArrayLoader({
+      this.actions = this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.VeeamService.getActions(this.$stateParams.serviceName),
       });
 
-      this.orderableOffers = this.ControllerHelper.request.getArrayLoader({
+      this.orderableOffers = this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.VeeamService.getOrderableOffers(this.serviceName),
         errorHandler,
       });
@@ -70,13 +71,13 @@
         },
         manageAutorenew: {
           text: this.$translate.instant('common_manage'),
-          href: this.ControllerHelper.navigation.getUrl('renew', { serviceName: this.serviceName, serviceType: 'VEEAM_CLOUD_CONNECT' }),
+          href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'renew'), { serviceName: this.serviceName, serviceType: 'VEEAM_CLOUD_CONNECT' }),
           isAvailable: () => true,
         },
         manageContact: {
           text: this.$translate.instant('common_manage'),
-          href: this.ControllerHelper.navigation.getUrl('contacts', { serviceName: this.serviceName }),
-          isAvailable: () => this.FeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
+          href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
+          isAvailable: () => this.CucFeatureAvailabilityService.hasFeature('CONTACTS', 'manage'),
         },
       };
     }
@@ -90,7 +91,7 @@
 
     addStorage() {
       if (this.actions.data.addStorage.available) {
-        this.ControllerHelper.modal
+        this.CucControllerHelper.modal
           .showModal({
             modalConfig: {
               templateUrl: 'app/veeam/storage/add/veeam-storage-add.html',
@@ -110,7 +111,7 @@
             type: 'error',
           }));
       } else {
-        this.ControllerHelper.modal.showWarningModal({
+        this.CucControllerHelper.modal.showWarningModal({
           title: this.$translate.instant('common_action_unavailable'),
           message: this.actions.data.addStorage.reason,
         });
@@ -119,7 +120,7 @@
 
     changeOffer() {
       if (this.actions.data.upgradeOffer.available) {
-        this.ControllerHelper.modal.showModal({
+        this.CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/veeam/dashboard/update-offer/veeam-update-offer.html',
             controller: 'VeeamUpdateOfferCtrl',
@@ -138,7 +139,7 @@
             type: 'error',
           }));
       } else {
-        this.ControllerHelper.modal.showWarningModal({
+        this.CucControllerHelper.modal.showWarningModal({
           title: this.$translate.instant('common_action_unavailable'),
           message: this.actions.data.upgradeOffer.reason,
         });

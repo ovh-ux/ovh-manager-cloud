@@ -1,6 +1,7 @@
 angular.module('managerApp').controller('VrackCtrl',
   function VrackCtrl($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal,
-    CucCloudMessage, SidebarMenu, OvhApiVrack, OvhApiCloudProject, OvhApiMe, URLS, VrackService) {
+    CucCloudMessage, SidebarMenu, OvhApiVrack, OvhApiCloudProject,
+    OvhApiMe, URLS, CucVrackService) {
     const self = this;
     const pollingInterval = 5000;
 
@@ -14,7 +15,7 @@ angular.module('managerApp').controller('VrackCtrl',
     self.descriptionOptions = { maxLength: 255 };
     self.changeOwnerUrl = null;
     self.vRackCloudRoadmapGuide = null;
-    self.vrackService = VrackService;
+    self.vrackService = CucVrackService;
 
     self.modals = {
       move: null,

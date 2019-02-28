@@ -1,6 +1,6 @@
 class CloudProjectComputeInfrastructureService {
   constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CloudUserPref,
-    CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper, TARGET) {
+    CloudProjectComputeInfrastructureOrchestrator, CucControllerHelper, CucServiceHelper, TARGET) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
@@ -8,8 +8,8 @@ class CloudProjectComputeInfrastructureService {
     this.CucCloudMessage = CucCloudMessage;
     this.CloudUserPref = CloudUserPref;
     this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
-    this.ControllerHelper = ControllerHelper;
-    this.ServiceHelper = ServiceHelper;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.TARGET = TARGET;
   }
 
@@ -120,20 +120,20 @@ class CloudProjectComputeInfrastructureService {
   }
 
   rebootVirtualMachine(vm, type) {
-    return this.ControllerHelper.modal.showConfirmationModal({
+    return this.CucControllerHelper.modal.showConfirmationModal({
       titleText: type === 'hard' ? this.$translate.instant('cpci_vm_action_reboot_hard') : this.$translate.instant('cpci_vm_action_reboot'),
       text: this.$translate.instant('cpci_vm_confirm_reboot', { name: vm.name || '' }),
     }).then(() => this.CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type)
-      .then(() => this.ServiceHelper.successHandler('cpci_vm_reboot_submit_success')())
-      .catch(this.ServiceHelper.errorHandler('cpci_vm_reboot_submit_error')));
+      .then(() => this.CucServiceHelper.successHandler('cpci_vm_reboot_submit_success')())
+      .catch(this.CucServiceHelper.errorHandler('cpci_vm_reboot_submit_error')));
   }
 
   reinstallVirtualMachine(vm) {
-    return this.ControllerHelper.modal.showConfirmationModal({
+    return this.CucControllerHelper.modal.showConfirmationModal({
       titleText: this.$translate.instant('cpci_vm_action_reinstall'),
       text: this.$translate.instant('cpci_vm_reinstall_warn'),
     }).then(() => this.CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm)
-      .catch(this.ServiceHelper.errorHandler('cpci_vm_reinstall_submit_error')));
+      .catch(this.CucServiceHelper.errorHandler('cpci_vm_reinstall_submit_error')));
   }
 
   deleteVirtualMachine(vm) {
@@ -146,7 +146,7 @@ class CloudProjectComputeInfrastructureService {
         params: () => vm,
       },
     }).result.then(() => this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
-      .catch(this.ServiceHelper.errorHandler('cpci_vm_delete_submit_error')));
+      .catch(this.CucServiceHelper.errorHandler('cpci_vm_delete_submit_error')));
   }
 
   rescueMode(vm) {
@@ -178,7 +178,7 @@ class CloudProjectComputeInfrastructureService {
       .then(() => {
         _.set(vm, 'confirm', null);
       })
-      .catch(this.ServiceHelper.errorHandler('cpci_vm_rescue_end_error'))
+      .catch(this.CucServiceHelper.errorHandler('cpci_vm_rescue_end_error'))
       .finally(() => {
         _.set(vm, 'confirmLoading', false);
       });

@@ -1,10 +1,10 @@
 class LogsRolesPermissionsCtrl {
-  constructor($q, $stateParams, CucCloudMessage, ControllerHelper, LogsRolesService) {
+  constructor($q, $stateParams, CucCloudMessage, CucControllerHelper, LogsRolesService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.roleId = this.$stateParams.roleId;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsRolesService = LogsRolesService;
     this.CucCloudMessage = CucCloudMessage;
     this.initLoaders();
@@ -20,7 +20,7 @@ class LogsRolesPermissionsCtrl {
     this.availableAliases = this.$q.defer();
     this.attachedAliases = this.$q.defer();
 
-    this.roleDetails = this.ControllerHelper.request.getArrayLoader({
+    this.roleDetails = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getRoleDetails(this.serviceName, this.roleId)
         .then((role) => {
           this.loadAttachedPermissions(role.permissions);
@@ -35,7 +35,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   loadAvailableAliases(permissionList) {
-    this.allAliases = this.ControllerHelper.request.getArrayLoader({
+    this.allAliases = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getAllAliases(this.serviceName)
         .then((result) => {
           const diff = _.map(_.filter(result, alias => alias.info.isShareable && !_.find(permissionList, permission => permission.aliasId === alias.info.aliasId)), 'info');
@@ -46,7 +46,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   loadAvailableIndices(permissionList) {
-    this.allIndices = this.ControllerHelper.request.getArrayLoader({
+    this.allIndices = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getAllIndices(this.serviceName)
         .then((result) => {
           const diff = _.map(_.filter(result, index => index.info.isShareable && !_.find(permissionList, permission => permission.indexId === index.info.indexId)), 'info');
@@ -57,7 +57,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   loadAvailableDashboards(permissionList) {
-    this.allDashboards = this.ControllerHelper.request.getArrayLoader({
+    this.allDashboards = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getAllDashboards(this.serviceName)
         .then((result) => {
           const diff = _.map(_.filter(result, dashboard => dashboard.info.isShareable && !_.find(permissionList, permission => permission.dashboardId === dashboard.info.dashboardId)), 'info');
@@ -68,7 +68,7 @@ class LogsRolesPermissionsCtrl {
   }
 
   loadAvailableStreams(permissionList) {
-    this.allStreams = this.ControllerHelper.request.getArrayLoader({
+    this.allStreams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getAllStreams(this.serviceName)
         .then((result) => {
           const diff = _.map(_.filter(result, stream => stream.info.isShareable && !_.find(permissionList, permission => permission.streamId === stream.info.streamId)), 'info');
@@ -112,51 +112,51 @@ class LogsRolesPermissionsCtrl {
 
   attachAlias(item) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveAlias = this.ControllerHelper.request.getArrayLoader({
+    this.saveAlias = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
-      errorHandler: () => this.ControllerHelper.scrollPageToTop(),
+      errorHandler: () => this.CucControllerHelper.scrollPageToTop(),
     });
     return this.saveAlias.load();
   }
 
   attachIndex(item) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveIndex = this.ControllerHelper.request.getArrayLoader({
+    this.saveIndex = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
-      errorHandler: () => this.ControllerHelper.scrollPageToTop(),
+      errorHandler: () => this.CucControllerHelper.scrollPageToTop(),
     });
     return this.saveIndex.load();
   }
 
   attachStream(item) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveStream = this.ControllerHelper.request.getArrayLoader({
+    this.saveStream = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
-      errorHandler: () => this.ControllerHelper.scrollPageToTop(),
+      errorHandler: () => this.CucControllerHelper.scrollPageToTop(),
     });
     return this.saveStream.load();
   }
 
   attachDashboard(item) {
     this.CucCloudMessage.flushChildMessage();
-    this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
+    this.saveDashboard = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService
         .addDashboard(this.serviceName, this.roleId, item[0]),
       successHandler: () => this.roleDetails.load(),
-      errorHandler: () => this.ControllerHelper.scrollPageToTop(),
+      errorHandler: () => this.CucControllerHelper.scrollPageToTop(),
     });
     return this.saveDashboard.load();
   }
 
   removePermission(permission) {
     this.CucCloudMessage.flushChildMessage();
-    this.deletePermission = this.ControllerHelper.request.getArrayLoader({
+    this.deletePermission = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService
         .removePermission(this.serviceName, this.roleId, permission),
-      errorHandler: () => this.ControllerHelper.scrollPageToTop(),
+      errorHandler: () => this.CucControllerHelper.scrollPageToTop(),
     });
     return this.deletePermission.load();
   }

@@ -1,11 +1,12 @@
 class VeeamEnterpriseDashboardCtrl {
-  constructor($stateParams, $translate, ControllerHelper, FeatureAvailabilityService,
-    VeeamEnterpriseService) {
+  constructor($stateParams, $translate, CucControllerHelper, CucFeatureAvailabilityService,
+    VeeamEnterpriseService, REDIRECT_URLS) {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.VeeamEnterpriseService = VeeamEnterpriseService;
+    this.REDIRECT_URLS = REDIRECT_URLS;
 
     this.serviceName = this.$stateParams.serviceName;
 
@@ -19,12 +20,12 @@ class VeeamEnterpriseDashboardCtrl {
       type: 'error',
     });
 
-    this.configurationInfos = this.ControllerHelper.request.getHashLoader({
+    this.configurationInfos = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VeeamEnterpriseService.getConfigurationInfos(this.serviceName),
       errorHandler,
     });
 
-    this.subscriptionInfos = this.ControllerHelper.request.getHashLoader({
+    this.subscriptionInfos = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VeeamEnterpriseService.getSubscriptionInfos(this.serviceName),
       errorHandler,
     });
@@ -34,8 +35,8 @@ class VeeamEnterpriseDashboardCtrl {
     this.uiActions = {
       manageAutorenew: {
         text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl(
-          'renew', {
+        href: this.CucControllerHelper.navigation.constructor.getUrl(
+          _.get(this.REDIRECT_URLS, 'renew'), {
             serviceName: this.serviceName,
             serviceType: 'VEEAM_ENTERPRISE',
           },
@@ -51,7 +52,7 @@ class VeeamEnterpriseDashboardCtrl {
   }
 
   activateLicense() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/veeam-enterprise/dashboard/license/veeam-enterprise-license.html',
         controller: 'VeeamEnterpriseLicenseCtrl',
@@ -65,7 +66,7 @@ class VeeamEnterpriseDashboardCtrl {
   }
 
   updateLicense() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/veeam-enterprise/dashboard/license/veeam-enterprise-license.html',
         controller: 'VeeamEnterpriseLicenseCtrl',
@@ -79,7 +80,7 @@ class VeeamEnterpriseDashboardCtrl {
   }
 
   terminateLicense() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/veeam-enterprise/dashboard/terminate/veeam-enterprise-terminate.html',
         controller: 'VeeamEnterpriseTerminateCtrl',

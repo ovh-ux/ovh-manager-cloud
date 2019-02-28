@@ -1,12 +1,12 @@
 class IpLoadBalancerServerService {
   constructor($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing,
-    ServiceHelper, RegionService) {
+    CucServiceHelper, RegionService) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.Server = {
       tcp: this.IpLoadBalancing.Farm().Tcp().Server().v6(),
@@ -30,9 +30,9 @@ class IpLoadBalancerServerService {
       farmId,
     }, server)
       .$promise
-      .then(() => this.ServiceHelper.successHandler('iplb_server_add_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_add_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_server_add_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_server_add_error'));
   }
 
   update(type, serviceName, farmId, serverId, server) {
@@ -42,9 +42,9 @@ class IpLoadBalancerServerService {
       serverId,
     }, server)
       .$promise
-      .then(() => this.ServiceHelper.successHandler('iplb_server_update_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_update_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_server_update_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_server_update_error'));
   }
 
   delete(serviceName, farmId, serverId) {
@@ -54,9 +54,9 @@ class IpLoadBalancerServerService {
         farmId,
         serverId,
       }).$promise)
-      .then(() => this.ServiceHelper.successHandler('iplb_server_delete_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_server_delete_success')())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_server_delete_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_server_delete_error'));
   }
 
   getFarmType(serviceName, farmId) {
@@ -78,7 +78,7 @@ class IpLoadBalancerServerService {
     return this.IpLoadBalancing.v6().schema()
       .$promise
       .then(schema => schema.models['ipLoadbalancing.ProxyProtocolVersionEnum'].enum)
-      .catch(this.ServiceHelper.errorHandler('iplb_server_request_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_server_request_error'));
   }
 }
 

@@ -1,11 +1,11 @@
 class CloudProjectVirtualMachineAddService {
-  constructor($q, $translate, CloudFlavorService, CloudImageService, ControllerModalHelper,
+  constructor($q, $translate, CloudFlavorService, CloudImageService, CucControllerModalHelper,
     OvhApiCloudProject, OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivateSubnet) {
     this.$q = $q;
     this.$translate = $translate;
     this.CloudFlavorService = CloudFlavorService;
     this.CloudImageService = CloudImageService;
-    this.ControllerModalHelper = ControllerModalHelper;
+    this.CucControllerModalHelper = CucControllerModalHelper;
     this.OvhApiCloudProject = OvhApiCloudProject;
     this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
     this.OvhApiCloudProjectNetworkPrivateSubnet = OvhApiCloudProjectNetworkPrivateSubnet;
@@ -170,14 +170,14 @@ class CloudProjectVirtualMachineAddService {
   }
 
   openSshKeyRegionModal(sshKey) {
-    return this.ControllerModalHelper.showConfirmationModal({
+    return this.CucControllerModalHelper.showConfirmationModal({
       titleText: this.$translate.instant('cpcivm_add_step1_sshKey_regions_title'),
       text: this.$translate.instant('cpcivm_add_step1_sshKey_regions_message', { sshKey }),
     });
   }
 
   openQuotaModal(type, params = null) {
-    this.ControllerModalHelper.showWarningModal({
+    this.CucControllerModalHelper.showWarningModal({
       title: this.$translate.instant(`cpcivm_add_step3_disabled_${type}`),
       message: this.$translate.instant(`cpcivm_add_step3_disabled_message_${type}`, params),
     });

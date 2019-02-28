@@ -7,10 +7,10 @@ angular.module('managerApp').service('VpsService', [
   'additionalDisk.capacities',
   'additionalDisk.hasNoOption',
   'VpsTaskService',
-  'ServiceHelper',
+  'CucServiceHelper',
   '$translate',
   function VpsService($http, $q, $timeout, cache, $rootScope, additionalDiskCapacities,
-    additionalDiskHasNoOption, VpsTaskService, ServiceHelper, $translate) {
+    additionalDiskHasNoOption, VpsTaskService, CucServiceHelper, $translate) {
     const aapiRootPath = '/sws/vps';
 
 
@@ -120,7 +120,7 @@ angular.module('managerApp').service('VpsService', [
             }));
           return result.data;
         })
-        .catch(ServiceHelper.errorHandler('vps_dashboard_loading_error'));
+        .catch(CucServiceHelper.errorHandler('vps_dashboard_loading_error'));
     };
 
     /*
@@ -148,7 +148,7 @@ angular.module('managerApp').service('VpsService', [
           return monitoring;
         }
         return null;
-      }).catch(ServiceHelper.errorHandler('vps_configuration_monitoring_fail'));
+      }).catch(CucServiceHelper.errorHandler('vps_configuration_monitoring_fail'));
     };
 
     /*
@@ -211,7 +211,7 @@ angular.module('managerApp').service('VpsService', [
     this.getKVMAccess = function (serviceName) {
       return $http.post([swsVpsProxypass, serviceName, 'openConsoleAccess'].join('/'), { protocol: 'VNCOverWebSocket' })
         .then(data => data.data)
-        .catch(ServiceHelper.errorHandler());
+        .catch(CucServiceHelper.errorHandler());
     };
 
     this.getKVMConsoleUrl = function (serviceName) {
@@ -232,7 +232,7 @@ angular.module('managerApp').service('VpsService', [
     this.getTemplates = function (serviceName) {
       return $http.get([aapiRootPath, serviceName, 'templates'].join('/'), { serviceType: 'aapi' })
         .then(response => response.data)
-        .catch(ServiceHelper.errorHandler('vps_configuration_polling_fail'));
+        .catch(CucServiceHelper.errorHandler('vps_configuration_polling_fail'));
     };
 
     /*
@@ -255,7 +255,7 @@ angular.module('managerApp').service('VpsService', [
           VpsTaskService.initPoller(serviceName, 'iaas.vps.detail');
           return response.data;
         })
-        .catch(ServiceHelper.errorHandler('vps_configuration_reinstall_fail'))
+        .catch(CucServiceHelper.errorHandler('vps_configuration_reinstall_fail'))
         .finally(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_reinstall_success', { serviceName: this.serviceName })));
     };
 
@@ -265,7 +265,7 @@ angular.module('managerApp').service('VpsService', [
     this.getIps = function (serviceName) {
       return $http.get([aapiRootPath, serviceName, 'ips'].join('/'), { serviceType: 'aapi' })
         .then(data => data.data)
-        .catch(ServiceHelper.errorHandler());
+        .catch(CucServiceHelper.errorHandler());
     };
 
     /*
@@ -323,7 +323,7 @@ angular.module('managerApp').service('VpsService', [
           return $q.reject(result.messages);
         }
         return $q.reject(result);
-      }).catch(ServiceHelper.errorHandler('vps_dashboard_loading_error'));
+      }).catch(CucServiceHelper.errorHandler('vps_dashboard_loading_error'));
     };
 
     /*
@@ -833,7 +833,7 @@ angular.module('managerApp').service('VpsService', [
           }
           return backupInfo;
         })
-        .catch(ServiceHelper.errorHandler());
+        .catch(CucServiceHelper.errorHandler());
     };
 
     this.getBackupStorageTab = function (serviceName, count, offset) {
@@ -958,13 +958,13 @@ angular.module('managerApp').service('VpsService', [
     this.getDisks = function (serviceName) {
       return $http.get([swsVpsProxypass, serviceName, 'disks'].join('/'))
         .then(response => response.data)
-        .catch(ServiceHelper.errorHandler('vps_dashboard_loading_error'));
+        .catch(CucServiceHelper.errorHandler('vps_dashboard_loading_error'));
     };
 
     this.getDiskInfo = function (serviceName, id) {
       return $http.get([swsVpsProxypass, serviceName, 'disks', id].join('/'))
         .then(response => response.data)
-        .catch(ServiceHelper.errorHandler('vps_dashboard_loading_error'));
+        .catch(CucServiceHelper.errorHandler('vps_dashboard_loading_error'));
     };
 
     this.showOnlyAdditionalDisk = function (disks) {
@@ -979,7 +979,7 @@ angular.module('managerApp').service('VpsService', [
           response.data.offer = vps.model;
           return response.data;
         })
-        .catch(ServiceHelper.errorHandler('vps_dashboard_loading_error')));
+        .catch(CucServiceHelper.errorHandler('vps_dashboard_loading_error')));
     };
 
     this.isAutoRenewable = function (serviceName) {

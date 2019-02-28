@@ -1,10 +1,10 @@
 class LogsAliasesService {
-  constructor($q, $translate, OvhApiDbaas, ServiceHelper, CucCloudPoll, LogsHelperService,
-    LogsOptionsService, LogsConstants, UrlHelper, CucCloudMessage, LogsStreamsService,
+  constructor($q, $translate, OvhApiDbaas, CucServiceHelper, CucCloudPoll, LogsHelperService,
+    LogsOptionsService, LogsConstants, CucUrlHelper, CucCloudMessage, LogsStreamsService,
     LogsIndexService) {
     this.$q = $q;
     this.$translate = $translate;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.AliasApiService = OvhApiDbaas.Logs().Alias().v6();
     this.AliasAapiService = OvhApiDbaas.Logs().Alias().Aapi();
     this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -13,7 +13,7 @@ class LogsAliasesService {
     this.LogsHelperService = LogsHelperService;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsConstants = LogsConstants;
-    this.UrlHelper = UrlHelper;
+    this.CucUrlHelper = CucUrlHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsIndexService = LogsIndexService;
@@ -293,7 +293,10 @@ class LogsAliasesService {
   }
 
   getElasticSearchUrl(alias) {
-    const url = this.UrlHelper.constructor.findUrl(alias, this.LogsConstants.ELASTICSEARCH_API_URL);
+    const url = this.CucUrlHelper.constructor.findUrl(
+      alias,
+      this.LogsConstants.ELASTICSEARCH_API_URL,
+    );
     if (!url) {
       this.CucCloudMessage.error(this.$translate.instant('logs_aliases_get_elasticsearch_url_error', { alias: alias.info.name }));
     }

@@ -1,10 +1,10 @@
 class SidebarContentService {
-  constructor($translate, FeatureAvailabilityService, SidebarMenu, SidebarHelper, MANAGER_URLS,
+  constructor($translate, CucFeatureAvailabilityService, SidebarMenu, SidebarHelper, MANAGER_URLS,
     IaasSectionSidebarService, PaasSectionSidebarService, MetricsSectionSidebarService,
     LogsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSectionSidebarService,
     CloudDesktopSectionSidebarService, IpSectionSidebarService, LicenseSectionSidebarService) {
     this.$translate = $translate;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
     this.SidebarHelper = SidebarHelper;
     this.MANAGER_URLS = MANAGER_URLS;

@@ -1,13 +1,13 @@
 class DeleteSecondaryDnsCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, domain, serviceName,
-    VpsService) {
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage,
+    domain, serviceName, VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.CucCloudMessage = CucCloudMessage;
     this.domain = domain;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
   }
 
   cancel() {
@@ -16,7 +16,7 @@ class DeleteSecondaryDnsCtrl {
 
   confirm() {
     this.CucCloudMessage.flushChildMessage();
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService
         .deleteSecondaryDnsDomain(this.serviceName, this.domain.domain)
         .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_secondarydns_delete_success')))

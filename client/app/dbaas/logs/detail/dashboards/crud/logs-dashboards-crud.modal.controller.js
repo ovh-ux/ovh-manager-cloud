@@ -1,13 +1,13 @@
 class LogsDashboardsCrudModalCtrl {
-  constructor($scope, $state, ControllerHelper) {
+  constructor($scope, $state, CucControllerHelper) {
     this.$scope = $scope;
     this.$state = $state;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.openModal();
   }
 
   openModal() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/dashboards/crud/logs-dashboards-crud.html',
         controller: 'LogsDashboardsCrudCtrl',

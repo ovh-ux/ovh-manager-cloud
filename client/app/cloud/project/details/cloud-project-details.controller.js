@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('CloudProjectDetailsCtrl',
   function CloudProjectDetailsCtrl($stateParams, $q, $state, $rootScope, $scope, $timeout,
-    ControllerModalHelper, OvhApiCloudProject, Poller, OvhApiMeOrder, CucCloudMessage, $translate,
-    $filter, REDIRECT_URLS) {
+    CucControllerModalHelper, OvhApiCloudProject, Poller, OvhApiMeOrder, CucCloudMessage,
+    $translate, $filter, REDIRECT_URLS) {
     const self = this;
 
     this.projectId = $stateParams.projectId;
@@ -27,7 +27,7 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
 
       $rootScope.$broadcast('CloudMainController:refresh');
 
-      ControllerModalHelper.showWarningModal({
+      CucControllerModalHelper.showWarningModal({
         title: $translate.instant('voucher_warning_title'),
         message: $translate.instant('voucher_warning_description', {
           expiration: $filter('date')(self.project.expiration, 'medium'),

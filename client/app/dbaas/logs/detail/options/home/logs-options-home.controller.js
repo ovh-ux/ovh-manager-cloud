@@ -1,13 +1,13 @@
 class LogsOptionsCtrl {
-  constructor($state, $stateParams, $window, ControllerHelper, LogsConstants, LogsOfferService,
-    LogsOptionsService, CurrencyService, OrderHelperService, LogsDetailService) {
+  constructor($state, $stateParams, $window, CucControllerHelper, LogsConstants, LogsOfferService,
+    LogsOptionsService, CucCurrencyService, CucOrderHelperService, LogsDetailService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$window = $window;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsOptionsService = LogsOptionsService;
-    this.CurrencyService = CurrencyService;
-    this.OrderHelperService = OrderHelperService;
+    this.CucCurrencyService = CucCurrencyService;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.LogsDetailService = LogsDetailService;
     this.LogsConstants = LogsConstants;
 
@@ -22,18 +22,18 @@ class LogsOptionsCtrl {
    * @memberof LogsOptionsCtrl
    */
   initLoaders() {
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsService.getOptions(this.serviceName),
     });
-    this.currentOptions = this.ControllerHelper.request.getArrayLoader({
+    this.currentOptions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsService
         .getSubscribedOptionsMapGrouped(this.serviceName),
     });
-    this.selectedOffer = this.ControllerHelper.request.getHashLoader({
+    this.selectedOffer = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsOptionsService.getOffer(this.serviceName),
     });
 
-    this.service = this.ControllerHelper.request.getHashLoader({
+    this.service = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
         .then((service) => {
           if (service.state !== this.LogsConstants.SERVICE_STATE_ENABLED) {
@@ -86,7 +86,7 @@ class LogsOptionsCtrl {
    * @memberof LogsOptionsCtrl
    */
   getCurrentCurrency() {
-    return this.CurrencyService.getCurrentCurrency();
+    return this.CucCurrencyService.getCurrentCurrency();
   }
 
   /**
@@ -114,7 +114,7 @@ class LogsOptionsCtrl {
    * @memberof LogsOptionsCtrl
    */
   order() {
-    this.OrderHelperService.openExpressOrderUrl(
+    this.CucOrderHelperService.openExpressOrderUrl(
       this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName),
     );
   }

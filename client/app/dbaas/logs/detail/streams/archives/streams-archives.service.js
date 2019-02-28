@@ -1,10 +1,10 @@
 class LogsStreamsArchivesService {
-  constructor($http, $q, LogsConstants, OvhApiDbaas, ServiceHelper) {
+  constructor($http, $q, LogsConstants, OvhApiDbaas, CucServiceHelper) {
     this.$http = $http;
     this.$q = $q;
     this.LogsConstants = LogsConstants;
     this.ArchivesApiService = OvhApiDbaas.Logs().Archive().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   /**
@@ -20,7 +20,7 @@ class LogsStreamsArchivesService {
       serviceName,
       streamId,
     }).$promise
-      .catch(this.ServiceHelper.errorHandler('streams_archives_ids_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('streams_archives_ids_loading_error'));
   }
 
   /**
@@ -38,7 +38,7 @@ class LogsStreamsArchivesService {
         archives.forEach(archive => this.transformArchive(archive));
         return archives;
       })
-      .catch(this.ServiceHelper.errorHandler('streams_archives_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('streams_archives_loading_error'));
   }
 
   /**

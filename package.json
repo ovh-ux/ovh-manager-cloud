@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.18.2",
+  "version": "7.18.4",
   "private": true,
   "description": "OVH Cloud control panel",
   "keywords": [
@@ -39,14 +39,14 @@
   },
   "dependencies": {
     "@ovh-ux/ng-ovh-apiv7": "^2.0.0",
-    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.1.0-alpha.5",
+    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.2.0",
     "@ovh-ux/ng-ovh-checkbox-table": "^1.0.0",
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-form-flat": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth-modal-plugin": "^3.0.0",
     "@ovh-ux/ng-ovh-stop-event": "^1.0.0",
-    "@ovh-ux/translate-async-loader": "^1.0.7",
+    "@ovh-ux/ng-translate-async-loader": "^2.0.0",
     "@uirouter/angularjs": "^1.0.22",
     "angular": "~1.6",
     "angular-animate": "~1.6",

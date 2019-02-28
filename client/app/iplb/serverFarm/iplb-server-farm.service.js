@@ -1,12 +1,12 @@
 class IpLoadBalancerServerFarmService {
   constructor($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing,
-    ServiceHelper, RegionService) {
+    CucServiceHelper, RegionService) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.Farm = {
       all: this.IpLoadBalancing.Farm().v6(),
@@ -25,7 +25,7 @@ class IpLoadBalancerServerFarmService {
   getAvailableFarmProbes(serviceName) {
     return this.IpLoadBalancing.v6().availableFarmProbes({ serviceName })
       .$promise
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_edit_probe_info_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_edit_probe_info_error'));
   }
 
   getServerFarms(serviceName, networkId) {
@@ -35,7 +35,7 @@ class IpLoadBalancerServerFarmService {
         const promises = _.map(farms, farm => this.getServerFarm(serviceName, farm.id, farm.type));
         return this.$q.all(promises);
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_list_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_list_loading_error'));
   }
 
   getServerFarm(serviceName, farmId, type) {
@@ -68,16 +68,16 @@ class IpLoadBalancerServerFarmService {
           }));
         return this.$q.all(promises);
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_server_list_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_server_list_loading_error'));
   }
 
   create(type, serviceName, farm) {
     return this.Farm[type].post({ serviceName }, farm)
       .$promise
-      .then(() => this.ServiceHelper.successHandler('iplb_farm_add_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_farm_add_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_add_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_add_error'));
   }
 
   update(type, serviceName, farmId, farm) {
@@ -86,10 +86,10 @@ class IpLoadBalancerServerFarmService {
       farmId,
     }, farm)
       .$promise
-      .then(() => this.ServiceHelper.successHandler('iplb_farm_update_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_farm_update_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_update_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_update_error'));
   }
 
   delete(type, serviceName, farmId) {
@@ -98,10 +98,10 @@ class IpLoadBalancerServerFarmService {
       farmId,
     })
       .$promise
-      .then(() => this.ServiceHelper.successHandler('iplb_farm_delete_success')())
+      .then(() => this.CucServiceHelper.successHandler('iplb_farm_delete_success')())
       .then(() => this.Farm.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_farm_delete_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_farm_delete_error'));
   }
 
   humanizeBalance(balance) {

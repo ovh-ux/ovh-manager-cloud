@@ -4,8 +4,8 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
     OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
-    OvhApiCloudProjectSshKey, CurrencyService, RegionService, ServiceHelper, ovhDocUrl, TARGET,
-    URLS) {
+    OvhApiCloudProjectSshKey, CucCurrencyService, RegionService, CucServiceHelper, ovhDocUrl,
+    TARGET, URLS) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -23,9 +23,9 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
     this.OvhApiCloudProjectSnapshot = OvhApiCloudProjectSnapshot;
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
-    this.CurrencyService = CurrencyService;
+    this.CucCurrencyService = CucCurrencyService;
     this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.ovhDocUrl = ovhDocUrl;
     this.TARGET = TARGET;
@@ -34,7 +34,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
 
   $onInit() {
     this.serviceName = this.$stateParams.projectId;
-    this.currentCurrency = this.CurrencyService.getCurrentCurrency();
+    this.currentCurrency = this.CucCurrencyService.getCurrentCurrency();
     this.loaders = {
       adding: false,
     };
@@ -104,13 +104,13 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.enums.imagesTypes = this.CloudImageService.constructor.getImageTypes(images);
           this.images = this.VirtualMachineAddService.getAugmentedImages(images);
         })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_images_ERROR')),
+        .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step1_images_ERROR')),
       snapshots: this.OvhApiCloudProjectSnapshot.v6()
         .query({ serviceName: this.serviceName }).$promise
         .then((snapshots) => {
           this.snapshots = _.map(snapshots, snapshot => _.set(snapshot, 'distribution', _.get(snapshot, 'type', 'linux')));
         })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_shapshots_ERROR')),
+        .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step1_shapshots_ERROR')),
       sshKeys: this.OvhApiCloudProjectSshKey.v6().query({ serviceName: this.serviceName }).$promise,
       instances: this.OvhApiCloudProjectInstance.v6()
         .query({ serviceName: this.serviceName }).$promise,
@@ -129,7 +129,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.model.sshKey = _.find(sshKeys, { id: this.mostRecentVm.sshKeyId });
         }
       })
-      .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_general_ERROR'))
+      .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step1_general_ERROR'))
       .finally(() => {
         this.loaders.step1 = false;
       });
@@ -168,7 +168,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.model.sshKey = newSshKey;
           this.checkSshKeyByRegion(newSshKey.regions);
         })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step1_sshKey_adding_ERROR'))
+        .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step1_sshKey_adding_ERROR'))
         .finally(() => {
           this.resetAddingSshKey();
           this.loaders.addingSsh = false;
@@ -201,7 +201,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
         }),
       quota: this.promiseQuota
         .then((quota) => { this.quota = quota; })
-        .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_quota_ERROR')),
+        .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step2_quota_ERROR')),
     })
       .then(({ regions }) => {
         _.forEach(regions, (region) => {
@@ -218,7 +218,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           .groupRegionsByDatacenter(regions);
         this.groupedRegions = _.groupBy(this.displayedRegions, 'continent');
       })
-      .catch(this.ServiceHelper.errorHandler('cpcivm_add_step2_regions_ERROR'))
+      .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step2_regions_ERROR'))
       .finally(() => {
         this.loaders.step2 = false;
       });
@@ -355,7 +355,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.enums.flavorsTypes,
         );
       })
-      .catch(this.ServiceHelper.errorHandler('cpcivm_add_step3_flavors_ERROR'))
+      .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step3_flavors_ERROR'))
       .finally(() => {
         this.loaders.step3 = false;
       });
@@ -476,7 +476,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
       .then(() => {
         this.$state.go('iaas.pci-project.compute.infrastructure.list');
       })
-      .catch(this.ServiceHelper.errorHandler('cpcivm_add_launch_ERROR'))
+      .catch(this.CucServiceHelper.errorHandler('cpcivm_add_launch_ERROR'))
       .catch(() => {
         this.submitted.step4 = false;
         this.loaders.adding = false;

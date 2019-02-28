@@ -1,13 +1,13 @@
 class IpLoadBalancerNatIpDetailCtrl {
-  constructor($uibModalInstance, serviceName, ControllerHelper, IpLoadBalancerNatIpService) {
+  constructor($uibModalInstance, serviceName, CucControllerHelper, IpLoadBalancerNatIpService) {
     this.$uibModalInstance = $uibModalInstance;
 
     this.serviceName = serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.IpLoadBalancerNatIpService = IpLoadBalancerNatIpService;
 
-    this.ips = this.ControllerHelper.request.getArrayLoader({
+    this.ips = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerNatIpService.getNatIps(this.serviceName),
     });
   }

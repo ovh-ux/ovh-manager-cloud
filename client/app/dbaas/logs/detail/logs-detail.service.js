@@ -1,15 +1,15 @@
 class LogsDetailService {
-  constructor($q, $translate, OvhApiDbaas, ServiceHelper) {
+  constructor($q, $translate, OvhApiDbaas, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.LogsLexiService = OvhApiDbaas.Logs().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getServiceDetails(serviceName) {
     return this.LogsLexiService.logDetail({ serviceName })
       .$promise
-      .catch(this.ServiceHelper.errorHandler('logs_details_error', undefined, 'data.message'));
+      .catch(this.CucServiceHelper.errorHandler('logs_details_error', undefined, 'data.message'));
   }
 }
 

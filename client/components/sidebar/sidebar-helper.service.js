@@ -1,13 +1,13 @@
 class SidebarHelper {
-  constructor($translate, FeatureAvailabilityService, SidebarMenu, MANAGER_URLS) {
+  constructor($translate, CucFeatureAvailabilityService, SidebarMenu, MANAGER_URLS) {
     this.$translate = $translate;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
     this.MANAGER_URLS = MANAGER_URLS;
   }
 
   sectionHasAvailableProduct(section, locale) {
-    return _.some(section.productTypesInSection, product => this.FeatureAvailabilityService.hasFeature(product.type, 'sidebarMenu', locale));
+    return _.some(section.productTypesInSection, product => this.CucFeatureAvailabilityService.hasFeature(product.type, 'sidebarMenu', locale));
   }
 
   static countProductsInSection(productsInSection) {

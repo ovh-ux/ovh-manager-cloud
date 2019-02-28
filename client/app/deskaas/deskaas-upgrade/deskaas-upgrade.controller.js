@@ -1,11 +1,11 @@
 class DeskaasUpgradeCtrl {
-  constructor($translate, $q, $state, $stateParams, ControllerHelper, DeskaasService,
+  constructor($translate, $q, $state, $stateParams, CucControllerHelper, DeskaasService,
     OvhApiDeskaasService) {
     this.$translate = $translate;
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.DeskaasService = DeskaasService;
     this.OvhApiDeskaasService = OvhApiDeskaasService;
     this.deskaasOffer = null;
@@ -39,7 +39,7 @@ class DeskaasUpgradeCtrl {
 
   confirmUpgrade() {
     this.saving = true;
-    return this.ControllerHelper.modal.showConfirmationModal({
+    return this.CucControllerHelper.modal.showConfirmationModal({
       titleText: this.$translate.instant('vdi_btn_popup_upgrade'),
       textHtml: this.$translate.instant('vdi_confirm_upgrade', { plan: this.deskaasOffer.name, price: this.deskaasOffer.priceText }),
     })

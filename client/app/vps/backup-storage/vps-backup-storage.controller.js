@@ -1,19 +1,19 @@
 class VpsBackupStorageCtrl {
-  constructor($stateParams, ControllerHelper, VpsActionService, VpsService) {
+  constructor($stateParams, CucControllerHelper, VpsActionService, VpsService) {
     this.serviceName = $stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
   }
 
   initLoaders() {
-    this.backup = this.ControllerHelper.request.getHashLoader({
+    this.backup = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getBackupStorageTab(this.serviceName),
     });
-    this.info = this.ControllerHelper.request.getHashLoader({
+    this.info = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getBackupStorageInformation(this.serviceName),
     });
-    this.vps = this.ControllerHelper.request.getHashLoader({
+    this.vps = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
     });
   }

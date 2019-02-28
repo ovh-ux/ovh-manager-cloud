@@ -1,13 +1,13 @@
 class LogsOfferCtrl {
-  constructor($state, $stateParams, $window, ControllerHelper, LogsConstants, LogsOfferService,
-    LogsOrderService, OrderHelperService, LogsDetailService) {
+  constructor($state, $stateParams, $window, CucControllerHelper, LogsConstants, LogsOfferService,
+    LogsOrderService, CucOrderHelperService, LogsDetailService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsOfferService = LogsOfferService;
     this.LogsOrderService = LogsOrderService;
-    this.ControllerHelper = ControllerHelper;
-    this.OrderHelperService = OrderHelperService;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.LogsDetailService = LogsDetailService;
     this.LogsConstants = LogsConstants;
     this.$window = $window;
@@ -21,16 +21,16 @@ class LogsOfferCtrl {
   }
 
   initLoaders() {
-    this.getSelectedPlan = this.ControllerHelper.request.getArrayLoader({
+    this.getSelectedPlan = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
         .then(selectedPlan => this.selectOffer(selectedPlan)),
     });
 
-    this.offers = this.ControllerHelper.request.getArrayLoader({
+    this.offers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOrderService.getOrder(this.serviceName),
     });
 
-    this.service = this.ControllerHelper.request.getHashLoader({
+    this.service = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
         .then((service) => {
           if (service.state !== this.LogsConstants.SERVICE_STATE_ENABLED) {
@@ -54,10 +54,10 @@ class LogsOfferCtrl {
   }
 
   processOrder() {
-    this.savingOffer = this.ControllerHelper.request.getArrayLoader({
+    this.savingOffer = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
         .then(response => this.$window.open(response.order.url, '_target'))
-        .catch(() => this.ControllerHelper.scrollPageToTop())
+        .catch(() => this.CucControllerHelper.scrollPageToTop())
         .finally(() => this.back()),
     });
     this.savingOffer.load();

@@ -1,11 +1,11 @@
 class CloudProjectComputeInfrastructureOpenstackClientService {
   constructor($q, $stateParams, $interval, OvhApiCloudProjectOpenstackClient,
-    OvhApiCloudProjectRegion, ServiceHelper) {
+    OvhApiCloudProjectRegion, CucServiceHelper) {
     this.$q = $q;
     this.$interval = $interval;
     this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.ws = null;
   }
@@ -28,12 +28,12 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
   getSession({ serviceName, term }) {
     return this.OvhApiCloudProjectOpenstackClient.v6().post({ serviceName }, {}).$promise
       .then(session => this.setSession(session, term))
-      .catch(this.ServiceHelper.errorHandler('cpci_openstack_client_session_error', 'iaas.pci-project.compute.openstack-console'));
+      .catch(this.CucServiceHelper.errorHandler('cpci_openstack_client_session_error', 'iaas.pci-project.compute.openstack-console'));
   }
 
   getRegions(serviceName) {
     return this.OvhApiCloudProjectRegion.v6().query({ serviceName }).$promise
-      .catch(this.ServiceHelper.errorHandler('cpci_openstack_client_regions_error', 'iaas.pci-project.compute.openstack-console'));
+      .catch(this.CucServiceHelper.errorHandler('cpci_openstack_client_regions_error', 'iaas.pci-project.compute.openstack-console'));
   }
 
   sendAction(action) {
@@ -93,12 +93,12 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
         this.initWebSocket(session, term);
         return;
       }
-      this.ServiceHelper.errorHandler('cpci_openstack_client_session_closed', 'iaas.pci-project.compute.openstack-console')({ data: 'Expired Session' });
+      this.CucServiceHelper.errorHandler('cpci_openstack_client_session_closed', 'iaas.pci-project.compute.openstack-console')({ data: 'Expired Session' });
       defer.reject();
     };
 
     this.ws.onerror = (err) => {
-      this.ServiceHelper.errorHandler('cpci_openstack_client_session_error', 'iaas.pci-project.compute.openstack-console')(err);
+      this.CucServiceHelper.errorHandler('cpci_openstack_client_session_error', 'iaas.pci-project.compute.openstack-console')(err);
       defer.reject(err);
     };
 
