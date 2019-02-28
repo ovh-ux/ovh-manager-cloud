@@ -56,15 +56,15 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
   }
 
   getAssociatedFlavor(node) {
-    if (node.instanceId) {
-      return this.Kubernetes.getAssociatedInstance(node.projectId, node.instanceId)
-        .then(instance => _.set(node, 'formattedFlavor', this.Kubernetes.formatFlavor(instance.flavor)))
-        .catch(() => {
-          _.set(node, 'formattedFlavor', this.$translate.instant('kube_nodes_flavor_error'));
-        });
-    }
-
-    return this.$q.when(_.set(node, 'formattedFlavor', node.flavor));
+    return this.Kubernetes.getFlavors(node.projectId)
+      .then((flavors) => {
+        _.set(node, 'formattedFlavor', this.Kubernetes.formatFlavor(
+          _.find(flavors, { name: node.flavor }),
+        ));
+      })
+      .catch(() => {
+        _.set(node, 'formattedFlavor', this.$translate.instant('kube_nodes_flavor_error'));
+      });
   }
 
   getPublicCloudProject() {
