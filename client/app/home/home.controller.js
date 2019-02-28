@@ -1,9 +1,10 @@
 class HomeCtrl {
-  constructor($q, DocsService, FeatureAvailabilityService, ovhUserPref) {
+  constructor($q, DocsService, FeatureAvailabilityService, ovhUserPref, TARGET) {
     this.$q = $q;
     this.DocsService = DocsService;
     this.FeatureAvailabilityService = FeatureAvailabilityService;
     this.ovhUserPref = ovhUserPref;
+    this.TARGET = TARGET;
   }
 
   $onInit() {
