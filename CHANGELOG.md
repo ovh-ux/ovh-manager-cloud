@@ -1,3 +1,60 @@
+## [7.18.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.3...v7.18.4) (2019-02-28)
+
+
+### Bug Fixes
+
+* **kube:** remove beta message ([d7580df](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7580df))
+
+
+
+## [7.18.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.2...v7.18.3) (2019-02-28)
+
+
+### Bug Fixes
+
+* **pci:** translations issues ([36bd4cc](https://github.com/ovh-ux/ovh-manager-cloud/commit/36bd4cc))
+
+
+
+## [7.18.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.1...v7.18.2) (2019-02-26)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([d86ff56](https://github.com/ovh-ux/ovh-manager-cloud/commit/d86ff56))
+
+
+
+## [7.18.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.0...v7.18.1) (2019-02-26)
+
+
+
+# [7.18.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.17.1...v7.18.0) (2019-02-25)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-apiv7 to v2.0.0 ([#1329](https://github.com/ovh-ux/ovh-manager-cloud/issues/1329)) ([54f54b9](https://github.com/ovh-ux/ovh-manager-cloud/commit/54f54b9))
+* **i18n:** add missing translations ([23395ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/23395ee))
+* **i18n:** add missing translations ([569f1a3](https://github.com/ovh-ux/ovh-manager-cloud/commit/569f1a3))
+* **i18n:** add missing translations ([5f90ef1](https://github.com/ovh-ux/ovh-manager-cloud/commit/5f90ef1))
+* **i18n:** add missing translations ([1a2799b](https://github.com/ovh-ux/ovh-manager-cloud/commit/1a2799b))
+* **i18n:** add missing translations ([c759708](https://github.com/ovh-ux/ovh-manager-cloud/commit/c759708))
+* **i18n:** add missing translations ([0bd122f](https://github.com/ovh-ux/ovh-manager-cloud/commit/0bd122f))
+* **i18n:** add missing translations ([48204e3](https://github.com/ovh-ux/ovh-manager-cloud/commit/48204e3))
+* **i18n:** add missing translations ([2a0b133](https://github.com/ovh-ux/ovh-manager-cloud/commit/2a0b133))
+* **kubernetes:** exit beta prefix ([851cf24](https://github.com/ovh-ux/ovh-manager-cloud/commit/851cf24))
+
+
+### Features
+
+* **kube:** add order in sidebar ([40e142d](https://github.com/ovh-ux/ovh-manager-cloud/commit/40e142d))
+* **kube:** add version for reset cluster ([326a10d](https://github.com/ovh-ux/ovh-manager-cloud/commit/326a10d))
+* **kubernetes:** add version update ([#1317](https://github.com/ovh-ux/ovh-manager-cloud/issues/1317)) ([b97e4c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/b97e4c9))
+* **kubernetes:** view and update kubernetes upgrade policy ([#1309](https://github.com/ovh-ux/ovh-manager-cloud/issues/1309)) ([70aa5de](https://github.com/ovh-ux/ovh-manager-cloud/commit/70aa5de))
+
+
+
 ## [7.17.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.17.0...v7.17.1) (2019-02-22)
 
 

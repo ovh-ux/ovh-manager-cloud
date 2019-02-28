@@ -1,10 +1,10 @@
 class LogsStreamsAlertsService {
-  constructor($q, CucCloudPoll, OvhApiDbaas, ServiceHelper, LogsConstants, LogsHelperService) {
+  constructor($q, CucCloudPoll, OvhApiDbaas, CucServiceHelper, LogsConstants, LogsHelperService) {
     this.$q = $q;
     this.CucCloudPoll = CucCloudPoll;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
     this.AlertsApiService = OvhApiDbaas.Logs().Alert().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.LogsConstants = LogsConstants;
     this.LogsHelperService = LogsHelperService;
   }

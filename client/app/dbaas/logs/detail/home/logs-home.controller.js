@@ -1,5 +1,5 @@
 class LogsHomeCtrl {
-  constructor($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper,
+  constructor($q, $scope, $state, $stateParams, $translate, bytesFilter, CucControllerHelper,
     LogsConstants, LogsHomeService, LogsTokensService, LogsHelperService, LogsDetailService) {
     this.$q = $q;
     this.$scope = $scope;
@@ -8,7 +8,7 @@ class LogsHomeCtrl {
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
     this.bytesFilter = bytesFilter;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsHomeService = LogsHomeService;
     this.LogsTokensService = LogsTokensService;
     this.LogsHelperService = LogsHelperService;
@@ -17,7 +17,7 @@ class LogsHomeCtrl {
   }
 
   $onInit() {
-    this.service = this.ControllerHelper.request.getHashLoader({
+    this.service = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
         .then((service) => {
           this.initLoaders();
@@ -46,14 +46,14 @@ class LogsHomeCtrl {
    * @memberof LogsHomeCtrl
    */
   openChangePasswordModal() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/account/password/logs-account-password.html',
         controller: 'LogsAccountPasswordCtrl',
         controllerAs: 'ctrl',
         backdrop: 'static',
       },
-    }).finally(() => this.ControllerHelper.scrollPageToTop());
+    }).finally(() => this.CucControllerHelper.scrollPageToTop());
   }
 
   /**
@@ -160,29 +160,29 @@ class LogsHomeCtrl {
    * @memberof LogsHomeCtrl
    */
   initLoaders() {
-    this.accountDetails = this.ControllerHelper.request.getHashLoader({
+    this.accountDetails = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName),
     });
-    this.account = this.ControllerHelper.request.getHashLoader({
+    this.account = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getAccount(this.serviceName),
     });
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsHomeService.getOptions(this.serviceName),
     });
-    this.serviceInfos = this.ControllerHelper.request.getHashLoader({
+    this.serviceInfos = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName),
     });
     if (!this.isAccountDisabled) {
-      this.tokenIds = this.ControllerHelper.request.getArrayLoader({
+      this.tokenIds = this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.LogsTokensService.getTokensIds(this.serviceName),
       });
-      this.defaultCluster = this.ControllerHelper.request.getHashLoader({
+      this.defaultCluster = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName),
       });
-      this.storageData = this.ControllerHelper.request.getHashLoader({
+      this.storageData = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName),
       });
-      this.coldStorage = this.ControllerHelper.request.getHashLoader({
+      this.coldStorage = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsHomeService.getColdstorage(this.serviceName),
       });
     }
@@ -194,7 +194,7 @@ class LogsHomeCtrl {
    * @memberof LogsHomeCtrl
    */
   openMessagesAndPorts() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/home/formatsports/logs-home-formatsports.html',
         controller: 'LogsHomeFormatsportsCtrl',

@@ -1,7 +1,7 @@
 class VpsOrderDiskCtrl {
   constructor($filter, $stateParams, $state, $translate, $q, $window, CucCloudMessage,
     CucCloudNavigation, VpsService,
-    ServiceHelper) {
+    CucServiceHelper) {
     this.$filter = $filter;
     this.$translate = $translate;
     this.$q = $q;
@@ -10,7 +10,7 @@ class VpsOrderDiskCtrl {
     this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.loaders = {
       capacity: false,
@@ -56,7 +56,7 @@ class VpsOrderDiskCtrl {
 
   orderAdditionalDiskOption() {
     this.loaders.order = true;
-    this.ServiceHelper
+    this.CucServiceHelper
       .loadOnNewPage(this.VpsService.postAdditionalDiskOrder(
         this.serviceName,
         this.model.capacity,

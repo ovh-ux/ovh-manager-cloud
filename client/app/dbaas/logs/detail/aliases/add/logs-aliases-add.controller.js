@@ -1,12 +1,12 @@
 class LogsAliasesAddCtrl {
-  constructor($q, $stateParams, $uibModalInstance, LogsAliasesService, ControllerHelper,
+  constructor($q, $stateParams, $uibModalInstance, LogsAliasesService, CucControllerHelper,
     CucCloudMessage) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.isEdit = false;
 
@@ -19,19 +19,19 @@ class LogsAliasesAddCtrl {
    * @memberof LogsAliasesAddCtrl
    */
   initLoaders() {
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsAliasesService.getSubscribedOptions(this.serviceName),
     });
     this.options.load();
 
-    this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+    this.mainOffer = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsAliasesService.getMainOffer(this.serviceName),
     });
     this.mainOffer.load();
 
     if (this.$stateParams.aliasId) {
       this.isEdit = true;
-      this.alias = this.ControllerHelper.request.getHashLoader({
+      this.alias = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsAliasesService.getAlias(
           this.serviceName,
           this.$stateParams.aliasId,
@@ -63,12 +63,12 @@ class LogsAliasesAddCtrl {
       return this.$q.reject();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .updateAlias(this.$stateParams.serviceName, this.alias.data)
         .finally(() => {
           this.$uibModalInstance.close();
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
         }),
     });
     return this.saving.load();
@@ -84,12 +84,12 @@ class LogsAliasesAddCtrl {
       return this.$q.reject();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .createAlias(this.$stateParams.serviceName, this.alias.data)
         .finally(() => {
           this.$uibModalInstance.close();
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
         }),
     });
     return this.saving.load();

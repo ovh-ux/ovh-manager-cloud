@@ -1025,12 +1025,20 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.1.0-alpha.5":
-  version "0.1.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.1.0-alpha.5.tgz#436c3e3ffe669740c75943d21aa24b5655f5ddc7"
-  integrity sha512-5AUq2gg9dh/4vy4aG/u+Y4sbW7iESF7l1GI5ZfkeBYIW3fyXNXzCAkmcpocfrZ77xU6YjoJfjQxXza2dLA5f3g==
+"@ovh-ux/ng-ovh-checkbox-table@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-checkbox-table/-/ng-ovh-checkbox-table-1.0.0.tgz#0a431f47fbde05dd48ed8fe38693a4a76079af5d"
+  integrity sha512-3DWHTCsKJROCwPzOCchWSf65AyKxQHsqVw2sdifym5MMsHgbwmGSBUyGrxOlWzilKjaUffh9NlQPTDXuv+hGHA==
+  dependencies:
+    lodash "^4.17.11"
+
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.2.0.tgz#b71418814a61cf05b5e65cb22c8ba118a36daeb9"
+  integrity sha512-cfYEexVR/P1NJbe2qm7iiYHM8KZeLkAYySMe86n1QW9xlGpfk96sYe2mJlvhEzDCUD81YoGMBDl7hIXTVRFgxw==
   dependencies:
     bootstrap "~3.3.0"
+    jsurl "^0.1.5"
     lodash "^4.17.11"
     moment "^2.24.0"
     ovh-ui-kit "^2.24.2"
@@ -1042,6 +1050,11 @@
   dependencies:
     lodash "~4.17.11"
     urijs "^1.19.1"
+
+"@ovh-ux/ng-ovh-form-flat@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-form-flat/-/ng-ovh-form-flat-4.0.0.tgz#d3da130cca543ddc60713e47a3a7c6c74fc97636"
+  integrity sha512-8WXu3DHEih5cqVB9srvvIkMnnpBA7oAIL1sH6v3SQZdhR9VIPTYYMPKnOQe2zQ0zjcQVpbpHQdNv2v7hzd9YRQ==
 
 "@ovh-ux/ng-ovh-sso-auth-modal-plugin@^3.0.0":
   version "3.0.0"
@@ -1060,6 +1073,11 @@
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-stop-event/-/ng-ovh-stop-event-1.0.0.tgz#08e9470ec08b263c7ca7370dab9b23d9b6044aef"
   integrity sha512-M8vEiHK5WytqeNBPnVY4cDR+RhwISD+wRKPpNRHiXLsewLqwx99ebtSiQWzXYK++poSbBoYwq9xnCVoh1VzjbQ==
 
+"@ovh-ux/ng-translate-async-loader@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
+  integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
+
 "@ovh-ux/rollup-plugin-less-tilde-importer@^1.0.0-beta.0":
   version "1.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/rollup-plugin-less-tilde-importer/-/rollup-plugin-less-tilde-importer-1.0.0-beta.0.tgz#eaf065c6e1fd039db0ddfb2f30955aec987e0c63"
@@ -1067,11 +1085,6 @@
   dependencies:
     magic-string "^0.25.1"
     rollup-pluginutils "^2.3.3"
-
-"@ovh-ux/translate-async-loader@^1.0.7":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/translate-async-loader/-/translate-async-loader-1.0.8.tgz#7cbdc3dfed1042f511206ff6bb9f14c33b8406ba"
-  integrity sha512-8yEhPeRTSxtEO9ODXRYZw6pzRQiV5ULCTi8mIzt39m/b9N2TcIF4ILTPsaa8xpE4npHKa/iYgL9z0HJUFi2LGQ==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -1448,11 +1461,6 @@ angular-resource@~1.6:
   resolved "https://registry.yarnpkg.com/angular-resource/-/angular-resource-1.6.10.tgz#28c1834e9fa623467d2f9894716a4e6c7e077459"
   integrity sha512-jrYXUGPtpv/lTBlYZ6HZefIV6Lb+6e1HUavBPg9TSzW7s4zYRBWzMj6vMg8gZzVjWdH/nYBWfilV0qfnmZSI+A==
 
-angular-sanitize@1.3.x:
-  version "1.3.20"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
-  integrity sha1-WxyqQXa42yA519HBUnU3phvjzWc=
-
 angular-sanitize@~1.6:
   version "1.6.10"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.10.tgz#635a362afb2dd040179f17d3a5455962b2c1918f"
@@ -1513,11 +1521,6 @@ angular@*, angular@1.x, "angular@>=1.2.26 <=1.7":
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.5.tgz#d1c1c01c6f5dc835638f3f9aa51012857bdac49e"
   integrity sha512-760183yxtGzni740IBTieNuWLtPNAoMqvmC0Z62UoU0I3nqk+VJuO3JbQAXOyvo3Oy/ZsdNQwrSTh/B0OQZjNw==
-
-angular@1.3.x:
-  version "1.3.20"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.3.20.tgz#b23a3d7c5e7f99f7d95b9b4d49b9ac355269baee"
-  integrity sha1-sjo9fF5/mffZW5tNSbmsNVJpuu4=
 
 angular@~1.6:
   version "1.6.10"
@@ -5904,7 +5907,7 @@ jquery@>=1.4:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
 
-jquery@~2.1, jquery@~2.1.3:
+jquery@~2.1:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.1.4.tgz#228bde698a0c61431dc2630a6a154f15890d2317"
   integrity sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=
@@ -6061,7 +6064,7 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jsurl@0.1.5:
+jsurl@0.1.5, jsurl@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/jsurl/-/jsurl-0.1.5.tgz#2a5c8741de39cacafc12f448908bf34e960dcee8"
   integrity sha1-KlyHQd45ysr8EvRIkIvzTpYNzug=
@@ -6587,11 +6590,6 @@ lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3,
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
-
-lodash@~3.3.0:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.3.1.tgz#3b914d4a1bb27efcee076e0dfa58152018e2042e"
-  integrity sha1-O5FNShuyfvzuB24N+lgVIBjiBC4=
 
 log-symbols@^1.0.2:
   version "1.0.2"
@@ -7675,19 +7673,6 @@ ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0:
 ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0:
   version "1.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-browser-alert/tar.gz/8336865a63083e009ae66241b13fec92762c35d3"
-
-ovh-angular-checkbox-table@ovh-ux/ovh-angular-checkbox-table#^0.1.2:
-  version "0.1.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-checkbox-table/tar.gz/93ccadcaf75ce66a76f71e1c083edd9e95d56cc4"
-  dependencies:
-    angular "1.3.x"
-    angular-sanitize "1.3.x"
-    jquery "~2.1.3"
-    lodash "~3.3.0"
-
-ovh-angular-form-flat@ovh-ux/ovh-angular-form-flat#^3.2.2:
-  version "3.2.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-form-flat/tar.gz/485e48349cf43202c45fb16fde933d025a7e3414"
 
 ovh-angular-jquery-ui-droppable@ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1:
   version "0.1.1"

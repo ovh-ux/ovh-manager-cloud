@@ -1,14 +1,14 @@
 class LogsHomeAccountModalCtrl {
-  constructor($scope, $state, $stateParams, ControllerHelper) {
+  constructor($scope, $state, $stateParams, CucControllerHelper) {
     this.$scope = $scope;
     this.$state = $state;
     this.serviceName = $stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.openModal();
   }
 
   openModal() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/home/account/logs-home-account.html',
         controller: 'LogsHomeAccountCtrl',

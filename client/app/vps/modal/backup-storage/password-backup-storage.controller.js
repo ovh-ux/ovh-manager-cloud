@@ -1,12 +1,12 @@
 class PasswordBackupStorageCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = serviceName;
     this.CucCloudMessage = CucCloudMessage;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
   }
 
   cancel() {
@@ -15,7 +15,7 @@ class PasswordBackupStorageCtrl {
 
   confirm() {
     this.CucCloudMessage.flushChildMessage();
-    this.loader = this.ControllerHelper.request.getHashLoader({
+    this.loader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.requestFtpBackupPassword(this.serviceName)
         .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_backup_storage_access_forgot_password_success')))
         .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_backup_storage_access_forgot_password_failure')))

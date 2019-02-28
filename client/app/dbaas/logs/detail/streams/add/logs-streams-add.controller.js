@@ -1,12 +1,12 @@
 class LogsStreamsAddCtrl {
-  constructor($q, $state, $stateParams, LogsStreamsService, ControllerHelper, CucCloudMessage,
+  constructor($q, $state, $stateParams, LogsStreamsService, CucControllerHelper, CucCloudMessage,
     LogsConstants) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsStreamsService = LogsStreamsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.isEdit = false;
@@ -22,18 +22,18 @@ class LogsStreamsAddCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   initLoaders() {
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getSubscribedOptions(this.serviceName),
     });
     this.options.load();
 
-    this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+    this.mainOffer = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getMainOffer(this.serviceName),
     });
-    this.catalog = this.ControllerHelper.request.getArrayLoader({
+    this.catalog = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getOrderCatalog(this.ovhSubsidiary),
     });
-    this.accountDetails = this.ControllerHelper.request.getHashLoader({
+    this.accountDetails = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.getAccountDetails(this.serviceName),
     });
 
@@ -54,7 +54,7 @@ class LogsStreamsAddCtrl {
 
     if (this.$stateParams.streamId) {
       this.isEdit = true;
-      this.stream = this.ControllerHelper.request.getHashLoader({
+      this.stream = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsStreamsService
           .getStream(this.serviceName, this.$stateParams.streamId),
       });
@@ -83,10 +83,10 @@ class LogsStreamsAddCtrl {
       return this.$q.reject();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.updateStream(this.serviceName, this.stream.data)
         .then(() => this.$state.go('dbaas.logs.detail.streams'))
-        .catch(() => this.ControllerHelper.scrollPageToTop()),
+        .catch(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }
@@ -101,10 +101,10 @@ class LogsStreamsAddCtrl {
       return this.$q.reject();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.createStream(this.serviceName, this.stream.data)
         .then(() => this.$state.go('dbaas.logs.detail.streams'))
-        .catch(() => this.ControllerHelper.scrollPageToTop()),
+        .catch(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }

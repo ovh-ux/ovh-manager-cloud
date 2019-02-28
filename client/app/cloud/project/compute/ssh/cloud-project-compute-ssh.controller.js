@@ -1,10 +1,10 @@
 class CloudProjectComputeSshCtrl {
   constructor(OvhApiCloudProjectSshKey, CloudProjectSSHKeyService, $translate,
-    ControllerHelper, CucCloudMessage, $stateParams, ovhDocUrl) {
+    CucControllerHelper, CucCloudMessage, $stateParams, ovhDocUrl) {
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
     this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.$stateParams = $stateParams;
     this.ovhDocUrl = ovhDocUrl;
@@ -36,7 +36,7 @@ class CloudProjectComputeSshCtrl {
   }
 
   initLoaders() {
-    this.createKey = this.ControllerHelper.request.getHashLoader({
+    this.createKey = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.CloudProjectSSHKeyService.createSSHKey(
         this.serviceName,
         this.sshKey,
@@ -49,7 +49,7 @@ class CloudProjectComputeSshCtrl {
       },
     });
 
-    this.keys = this.ControllerHelper.request.getArrayLoader({
+    this.keys = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudProjectSSHKeyService.getSSHKeys(this.serviceName),
       errorHandler: err => this.CucCloudMessage.error([this.$translate.instant('cpc_ssh_error'), (err.data && err.data.message) || ''].join(' ')),
       successHandler: () => this.filterSshKeys(),
@@ -80,7 +80,7 @@ class CloudProjectComputeSshCtrl {
   }
 
   openDeleteSshKey(sshKey) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/cloud/project/compute/ssh/delete/compute-ssh-delete.html',
         controller: 'CloudProjectComputeSshDeleteCtrl',

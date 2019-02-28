@@ -1,11 +1,11 @@
 class LogsStreamsFollowCtrl {
-  constructor($scope, $stateParams, $translate, ControllerHelper, UrlHelper, CucCloudMessage,
+  constructor($scope, $stateParams, $translate, CucControllerHelper, CucUrlHelper, CucCloudMessage,
     LogsStreamsService, LogsStreamsFollowService, LogsConstants) {
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
-    this.UrlHelper = UrlHelper;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucUrlHelper = CucUrlHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsStreamsFollowService = LogsStreamsFollowService;
@@ -19,7 +19,7 @@ class LogsStreamsFollowCtrl {
   }
 
   initLoaders() {
-    this.stream = this.ControllerHelper.request.getHashLoader({
+    this.stream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService
         .getAapiStream(this.$stateParams.serviceName, this.$stateParams.streamId)
         .then((stream) => {
@@ -29,15 +29,15 @@ class LogsStreamsFollowCtrl {
     });
     this.stream.load();
 
-    this.testClientUrls = this.ControllerHelper.request.getHashLoader({
+    this.testClientUrls = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsFollowService
         .getTestClientUrls(this.$stateParams.serviceName)
         .then((serviceInfo) => {
-          this.rfc5424Url = this.UrlHelper.constructor
+          this.rfc5424Url = this.CucUrlHelper.constructor
             .findUrl(serviceInfo, this.LogsConstants.RFC_URL, false);
-          this.ltsvUrl = this.UrlHelper.constructor
+          this.ltsvUrl = this.CucUrlHelper.constructor
             .findUrl(serviceInfo, this.LogsConstants.LTSV_URL, false);
-          this.gelfUrl = this.UrlHelper.constructor
+          this.gelfUrl = this.CucUrlHelper.constructor
             .findUrl(serviceInfo, this.LogsConstants.GELF_URL, false);
         }),
     });

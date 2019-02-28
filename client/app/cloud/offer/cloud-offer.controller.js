@@ -1,6 +1,6 @@
 (() => {
   class CloudOfferCtrl {
-    constructor($q, $stateParams, $translate, FeatureAvailabilityService, CloudProjectAdd,
+    constructor($q, $stateParams, $translate, CucFeatureAvailabilityService, CloudProjectAdd,
       CucCloudMessage, OvhApiMe, TARGET, URLS) {
       this.$q = $q;
       this.$stateParams = $stateParams;
@@ -8,7 +8,7 @@
       this.CloudProjectAdd = CloudProjectAdd;
       this.CucCloudMessage = CucCloudMessage;
       this.User = OvhApiMe;
-      this.FeatureAvailabilityService = FeatureAvailabilityService;
+      this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
       this.TARGET = TARGET;
       this.URLS = URLS;
 
@@ -82,7 +82,7 @@
     init() {
       this.loadMessage();
       // Call not available for US customer
-      this.FeatureAvailabilityService.hasFeaturePromise('PROJECT', 'expressOrder').then((hasFeature) => {
+      this.CucFeatureAvailabilityService.hasFeaturePromise('PROJECT', 'expressOrder').then((hasFeature) => {
         if (!hasFeature) {
           this.loaders.agreements = true;
           this.CloudProjectAdd.getProjectInfo()
@@ -113,7 +113,7 @@
       this.loaders.start = true;
 
       // Use express order for US customers
-      if (this.FeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
+      if (this.CucFeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
         window.location.href = this.URLS.website_order['cloud-resell-eu'].US(this.model.projectName);
         return;
       }

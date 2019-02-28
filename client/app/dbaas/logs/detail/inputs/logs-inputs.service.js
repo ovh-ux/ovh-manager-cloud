@@ -7,7 +7,7 @@ class LogsInputsService {
     LogsConstants,
     LogsOptionsService,
     OvhApiDbaas,
-    ServiceHelper,
+    CucServiceHelper,
   ) {
     this.$q = $q;
     this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -19,7 +19,7 @@ class LogsInputsService {
     this.LogsConstants = LogsConstants;
     this.LogsOptionsService = LogsOptionsService;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.LogsHelperService = LogsHelperService;
 
     this.initializeData();

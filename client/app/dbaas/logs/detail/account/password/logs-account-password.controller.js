@@ -1,11 +1,11 @@
 class LogsAccountPasswordCtrl {
-  constructor($q, $state, $stateParams, $uibModalInstance, ControllerHelper, CucCloudMessage,
+  constructor($q, $state, $stateParams, $uibModalInstance, CucControllerHelper, CucCloudMessage,
     LogsAccountService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsAccountService = LogsAccountService;
     this.passwordValid = false;
@@ -38,7 +38,7 @@ class LogsAccountPasswordCtrl {
       return this.$q.reject();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAccountService
         .changePassword(
           this.serviceName,

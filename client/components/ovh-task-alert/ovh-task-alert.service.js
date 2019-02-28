@@ -1,9 +1,9 @@
 class OvhTaskAlertsService {
-  constructor($translate, ControllerHelper, CucCloudMessage, OvhApiMeAlertsAapi, $http,
+  constructor($translate, CucControllerHelper, CucCloudMessage, OvhApiMeAlertsAapi, $http,
     TranslateService) {
     this.$translate = $translate;
     this.$http = $http;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.UserAlertsAapi = OvhApiMeAlertsAapi;
     this.TranslateService = TranslateService;
@@ -53,7 +53,7 @@ class OvhTaskAlertsService {
   }
 
   showSubTasks(tasks) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'components/ovh-task-alert/modal/ovh-task-follow-modal.html',
         controller: 'ovhTaskFollowModalCtrl',

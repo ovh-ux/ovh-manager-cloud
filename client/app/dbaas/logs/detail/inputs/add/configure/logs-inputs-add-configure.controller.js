@@ -1,5 +1,5 @@
 class LogsInputsAddConfigureCtrl {
-  constructor($q, $state, $stateParams, $translate, ControllerModalHelper, ControllerHelper,
+  constructor($q, $state, $stateParams, $translate, CucControllerModalHelper, CucControllerHelper,
     LogsInputsService, LogsConstants, CucCloudMessage) {
     this.$q = $q;
     this.$state = $state;
@@ -7,8 +7,8 @@ class LogsInputsAddConfigureCtrl {
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
-    this.ControllerModalHelper = ControllerModalHelper;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerModalHelper = CucControllerModalHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsInputsService = LogsInputsService;
     this.LogsConstants = LogsConstants;
     this.CucCloudMessage = CucCloudMessage;
@@ -26,7 +26,7 @@ class LogsInputsAddConfigureCtrl {
    * @memberof LogsInputsAddConfigureCtrl
    */
   initLoaders() {
-    this.input = this.ControllerHelper.request.getHashLoader({
+    this.input = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
         .then((input) => {
           this.configuration.engineType = input.info.engine.name;
@@ -39,7 +39,7 @@ class LogsInputsAddConfigureCtrl {
         }),
     });
 
-    this.test = this.ControllerHelper.request.getHashLoader({
+    this.test = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .getTestResults(this.serviceName, this.input.data),
     });
@@ -60,11 +60,11 @@ class LogsInputsAddConfigureCtrl {
   }
 
   initLogstash(configuration) {
-    this.configuration.logstash.inputSection = this.ControllerHelper.constructor
+    this.configuration.logstash.inputSection = this.CucControllerHelper.constructor
       .htmlDecode(configuration.inputSection);
-    this.configuration.logstash.filterSection = this.ControllerHelper.constructor
+    this.configuration.logstash.filterSection = this.CucControllerHelper.constructor
       .htmlDecode(configuration.filterSection);
-    this.configuration.logstash.patternSection = this.ControllerHelper.constructor
+    this.configuration.logstash.patternSection = this.CucControllerHelper.constructor
       .htmlDecode(configuration.patternSection);
   }
 
@@ -76,7 +76,7 @@ class LogsInputsAddConfigureCtrl {
 
   executeTest() {
     this.CucCloudMessage.flushChildMessage();
-    this.test = this.ControllerHelper.request.getHashLoader({
+    this.test = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.logstashForm.$dirty
         ? this.LogsInputsService.updateLogstash(
           this.serviceName,
@@ -86,7 +86,7 @@ class LogsInputsAddConfigureCtrl {
         : this.$q.when({})
       )
         .then(() => this.LogsInputsService.executeTest(this.serviceName, this.input.data))
-        .catch(() => this.ControllerHelper.scrollPageToTop()),
+        .catch(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.test.load();
   }
@@ -98,11 +98,11 @@ class LogsInputsAddConfigureCtrl {
       return this.goToNetworkPage();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .updateFlowgger(this.serviceName, this.input.data, this.configuration.flowgger)
         .then(() => this.goToNetworkPage())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }
@@ -111,7 +111,7 @@ class LogsInputsAddConfigureCtrl {
     if (this.logstashForm.$invalid) {
       return this.$q.reject();
     } if (!this.test.data.stdout) {
-      return this.ControllerModalHelper.showWarningModal({
+      return this.CucControllerModalHelper.showWarningModal({
         title: this.$translate.instant('logs_inputs_logstash_save_warning_title'),
         message: this.test.data.updatedAt ? this.$translate.instant('logs_inputs_logstash_save_warning_unsuccessful') : this.$translate.instant('logs_inputs_logstash_save_warning_no_test'),
       });
@@ -119,11 +119,11 @@ class LogsInputsAddConfigureCtrl {
       return this.goToNetworkPage();
     }
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService
         .updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)
         .then(() => this.goToNetworkPage())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }

@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.17.1",
+  "version": "7.18.4",
   "private": true,
   "description": "OVH Cloud control panel",
   "keywords": [
@@ -39,12 +39,14 @@
   },
   "dependencies": {
     "@ovh-ux/ng-ovh-apiv7": "^2.0.0",
-    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.1.0-alpha.5",
+    "@ovh-ux/ng-ovh-cloud-universe-components": "^0.2.0",
+    "@ovh-ux/ng-ovh-checkbox-table": "^1.0.0",
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
+    "@ovh-ux/ng-ovh-form-flat": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth-modal-plugin": "^3.0.0",
     "@ovh-ux/ng-ovh-stop-event": "^1.0.0",
-    "@ovh-ux/translate-async-loader": "^1.0.7",
+    "@ovh-ux/ng-translate-async-loader": "^2.0.0",
     "@uirouter/angularjs": "^1.0.22",
     "angular": "~1.6",
     "angular-animate": "~1.6",
@@ -95,8 +97,6 @@
     "ng-slide-down": "TheRusskiy/ng-slide-down#~1.2",
     "ovh-angular-actions-menu": "ovh-ux/ovh-angular-actions-menu#^3.2.0",
     "ovh-angular-browser-alert": "ovh-ux/ovh-angular-browser-alert#^1.0.0",
-    "ovh-angular-checkbox-table": "ovh-ux/ovh-angular-checkbox-table#^0.1.2",
-    "ovh-angular-form-flat": "ovh-ux/ovh-angular-form-flat#^3.2.2",
     "ovh-angular-jquery-ui-droppable": "ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1",
     "ovh-angular-jsplumb": "ovh-ux/ovh-angular-jsplumb#^3.0.5",
     "ovh-angular-list-view": "ovh-ux/ovh-angular-list-view#^0.1.5",

@@ -1,14 +1,14 @@
 class IpLoadBalancerFailoverIpService {
-  constructor($translate, OvhApiIpLoadBalancing, ServiceHelper) {
+  constructor($translate, OvhApiIpLoadBalancing, CucServiceHelper) {
     this.$translate = $translate;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getFailoverIps(serviceName) {
     return this.IpLoadBalancing.v6().failoverIp({ serviceName }).$promise
       .then(response => response)
-      .catch(this.ServiceHelper.errorHandler('iplb_failover_ip_detail_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_failover_ip_detail_loading_error'));
   }
 
   getFailoverIpsSelectData(serviceName) {

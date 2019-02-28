@@ -3,7 +3,7 @@ class LogsStreamsService {
     $q,
     $translate,
     CucCloudMessage,
-    ControllerHelper,
+    CucControllerHelper,
     LogsHomeService,
     LogsOptionsService,
     LogsStreamsAlertsService,
@@ -11,7 +11,7 @@ class LogsStreamsService {
     LogsOrderService,
     LogsConstants,
     OvhApiDbaas,
-    UrlHelper,
+    CucUrlHelper,
     LogsHelperService,
   ) {
     this.$q = $q;
@@ -25,9 +25,9 @@ class LogsStreamsService {
     this.LogsOptionsService = LogsOptionsService;
     this.LogsStreamsAlertsService = LogsStreamsAlertsService;
     this.LogsStreamsArchivesService = LogsStreamsArchivesService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsOrderService = LogsOrderService;
-    this.UrlHelper = UrlHelper;
+    this.CucUrlHelper = CucUrlHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
     this.LogsHelperService = LogsHelperService;
@@ -297,7 +297,7 @@ class LogsStreamsService {
    * @memberof LogsStreamsService
    */
   getStreamGraylogUrl(stream) {
-    const url = this.UrlHelper.constructor.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
+    const url = this.CucUrlHelper.constructor.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
     if (stream.indexingEnabled && !url) {
       this.CucCloudMessage.error(this.$translate.instant('logs_streams_get_graylog_url_error', { stream: stream.info.title }));
     }
@@ -314,7 +314,7 @@ class LogsStreamsService {
   copyStreamToken(stream) {
     const token = this.getStreamToken(stream);
     if (token) {
-      const error = this.ControllerHelper.constructor.copyToClipboard(token);
+      const error = this.CucControllerHelper.constructor.copyToClipboard(token);
       if (error) {
         this.CucCloudMessage.error(this.$translate.instant('logs_streams_copy_token_error', {
           stream: stream.info.title,

@@ -1,6 +1,6 @@
 class LogsHomeService {
   constructor($http, $q, $translate, LogsHelperService, LogsConstants, LogsOptionsService,
-    OvhApiDbaas, ServiceHelper, SidebarMenu) {
+    OvhApiDbaas, CucServiceHelper, SidebarMenu) {
     this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
@@ -14,7 +14,7 @@ class LogsHomeService {
     this.LogsConstants = LogsConstants;
     this.LogsOptionsService = LogsOptionsService;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.SidebarMenu = SidebarMenu;
   }
 
@@ -28,7 +28,7 @@ class LogsHomeService {
   getAccount(serviceName) {
     return this.AccountingAapiService.me({ serviceName }).$promise
       .then(account => this.transformAccount(account))
-      .catch(this.ServiceHelper.errorHandler('logs_home_account_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_account_get_error'));
   }
 
   /**
@@ -41,7 +41,7 @@ class LogsHomeService {
   getAccountDetails(serviceName) {
     return this.DetailsAapiService.me({ serviceName }).$promise
       .then(accountDetails => this.transformAccountDetails(accountDetails))
-      .catch(this.ServiceHelper.errorHandler('logs_home_account_details_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_account_details_get_error'));
   }
 
   /**
@@ -99,7 +99,7 @@ class LogsHomeService {
           usageData: data,
         };
       })
-      .catch(this.ServiceHelper.errorHandler('logs_home_data_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_data_get_error'));
   }
 
   /**
@@ -153,7 +153,7 @@ class LogsHomeService {
    */
   getServiceInfos(serviceName) {
     return this.LogsLexiService.serviceInfos({ serviceName }).$promise
-      .catch(this.ServiceHelper.errorHandler('logs_home_service_info_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_service_info_get_error'));
   }
 
   /**
