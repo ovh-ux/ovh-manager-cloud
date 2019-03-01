@@ -2,7 +2,7 @@
 
 angular.module('managerApp')
   .component('hourlyResourceList', {
-    templateUrl: 'components/cloud/project/billing/hourly-resource-list/billing-hourly-resource-list.component.html',
+    templateUrl: 'app/cloud/components/project/billing/hourly-resource-list/billing-hourly-resource-list.component.html',
     controller: 'BillingHourlyResourceListComponentCtrl',
     bindings: {
       resources: '<',
