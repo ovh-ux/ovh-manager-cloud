@@ -1,10 +1,9 @@
-
-
 angular.module('managerApp')
-  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, CucControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService) {
+  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, CucControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService, TARGET) {
     const self = this;
     const serviceName = $stateParams.projectId;
     const onboardingKey = 'SHOW_PCI_ONBOARDING';
+    $scope.TARGET = TARGET;
 
     self.loaders = {
       project: false,

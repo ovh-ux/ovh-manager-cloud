@@ -1,3 +1,12 @@
+## [7.18.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.4...v7.18.5) (2019-02-28)
+
+
+### Bug Fixes
+
+* **pci:** remove menu for us region ([d114833](https://github.com/ovh-ux/ovh-manager-cloud/commit/d114833))
+
+
+
 ## [7.18.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.3...v7.18.4) (2019-02-28)
 
 
