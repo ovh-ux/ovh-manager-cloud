@@ -2,7 +2,7 @@
 
 angular.module('managerApp')
   .component('instanceList', {
-    templateUrl: 'components/cloud/project/billing/instance-list/billing-instance-list.component.html',
+    templateUrl: 'app/cloud/components/project/billing/instance-list/billing-instance-list.component.html',
     controller: 'BillingInstanceListComponentCtrl',
     bindings: {
       instances: '<',

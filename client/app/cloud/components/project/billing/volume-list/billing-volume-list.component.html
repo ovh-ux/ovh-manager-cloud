@@ -20,7 +20,7 @@
         <tbody data-ng-if="!$ctrl.loading" class="oui-datagrid__body">
             <tr data-ng-repeat="volume in $ctrl.volumeConsumptionDetails | orderBy: 'name' track by volume.volumeId" class="oui-datagrid__row">
                 <td data-title="{{ :: 'cpbc_volume_col_name' | translate }}" class="oui-datagrid__cell word-break"
-                    data-responsive-popover="'components/cloud/project/billing/details-popover/volume-details-popover.html'"
+                    data-responsive-popover="'app/cloud/components/project/billing/details-popover/volume-details-popover.html'"
                     data-popover-class="details-popover"
                     data-popover-is-open="$ctrl.DetailsPopoverService.isCurrentDetails(volume)"
                     data-popover-placement="top"
