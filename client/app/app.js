@@ -6,6 +6,7 @@ import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
+import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
 
@@ -31,6 +32,7 @@ angular.module('managerApp', [
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
   ngOvhCloudUniverseComponents,
+  ngOvhUserPref,
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-q-allSettled',
@@ -64,7 +66,6 @@ angular.module('managerApp', [
   'ng-at-internet',
   'atInternetUiRouterPlugin',
   'matchmedia-ng',
-  'ovh-angular-user-pref',
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',

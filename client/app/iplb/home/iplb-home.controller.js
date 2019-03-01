@@ -3,7 +3,7 @@ class IpLoadBalancerHomeCtrl {
     CucFeatureAvailabilityService, IpLoadBalancerActionService, IpLoadBalancerConstant,
     IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
     IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
-    IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, RegionService,
+    IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, CucRegionService,
     CucVrackService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -21,9 +21,8 @@ class IpLoadBalancerHomeCtrl {
     this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
     this.REDIRECT_URLS = REDIRECT_URLS;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.VrackService = CucVrackService;
-
 
     this.serviceName = this.$stateParams.serviceName;
 
@@ -260,8 +259,8 @@ class IpLoadBalancerHomeCtrl {
     this.regionsGroup = [];
     if (regions) {
       this.detailedRegions = !_.isArray(regions)
-        ? [this.RegionService.getRegion(regions)]
-        : _.map(regions, region => this.RegionService.getRegion(region));
+        ? [this.CucRegionService.getRegion(regions)]
+        : _.map(regions, region => this.CucRegionService.getRegion(region));
     }
 
     this.regionsGroup = _.groupBy(this.detailedRegions, 'country');

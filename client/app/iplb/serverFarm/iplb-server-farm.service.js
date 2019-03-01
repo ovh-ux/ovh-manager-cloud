@@ -1,11 +1,11 @@
 class IpLoadBalancerServerFarmService {
   constructor($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing,
-    CucServiceHelper, RegionService) {
+    CucServiceHelper, CucRegionService) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
 
     this.Farm = {
@@ -43,7 +43,7 @@ class IpLoadBalancerServerFarmService {
       .$promise
       .then((farm) => {
         _.set(farm, 'type', type);
-        _.set(farm, 'zoneText', this.RegionService.getRegion(farm.zone));
+        _.set(farm, 'zoneText', this.CucRegionService.getRegion(farm.zone));
         return farm;
       });
   }

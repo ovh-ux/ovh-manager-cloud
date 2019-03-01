@@ -3,11 +3,11 @@
     constructor($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout,
       $transitions, $translate, $uibModal, $window, CucCloudMessage, CucCloudNavigation,
       CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
-      CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
+      CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CucUserPref,
       OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
       OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
       OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot, OvhApiIp, OvhApiMe,
-      jsPlumbService, Poller, RegionService,
+      jsPlumbService, Poller, CucRegionService,
       CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, TARGET, URLS) {
       this.$rootScope = $rootScope;
       this.$scope = $scope;
@@ -28,7 +28,7 @@
       this.InfrastructureService = CloudProjectComputeInfrastructureService;
       this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
       this.CloudProjectOrchestrator = CloudProjectOrchestrator;
-      this.CloudUserPref = CloudUserPref;
+      this.CucUserPref = CucUserPref;
 
       this.Cloud = OvhApiCloud;
       this.OvhApiCloudProject = OvhApiCloudProject;
@@ -44,7 +44,7 @@
 
       this.jsPlumbService = jsPlumbService;
       this.Poller = Poller;
-      this.RegionService = RegionService;
+      this.CucRegionService = CucRegionService;
       this.conversion = CLOUD_UNIT_CONVERSION;
       this.CLOUD_MONITORING = CLOUD_MONITORING;
       this.REDIRECT_URLS = REDIRECT_URLS;
@@ -479,7 +479,7 @@
          */
     checkPendingImportIpFailOver(serviceName) {
       // On page refresh, get pending IPFO import
-      return this.CloudUserPref.get(`cloud_project_${serviceName}_infra_ipfo_import`)
+      return this.CucUserPref.get(`cloud_project_${serviceName}_infra_ipfo_import`)
         .then((ipfoToImportParam) => {
           let ipfoToImport = ipfoToImportParam;
           ipfoToImport = _.get(ipfoToImport, 'ips', []);
@@ -510,7 +510,7 @@
           if (taskId) {
             this.importedIpFailoverPending.push(ip);
 
-            this.CloudUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
+            this.CucUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
               ips: this.importedIpFailoverPending,
             });
 
@@ -530,7 +530,7 @@
           return null;
         }).then(() => {
           _.pull(this.importedIpFailoverPending, ip);
-          this.CloudUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
+          this.CucUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
             ips: this.importedIpFailoverPending,
           });
         }).finally(() => {
@@ -543,7 +543,7 @@
          * @param {string} serviceName
          */
     checkIpAutoSort(serviceName) {
-      this.CloudUserPref.get(`cloud_project_${serviceName}_infra_ip_autosort`)
+      this.CucUserPref.get(`cloud_project_${serviceName}_infra_ip_autosort`)
         .then((ipAutoSort) => {
           if (ipAutoSort) {
             this.sort.ipAutoSort = ipAutoSort.enabled;
@@ -754,7 +754,7 @@
       this.sort.ipAutoSort = autoSortEnable;
       this.sort.ipNaturalSort = autoSortEnable; // activate naturalSort if autoSort is enabled
       this.refreshLinks();
-      this.CloudUserPref.set(`cloud_project_${this.$stateParams.projectId}_infra_ip_autosort`, {
+      this.CucUserPref.set(`cloud_project_${this.$stateParams.projectId}_infra_ip_autosort`, {
         enabled: autoSortEnable,
       });
     }
@@ -1296,7 +1296,7 @@
     }
 
     getTranslatedRegion(region) {
-      return region ? this.RegionService.getTranslatedMicroRegion(region) : '';
+      return region ? this.CucRegionService.getTranslatedMicroRegion(region) : '';
     }
 
     // ------- JQUERY UI DRAGGABLE -------

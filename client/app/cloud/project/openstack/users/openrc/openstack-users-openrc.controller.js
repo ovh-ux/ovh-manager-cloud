@@ -1,10 +1,10 @@
 angular.module('managerApp')
   .controller('OpenstackUsersOpenrcCtrl', function OpenstackUsersOpenrcCtrl($httpParamSerializer,
     $stateParams, $uibModalInstance, CLOUD_OPENRC_VERSION, CONFIG_API, openstackUser,
-    OvhApiCloud, OvhApiMe, RegionService, URLS) {
+    OvhApiCloud, OvhApiMe, CucRegionService, URLS) {
     const self = this;
 
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
     self.openstackUser = openstackUser;
     self.projectId = $stateParams.projectId;
 

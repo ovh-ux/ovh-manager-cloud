@@ -1,12 +1,12 @@
 (() => {
   class VeeamDashboardCtrl {
     constructor($stateParams, $translate, CucControllerHelper, CucFeatureAvailabilityService,
-      RegionService, VeeamService, REDIRECT_URLS) {
+      CucRegionService, VeeamService, REDIRECT_URLS) {
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CucControllerHelper = CucControllerHelper;
       this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
-      this.RegionService = RegionService;
+      this.CucRegionService = CucRegionService;
       this.VeeamService = VeeamService;
       this.REDIRECT_URLS = REDIRECT_URLS;
 
@@ -147,7 +147,7 @@
     }
 
     getRegion(region) {
-      this.region = this.RegionService.getRegion(region);
+      this.region = this.CucRegionService.getRegion(region);
     }
   }
 

@@ -12,7 +12,7 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     $translate,
     CloudProjectComputeInfrastructureFactory,
     CloudProjectComputeVolumesOrchestrator,
-    CloudUserPref,
+    CucUserPref,
     OvhApiCloudProjectFlavor,
     OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance,
@@ -756,13 +756,13 @@ angular.module('managerApp').service('CloudProjectComputeInfrastructureOrchestra
     ==================================== */
 
     this.saveToUserPref = function saveToUserPref() {
-      return CloudUserPref.set(`cloud_project_${self.infra.serviceName}_infra`,
+      return CucUserPref.set(`cloud_project_${self.infra.serviceName}_infra`,
         self.infra.prepareToJson());
     };
 
     this.createFromUserPref = function createFromUserPref(serviceName) {
       const key = `cloud_project_${serviceName}_infra`;
-      return CloudUserPref.get(key).then((infra) => {
+      return CucUserPref.get(key).then((infra) => {
         _.set(infra, 'serviceName', serviceName);
         return new CloudProjectComputeInfrastructureFactory(infra);
       }, () => new CloudProjectComputeInfrastructureFactory({

@@ -4,7 +4,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
     OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
-    OvhApiCloudProjectSshKey, CucCurrencyService, RegionService, CucServiceHelper, ovhDocUrl,
+    OvhApiCloudProjectSshKey, CucCurrencyService, CucRegionService, CucServiceHelper, ovhDocUrl,
     TARGET, URLS) {
     this.$q = $q;
     this.$state = $state;
@@ -24,7 +24,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.OvhApiCloudProjectSnapshot = OvhApiCloudProjectSnapshot;
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
     this.CucCurrencyService = CucCurrencyService;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.ovhDocUrl = ovhDocUrl;
@@ -196,7 +196,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     return this.$q.all({
       regions: this.OvhApiCloudProjectRegion.v6().query({ serviceName: this.serviceName }).$promise
         .then((regions) => {
-          this.regions = _.map(regions, region => this.RegionService.getRegion(region));
+          this.regions = _.map(regions, region => this.CucRegionService.getRegion(region));
           return this.VirtualMachineAddService.getRegionsByImageType(this.regions, this.images, _.get(this.model, 'imageType'));
         }),
       quota: this.promiseQuota

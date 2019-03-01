@@ -98,7 +98,7 @@ angular.module('managerApp')
       OvhApiCloudProjectSnapshot,
       OvhApiMe,
       ovhDocUrl,
-      RegionService,
+      CucRegionService,
       CLOUD_FLAVOR_SPECIFIC_IMAGE,
       CLOUD_FLAVORTYPE_CATEGORY,
       CLOUD_INSTANCE_CPU_FREQUENCY,
@@ -115,7 +115,7 @@ angular.module('managerApp')
 
       let oldVmName = null;
 
-      self.regionService = RegionService;
+      self.regionService = CucRegionService;
       self.enums = {
         flavorsTypes: [],
         imagesTypes: [],

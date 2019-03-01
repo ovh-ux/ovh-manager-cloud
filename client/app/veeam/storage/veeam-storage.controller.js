@@ -1,10 +1,10 @@
 (() => {
   class VeeamStorageCtrl {
-    constructor($stateParams, $translate, CucControllerHelper, RegionService, VeeamService) {
+    constructor($stateParams, $translate, CucControllerHelper, CucRegionService, VeeamService) {
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CucControllerHelper = CucControllerHelper;
-      this.RegionService = RegionService;
+      this.CucRegionService = CucRegionService;
       this.VeeamService = VeeamService;
 
       this.storageInfos = CucControllerHelper.request.getArrayLoader({
@@ -25,7 +25,7 @@
     }
 
     getRegionText(region) {
-      return this.RegionService.getTranslatedMicroRegion(region.toUpperCase());
+      return this.CucRegionService.getTranslatedMicroRegion(region.toUpperCase());
     }
 
     addStorage() {

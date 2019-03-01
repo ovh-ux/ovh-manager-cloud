@@ -1,11 +1,11 @@
 class IpLoadBalancerHomeService {
-  constructor($q, SidebarMenu, IpLoadBalancerCipherService, OvhApiIpLoadBalancing, RegionService,
+  constructor($q, SidebarMenu, IpLoadBalancerCipherService, OvhApiIpLoadBalancing, CucRegionService,
     CucServiceHelper) {
     this.$q = $q;
     this.SidebarMenu = SidebarMenu;
     this.IpLoadBalancerCipherService = IpLoadBalancerCipherService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
   }
 
@@ -41,7 +41,7 @@ class IpLoadBalancerHomeService {
       .$promise
       .then(zones => this.$q.all(zones.map(zone => this.getUsageForZone(serviceName, zone))))
       .then(quotas => quotas.map((quota) => {
-        _.set(quota, 'region', this.RegionService.getRegion(quota.zone));
+        _.set(quota, 'region', this.CucRegionService.getRegion(quota.zone));
         return quota;
       }))
       .catch(this.CucServiceHelper.errorHandler('iplb_usage_loading_error'));

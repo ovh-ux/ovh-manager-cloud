@@ -1,13 +1,13 @@
 class IpLoadBalancerZoneAddService {
   constructor($q, $translate, $window, CucCloudMessage, CucOrderHelperService,
-    OvhApiIpLoadBalancing, RegionService, CucServiceHelper) {
+    OvhApiIpLoadBalancing, CucRegionService, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
     this.CucOrderHelperService = CucOrderHelperService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.CucServiceHelper = CucServiceHelper;
   }
 
@@ -23,7 +23,7 @@ class IpLoadBalancerZoneAddService {
         const availableZones = response.orderableZones.concat(response.suspendedZones);
         return _.map(
           availableZones,
-          zone => _.extend(zone, this.RegionService.getRegion(zone.name)),
+          zone => _.extend(zone, this.CucRegionService.getRegion(zone.name)),
         );
       })
       .then(availableZones => _.map(availableZones, zone => _.extend(zone, {

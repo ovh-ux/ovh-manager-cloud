@@ -1,12 +1,12 @@
 class CloudProjectComputeInfrastructureService {
-  constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CloudUserPref,
+  constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CucUserPref,
     CloudProjectComputeInfrastructureOrchestrator, CucControllerHelper, CucServiceHelper, TARGET) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
     this.CucCloudMessage = CucCloudMessage;
-    this.CloudUserPref = CloudUserPref;
+    this.CucUserPref = CucUserPref;
     this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
     this.CucControllerHelper = CucControllerHelper;
     this.CucServiceHelper = CucServiceHelper;
@@ -222,14 +222,14 @@ class CloudProjectComputeInfrastructureService {
 
   setPreferredView(view) {
     if (_.includes(['diagram', 'list'], view)) {
-      this.CloudUserPref.set('CLOUD_PROJECT_INFRA_PREFERRED_VIEW', {
+      this.CucUserPref.set('CLOUD_PROJECT_INFRA_PREFERRED_VIEW', {
         view,
       });
     }
   }
 
   getPreferredView() {
-    return this.CloudUserPref.get('CLOUD_PROJECT_INFRA_PREFERRED_VIEW')
+    return this.CucUserPref.get('CLOUD_PROJECT_INFRA_PREFERRED_VIEW')
       .then(view => _.get(view, 'view', 'diagram'));
   }
 }
