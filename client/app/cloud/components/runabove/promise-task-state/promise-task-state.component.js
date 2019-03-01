@@ -1,5 +1,5 @@
 angular.module('managerApp').component('promiseTaskState', {
-  templateUrl: 'components/runabove/promise-task-state/promise-task-state.html',
+  templateUrl: 'app/cloud/components/runabove/promise-task-state/promise-task-state.html',
   controller: ['$timeout', 'CloudStorageContainerTasksRunner', function ($timeout, CloudStorageContainerTasksRunner) {
     const self = this;
 
