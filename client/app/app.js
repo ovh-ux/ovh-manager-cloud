@@ -1,5 +1,5 @@
 import '@uirouter/angularjs';
-import ngOvhApiv7 from '@ovh-ux/ng-ovh-apiv7';
+import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
 import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
@@ -25,7 +25,7 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
-  ngOvhApiv7,
+  ngOvhApiWrappers,
   ngOvhCheckboxTable,
   ngOvhDocUrl,
   ngOvhFormFlat,
