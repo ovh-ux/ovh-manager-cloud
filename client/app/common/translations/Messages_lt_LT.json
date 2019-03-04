@@ -1,5 +1,5 @@
 {
- "preload_welcome": "Welcome to your",
+ "preload_welcome": "Welcome to the",
  "preload_manager_ovh": "OVH Control Panel",
  "common_confirm": "Confirm",
  "common_buy": "Buy ",
@@ -68,7 +68,7 @@
  "common_menu_changelog": "Changelog",
  "common_skip_to_main_content": "Skip to main content",
  "global_logout": "Log out",
- "common_menu_dedicated_servers": "Dedicated servers",
+ "common_menu_dedicated_servers": "Dedicated Servers",
  "common_menu_networks": "Networks",
  "common_menu_vps": "VPS",
  "common_menu_vdi": "Cloud Desktop",
@@ -98,6 +98,7 @@
  "common_modify": "Edit",
  "common_select": "Select",
  "common_add": "Add",
+ "common_update": "Update",
  "common_save": "Save",
  "common_delete": "Delete",
  "common_reinstall": "Reinstall",
