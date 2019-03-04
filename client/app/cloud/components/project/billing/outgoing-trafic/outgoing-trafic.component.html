@@ -2,7 +2,7 @@
     data-translate="cpbc_no_consumption_data"
     class="cloud-billing-resource-no-data">
 </span>
-<oui-datagrid data-rows="$ctrl.regions" class="datagrid-without-pagination"
+<oui-datagrid data-rows="$ctrl.regions"
     data-ng-if="$ctrl.regions.length > 0">
     <oui-column data-title="::'cpbc_hourly_instance_trafic_region' | translate" data-property="region">
         <span data-ng-bind=":: $ctrl.RegionService.getTranslatedMicroRegion($row.region)"></span>
