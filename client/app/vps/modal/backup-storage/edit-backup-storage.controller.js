@@ -1,9 +1,9 @@
 class EditBackupStorageCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, row, CucCloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, row, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.row = row;
     this.serviceName = serviceName;
     this.CucCloudMessage = CucCloudMessage;
@@ -25,7 +25,7 @@ class EditBackupStorageCtrl {
 
   confirm() {
     this.CucCloudMessage.flushChildMessage();
-    this.loader = this.ControllerHelper.request.getHashLoader({
+    this.loader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService
         .putBackupStorageAccess(
           this.serviceName,

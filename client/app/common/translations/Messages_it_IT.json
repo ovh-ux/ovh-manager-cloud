@@ -13,7 +13,7 @@
  "common_see_detail": "Visualizza dettagli ",
  "common_manage": "Gestisci",
  "common_apply": "Applica",
- "common_loading": "Caricamento",
+ "common_loading": "Caricamento...",
  "common_refresh": "Aggiorna",
  "common_pagination_page": "pagina",
  "common_pagination_display": "Mostra",
@@ -84,7 +84,7 @@
  "common_menu_support_email_history": "Storico delle tue email",
  "common_menu_support_telephony_contact": "Supporto telefonico",
  "common_menu_support_userAccount_1": "Benvenuto {{username}}",
- "common_menu_support_userAccount_2": "Il tuo account:",
+ "common_menu_support_userAccount_2": "Il tuo account",
  "common_navbar_notification_title": "Notifiche",
  "common_navbar_notification_title_expanded": "Le tue notifiche",
  "common_navbar_notification_see_all": "Visualizza tutte le notifiche",
@@ -98,6 +98,7 @@
  "common_modify": "Modifica",
  "common_select": "Seleziona",
  "common_add": "Aggiungi",
+ "common_update": "Aggiorna",
  "common_save": "Salva",
  "common_delete": "Elimina",
  "common_reinstall": "Reinstalla",
@@ -626,5 +627,6 @@
  "guide_project_6": "Avviare il primo server Cloud in 3 minuti",
  "guide_project_7": "Preparare l’ambiente di sviluppo per utilizzare l’API OpenStack",
  "guide_project_8": "Creare e configurare un disco aggiuntivo su un’istanza",
- "guide_project_all": "Tutte le guide Public Cloud"
+ "guide_project_all": "Tutte le guide Public Cloud",
+ "guide_project_apac_trafic": "Come viene fatturato il traffico delle istanze ospitate a Sydney e Singapore?"
 }

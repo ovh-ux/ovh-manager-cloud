@@ -1,5 +1,5 @@
 class LogsInputsAddEditCtrl {
-  constructor($q, $state, $stateParams, CucCloudMessage, ControllerHelper, LogsConstants,
+  constructor($q, $state, $stateParams, CucCloudMessage, CucControllerHelper, LogsConstants,
     LogsInputsService, LogsStreamsService) {
     this.$q = $q;
     this.$state = $state;
@@ -7,7 +7,7 @@ class LogsInputsAddEditCtrl {
     this.serviceName = this.$stateParams.serviceName;
     this.inputId = this.$stateParams.inputId;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsInputsService = LogsInputsService;
     this.LogsStreamsService = LogsStreamsService;
@@ -44,21 +44,21 @@ class LogsInputsAddEditCtrl {
    */
   initLoaders() {
     if (this.editMode) {
-      this.input = this.ControllerHelper.request.getHashLoader({
+      this.input = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
           .then(input => this.LogsInputsService.transformInput(input)),
       });
     }
-    this.details = this.ControllerHelper.request.getHashLoader({
+    this.details = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsInputsService.getDetails(this.serviceName),
     });
-    this.streams = this.ControllerHelper.request.getArrayLoader({
+    this.streams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName),
     });
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsInputsService.getSubscribedOptions(this.serviceName),
     });
-    this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+    this.mainOffer = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsInputsService.getMainOffer(this.serviceName),
     });
   }
@@ -70,7 +70,7 @@ class LogsInputsAddEditCtrl {
       return this.gotToNextStep(this.inputId);
     }
     this.CucCloudMessage.flushChildMessage();
-    this.inputAddEdit = this.ControllerHelper.request.getHashLoader({
+    this.inputAddEdit = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editMode
         ? this.LogsInputsService.updateInput(this.serviceName, this.input.data)
         : this.LogsInputsService.addInput(this.serviceName, this.input.data)),
@@ -79,7 +79,7 @@ class LogsInputsAddEditCtrl {
       .then((successData) => {
         this.gotToNextStep(this.inputId || successData[0].item.inputId);
       })
-      .catch(() => this.ControllerHelper.scrollPageToTop());
+      .catch(() => this.CucControllerHelper.scrollPageToTop());
   }
 
   gotToNextStep(inputId) {

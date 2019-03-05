@@ -2,7 +2,7 @@ class VpsMonitoringSlaCtrl {
   constructor(
     $translate,
     $uibModalInstance,
-    ControllerHelper,
+    CucControllerHelper,
     CucCloudMessage,
     preview,
     serviceName,
@@ -16,7 +16,7 @@ class VpsMonitoringSlaCtrl {
     this.preview = preview;
     this.state = state;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.currentState = !this.state;
     this.title = this.$translate.instant('vps_configuration_sla_title_enable');
     this.vps = {};
@@ -29,7 +29,7 @@ class VpsMonitoringSlaCtrl {
     if (this.preview) {
       this.title = this.$translate.instant('vps_dashboard_monitoring_sla_ips');
     }
-    this.selectedVps = this.ControllerHelper.request.getHashLoader({
+    this.selectedVps = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)
         .then((vps) => { this.vps = vps; })
         .catch(err => this.CucCloudMessage.error(err)),
@@ -42,7 +42,7 @@ class VpsMonitoringSlaCtrl {
   }
 
   confirm() {
-    this.save = this.ControllerHelper.request.getHashLoader({
+    this.save = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.update(this.serviceName, { slaMonitoring: this.state })
         .then(() => this.CucCloudMessage.success(this.$translate.instant(`vps_configuration_monitoring_sla_ok_${this.state}`)))
         .catch(() => this.CucCloudMessage.error(this.$translate.instant(`vps_configuration_monitoring_sla_error_${this.state}`)))

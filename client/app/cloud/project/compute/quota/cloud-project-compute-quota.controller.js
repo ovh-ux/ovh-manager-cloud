@@ -4,7 +4,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
   function CloudProjectComputeQuotaCtrl(
     $q, $stateParams, $translate, REDIRECT_URLS,
     OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CucCloudMessage, OtrsPopupService,
-    RegionService, TARGET,
+    CucRegionService, TARGET,
   ) {
     // ---------VARIABLE DECLARATION---------
 
@@ -29,7 +29,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
     this.paymentmeanUrl = REDIRECT_URLS.paymentMeans;
     this.supportUrl = REDIRECT_URLS.support;
 
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
 
     this.TARGET = TARGET;
 

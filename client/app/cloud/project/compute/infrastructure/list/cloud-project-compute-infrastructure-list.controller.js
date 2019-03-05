@@ -2,7 +2,7 @@ class CloudProjectComputeInfrastructureListCtrl {
   constructor($scope, $q, $stateParams, $translate, $timeout, atInternet,
     CucCloudMessage, CucCloudNavigation, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
-    OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
+    OvhApiCloudProjectVolume, CucRegionService, OvhApiCloudProjectFlavor, TARGET) {
     this.$scope = $scope;
     this.$q = $q;
     this.$timeout = $timeout;
@@ -14,7 +14,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.InfrastructureService = CloudProjectComputeInfrastructureService;
     this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
-    this.RegionService = RegionService;
+    this.CucRegionService = CucRegionService;
     this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
     this.TARGET = TARGET;
   }
@@ -52,7 +52,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     };
 
     this.regionOptions = {
-      values: this.RegionService.getAllTranslatedMacroRegion(),
+      values: this.CucRegionService.getAllTranslatedMacroRegion(),
     };
 
     this.$scope.$watchCollection(() => _.get(this.infra, 'vrack.publicCloud.sortedKeys'), (newValues, oldValues) => {
@@ -105,7 +105,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     _.set(instance, 'ipv4', instance.getPublicIpv4());
     _.set(instance, 'ipv6', instance.getPublicIpv6());
     _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));
-    _.set(instance, 'macroRegion', this.RegionService.constructor.getMacroRegion(instance.region));
+    _.set(instance, 'macroRegion', this.CucRegionService.constructor.getMacroRegion(instance.region));
     // patch for some translations that have &#160; html entities
     _.set(instance, 'flavorTranslated', this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace('&#160;', ' '));
     return instance;

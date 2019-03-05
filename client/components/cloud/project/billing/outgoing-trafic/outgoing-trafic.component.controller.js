@@ -1,11 +1,11 @@
 class OutgoingTraficComponentCtrl {
-  constructor($translate, ControllerHelper,
-    OvhApiMe, RegionService, ServiceHelper, CLOUD_GEOLOCALISATION, CLOUD_UNIT_CONVERSION) {
+  constructor($translate, CucControllerHelper,
+    OvhApiMe, CucRegionService, CucServiceHelper, CLOUD_GEOLOCALISATION, CLOUD_UNIT_CONVERSION) {
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiMe = OvhApiMe;
-    this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucRegionService = CucRegionService;
+    this.CucServiceHelper = CucServiceHelper;
     this.apacRegions = CLOUD_GEOLOCALISATION.instance.APAC;
     this.CLOUD_UNIT_CONVERSION = CLOUD_UNIT_CONVERSION;
     this.FREE_TRAFFIC_PER_APAC_REGION = 1024;
@@ -21,12 +21,12 @@ class OutgoingTraficComponentCtrl {
   }
 
   initCurrency() {
-    this.currency = this.ControllerHelper.request.getHashLoader({
+    this.currency = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiMe.v6()
         .get()
         .$promise
         .then(me => me.currency)
-        .catch(error => this.ServiceHelper.errorHandler('cpb_error_message')(error)),
+        .catch(error => this.CucServiceHelper.errorHandler('cpb_error_message')(error)),
     });
     return this.currency.load();
   }

@@ -1,9 +1,9 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
+  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, CucControllerHelper,
     CloudProjectOrchestrator, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-    OvhApiCloudProjectInstance, CucCloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
+    OvhApiCloudProjectInstance, CucCloudMessage, CucRegionService, CLOUD_UNIT_CONVERSION) {
     const self = this;
 
 
@@ -11,7 +11,7 @@ angular.module('managerApp')
 
 
     const orderBy = $filter('orderBy');
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
     // Datas
     self.table = {
       volume: [],
@@ -288,7 +288,7 @@ angular.module('managerApp')
     };
 
     self.openDeleteVolume = function (volume) {
-      ControllerHelper.modal.showModal({
+      CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/cloud/project/compute/volume/delete/cloud-project-compute-volume-delete.html',
           controller: 'CloudProjectComputeVolumeDeleteCtrl',

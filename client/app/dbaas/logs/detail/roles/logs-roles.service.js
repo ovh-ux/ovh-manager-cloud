@@ -1,11 +1,11 @@
 class LogsRolesService {
-  constructor($q, $translate, CucCloudPoll, ControllerHelper, LogsAliasesService,
+  constructor($q, $translate, CucCloudPoll, CucControllerHelper, LogsAliasesService,
     LogsDashboardsService, LogsHelperService, LogsIndexService, LogsOptionsService,
-    LogsConstants, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
+    LogsConstants, LogsStreamsService, OvhApiDbaas, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
-    this.ServiceHelper = ServiceHelper;
-    this.ControllerHelper = ControllerHelper;
+    this.CucServiceHelper = CucServiceHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsDashboardsService = LogsDashboardsService;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsAliasesService = LogsAliasesService;
@@ -121,7 +121,7 @@ class LogsRolesService {
         const promises = logs.map(serviceName => this.getLogDetails(serviceName));
         return this.$q.all(promises);
       })
-      .catch(this.ServiceHelper.errorHandler('logs_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_get_error'));
   }
 
   getLogDetails(serviceName) {
@@ -189,7 +189,7 @@ class LogsRolesService {
   }
 
   deleteModal(role) {
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_role_modal_delete_title'),
       textHtml: this.$translate.instant('logs_role_modal_delete_question', { name: role.name }),
     });
@@ -214,7 +214,7 @@ class LogsRolesService {
   }
 
   deleteMemberModal(username) {
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_member_delete_title'),
       textHtml: this.$translate.instant('logs_member_delete_question', { username }),
     });

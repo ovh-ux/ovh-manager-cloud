@@ -33,13 +33,6 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Project().v6().query({ serviceName }).$promise;
   }
 
-  getAssociatedInstance(projectId, instanceId) {
-    return this.OvhApiCloudProjectInstance
-      .v6()
-      .get({ serviceName: projectId, instanceId })
-      .$promise;
-  }
-
   getProject(projectId) {
     return this.OvhApiCloudProject.v6().get({ serviceName: projectId }).$promise;
   }

@@ -98,6 +98,7 @@
  "common_modify": "Alterar",
  "common_select": "Selecionar",
  "common_add": "Adicionar",
+ "common_update": "Atualizar",
  "common_save": "Guardar",
  "common_delete": "Eliminar",
  "common_reinstall": "Reinstalar",
@@ -623,8 +624,9 @@
  "guide_project_3": "Introdução às instâncias e a outras noções Cloud",
  "guide_project_4": "Aumentar as capacidades do serviço Public Cloud",
  "guide_project_5": "Criar um acesso ao Horizon",
- "guide_project_6": "Crie o primeiro servidor cloud em 3 minutos",
- "guide_project_7": "Prepare o ambiente para usar a API OpenStack",
+ "guide_project_6": "Criar um primeiro servidor cloud em 3 minutos",
+ "guide_project_7": "Preparar o ambiente para usar a API OpenStack",
  "guide_project_8": "Criar e configurar um disco adicional numa instância",
- "guide_project_all": "Ver todos os manuais do Public Cloud"
+ "guide_project_all": "Ver todos os manuais do Public Cloud",
+ "guide_project_apac_trafic": "De que forma é faturado o tráfego das minhas instâncias alojadas em Sydney e Singapura?"
 }

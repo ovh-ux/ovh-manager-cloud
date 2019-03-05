@@ -1,14 +1,14 @@
 class IpLoadBalancerVrackService {
   constructor($q, IpLoadBalancerServerFarmService, OvhApiIpLoadBalancing,
     IpLoadBalancerTaskService, OvhApiVrack,
-    CucCloudPoll, ServiceHelper) {
+    CucCloudPoll, CucServiceHelper) {
     this.$q = $q;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
     this.OvhApiVrack = OvhApiVrack;
     this.CucCloudPoll = CucCloudPoll;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   associateVrack(serviceName, vrackName) {
@@ -19,7 +19,7 @@ class IpLoadBalancerVrackService {
     })
       .$promise
       .then(task => task.data)
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_associate_vrack_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_associate_vrack_error'));
   }
 
   deAssociateVrack(serviceName) {
@@ -30,7 +30,7 @@ class IpLoadBalancerVrackService {
         ipLoadbalancing: serviceName,
       }).$promise)
       .then(task => task.data)
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_deassociate_vrack_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_deassociate_vrack_error'));
   }
 
   getNetworkCreationRules(serviceName, config = { resetCache: false }) {
@@ -58,7 +58,7 @@ class IpLoadBalancerVrackService {
         vrackEligibility: response.iplb.vrackEligibility,
         tasks: response.vrackStatus.task,
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_rules_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_rules_loading_error'));
   }
 
   pollNetworkTask(serviceName, tasks) {
@@ -94,7 +94,7 @@ class IpLoadBalancerVrackService {
 
         return response;
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_networks_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_private_networks_loading_error'));
   }
 
   getPrivateNetworkFarms(serviceName, networkId) {
@@ -118,8 +118,8 @@ class IpLoadBalancerVrackService {
         this.OvhApiIpLoadBalancing.Farm().Http().v6().resetCache();
         return response;
       })
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_add_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_add_error'));
+      .then(() => this.CucServiceHelper.successHandler('iplb_vrack_private_network_add_success')())
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_private_network_add_error'));
   }
 
   editPrivateNetwork(serviceName, network) {
@@ -138,8 +138,8 @@ class IpLoadBalancerVrackService {
         this.OvhApiIpLoadBalancing.Farm().Http().v6().resetCache();
         return response;
       })
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_edit_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_edit_error'));
+      .then(() => this.CucServiceHelper.successHandler('iplb_vrack_private_network_edit_success')())
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_private_network_edit_error'));
   }
 
   deletePrivateNetwork(serviceName, networkId) {
@@ -147,8 +147,8 @@ class IpLoadBalancerVrackService {
       .updateFarmId({ serviceName, vrackNetworkId: networkId }, { farmId: [] }).$promise
       .then(() => this.OvhApiIpLoadBalancing.Vrack().v6()
         .delete({ serviceName, vrackNetworkId: networkId }).$promise)
-      .then(this.ServiceHelper.successHandler('iplb_vrack_private_network_delete_success'))
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_delete_error'));
+      .then(() => this.CucServiceHelper.successHandler('iplb_vrack_private_network_delete_success')())
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_private_network_delete_error'));
   }
 
   getPrivateNetwork(serviceName, networkId) {
@@ -158,7 +158,7 @@ class IpLoadBalancerVrackService {
         response.displayName = response.displayName || response.vrackNetworkId;
         return response;
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_vrack_private_network_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_vrack_private_network_loading_error'));
   }
 }
 

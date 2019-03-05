@@ -1,8 +1,8 @@
 
 
-angular.module('managerApp').controller('DetailsPopoverController', function (DetailsPopoverService, RegionService) {
+angular.module('managerApp').controller('DetailsPopoverController', function (DetailsPopoverService, CucRegionService) {
   const self = this;
-  self.RegionService = RegionService;
+  self.CucRegionService = CucRegionService;
 
   self.closePopover = function () {
     DetailsPopoverService.reset();

@@ -1,12 +1,12 @@
 class VpsTakeSnapshotCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.snapshot = {
       description: '',
     };
@@ -17,7 +17,7 @@ class VpsTakeSnapshotCtrl {
   }
 
   confirm() {
-    this.save = this.ControllerHelper.request.getHashLoader({
+    this.save = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.takeSnapshot(this.serviceName, this.snapshot)
         .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_snapshot_take_success', { serviceName: this.serviceName })))
         .catch(err => this.CucCloudMessage.error(err.message || this.$translate.instant('vps_configuration_snapshot_take_fail')))

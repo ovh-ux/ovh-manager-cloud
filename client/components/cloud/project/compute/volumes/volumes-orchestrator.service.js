@@ -6,7 +6,7 @@
  *  This orchestrator is used to init and manage a Cloud Volumes list.
  */
 angular.module('managerApp').service('CloudProjectComputeVolumesOrchestrator',
-  function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref,
+  function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CucUserPref,
     OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot, CloudProjectComputeVolumesFactory,
     OvhApiCloudProjectRegion, Toast) {
     // Warning: all values must be reset at init (see resetDatas())
@@ -457,13 +457,13 @@ angular.module('managerApp').service('CloudProjectComputeVolumesOrchestrator',
         ==================================== */
 
     this.saveToUserPref = function () {
-      return CloudUserPref.set(`cloud_project_${self.volumes.serviceName}_volumes`,
+      return CucUserPref.set(`cloud_project_${self.volumes.serviceName}_volumes`,
         self.volumes.prepareToJson());
     };
 
     this.createFromUserPref = function (serviceName) {
       const key = `cloud_project_${serviceName}_volumes`;
-      return CloudUserPref.get(key).then((volumes) => {
+      return CucUserPref.get(key).then((volumes) => {
         _.set(volumes, 'serviceName', serviceName);
         return new CloudProjectComputeVolumesFactory(volumes);
       }, () => new CloudProjectComputeVolumesFactory({

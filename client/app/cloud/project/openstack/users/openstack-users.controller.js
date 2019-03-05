@@ -1,7 +1,7 @@
 angular.module('managerApp')
   .controller('CloudProjectOpenstackUsersCtrl',
     function CloudProjectOpenstackUsersCtrl(OvhApiCloud, $translate, CucCloudMessage, $stateParams,
-      Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken, $filter, $q, ControllerHelper,
+      Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken, $filter, $q, CucControllerHelper,
       $window, REDIRECT_URLS) {
       const self = this;
       const orderBy = $filter('orderBy');
@@ -174,7 +174,7 @@ angular.module('managerApp')
       };
 
       self.downloadOpenrcFile = function (currentUser) {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/openstack/users/openrc/openstack-users-openrc.html',
             controller: 'OpenstackUsersOpenrcCtrl',
@@ -187,7 +187,7 @@ angular.module('managerApp')
       };
 
       self.downloadRcloneFile = function (currentUser) {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/openstack/users/rclone/openstack-users-rclone.modal.html',
             controller: 'CloudProjectOpenstackUsersRcloneModalCtrl',
@@ -202,7 +202,7 @@ angular.module('managerApp')
       };
 
       self.generateToken = function (currentUser) {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/openstack/users/token/openstack-users-token.html',
             controller: 'CloudProjectOpenstackUsersTokenCtrl',
@@ -214,7 +214,7 @@ angular.module('managerApp')
         });
       };
       self.openAddUser = function () {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/openstack/users/add/openstack-users-add.html',
             controller: 'CloudProjectOpenStackUserAddCtrl',
@@ -227,7 +227,7 @@ angular.module('managerApp')
         });
       };
       self.openDeleteUser = function (currentUser) {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/openstack/users/delete/openstack-users-delete.html',
             controller: 'CloudProjectOpenStackUserDeleteCtrl',

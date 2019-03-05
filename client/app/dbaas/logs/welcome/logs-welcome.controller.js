@@ -1,20 +1,20 @@
 class LogsWelcomeCtrl {
-  constructor($state, LogsConstants, OrderHelperService, ovhDocUrl, TARGET) {
+  constructor($state, LogsConstants, CucOrderHelperService, ovhDocUrl, TARGET) {
     this.$state = $state;
     this.TARGET = TARGET;
     this.LogsConstants = LogsConstants;
-    this.OrderHelperService = OrderHelperService;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.ovhDocUrl = ovhDocUrl;
     this.urls = {};
   }
 
   $onInit() {
     this.urls.docsUrl = this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME);
-    this.OrderHelperService.buildUrl(this.LogsConstants.LOGS_PRODUCT_URL)
+    this.CucOrderHelperService.buildUrl(this.LogsConstants.LOGS_PRODUCT_URL)
       .then((url) => {
         this.urls.productURL = url;
       });
-    this.OrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
+    this.CucOrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
       .then((url) => {
         this.urls.orderURL = url;
       });

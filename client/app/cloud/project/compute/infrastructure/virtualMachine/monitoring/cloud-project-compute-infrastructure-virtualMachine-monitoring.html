@@ -62,7 +62,7 @@
                         </div>
                         <!-- CPU monitoring chart -->
                         <div data-ng-if="VmMonitoringCtrl.chartData['cpu:used'] && !VmMonitoringCtrl.loaders.monitoring['cpu:used']" class="row monitoring-chart right-space-p20">
-                            <monitoring-chart model="VmMonitoringCtrl.chartData['cpu:used']"></monitoring-chart>
+                            <cuc-monitoring-chart model="VmMonitoringCtrl.chartData['cpu:used']"></cuc-monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['cpu:used']">
                             <div class="text-center">
@@ -124,7 +124,7 @@
                         </div>
                         <!-- RAM monitoring chart -->
                         <div data-ng-if="VmMonitoringCtrl.chartData['mem:used'] && !VmMonitoringCtrl.loaders.monitoring['mem:used']" class="row monitoring-chart right-space-p20">
-                            <monitoring-chart model="VmMonitoringCtrl.chartData['mem:used']"></monitoring-chart>
+                            <cuc-monitoring-chart model="VmMonitoringCtrl.chartData['mem:used']"></cuc-monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['mem:used']">
                             <div class="text-center">
@@ -200,7 +200,7 @@
                         </div>
                         <!-- NET TX monitoring chart -->
                         <div data-ng-if="VmMonitoringCtrl.chartData['net:tx'] && !VmMonitoringCtrl.loaders.monitoring['net:tx']" class="row monitoring-chart right-space-p20">
-                            <monitoring-chart model="VmMonitoringCtrl.chartData['net:tx']"></monitoring-chart>
+                            <cuc-monitoring-chart model="VmMonitoringCtrl.chartData['net:tx']"></cuc-monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['net:tx']">
                             <div class="text-center">
@@ -231,7 +231,7 @@
                         </div>
                         <!-- NET TX monitoring chart -->
                         <div data-ng-if="VmMonitoringCtrl.chartData['net:rx'] && !VmMonitoringCtrl.loaders.monitoring['net:rx']" class="row monitoring-chart right-space-p20">
-                            <monitoring-chart model="VmMonitoringCtrl.chartData['net:rx']"></monitoring-chart>
+                            <cuc-monitoring-chart model="VmMonitoringCtrl.chartData['net:rx']"></cuc-monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['net:rx']">
                             <div class="text-center">
