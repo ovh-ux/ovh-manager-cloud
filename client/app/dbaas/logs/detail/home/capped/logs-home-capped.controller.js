@@ -1,12 +1,12 @@
 class LogsHomeCappedCtrl {
-  constructor($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper,
+  constructor($location, $stateParams, $uibModalInstance, CucCloudMessage, CucControllerHelper,
     LogsHomeService, LogsConstants) {
     this.$location = $location;
     this.serviceName = $stateParams.serviceName;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsHomeService = LogsHomeService;
     this.initLoaders();
   }
@@ -28,10 +28,10 @@ class LogsHomeCappedCtrl {
    * @memberof LogsHomeCappedCtrl
    */
   initLoaders() {
-    this.accountDetails = this.ControllerHelper.request.getHashLoader({
+    this.accountDetails = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName),
     });
-    this.account = this.ControllerHelper.request.getHashLoader({
+    this.account = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService.getAccount(this.serviceName),
     });
   }
@@ -51,12 +51,12 @@ class LogsHomeCappedCtrl {
    * @memberof LogsHomeCappedCtrl
    */
   updateCappedPlan() {
-    this.CloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsHomeService
         .updateCappedPlan(this.serviceName, this.service)
         .finally(() => {
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
           this.$uibModalInstance.close();
         }),
     });
