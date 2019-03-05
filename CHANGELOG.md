@@ -1,3 +1,12 @@
+## [7.19.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.0...v7.19.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **dbass.logs.detail.home.capped:** add missing cuc prefix ([#1373](https://github.com/ovh-ux/ovh-manager-cloud/issues/1373)) ([ca5e07d](https://github.com/ovh-ux/ovh-manager-cloud/commit/ca5e07d))
+
+
+
 # [7.19.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.5...v7.19.0) (2019-03-05)
 
 
