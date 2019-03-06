@@ -6,6 +6,7 @@ import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
+import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
@@ -31,6 +32,7 @@ angular.module('managerApp', [
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
+  ngOvhSwimmingPoll,
   ngOvhCloudUniverseComponents,
   ngOvhUserPref,
   'ovh-api-services',
@@ -38,7 +40,6 @@ angular.module('managerApp', [
   'ovh-angular-q-allSettled',
   'angularMoment',
   'ovh-angular-toaster',
-  'ovh-angular-swimming-poll',
   'oui',
   'oui.list-view',
   'chart.js',
