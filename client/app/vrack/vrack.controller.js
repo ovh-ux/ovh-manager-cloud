@@ -1,6 +1,7 @@
 angular.module('managerApp').controller('VrackCtrl',
   function VrackCtrl($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal,
-    CloudMessage, SidebarMenu, OvhApiVrack, OvhApiCloudProject, OvhApiMe, URLS, VrackService) {
+    CucCloudMessage, SidebarMenu, OvhApiVrack, OvhApiCloudProject,
+    OvhApiMe, URLS, CucVrackService) {
     const self = this;
     const pollingInterval = 5000;
 
@@ -14,7 +15,7 @@ angular.module('managerApp').controller('VrackCtrl',
     self.descriptionOptions = { maxLength: 255 };
     self.changeOwnerUrl = null;
     self.vRackCloudRoadmapGuide = null;
-    self.vrackService = VrackService;
+    self.vrackService = CucVrackService;
 
     self.modals = {
       move: null,
@@ -62,8 +63,8 @@ angular.module('managerApp').controller('VrackCtrl',
     };
 
     self.loadMessage = function () {
-      CloudMessage.unSubscribe('vrack');
-      self.messageHandler = CloudMessage.subscribe('vrack', { onMessage: () => self.refreshMessage() });
+      CucCloudMessage.unSubscribe('vrack');
+      self.messageHandler = CucCloudMessage.subscribe('vrack', { onMessage: () => self.refreshMessage() });
     };
 
     self.groupedServiceKeys = {
@@ -451,7 +452,7 @@ angular.module('managerApp').controller('VrackCtrl',
       OvhApiVrack.v6().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
         .catch((err) => {
           self.name = self.nameBackup;
-          CloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || err.message || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || err.message || ''].join(' '));
         })
         .finally(() => {
           const menuItem = SidebarMenu.getItemById(self.serviceName);
@@ -478,7 +479,7 @@ angular.module('managerApp').controller('VrackCtrl',
         .edit({ serviceName: self.serviceName }, { description: self.description }).$promise
         .catch((err) => {
           self.description = self.descriptionBackup;
-          CloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || err.message || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || err.message || ''].join(' '));
         })
         .finally(() => {
           self.descriptionBackup = null;
@@ -543,7 +544,7 @@ angular.module('managerApp').controller('VrackCtrl',
             break;
         }
         return task.catch((err) => {
-          CloudMessage.error([$translate.instant('vrack_add_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('vrack_add_error'), (err.data && err.data.message) || ''].join(' '));
           return $q.reject(err);
         });
       })).then(() => self.refreshData()).finally(() => {
@@ -603,7 +604,7 @@ angular.module('managerApp').controller('VrackCtrl',
             break;
         }
         return task.catch((err) => {
-          CloudMessage.error([$translate.instant('vrack_remove_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('vrack_remove_error'), (err.data && err.data.message) || ''].join(' '));
           return $q.reject(err);
         });
       })).then(() => self.refreshData()).finally(() => {
@@ -705,7 +706,7 @@ angular.module('managerApp').controller('VrackCtrl',
           setUserRelatedContent();
           self.refreshData();
         }).catch((err) => {
-          CloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('vrack_error'), (err.data && err.data.message) || ''].join(' '));
         });
       }
     }

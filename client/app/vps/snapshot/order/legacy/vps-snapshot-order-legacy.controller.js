@@ -1,11 +1,11 @@
 export default class VpsSnapshotOrderLegacyCtrl {
   /* @ngInject */
-  constructor($stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService) {
+  constructor($stateParams, $translate, $window, CucCloudMessage, CucCloudNavigation, VpsService) {
     this.$translate = $translate;
     this.serviceName = $stateParams.serviceName;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.VpsService = VpsService;
 
     this.loaders = {
@@ -22,7 +22,7 @@ export default class VpsSnapshotOrderLegacyCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
   }
 
   loadVps() {
@@ -32,7 +32,7 @@ export default class VpsSnapshotOrderLegacyCtrl {
         this.model.vps = data;
         this.loadOptionDetails();
       })
-      .catch(error => this.CloudMessage.error(error.message || this.$translate.instant('vps_configuration_activate_snapshot_fail')))
+      .catch(error => this.CucCloudMessage.error(error.message || this.$translate.instant('vps_configuration_activate_snapshot_fail')))
       .finally(() => { this.loaders.init = false; });
   }
 
@@ -40,7 +40,7 @@ export default class VpsSnapshotOrderLegacyCtrl {
     this.loaders.options = true;
     this.VpsService.getOptionSnapshotFormated(this.serviceName)
       .then((data) => { this.model.optionDetails = data; })
-      .catch(error => this.CloudMessage.error(error.message || this.$translate.instant('vps_configuration_activate_snapshot_fail')))
+      .catch(error => this.CucCloudMessage.error(error.message || this.$translate.instant('vps_configuration_activate_snapshot_fail')))
       .finally(() => { this.loaders.options = false; });
   }
 
@@ -50,9 +50,9 @@ export default class VpsSnapshotOrderLegacyCtrl {
         .then(({ url }) => {
           this.model.url = url;
         })
-        .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_activate_snapshot_fail')));
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_activate_snapshot_fail')));
     } else if (this.model.contractsValidated) {
-      this.CloudMessage.error(this.$translate.instant('vps_configuration_activate_snapshot_fail'));
+      this.CucCloudMessage.error(this.$translate.instant('vps_configuration_activate_snapshot_fail'));
     }
   }
 

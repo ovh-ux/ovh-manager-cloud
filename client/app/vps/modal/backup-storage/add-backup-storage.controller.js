@@ -1,11 +1,11 @@
 class AddBackupStorageCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.serviceName = serviceName;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.VpsService = VpsService;
 
     this.loader = {
@@ -35,10 +35,10 @@ class AddBackupStorageCtrl {
   }
 
   loadAvailableIpBlocks() {
-    this.ipBlocks = this.ControllerHelper.request.getHashLoader({
+    this.ipBlocks = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getBackupStorageAuthorizableBlocks(this.serviceName)
         .then((data) => { this.available = data; })
-        .catch(() => this.CloudMessage.error(this.$translate.instant('vps_backup_storage_access_add_ip_failure')))
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_backup_storage_access_add_ip_failure')))
         .finally(() => { this.loader.init = false; }),
     });
     return this.ipBlocks.load();
@@ -52,8 +52,8 @@ class AddBackupStorageCtrl {
     if (!this.isAvailable()) {
       return this.cancel();
     }
-    this.CloudMessage.flushChildMessage();
-    this.addStorage = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.addStorage = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService
         .postBackupStorageAccess(
           this.serviceName,
@@ -64,12 +64,12 @@ class AddBackupStorageCtrl {
         )
         .then((data) => {
           if (data.state === 'ERROR') {
-            this.CloudMessage.error(_.get(data, 'messages[0].message', false) || this.$translate.instant('vps_backup_storage_access_add_failure'));
+            this.CucCloudMessage.error(_.get(data, 'messages[0].message', false) || this.$translate.instant('vps_backup_storage_access_add_failure'));
           } else {
-            this.CloudMessage.success(this.$translate.instant('vps_backup_storage_access_add_success'));
+            this.CucCloudMessage.success(this.$translate.instant('vps_backup_storage_access_add_success'));
           }
         })
-        .catch(err => this.CloudMessage.error(err || this.$translate.instant('vps_backup_storage_access_add_failure')))
+        .catch(err => this.CucCloudMessage.error(err || this.$translate.instant('vps_backup_storage_access_add_failure')))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.addStorage.load();

@@ -1,12 +1,13 @@
 export default class VpsWindowsOrderLegacyCtrl {
   /* @ngInject */
-  constructor($q, $stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService) {
+  constructor($q, $stateParams, $translate, $window, CucCloudMessage,
+    CucCloudNavigation, VpsService) {
     this.$q = $q;
     this.$translate = $translate;
     this.serviceName = $stateParams.serviceName;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.VpsService = VpsService;
 
     this.loaders = {
@@ -27,7 +28,7 @@ export default class VpsWindowsOrderLegacyCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
   }
 
 
@@ -38,7 +39,7 @@ export default class VpsWindowsOrderLegacyCtrl {
         this.durations.available = durations;
         this.loadPrices(durations);
       })
-      .catch(err => this.CloudMessage.error(err.data.message || err.data))
+      .catch(err => this.CucCloudMessage.error(err.data.message || err.data))
       .finally(() => { this.loaders.durations = false; });
   }
 
@@ -52,7 +53,7 @@ export default class VpsWindowsOrderLegacyCtrl {
     });
 
     this.$q.all(queue)
-      .catch(err => this.CloudMessage.error(err.data || this.$translate.instant('vps_order_windows_price_error')))
+      .catch(err => this.CucCloudMessage.error(err.data || this.$translate.instant('vps_order_windows_price_error')))
       .finally(() => {
         this.loaders.prices = false;
       });
@@ -70,7 +71,7 @@ export default class VpsWindowsOrderLegacyCtrl {
   orderOption() {
     this.VpsService.postWindowsOptionOrder(this.serviceName, this.model.duration)
       .then(({ url }) => { this.model.url = url; })
-      .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_windows_order_error')));
+      .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_windows_order_error')));
   }
 
   cancel() {

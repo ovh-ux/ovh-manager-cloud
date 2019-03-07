@@ -166,6 +166,15 @@ angular.module('managerApp')
         WE: 'https://us.ovh.com/us/order/express/#/new/express/resume',
         WS: 'https://us.ovh.com/es/order/express/#/new/express/resume',
       },
+      express_review_base: {
+        ASIA: 'https://ca.ovh.com/asia/order/express/#/express/review',
+        AU: 'https://ca.ovh.com/au/order/express/#/express/review',
+        CA: 'https://ca.ovh.com/en/order/express/#/express/review',
+        QC: 'https://ca.ovh.com/fr/order/express/#/express/review',
+        SG: 'https://ca.ovh.com/sg/order/express/#/express/review',
+        WE: 'https://us.ovh.com/us/order/express/#/express/review',
+        WS: 'https://us.ovh.com/es/order/express/#/express/review',
+      },
     },
     guides: {
       home: {

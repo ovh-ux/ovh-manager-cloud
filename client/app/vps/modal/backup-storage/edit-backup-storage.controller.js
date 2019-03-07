@@ -1,12 +1,12 @@
 class EditBackupStorageCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, row, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, row, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.row = row;
     this.serviceName = serviceName;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.VpsService = VpsService;
     this.model = {
       ftp: row.ftp,
@@ -24,8 +24,8 @@ class EditBackupStorageCtrl {
   }
 
   confirm() {
-    this.CloudMessage.flushChildMessage();
-    this.loader = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.loader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService
         .putBackupStorageAccess(
           this.serviceName,
@@ -34,12 +34,12 @@ class EditBackupStorageCtrl {
           this.model.nfs,
           this.model.cifs,
         )
-        .then(() => this.CloudMessage.success(this.$translate.instant('vps_tab_backup_storage_set_success', { access: this.row.ipBlock })))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_tab_backup_storage_set_success', { access: this.row.ipBlock })))
         .catch((err) => {
           if (_(err).has('data.message')) {
-            this.CloudMessage.error(err.data.message);
+            this.CucCloudMessage.error(err.data.message);
           }
-          this.CloudMessage.error(this.$translate.instant('vps_tab_backup_storage_set_fail', { access: this.row.ipBlock }));
+          this.CucCloudMessage.error(this.$translate.instant('vps_tab_backup_storage_set_fail', { access: this.row.ipBlock }));
         })
         .finally(() => this.$uibModalInstance.close()),
     });

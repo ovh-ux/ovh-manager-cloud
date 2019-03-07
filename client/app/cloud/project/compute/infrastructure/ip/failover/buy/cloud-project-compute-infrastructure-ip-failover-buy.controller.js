@@ -1,7 +1,7 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectComputeInfrastructureIpFailoverBuyCtrl', function CloudProjectComputeInfrastructureIpFailoverBuyCtrl($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
+  .controller('CloudProjectComputeInfrastructureIpFailoverBuyCtrl', function CloudProjectComputeInfrastructureIpFailoverBuyCtrl($scope, $uibModalInstance, OvhApiIp, $translate, CucCloudMessage, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
     const self = this;
     const { projectId } = $stateParams;
 
@@ -19,7 +19,7 @@ angular.module('managerApp')
           self.datas.billingInfo = result;
         }, (err) => {
           self.datas.billingInfo = null;
-          CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || '', self.form.instance.region, self.form.country].join(' '));
+          CucCloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || '', self.form.instance.region, self.form.country].join(' '));
           $uibModalInstance.dismiss();
         }).finally(() => {
           self.loaders.billingInfo = false;
@@ -85,7 +85,7 @@ angular.module('managerApp')
         self.form.instances = result;
       }, (err) => {
         self.form.instances = [];
-        CloudMessage.error([
+        CucCloudMessage.error([
           $translate.instant('cpciif_buy_init_error'),
           (err.data && err.data.message) || '',
         ].join(' '));
@@ -101,7 +101,7 @@ angular.module('managerApp')
         self.form.flavors = result;
       }, (err) => {
         self.form.flavors = [];
-        CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
         $uibModalInstance.dismiss();
         return $q.reject(err);
       });
@@ -115,7 +115,7 @@ angular.module('managerApp')
         self.form.failoverIps = result;
       }, (err) => {
         self.form.failoverIps = [];
-        CloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cpciif_buy_init_error'), (err.data && err.data.message) || ''].join(' '));
         $uibModalInstance.dismiss();
         return $q.reject(err);
       });
@@ -171,7 +171,7 @@ angular.module('managerApp')
         quantity: self.form.quantity,
       }).$promise.then((result) => {
         $window.open(result.url, '_blank');
-        CloudMessage.success($translate.instant('cpciif_buy_success', { url: result.url }), { hideAfter: false });
+        CucCloudMessage.success($translate.instant('cpciif_buy_success', { url: result.url }), { hideAfter: false });
         $uibModalInstance.dismiss();
         atInternet.trackOrder({
           name: `[IP]ipfailover[ip-failover-${self.form.country}]`,
@@ -180,7 +180,7 @@ angular.module('managerApp')
           quantity: self.form.quantity,
         });
       }, (err) => {
-        CloudMessage.error([$translate.instant('cpciif_buy_error'), (err.data && err.data.message) || ''].join(' '));
+        CucCloudMessage.error([$translate.instant('cpciif_buy_error'), (err.data && err.data.message) || ''].join(' '));
         $uibModalInstance.dismiss();
         return $q.reject(err);
       }).finally(() => {

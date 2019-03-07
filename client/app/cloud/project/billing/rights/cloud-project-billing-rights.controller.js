@@ -1,7 +1,7 @@
 angular.module('managerApp')
   .controller('CloudProjectBillingRightsCtrl',
-    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CloudMessage,
-      ControllerHelper, $translate, REDIRECT_URLS, $window) {
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CucCloudMessage,
+      CucControllerHelper, $translate, REDIRECT_URLS, $window) {
       const self = this;
       const serviceName = $stateParams.projectId;
 
@@ -135,7 +135,7 @@ angular.module('managerApp')
          */
 
       self.showAddRight = function () {
-        ControllerHelper.modal.showModal({
+        CucControllerHelper.modal.showModal({
           modalConfig: {
             templateUrl: 'app/cloud/project/billing/rights/addRights/cloud-project-billing-rights-add.html',
             controller: 'CloudProjectBillingRightsAddCtrl',
@@ -147,10 +147,10 @@ angular.module('managerApp')
         })
           .then(() => {
             self.getRights(true);
-            CloudMessage.success($translate.instant('cpb_rights_table_rights_add_success'));
+            CucCloudMessage.success($translate.instant('cpb_rights_table_rights_add_success'));
           })
           .catch((err) => {
-            CloudMessage.error([$translate.instant('cpb_rights_add_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_add_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;
@@ -170,7 +170,7 @@ angular.module('managerApp')
           })
           .catch((err) => {
             self.data.rights = [];
-            CloudMessage.error([$translate.instant('cpb_rights_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;
@@ -181,7 +181,7 @@ angular.module('managerApp')
         self.loader = true;
         self.removeRight.accountId = account.accountId;
 
-        return ControllerHelper.modal.showConfirmationModal({
+        return CucControllerHelper.modal.showConfirmationModal({
           titleText: $translate.instant('cpb_rights_delete_title'),
           text: $translate.instant('cpb_rights_delete_question', { nickname: account.accountId }),
         })
@@ -191,10 +191,10 @@ angular.module('managerApp')
           }).$promise)
           .then(() => {
             self.getRights(true);
-            CloudMessage.success($translate.instant('cpb_rights_table_rights_remove_success'));
+            CucCloudMessage.success($translate.instant('cpb_rights_table_rights_remove_success'));
           })
           .catch((err) => {
-            CloudMessage.error([$translate.instant('cpb_rights_remove_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpb_rights_remove_error'), (err.data && err.data.message) || ''].join(' '));
           })
           .finally(() => {
             self.loader = false;

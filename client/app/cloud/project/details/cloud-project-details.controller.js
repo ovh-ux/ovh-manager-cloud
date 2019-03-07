@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('CloudProjectDetailsCtrl',
   function CloudProjectDetailsCtrl($stateParams, $q, $state, $rootScope, $scope, $timeout,
-    ControllerModalHelper, OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate,
-    $filter, REDIRECT_URLS) {
+    CucControllerModalHelper, OvhApiCloudProject, Poller, OvhApiMeOrder, CucCloudMessage,
+    $translate, $filter, REDIRECT_URLS) {
     const self = this;
 
     this.projectId = $stateParams.projectId;
@@ -27,7 +27,7 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
 
       $rootScope.$broadcast('CloudMainController:refresh');
 
-      ControllerModalHelper.showWarningModal({
+      CucControllerModalHelper.showWarningModal({
         title: $translate.instant('voucher_warning_title'),
         message: $translate.instant('voucher_warning_description', {
           expiration: $filter('date')(self.project.expiration, 'medium'),
@@ -126,7 +126,7 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
       return OvhApiCloudProject.v6().cancelCreation({
         serviceName: self.projectId,
       }, {}).$promise.then((result) => {
-        CloudMessage.success($translate.instant('cpd_project_cancel_success'));
+        CucCloudMessage.success($translate.instant('cpd_project_cancel_success'));
         $rootScope.$broadcast('sidebar_refresh_cloud');
         $state.go('home');
         init();
@@ -134,17 +134,17 @@ angular.module('managerApp').controller('CloudProjectDetailsCtrl',
       }, (err) => {
         switch (err) {
           case self.projectDeleteErrorsStatus.expired:
-            CloudMessage.error($translate.instant('cpd_project_cancel_error_expired_status'));
+            CucCloudMessage.error($translate.instant('cpd_project_cancel_error_expired_status'));
             $rootScope.$broadcast('sidebar_refresh_cloud');
             init();
             break;
           case self.projectDeleteErrorsStatus.ok:
-            CloudMessage.error($translate.instant('cpd_project_cancel_error_ok_status'));
+            CucCloudMessage.error($translate.instant('cpd_project_cancel_error_ok_status'));
             $rootScope.$broadcast('sidebar_refresh_cloud');
             init();
             break;
           default:
-            CloudMessage.error($translate.instant('cpd_project_cancel_error'));
+            CucCloudMessage.error($translate.instant('cpd_project_cancel_error'));
         }
         $q.reject(err);
       }).finally(() => {

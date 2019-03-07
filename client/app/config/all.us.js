@@ -102,6 +102,9 @@ angular.module('managerApp')
       express_base: {
         US: 'https://us.ovhcloud.com/order/express/#/express/review',
       },
+      express_review_base: {
+        US: 'https://us.ovhcloud.com/order/express/#/express/review',
+      },
     },
     guides: {
       home: {

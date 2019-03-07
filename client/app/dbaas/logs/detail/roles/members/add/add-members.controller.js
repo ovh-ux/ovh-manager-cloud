@@ -1,8 +1,8 @@
 class LogsRolesAddMembersCtrl {
-  constructor($stateParams, $uibModalInstance, ControllerHelper, logs, LogsRolesService) {
+  constructor($stateParams, $uibModalInstance, CucControllerHelper, logs, LogsRolesService) {
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.roleId = this.$stateParams.roleId;
     this.$uibModalInstance = $uibModalInstance;
     this.logs = logs;
@@ -26,14 +26,14 @@ class LogsRolesAddMembersCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsRolesService.createMember(this.serviceName, this.roleId, {
         username: this.member.username.username,
         note: this.member.note,
       })
         .then(response => this.$uibModalInstance.close(response))
         .catch(response => this.$uibModalInstance.dismiss(response))
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     return this.saving.load();
   }

@@ -15,7 +15,7 @@
                 data-ng-model="ctrl.alert.data.title"
                 data-ng-minlength="ctrl.LogsConstants.TITLE_MIN_LENGTH"
                 data-ng-maxlength="ctrl.LogsConstants.TITLE_MAX_LENGTH"
-                autofocus
+                cuc-autofocus
                 required>
         </oui-field>
 
@@ -119,6 +119,15 @@
                 max="ctrl.LogsConstants.BACKLOG_MAX"
                 required>
             </oui-numeric>
+        </oui-field>
+
+        <oui-field data-label="{{ ::'add_alert_value_query_filter' | translate }}" data-size="xl"
+            data-help-text="{{ ::'add_alert_value_query_filter_description' | translate }}">
+            <input type="text" id="query_filter" name="query_filter"
+                class="oui-input"
+                data-ng-model="ctrl.alert.data.queryFilter"
+                data-ng-minlength="ctrl.LogsConstants.VALUE_MIN_LENGTH"
+                data-ng-maxlength="ctrl.LogsConstants.VALUE_MAX_LENGTH">
         </oui-field>
 
         <oui-field data-size="xl">

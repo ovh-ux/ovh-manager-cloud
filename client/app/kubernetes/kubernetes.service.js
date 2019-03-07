@@ -14,6 +14,7 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     this.OvhApiCloudProjectQuota = OvhApiCloudProjectQuota;
     this.SidebarMenu = SidebarMenu;
     this.KUBERNETES = KUBERNETES;
+    this.initializeUpgradePolicies();
   }
 
   getKubernetesCluster(serviceName) {
@@ -32,13 +33,6 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Project().v6().query({ serviceName }).$promise;
   }
 
-  getAssociatedInstance(projectId, instanceId) {
-    return this.OvhApiCloudProjectInstance
-      .v6()
-      .get({ serviceName: projectId, instanceId })
-      .$promise;
-  }
-
   getProject(projectId) {
     return this.OvhApiCloudProject.v6().get({ serviceName: projectId }).$promise;
   }
@@ -54,8 +48,11 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.PublicCloud().Node().v6().query({ serviceName }).$promise;
   }
 
-  addNode(serviceName, flavorName) {
-    return this.OvhApiKube.PublicCloud().Node().v6().save({ serviceName }, { flavorName }).$promise;
+  addNode(serviceName, name, flavorName) {
+    return this.OvhApiKube.PublicCloud().Node().v6().save(
+      { serviceName },
+      { name, flavorName },
+    ).$promise;
   }
 
   changeMenuTitle(serviceName, name) {
@@ -67,6 +64,10 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
 
   deleteNode(serviceName, nodeId) {
     return this.OvhApiKube.PublicCloud().Node().v6().delete({ serviceName, nodeId }).$promise;
+  }
+
+  isProcessing(status) {
+    return this.KUBERNETES.processingStatus.includes(status);
   }
 
   resetNodesCache() {
@@ -95,8 +96,11 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     });
   }
 
-  resetCluster(serviceName, workerNodesPolicy) {
-    return this.OvhApiKube.v6().reset({ serviceName }, { workerNodesPolicy }).$promise;
+  resetCluster(serviceName, { workerNodesPolicy, version }) {
+    return this.OvhApiKube.v6().reset({ serviceName }, {
+      workerNodesPolicy,
+      version,
+    }).$promise;
   }
 
   resetClusterCache() {
@@ -107,6 +111,50 @@ angular.module('managerApp').service('Kubernetes', class Kubernetes {
     return this.OvhApiKube.v6().update({ serviceName }, { name: kubernetes.name }).$promise
       .then((res) => {
         this.changeMenuTitle(serviceName, kubernetes.name);
+        return res;
+      });
+  }
+
+  updateKubernetesUpgradePolicy(serviceName, upgradePolicy) {
+    return this.OvhApiKube.v6().updatePolicy(
+      { serviceName },
+      { updatePolicy: upgradePolicy },
+    ).$promise;
+  }
+
+  getUpgradePolicies() {
+    return this.upgradePolicies;
+  }
+
+  initializeUpgradePolicies() {
+    const upgradePolicyEnum = _.indexBy(this.KUBERNETES.upgradePolicies);
+    this.upgradePolicies = [
+      {
+        value: upgradePolicyEnum.ALWAYS_UPDATE,
+        localizationKey: 'kube_service_upgrade_policy_ALWAYS_UPDATE',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_ALWAYS_UPDATE',
+      },
+      {
+        value: upgradePolicyEnum.MINIMAL_DOWNTIME,
+        localizationKey: 'kube_service_upgrade_policy_MINIMAL_DOWNTIME',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_MINIMAL_DOWNTIME',
+      },
+      {
+        value: upgradePolicyEnum.NEVER_UPDATE,
+        localizationKey: 'kube_service_upgrade_policy_NEVER_UPDATE',
+        localizationDescriptionKey: 'kube_service_upgrade_policy_description_NEVER_UPDATE',
+      },
+    ];
+  }
+
+  getSchema() {
+    return this.OvhApiKube.v6().getSchema().$promise;
+  }
+
+  updateKubernetesVersion(serviceName) {
+    return this.OvhApiKube.v6().updateVersion({ serviceName }, {}).$promise
+      .then((res) => {
+        this.resetClusterCache();
         return res;
       });
   }

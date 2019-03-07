@@ -1,6 +1,6 @@
 
 
-angular.module('managerApp').controller('CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm', function CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm($uibModalInstance, params, $translate, CloudMessage, CloudProjectComputeInfrastructureOrchestrator) {
+angular.module('managerApp').controller('CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm', function CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm($uibModalInstance, params, $translate, CucCloudMessage, CloudProjectComputeInfrastructureOrchestrator) {
   const self = this;
 
   self.vmInEdition = params;
@@ -18,9 +18,9 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureVirtua
     self.vmInEdition.monthlyBillingBoolean = true;
     self.loaders.saveVm = true;
     CloudProjectComputeInfrastructureOrchestrator.saveEditedVm(self.vmInEdition).then(() => {
-      CloudMessage.success($translate.instant('cpcivm_monthly_success'));
+      CucCloudMessage.success($translate.instant('cpcivm_monthly_success'));
     }, (err) => {
-      CloudMessage.error([
+      CucCloudMessage.error([
         $translate.instant('cpcivm_monthly_fail'),
         (err.data && err.data.message) || '',
       ].join(' '));

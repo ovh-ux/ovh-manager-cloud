@@ -1,23 +1,23 @@
 class VpsRestoreSnapshotCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.summary = {};
   }
 
   $onInit() {
-    this.snapshotSummary = this.ControllerHelper.request.getHashLoader({
+    this.snapshotSummary = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getTabSummary(this.serviceName)
         .then((data) => {
           this.summary = data;
           this.date = moment(data.snapshot.creationDate).format('LLL');
         })
-        .catch(error => this.CloudMessage.error(error.message || this.$translate.instant('vps_configuration_snapshot_restore_fail'))),
+        .catch(error => this.CucCloudMessage.error(error.message || this.$translate.instant('vps_configuration_snapshot_restore_fail'))),
     });
     return this.snapshotSummary.load();
   }
@@ -27,10 +27,10 @@ class VpsRestoreSnapshotCtrl {
   }
 
   confirm() {
-    this.restore = this.ControllerHelper.request.getHashLoader({
+    this.restore = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.restoreSnapshot(this.serviceName)
-        .then(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_snapshot_restore_success', { serviceName: this.serviceName })))
-        .catch(error => this.CloudMessage.error(error.message || this.$translate.instant('vps_configuration_snapshot_restore_fail')))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_snapshot_restore_success', { serviceName: this.serviceName })))
+        .catch(error => this.CucCloudMessage.error(error.message || this.$translate.instant('vps_configuration_snapshot_restore_fail')))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.restore.load();

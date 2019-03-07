@@ -125,6 +125,36 @@ angular.module('managerApp')
       self.data.totals.hourly.volume = roundNumber(self.data.totals.hourly.volume, 2);
     }
 
+    function initInstanceBandwidth() {
+      if (!self.data.hourlyBilling || !self.data.hourlyBilling.hourlyUsage) {
+        return;
+      }
+      const bandwidthByRegions = _.map(
+        self.data.hourlyBilling.hourlyUsage.instanceBandwidth,
+        (bandwidthByRegion) => {
+          const newBandwidthByRegion = _.clone(bandwidthByRegion);
+          newBandwidthByRegion.outgoingBandwidth.totalPrice = roundNumber(
+            newBandwidthByRegion.outgoingBandwidth.totalPrice,
+            2,
+          );
+          if (newBandwidthByRegion.outgoingBandwidth.quantity.value > 0) {
+            newBandwidthByRegion.outgoingBandwidth.quantity.value = roundNumber(
+              newBandwidthByRegion.outgoingBandwidth.quantity.value,
+              2,
+            );
+          }
+          return newBandwidthByRegion;
+        },
+      );
+      self.data.bandwidthByRegions = bandwidthByRegions;
+      self.data.totals.hourly.bandwidth = _.reduce(
+        self.data.bandwidthByRegions,
+        (sum, bandwidth) => sum + bandwidth.outgoingBandwidth.totalPrice,
+        0,
+      );
+      self.data.totals.hourly.bandwidth = roundNumber(self.data.totals.hourly.bandwidth, 2);
+    }
+
     self.getConsumptionDetails = function (hourlyBillingInfo, monthlyBillingInfo) {
       return self.getDataInitialized()
         .then(() => {
@@ -139,6 +169,7 @@ angular.module('managerApp')
               initArchiveStorageList(),
               initSnapshotList(),
               initVolumeList(),
+              initInstanceBandwidth(),
             ])
             .then(() => {
               self.data.totals.monthly.total = roundNumber(self.data.totals.monthly.instance, 2);
@@ -147,7 +178,8 @@ angular.module('managerApp')
                 + self.data.totals.hourly.snapshot
                 + self.data.totals.hourly.objectStorage
                 + self.data.totals.hourly.archiveStorage
-                + self.data.totals.hourly.volume,
+                + self.data.totals.hourly.volume
+                + self.data.totals.hourly.bandwidth,
                 2,
               );
               self.data.totals.total = roundNumber(
@@ -167,6 +199,7 @@ angular.module('managerApp')
         archiveStorages: [],
         snapshots: [],
         volumes: [],
+        bandwidthByRegions: [],
         billing: {},
         totals: {
           total: 0,
@@ -178,6 +211,7 @@ angular.module('managerApp')
             archiveStorage: 0,
             snapshot: 0,
             volume: 0,
+            bandwidth: 0,
           },
           monthly: {
             total: 0,

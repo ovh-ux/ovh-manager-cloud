@@ -1,12 +1,12 @@
 class IpLoadBalancerVrackEditCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, CloudNavigation, ControllerHelper,
-    IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
+  constructor($q, $stateParams, $translate, CucCloudMessage, CucCloudNavigation,
+    CucControllerHelper, IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
 
@@ -18,7 +18,7 @@ class IpLoadBalancerVrackEditCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.creationRules.load();
     this.privateNetwork.load()
       .then(() => {
@@ -56,7 +56,7 @@ class IpLoadBalancerVrackEditCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return (!this.editing() ? this.addNetwork() : this.editNetwork())
       .then(() => this.previousState.go())
       .finally(() => { this.saving = false; });
@@ -129,22 +129,22 @@ class IpLoadBalancerVrackEditCtrl {
   }
 
   initLoaders() {
-    this.creationRules = this.ControllerHelper.request.getHashLoader({
+    this.creationRules = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getNetworkCreationRules(this.serviceName),
     });
 
-    this.privateNetwork = this.ControllerHelper.request.getHashLoader({
+    this.privateNetwork = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editing() ? this.IpLoadBalancerVrackService
         .getPrivateNetwork(this.serviceName, this.networkId) : this.$q.when({})),
     });
 
-    this.privateNetworkFarms = this.ControllerHelper.request.getHashLoader({
+    this.privateNetworkFarms = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editing() ? this.IpLoadBalancerVrackService
         .getPrivateNetworkFarms(this.serviceName, this.networkId) : this.$q.when([])),
     });
 
-    this.farms = this.ControllerHelper.request.getArrayLoader({
+    this.farms = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService.getServerFarms(this.serviceName),
     });
   }

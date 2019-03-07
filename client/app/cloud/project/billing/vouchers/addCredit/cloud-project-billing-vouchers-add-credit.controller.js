@@ -1,13 +1,13 @@
 class CloudProjectBillingVouchersAddcreditCtrl {
-  constructor($uibModalInstance, ControllerHelper, OvhApiMe) {
+  constructor($uibModalInstance, CucControllerHelper, OvhApiMe) {
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiMe = OvhApiMe;
     this.credit = {
       amount: 10,
     };
 
-    this.currency = this.ControllerHelper.request.getHashLoader({
+    this.currency = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiMe.v6().get().$promise,
     });
   }

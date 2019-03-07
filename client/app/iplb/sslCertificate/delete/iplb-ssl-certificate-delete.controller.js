@@ -1,9 +1,9 @@
 class IpLoadBalancerSslCertificateDeleteCtrl {
-  constructor($stateParams, $uibModalInstance, ControllerHelper,
+  constructor($stateParams, $uibModalInstance, CucControllerHelper,
     IpLoadBalancerSslCertificateService, ssl) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
 
     this.ssl = ssl;
@@ -12,7 +12,7 @@ class IpLoadBalancerSslCertificateDeleteCtrl {
   }
 
   confirm() {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerSslCertificateService
         .delete(this.$stateParams.serviceName, this.sslId)
         .then(response => this.$uibModalInstance.close(response))

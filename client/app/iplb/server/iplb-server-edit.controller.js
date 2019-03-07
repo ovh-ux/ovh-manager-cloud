@@ -1,11 +1,11 @@
 class IpLoadBalancerServerEditCtrl {
-  constructor($q, $state, $stateParams, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerServerService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerServerService = IpLoadBalancerServerService;
 
@@ -13,7 +13,7 @@ class IpLoadBalancerServerEditCtrl {
   }
 
   initLoaders() {
-    this.farmTypeLoader = this.ControllerHelper.request.getHashLoader({
+    this.farmTypeLoader = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerService.getFarmType(
         this.$stateParams.serviceName,
         this.$stateParams.farmId,
@@ -25,17 +25,17 @@ class IpLoadBalancerServerEditCtrl {
           if (err === 'NOTFOUND') {
             return this.$state.go('network.iplb.detail.server-farm');
           }
-          return this.ServiceHelper.errorHandler('iplb_server_request_error');
+          return this.CucServiceHelper.errorHandler('iplb_server_request_error');
         }),
     });
 
-    this.proxyProtocolVersions = this.ControllerHelper.request.getArrayLoader({
+    this.proxyProtocolVersions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerServerService.getProxyProtocolVersions(
         this.$stateParams.serviceName,
       ),
     });
 
-    this.apiServer = this.ControllerHelper.request.getHashLoader({
+    this.apiServer = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerService.getServer(
         this.$stateParams.serviceName,
         this.$stateParams.farmId,
@@ -92,7 +92,7 @@ class IpLoadBalancerServerEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerService.create(
       this.farmType,
       this.$stateParams.serviceName,
@@ -113,7 +113,7 @@ class IpLoadBalancerServerEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerService.update(
       this.farmType,
       this.$stateParams.serviceName,

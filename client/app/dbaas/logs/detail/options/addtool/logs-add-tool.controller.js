@@ -1,11 +1,11 @@
 class logsAddToolCtrl {
-  constructor($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper,
+  constructor($state, $stateParams, $translate, CucControllerHelper, CucControllerModalHelper,
     LogsConstants, LogsOfferService) {
     this.$state = $state;
     this.$translate = $translate;
     this.serviceName = $stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
-    this.ControllerModalHelper = ControllerModalHelper;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucControllerModalHelper = CucControllerModalHelper;
     this.LogsConstants = LogsConstants;
     this.LogsOfferService = LogsOfferService;
     this.initLoaders();
@@ -22,7 +22,7 @@ class logsAddToolCtrl {
    * @memberof logsAddToolCtrl
    */
   initLoaders() {
-    this.selectedOffer = this.ControllerHelper.request.getHashLoader({
+    this.selectedOffer = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName),
     });
   }
@@ -49,7 +49,7 @@ class logsAddToolCtrl {
     if (this.currentUsage < this.maxUsage) {
       return this.callback();
     } if (this.isBasicOffer(this.selectedOffer.data)) {
-      return this.ControllerModalHelper.showInfoModal({
+      return this.CucControllerModalHelper.showInfoModal({
         titleText: this.$translate.instant('options_upgradequotalink_increase_quota_title'),
         text: this.$translate.instant('options_upgradequotalink_increase_quota_message'),
         okButtonText: this.$translate.instant('options_upgradequotalink_increase_quota_upgrade'),
@@ -58,7 +58,7 @@ class logsAddToolCtrl {
     }
     const quotaReached = this.$translate.instant('add_tool_quota_reached');
     const purchaseMore = this.$translate.instant('add_tool_purchase_more_options');
-    return this.ControllerModalHelper.showInfoModal({
+    return this.CucControllerModalHelper.showInfoModal({
       titleText: this.$translate.instant('add_tool_title'),
       text: `${quotaReached} ${this.toolType}. ${purchaseMore}`,
       okButtonText: this.$translate.instant('add_tool_options_purchase'),

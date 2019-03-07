@@ -5,21 +5,23 @@ class VpsCloudDatabaseCtrl {
     $timeout,
     $translate,
     $window,
-    CloudMessage,
-    ControllerHelper,
+    CucCloudMessage,
+    CucControllerHelper,
     OvhApiHostingPrivateDatabase,
     VpsService,
+    REDIRECT_URLS,
   ) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.ApiPrivateDb = OvhApiHostingPrivateDatabase.v6();
     this.ApiWhitelist = OvhApiHostingPrivateDatabase.Whitelist().v6();
     this.VpsService = VpsService;
+    this.REDIRECT_URLS = REDIRECT_URLS;
   }
 
   $onInit() {
@@ -84,7 +86,7 @@ class VpsCloudDatabaseCtrl {
         }, database,
       )))
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_fetch_error'),
           _(error).get('data.message', ''),
         ].join(' '));
@@ -112,12 +114,12 @@ class VpsCloudDatabaseCtrl {
     ).$promise
       .then(() => {
         this.$timeout(() => {
-          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
+          this.CucCloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_add_success'));
           this.refresh();
         }, 2000);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_whitelist_add_error'),
           _(error).get('data.message', ''),
         ].join(' '));
@@ -129,12 +131,12 @@ class VpsCloudDatabaseCtrl {
     return this.ApiWhitelist.deleteIp({ serviceName }, { ip: this.ipv4 }).$promise
       .then(() => {
         this.$timeout(() => {
-          this.CloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
+          this.CucCloudMessage.success(this.$translate.instant('vps_tab_cloud_database_whitelist_remove_success'));
           this.refresh();
         }, 2000);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_tab_cloud_database_whitelist_remove_error'),
           _(error).get('data.message', ''),
         ].join(' '));
@@ -143,7 +145,10 @@ class VpsCloudDatabaseCtrl {
 
   goToCloudDatabase(database) {
     const { serviceName } = database;
-    this.$window.open(this.ControllerHelper.navigation.getUrl('privateDatabase', { serviceName }));
+    this.$window.open(this.CucControllerHelper.navigation.constructor.getUrl(
+      _.get(this.REDIRECT_URLS, 'privateDatabase'),
+      { serviceName },
+    ));
   }
 }
 

@@ -1,12 +1,20 @@
 <div class="container-fluid">
-    <div class="text-center mt-5 py-5">
-        <h1 class="d-inline">
-            <span data-translate="homepage_welcome_to_your_manager_1"></span>
-            <span data-translate="homepage_welcome_to_your_manager_2"></span>
-        </h1>
-        <p class="lead"
-           data-ng-bind-html="'homepage_top_guides_header' | translate: { url: $ctrl.guides.all }">
-        </p>
+    <div class="mt-5 py-5">
+        <oui-message data-type="info"
+            data-on-dismissed="$ctrl.onNewRegionsAvailableMessageDismiss()"
+            data-ng-if="$ctrl.showNewRegionsAvailableMessage && $ctrl.TARGET !== 'US'">
+            {{ ::'homepage_apac_regions_availability_message'| translate }}
+        </oui-message>
+        <div class="text-center">
+            <h1>
+                <span data-translate="homepage_welcome_to_your_manager_1"></span>
+                <span data-translate="homepage_welcome_to_your_manager_2"></span>
+            </h1>
+            <p class="lead"
+                data-translate="homepage_top_guides_header"
+                data-translate-values="{ url: $ctrl.guides.all }">
+            </p>
+        </div>
     </div>
     <div class="row d-md-flex">
         <div class="col-md-10 col-lg-8 mx-md-auto">

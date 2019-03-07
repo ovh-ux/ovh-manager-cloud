@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesNodesCtrl {
   constructor(
     $q, $state, $stateParams, $timeout, $translate, $uibModal,
-    CloudMessage, Kubernetes,
+    CucCloudMessage, Kubernetes,
     KUBERNETES,
   ) {
     this.$q = $q;
@@ -10,22 +10,23 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
     this.$timeout = $timeout;
     this.$translate = $translate;
     this.$uibModal = $uibModal;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
   }
 
   $onInit() {
-    this.loading = false;
+    this.loading = true;
 
     this.getPublicCloudProject()
       .then(() => this.getInfo())
-      .then(() => this.loadMessages());
+      .then(() => this.loadMessages())
+      .finally(() => { this.loading = false; });
   }
 
   loadMessages() {
-    this.CloudMessage.unSubscribe('paas.kube.nodes');
-    this.messageHandler = this.CloudMessage.subscribe('paas.kube.nodes', { onMessage: () => this.refreshMessages() });
+    this.CucCloudMessage.unSubscribe('paas.kube.nodes');
+    this.messageHandler = this.CucCloudMessage.subscribe('paas.kube.nodes', { onMessage: () => this.refreshMessages() });
   }
 
   refreshMessages() {
@@ -37,33 +38,33 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       .then((cluster) => { this.cluster = cluster; })
       .catch((error) => {
         this.cluster = { id: this.serviceName, name: this.serviceName };
-        this.CloudMessage.error(this.$translate.instant('kube_error', { message: _.get(error, 'data.message') }));
+        this.CucCloudMessage.error(this.$translate.instant('kube_error', { message: _.get(error, 'data.message') }));
       });
   }
 
   getInfo() {
-    return this.$q.all(
+    return this.$q.all([
       this.getNodes(),
       this.getCluster(),
-    ).finally(() => { this.loading = false; });
+    ]);
   }
 
   getNodes() {
     return this.Kubernetes.getNodes(this.serviceName)
       .then((nodes) => { this.nodes = nodes; })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('kube_nodes_error')));
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('kube_nodes_error')));
   }
 
   getAssociatedFlavor(node) {
-    if (node.instanceId) {
-      return this.Kubernetes.getAssociatedInstance(node.projectId, node.instanceId)
-        .then(instance => _.set(node, 'formattedFlavor', this.Kubernetes.formatFlavor(instance.flavor)))
-        .catch(() => {
-          _.set(node, 'formattedFlavor', this.$translate.instant('kube_nodes_flavor_error'));
-        });
-    }
-
-    return this.$q.when(_.set(node, 'formattedFlavor', node.flavor));
+    return this.Kubernetes.getFlavors(node.projectId)
+      .then((flavors) => {
+        _.set(node, 'formattedFlavor', this.Kubernetes.formatFlavor(
+          _.find(flavors, { name: node.flavor }),
+        ));
+      })
+      .catch(() => {
+        _.set(node, 'formattedFlavor', this.$translate.instant('kube_nodes_flavor_error'));
+      });
   }
 
   getPublicCloudProject() {
@@ -73,7 +74,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
         this.project = project;
       })
       .catch(() => {
-        this.CloudMessage.error(this.$translate.instant('kube_nodes_project_error'));
+        this.CucCloudMessage.error(this.$translate.instant('kube_nodes_project_error'));
       });
   }
 
@@ -95,7 +96,7 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       })
       .catch((error) => {
         if (error) {
-          this.CloudMessage.error(this.$translate.instant('kube_nodes_delete_error', { message: error }));
+          this.CucCloudMessage.error(this.$translate.instant('kube_nodes_delete_error', { message: error }));
         }
       });
   }
@@ -118,19 +119,21 @@ angular.module('managerApp').controller('KubernetesNodesCtrl', class KubernetesN
       })
       .catch((error) => {
         if (error) {
-          this.CloudMessage.error(error);
+          this.CucCloudMessage.error(error);
         }
       });
   }
 
   displaySuccessMessage(message) {
-    this.CloudMessage.success(this.$translate.instant(message));
-    this.$timeout(() => this.CloudMessage.flushMessages(), 3000);
+    this.CucCloudMessage.success(this.$translate.instant(message));
+    this.$timeout(() => this.CucCloudMessage.flushMessages(), 3000);
   }
 
   refreshNodes() {
+    this.loading = true;
     this.Kubernetes.resetClusterCache();
     this.Kubernetes.resetNodesCache();
-    return this.getInfo();
+    return this.getInfo()
+      .finally(() => { this.loading = false; });
   }
 });

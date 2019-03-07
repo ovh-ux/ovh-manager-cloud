@@ -1,14 +1,14 @@
 (() => {
   class CloudOfferCtrl {
-    constructor($q, $stateParams, $translate, FeatureAvailabilityService, CloudProjectAdd,
-      CloudMessage, OvhApiMe, TARGET, URLS) {
+    constructor($q, $stateParams, $translate, CucFeatureAvailabilityService, CloudProjectAdd,
+      CucCloudMessage, OvhApiMe, TARGET, URLS) {
       this.$q = $q;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
       this.CloudProjectAdd = CloudProjectAdd;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.User = OvhApiMe;
-      this.FeatureAvailabilityService = FeatureAvailabilityService;
+      this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
       this.TARGET = TARGET;
       this.URLS = URLS;
 
@@ -82,7 +82,7 @@
     init() {
       this.loadMessage();
       // Call not available for US customer
-      this.FeatureAvailabilityService.hasFeaturePromise('PROJECT', 'expressOrder').then((hasFeature) => {
+      this.CucFeatureAvailabilityService.hasFeaturePromise('PROJECT', 'expressOrder').then((hasFeature) => {
         if (!hasFeature) {
           this.loaders.agreements = true;
           this.CloudProjectAdd.getProjectInfo()
@@ -101,8 +101,8 @@
     }
 
     loadMessage() {
-      this.CloudMessage.unSubscribe('iaas.pci-project-onboarding');
-      this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project-onboarding', { onMessage: () => this.refreshMessage() });
+      this.CucCloudMessage.unSubscribe('iaas.pci-project-onboarding');
+      this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project-onboarding', { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage() {
@@ -113,7 +113,7 @@
       this.loaders.start = true;
 
       // Use express order for US customers
-      if (this.FeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
+      if (this.CucFeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
         window.location.href = this.URLS.website_order['cloud-resell-eu'].US(this.model.projectName);
         return;
       }
@@ -144,7 +144,7 @@
       });
       return this.$q.all(agreements)
         .catch((err) => {
-          this.CloudMessage.error(this.$translate.instant('cpa_error') + (err.data && err.data.message ? ` (${err.data.message})` : ''));
+          this.CucCloudMessage.error(this.$translate.instant('cpa_error') + (err.data && err.data.message ? ` (${err.data.message})` : ''));
           this.loaders.start = false;
         });
     }

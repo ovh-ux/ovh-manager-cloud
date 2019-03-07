@@ -2,13 +2,13 @@ import { OFFER_AGORA_MAPPING } from './vps-upgrade.constants';
 
 export default class VpsUpgradeCtrl {
   /* @ngInject */
-  constructor($q, $translate, $window, CloudMessage, connectedUser, OvhApiOrder,
+  constructor($q, $translate, $window, CucCloudMessage, connectedUser, OvhApiOrder,
     OvhApiVps, stateVps) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CloudMessage = CucCloudMessage;
     this.connectedUser = connectedUser;
     this.OvhApiOrder = OvhApiOrder;
     this.OvhApiVps = OvhApiVps;

@@ -1,22 +1,22 @@
 class LogsListCtrl {
-  constructor($state, CloudMessage, LogsListService, ControllerHelper, LogsConstants,
-    LogsHelperService, OrderHelperService) {
+  constructor($state, CucCloudMessage, LogsListService, CucControllerHelper, LogsConstants,
+    LogsHelperService, CucOrderHelperService) {
     this.$state = $state;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsListService = LogsListService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsHelperService = LogsHelperService;
-    this.OrderHelperService = OrderHelperService;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.messages = [];
 
     this.initLoaders();
   }
 
   $onInit() {
-    this.CloudMessage.unSubscribe('dbaas.logs.list');
-    this.messageHandler = this.CloudMessage.subscribe('dbaas.logs.list', { onMessage: () => this.refreshMessage() });
-    this.OrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
+    this.CucCloudMessage.unSubscribe('dbaas.logs.list');
+    this.messageHandler = this.CucCloudMessage.subscribe('dbaas.logs.list', { onMessage: () => this.refreshMessage() });
+    this.CucOrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
       .then((url) => {
         this.orderURL = url;
       });
@@ -43,7 +43,7 @@ class LogsListCtrl {
   }
 
   initLoaders() {
-    this.accounts = this.ControllerHelper.request.getArrayLoader({
+    this.accounts = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsListService.getServices(),
     });
     this.accounts.load();

@@ -1,6 +1,6 @@
 class LogsDashboardsService {
   constructor($q, OvhApiDbaas, LogsOptionsService,
-    LogsHelperService, LogsConstants, UrlHelper) {
+    LogsHelperService, LogsConstants, CucUrlHelper) {
     this.$q = $q;
     this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().v6();
     this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
@@ -9,7 +9,7 @@ class LogsDashboardsService {
     this.LogsOptionsService = LogsOptionsService;
     this.LogsHelperService = LogsHelperService;
     this.LogsConstants = LogsConstants;
-    this.UrlHelper = UrlHelper;
+    this.CucUrlHelper = CucUrlHelper;
   }
 
   /**
@@ -248,7 +248,10 @@ class LogsDashboardsService {
    * @memberof LogsDashboardsService
    */
   getDashboardGraylogUrl(aapiDashboard) {
-    const url = this.UrlHelper.constructor.findUrl(aapiDashboard, this.LogsConstants.GRAYLOG_WEBUI);
+    const url = this.CucUrlHelper.constructor.findUrl(
+      aapiDashboard,
+      this.LogsConstants.GRAYLOG_WEBUI,
+    );
     if (!url) {
       this.LogsHelperService.handleError('logs_dashboards_get_graylog_url_error', {}, { dashboardName: aapiDashboard.info.title });
     }

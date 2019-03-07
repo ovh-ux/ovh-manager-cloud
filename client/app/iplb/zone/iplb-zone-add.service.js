@@ -1,14 +1,14 @@
 class IpLoadBalancerZoneAddService {
-  constructor($q, $translate, $window, CloudMessage, OrderHelperService, OvhApiIpLoadBalancing,
-    RegionService, ServiceHelper) {
+  constructor($q, $translate, $window, CucCloudMessage, CucOrderHelperService,
+    OvhApiIpLoadBalancing, CucRegionService, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.OrderHelperService = OrderHelperService;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucOrderHelperService = CucOrderHelperService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucRegionService = CucRegionService;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getOrderableZones(serviceName) {
@@ -23,7 +23,7 @@ class IpLoadBalancerZoneAddService {
         const availableZones = response.orderableZones.concat(response.suspendedZones);
         return _.map(
           availableZones,
-          zone => _.extend(zone, this.RegionService.getRegion(zone.name)),
+          zone => _.extend(zone, this.CucRegionService.getRegion(zone.name)),
         );
       })
       .then(availableZones => _.map(availableZones, zone => _.extend(zone, {
@@ -32,12 +32,12 @@ class IpLoadBalancerZoneAddService {
           reason: zone.state === 'released' ? this.$translate.instant('iplb_zone_add_available_released') : '',
         },
       })))
-      .catch(this.ServiceHelper.errorHandler('iplb_zone_add_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_zone_add_loading_error'));
   }
 
   addZones(serviceName, zones) {
     if (zones.length === 0) {
-      return this.ServiceHelper.errorHandler('iplb_zone_add_selection_error')({});
+      return this.CucServiceHelper.errorHandler('iplb_zone_add_selection_error')({});
     }
 
     return this.$q.all({
@@ -47,7 +47,7 @@ class IpLoadBalancerZoneAddService {
       .then((response) => {
         if (response.created.quantity > 0) {
           this.$window.open(response.created.url, '_blank');
-          return this.ServiceHelper.successHandler({
+          return this.CucServiceHelper.successHandler({
             text: this.$translate.instant(zones.length > 1 ? 'iplb_zone_add_plural_success' : 'iplb_zone_add_single_success'),
             link: {
               text: this.$translate.instant('common_complete_order'),
@@ -57,7 +57,7 @@ class IpLoadBalancerZoneAddService {
         }
 
         if (response.activated.quantity > 0) {
-          return this.ServiceHelper.successHandler({
+          return this.CucServiceHelper.successHandler({
             text: this.$translate.instant(zones.length > 1 ? 'iplb_zone_activate_plural_success' : 'iplb_zone_activate_single_success'),
           })(response);
         }
@@ -72,7 +72,7 @@ class IpLoadBalancerZoneAddService {
       return emptyResponse;
     }
 
-    return this.OrderHelperService.getExpressOrderUrl(_.map(zones, zone => ({
+    return this.CucOrderHelperService.getExpressOrderUrl(_.map(zones, zone => ({
       productId: 'ipLoadbalancing',
       serviceName,
       planCode: zone.planCode,
@@ -82,7 +82,7 @@ class IpLoadBalancerZoneAddService {
         url: response,
       }))
       .catch((response) => {
-        this.ServiceHelper.errorHandler(zones.length > 1 ? 'iplb_zone_add_plural_error' : 'iplb_zone_add_single_error')(response);
+        this.CucServiceHelper.errorHandler(zones.length > 1 ? 'iplb_zone_add_plural_error' : 'iplb_zone_add_single_error')(response);
         return emptyResponse;
       });
   }
@@ -103,7 +103,7 @@ class IpLoadBalancerZoneAddService {
         quantity: zones.length,
       }))
       .catch((response) => {
-        this.ServiceHelper.errorHandler(zones.length > 1 ? 'iplb_zone_add_plural_error' : 'iplb_zone_add_single_error')(response);
+        this.CucServiceHelper.errorHandler(zones.length > 1 ? 'iplb_zone_add_plural_error' : 'iplb_zone_add_single_error')(response);
         return emptyResponse;
       });
   }

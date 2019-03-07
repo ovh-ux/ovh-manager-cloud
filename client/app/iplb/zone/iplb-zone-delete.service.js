@@ -1,11 +1,18 @@
 class IpLoadBalancerZoneDeleteService {
-  constructor($q, $translate, CloudMessage, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+  constructor(
+    $q,
+    $translate,
+    CucCloudMessage,
+    OvhApiIpLoadBalancing,
+    CucRegionService,
+    CucServiceHelper,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucRegionService = CucRegionService;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getDeletableZones(serviceName) {
@@ -22,15 +29,15 @@ class IpLoadBalancerZoneDeleteService {
           value: zone.state !== 'released',
           reason: zone.state === 'released' ? this.$translate.instant('iplb_zone_delete_unavailable_already_released') : '',
         },
-      }, this.RegionService.getRegion(zone.name))))
-      .catch(this.ServiceHelper.errorHandler('iplb_zone_delete_loading_error'));
+      }, this.CucRegionService.getRegion(zone.name))))
+      .catch(this.CucServiceHelper.errorHandler('iplb_zone_delete_loading_error'));
   }
 
   deleteZones(serviceName, zones) {
     return this.getDeletableZones(serviceName)
       .then((deletableZones) => {
         if (zones.length === 0) {
-          return this.ServiceHelper.errorHandler('iplb_zone_delete_selection_error')({});
+          return this.CucServiceHelper.errorHandler('iplb_zone_delete_selection_error')({});
         }
 
         const deletableZoneCount = _.filter(
@@ -44,7 +51,7 @@ class IpLoadBalancerZoneDeleteService {
         };
 
         if (zones.length > deletableZoneCount) {
-          return this.ServiceHelper.errorHandler(messages.tooMany)({
+          return this.CucServiceHelper.errorHandler(messages.tooMany)({
             data: {
               zoneQuantity: deletableZoneCount,
             },
@@ -58,8 +65,10 @@ class IpLoadBalancerZoneDeleteService {
             .delete({ serviceName, name: zone.name }, {}).$promise,
         );
         return this.$q.all(promises)
-          .then(() => this.ServiceHelper.successHandler(messages.success)({ zones: deletedZones }))
-          .catch(this.ServiceHelper.errorHandler(messages.error));
+          .then(() => this.CucServiceHelper.successHandler(messages.success)(
+            { zones: deletedZones },
+          ))
+          .catch(this.CucServiceHelper.errorHandler(messages.error));
       });
   }
 }

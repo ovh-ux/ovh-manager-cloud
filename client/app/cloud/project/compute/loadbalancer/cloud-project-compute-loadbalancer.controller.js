@@ -1,7 +1,7 @@
 class CloudProjectComputeLoadbalancerCtrl {
   constructor(
     $q, $translate, $state, $stateParams, CloudProjectComputeLoadbalancerService,
-    OvhApiCloudProjectIplb, OvhApiIpLoadBalancing, CloudMessage, OvhApiMe, URLS,
+    OvhApiCloudProjectIplb, OvhApiIpLoadBalancing, CucCloudMessage, OvhApiMe, URLS,
   ) {
     this.$q = $q;
     this.$translate = $translate;
@@ -9,7 +9,7 @@ class CloudProjectComputeLoadbalancerCtrl {
     this.CloudProjectComputeLoadbalancerService = CloudProjectComputeLoadbalancerService;
     this.OvhApiCloudProjectIplb = OvhApiCloudProjectIplb;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiMe = OvhApiMe;
 
     this.serviceName = $stateParams.projectId;
@@ -92,7 +92,7 @@ class CloudProjectComputeLoadbalancerCtrl {
         });
       }).catch((err) => {
         this.table.loadbalancer = null;
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('cpc_loadbalancer_error'),
           (err.data && err.data.message) || '',
         ].join(' '));

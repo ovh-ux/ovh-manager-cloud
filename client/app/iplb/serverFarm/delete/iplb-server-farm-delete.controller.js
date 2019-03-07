@@ -1,9 +1,9 @@
 class IpLoadBalancerServerFarmDeleteCtrl {
-  constructor($stateParams, $uibModalInstance, ControllerHelper, farm,
+  constructor($stateParams, $uibModalInstance, CucControllerHelper, farm,
     IpLoadBalancerServerFarmService) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
 
     this.farm = farm;
@@ -13,7 +13,7 @@ class IpLoadBalancerServerFarmDeleteCtrl {
   }
 
   confirm() {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService
         .delete(this.type, this.$stateParams.serviceName, this.farmId)
         .then(response => this.$uibModalInstance.close(response))

@@ -1,19 +1,22 @@
 class VpsDashboardCtrl {
-  constructor($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage,
-    ControllerHelper, RegionService, SidebarMenu, VpsActionService, VpsService) {
+  constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
+    CucControllerHelper, CucRegionService, SidebarMenu, VpsActionService, VpsService, URLS,
+    REDIRECT_URLS) {
     this.$filter = $filter;
     this.$q = $q;
     this.$scope = $scope;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
-    this.RegionService = RegionService;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucRegionService = CucRegionService;
     this.serviceName = $stateParams.serviceName;
     this.SidebarMenu = SidebarMenu;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
+    this.URLS = URLS;
+    this.REDIRECT_URLS = REDIRECT_URLS;
 
     this.plan = {};
     this.summary = {};
@@ -27,7 +30,7 @@ class VpsDashboardCtrl {
   }
 
   initLoaders() {
-    this.vps = this.ControllerHelper.request.getHashLoader({
+    this.vps = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
       successHandler: () => {
         this.getRegionsGroup(this.vps.data.location.datacentre);
@@ -37,11 +40,11 @@ class VpsDashboardCtrl {
         }
       },
     });
-    this.summary = this.ControllerHelper.request.getHashLoader({
+    this.summary = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getTabSummary(this.serviceName, true),
       successHandler: () => this.initOptionsActions(),
     });
-    this.plan = this.ControllerHelper.request.getHashLoader({
+    this.plan = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getServiceInfos(this.serviceName),
     });
   }
@@ -96,7 +99,7 @@ class VpsDashboardCtrl {
           });
       })
       .catch((error) => {
-        this.CloudMessage.error(error || this.$translate.instant('vps_additional_disk_info_fail'));
+        this.CucCloudMessage.error(error || this.$translate.instant('vps_additional_disk_info_fail'));
         return this.$q.reject(error);
       })
       .finally(() => { this.loaders.disk = false; });
@@ -194,9 +197,9 @@ class VpsDashboardCtrl {
         const menuItem = this.SidebarMenu.getItemById(this.serviceName);
         menuItem.title = newDisplayName;
 
-        this.CloudMessage.success(this.$translate.instant('vps_setting_name_updated'));
+        this.CucCloudMessage.success(this.$translate.instant('vps_setting_name_updated'));
       })
-      .catch(err => this.CloudMessage.error(err))
+      .catch(err => this.CucCloudMessage.error(err))
       .finally(() => this.vps.load());
   }
 
@@ -204,7 +207,7 @@ class VpsDashboardCtrl {
     this.actions = {
       changeName: {
         text: this.$translate.instant('common_edit'),
-        callback: () => this.ControllerHelper.modal.showNameChangeModal({
+        callback: () => this.CucControllerHelper.modal.showNameChangeModal({
           serviceName: this.serviceName,
           displayName: this.vps.data.displayName,
           onSave: newDisplayName => this.updateName(newDisplayName),
@@ -224,17 +227,17 @@ class VpsDashboardCtrl {
       },
       manageAutorenew: {
         text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl('renew', { serviceName: this.serviceName, serviceType: 'VPS' }),
+        href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'renew'), { serviceName: this.serviceName, serviceType: 'VPS' }),
         isAvailable: () => !this.vps.loading && !this.loaders.plan,
       },
       manageContact: {
         text: this.$translate.instant('common_manage'),
-        href: this.ControllerHelper.navigation.getUrl('contacts', { serviceName: this.serviceName }),
+        href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'contacts'), { serviceName: this.serviceName }),
         isAvailable: () => !this.vps.loading,
       },
       manageIps: {
         text: this.$translate.instant('vps_configuration_add_ipv4_title_button'),
-        href: this.ControllerHelper.navigation.getUrl('ip', { serviceName: this.serviceName }),
+        href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'ip'), { serviceName: this.serviceName }),
         isAvailable: () => !this.vps.loading && !this.loaders.ip,
       },
       displayIps: {
@@ -300,15 +303,15 @@ class VpsDashboardCtrl {
         isAvailable: () => !this.loaders.polling && !this.vps.loading,
       },
     };
-    this.ControllerHelper.navigation.getConstant('changeOwner').then((url) => { this.actions.changeOwner.href = url; });
+    this.CucControllerHelper.navigation.getConstant(_.get(this.URLS, 'changeOwner', '')).then((url) => { this.actions.changeOwner.href = url; });
   }
 
   getRegionsGroup(regions) {
     this.regionsGroup = [];
     if (regions) {
       this.detailedRegions = !_.isArray(regions)
-        ? [this.RegionService.getRegion(regions)]
-        : _.map(regions, region => this.RegionService.getRegion(region));
+        ? [this.CucRegionService.getRegion(regions)]
+        : _.map(regions, region => this.CucRegionService.getRegion(region));
     }
     this.regionsGroup = _.groupBy(this.detailedRegions, 'country');
   }

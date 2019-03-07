@@ -1,10 +1,10 @@
 class VpsDetailCtrl {
-  constructor($filter, $scope, $stateParams, CloudMessage, CloudNavigation, VpsTaskService) {
+  constructor($filter, $scope, $stateParams, CucCloudMessage, CucCloudNavigation, VpsTaskService) {
     this.$filter = $filter;
     this.$scope = $scope;
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsTaskService = VpsTaskService;
 
@@ -13,7 +13,7 @@ class VpsDetailCtrl {
 
   $onInit() {
     this.loadMessage();
-    this.CloudNavigation.init({
+    this.CucCloudNavigation.init({
       state: 'iaas.vps.detail',
       stateParams: {
         serviceName: this.serviceName,
@@ -24,8 +24,8 @@ class VpsDetailCtrl {
   }
 
   loadMessage() {
-    this.CloudMessage.unSubscribe('iaas.vps.detail');
-    this.messageHandler = this.CloudMessage.subscribe('iaas.vps.detail', { onMessage: () => this.refreshMessage() });
+    this.CucCloudMessage.unSubscribe('iaas.vps.detail');
+    this.messageHandler = this.CucCloudMessage.subscribe('iaas.vps.detail', { onMessage: () => this.refreshMessage() });
   }
 
   refreshMessage() {

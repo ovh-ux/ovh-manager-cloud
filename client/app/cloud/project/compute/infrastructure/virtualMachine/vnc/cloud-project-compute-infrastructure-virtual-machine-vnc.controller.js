@@ -2,7 +2,7 @@
 
 angular.module('managerApp').controller('CloudProjectComputeInfrastructureVirtualmachineVncCtrl',
   function CloudProjectComputeInfrastructureVirtualmachineVncCtrl(
-    $uibModalInstance, params, $translate, CloudMessage, OvhApiCloudProjectInstance,
+    $uibModalInstance, params, $translate, CucCloudMessage, OvhApiCloudProjectInstance,
   ) {
     const self = this;
     this.loading = true;
@@ -20,7 +20,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructureVirtua
         self.data.url = vncInfos.url;
         self.loading = false;
       }, (err) => {
-        CloudMessage.error([
+        CucCloudMessage.error([
           $translate.instant('cpcivm_vnc_error'),
           (err.data && err.data.message) || '',
         ].join(' '));

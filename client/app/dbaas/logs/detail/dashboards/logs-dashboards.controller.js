@@ -1,15 +1,15 @@
 class LogsDashboardsCtrl {
   constructor($state, $stateParams, $translate, LogsDashboardsService,
-    ControllerHelper, CloudMessage, LogsConstants, ControllerModalHelper) {
+    CucControllerHelper, CucCloudMessage, LogsConstants, CucControllerModalHelper) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
     this.LogsDashboardsService = LogsDashboardsService;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsConstants = LogsConstants;
-    this.ControllerModalHelper = ControllerModalHelper;
+    this.CucControllerModalHelper = CucControllerModalHelper;
 
     this.initLoaders();
   }
@@ -20,10 +20,10 @@ class LogsDashboardsCtrl {
    * @memberof LogsDashboardsCtrl
    */
   initLoaders() {
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService.getQuota(this.serviceName),
     });
-    this.dashboards = this.ControllerHelper.request.getArrayLoader({
+    this.dashboards = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsDashboardsService.getDashboards(this.serviceName),
     });
     this.quota.load();
@@ -79,8 +79,8 @@ class LogsDashboardsCtrl {
    * @memberof LogsDashboardsCtrl
    */
   showDeleteConfirm(dashboard) {
-    this.CloudMessage.flushChildMessage();
-    return this.ControllerHelper.modal.showDeleteModal({
+    this.CucCloudMessage.flushChildMessage();
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_dashboards_delete_title'),
       textHtml: this.$translate.instant('logs_dashboards_delete_message', { dashboardName: dashboard.title }),
     }).then(() => this.delete(dashboard));
@@ -93,10 +93,10 @@ class LogsDashboardsCtrl {
    * @memberof LogsDashboardsCtrl
    */
   delete(dashboard) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService.deleteDashboard(this.serviceName, dashboard)
         .then(() => this.initLoaders())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load();
   }
@@ -128,7 +128,7 @@ class LogsDashboardsCtrl {
    * @memberof LogsDashboardsCtrl
    */
   showOfferUpgradeInfo() {
-    return this.ControllerModalHelper.showInfoModal({
+    return this.CucControllerModalHelper.showInfoModal({
       titleText: this.$translate.instant('options_upgradequotalink_increase_quota_title'),
       text: this.$translate.instant('logs_dashboards_basic_offer_info_message'),
       okButtonText: this.$translate.instant('options_upgradequotalink_increase_quota_upgrade'),

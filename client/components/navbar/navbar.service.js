@@ -5,13 +5,13 @@ class ManagerNavbarService {
     $q,
     $translate,
     atInternet,
-    FeatureAvailabilityService,
+    CucFeatureAvailabilityService,
     LANGUAGES,
     MANAGER_URLS,
     NavbarBuilder,
     NavbarNotificationService,
     OtrsPopupService,
-    ProductsService,
+    CucProductsService,
     REDIRECT_URLS,
     SessionService,
     ssoAuthentication,
@@ -24,13 +24,13 @@ class ManagerNavbarService {
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
-    this.featureAvailabilityService = FeatureAvailabilityService;
+    this.featureAvailabilityService = CucFeatureAvailabilityService;
     this.LANGUAGES = LANGUAGES;
     this.MANAGER_URLS = MANAGER_URLS;
     this.NavbarBuilder = NavbarBuilder;
     this.navbarNotificationService = NavbarNotificationService;
     this.otrsPopupService = OtrsPopupService;
-    this.productsService = ProductsService;
+    this.productsService = CucProductsService;
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.sections = {
       iaas: ['PROJECT', 'VPS', 'SERVER', 'DEDICATED_CLOUD', 'HOUSING'],

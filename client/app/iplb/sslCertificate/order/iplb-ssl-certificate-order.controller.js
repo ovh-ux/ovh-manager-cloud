@@ -1,18 +1,18 @@
 class IpLoadBalancerSslCertificateOrderCtrl {
-  constructor($q, $state, $stateParams, $location, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, $location, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerSslCertificateService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$location = $location;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
   }
 
   $onInit() {
-    this.paidOffers = this.ControllerHelper.request.getArrayLoader({
+    this.paidOffers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerSslCertificateService.getCertificateProducts(
         this.$stateParams.serviceName,
       )

@@ -1,12 +1,12 @@
 class LogsStreamsArchivesCtrl {
-  constructor($interval, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
+  constructor($interval, $state, $stateParams, $translate, CucCloudMessage, CucControllerHelper,
     LogsStreamsService, LogsConstants, LogsStreamsArchivesService) {
     this.$interval = $interval;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsConstants = LogsConstants;
     this.LogsStreamsArchivesService = LogsStreamsArchivesService;
@@ -47,11 +47,11 @@ class LogsStreamsArchivesCtrl {
    * @memberof LogsStreamsArchivesHomeCtrl
    */
   initLoaders() {
-    this.archiveIds = this.ControllerHelper.request.getArrayLoader({
+    this.archiveIds = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsArchivesService
         .getArchiveIds(this.serviceName, this.streamId),
     });
-    this.stream = this.ControllerHelper.request.getHashLoader({
+    this.stream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.getStream(this.serviceName, this.streamId),
     });
   }
@@ -64,7 +64,7 @@ class LogsStreamsArchivesCtrl {
    * @memberof LogsStreamsArchivesHomeCtrl
    */
   reloadArchiveDetail(archiveId) {
-    this.archiveReload = this.ControllerHelper.request.getArrayLoader({
+    this.archiveReload = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsArchivesService.getArchives(
         this.serviceName,
         this.streamId,
@@ -192,8 +192,8 @@ class LogsStreamsArchivesCtrl {
       type: 'info',
       archive,
     });
-    this.ControllerHelper.scrollPageToTop();
-    this.archiveDownload = this.ControllerHelper.request.getHashLoader({
+    this.CucControllerHelper.scrollPageToTop();
+    this.archiveDownload = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsArchivesService
         .getDownloadUrl(this.serviceName, this.streamId, archive.archiveId),
     });
@@ -201,7 +201,7 @@ class LogsStreamsArchivesCtrl {
     this.archiveDownload.load()
       .then((urlInfo) => {
         this.removeNotification(archive);
-        this.ControllerHelper.constructor.downloadUrl(urlInfo.url);
+        this.CucControllerHelper.constructor.downloadUrl(urlInfo.url);
       });
   }
 
@@ -216,7 +216,7 @@ class LogsStreamsArchivesCtrl {
    */
   loadArchives({ offset, pageSize }) {
     this.stopRetrievalDelayUpdate();
-    this.archives = this.ControllerHelper.request.getArrayLoader({
+    this.archives = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsArchivesService.getArchives(
         this.serviceName,
         this.streamId,
@@ -252,7 +252,7 @@ class LogsStreamsArchivesCtrl {
       type: 'info',
       archive,
     });
-    this.ControllerHelper.scrollPageToTop();
+    this.CucControllerHelper.scrollPageToTop();
     this.LogsStreamsArchivesService.getDownloadUrl(
       this.serviceName,
       this.streamId,

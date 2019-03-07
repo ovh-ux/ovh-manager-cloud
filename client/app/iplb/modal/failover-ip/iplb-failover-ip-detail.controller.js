@@ -1,13 +1,14 @@
 class IpLoadBalancerFailoverIpDetailCtrl {
-  constructor($uibModalInstance, serviceName, ControllerHelper, IpLoadBalancerFailoverIpService) {
+  constructor($uibModalInstance, serviceName, CucControllerHelper,
+    IpLoadBalancerFailoverIpService) {
     this.$uibModalInstance = $uibModalInstance;
 
     this.serviceName = serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
 
-    this.ips = this.ControllerHelper.request.getArrayLoader({
+    this.ips = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerFailoverIpService.getFailoverIps(this.serviceName),
     });
   }

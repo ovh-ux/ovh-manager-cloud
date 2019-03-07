@@ -1,12 +1,12 @@
 class VpsDeleteSnapshotCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = serviceName;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
   }
 
   cancel() {
@@ -14,10 +14,10 @@ class VpsDeleteSnapshotCtrl {
   }
 
   confirm() {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.deleteSnapshot(this.serviceName)
-        .then(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_delete_snapshot_success', { serviceName: this.serviceName })))
-        .catch(error => this.CloudMessage.error(error.message || this.$translate.instant('vps_configuration_delete_snapshot_fail')))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_delete_snapshot_success', { serviceName: this.serviceName })))
+        .catch(error => this.CucCloudMessage.error(error.message || this.$translate.instant('vps_configuration_delete_snapshot_fail')))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.delete.load();

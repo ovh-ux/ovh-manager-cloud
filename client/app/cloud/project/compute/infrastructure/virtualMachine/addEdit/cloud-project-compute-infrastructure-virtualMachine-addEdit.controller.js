@@ -84,7 +84,7 @@ angular.module('managerApp')
       atInternet,
       CloudFlavorService,
       CloudImageService,
-      CloudMessage,
+      CucCloudMessage,
       CloudProjectComputeInfrastructureOrchestrator,
       OvhApiCloudProjectSshKey,
       OvhApiCloudProjectFlavor,
@@ -98,7 +98,7 @@ angular.module('managerApp')
       OvhApiCloudProjectSnapshot,
       OvhApiMe,
       ovhDocUrl,
-      RegionService,
+      CucRegionService,
       CLOUD_FLAVOR_SPECIFIC_IMAGE,
       CLOUD_FLAVORTYPE_CATEGORY,
       CLOUD_INSTANCE_CPU_FREQUENCY,
@@ -115,7 +115,7 @@ angular.module('managerApp')
 
       let oldVmName = null;
 
-      self.regionService = RegionService;
+      self.regionService = CucRegionService;
       self.enums = {
         flavorsTypes: [],
         imagesTypes: [],
@@ -376,6 +376,38 @@ angular.module('managerApp')
             self.states.hasOldFlavors = true;
           }
         });
+        // Remove flavors if OS has any restrictions,
+        // for example NVIDIA OS can only be deployed on t1 or t2 instances/flavours
+        const restrictedFlavors = _.get(self.vmInEdition, 'image.flavorType', []);
+        const selectedFlavour = _.get(self.vmInEdition, 'flavor');
+        let selectedFlavourInFilterList = false;
+        if (!_.isEmpty(restrictedFlavors)) {
+          self.displayData.categories = _.filter(
+            self.displayData.categories,
+            (category) => {
+              const currentCategory = category;
+              currentCategory.flavors = _.filter(
+                category.flavors,
+                (flavor) => {
+                  const isRestricted = _.includes(restrictedFlavors, flavor.shortType);
+                  if (!selectedFlavourInFilterList
+                    && isRestricted
+                    && selectedFlavour.id === flavor.id) {
+                    selectedFlavourInFilterList = true;
+                  }
+                  return isRestricted;
+                },
+              );
+              return currentCategory.flavors.length > 0;
+            },
+          );
+          // check if previously selected instance is available in filtered list
+          // set flavour/instance to empty if
+          // previously selefcted flavour is not available in filtered list
+          if (!selectedFlavourInFilterList) {
+            _.set(self.vmInEdition, 'flavor', null);
+          }
+        }
         self.displayData.categories = _.sortBy(self.displayData.categories, 'order');
       }
 
@@ -669,7 +701,7 @@ angular.module('managerApp')
           });
         }, 99);
 
-        $rootScope.$broadcast('highlighed-element.show', `compute,${self.vmInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.show', `compute,${self.vmInEdition.id}`);
       }
 
       function editWithParam() {
@@ -870,12 +902,12 @@ angular.module('managerApp')
             CloudProjectComputeInfrastructureOrchestrator
               .saveMultipleNewVms(self.vmInEdition, self.model.vmCount)
               .then(() => {
-                $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+                $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
                 CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
                   false,
                   self.vmInEdition,
                 );
-                CloudMessage.success($translate.instant('cpcivm_addedit_save_multiple_success'));
+                CucCloudMessage.success($translate.instant('cpcivm_addedit_save_multiple_success'));
                 atInternet.trackOrder({
                   name: `[INSTANCE]::${self.vmInEdition.flavor.name.replace(/[\W_]+/g, '')}[${self.vmInEdition.flavor.name}]`,
                   page: 'iaas::pci-project::compute::infrastructure::order',
@@ -884,7 +916,7 @@ angular.module('managerApp')
                   orderId: self.vmInEdition.id,
                 });
               }, (err) => {
-                CloudMessage.error([$translate.instant('cpcivm_addedit_save_multiple_error'), (err.data && err.data.message) || ''].join(' '));
+                CucCloudMessage.error([$translate.instant('cpcivm_addedit_save_multiple_error'), (err.data && err.data.message) || ''].join(' '));
                 self.loaders.launch = false;
               });
             /**
@@ -892,7 +924,7 @@ angular.module('managerApp')
              */
           } else {
             CloudProjectComputeInfrastructureOrchestrator.saveNewVm(self.vmInEdition).then(() => {
-              $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+              $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
               CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(
                 false,
                 self.vmInEdition,
@@ -905,9 +937,9 @@ angular.module('managerApp')
               });
             }, (err) => {
               if (err && err.status === 409) {
-                CloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
+                CucCloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
               } else {
-                CloudMessage.error([$translate.instant('cpcivm_edit_vm_post_error'), (err.data && err.data.message) || ''].join(' '));
+                CucCloudMessage.error([$translate.instant('cpcivm_edit_vm_post_error'), (err.data && err.data.message) || ''].join(' '));
               }
               self.loaders.launch = false;
             });
@@ -915,14 +947,14 @@ angular.module('managerApp')
         } else {
         // PUT
           CloudProjectComputeInfrastructureOrchestrator.saveEditedVm(self.vmInEdition).then(() => {
-            $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+            $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
             CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
           }, (err) => {
             if (err && err.status === 409) {
-              CloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
+              CucCloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
             } else {
               angular.forEach(err.errors, (err) => { // eslint-disable-line
-                CloudMessage.error([$translate.instant(`cpcivm_edit_vm_${err.requestName}_error`), err.error.message || ''].join(' '));
+                CucCloudMessage.error([$translate.instant(`cpcivm_edit_vm_${err.requestName}_error`), err.error.message || ''].join(' '));
               });
             }
             self.loaders.launch = false;
@@ -935,7 +967,7 @@ angular.module('managerApp')
         if (self.vmInEdition.status === 'DRAFT') {
           CloudProjectComputeInfrastructureOrchestrator.deleteVm(self.vmInEdition);
         }
-        $rootScope.$broadcast('highlighed-element.hide', `compute,${self.vmInEdition.id}`);
+        $rootScope.$broadcast('cuc-highlighted-element.hide', `compute,${self.vmInEdition.id}`);
         CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
       };
 
@@ -1137,7 +1169,7 @@ angular.module('managerApp')
 
               connectFlavorTogether();
             }, (err) => {
-              CloudMessage.error([$translate.instant('cpcivm_addedit_flavor_error'), err.data.message || ''].join(' '));
+              CucCloudMessage.error([$translate.instant('cpcivm_addedit_flavor_error'), err.data.message || ''].join(' '));
               return $q.reject(err);
             }),
             OvhApiCloudProjectQuota.v6().query({
@@ -1145,14 +1177,14 @@ angular.module('managerApp')
             }).$promise.then((quota) => {
               self.panelsData.quota = quota;
             }, (err) => {
-              CloudMessage.error([$translate.instant('cpcivm_addedit_quota_error'), err.data.message || ''].join(' '));
+              CucCloudMessage.error([$translate.instant('cpcivm_addedit_quota_error'), err.data.message || ''].join(' '));
               self.cancelVm();
               return $q.reject(err);
             }),
             OvhCloudPriceHelper.getPrices(serviceName).then((flavorsPrices) => {
               self.panelsData.prices = flavorsPrices;
             }, (err) => {
-              CloudMessage.error([$translate.instant('cpcivm_addedit_flavor_price_error'), err.data.message || ''].join(' '));
+              CucCloudMessage.error([$translate.instant('cpcivm_addedit_flavor_price_error'), err.data.message || ''].join(' '));
               return $q.reject(err);
             }),
             self.getImages(),
@@ -1436,6 +1468,21 @@ angular.module('managerApp')
         return _.find(CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, elem => elem === flavorType);
       };
 
+      /**
+       * We dont support OS and flavour change at same time.
+       * NVIDIA OS supported only in t1 and t2 instances.
+       * If previous flavour is not t1 or t2, dont allow to select NVIDIA.
+       * This is also applicable for other images with restricted flavours.
+       */
+      self.isImageSelectableInEditMode = function isImageSelectableInEditMode(image) {
+        const flavorTypes = _.get(image, 'flavorType', []);
+        if (self.vmInEdition.status === 'DRAFT' || _.isEmpty(flavorTypes)) {
+          return true;
+        }
+        const flavorType = _.get(self.vmInEdition, 'flavor.shortType', null);
+        return _.includes(flavorTypes, flavorType);
+      };
+
       self.getRealFlavor = function getRealFlavor(flavor, category) {
         const osType = self.vmInEdition.image ? self.vmInEdition.image.type : 'linux';
         const flex = category === 'accelerated' ? false : self.model.flex;
@@ -1545,7 +1592,7 @@ angular.module('managerApp')
             );
           }).catch((err) => {
             self.panelsData.images = null;
-            CloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.panelsData.images = false;
           });
@@ -1570,7 +1617,7 @@ angular.module('managerApp')
             }
           }, (err) => {
             self.panelsData.snapshots = null;
-            CloudMessage.error([$translate.instant('cpcivm_addedit_image_snapshot_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_image_snapshot_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.panelsData.snapshots = false;
           });
@@ -1603,7 +1650,7 @@ angular.module('managerApp')
             self.panelsData.regions = regionsList;
           }, (err) => {
             self.panelsData.regions = null;
-            CloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_image_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.panelsData.regions = false;
           });
@@ -1631,7 +1678,7 @@ angular.module('managerApp')
             getDisplaySshKeys();
           }, (err) => {
             self.panelsData.sshKeys = null;
-            CloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.panelsData.sshKeys = false;
           });
@@ -1646,7 +1693,7 @@ angular.module('managerApp')
           );
 
           if (uniq) {
-            CloudMessage.info($translate.instant('cpcivm_addedit_sshkey_add_submit_name_error'));
+            CucCloudMessage.info($translate.instant('cpcivm_addedit_sshkey_add_submit_name_error'));
             return;
           }
 
@@ -1660,10 +1707,10 @@ angular.module('managerApp')
             self.toggleAddSshKey();
             return self.getSshKeys(true).then(() => {
               self.model.sshKeyId = newSshKey.id;
-              CloudMessage.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
+              CucCloudMessage.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
             });
           }, (err) => {
-            CloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.sshKey.add = false;
           });
@@ -1680,9 +1727,9 @@ angular.module('managerApp')
           region: self.model.region,
         }).$promise.then(newSshKey => self.getSshKeys(true).then(() => {
           self.model.sshKeyId = newSshKey.id;
-          CloudMessage.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
+          CucCloudMessage.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
         })).catch((err) => {
-          CloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
         }).finally(() => {
           self.loaders.sshKey.add = false;
         });
@@ -1698,9 +1745,9 @@ angular.module('managerApp')
             if (keyId === self.model.sshKeyId) {
               self.model.sshKeyId = null;
             }
-            CloudMessage.success($translate.instant('cpcivm_addedit_sshkey_delete_success'));
+            CucCloudMessage.success($translate.instant('cpcivm_addedit_sshkey_delete_success'));
           }), (err) => {
-            CloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_delete_error'), err.data.message || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpcivm_addedit_sshkey_delete_error'), err.data.message || ''].join(' '));
           }).finally(() => {
             self.loaders.sshKey.remove = false;
           });
@@ -1745,7 +1792,7 @@ angular.module('managerApp')
           self.panelsData.publicNetworks = networks;
         }).catch((error) => {
           self.panelsData.publicNetworks = [];
-          CloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_public_network_query_error', {
+          CucCloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_public_network_query_error', {
             message: JSON.stringify(error),
           }));
         }).finally(() => {
@@ -1767,7 +1814,7 @@ angular.module('managerApp')
           return self.fetchPrivateNetworksSubnets();
         }).catch((error) => {
           self.panelsData.privateNetworks = [];
-          CloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_private_network_query_error', {
+          CucCloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_private_network_query_error', {
             message: JSON.stringify(error),
           }));
         }).finally(() => {
@@ -1808,7 +1855,7 @@ angular.module('managerApp')
           })
           .catch((error) => {
             self.panelsData.subnets = [];
-            CloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_private_network_subnet_query_error', {
+            CucCloudMessage.error($translate.instant('cpcivm_addedit_advanced_options_private_network_subnet_query_error', {
               message: error.data.message || JSON.stringify(error),
             }));
           })

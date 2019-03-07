@@ -1,16 +1,16 @@
 class LogsAliasesLinkCtrl {
-  constructor($q, $stateParams, $translate, LogsAliasesService, ControllerHelper,
-    LogsStreamsService, LogsIndexService, CloudMessage, ServiceHelper) {
+  constructor($q, $stateParams, $translate, LogsAliasesService, CucControllerHelper,
+    LogsStreamsService, LogsIndexService, CucCloudMessage, CucServiceHelper) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsAliasesService = LogsAliasesService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsIndexService = LogsIndexService;
-    this.CloudMessage = CloudMessage;
-    this.ServiceHelper = ServiceHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.initLoaders();
   }
@@ -26,7 +26,7 @@ class LogsAliasesLinkCtrl {
     this.availableIndices = this.$q.defer();
     this.attachedIndices = this.$q.defer();
 
-    this.alias = this.ControllerHelper.request.getHashLoader({
+    this.alias = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .getAliasWithStreamsAndIndices(this.serviceName, this.$stateParams.aliasId)
         .then((alias) => {
@@ -42,12 +42,12 @@ class LogsAliasesLinkCtrl {
     });
     this.alias.load();
 
-    this.streams = this.ControllerHelper.request.getArrayLoader({
+    this.streams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName),
     });
     this.streams.load();
 
-    this.indices = this.ControllerHelper.request.getArrayLoader({
+    this.indices = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName),
     });
     this.indices.load();
@@ -88,12 +88,12 @@ class LogsAliasesLinkCtrl {
   }
 
   attachStream(items) {
-    this.CloudMessage.flushChildMessage();
-    this.saveStream = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saveStream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .attachStream(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('logs_aliases_attach_stream_fail', { stream: items[0].info.title }));
+          this.CucCloudMessage.error(this.$translate.instant('logs_aliases_attach_stream_fail', { stream: items[0].info.title }));
           this.$q.reject();
         }),
     });
@@ -101,12 +101,12 @@ class LogsAliasesLinkCtrl {
   }
 
   detachStream(items) {
-    this.CloudMessage.flushChildMessage();
-    this.saveStream = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saveStream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .detachStream(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('logs_aliases_detach_stream_fail', { stream: items[0].info.title }));
+          this.CucCloudMessage.error(this.$translate.instant('logs_aliases_detach_stream_fail', { stream: items[0].info.title }));
           this.$q.reject();
         }),
     });
@@ -114,12 +114,12 @@ class LogsAliasesLinkCtrl {
   }
 
   attachIndex(items) {
-    this.CloudMessage.flushChildMessage();
-    this.saveIndex = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saveIndex = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .attachIndex(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('logs_aliases_attach_index_fail', { index: items[0].info.name }));
+          this.CucCloudMessage.error(this.$translate.instant('logs_aliases_attach_index_fail', { index: items[0].info.name }));
           this.$q.reject();
         }),
     });
@@ -127,12 +127,12 @@ class LogsAliasesLinkCtrl {
   }
 
   detachIndex(items) {
-    this.CloudMessage.flushChildMessage();
-    this.saveIndex = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saveIndex = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsAliasesService
         .detachIndex(this.serviceName, this.alias.data.info, items[0].info)
         .catch(() => {
-          this.CloudMessage.error(this.$translate.instant('logs_aliases_detach_index_fail', { index: items[0].info.name }));
+          this.CucCloudMessage.error(this.$translate.instant('logs_aliases_detach_index_fail', { index: items[0].info.name }));
           this.$q.reject();
         }),
     });

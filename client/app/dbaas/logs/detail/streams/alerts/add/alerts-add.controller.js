@@ -1,6 +1,6 @@
 class LogsStreamsAlertsAddCtrl {
-  constructor($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, LogsConstants,
-    LogsStreamsAlertsService) {
+  constructor($q, $state, $stateParams, $window, CucCloudMessage, CucControllerHelper,
+    LogsConstants, LogsStreamsAlertsService) {
     this.$q = $q;
     this.$state = $state;
     this.serviceName = $stateParams.serviceName;
@@ -9,8 +9,8 @@ class LogsStreamsAlertsAddCtrl {
     this.alertType = $stateParams.type;
     this.editMode = Boolean(this.alertId);
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsConstants = LogsConstants;
     this.LogsStreamsAlertsService = LogsStreamsAlertsService;
@@ -18,7 +18,7 @@ class LogsStreamsAlertsAddCtrl {
 
   $onInit() {
     if (this.editMode) {
-      this.alert = this.ControllerHelper.request.getHashLoader({
+      this.alert = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsStreamsAlertsService
           .getAlert(this.serviceName, this.streamId, this.alertId),
       });
@@ -42,8 +42,8 @@ class LogsStreamsAlertsAddCtrl {
       return this.$q.reject();
     }
 
-    this.CloudMessage.flushChildMessage();
-    this.savingAlert = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.savingAlert = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editMode
         ? this.LogsStreamsAlertsService
           .updateAlert(this.serviceName, this.streamId, this.alert.data)
