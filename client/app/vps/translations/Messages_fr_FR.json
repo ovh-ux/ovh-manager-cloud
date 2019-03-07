@@ -443,6 +443,7 @@
   "vps_dashboard_name": "Nom",
   "vps_status_disabled": "Désactivé",
   "vps_status_enabled": "Activé",
+  "vps_option_unavailable": "Option non disponible",
   "vps_dashboard_product": "Modèle",
   "vps_configuration_sla_title_enable": "Activer le monitoring SLA pour ce serveur ?",
   "vps_configuration_sla_title_disable": "Désactiver le monitoring SLA pour ce serveur ?",

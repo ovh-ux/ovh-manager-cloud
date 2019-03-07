@@ -1,11 +1,12 @@
 export default class VpsVeeamOrderCtrl {
   /* @ngInject */
-  constructor($q, $translate, $window, CloudMessage, connectedUser, OvhApiOrder, stateVps, URLS) {
+  constructor($q, $translate, $window, CucCloudMessage, connectedUser,
+    OvhApiOrder, stateVps, URLS) {
     // dependencies injections
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.connectedUser = connectedUser;
     this.OvhApiOrder = OvhApiOrder;
     this.stateVps = stateVps;
@@ -49,7 +50,7 @@ export default class VpsVeeamOrderCtrl {
 
     this.$window.open(expressOrderUrl, '_blank');
 
-    this.CloudMessage.success({
+    this.CucCloudMessage.success({
       textHtml: this.$translate.instant('vps_configuration_veeam_order_success', {
         url: expressOrderUrl,
       }),
@@ -90,7 +91,7 @@ export default class VpsVeeamOrderCtrl {
         return this.veeamOption;
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_configuration_veeam_order_load_error'),
           _.get(error, 'data.message'),
         ].join(' '));

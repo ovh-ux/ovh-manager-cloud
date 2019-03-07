@@ -1,10 +1,10 @@
 export default class VpsOrderDiskCtrl {
   /* @ngInject */
-  constructor($translate, $window, CloudMessage, connectedUser, OvhApiOrder, stateVps, URLS) {
+  constructor($translate, $window, CucCloudMessage, connectedUser, OvhApiOrder, stateVps, URLS) {
     // dependencies injections
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.connectedUser = connectedUser;
     this.OvhApiOrder = OvhApiOrder;
     this.stateVps = stateVps;
@@ -51,7 +51,7 @@ export default class VpsOrderDiskCtrl {
 
     this.$window.open(expressOrderUrl, '_blank');
 
-    this.CloudMessage.success({
+    this.CucCloudMessage.success({
       textHtml: this.$translate.instant('vps_order_additional_disk_success', {
         url: expressOrderUrl,
       }),
@@ -96,7 +96,7 @@ export default class VpsOrderDiskCtrl {
         this.chunkedDiskOptions = _.chunk(diskOptions, 3);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_order_additional_disk_load_error'),
           _.get(error, 'data.message'),
         ].join(' '));

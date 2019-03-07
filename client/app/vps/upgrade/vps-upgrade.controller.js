@@ -8,7 +8,7 @@ export default class VpsUpgradeCtrl {
     this.$q = $q;
     this.$translate = $translate;
     this.$window = $window;
-    this.CloudMessage = CucCloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.connectedUser = connectedUser;
     this.OvhApiOrder = OvhApiOrder;
     this.OvhApiVps = OvhApiVps;
@@ -94,7 +94,7 @@ export default class VpsUpgradeCtrl {
         });
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
           _.get(error, 'data.message'),
         ].join(' '));
@@ -130,7 +130,7 @@ export default class VpsUpgradeCtrl {
         this.$window.open(response.order.url, '_blank');
 
         // display success message
-        this.CloudMessage.success({
+        this.CucCloudMessage.success({
           textHtml: this.$translate.instant('vps_configuration_upgradevps_success', {
             orderId: response.order.orderId,
             url: response.order.url,
@@ -141,7 +141,7 @@ export default class VpsUpgradeCtrl {
         return this.$onInit();
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
           _.get(error, 'data.message'),
         ].join(' '));
@@ -209,7 +209,7 @@ export default class VpsUpgradeCtrl {
         }].concat(availableUpgrade), 3);
       })
       .catch((error) => {
-        this.CloudMessage.error([
+        this.CucCloudMessage.error([
           this.$translate.instant('vps_configuration_upgradevps_fail'),
           _.get(error, 'data.message'),
         ].join(' '));
