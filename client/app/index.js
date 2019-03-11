@@ -41,8 +41,6 @@ import 'matchmedia-ng';
 import 'ng-slide-down';
 import 'script-loader!uri.js/src/URI.min.js';
 import 'script-loader!validator-js/validator.js';
-import 'ng-at-internet';
-import 'at-internet-ui-router-plugin';
 import 'ovh-jquery-ui-draggable-ng';
 import 'ovh-angular-responsive-popover';
 import 'ovh-angular-actions-menu';
