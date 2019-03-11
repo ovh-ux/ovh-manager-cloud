@@ -86,6 +86,7 @@ angular.module('managerApp')
       CloudImageService,
       CucCloudMessage,
       CloudProjectComputeInfrastructureOrchestrator,
+      CucControllerHelper,
       OvhApiCloudProjectSshKey,
       OvhApiCloudProjectFlavor,
       OvhCloudPriceHelper,
@@ -99,6 +100,7 @@ angular.module('managerApp')
       OvhApiMe,
       ovhDocUrl,
       CucRegionService,
+      CucServiceHelper,
       CLOUD_FLAVOR_SPECIFIC_IMAGE,
       CLOUD_FLAVORTYPE_CATEGORY,
       CLOUD_INSTANCE_CPU_FREQUENCY,
@@ -653,6 +655,7 @@ angular.module('managerApp')
           // get flavors, gets the images (for windows image price calculation), get the quotas
           flavors: self.getFlavors(),
           regions: self.getRegions(),
+          availableRegions: self.getAvailableRegions(),
           sshKeys: self.getSshKeys(),
           hasVrack: CloudProjectComputeInfrastructureOrchestrator.hasVrack(),
           user: OvhApiMe.v6().get().$promise,
@@ -1655,6 +1658,18 @@ angular.module('managerApp')
             self.loaders.panelsData.regions = false;
           });
         }
+      };
+
+      // --------- AVAILABLE REGIONS panel ---------
+
+      self.getAvailableRegions = function getAvailableRegions() {
+        self.availableRegions = CucControllerHelper.request.getHashLoader({
+          loaderFunction: () => OvhApiCloudProjectRegion.AvailableRegions().v6()
+            .query({ serviceName })
+            .$promise
+            .catch(error => CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+        });
+        return self.availableRegions.load();
       };
 
       // --------- SSHKEYS panel ---------

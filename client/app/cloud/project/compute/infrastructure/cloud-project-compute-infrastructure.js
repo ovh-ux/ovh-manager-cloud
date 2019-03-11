@@ -46,6 +46,7 @@ angular.module('managerApp')
             '../../rename',
             './openstackClient',
             '../../../../vrack/modals',
+            '../../regions',
           ],
           format: 'json',
         },

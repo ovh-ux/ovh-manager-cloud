@@ -1,7 +1,7 @@
 class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
   constructor($q, $state, $stateParams, atInternet,
     CloudFlavorService, CloudImageService, CloudProjectVirtualMachineAddService, CloudRegionService,
-    OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
+    CucControllerHelper, OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
     OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
     OvhApiCloudProjectSshKey, CucCurrencyService, CucRegionService, CucServiceHelper, ovhDocUrl,
@@ -14,6 +14,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.CloudImageService = CloudImageService;
     this.OvhCloudPriceHelper = OvhCloudPriceHelper;
     this.CloudRegionService = CloudRegionService;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
     this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
     this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
@@ -199,29 +200,49 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
           this.regions = _.map(regions, region => this.CucRegionService.getRegion(region));
           return this.VirtualMachineAddService.getRegionsByImageType(this.regions, this.images, _.get(this.model, 'imageType'));
         }),
+      availableRegions: this.fetchAvailableRegions(),
       quota: this.promiseQuota
         .then((quota) => { this.quota = quota; })
         .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step2_quota_ERROR')),
     })
-      .then(({ regions }) => {
-        _.forEach(regions, (region) => {
+      .then(({ regions, availableRegions }) => {
+        const allRegions = regions.concat(availableRegions);
+        _.forEach(allRegions, (region) => {
           // Add quota info
           this.CloudRegionService.constructor.addOverQuotaInfos(region, this.quota);
-
           // Check SSH Key opportunity
           if (_.get(this.model, 'sshKey.regions', false)) {
             this.CloudRegionService.constructor.checkSshKey(region, this.model.sshKey.regions);
           }
+          // check region active/inactive
+          const isRegionActive = this.CloudRegionService.constructor.isActive(region);
+          if (!isRegionActive) {
+            this.CloudRegionService.constructor.setRegionInactiveMessage(region);
+          }
         });
-
         this.displayedRegions = this.VirtualMachineAddService.constructor
-          .groupRegionsByDatacenter(regions);
+          .groupRegionsByDatacenter(allRegions);
         this.groupedRegions = _.groupBy(this.displayedRegions, 'continent');
       })
       .catch(this.CucServiceHelper.errorHandler('cpcivm_add_step2_regions_ERROR'))
       .finally(() => {
         this.loaders.step2 = false;
       });
+  }
+
+  fetchAvailableRegions() {
+    this.availableRegions = this.CucControllerHelper.request.getHashLoader({
+      loaderFunction: () => this.OvhApiCloudProjectRegion.AvailableRegions().v6()
+        .query({ serviceName: this.serviceName })
+        .$promise
+        .then(regionIds => _.map(regionIds, (region) => {
+          const regionDetails = this.CucRegionService.getRegion(region.name);
+          _.set(regionDetails, 'notAvailable', true);
+          return regionDetails;
+        }))
+        .catch(error => this.CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+    });
+    return this.availableRegions.load();
   }
 
   isStep2Valid() {
