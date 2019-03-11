@@ -2,7 +2,7 @@ class CloudProjectComputeCtrl {
   constructor(
     $q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CucCloudMessage,
     CloudProjectOrchestrator,
-    CloudUserPref, FeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS,
+    CucUserPref, CucFeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS,
   ) {
     this.$q = $q;
     this.$scope = $scope;
@@ -15,8 +15,8 @@ class CloudProjectComputeCtrl {
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
     this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
     this.OvhApiMe = OvhApiMe;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
-    this.CloudUserPref = CloudUserPref;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
+    this.CucUserPref = CucUserPref;
     this.moment = moment;
     this.messages = [];
   }
@@ -74,7 +74,7 @@ class CloudProjectComputeCtrl {
       hasTooManyIps: this.CloudProjectOrchestrator.hasTooManyIps(this.$stateParams.projectId),
     }).then(result => result.hasTooManyInstances || result.hasTooManyIps);
 
-    return this.CloudUserPref.get(`cloud_project_${this.serviceName}_overview`).then((params) => {
+    return this.CucUserPref.get(`cloud_project_${this.serviceName}_overview`).then((params) => {
       if (params && params.hide) {
         return false;
       }
@@ -124,11 +124,11 @@ class CloudProjectComputeCtrl {
   }
 
   dismissInfoMessage(messageId) {
-    this.CloudUserPref.set(messageId, { markedAsRead: new Date() });
+    this.CucUserPref.set(messageId, { markedAsRead: new Date() });
   }
 
   isInfoMessageDismissed(message) {
-    return this.CloudUserPref.get(message.messageId).then((value) => {
+    return this.CucUserPref.get(message.messageId).then((value) => {
       _.set(message, 'dismissed', !!(!_.isEmpty(value) && value.markedAsRead));
       return message;
     });

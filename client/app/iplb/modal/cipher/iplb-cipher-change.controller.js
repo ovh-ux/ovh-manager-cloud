@@ -1,18 +1,18 @@
 class IpLoadBalancerCipherChangeCtrl {
-  constructor($uibModalInstance, serviceName, ControllerHelper, IpLoadBalancerCipherService) {
+  constructor($uibModalInstance, serviceName, CucControllerHelper, IpLoadBalancerCipherService) {
     this.$uibModalInstance = $uibModalInstance;
 
     this.serviceName = serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
 
     this.IpLoadBalancerCipherService = IpLoadBalancerCipherService;
 
-    this.cipher = this.ControllerHelper.request.getHashLoader({
+    this.cipher = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerCipherService.getCipher(this.serviceName),
       successHandler: () => { this.model.cipherType.value = this.cipher.data.type; },
     });
 
-    this.cipherTypes = this.ControllerHelper.request.getArrayLoader({
+    this.cipherTypes = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerCipherService.getCipherTypes(this.serviceName),
     });
 

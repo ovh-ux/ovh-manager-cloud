@@ -131,14 +131,14 @@
                     <div class="infra-vrack-public-ctnr">
 
                         <!-- Unlink Volume -->
-                        <div class="volume-content-unlinked highlighed-element"
+                        <div class="volume-content-unlinked cuc-highlighted-element"
                              data-ng-class="{ hasCurrentDroppableVolume : ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume}"
                              data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vRack"
                              data-droppable
                              data-droppable-id="unlinked"
                              data-droppable-info="{'group':'unlinkedVolumes'}"
                              data-droppable-options="{{ComputeInfrastructureDiagramCtrl.droppableOptions.unlinked}}"
-                             data-highlighed-element="unlinked_volumes">
+                             data-cuc-highlighted-element="unlinked_volumes">
 
                             <div class="volume-resume"
                                  data-ng-style="(ComputeInfrastructureDiagramCtrl.helpDisplay.openUnlinkVolume || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === 'unlinked') && {'border-bottom' : 'none'}">
@@ -175,7 +175,7 @@
                                         <!-- Loop over volumes in current listed region -->
                                         <ul class="volume-content-unlinked-items clearfix">
 
-                                            <li class="volume-detail-item volume-detail-item-{{volume.region}} highlighed-element"
+                                            <li class="volume-detail-item volume-detail-item-{{volume.region}} cuc-highlighted-element"
                                                 data-draggable
                                                 data-draggable-disabled="{{volume.getStatusGroup() !== 'ACTIVE'
                                                     || volume.openDetail
@@ -186,7 +186,7 @@
                                                 data-draggable-info="{'volume':{{volume}}, 'srcVmId':'unlinked'}"
                                                 data-draggable-options="{{ComputeInfrastructureDiagramCtrl.draggableOptions.unlinked}}"
                                                 data-draggable-src-cloned-class="volume-detail-item-helper"
-                                                data-highlighed-element="{{volume.id}}"
+                                                data-cuc-highlighted-element="{{volume.id}}"
                                                 data-ng-class="{
                                                     'visibility-hide' : !ComputeInfrastructureDiagramCtrl.dragDropHelper.draggingIsDoing && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.id === volume.id,
                                                     'opacity5' : volume.getStatusGroup() === 'DRAFT'
@@ -375,7 +375,7 @@
                                  data-ui-sortable="ComputeInfrastructureDiagramCtrl.vmSortableOptions">
 
                                 <!-- VM -->
-                                <div class="cloud-vm public-cloud-vm highlighed-element {{vm.status}}"
+                                <div class="cloud-vm public-cloud-vm cuc-highlighted-element{{vm.status}}"
                                      data-ng-class="{
                                         'collapsed': vm.collapsed,
                                         'pointer': (vm.status === 'DRAFT' || vm.status === 'ACTIVE')
@@ -393,7 +393,7 @@
                                      data-droppable-info="{'group':'linkedVolumes'}"
                                      data-droppable-id="{{vm.id}}"
                                      data-droppable-options="{{ { accept : ComputeInfrastructureDiagramCtrl.droppableOptions.vmUnlinked(vm) } }}"
-                                     data-highlighed-element="vm,{{vm.id}},vm-{{vm.getStatusGroup()}},vm-{{vm.getStatusGroup()}}-{{vm.region}},vm-{{vm.getStatusGroup()}}-{{ComputeInfrastructureDiagramCtrl.getVmContinent(vm)}}"
+                                     data-cuc-highlighted-element="vm,{{vm.id}},vm-{{vm.getStatusGroup()}},vm-{{vm.getStatusGroup()}}-{{vm.region}},vm-{{vm.getStatusGroup()}}-{{ComputeInfrastructureDiagramCtrl.getVmContinent(vm)}}"
                                      data-instance-id="{{:: vm.id }}">
 
                                     <!-- loadings -->
@@ -811,7 +811,7 @@
                                                             || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id">
                                                         <ul class="volume-content-linked-items clearfix volume-content-linked-items-{{vm.id}}">
 
-                                                            <li class="volume-detail-item volume-detail-item-{{vm.region}} highlighed-element"
+                                                            <li class="volume-detail-item volume-detail-item-{{vm.region}} cuc-highlighted-element"
                                                                 data-ng-class="{'visibility-hide' : !ComputeInfrastructureDiagramCtrl.dragDropHelper.draggingIsDoing && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.id === volume.id}"
                                                                 data-ng-repeat="volume in ComputeInfrastructureDiagramCtrl.volumes[vm.id]"
                                                                 data-draggable
@@ -824,7 +824,7 @@
                                                                 data-draggable-info="{'volume':{{volume}}, 'srcVmId':'{{vm.id}}'}"
                                                                 data-draggable-options="{{ComputeInfrastructureDiagramCtrl.draggableOptions.linked}}"
                                                                 data-draggable-src-cloned-class="volume-detail-item-helper"
-                                                                data-highlighed-element="{{volume.id}}"
+                                                                data-cuc-highlighted-element="{{volume.id}}"
                                                                 data-uib-tooltip="{{ volume.name + ' (' + volume.region + ')' }}">
 
                                                                 <button type="button" class="btn volume-detail-item-illustration"
@@ -1056,9 +1056,9 @@
 
                             <!-- IP LIST -->
                             <div data-ng-repeat="ip in ComputeInfrastructureDiagramCtrl.infra.internet.ipList.getItems() | orderBy:[ComputeInfrastructureDiagramCtrl.ipAutoSort(), ComputeInfrastructureDiagramCtrl.ipSortNatural()] track by ip.id">
-                                <div class="ip highlighed-element ip-{{::ip.type}} fade-transition"
+                                <div class="ip cuc-highlighted-element ip-{{::ip.type}} fade-transition"
                                      data-ng-class="{'sortable-disabled': !!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit || ComputeInfrastructureDiagramCtrl.sort.ipAutoSort}"
-                                     data-highlighed-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}"
+                                     data-cuc-highlighted-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}"
                                      data-instance-id="{{:: ip.routedTo }}"
                                      data-ng-mouseenter="ComputeInfrastructureDiagramCtrl.highlightInstanceAndPublicIP($event)"
                                      data-ng-mouseleave="ComputeInfrastructureDiagramCtrl.removeAllFades()">
@@ -1122,10 +1122,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="ip ipV6 highlighed-element fade-transition"
+                                <div class="ip ipV6 cuc-highlighted-element fade-transition"
                                      data-ng-if="ip.ipV6"
                                      data-instance-id="{{:: ip.routedTo }}"
-                                     data-highlighed-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}">
+                                     data-cuc-highlighted-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}">
                                     <div class="ip-content clearfix">
                                         <span class="ip-text"
                                               data-ng-if="ip.ip">

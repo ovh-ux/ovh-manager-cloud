@@ -1,9 +1,9 @@
 class CloudProjectBillingVoucherAddCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CucCloudMessage,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage,
     OvhApiCloudProjectCredit, serviceName) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudMessage = CucCloudMessage;
     this.OvhApiCloudProjectCredit = OvhApiCloudProjectCredit;
     this.serviceName = serviceName;
@@ -19,7 +19,7 @@ class CloudProjectBillingVoucherAddCtrl {
 
   confirm() {
     this.CucCloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloudProjectCredit.v6().save({
         serviceName: this.serviceName,
       }, {

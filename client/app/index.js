@@ -53,8 +53,6 @@ import 'script-loader!ovh-angular-jsplumb/dist/ovh-angular-jsplumb.min.js';
 import 'ovh-common-style';
 import 'ovh-angular-q-allsettled';
 import 'ovh-angular-slider';
-import 'ovh-angular-proxy-request';
-import 'ovh-angular-user-pref';
 import 'ovh-angular-tail-logs';
 import 'script-loader!messenger/build/js/messenger.js';
 import 'script-loader!messenger/build/js/messenger-theme-future.js';
@@ -64,7 +62,6 @@ import 'script-loader!ovh-angular-browser-alert/dist/ovh-angular-browser-alert.j
 import 'ovh-angular-pagination-front';
 import 'ovh-angular-responsive-page-switcher';
 import 'ovh-angular-responsive-tabs';
-import 'ovh-angular-swimming-poll';
 import 'ovh-api-services';
 import 'ovh-angular-otrs';
 import 'script-loader!chart.js/dist/Chart.js';

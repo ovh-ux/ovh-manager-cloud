@@ -1,13 +1,13 @@
 class CloudProjectComputeInfrastructureOpenstackClientCtrl {
   constructor($interval, $q, $stateParams, $translate, CucCloudMessage,
-    CloudProjectComputeInfrastructureOpenstackClientService, ControllerHelper,
+    CloudProjectComputeInfrastructureOpenstackClientService, CucControllerHelper,
     OvhApiCloudProjectOpenstackClient, OvhApiCloudProjectRegion) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
     this.Service = CloudProjectComputeInfrastructureOpenstackClientService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
     this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
 
@@ -55,13 +55,13 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
   }
 
   initLoaders() {
-    this.session = this.ControllerHelper.request.getHashLoader({
+    this.session = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.Service.getSession({
         serviceName: this.serviceName,
         term: this.term,
       }),
     });
-    this.regions = this.ControllerHelper.request.getArrayLoader({
+    this.regions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.Service.getRegions(this.serviceName),
     });
   }

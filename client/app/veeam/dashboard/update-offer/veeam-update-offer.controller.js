@@ -1,12 +1,12 @@
 (() => {
   class VeeamUpdateOfferCtrl {
-    constructor($uibModalInstance, serviceName, ControllerHelper, VeeamService) {
+    constructor($uibModalInstance, serviceName, CucControllerHelper, VeeamService) {
       this.$uibModalInstance = $uibModalInstance;
       this.serviceName = serviceName;
-      this.ControllerHelper = ControllerHelper;
+      this.CucControllerHelper = CucControllerHelper;
       this.VeeamService = VeeamService;
 
-      this.orderInfo = this.ControllerHelper.request
+      this.orderInfo = this.CucControllerHelper.request
         .getArrayLoader(() => this.VeeamService.getOrderableOfferPrices(this.serviceName));
       this.orderPost = {};
 
@@ -25,7 +25,7 @@
     }
 
     confirm() {
-      this.orderPost = this.ControllerHelper.request
+      this.orderPost = this.CucControllerHelper.request
         .getArrayLoader({
           loaderFunction: () => this.VeeamService
             .updateOffer(this.serviceName, this.orderInfo.data.offer, this.orderInfo.data.duration),

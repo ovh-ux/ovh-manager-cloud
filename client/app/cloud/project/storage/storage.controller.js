@@ -10,10 +10,10 @@ angular.module('managerApp').controller('RA.storageCtrl', [
   'CloudStorageContainerTasksRunner',
   'CucCloudMessage',
   'ovhDocUrl',
-  'RegionService',
+  'CucRegionService',
   function ($filter, $rootScope, $scope, $stateParams, $translate, $uibModal, CloudStorageContainer,
     CloudStorageContainers, CloudStorageContainerTasksRunner, CucCloudMessage, ovhDocUrl,
-    RegionService) {
+    CucRegionService) {
     $scope.projectId = $stateParams.projectId;
     $scope.loaders = {
       storages: true,
@@ -23,7 +23,7 @@ angular.module('managerApp').controller('RA.storageCtrl', [
     $scope.storages = null;
     $scope.storagesFiltered = null; // for searching
     $scope.open = {};
-    $scope.regionService = RegionService;
+    $scope.regionService = CucRegionService;
 
     // guides
     $scope.guides = {

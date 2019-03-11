@@ -1,12 +1,12 @@
 angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivateNetworkDialogCtrl',
   function ($rootScope, $scope, $q, $timeout, $translate, $stateParams,
-    CloudProjectComputeInfrastructurePrivateNetworkDialogService, RegionService) {
+    CloudProjectComputeInfrastructurePrivateNetworkDialogService, CucRegionService) {
     const self = this;
 
     self.projectId = $stateParams.projectId;
 
     self.service = CloudProjectComputeInfrastructurePrivateNetworkDialogService;
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
 
     self.form = null;
 
@@ -51,7 +51,7 @@ angular.module('managerApp').controller('CloudProjectComputeInfrastructurePrivat
       ]).then(() => {
         self.presetNetwork(self.userInput.vlanId);
       }).finally(() => {
-        $rootScope.$broadcast('highlighed-element.show', 'compute');
+        $rootScope.$broadcast('cuc-highlighted-element.show', 'compute');
       });
 
       if (!self.service.areUrlsLoading()) {

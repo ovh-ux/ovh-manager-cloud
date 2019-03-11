@@ -1,9 +1,10 @@
 class HomeCtrl {
-  constructor($q, DocsService, FeatureAvailabilityService, ovhUserPref) {
+  constructor($q, DocsService, CucFeatureAvailabilityService, ovhUserPref, TARGET) {
     this.$q = $q;
     this.DocsService = DocsService;
-    this.FeatureAvailabilityService = FeatureAvailabilityService;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.ovhUserPref = ovhUserPref;
+    this.TARGET = TARGET;
   }
 
   $onInit() {
@@ -17,7 +18,7 @@ class HomeCtrl {
   }
 
   setSections() {
-    const sectionsPromise = _.map(this.defaultSections, section => this.FeatureAvailabilityService.hasFeaturePromise(section, 'guides'));
+    const sectionsPromise = _.map(this.defaultSections, section => this.CucFeatureAvailabilityService.hasFeaturePromise(section, 'guides'));
 
     return this.$q.all(sectionsPromise)
       .then((sections) => {

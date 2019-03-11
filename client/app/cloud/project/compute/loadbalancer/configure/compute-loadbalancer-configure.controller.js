@@ -3,7 +3,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     $anchorScroll, $scope, $state, $stateParams, $q, $location, $window, $translate,
     CloudProjectComputeLoadbalancerService, OvhApiIpLoadBalancing, OvhApiCloudProjectIplb,
     OvhApiCloudProject, ovhDocUrl, CucCloudMessage, IpLoadBalancerTaskService,
-    ControllerHelper, CucCloudPoll, ServiceHelper,
+    CucControllerHelper, CucCloudPoll, CucServiceHelper,
   ) {
     this.$anchorScroll = $anchorScroll;
     this.$scope = $scope;
@@ -19,9 +19,9 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     this.ovhDocUrl = ovhDocUrl;
     this.CucCloudMessage = CucCloudMessage;
     this.IpLoadBalancerTaskService = IpLoadBalancerTaskService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.CucCloudPoll = CucCloudPoll;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.serviceName = $stateParams.projectId;
     this.loadbalancerId = $stateParams.loadbalancerId;
@@ -56,7 +56,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
 
   $onInit() {
     // Get loadbalancer pending tasks and define poller
-    this.tasks = this.ControllerHelper.request.getArrayLoader({
+    this.tasks = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerTaskService.getTasks(this.loadbalancerId).then(tasks => _.filter(tasks, task => _.includes(['todo', 'doing'], task.status))),
       successHandler: () => this.startTaskPolling(),
     });

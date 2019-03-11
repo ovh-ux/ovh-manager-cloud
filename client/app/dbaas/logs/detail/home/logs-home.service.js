@@ -1,6 +1,6 @@
 class LogsHomeService {
   constructor($http, $q, $translate, LogsHelperService, LogsConstants, LogsOptionsService,
-    OvhApiDbaas, ServiceHelper, SidebarMenu) {
+    OvhApiDbaas, CucServiceHelper, SidebarMenu) {
     this.$http = $http;
     this.$q = $q;
     this.$translate = $translate;
@@ -14,7 +14,7 @@ class LogsHomeService {
     this.LogsConstants = LogsConstants;
     this.LogsOptionsService = LogsOptionsService;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
     this.SidebarMenu = SidebarMenu;
   }
 
@@ -28,7 +28,7 @@ class LogsHomeService {
   getAccount(serviceName) {
     return this.AccountingAapiService.me({ serviceName }).$promise
       .then(account => this.transformAccount(account))
-      .catch(this.ServiceHelper.errorHandler('logs_home_account_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_account_get_error'));
   }
 
   /**
@@ -41,7 +41,7 @@ class LogsHomeService {
   getAccountDetails(serviceName) {
     return this.DetailsAapiService.me({ serviceName }).$promise
       .then(accountDetails => this.transformAccountDetails(accountDetails))
-      .catch(this.ServiceHelper.errorHandler('logs_home_account_details_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_account_details_get_error'));
   }
 
   /**
@@ -99,7 +99,7 @@ class LogsHomeService {
           usageData: data,
         };
       })
-      .catch(this.ServiceHelper.errorHandler('logs_home_data_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_data_get_error'));
   }
 
   /**
@@ -153,7 +153,7 @@ class LogsHomeService {
    */
   getServiceInfos(serviceName) {
     return this.LogsLexiService.serviceInfos({ serviceName }).$promise
-      .catch(this.ServiceHelper.errorHandler('logs_home_service_info_get_error'));
+      .catch(this.CucServiceHelper.errorHandler('logs_home_service_info_get_error'));
   }
 
   /**
@@ -183,21 +183,38 @@ class LogsHomeService {
    * Updates the current display name information
    *
    * @param {any} serviceName
-   * @param {string} displayName
+   * @param {service} service
    * @returns promise which will resolve or reject once the operation is complete
    * @memberof LogsHomeService
    */
-  updateDisplayName(serviceName, displayName) {
-    return this.LogsLexiService.update({ serviceName }, { displayName })
+  updateDisplayName(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_display_name_update_success', { })
           .then((res) => {
-            this.changeMenuTitle(serviceName, displayName || serviceName);
+            this.changeMenuTitle(serviceName, service.displayName || serviceName);
             return res;
           });
       })
       .catch(err => this.LogsHelperService.handleError('logs_home_display_name_update_error', err, { }));
+  }
+
+  /**
+   * Updates the current capped plan settings
+   *
+   * @param {any} serviceName
+   * @param {service} service
+   * @returns promise which will resolve or reject once the operation is complete
+   * @memberof LogsHomeService
+   */
+  updateCappedPlan(serviceName, service) {
+    return this.LogsLexiService.update({ serviceName }, service)
+      .$promise.then((operation) => {
+        this.resetAllCache();
+        return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { });
+      })
+      .catch(err => this.LogsHelperService.handleError('logs_home_capped_update_error', err, { }));
   }
 
   /**
@@ -229,25 +246,25 @@ class LogsHomeService {
   }
 
   /**
-   * Gets the Greylog API url from the object
+   * Gets the Graylog API url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog API url
+   * @returns the Graylog API url
    * @memberof LogsHomeService
    */
-  getGreyLogApiUrl(object) {
+  getGrayLogApiUrl(object) {
     _.set(object, 'graylogApiUrl', this.constructor.findUrl(object.urls, this.LogsConstants.URLS.GRAYLOG_API));
     return object;
   }
 
   /**
-   * Gets the Greylog url from the object
+   * Gets the Graylog url from the object
    *
    * @param {any} object the object with urls
-   * @returns the Greylog url
+   * @returns the Graylog url
    * @memberof LogsHomeService
    */
-  getGreyLogUrl(object) {
+  getGrayLogUrl(object) {
     _.set(object, 'graylogWebuiUrl', this.constructor.findUrl(
       object.urls,
       this.LogsConstants.URLS.GRAYLOG_WEBUI,
@@ -316,15 +333,15 @@ class LogsHomeService {
     _.set(accountDetails, 'email', accountDetails.service.contact
       ? accountDetails.service.contact.email
       : accountDetails.me.email);
-    this.getGreyLogUrl(accountDetails);
-    this.getGreyLogApiUrl(accountDetails);
+    this.getGrayLogUrl(accountDetails);
+    this.getGrayLogApiUrl(accountDetails);
     _.set(accountDetails, 'graylogApiUrl', `${accountDetails.graylogApiUrl}/api-browser`);
     _.set(accountDetails, 'graylogEntryPoint', accountDetails.graylogWebuiUrl
       .replace('https://', '')
       .replace('/api', ''));
     this.getElasticSearchApiUrl(accountDetails);
-    if (accountDetails.last_stream) { this.getGreyLogUrl(accountDetails.last_stream); }
-    if (accountDetails.last_dashboard) { this.getGreyLogUrl(accountDetails.last_dashboard); }
+    if (accountDetails.last_stream) { this.getGrayLogUrl(accountDetails.last_stream); }
+    if (accountDetails.last_dashboard) { this.getGrayLogUrl(accountDetails.last_dashboard); }
     _.set(accountDetails, 'portsAndMessages', this.getPortsAndMessages(accountDetails));
     return accountDetails;
   }

@@ -5,14 +5,14 @@
   };
 
   class VeeamService {
-    constructor($interval, $q, $timeout, $translate, $filter, OvhApiVeeam, RegionService) {
+    constructor($interval, $q, $timeout, $translate, $filter, OvhApiVeeam, CucRegionService) {
       this.$interval = $interval;
       this.$q = $q;
       this.$timeout = $timeout;
       this.$translate = $translate;
       this.$filter = $filter;
       this.veeam = OvhApiVeeam.v6();
-      this.RegionService = RegionService;
+      this.CucRegionService = CucRegionService;
 
       this.unitOfWork = { };
       this.unitOfWork.init = () => {
@@ -40,7 +40,7 @@
     }
 
     transformConfigurationInfos(infos) {
-      _.set(infos, 'detail.location', this.RegionService.getRegion(infos.detail.location));
+      _.set(infos, 'detail.location', this.CucRegionService.getRegion(infos.detail.location));
       _.set(infos, 'detail.backupCount', infos.inventoryNames.length);
       return infos.detail;
     }

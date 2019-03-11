@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('CloudProjectAddCtrl',
   function CloudProjectAddCtrl($q, $state, $translate, atInternet, Toast, REDIRECT_URLS,
-    FeatureAvailabilityService, OvhApiCloud, OvhApiMe, OvhApiVrack, $window,
+    CucFeatureAvailabilityService, OvhApiCloud, OvhApiMe, OvhApiVrack, $window,
     OvhApiMePaymentMeanCreditCard, CloudProjectSidebar,
     CloudProjectAdd) {
     const self = this;
@@ -223,7 +223,7 @@ angular.module('managerApp').controller('CloudProjectAddCtrl',
     function init() {
       self.loaders.init = true;
       // Redirect US to onboarding
-      if (FeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
+      if (CucFeatureAvailabilityService.hasFeature('PROJECT', 'expressOrder')) {
         $state.go('iaas.pci-project-onboarding', { location: 'replace' });
         return;
       }

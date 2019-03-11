@@ -6,9 +6,9 @@ class IpLoadBalancerConfigurationCtrl {
     $translate,
     CucCloudMessage,
     CucCloudPoll,
-    ControllerHelper,
+    CucControllerHelper,
     IpLoadBalancerConfigurationService,
-    ServiceHelper,
+    CucServiceHelper,
   ) {
     this.$q = $q;
     this.$scope = $scope;
@@ -17,9 +17,9 @@ class IpLoadBalancerConfigurationCtrl {
 
     this.CucCloudMessage = CucCloudMessage;
     this.CucCloudPoll = CucCloudPoll;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   $onInit() {
@@ -35,7 +35,7 @@ class IpLoadBalancerConfigurationCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getHashLoader({
+    this.zones = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerConfigurationService
         .getAllZonesChanges(this.$stateParams.serviceName),
     });

@@ -20,7 +20,7 @@ angular.module('managerApp')
       $state,
       $stateParams,
       Poller,
-      RegionService,
+      CucRegionService,
       CLOUD_UNIT_CONVERSION,
     ) {
       const self = this;
@@ -31,7 +31,7 @@ angular.module('managerApp')
 
       const orderBy = $filter('orderBy');
 
-      self.regionService = RegionService;
+      self.regionService = CucRegionService;
       // Datas
       self.table = {
         snapshot: [],

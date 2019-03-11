@@ -1,12 +1,12 @@
 class IpLoadBalancerVrackEditCtrl {
-  constructor($q, $stateParams, $translate, CucCloudMessage, CucCloudNavigation, ControllerHelper,
-    IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
+  constructor($q, $stateParams, $translate, CucCloudMessage, CucCloudNavigation,
+    CucControllerHelper, IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
     this.CucCloudNavigation = CucCloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
 
@@ -129,22 +129,22 @@ class IpLoadBalancerVrackEditCtrl {
   }
 
   initLoaders() {
-    this.creationRules = this.ControllerHelper.request.getHashLoader({
+    this.creationRules = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getNetworkCreationRules(this.serviceName),
     });
 
-    this.privateNetwork = this.ControllerHelper.request.getHashLoader({
+    this.privateNetwork = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editing() ? this.IpLoadBalancerVrackService
         .getPrivateNetwork(this.serviceName, this.networkId) : this.$q.when({})),
     });
 
-    this.privateNetworkFarms = this.ControllerHelper.request.getHashLoader({
+    this.privateNetworkFarms = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => (this.editing() ? this.IpLoadBalancerVrackService
         .getPrivateNetworkFarms(this.serviceName, this.networkId) : this.$q.when([])),
     });
 
-    this.farms = this.ControllerHelper.request.getArrayLoader({
+    this.farms = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService.getServerFarms(this.serviceName),
     });
   }

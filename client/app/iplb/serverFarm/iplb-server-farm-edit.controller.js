@@ -1,12 +1,12 @@
 class IpLoadBalancerServerFarmEditCtrl {
-  constructor($q, $state, $stateParams, CucCloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerServerFarmService,
     IpLoadBalancerVrackService, IpLoadBalancerZoneService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
@@ -16,18 +16,18 @@ class IpLoadBalancerServerFarmEditCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getArrayLoader({
+    this.zones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
         this.$stateParams.serviceName,
       ),
     });
 
-    this.privateNetworks = this.ControllerHelper.request.getArrayLoader({
+    this.privateNetworks = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getPrivateNetworks(this.$stateParams.serviceName),
     });
 
-    this.apiFarm = this.ControllerHelper.request.getHashLoader({
+    this.apiFarm = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService.getAllFarmsTypes(
         this.$stateParams.serviceName,
       )
@@ -202,7 +202,7 @@ class IpLoadBalancerServerFarmEditCtrl {
   }
 
   editProbe() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/serverFarm/probe/iplb-server-farm-probe.html',
         controller: 'IpLoadBalancerServerFarmProbeEditCtrl',

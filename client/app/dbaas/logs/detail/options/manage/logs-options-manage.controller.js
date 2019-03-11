@@ -1,46 +1,46 @@
 class LogsOptionsManageCtrl {
-  constructor($state, $stateParams, $window, CucCloudMessage, ControllerHelper, LogsOptionsService,
-    LogsOptionsManageService, CurrencyService, OrderHelperService) {
+  constructor($state, $stateParams, $window, CucCloudMessage, CucControllerHelper,
+    LogsOptionsService, LogsOptionsManageService, CucCurrencyService, CucOrderHelperService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsOptionsManageService = LogsOptionsManageService;
-    this.CurrencyService = CurrencyService;
-    this.OrderHelperService = OrderHelperService;
+    this.CucCurrencyService = CucCurrencyService;
+    this.CucOrderHelperService = CucOrderHelperService;
 
     this.serviceName = this.$stateParams.serviceName;
     this.initLoaders();
   }
 
   initLoaders() {
-    this.getManagedOptions = this.ControllerHelper.request.getArrayLoader({
+    this.getManagedOptions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsService.getManagedOptions(this.serviceName),
     });
 
-    this.getAllDashboards = this.ControllerHelper.request.getArrayLoader({
+    this.getAllDashboards = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllDashboards(this.serviceName),
     });
 
-    this.getAllStreams = this.ControllerHelper.request.getArrayLoader({
+    this.getAllStreams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllStreams(this.serviceName),
     });
 
-    this.getAllIndices = this.ControllerHelper.request.getArrayLoader({
+    this.getAllIndices = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllIndices(this.serviceName),
     });
 
-    this.getAllAliases = this.ControllerHelper.request.getArrayLoader({
+    this.getAllAliases = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllAliases(this.serviceName),
     });
 
-    this.getAllRoles = this.ControllerHelper.request.getArrayLoader({
+    this.getAllRoles = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllRoles(this.serviceName),
     });
 
-    this.getAllInputs = this.ControllerHelper.request.getArrayLoader({
+    this.getAllInputs = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsManageService.getAllInputs(this.serviceName),
     });
 
@@ -54,13 +54,13 @@ class LogsOptionsManageCtrl {
   }
 
   terminateOption(option) {
-    this.removeOption = this.ControllerHelper.request.getArrayLoader({
+    this.removeOption = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsOptionsService.terminateOption(this.serviceName, option),
     });
   }
 
   overview(info) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/options/manage/overview/logs-options-overview.html',
         controller: 'LogsOptionsManageOverviewCtrl',
@@ -83,10 +83,10 @@ class LogsOptionsManageCtrl {
     this.LogsOptionsService.terminateModal(
       option,
     ).then(() => {
-      this.delete = this.ControllerHelper.request.getHashLoader({
+      this.delete = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsOptionsService.terminateOption(this.serviceName, option)
           .then(() => this.initLoaders())
-          .finally(() => this.ControllerHelper.scrollPageToTop()),
+          .finally(() => this.CucControllerHelper.scrollPageToTop()),
       });
       this.delete.load();
     });
