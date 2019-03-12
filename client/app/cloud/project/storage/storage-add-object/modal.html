@@ -16,12 +16,12 @@
 </div>
 
 <div class="modal-footer">
-    <form name="storage_import_file" class="pull-right form_import cloud-button cloud-button_primary" data-ng-disabled="loaders.uploading">
+    <form name="storage_import_file" class="pull-right form_import oui-button oui-button_primary" data-ng-disabled="loaders.uploading">
         <i class="fa fa-upload"></i>
         <span data-translate="storage_object_import_files"></span>
         <filelistener ng-model="uploadForm.files" class="form_import_file_input" multiple="multiple" data-ng-disabled="loaders.uploading"/>
     </form>
-    <button type="reset" class="cloud-button cloud-button_secondary pull-left"
+    <button type="reset" class="oui-button oui-button_secondary pull-left"
         data-ng-click="cancel()">
         <i class="glyphicon glyphicon-remove"></i>
         <span data-translate="common_cancel"></span>
