@@ -1046,10 +1046,10 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.3.0.tgz#0658180a03ba7bd00d5562652efd09b3b6b82e37"
-  integrity sha512-GCe+f3SJtVd6JJPfVzqLzx5v6xNPpc9aUDq6HG3HaxzB3uFwQey/rQe9jZfisY9UQr2GZk0Mvb5ORnKGXewzCw==
+"@ovh-ux/ng-ovh-cloud-universe-components@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.3.1.tgz#38b6d22f03fb4e76cfc6ac24da4afada3583ca00"
+  integrity sha512-U4CjjnBWG5NH8hF9Pi7RtF/kPu04ZYnhxDIQ40c8qJrAkEMTeCNCSWwuiITZ6iM5lw3mISudibJmkEIuWs2P/g==
   dependencies:
     bootstrap "~3.3.0"
     jsurl "^0.1.5"
@@ -7232,19 +7232,6 @@ node-gyp@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.8.0.tgz#540304261c330e80d0d5edce253a68cb3964218c"
   integrity sha512-3g8lYefrRRzvGeSowdJKAKyks8oUpLEd/DyPV4eMhVlhJ0aNaZqIrNUIPuEWWTAoPqyFkfGrM67MC69baqn6vA==
-  dependencies:
-    fstream "^1.0.0"
-    glob "^7.0.3"
-    graceful-fs "^4.1.2"
-    mkdirp "^0.5.0"
-    nopt "2 || 3"
-    npmlog "0 || 1 || 2 || 3 || 4"
-    osenv "0"
-    request "^2.87.0"
-    rimraf "2"
-    semver "~5.3.0"
-    tar "^2.0.0"
-    which "1"
 
 node-libs-browser@^2.0.0:
   version "2.1.0"
