@@ -1,3 +1,14 @@
+## [7.19.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.1...v7.19.2) (2019-03-12)
+
+
+### Bug Fixes
+
+* **cloud.project.compute.infrastructure:** replace region service ([#1381](https://github.com/ovh-ux/ovh-manager-cloud/issues/1381)) ([bd87a46](https://github.com/ovh-ux/ovh-manager-cloud/commit/bd87a46))
+* **iplb:** infinite loading ssl certifiacte order ([bf75470](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf75470))
+* **iplb:** status in dashboard ([a3e1912](https://github.com/ovh-ux/ovh-manager-cloud/commit/a3e1912))
+
+
+
 ## [7.19.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.0...v7.19.1) (2019-03-05)
 
 
