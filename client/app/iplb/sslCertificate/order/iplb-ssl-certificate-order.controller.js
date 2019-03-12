@@ -1,10 +1,10 @@
 class IpLoadBalancerSslCertificateOrderCtrl {
-  constructor($q, $state, $stateParams, $location, CucCloudMessage, CucControllerHelper,
+  constructor($q, $state, $stateParams, $window, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerSslCertificateService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.$location = $location;
+    this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
     this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
@@ -93,10 +93,10 @@ class IpLoadBalancerSslCertificateOrderCtrl {
     this.saving = true;
     this.IpLoadBalancerSslCertificateService
       .orderPaidCertificate(this.$stateParams.serviceName, options, configuration)
-      .then((result) => {
-        this.$location.href = result.url;
+      .then(({ url }) => {
+        this.$window.open(url);
       })
-      .catch(() => {
+      .finally(() => {
         this.saving = false;
       });
   }
