@@ -964,9 +964,9 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
-"@ovh-ux/manager-cloud-styles@git+https://github.com/ovh-ux/manager.git#split-manager-cloud-styles/fix-cloud-styles-rem":
-  version "0.0.0"
-  resolved "git+https://github.com/ovh-ux/manager.git#3012eb10593b86056a2813a906e2ce63a707b459"
+"@ovh-ux/manager-cloud-styles@git+https://github.com/ovh-ux/manager.git#split-manager-cloud-styles/fix-rems":
+  version "0.1.0"
+  resolved "git+https://github.com/ovh-ux/manager.git#1a1fab3beaad904339b21d5739ea3042594f0e1e"
 
 "@ovh-ux/manager-webpack-config@^3.0.4":
   version "3.0.4"
@@ -1036,9 +1036,9 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-cuc-rems":
-  version "0.3.0"
-  resolved "git+https://github.com/ovh-ux/manager.git#5a8d75c8f6fd465f77730711bde84a887b193a9f"
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-rems":
+  version "0.3.1"
+  resolved "git+https://github.com/ovh-ux/manager.git#292df8e1c34855a5f345ee780300e734d7abb0f9"
   dependencies:
     bootstrap "~3.3.0"
     jsurl "^0.1.5"
