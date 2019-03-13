@@ -41,8 +41,6 @@ import 'matchmedia-ng';
 import 'ng-slide-down';
 import 'script-loader!uri.js/src/URI.min.js';
 import 'script-loader!validator-js/validator.js';
-import 'ng-at-internet';
-import 'at-internet-ui-router-plugin';
 import 'ovh-jquery-ui-draggable-ng';
 import 'ovh-angular-responsive-popover';
 import 'ovh-angular-actions-menu';
@@ -62,7 +60,6 @@ import 'script-loader!ovh-angular-browser-alert/dist/ovh-angular-browser-alert.j
 import 'ovh-angular-pagination-front';
 import 'ovh-angular-responsive-page-switcher';
 import 'ovh-angular-responsive-tabs';
-import 'ovh-angular-swimming-poll';
 import 'ovh-api-services';
 import 'ovh-angular-otrs';
 import 'script-loader!chart.js/dist/Chart.js';

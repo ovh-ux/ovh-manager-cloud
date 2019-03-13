@@ -39,6 +39,7 @@ class ManagerNavbarService {
       vracks: 'VRACK',
       loadBalancer: 'LOAD_BALANCER',
       cloudDesktop: 'CLOUD_DESKTOP',
+      logsDataPlatform: 'DBAAS_LOGS',
     };
     this.sessionService = SessionService;
     this.ssoAuthentication = ssoAuthentication;
@@ -67,6 +68,7 @@ class ManagerNavbarService {
       vracks: getServices(this.sections.vracks, products),
       loadBalancer: getServices(this.sections.loadBalancer, products),
       cloudDesktop: getServices(this.sections.cloudDesktop, products),
+      logsDataPlatform: getServices(this.sections.logsDataPlatform, products),
     };
   }
 
@@ -246,6 +248,11 @@ class ManagerNavbarService {
       name: 'dbaas.metrics',
       title: this.$translate.instant('cloud_sidebar_section_metrics'),
       subLinks: this.constructor.getProductsMenu('dbaas.metrics.detail.dashboard', universeProducts.metrics),
+    }, {
+      // Logs
+      name: 'dbaas.logs',
+      title: this.$translate.instant('cloud_sidebar_section_logs'),
+      subLinks: this.constructor.getProductsMenu('dbaas.logs.detail', universeProducts.logsDataPlatform),
     }, {
       // Licences (Link)
       title: this.$translate.instant('cloud_sidebar_section_license'),

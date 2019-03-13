@@ -22,7 +22,7 @@
         <tbody data-ng-if="!$ctrl.loaders.instanceList">
             <tr data-ng-repeat="instanceConsumption in $ctrl.instanceConsumptionDetails | orderBy: 'instanceName' track by instanceConsumption.instanceId + instanceConsumption.reference" class="oui-datagrid__row">
                 <td data-title="{{ :: $ctrl.instanceColName | translate }}" class="oui-datagrid__cell word-break"
-                    data-responsive-popover="'components/cloud/project/billing/details-popover/instance-details-popover.html'"
+                    data-responsive-popover="'app/cloud/components/project/billing/details-popover/instance-details-popover.html'"
                     data-popover-class="details-popover"
                     data-popover-is-open="$ctrl.DetailsPopoverService.isCurrentDetails(instanceConsumption)"
                     data-popover-placement="top"
