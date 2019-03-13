@@ -1,3 +1,33 @@
+# [7.20.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.3...v7.20.0) (2019-03-13)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-at-internet to v4.0.0 ([#1380](https://github.com/ovh-ux/ovh-manager-cloud/issues/1380)) ([18b4f59](https://github.com/ovh-ux/ovh-manager-cloud/commit/18b4f59))
+* **deps:** upgrade ng-ovh-api-wrappers to v3.0.0 ([#1369](https://github.com/ovh-ux/ovh-manager-cloud/issues/1369)) ([6a1a644](https://github.com/ovh-ux/ovh-manager-cloud/commit/6a1a644))
+* **deps:** upgrade ng-ovh-swimming-poll to v4.0.0 ([#1357](https://github.com/ovh-ux/ovh-manager-cloud/issues/1357)) ([9b4729b](https://github.com/ovh-ux/ovh-manager-cloud/commit/9b4729b))
+* **deps:** upgrade ovh-api-services to v6.1.2 ([#1390](https://github.com/ovh-ux/ovh-manager-cloud/issues/1390)) ([a2cd8d5](https://github.com/ovh-ux/ovh-manager-cloud/commit/a2cd8d5))
+* **i18n:** add consistency across website, order and manager ([#1359](https://github.com/ovh-ux/ovh-manager-cloud/issues/1359)) ([277fafd](https://github.com/ovh-ux/ovh-manager-cloud/commit/277fafd))
+* **i18n:** add missing translations ([dcf652a](https://github.com/ovh-ux/ovh-manager-cloud/commit/dcf652a))
+* **i18n:** add missing translations ([86ee4b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/86ee4b2))
+* **i18n:** add missing translations ([24eb2ad](https://github.com/ovh-ux/ovh-manager-cloud/commit/24eb2ad))
+* **i18n:** add missing translations ([d802353](https://github.com/ovh-ux/ovh-manager-cloud/commit/d802353))
+* **i18n:** add missing translations ([737787e](https://github.com/ovh-ux/ovh-manager-cloud/commit/737787e))
+* **i18n:** add missing translations ([8d51455](https://github.com/ovh-ux/ovh-manager-cloud/commit/8d51455))
+* **i18n:** add missing translations ([e7faa8a](https://github.com/ovh-ux/ovh-manager-cloud/commit/e7faa8a))
+* **i18n:** add missing translations ([5fe35e8](https://github.com/ovh-ux/ovh-manager-cloud/commit/5fe35e8))
+* **i18n:** add missing translations ([1d045af](https://github.com/ovh-ux/ovh-manager-cloud/commit/1d045af))
+* **i18n:** add missing translations ([350c9df](https://github.com/ovh-ux/ovh-manager-cloud/commit/350c9df))
+* **navbar:** add mobile menu for logs data platform ([#1379](https://github.com/ovh-ux/ovh-manager-cloud/issues/1379)) ([15b45fd](https://github.com/ovh-ux/ovh-manager-cloud/commit/15b45fd))
+* **order:** display doing message when create order ([#1370](https://github.com/ovh-ux/ovh-manager-cloud/issues/1370)) ([bf8d31f](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf8d31f))
+
+
+### Features
+
+* **cloud.project:** add tracking to pci menu and slideshow ([#1377](https://github.com/ovh-ux/ovh-manager-cloud/issues/1377)) ([427eed1](https://github.com/ovh-ux/ovh-manager-cloud/commit/427eed1))
+
+
+
 ## [7.19.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.2...v7.19.3) (2019-03-12)
 
 
