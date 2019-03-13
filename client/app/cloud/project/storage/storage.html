@@ -2,9 +2,11 @@
 
     <cui-message-container data-messages="messages"></cui-message-container>
 
-    <cui-page-content-title data-text="'storage_title' | translate">
-        <oui-spinner data-ng-show="loaders.storages"></oui-spinner>
-    </cui-page-content-title>
+    <cui-page-content-title data-text="'storage_title' | translate"></cui-page-content-title>
+
+    <div class="text-center" data-ng-if="loaders.storages">
+        <oui-spinner></oui-spinner>
+    </div>
 
     <div data-ng-if="storages !== null">
         <a class="oui-button oui-button_secondary"
