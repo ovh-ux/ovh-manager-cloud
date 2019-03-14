@@ -410,7 +410,7 @@ angular.module('managerApp')
         }
         self.displayData.categories = _.sortBy(self.displayData.categories, 'order');
         // if selected flavor is not available, set to null
-        if (!_.has(selectedFlavour, 'available')) {
+        if (!_.get(selectedFlavour, 'available')) {
           _.set(self.vmInEdition, 'flavor', null);
         }
       }
