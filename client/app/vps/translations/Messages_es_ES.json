@@ -460,7 +460,7 @@
  "vps_tab_additional_disk_state_pending": "Pendiente",
  "vps_additional_disk_add_button_soon": "Dentro de poco podrá añadir múltiples discos adicionales a su VPS.",
  "vps_tab_additional_disk_guide": "Cómo utilizar un disco adicional",
- "vps_order_additionnal_disk_title": "Contratar un disco adicional ",
+ "vps_order_additionnal_disk_title": "Contratar un disco adicional",
  "vps_order_additional_disk_select_capacity": "Seleccione el tamaño de su disco adicional para su VPS. Aparecerá como segundo disco duro en su sistema operativo.",
  "vps_order_additional_disk_step2": "El disco adicional se añadirá a su servidor hasta la fecha de renovación de su VPS. A continuación, se renovará junto con este último.",
  "vps_order_additional_disk_select_capacity_price_tax_free": "{{ price }}/mes + IVA",
