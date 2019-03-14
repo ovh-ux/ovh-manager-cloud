@@ -1,4 +1,6 @@
 import '@uirouter/angularjs';
+import ngAtInternet from '@ovh-ux/ng-at-internet';
+import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
 import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
@@ -25,6 +27,8 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
+  ngAtInternet,
+  ngAtInternetUiRouterPlugin,
   ngOvhApiWrappers,
   ngOvhCheckboxTable,
   ngOvhDocUrl,
@@ -64,8 +68,6 @@ angular.module('managerApp', [
   'ovh-angular-jquery-ui-droppable',
   'ovh-angular-slider',
   'ovh-angular-tail-logs',
-  'ng-at-internet',
-  'atInternetUiRouterPlugin',
   'matchmedia-ng',
   'ovhBrowserAlert',
   'angular-websocket',
