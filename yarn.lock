@@ -1050,8 +1050,9 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-rems":
+"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-cuc-rems", "@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-rems":
   version "0.3.1"
+  uid "292df8e1c34855a5f345ee780300e734d7abb0f9"
   resolved "git+https://github.com/ovh-ux/manager.git#292df8e1c34855a5f345ee780300e734d7abb0f9"
   dependencies:
     bootstrap "~3.3.0"
