@@ -38,12 +38,12 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@ovh-ux/manager-cloud-styles": "git+https://github.com/ovh-ux/manager.git#split-manager-cloud-styles/fix-rems",
+    "@ovh-ux/manager-cloud-styles": "^0.1.1-alpha.0",
     "@ovh-ux/ng-at-internet": "^4.0.0",
     "@ovh-ux/ng-at-internet-ui-router-plugin": "^2.0.0",
     "@ovh-ux/ng-ovh-api-wrappers": "^3.0.0",
     "@ovh-ux/ng-ovh-checkbox-table": "^1.0.0",
-    "@ovh-ux/ng-ovh-cloud-universe-components": "git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-cuc-rems",
+    "@ovh-ux/ng-ovh-cloud-universe-components": "^1.0.1-alpha.0",
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-form-flat": "^4.0.0",
     "@ovh-ux/ng-ovh-proxy-request": "^1.0.0-beta.0",

@@ -964,9 +964,10 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
-"@ovh-ux/manager-cloud-styles@git+https://github.com/ovh-ux/manager.git#split-manager-cloud-styles/fix-rems":
-  version "0.1.0"
-  resolved "git+https://github.com/ovh-ux/manager.git#0e3580c39e3ae1e1da9b8c1247420c46b5039867"
+"@ovh-ux/manager-cloud-styles@^0.1.1-alpha.0":
+  version "0.1.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-cloud-styles/-/manager-cloud-styles-0.1.1-alpha.0.tgz#fcb217f8c3ec67d8e12af2bf4495689768d9bb87"
+  integrity sha512-igkoN3m+62dAXYBXGgTzK5CsGMJT59Q2ubAXTDJ5J+V1ORcEKP5g/NBtPyd2sFFDFFGZEmE/YFq31xcLlt+Hcg==
 
 "@ovh-ux/manager-webpack-config@^3.0.4":
   version "3.0.4"
@@ -1050,10 +1051,10 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-cuc-rems", "@ovh-ux/ng-ovh-cloud-universe-components@git+https://github.com/ovh-ux/manager.git#split-ng-ovh-cloud-universe-components/fix-rems":
-  version "0.3.1"
-  uid "292df8e1c34855a5f345ee780300e734d7abb0f9"
-  resolved "git+https://github.com/ovh-ux/manager.git#292df8e1c34855a5f345ee780300e734d7abb0f9"
+"@ovh-ux/ng-ovh-cloud-universe-components@^1.0.1-alpha.0":
+  version "1.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-1.0.1-alpha.0.tgz#a2dd7b6cc36cd61dc9546284ca4ca05ea3838d89"
+  integrity sha512-RXAoFU3GQkLplCZIaujeSt/qrKC4odFaK2uBm1GdmXeUiAztcKiDT7wyg+hlkiRcZWEiiweDByDFPZ/sOj46Zw==
   dependencies:
     bootstrap "~3.3.0"
     jsurl "^0.1.5"
@@ -7798,9 +7799,9 @@ ovh-ui-kit-bs@^2.1.1:
   integrity sha512-gjWYjnGmS75nrEpYoYIvJ/wh7K8zzm4k5x2+mICOCmEOKbU7iWy642iXxvDI1TYR+61TDTRjtshnXsGVtUtu7g==
 
 ovh-ui-kit@^2.24.2:
-  version "2.24.2"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.2.tgz#27e7c945c81f22745657d4eeb8b6a96022a87828"
-  integrity sha512-yLdyZskNlDUnx29XCYY5SppcJYaVBrNOpa682D+rw1s79Y9/dwAlF6qWD47NWDRK2XzgJR8U7xTjvbersuGBwg==
+  version "2.25.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.25.0.tgz#cf49d929dc9c4dde9478cb70c35246000bd49563"
+  integrity sha512-SapAsTK38S4YmyBJG7tclcCSnVlP3xY3mB1mS6xhtQ+/qBliGvPDxzlM5rCBP4+W77qqitRIwHpY8GpcFN7TLg==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
