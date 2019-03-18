@@ -1,9 +1,6 @@
-
-
 angular.module('managerApp')
-  .controller('BillingHourlyResourceListComponentCtrl', function (DetailsPopoverService) {
+  .controller('BillingHourlyResourceListComponentCtrl', function () {
     const self = this;
-
     self.toggle = {
       accordions: {
         instance: false,
@@ -12,9 +9,5 @@ angular.module('managerApp')
         snapshot: false,
         volume: false,
       },
-    };
-
-    self.toggleAccordion = function () {
-      DetailsPopoverService.reset();
     };
   });

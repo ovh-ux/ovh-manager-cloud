@@ -10,12 +10,14 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.instance.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
+            <span data-ng-if="!$ctrl.resources.hourlyInstances.length || $ctrl.resources.hourlyInstances.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
             <instance-list instances="$ctrl.resources.hourlyInstances"
-                        instance-col-name="'cpbc_hourly_instance_col_name'"
-                        instance-col-total="'cpbc_hourly_instance_col_consumption'"
-                        instance-col-total-tooltip="'cpbc_hourly_instance_col_consumption_tooltip'"
-                        show-switch-to-monthly-billing-option="$ctrl.showSwitchToMonthlyBillingOption"
-                        show-additional-instance-details="$ctrl.showAdditionalInstanceDetails"></instance-list>
+                           data-ng-if="$ctrl.resources.hourlyInstances.length > 0"
+                           instance-col-name="'cpbc_hourly_instance_col_name'"
+                           instance-col-total="'cpbc_hourly_instance_col_consumption'"
+                           instance-col-total-tooltip="'cpbc_hourly_instance_col_consumption_tooltip'"
+                           show-switch-to-monthly-billing-option="$ctrl.showSwitchToMonthlyBillingOption"
+                           show-additional-instance-details="$ctrl.showAdditionalInstanceDetails"></instance-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -31,7 +33,8 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.snapshot.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
-            <snapshot-list snapshots="$ctrl.resources.snapshots"></snapshot-list>
+            <span data-ng-if="!$ctrl.resources.snapshots.length || $ctrl.resources.snapshots.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
+            <snapshot-list data-ng-if="$ctrl.resources.snapshots.length > 0" snapshots="$ctrl.resources.snapshots"></snapshot-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -47,7 +50,8 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.volume.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
-            <volume-list volumes="$ctrl.resources.volumes"></volume-list>
+            <span data-ng-if="!$ctrl.resources.volumes.length || $ctrl.resources.volumes.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
+            <volume-list data-ng-if="$ctrl.resources.volumes.length > 0" volumes="$ctrl.resources.volumes"></volume-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -63,7 +67,8 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.objectStorage.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
-            <object-storage-list storages="$ctrl.resources.objectStorages"></object-storage-list>
+            <span data-ng-if="!$ctrl.resources.objectStorages.length || $ctrl.resources.objectStorages.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
+            <object-storage-list data-ng-if="$ctrl.resources.objectStorages.length > 0" storages="$ctrl.resources.objectStorages"></object-storage-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -79,7 +84,8 @@
                     <span class="cloud-billing-accordion-heading-price">{{ $ctrl.resources.totals.hourly.archiveStorage.toFixed(2) + " " + $ctrl.resources.totals.currencySymbol }}</span>
                 </button>
             </uib-accordion-heading>
-            <archive-storage-list storages="$ctrl.resources.archiveStorages"></archive-storage-list>
+            <span data-ng-if="!$ctrl.resources.archiveStorages.length || $ctrl.resources.archiveStorages.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
+            <archive-storage-list data-ng-if="$ctrl.resources.archiveStorages.length > 0" storages="$ctrl.resources.archiveStorages"></archive-storage-list>
         </uib-accordion-group>
     </uib-accordion>
     <uib-accordion>
@@ -95,7 +101,9 @@
                     </span>
                 </button>
             </uib-accordion-heading>
-            <outgoing-trafic data-regions="$ctrl.resources.bandwidthByRegions"></outgoing-trafic>
+            <span data-ng-if="!$ctrl.resources.bandwidthByRegions.length || $ctrl.resources.bandwidthByRegions.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data">
+            </span>
+            <outgoing-trafic data-ng-if="$ctrl.resources.bandwidthByRegions.length > 0" data-regions="$ctrl.resources.bandwidthByRegions"></outgoing-trafic>
         </uib-accordion-group>
     </uib-accordion>
 </div>

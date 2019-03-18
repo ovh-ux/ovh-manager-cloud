@@ -1,7 +1,4 @@
-<span  data-ng-if="$ctrl.storages.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
-
-<oui-datagrid data-rows="$ctrl.storages" class="datagrid-without-pagination objectStorageList"
-    data-ng-if="$ctrl.storages.length > 0">
+<oui-datagrid data-rows="$ctrl.storages" class="datagrid-without-pagination objectStorageList">
     <oui-column data-title="::'cpbc_object_storage_col_location' | translate" data-property="region">
         <span data-ng-bind=":: $ctrl.CucRegionService.getTranslatedMicroRegion($row.region)"></span>
     </oui-column>

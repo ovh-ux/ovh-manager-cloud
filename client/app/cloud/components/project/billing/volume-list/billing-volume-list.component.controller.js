@@ -1,8 +1,7 @@
 angular.module('managerApp')
   .controller('BillingVolumeListComponentCtrl', function ($filter, $q, $stateParams, $translate,
-    CucRegionService, DetailsPopoverService, OvhApiCloudProjectVolume, OvhApiMe, Toast) {
+    CucRegionService, OvhApiCloudProjectVolume, OvhApiMe, Toast) {
     const self = this;
-    self.DetailsPopoverService = DetailsPopoverService;
     self.CucRegionService = CucRegionService;
     self.volumeConsumptionDetails = [];
     self.currencySymbol = '';
