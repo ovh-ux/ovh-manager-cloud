@@ -5,14 +5,25 @@
 <oui-datagrid data-rows="$ctrl.instanceConsumptionDetails" data-ng-if="$ctrl.instanceConsumptionDetails.length > 0"
         class="cloud-billing-instance-list">
     <oui-column data-title=":: $ctrl.instanceColName | translate" data-sortable data-property="instanceName">
-        <span data-ng-bind=":: $row.instanceName"
-              data-responsive-popover="'app/cloud/components/project/billing/details-popover/instance-details-popover.html'"
-              data-popover-class="details-popover"
-              data-popover-is-open="$ctrl.DetailsPopoverService.isCurrentDetails($row)"
-              data-popover-placement="top"
-              data-popover-append-to-body="true"
-              data-popover-trigger="none"
-              data-ng-click="$ctrl.DetailsPopoverService.setCurrentDetails($row)"></span>
+        <oui-popover oui-popover-placement="top">
+            <span oui-popover-trigger data-ng-bind=":: $row.instanceName"></span>
+            <oui-popover-content>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong><span data-translate="cpbc_server_details_popover_region"></span> : </strong>
+                        <span data-ng-bind=":: $ctrl.CucRegionService.getTranslatedMicroRegion($row.region)"></span>
+                    </li>
+                    <li>
+                        <strong><span data-translate="cpbc_server_details_popover_image_type"></span> : </strong>
+                        <span data-translate="{{ :: $row.imageType ? ('cpbc_server_details_popover_imagetype_' + $row.imageType) : '-'}}"></span>
+                    </li>
+                    <li>
+                        <strong><span data-translate="cpbc_server_details_popover_vm_type"></span> : </strong>
+                        <span data-translate="{{ :: $row.vmType ? $row.vmType : '-' }}"></span>
+                    </li>
+                </ul>
+            </oui-popover-content>
+        </oui-popover>
     </oui-column>
     <oui-column data-title=":: $ctrl.instanceColTotal | translate" data-property="total" data-sortable>
     </oui-column>
@@ -23,7 +34,7 @@
         </span>
         <span data-ng-if="$row.monthlyBilling && $row.monthlyBilling.status === 'activationPending'"
               data-translate="cpbc_hourly_instance_monthly_billing_activationPending">
-            <i class="fa fa-clock-o left-space-m8"></i>
+            <i class="fa fa-clock-o left-space-m8" aria-hidden="true"></i>
         </span>
         <span class="opacity6"
               data-ng-if="!$row.monthlyBilling && $row.isDeleted"
@@ -37,7 +48,7 @@
                         data-on-click="$ctrl.endInstanceToMonthlyConversion()"
                         data-disabled="$ctrl.loaders.monthlyBilling">
                 <div class="change-billing-button-text">
-                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
+                    <i class="glyphicon glyphicon-remove right-space-m8" aria-hidden="true"></i>
                     <span data-translate="common_cancel"></span>
                 </div>
             </oui-button>
@@ -47,7 +58,7 @@
                         data-on-click="$ctrl.confirmMonthlyPaymentActivation()"
                         data-disabled="$ctrl.loaders.monthlyBilling">
                 <div class="change-billing-button-text">
-                    <i class="fa fa-check right-space-m8"></i>
+                    <i class="fa fa-check right-space-m8" aria-hidden="true"></i>
                     <span data-translate="cpbc_hourly_instance_pass_to_monthly_button"
                           data-translate-values="{ price: $ctrl.data.instanceToMonthlyPrice.price.text }"></span>
                     <oui-spinner data-size="s" data-ng-if="$ctrl.loaders.monthlyBilling"></oui-spinner>
