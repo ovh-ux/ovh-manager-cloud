@@ -47,7 +47,7 @@ angular.module('managerApp')
         views: {
           kubernetesPopUpView: {
             controller: 'kubernetesTerminateModalCtrl',
-            controllerAs: 'ctrl',
+            controllerAs: '$ctrl',
           },
         },
         translations: {

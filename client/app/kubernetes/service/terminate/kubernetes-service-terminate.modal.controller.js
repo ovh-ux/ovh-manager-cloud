@@ -12,7 +12,7 @@ class kubernetesTerminateModalCtrl {
       modalConfig: {
         templateUrl: 'app/kubernetes/service/terminate/kubernetes-service-terminate.html',
         controller: 'kubernetesTerminateCtrl',
-        controllerAs: 'ctrl',
+        controllerAs: '$ctrl',
         backdrop: 'static',
       },
     }).finally(() => this.onCloseModal());

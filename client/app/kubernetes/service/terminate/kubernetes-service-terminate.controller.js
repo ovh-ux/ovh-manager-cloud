@@ -10,8 +10,9 @@ class kubernetesTerminateCtrl {
     this.CucControllerHelper = CucControllerHelper;
     this.Kubernetes = Kubernetes;
     this.KUBERNETES = KUBERNETES;
+  }
 
-    // other attributes used in view
+  $onInit() {
     this.availableVersions = null;
 
     this.model = {
