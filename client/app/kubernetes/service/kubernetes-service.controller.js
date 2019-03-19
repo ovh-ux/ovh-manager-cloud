@@ -107,7 +107,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
   }
 
   showUgradePolicy() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/kubernetes/service/upgrade-policy/kubernetes-service-upgrade-policy.html',
         controller: 'kubernetesUpgradePolicyCtrl',
