@@ -2,7 +2,7 @@ class CloudProjectComputeInfrastructureListCtrl {
   constructor($scope, $q, $stateParams, $translate, $timeout, atInternet,
     CloudFlavorService, CucCloudMessage, CucCloudNavigation, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
-    OvhApiCloudProjectVolume, CucRegionService, OvhApiCloudProjectFlavor, TARGET) {
+    OvhApiCloudProjectVolume, CucRegionService, OvhApiCloudProjectFlavor, coreConfig) {
     this.$scope = $scope;
     this.$q = $q;
     this.$timeout = $timeout;
@@ -17,7 +17,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
     this.CucRegionService = CucRegionService;
     this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
-    this.TARGET = TARGET;
+    this.region = coreConfig.getRegion();
   }
 
   $onInit() {

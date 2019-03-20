@@ -1,5 +1,4 @@
 angular.module('managerApp')
-  .constant('TARGET', 'CA')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     dedicated: 'https://ca.ovh.com/manager/index.html#/',

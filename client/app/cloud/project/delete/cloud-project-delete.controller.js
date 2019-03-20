@@ -17,7 +17,7 @@ angular.module('managerApp').controller('CloudProjectDeleteCtrl',
     OvhApiCloudProjectUsageCurrent,
     OvhApiCloudProjectCredit,
     CloudProjectBillingService,
-    TARGET,
+    coreConfig,
   ) {
     const self = this;
     const { projectId } = $stateParams;
@@ -84,8 +84,8 @@ angular.module('managerApp').controller('CloudProjectDeleteCtrl',
       });
     }
 
-    this.init = function () {
-      if (TARGET !== 'US') {
+    this.init = function init() {
+      if (coreConfig.getRegion() !== 'US') {
         self.loaders.init = true;
         $q.all([
           getConsumption(),

@@ -1,7 +1,7 @@
 class LogsWelcomeCtrl {
-  constructor($state, LogsConstants, CucOrderHelperService, ovhDocUrl, TARGET) {
+  constructor($state, LogsConstants, CucOrderHelperService, ovhDocUrl, coreConfig) {
     this.$state = $state;
-    this.TARGET = TARGET;
+    this.region = coreConfig.getRegion();
     this.LogsConstants = LogsConstants;
     this.CucOrderHelperService = CucOrderHelperService;
     this.ovhDocUrl = ovhDocUrl;
