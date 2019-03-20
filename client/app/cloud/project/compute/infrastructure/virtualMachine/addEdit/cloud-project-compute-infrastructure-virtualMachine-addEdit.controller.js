@@ -105,7 +105,7 @@ angular.module('managerApp')
       CLOUD_INSTANCE_DEFAULT_FALLBACK,
       CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES,
       REDIRECT_URLS,
-      TARGET,
+      coreConfig,
       URLS,
     ) {
       const self = this;
@@ -726,7 +726,7 @@ angular.module('managerApp')
       function initURLs() {
         self.urls.vlansApiGuide = ovhDocUrl.getDocUrl('g2162.public_cloud_et_vrack_-_comment_utiliser_le_vrack_et_les_reseaux_prives_avec_les_instances_public_cloud');
 
-        if (TARGET === 'US') {
+        if (coreConfig.getRegion() === 'US') {
           self.urls.guidesSshkeyURL = URLS.guides.ssh.create.US;
         } else {
           self.urls.guidesSshkeyURL = ovhDocUrl.getDocUrl('g1769.creating_ssh_keys');

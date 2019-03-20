@@ -5,7 +5,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPublic,
     OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot,
     OvhApiCloudProjectSshKey, CucCurrencyService, CucRegionService, CucServiceHelper, ovhDocUrl,
-    TARGET, URLS) {
+    coreConfig, URLS) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
@@ -28,7 +28,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.CucServiceHelper = CucServiceHelper;
     this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
     this.ovhDocUrl = ovhDocUrl;
-    this.TARGET = TARGET;
+    this.coreConfig = coreConfig;
     this.URLS = URLS;
   }
 
@@ -74,7 +74,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     this.promisePublicNetworks = this.OvhApiCloudProjectNetworkPublic.v6()
       .query({ serviceName: this.serviceName }).$promise;
     this.urls.vLansApiGuide = this.ovhDocUrl.getDocUrl('g2162.public_cloud_et_vrack_-_comment_utiliser_le_vrack_et_les_reseaux_prives_avec_les_instances_public_cloud');
-    if (this.TARGET === 'US') {
+    if (this.coreConfig.getRegion() === 'US') {
       this.urls.guidesSshkey = this.URLS.guides.ssh.create.US;
     } else {
       this.urls.guidesSshkey = this.ovhDocUrl.getDocUrl('g1769.creating_ssh_keys');

@@ -38,6 +38,8 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
+    "@ovh-ux/manager-config": "^0.1.0",
+    "@ovh-ux/manager-core": "^5.0.0",
     "@ovh-ux/ng-at-internet": "^4.0.0",
     "@ovh-ux/ng-at-internet-ui-router-plugin": "^2.0.0",
     "@ovh-ux/ng-ovh-api-wrappers": "^3.0.0",
@@ -45,6 +47,7 @@
     "@ovh-ux/ng-ovh-cloud-universe-components": "^0.3.1",
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-form-flat": "^4.0.0",
+    "@ovh-ux/ng-ovh-http": "^4.0.1-beta.0",
     "@ovh-ux/ng-ovh-proxy-request": "^1.0.0-beta.0",
     "@ovh-ux/ng-ovh-sso-auth": "^4.0.0",
     "@ovh-ux/ng-ovh-sso-auth-modal-plugin": "^3.0.0",
@@ -122,6 +125,7 @@
     "popper.js": "^1.14.1",
     "uri.js": "medialize/URI.js#~1.15.0",
     "validator-js": "chriso/validator.js#~3.37.0",
+    "webpack": "^4.29.6",
     "xterm": "^3.4.1"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@ class NavbarNotificationService {
   constructor(
     $interval, $q, $translate,
     atInternet, CucCloudMessage, NavbarBuilder, OvhApiNotificationAapi,
-    TARGET, UNIVERSE,
+    coreConfig, UNIVERSE,
   ) {
     this.$interval = $interval;
     this.$q = $q;
@@ -11,7 +11,7 @@ class NavbarNotificationService {
     this.CucCloudMessage = CucCloudMessage;
     this.NavbarBuilder = NavbarBuilder;
     this.OvhApiNotificationAapi = OvhApiNotificationAapi;
-    this.TARGET = TARGET;
+    this.coreConfig = coreConfig;
     this.UNIVERSE = UNIVERSE;
 
     this.NOTIFICATION_REFRESH_TIME = 60000;
@@ -20,7 +20,7 @@ class NavbarNotificationService {
   getMessages() {
     return this.$translate.refresh().then(() => this.OvhApiNotificationAapi.query({
       lang: this.$translate.preferredLanguage(),
-      target: this.TARGET,
+      target: this.coreConfig.getRegion(),
       universe: this.UNIVERSE,
     }).$promise.catch((error) => {
       this.CucCloudMessage.error({ textHtml: error.message }, 'index');
