@@ -4,7 +4,6 @@ class CloudProjectSidebar {
     this.SidebarMenu = SidebarMenu;
 
     this.region = coreConfig.getRegion();
-    console.log(this.region);
     this.type = 'PROJECT';
   }
 
