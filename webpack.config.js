@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const _ = require('lodash');
-const webpack = require('webpack');
+const webpack = require('webpack'); // eslint-disable-line
 const webpackConfig = require('@ovh-ux/manager-webpack-config');
 
 const folder = './client/app';

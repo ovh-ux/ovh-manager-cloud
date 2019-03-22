@@ -125,7 +125,6 @@
     "popper.js": "^1.14.1",
     "uri.js": "medialize/URI.js#~1.15.0",
     "validator-js": "chriso/validator.js#~3.37.0",
-    "webpack": "^4.29.6",
     "xterm": "^3.4.1"
   },
   "devDependencies": {
