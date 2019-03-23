@@ -175,7 +175,7 @@ class ManagerNavbarService {
           case 'KUBE':
             return {
               title: service.displayName,
-              state: 'paas.kube.service',
+              state: 'kube.service',
               stateParams: {
                 serviceName: service.serviceName,
               },

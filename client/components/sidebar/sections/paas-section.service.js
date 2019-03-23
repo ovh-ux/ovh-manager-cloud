@@ -23,7 +23,7 @@ class PaasSectionSidebarService {
       id: 'mainPaasItem',
       title: this.$translate.instant('cloud_sidebar_section_paas'),
       icon: 'ovh-font ovh-font-cloud-package',
-      loadOnState: 'paas',
+      loadOnState: ['paas', 'kube'],
       allowSubItems: true,
       allowSearch: this.SidebarHelper.constructor
         .countProductsInSection(paasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH,

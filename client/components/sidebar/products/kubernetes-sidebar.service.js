@@ -49,11 +49,11 @@ class KubernetesSidebar {
         title: service.displayName || service.serviceName,
         icon: 'ovh-font ovh-font-cloud-public2',
         allowSubItems: false,
-        state: 'paas.kube.service',
+        state: 'kube.service',
         stateParams: {
           serviceName: service.serviceName,
         },
-        loadOnState: 'paas.kube',
+        loadOnState: 'kube',
         loadOnStateParams: {
           serviceName: service.serviceName,
         },
@@ -69,4 +69,13 @@ class KubernetesSidebar {
   }
 }
 
-angular.module('managerApp').service('KubernetesSidebar', KubernetesSidebar);
+angular.module('managerApp')
+  .run(($rootScope, SidebarMenu) => {
+    $rootScope.$on('sidebar.kubernetes.name.update', (event, { serviceName, title }) => {
+      const { parentId } = SidebarMenu.getItemById(serviceName);
+      SidebarMenu.updateItemDisplay({
+        title,
+      }, serviceName, parentId);
+    });
+  })
+  .service('KubernetesSidebar', KubernetesSidebar);
