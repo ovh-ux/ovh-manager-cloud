@@ -5,6 +5,7 @@
  "cpbc_monthly_instance_col_total": "Tarifa mensal",
  "cpbc_monthly_instance_col_total_tooltip": "Faturado no início do mês",
  "cpbc_hourly_instance_detail_title": "Servidores",
+ "cpbc_hourly_additional_services_detail_title": "Serviços adicionais",
  "cpbc_hourly_instance_col_name": "Nome",
  "cpbc_hourly_instance_col_consumption": "Consumo",
  "cpbc_hourly_instance_col_consumption_tooltip": "Faturado no início do mês seguinte.",
@@ -13,7 +14,7 @@
  "cpbc_hourly_instance_pass_to_monthly_error": "Lamentamos, mas não foi possível integrar esta instância no tarifário mensal.",
  "cpbc_hourly_instance_pass_to_monthly_price_error": "Lamentamos, mas não foi possível carregar o preço do tarifário mensal.",
  "cpbc_hourly_instance_pass_to_monthly_info": "Um ajuste prorata temporis será imediatamente calculado para o mês a decorrer.",
- "cpbc_hourly_instance_pass_to_monthly_button": "Passar para valor mensal ({{price}}/mês + IVA)",
+ "cpbc_hourly_instance_pass_to_monthly_button": "Passar a valor mensal ({{price}} s/IVA/mês)",
  "cpbc_hourly_instance_deleted": "Instância eliminada",
  "cpbc_hourly_instance_pass_to_monthly": "Integrar no tarifário mensal",
  "cpbc_object_storage_detail_title": "Armazenamento de objetos",
@@ -63,5 +64,6 @@
  "cpbc_hourly_instance_trafic_trafic": "Tráfego",
  "cpbc_hourly_instance_trafic_price": "Preço",
  "cpbc_hourly_instance_trafic_unlimitted": "ilimitado",
- "cpbc_hourly_instance_trafic_included": "incluído"
+ "cpbc_hourly_instance_trafic_included": "incluído",
+ "cpbc_platform_dc-adp": "Plataforma de dados de análise"
 }

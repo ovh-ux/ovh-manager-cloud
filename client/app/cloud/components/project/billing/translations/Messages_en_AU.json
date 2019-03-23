@@ -5,6 +5,7 @@
  "cpbc_monthly_instance_col_total": "Monthly rate ",
  "cpbc_monthly_instance_col_total_tooltip": "Billed at the beginning of the month.",
  "cpbc_hourly_instance_detail_title": "Servers",
+ "cpbc_hourly_additional_services_detail_title": "Additional services",
  "cpbc_hourly_instance_col_name": "Name",
  "cpbc_hourly_instance_col_consumption": "Usage",
  "cpbc_hourly_instance_col_consumption_tooltip": "Billed at the beginning of the following month.",
@@ -36,7 +37,7 @@
  "cpbc_archive_storage_output_traffic_info_part2": ". You have used {{amount}} GiB during this period. ",
  "cpbc_archive_storage_input_traffic_info_part2": ". You have used {{amount}} GiB during this period. ",
  "cpbc_snapshot_detail_title": "Backup storage",
- "cpbc_snapshot_col_location": "Location",
+ "cpbc_snapshot_col_location": "Region",
  "cpbc_snapshot_col_type": "Type",
  "cpbc_snapshot_col_usage": "Usage",
  "cpbc_snapshot_col_usage_tooltip": "Billed at the beginning of the following month.",
@@ -63,5 +64,6 @@
  "cpbc_hourly_instance_trafic_trafic": "Traffic",
  "cpbc_hourly_instance_trafic_price": "Price",
  "cpbc_hourly_instance_trafic_unlimitted": "Unlimited",
- "cpbc_hourly_instance_trafic_included": "Included"
+ "cpbc_hourly_instance_trafic_included": "Included",
+ "cpbc_platform_dc-adp": "Data analysis platform"
 }
