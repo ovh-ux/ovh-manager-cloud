@@ -180,7 +180,7 @@
  "logs-stream-5-type": "Stream",
  "logs-kibana-1-type": "Kibana on demand",
  "logs-alias-5-type": "​​Elasticsearch-Alias",
- "logs-index-0-type": "Elasticsearch-Index 500 MiB",
+ "logs-index-0-type": "Elasticsearch-Index mit 500 GiB",
  "logs-index-1-type": "Elasticsearch-Index mit 25 GiB",
  "logs-index-2-type": "Elasticsearch-Index mit 50 GiB",
  "logs-index-4-type": "Elasticsearch-Index mit 100 GiB",
