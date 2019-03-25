@@ -1,13 +1,13 @@
 class IpLoadBalancerFrontendsEditCtrl {
-  constructor($q, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, $translate, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerFailoverIpService,
     IpLoadBalancerFrontendsService, IpLoadBalancerZoneService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
     this.IpLoadBalancerFrontendsService = IpLoadBalancerFrontendsService;
@@ -17,29 +17,29 @@ class IpLoadBalancerFrontendsEditCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getArrayLoader({
+    this.zones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
         this.$stateParams.serviceName,
       ),
     });
-    this.farms = this.ControllerHelper.request.getArrayLoader({
+    this.farms = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerFrontendsService.getFarmsChoices(
         this.getFarmType(),
         this.$stateParams.serviceName,
         this.frontend.zone,
       ),
     });
-    this.certificates = this.ControllerHelper.request.getArrayLoader({
+    this.certificates = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerFrontendsService.getCertificatesChoices(
         this.$stateParams.serviceName,
       ),
     });
-    this.failoverIps = this.ControllerHelper.request.getHashLoader({
+    this.failoverIps = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerFailoverIpService.getFailoverIpsSelectData(
         this.$stateParams.serviceName,
       ),
     });
-    this.apiFrontend = this.ControllerHelper.request.getHashLoader({
+    this.apiFrontend = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerFrontendsService.getAllFrontendsTypes(
         this.$stateParams.serviceName,
       )
@@ -251,7 +251,7 @@ class IpLoadBalancerFrontendsEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerFrontendsService
       .createFrontend(this.type, this.$stateParams.serviceName, this.getCleanFrontend())
       .then(() => this.$state.go('network.iplb.detail.frontends'))
@@ -265,7 +265,7 @@ class IpLoadBalancerFrontendsEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerFrontendsService
       .updateFrontend(
         this.type,

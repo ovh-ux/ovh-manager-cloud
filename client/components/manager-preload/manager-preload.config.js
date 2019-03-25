@@ -1,8 +1,8 @@
-angular.module('managerApp').run(($q, $rootScope, $transitions, $translate, SessionService, ProductsService) => {
+angular.module('managerApp').run(($q, $rootScope, $transitions, $translate, SessionService, CucProductsService) => {
   $transitions.onSuccess({}, () => {
     $q.all({
       user: SessionService.getUser(),
-      products: ProductsService.getProducts(),
+      products: CucProductsService.getProducts(),
       translate: $translate.refresh(),
     }).then(() => {
       $rootScope.managerPreloadHide += ' manager-preload-hide'; // eslint-disable-line

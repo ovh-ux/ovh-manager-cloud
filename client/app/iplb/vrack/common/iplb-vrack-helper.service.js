@@ -1,6 +1,6 @@
 class IpLoadBalancerVrackHelper {
-  constructor(CloudPoll, IpLoadBalancerVrackService, OvhApiVrack) {
-    this.CloudPoll = CloudPoll;
+  constructor(CucCloudPoll, IpLoadBalancerVrackService, OvhApiVrack) {
+    this.CucCloudPoll = CucCloudPoll;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
     this.OvhApiVrack = OvhApiVrack;
   }
@@ -32,7 +32,7 @@ class IpLoadBalancerVrackHelper {
   }
 
   pollCreationRules(task) {
-    return this.CloudPoll.poll({
+    return this.CucCloudPoll.poll({
       item: task,
       pollFunction: () => this.OvhApiVrack.v6()
         .task({ serviceName: task.serviceName, taskId: task.id })

@@ -1,10 +1,10 @@
 class IpLoadBalancerZoneDeleteCtrl {
-  constructor($q, $stateParams, CloudMessage, CloudNavigation, ControllerHelper,
+  constructor($q, $stateParams, CucCloudMessage, CucCloudNavigation, CucControllerHelper,
     IpLoadBalancerZoneDeleteService) {
     this.$q = $q;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerZoneDeleteService = IpLoadBalancerZoneDeleteService;
 
     this.serviceName = $stateParams.serviceName;
@@ -14,7 +14,7 @@ class IpLoadBalancerZoneDeleteCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.zones.load();
   }
 
@@ -24,7 +24,7 @@ class IpLoadBalancerZoneDeleteCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerZoneDeleteService
       .deleteZones(this.serviceName, this.model.zones.value)
       .then(() => {
@@ -44,7 +44,7 @@ class IpLoadBalancerZoneDeleteCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getArrayLoader({
+    this.zones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneDeleteService
         .getDeletableZones(this.serviceName),
     });

@@ -1,11 +1,11 @@
 class LogsIndexService {
-  constructor($q, $translate, CloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas,
-    ServiceHelper, LogsOptionsService, LogsConstants) {
+  constructor($q, $translate, CucCloudPoll, CucControllerHelper, LogsHelperService, OvhApiDbaas,
+    CucServiceHelper, LogsOptionsService, LogsConstants) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudPoll = CloudPoll;
-    this.ServiceHelper = ServiceHelper;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudPoll = CucCloudPoll;
+    this.CucServiceHelper = CucServiceHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsHelperService = LogsHelperService;
     this.LogsOptionsService = LogsOptionsService;
     this.LogsConstants = LogsConstants;
@@ -76,7 +76,7 @@ class LogsIndexService {
   }
 
   deleteModal(indexName) {
-    return this.ControllerHelper.modal.showDeleteModal({
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_modal_delete_title'),
       textHtml: this.$translate.instant('logs_modal_delete_question', { indexName }),
     });

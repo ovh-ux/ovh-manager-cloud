@@ -1,12 +1,12 @@
 class AddSecondaryDnsCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage, serviceName,
     VpsService) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = serviceName;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.VpsService = VpsService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.available = null;
     this.model = null;
   }
@@ -16,10 +16,10 @@ class AddSecondaryDnsCtrl {
   }
 
   loadAvailableDns() {
-    this.availableDns = this.ControllerHelper.request.getHashLoader({
+    this.availableDns = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.getSecondaryDNSAvailable(this.serviceName)
         .then((data) => { this.available = data; })
-        .catch(() => this.CloudMessage.error(this.$translate.instant('vps_configuration_secondarydns_add_fail'))),
+        .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_configuration_secondarydns_add_fail'))),
     });
     return this.availableDns.load();
   }
@@ -29,11 +29,11 @@ class AddSecondaryDnsCtrl {
   }
 
   confirm() {
-    this.CloudMessage.flushChildMessage();
-    this.addDns = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.addDns = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.VpsService.addSecondaryDnsDomain(this.serviceName, this.model)
-        .then(() => this.CloudMessage.success(this.$translate.instant('vps_configuration_secondarydns_add_success', { domain: this.model })))
-        .catch(err => this.CloudMessage.error(err.message))
+        .then(() => this.CucCloudMessage.success(this.$translate.instant('vps_configuration_secondarydns_add_success', { domain: this.model })))
+        .catch(err => this.CucCloudMessage.error(err.message))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.addDns.load();

@@ -3,24 +3,24 @@ class VpsHeaderCtrl {
     $rootScope,
     $stateParams,
     $translate,
-    CloudMessage,
+    CucCloudMessage,
     OvhApiMe,
     VpsNotificationIpv6,
     STOP_NOTIFICATION_USER_PREF,
     VpsService,
-    ProductsService,
+    CucProductsService,
   ) {
     this.$rootScope = $rootScope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.OvhApiMe = OvhApiMe;
     this.VpsNotificationIpv6 = VpsNotificationIpv6;
     this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
     this.serviceName = $stateParams.serviceName;
     this.description = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ProductsService = ProductsService;
+    this.CucProductsService = CucProductsService;
 
     this.loaders = {
       init: false,
@@ -54,9 +54,9 @@ class VpsHeaderCtrl {
           }
         });
       })
-      .catch(() => this.CloudMessage.error(this.$translate.instant('vps_dashboard_loading_error')))
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_dashboard_loading_error')))
       .finally(() => { this.loaders.init = false; });
-    this.description = this.ProductsService.getDisplayName('VPS', this.serviceName);
+    this.description = this.CucProductsService.getDisplayName('VPS', this.serviceName);
   }
 
   checkMessages(vps) {
@@ -67,15 +67,15 @@ class VpsHeaderCtrl {
 
   isExpired(vps) {
     if (vps.isExpired) {
-      this.CloudMessage.warning(this.$translate.instant('vps_service_expired', { vps: vps.name }), 'iaas.vps.detail');
+      this.CucCloudMessage.warning(this.$translate.instant('vps_service_expired', { vps: vps.name }), 'iaas.vps.detail');
     } else if (vps.messages.length > 0) {
-      this.CloudMessage.error(this.$translate.instant('vps_dashboard_loading_error'), vps);
+      this.CucCloudMessage.error(this.$translate.instant('vps_dashboard_loading_error'), vps);
     }
   }
 
   isInRescueMode(netbootMode) {
     if (netbootMode === 'RESCUE') {
-      this.CloudMessage.warning({
+      this.CucCloudMessage.warning({
         textHtml: this.$translate.instant('vps_configuration_reboot_rescue_warning_text'),
       }, 'iaas.vps.detail');
     }
@@ -85,7 +85,7 @@ class VpsHeaderCtrl {
     const oldVersion = _.contains(version, '2014') || _.contains(version, '2013');
     const userAcknowledged = this.stopNotification.ipV6;
     if (!userAcknowledged && !oldVersion && ipv6) {
-      this.CloudMessage.info({
+      this.CucCloudMessage.info({
         textHtml: this.$translate.instant('vps_configuration_ipV6_info_text'),
         dismissed: this.stopNotification.ipV6,
         dismiss: () => this.stopNotificationIpV6(),
@@ -107,7 +107,7 @@ class VpsHeaderCtrl {
   stopNotificationIpV6() {
     this.stopNotification.ipV6 = true;
     this.VpsNotificationIpv6.stopNotification(this.STOP_NOTIFICATION_USER_PREF.ipV6, this.vps.name)
-      .catch(() => this.CloudMessage.error(this.$translate.instant('vps_stop_bother_error')));
+      .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_stop_bother_error')));
   }
 }
 

@@ -2,11 +2,27 @@
 
 angular.module('managerApp')
   .controller('CloudProjectComputeSnapshotCtrl',
-    function CloudProjectComputeSnapshotCtrl($uibModal, OvhCloudPriceHelper,
-      OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
-      OvhApiCloudProjectVolumeSnapshot, OvhApiCloudProjectImage, $translate, CloudMessage, $scope,
-      $filter, $q, $timeout, CloudProjectOrchestrator, $state,
-      $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
+    function CloudProjectComputeSnapshotCtrl(
+      $uibModal,
+      OvhCloudPriceHelper,
+      OvhApiCloudProjectSnapshot,
+      OvhApiCloudProjectInstance,
+      OvhApiCloudProjectVolume,
+      OvhApiCloudProjectVolumeSnapshot,
+      OvhApiCloudProjectImage,
+      $translate,
+      CucCloudMessage,
+      $scope,
+      $filter,
+      $q,
+      $timeout,
+      CloudProjectOrchestrator,
+      $state,
+      $stateParams,
+      Poller,
+      CucRegionService,
+      CLOUD_UNIT_CONVERSION,
+    ) {
       const self = this;
       const serviceName = $stateParams.projectId;
 
@@ -15,7 +31,7 @@ angular.module('managerApp')
 
       const orderBy = $filter('orderBy');
 
-      self.regionService = RegionService;
+      self.regionService = CucRegionService;
       // Datas
       self.table = {
         snapshot: [],
@@ -258,7 +274,7 @@ angular.module('managerApp')
         }, (err) => {
           if (err && err.status) {
             self.table.snapshot = _.filter(self.table.snapshot, { type: 'volume' });
-            CloudMessage.error([
+            CucCloudMessage.error([
               $translate.instant('cpc_snapshot_error'),
               (err.data && err.data.message) || '',
             ].join(' '));
@@ -307,7 +323,7 @@ angular.module('managerApp')
         }, (err) => {
           if (err && err.status) {
             self.table.snapshot = _.filter(self.table.snapshot, snapshot => snapshot.type !== 'volume');
-            CloudMessage.error([$translate.instant('cpc_snapshot_error'), (err.data && err.data.message) || ''].join(' '));
+            CucCloudMessage.error([$translate.instant('cpc_snapshot_error'), (err.data && err.data.message) || ''].join(' '));
           }
         }, (snapshotList) => {
           const currentVolumeSnapshots = _.filter(self.table.snapshot, { type: 'volume' });
@@ -405,7 +421,7 @@ angular.module('managerApp')
             setPrice();
           }, (err) => {
             self.table.snapshot = null;
-            CloudMessage.error([
+            CucCloudMessage.error([
               $translate.instant('cpc_snapshot_error'),
               (err.data && err.data.message) || '',
             ].join(' '));
@@ -416,13 +432,13 @@ angular.module('managerApp')
       };
 
       self.createVmBySnapshot = function (snapshot) {
-        CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
+        CucCloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
         $state.go('iaas.pci-project.compute.infrastructure.diagram');
       };
 
       self.createVolumeBySnapshot = function (snapshot) {
-        CloudMessage.info($translate.instant('cpc_snapshot_create_volume_button_info'));
+        CucCloudMessage.info($translate.instant('cpc_snapshot_create_volume_button_info'));
         $timeout(() => {
           $state.go('iaas.pci-project.compute.infrastructure.diagram', {
             createNewVolumeFromSnapshot: {
@@ -444,11 +460,11 @@ angular.module('managerApp')
           },
           successHandler: () => {
             self.getSnapshot(true);
-            CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
+            CucCloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
             pollSnapshots();
             pollVolumeSnapshots();
           },
-          errorHandler: err => CloudMessage.error([
+          errorHandler: err => CucCloudMessage.error([
             $translate.instant('cpc_snapshot_delete_error'),
             (err.data && err.data.message) || '',
           ].join(' ')),

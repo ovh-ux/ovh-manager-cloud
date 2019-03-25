@@ -1,11 +1,19 @@
 class LogsStreamsAlertsHomeCtrl {
-  constructor($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService,
-    LogsConstants, LogsStreamsAlertsService) {
+  constructor(
+    $state,
+    $stateParams,
+    $translate,
+    CucCloudMessage,
+    CucControllerHelper,
+    LogsStreamsService,
+    LogsConstants,
+    LogsStreamsAlertsService,
+  ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsStreamsService = LogsStreamsService;
     this.LogsConstants = LogsConstants;
     this.LogsStreamsAlertsService = LogsStreamsAlertsService;
@@ -39,11 +47,11 @@ class LogsStreamsAlertsHomeCtrl {
    * @memberof LogsStreamsAlertsHomeCtrl
    */
   initLoaders() {
-    this.alertIds = this.ControllerHelper.request.getArrayLoader({
+    this.alertIds = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsAlertsService
         .getAlertIds(this.serviceName, this.streamId),
     });
-    this.stream = this.ControllerHelper.request.getHashLoader({
+    this.stream = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.getStream(this.serviceName, this.streamId),
     });
   }
@@ -57,7 +65,7 @@ class LogsStreamsAlertsHomeCtrl {
      * @memberof LogsStreamsAlertsHomeCtrl
      */
   loadAlerts({ offset, pageSize }) {
-    this.alerts = this.ControllerHelper.request.getArrayLoader({
+    this.alerts = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsAlertsService.getAlerts(
         this.serviceName,
         this.streamId,
@@ -82,8 +90,8 @@ class LogsStreamsAlertsHomeCtrl {
      * @memberof LogsStreamsAlertsHomeCtrl
      */
   showDeleteConfirm(alert) {
-    this.CloudMessage.flushChildMessage();
-    return this.ControllerHelper.modal.showDeleteModal({
+    this.CucCloudMessage.flushChildMessage();
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('streams_alerts_delete'),
       textHtml: this.$translate.instant('streams_alerts_delete_message', { alert: alert.title }),
     }).then(() => this.remove(alert));
@@ -96,7 +104,7 @@ class LogsStreamsAlertsHomeCtrl {
    * @memberof LogsStreamsAlertsHomeCtrl
    */
   remove(alert) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsAlertsService
         .deleteAlert(this.serviceName, this.streamId, alert)
         .then(() => this.runLoaders()),

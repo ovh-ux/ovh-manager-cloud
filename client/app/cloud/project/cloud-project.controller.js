@@ -1,10 +1,12 @@
-
-
 angular.module('managerApp')
-  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions, ControllerHelper, ovhUserPref, OvhApiCloud, CloudProjectRightService) {
+  .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions,
+    atInternet, CloudProjectRightService, CucControllerHelper, ovhUserPref, OvhApiCloud,
+    TARGET, TRACKING_CLOUD) {
     const self = this;
     const serviceName = $stateParams.projectId;
     const onboardingKey = 'SHOW_PCI_ONBOARDING';
+    $scope.TARGET = TARGET;
+    self.TRACKING_CLOUD = TRACKING_CLOUD;
 
     self.loaders = {
       project: false,
@@ -19,11 +21,18 @@ angular.module('managerApp')
       return $state.includes(stateName);
     };
 
+    self.trackTab = function trackTab(name) {
+      atInternet.trackClick({
+        name,
+        type: 'action',
+      });
+    };
+
     // reference to our rootScope state change listener
     let stateChangeListener = null;
 
     function openOnboarding() {
-      ControllerHelper.modal.showModal({
+      CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/cloud/project/onboarding/onboarding-pci.html',
           controller: 'pciSlideshowCtrl',

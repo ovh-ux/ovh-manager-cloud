@@ -1,7 +1,7 @@
 (() => {
   class CloudProjectBillingCtrl {
-    constructor(CloudMessage, $stateParams) {
-      this.CloudMessage = CloudMessage;
+    constructor(CucCloudMessage, $stateParams) {
+      this.CucCloudMessage = CucCloudMessage;
       this.serviceName = $stateParams.projectId;
 
       this.messages = [];
@@ -12,8 +12,8 @@
     }
 
     loadMessage() {
-      this.CloudMessage.unSubscribe('iaas.pci-project.billing');
-      this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project.billing', { onMessage: () => this.refreshMessage() });
+      this.CucCloudMessage.unSubscribe('iaas.pci-project.billing');
+      this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project.billing', { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage() {

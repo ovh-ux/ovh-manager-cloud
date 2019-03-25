@@ -1,7 +1,7 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectComputeVolumeSnapshotAddCtrl', function CloudProjectComputeVolumeSnapshotAddCtrl($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator) {
+  .controller('CloudProjectComputeVolumeSnapshotAddCtrl', function CloudProjectComputeVolumeSnapshotAddCtrl($scope, $stateParams, $uibModalInstance, params, CucCloudMessage, $translate, $filter, $q, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator) {
     const self = this;
     const serviceName = $stateParams.projectId;
 
@@ -37,9 +37,9 @@ angular.module('managerApp')
       CloudProjectComputeVolumesOrchestrator
         .snapshotVolume(self.snapshot.volume, self.snapshot.name).then(() => {
           $uibModalInstance.close(self.snapshot);
-          CloudMessage.info($translate.instant('cpcv_snapshot_creation_info'), { hideAfter: 3 });
+          CucCloudMessage.info($translate.instant('cpcv_snapshot_creation_info'), { hideAfter: 3 });
         }, (err) => {
-          CloudMessage.error([$translate.instant('cpcv_snapshot_creation_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpcv_snapshot_creation_error'), (err.data && err.data.message) || ''].join(' '));
         }).finally(() => {
           self.loaders.snapshot = false;
         });

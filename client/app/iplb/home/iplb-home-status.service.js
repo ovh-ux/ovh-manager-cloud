@@ -1,9 +1,9 @@
 class IpLoadBalancerHomeStatusService {
-  constructor($q, $translate, OvhApiIpLoadBalancing, ServiceHelper) {
+  constructor($q, $translate, OvhApiIpLoadBalancing, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.apiToUiStatus = {
       ok: 'success',
@@ -43,7 +43,7 @@ class IpLoadBalancerHomeStatusService {
             return transformedResponse;
           });
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_status_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_status_loading_error'));
   }
 
   transformIplbItem(serviceName, iplbItem) {

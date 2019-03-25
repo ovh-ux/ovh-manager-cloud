@@ -1,9 +1,9 @@
 
 
 angular.module('managerApp')
-  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
+  .controller('CloudProjectComputeVolumeCtrl', function CloudProjectComputeVolumeCtrl($scope, $filter, $q, $timeout, $stateParams, $translate, $state, CucControllerHelper,
     CloudProjectOrchestrator, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-    OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
+    OvhApiCloudProjectInstance, CucCloudMessage, CucRegionService, CLOUD_UNIT_CONVERSION) {
     const self = this;
 
 
@@ -11,7 +11,7 @@ angular.module('managerApp')
 
 
     const orderBy = $filter('orderBy');
-    self.regionService = RegionService;
+    self.regionService = CucRegionService;
     // Datas
     self.table = {
       volume: [],
@@ -259,7 +259,7 @@ angular.module('managerApp')
           self.table.volume = null;
           self.table.instance = null;
           self.table.snapshots = null;
-          CloudMessage.error([$translate.instant('cpc_volume_error'), (err.data && err.data.message) || ''].join(' '));
+          CucCloudMessage.error([$translate.instant('cpc_volume_error'), (err.data && err.data.message) || ''].join(' '));
         }).finally(() => {
           self.loaders.table.volume = false;
         });
@@ -279,7 +279,7 @@ angular.module('managerApp')
     }, true);
 
     self.createNewVolume = function () {
-      CloudMessage.info($translate.instant('cpc_volume_create_volume_button_info'));
+      CucCloudMessage.info($translate.instant('cpc_volume_create_volume_button_info'));
       $timeout(() => {
         $state.go('iaas.pci-project.compute.infrastructure.diagram', {
           createNewVolume: true,
@@ -288,7 +288,7 @@ angular.module('managerApp')
     };
 
     self.openDeleteVolume = function (volume) {
-      ControllerHelper.modal.showModal({
+      CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/cloud/project/compute/volume/delete/cloud-project-compute-volume-delete.html',
           controller: 'CloudProjectComputeVolumeDeleteCtrl',
@@ -300,9 +300,9 @@ angular.module('managerApp')
         },
         successHandler: () => {
           self.getVolume(true);
-          CloudMessage.success($translate.instant('cpc_volume_delete_success'));
+          CucCloudMessage.success($translate.instant('cpc_volume_delete_success'));
         },
-        errorHandler: err => CloudMessage.error([$translate.instant('cpc_volume_delete_error'), (err.data && err.data.message) || ''].join(' ')),
+        errorHandler: err => CucCloudMessage.error([$translate.instant('cpc_volume_delete_error'), (err.data && err.data.message) || ''].join(' ')),
       });
     };
 

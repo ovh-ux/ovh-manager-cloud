@@ -1,10 +1,10 @@
 class CloudProjectOpenStackUserAddCtrl {
-  constructor($translate, $uibModalInstance, ControllerHelper, CloudMessage,
+  constructor($translate, $uibModalInstance, CucControllerHelper, CucCloudMessage,
     OpenstackUsersPassword, OvhApiCloud, serviceName) {
     this.$translate = $translate;
     this.$uibModalInstance = $uibModalInstance;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
     this.OpenstackUsersPassword = OpenstackUsersPassword;
     this.OvhApiCloud = OvhApiCloud;
     this.serviceName = serviceName;
@@ -19,8 +19,8 @@ class CloudProjectOpenStackUserAddCtrl {
   }
 
   confirm() {
-    this.CloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.OvhApiCloud.Project().User().v6().save({
         serviceName: this.serviceName,
       }, {
@@ -28,9 +28,9 @@ class CloudProjectOpenStackUserAddCtrl {
       }).$promise
         .then((newUser) => {
           this.OpenstackUsersPassword.put(this.serviceName, newUser.id, newUser.password);
-          this.CloudMessage.success(this.$translate.instant('openstackusers_users_userlist_add_submit_success'));
+          this.CucCloudMessage.success(this.$translate.instant('openstackusers_users_userlist_add_submit_success'));
         })
-        .catch(err => this.CloudMessage.error([this.$translate.instant('openstackusers_users_userlist_add_submit_error'), (err.data && err.data.message) || ''].join(' ')))
+        .catch(err => this.CucCloudMessage.error([this.$translate.instant('openstackusers_users_userlist_add_submit_error'), (err.data && err.data.message) || ''].join(' ')))
         .finally(() => this.$uibModalInstance.close()),
     });
     return this.saving.load();

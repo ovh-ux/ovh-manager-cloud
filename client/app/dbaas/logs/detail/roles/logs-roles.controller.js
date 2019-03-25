@@ -1,24 +1,24 @@
 class LogsRolesCtrl {
-  constructor($state, $stateParams, CloudMessage, ControllerHelper, LogsRolesService) {
+  constructor($state, $stateParams, CucCloudMessage, CucControllerHelper, LogsRolesService) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.LogsRolesService = LogsRolesService;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.initLoaders();
   }
 
   initLoaders() {
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsRolesService.getQuota(this.serviceName),
     });
 
-    this.roles = this.ControllerHelper.request.getArrayLoader({
+    this.roles = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getRoles(this.serviceName),
     });
 
-    this.roleOptions = this.ControllerHelper.request.getArrayLoader({
+    this.roleOptions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsRolesService.getSubscribedOptions(this.serviceName),
     });
 
@@ -28,8 +28,8 @@ class LogsRolesCtrl {
   }
 
   add(info) {
-    this.CloudMessage.flushChildMessage();
-    this.ControllerHelper.modal.showModal({
+    this.CucCloudMessage.flushChildMessage();
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/roles/add/logs-role-add.html',
         controller: 'LogsRoleAddModalCtrl',
@@ -45,7 +45,7 @@ class LogsRolesCtrl {
   }
 
   summary(info) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/roles/overview/logs-role-overview.html',
         controller: 'LogsRoleOverviewCtrl',
@@ -58,14 +58,14 @@ class LogsRolesCtrl {
   }
 
   showDeleteConfirm(info) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsRolesService.deleteModal(
       info,
     ).then(() => {
-      this.delete = this.ControllerHelper.request.getHashLoader({
+      this.delete = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info)
           .then(() => this.initLoaders())
-          .finally(() => this.ControllerHelper.scrollPageToTop()),
+          .finally(() => this.CucControllerHelper.scrollPageToTop()),
       });
       this.delete.load();
     });

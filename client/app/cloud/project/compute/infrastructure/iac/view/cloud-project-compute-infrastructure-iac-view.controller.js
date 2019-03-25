@@ -1,10 +1,10 @@
 class CloudProjectComputeInfrastructureIacViewCtrl {
-  constructor($q, $state, $stateParams, OvhApiCloudProjectStack, ServiceHelper) {
+  constructor($q, $state, $stateParams, OvhApiCloudProjectStack, CucServiceHelper) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.OvhApiCloudProjectStack = OvhApiCloudProjectStack;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   $onInit() {
@@ -26,7 +26,7 @@ class CloudProjectComputeInfrastructureIacViewCtrl {
         this.stacks = stacks;
         return stacks;
       })
-      .catch(this.ServiceHelper.errorHandler('cpciiac_view_general_ERROR'));
+      .catch(this.CucServiceHelper.errorHandler('cpciiac_view_general_ERROR'));
   }
 
   viewStack(stack) {

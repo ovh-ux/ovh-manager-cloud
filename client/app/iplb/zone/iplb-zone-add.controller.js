@@ -1,11 +1,11 @@
 class IpLoadBalancerZoneAddCtrl {
-  constructor($q, $translate, $stateParams, CloudMessage, CloudNavigation, ControllerHelper,
-    IpLoadBalancerZoneAddService) {
+  constructor($q, $translate, $stateParams, CucCloudMessage, CucCloudNavigation,
+    CucControllerHelper, IpLoadBalancerZoneAddService) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
 
     this.serviceName = $stateParams.serviceName;
@@ -15,7 +15,7 @@ class IpLoadBalancerZoneAddCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.zones.load();
   }
 
@@ -25,7 +25,7 @@ class IpLoadBalancerZoneAddCtrl {
     }
 
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerZoneAddService.addZones(this.serviceName, this.model.zones.value)
       .then(() => {
         this.previousState.go();
@@ -40,7 +40,7 @@ class IpLoadBalancerZoneAddCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getArrayLoader({
+    this.zones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName),
     });
   }

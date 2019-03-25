@@ -1,4 +1,4 @@
-angular.module('managerApp').controller('NashaPartitionDeleteCtrl', function (OvhApiDedicatedNasha, $stateParams, $scope, $uibModalInstance, $translate, CloudMessage) {
+angular.module('managerApp').controller('NashaPartitionDeleteCtrl', function (OvhApiDedicatedNasha, $stateParams, $scope, $uibModalInstance, $translate, CucCloudMessage) {
   const self = this;
   self.loading = false;
   self.data = {
@@ -13,10 +13,10 @@ angular.module('managerApp').controller('NashaPartitionDeleteCtrl', function (Ov
       partitionName: self.data.partition.partitionName,
     }).$promise.then((result) => {
       $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
-      CloudMessage.success($translate.instant('nasha_partitions_action_delete_success', { partitionName: self.data.partition.partitionName }));
+      CucCloudMessage.success($translate.instant('nasha_partitions_action_delete_success', { partitionName: self.data.partition.partitionName }));
     }).catch(() => {
       $uibModalInstance.dismiss();
-      CloudMessage.error($translate.instant('nasha_partitions_action_delete_failure', { partitionName: self.data.partition.partitionName }));
+      CucCloudMessage.error($translate.instant('nasha_partitions_action_delete_failure', { partitionName: self.data.partition.partitionName }));
     }).finally(() => {
       self.loading = false;
     });

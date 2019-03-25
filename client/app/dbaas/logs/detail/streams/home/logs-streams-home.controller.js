@@ -1,14 +1,21 @@
 class LogsStreamsHomeCtrl {
-  constructor($state, $stateParams, $translate, LogsStreamsService, ControllerHelper, CloudMessage,
-    UrlHelper) {
+  constructor(
+    $state,
+    $stateParams,
+    $translate,
+    LogsStreamsService,
+    CucControllerHelper,
+    CucCloudMessage,
+    CucUrlHelper,
+  ) {
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsStreamsService = LogsStreamsService;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
-    this.UrlHelper = UrlHelper;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucUrlHelper = CucUrlHelper;
     this.initLoaders();
   }
 
@@ -18,10 +25,10 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   initLoaders() {
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.getQuota(this.serviceName),
     });
-    this.streams = this.ControllerHelper.request.getArrayLoader({
+    this.streams = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName),
     });
     this.quota.load();
@@ -69,8 +76,8 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   showDeleteConfirm(stream) {
-    this.CloudMessage.flushChildMessage();
-    this.ControllerHelper.modal.showDeleteModal({
+    this.CucCloudMessage.flushChildMessage();
+    this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_stream_delete_title'),
       textHtml: this.$translate.instant('logs_stream_delete_message', { stream: stream.info.title }),
     }).then(() => this.remove(stream));
@@ -83,10 +90,10 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   remove(stream) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsStreamsService.deleteStream(this.serviceName, stream.info)
         .then(() => this.initLoaders())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load();
   }
@@ -98,7 +105,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   manageAlerts(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.alerts', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,
@@ -112,7 +119,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   gotoArchives(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.archives', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,
@@ -126,7 +133,7 @@ class LogsStreamsHomeCtrl {
    * @memberof LogsStreamsHomeCtrl
    */
   followLive(stream) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.$state.go('dbaas.logs.detail.streams.follow', {
       serviceName: this.serviceName,
       streamId: stream.info.streamId,
@@ -146,7 +153,7 @@ class LogsStreamsHomeCtrl {
 
   copyToken(stream) {
     this.LogsStreamsService.copyStreamToken(stream);
-    this.ControllerHelper.scrollPageToTop();
+    this.CucControllerHelper.scrollPageToTop();
   }
 }
 

@@ -1,8 +1,8 @@
 (() => {
   class CloudProjectOpenstackCtrl {
-    constructor($state, CloudMessage, $stateParams) {
+    constructor($state, CucCloudMessage, $stateParams) {
       this.$state = $state;
-      this.CloudMessage = CloudMessage;
+      this.CucCloudMessage = CucCloudMessage;
       this.serviceName = $stateParams.projectId;
 
       this.messages = [];
@@ -13,8 +13,8 @@
     }
 
     loadMessages() {
-      this.CloudMessage.unSubscribe('iaas.pci-project.compute.openstack');
-      this.messageHandler = this.CloudMessage.subscribe('iaas.pci-project.compute.openstack', { onMessage: () => this.refreshMessage() });
+      this.CucCloudMessage.unSubscribe('iaas.pci-project.compute.openstack');
+      this.messageHandler = this.CucCloudMessage.subscribe('iaas.pci-project.compute.openstack', { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage() {

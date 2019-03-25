@@ -1,10 +1,10 @@
 class LogsIndexCtrl {
-  constructor($stateParams, bytesFilter, CloudMessage, ControllerHelper, LogsIndexService,
+  constructor($stateParams, bytesFilter, CucCloudMessage, CucControllerHelper, LogsIndexService,
     LogsConstants) {
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsIndexService = LogsIndexService;
     this.LogsConstants = LogsConstants;
     this.suffixPattern = this.LogsConstants.suffixPattern;
@@ -13,15 +13,15 @@ class LogsIndexCtrl {
   }
 
   initLoaders() {
-    this.indexOptions = this.ControllerHelper.request.getArrayLoader({
+    this.indexOptions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsIndexService.getSubscribedOptions(this.serviceName),
     });
 
-    this.quota = this.ControllerHelper.request.getHashLoader({
+    this.quota = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsIndexService.getQuota(this.serviceName),
     });
 
-    this.indices = this.ControllerHelper.request.getArrayLoader({
+    this.indices = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName),
     });
 
@@ -31,8 +31,8 @@ class LogsIndexCtrl {
   }
 
   add(info) {
-    this.CloudMessage.flushChildMessage();
-    this.ControllerHelper.modal.showModal({
+    this.CucCloudMessage.flushChildMessage();
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/dbaas/logs/detail/index/add/logs-index-add.html',
         controller: 'LogsIndexAddModalCtrl',
@@ -63,14 +63,14 @@ class LogsIndexCtrl {
   }
 
   showDeleteConfirm(info) {
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     this.LogsIndexService.deleteModal(
       info.name,
     ).then(() => {
-      this.delete = this.ControllerHelper.request.getHashLoader({
+      this.delete = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info)
           .then(() => this.initLoaders())
-          .finally(() => this.ControllerHelper.scrollPageToTop()),
+          .finally(() => this.CucControllerHelper.scrollPageToTop()),
       });
 
       this.delete.load();

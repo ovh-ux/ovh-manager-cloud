@@ -1,5 +1,5 @@
 angular.module('managerApp')
-  .controller('CdaIpListCtrl', function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage) {
+  .controller('CdaIpListCtrl', function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CucCloudMessage) {
     const self = this;
 
     self.loading = false;
@@ -30,7 +30,7 @@ angular.module('managerApp')
     }
 
     function displayError(error) {
-      CloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
+      CucCloudMessage.error([$translate.instant('ceph_common_error'), (error.data && error.data.message) || ''].join(' '));
     }
 
     function init() {

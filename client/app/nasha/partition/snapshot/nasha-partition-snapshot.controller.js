@@ -1,4 +1,4 @@
-angular.module('managerApp').controller('NashaPartitionSnapshotCtrl', function ($stateParams, $scope, $uibModalInstance, $q, $translate, OvhApiDedicatedNasha, CloudMessage) {
+angular.module('managerApp').controller('NashaPartitionSnapshotCtrl', function ($stateParams, $scope, $uibModalInstance, $q, $translate, OvhApiDedicatedNasha, CucCloudMessage) {
   const self = this;
 
   self.snapshotEnum = null;
@@ -36,10 +36,10 @@ angular.module('managerApp').controller('NashaPartitionSnapshotCtrl', function (
     self.getDeleteSchedulesPromises(promises);
     $q.all(promises)
       .then((tasks) => {
-        CloudMessage.success($translate.instant('nasha_snapshot_set_success'));
+        CucCloudMessage.success($translate.instant('nasha_snapshot_set_success'));
         $uibModalInstance.close({ partition: self.data.partition, tasks });
       }).catch(() => {
-        CloudMessage.error($translate.instant('nasha_snapshot_set_success_fail'));
+        CucCloudMessage.error($translate.instant('nasha_snapshot_set_success_fail'));
         $uibModalInstance.dismiss();
       }).finally(() => {
         self.loading = false;
@@ -89,7 +89,7 @@ angular.module('managerApp').controller('NashaPartitionSnapshotCtrl', function (
       angular.copy(data, self.snapshots.before);
       angular.copy(data, self.snapshots.after);
     }).catch(() => {
-      CloudMessage.error($translate.instant('nasha_snapshot_loading_error'));
+      CucCloudMessage.error($translate.instant('nasha_snapshot_loading_error'));
     }).finally(() => {
       self.loading = false;
     });

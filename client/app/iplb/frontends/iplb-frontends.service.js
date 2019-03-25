@@ -1,14 +1,14 @@
 class IpLoadBalancerFrontendsService {
   constructor($q, $translate, IpLoadBalancerConfigurationService, IpLoadBalancerZoneService,
     OvhApiIpLoadBalancing,
-    RegionService, ServiceHelper) {
+    CucRegionService, CucServiceHelper) {
     this.$q = $q;
     this.$translate = $translate;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
     this.IpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucRegionService = CucRegionService;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.Frontend = {
       all: this.IpLoadBalancing.Frontend().v6(),
@@ -27,7 +27,7 @@ class IpLoadBalancerFrontendsService {
   getFrontends(serviceName) {
     return this.getFrontendIndex(serviceName)
       .then(frontends => frontends.map(frontend => this.transformFrontend(frontend)))
-      .catch(this.ServiceHelper.errorHandler('iplb_frontend_list_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_frontend_list_error'));
   }
 
   getFrontendIndex(serviceName) {
@@ -65,7 +65,7 @@ class IpLoadBalancerFrontendsService {
         },
       });
     } else {
-      _.set(frontend, 'region', this.RegionService.getRegion(frontend.zone));
+      _.set(frontend, 'region', this.CucRegionService.getRegion(frontend.zone));
     }
 
     // Needed to trigger row loading with datagrid.
@@ -116,7 +116,7 @@ class IpLoadBalancerFrontendsService {
     return this.IpLoadBalancerZoneService.getIPLBZones()
       .then(zones => zones.reduce((zonesMapParam, zoneName) => {
         const zonesMap = zonesMapParam;
-        zonesMap[zoneName] = this.RegionService.getRegion(zoneName).microRegion.text;
+        zonesMap[zoneName] = this.CucRegionService.getRegion(zoneName).microRegion.text;
         return zonesMap;
       }, {}))
       .then((zones) => {
@@ -154,10 +154,10 @@ class IpLoadBalancerFrontendsService {
   createFrontend(type, serviceName, frontend) {
     return this.Frontend[type].post({ serviceName }, frontend)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_add_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_frontend_add_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_frontend_add_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_frontend_add_error'));
   }
 
   updateFrontend(type, serviceName, frontendId, frontend) {
@@ -166,10 +166,10 @@ class IpLoadBalancerFrontendsService {
       frontendId,
     }, frontend)
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_update_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_frontend_update_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_frontend_update_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_frontend_update_error'));
   }
 
   deleteFrontend(type, serviceName, frontendId) {
@@ -178,10 +178,10 @@ class IpLoadBalancerFrontendsService {
       frontendId,
     })
       .$promise
-      .then(this.ServiceHelper.successHandler('iplb_frontend_delete_success'))
+      .then(() => this.CucServiceHelper.successHandler('iplb_frontend_delete_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_frontend_delete_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_frontend_delete_error'));
   }
 
   toggleFrontend(type, serviceName, frontend) {
@@ -192,12 +192,10 @@ class IpLoadBalancerFrontendsService {
       disabled: frontend.disabled,
     })
       .$promise
-      .then(() => {
-        this.ServiceHelper.successHandler('iplb_frontend_toggle_success')(null);
-      })
+      .then(() => this.CucServiceHelper.successHandler('iplb_frontend_toggle_success')())
       .then(() => this.Frontend.all.resetQueryCache())
       .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
-      .catch(this.ServiceHelper.errorHandler('iplb_frontend_toggle_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_frontend_toggle_error'));
   }
 }
 

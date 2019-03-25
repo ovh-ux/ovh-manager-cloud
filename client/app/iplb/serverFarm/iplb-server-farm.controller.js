@@ -1,12 +1,12 @@
 class IpLoadBalancerServerFarmCtrl {
-  constructor($filter, $state, $stateParams, $translate, ControllerHelper,
+  constructor($filter, $state, $stateParams, $translate, CucControllerHelper,
     IpLoadBalancerActionService, IpLoadBalancerServerService,
     IpLoadBalancerServerFarmService) {
     this.$filter = $filter;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerActionService = IpLoadBalancerActionService;
     this.IpLoadBalancerServerService = IpLoadBalancerServerService;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
@@ -31,7 +31,7 @@ class IpLoadBalancerServerFarmCtrl {
   }
 
   initLoaders() {
-    this.farms = this.ControllerHelper.request.getHashLoader({
+    this.farms = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService.getServerFarms(this.serviceName)
         .then((farms) => {
           this.createFarmActions(farms);
@@ -49,7 +49,7 @@ class IpLoadBalancerServerFarmCtrl {
 
   loadServers() {
     _.forEach(this.farms.data, (farm) => {
-      _.set(farm, 'servers', this.ControllerHelper.request.getArrayLoader({
+      _.set(farm, 'servers', this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.IpLoadBalancerServerFarmService
           .getServerFarmServers(this.serviceName, farm.farmId, farm.type),
       }));
@@ -58,7 +58,7 @@ class IpLoadBalancerServerFarmCtrl {
   }
 
   seeServerPreview(server) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/server/preview/iplb-server-preview.html',
         controller: 'IpLoadBalancerServerPreviewCtrl',
@@ -71,7 +71,7 @@ class IpLoadBalancerServerFarmCtrl {
   }
 
   seeServerStatus(server) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/server/status/iplb-server-status-detail.html',
         controller: 'IpLoadBalancerServerStatusDetailCtrl',
@@ -92,7 +92,7 @@ class IpLoadBalancerServerFarmCtrl {
   }
 
   farmPreview(farm) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/serverFarm/preview/iplb-server-farm-preview.html',
         controller: 'IpLoadBalancerServerFarmPreviewCtrl',

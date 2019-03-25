@@ -1,3 +1,241 @@
+# [7.21.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.20.1...v7.21.0) (2019-03-20)
+
+
+
+## [7.20.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.20.0...v7.20.1) (2019-03-18)
+
+
+### Bug Fixes
+
+* **kubernetes:** display modals ([#1396](https://github.com/ovh-ux/ovh-manager-cloud/issues/1396)) ([f45ea01](https://github.com/ovh-ux/ovh-manager-cloud/commit/f45ea01))
+
+
+
+# [7.20.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.3...v7.20.0) (2019-03-13)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-at-internet to v4.0.0 ([#1380](https://github.com/ovh-ux/ovh-manager-cloud/issues/1380)) ([18b4f59](https://github.com/ovh-ux/ovh-manager-cloud/commit/18b4f59))
+* **deps:** upgrade ng-ovh-api-wrappers to v3.0.0 ([#1369](https://github.com/ovh-ux/ovh-manager-cloud/issues/1369)) ([6a1a644](https://github.com/ovh-ux/ovh-manager-cloud/commit/6a1a644))
+* **deps:** upgrade ng-ovh-swimming-poll to v4.0.0 ([#1357](https://github.com/ovh-ux/ovh-manager-cloud/issues/1357)) ([9b4729b](https://github.com/ovh-ux/ovh-manager-cloud/commit/9b4729b))
+* **deps:** upgrade ovh-api-services to v6.1.2 ([#1390](https://github.com/ovh-ux/ovh-manager-cloud/issues/1390)) ([a2cd8d5](https://github.com/ovh-ux/ovh-manager-cloud/commit/a2cd8d5))
+* **i18n:** add consistency across website, order and manager ([#1359](https://github.com/ovh-ux/ovh-manager-cloud/issues/1359)) ([277fafd](https://github.com/ovh-ux/ovh-manager-cloud/commit/277fafd))
+* **i18n:** add missing translations ([dcf652a](https://github.com/ovh-ux/ovh-manager-cloud/commit/dcf652a))
+* **i18n:** add missing translations ([86ee4b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/86ee4b2))
+* **i18n:** add missing translations ([24eb2ad](https://github.com/ovh-ux/ovh-manager-cloud/commit/24eb2ad))
+* **i18n:** add missing translations ([d802353](https://github.com/ovh-ux/ovh-manager-cloud/commit/d802353))
+* **i18n:** add missing translations ([737787e](https://github.com/ovh-ux/ovh-manager-cloud/commit/737787e))
+* **i18n:** add missing translations ([8d51455](https://github.com/ovh-ux/ovh-manager-cloud/commit/8d51455))
+* **i18n:** add missing translations ([e7faa8a](https://github.com/ovh-ux/ovh-manager-cloud/commit/e7faa8a))
+* **i18n:** add missing translations ([5fe35e8](https://github.com/ovh-ux/ovh-manager-cloud/commit/5fe35e8))
+* **i18n:** add missing translations ([1d045af](https://github.com/ovh-ux/ovh-manager-cloud/commit/1d045af))
+* **i18n:** add missing translations ([350c9df](https://github.com/ovh-ux/ovh-manager-cloud/commit/350c9df))
+* **navbar:** add mobile menu for logs data platform ([#1379](https://github.com/ovh-ux/ovh-manager-cloud/issues/1379)) ([15b45fd](https://github.com/ovh-ux/ovh-manager-cloud/commit/15b45fd))
+* **order:** display doing message when create order ([#1370](https://github.com/ovh-ux/ovh-manager-cloud/issues/1370)) ([bf8d31f](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf8d31f))
+
+
+### Features
+
+* **cloud.project:** add tracking to pci menu and slideshow ([#1377](https://github.com/ovh-ux/ovh-manager-cloud/issues/1377)) ([427eed1](https://github.com/ovh-ux/ovh-manager-cloud/commit/427eed1))
+
+
+
+## [7.19.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.2...v7.19.3) (2019-03-12)
+
+
+
+## [7.19.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.1...v7.19.2) (2019-03-12)
+
+
+### Bug Fixes
+
+* **cloud.project.compute.infrastructure:** replace region service ([#1381](https://github.com/ovh-ux/ovh-manager-cloud/issues/1381)) ([bd87a46](https://github.com/ovh-ux/ovh-manager-cloud/commit/bd87a46))
+* **iplb:** infinite loading ssl certifiacte order ([bf75470](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf75470))
+* **iplb:** status in dashboard ([a3e1912](https://github.com/ovh-ux/ovh-manager-cloud/commit/a3e1912))
+
+
+
+## [7.19.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.0...v7.19.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **dbass.logs.detail.home.capped:** add missing cuc prefix ([#1373](https://github.com/ovh-ux/ovh-manager-cloud/issues/1373)) ([ca5e07d](https://github.com/ovh-ux/ovh-manager-cloud/commit/ca5e07d))
+
+
+
+# [7.19.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.5...v7.19.0) (2019-03-05)
+
+
+### Bug Fixes
+
+* **cloud:** update wrong cuc directive ([a3595f7](https://github.com/ovh-ux/ovh-manager-cloud/commit/a3595f7))
+* **cloud.project.compute.infrastructure:** remove T1-180 flavor restriction ([#1334](https://github.com/ovh-ux/ovh-manager-cloud/issues/1334)) ([01ff1bc](https://github.com/ovh-ux/ovh-manager-cloud/commit/01ff1bc))
+* **deps:** upgrade ng-ovh-checkbox-table to v1.0.0 ([2721e88](https://github.com/ovh-ux/ovh-manager-cloud/commit/2721e88))
+* **deps:** upgrade ng-ovh-form-flat to v4.0.0 ([fcd5904](https://github.com/ovh-ux/ovh-manager-cloud/commit/fcd5904))
+* **html:** hide unavailable flavors ([ae782cc](https://github.com/ovh-ux/ovh-manager-cloud/commit/ae782cc)), closes [#MBE-285](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBE-285)
+* **i18n:** add missing translations ([b5df4dd](https://github.com/ovh-ux/ovh-manager-cloud/commit/b5df4dd))
+* **i18n:** add missing translations ([dab51f8](https://github.com/ovh-ux/ovh-manager-cloud/commit/dab51f8))
+* **i18n:** add missing translations ([aa5c922](https://github.com/ovh-ux/ovh-manager-cloud/commit/aa5c922))
+* **i18n:** add missing translations ([43634ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/43634ee))
+* **i18n:** add missing translations ([596c6ed](https://github.com/ovh-ux/ovh-manager-cloud/commit/596c6ed))
+* **i18n:** add missing translations ([9e1af2a](https://github.com/ovh-ux/ovh-manager-cloud/commit/9e1af2a))
+* **i18n:** add missing translations ([3e440b6](https://github.com/ovh-ux/ovh-manager-cloud/commit/3e440b6))
+* **i18n:** add missing translations ([03c0ccd](https://github.com/ovh-ux/ovh-manager-cloud/commit/03c0ccd))
+* **i18n:** add missing translations ([94b7c0f](https://github.com/ovh-ux/ovh-manager-cloud/commit/94b7c0f))
+* **i18n:** add missing translations ([be4b4e7](https://github.com/ovh-ux/ovh-manager-cloud/commit/be4b4e7))
+* **i18n:** add missing translations ([b266692](https://github.com/ovh-ux/ovh-manager-cloud/commit/b266692))
+* **i18n:** add missing translations ([a336d2c](https://github.com/ovh-ux/ovh-manager-cloud/commit/a336d2c))
+* **i18n:** add missing translations ([14069dd](https://github.com/ovh-ux/ovh-manager-cloud/commit/14069dd))
+* **iplb.configuration:** error on apply configuration success ([#1355](https://github.com/ovh-ux/ovh-manager-cloud/issues/1355)) ([502f550](https://github.com/ovh-ux/ovh-manager-cloud/commit/502f550))
+* **kubernetes.nodes:** update flavor after a node is added ([#1346](https://github.com/ovh-ux/ovh-manager-cloud/issues/1346)) ([199b573](https://github.com/ovh-ux/ovh-manager-cloud/commit/199b573))
+
+
+### Features
+
+* **cloud.logs:** allow queryFilter on alert conditions ([#1303](https://github.com/ovh-ux/ovh-manager-cloud/issues/1303)) ([1f850af](https://github.com/ovh-ux/ovh-manager-cloud/commit/1f850af))
+
+
+
+## [7.18.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.4...v7.18.5) (2019-02-28)
+
+
+### Bug Fixes
+
+* **pci:** remove menu for us region ([d114833](https://github.com/ovh-ux/ovh-manager-cloud/commit/d114833))
+
+
+
+## [7.18.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.3...v7.18.4) (2019-02-28)
+
+
+### Bug Fixes
+
+* **kube:** remove beta message ([d7580df](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7580df))
+
+
+
+## [7.18.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.2...v7.18.3) (2019-02-28)
+
+
+### Bug Fixes
+
+* **pci:** translations issues ([36bd4cc](https://github.com/ovh-ux/ovh-manager-cloud/commit/36bd4cc))
+
+
+
+## [7.18.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.1...v7.18.2) (2019-02-26)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([d86ff56](https://github.com/ovh-ux/ovh-manager-cloud/commit/d86ff56))
+
+
+
+## [7.18.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.18.0...v7.18.1) (2019-02-26)
+
+
+
+# [7.18.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.17.1...v7.18.0) (2019-02-25)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-apiv7 to v2.0.0 ([#1329](https://github.com/ovh-ux/ovh-manager-cloud/issues/1329)) ([54f54b9](https://github.com/ovh-ux/ovh-manager-cloud/commit/54f54b9))
+* **i18n:** add missing translations ([23395ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/23395ee))
+* **i18n:** add missing translations ([569f1a3](https://github.com/ovh-ux/ovh-manager-cloud/commit/569f1a3))
+* **i18n:** add missing translations ([5f90ef1](https://github.com/ovh-ux/ovh-manager-cloud/commit/5f90ef1))
+* **i18n:** add missing translations ([1a2799b](https://github.com/ovh-ux/ovh-manager-cloud/commit/1a2799b))
+* **i18n:** add missing translations ([c759708](https://github.com/ovh-ux/ovh-manager-cloud/commit/c759708))
+* **i18n:** add missing translations ([0bd122f](https://github.com/ovh-ux/ovh-manager-cloud/commit/0bd122f))
+* **i18n:** add missing translations ([48204e3](https://github.com/ovh-ux/ovh-manager-cloud/commit/48204e3))
+* **i18n:** add missing translations ([2a0b133](https://github.com/ovh-ux/ovh-manager-cloud/commit/2a0b133))
+* **kubernetes:** exit beta prefix ([851cf24](https://github.com/ovh-ux/ovh-manager-cloud/commit/851cf24))
+
+
+### Features
+
+* **kube:** add order in sidebar ([40e142d](https://github.com/ovh-ux/ovh-manager-cloud/commit/40e142d))
+* **kube:** add version for reset cluster ([326a10d](https://github.com/ovh-ux/ovh-manager-cloud/commit/326a10d))
+* **kubernetes:** add version update ([#1317](https://github.com/ovh-ux/ovh-manager-cloud/issues/1317)) ([b97e4c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/b97e4c9))
+* **kubernetes:** view and update kubernetes upgrade policy ([#1309](https://github.com/ovh-ux/ovh-manager-cloud/issues/1309)) ([70aa5de](https://github.com/ovh-ux/ovh-manager-cloud/commit/70aa5de))
+
+
+
+## [7.17.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.17.0...v7.17.1) (2019-02-22)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([a62e060](https://github.com/ovh-ux/ovh-manager-cloud/commit/a62e060))
+* **i18n:** add missing translations ([775ad7b](https://github.com/ovh-ux/ovh-manager-cloud/commit/775ad7b))
+* **i18n:** add missing translations ([971fee7](https://github.com/ovh-ux/ovh-manager-cloud/commit/971fee7))
+
+
+
+# [7.17.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.16.0...v7.17.0) (2019-02-20)
+
+
+### Bug Fixes
+
+* replace region add success message ([5e8f8d4](https://github.com/ovh-ux/ovh-manager-cloud/commit/5e8f8d4))
+
+
+### Features
+
+* **cloud.project.compute.infrastructure:** support NVIDIA GPU OS ([#1277](https://github.com/ovh-ux/ovh-manager-cloud/issues/1277)) ([0196991](https://github.com/ovh-ux/ovh-manager-cloud/commit/0196991))
+
+
+
+# [7.16.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.7...v7.16.0) (2019-02-19)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([ff24344](https://github.com/ovh-ux/ovh-manager-cloud/commit/ff24344))
+* **i18n:** add missing translations ([15e149d](https://github.com/ovh-ux/ovh-manager-cloud/commit/15e149d))
+* **i18n:** add missing translations ([593914c](https://github.com/ovh-ux/ovh-manager-cloud/commit/593914c))
+* **i18n:** add missing translations ([0f96a79](https://github.com/ovh-ux/ovh-manager-cloud/commit/0f96a79))
+
+
+### Features
+
+* **home:** add traffic apac guide ([12b3690](https://github.com/ovh-ux/ovh-manager-cloud/commit/12b3690))
+* **info:** show new DC available info message ([a59f115](https://github.com/ovh-ux/ovh-manager-cloud/commit/a59f115)), closes [#MBE-247](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBE-247)
+
+
+
+## [7.15.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.6...v7.15.7) (2019-02-18)
+
+
+### Bug Fixes
+
+* add en translations ([86f8609](https://github.com/ovh-ux/ovh-manager-cloud/commit/86f8609))
+* **i18n:** add missing translations ([c153e62](https://github.com/ovh-ux/ovh-manager-cloud/commit/c153e62))
+
+
+
+## [7.15.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.5...v7.15.6) (2019-02-18)
+
+
+### Bug Fixes
+
+* **cloud.project.billing:** add new translations for APAC traffic limit ([#1281](https://github.com/ovh-ux/ovh-manager-cloud/issues/1281)) ([bb88931](https://github.com/ovh-ux/ovh-manager-cloud/commit/bb88931))
+* **deps:** remove ovh-angular-a-disabled from dependency ([f989711](https://github.com/ovh-ux/ovh-manager-cloud/commit/f989711)), closes [ovh-ux/manager#200](https://github.com/ovh-ux/manager/issues/200)
+* **i18n:** add missing translations ([cef1dc9](https://github.com/ovh-ux/ovh-manager-cloud/commit/cef1dc9))
+* **i18n:** add missing translations ([6490784](https://github.com/ovh-ux/ovh-manager-cloud/commit/6490784))
+* **i18n:** add missing translations ([286e1dd](https://github.com/ovh-ux/ovh-manager-cloud/commit/286e1dd))
+
+
+### Features
+
+* **cloud:** show bandwidth usage along with price group by region ([#1291](https://github.com/ovh-ux/ovh-manager-cloud/issues/1291)) ([094c914](https://github.com/ovh-ux/ovh-manager-cloud/commit/094c914))
+* **kubernetes:** add name field to the node add pop-up ([#1290](https://github.com/ovh-ux/ovh-manager-cloud/issues/1290)) ([038e502](https://github.com/ovh-ux/ovh-manager-cloud/commit/038e502))
+
+
+
 ## [7.15.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.15.4...v7.15.5) (2019-02-07)
 
 

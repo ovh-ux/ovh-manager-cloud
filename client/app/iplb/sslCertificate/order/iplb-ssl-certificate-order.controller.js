@@ -1,18 +1,18 @@
 class IpLoadBalancerSslCertificateOrderCtrl {
-  constructor($q, $state, $stateParams, $location, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, $window, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerSslCertificateService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.$location = $location;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.$window = $window;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
   }
 
   $onInit() {
-    this.paidOffers = this.ControllerHelper.request.getArrayLoader({
+    this.paidOffers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerSslCertificateService.getCertificateProducts(
         this.$stateParams.serviceName,
       )
@@ -93,10 +93,10 @@ class IpLoadBalancerSslCertificateOrderCtrl {
     this.saving = true;
     this.IpLoadBalancerSslCertificateService
       .orderPaidCertificate(this.$stateParams.serviceName, options, configuration)
-      .then((result) => {
-        this.$location.href = result.url;
+      .then(({ url }) => {
+        this.$window.open(url);
       })
-      .catch(() => {
+      .finally(() => {
         this.saving = false;
       });
   }

@@ -1,9 +1,16 @@
 class VpsMonitoringCtrl {
-  constructor($q, $stateParams, $translate, CloudMessage, VpsActionService, VpsMonitoringConstant,
-    VpsService) {
+  constructor(
+    $q,
+    $stateParams,
+    $translate,
+    CucCloudMessage,
+    VpsActionService,
+    VpsMonitoringConstant,
+    VpsService,
+  ) {
     this.$q = $q;
     this.$translate = $translate;
-    this.CloudMessage = CloudMessage;
+    this.CucCloudMessage = CucCloudMessage;
     this.serviceName = $stateParams.serviceName;
     this.VpsActionService = VpsActionService;
     this.VpsMonitoringConstant = VpsMonitoringConstant;

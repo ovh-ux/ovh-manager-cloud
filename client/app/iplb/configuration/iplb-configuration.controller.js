@@ -4,22 +4,22 @@ class IpLoadBalancerConfigurationCtrl {
     $scope,
     $stateParams,
     $translate,
-    CloudMessage,
-    CloudPoll,
-    ControllerHelper,
+    CucCloudMessage,
+    CucCloudPoll,
+    CucControllerHelper,
     IpLoadBalancerConfigurationService,
-    ServiceHelper,
+    CucServiceHelper,
   ) {
     this.$q = $q;
     this.$scope = $scope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
 
-    this.CloudMessage = CloudMessage;
-    this.CloudPoll = CloudPoll;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudPoll = CucCloudPoll;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   $onInit() {
@@ -35,7 +35,7 @@ class IpLoadBalancerConfigurationCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getHashLoader({
+    this.zones = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerConfigurationService
         .getAllZonesChanges(this.$stateParams.serviceName),
     });
@@ -63,7 +63,7 @@ class IpLoadBalancerConfigurationCtrl {
         )} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`
         : `${this.$translate.instant('iplb_configuration_excludedZones_all')} ${this.$translate.instant('iplb_configuration_excludedZones_explanation')}`;
 
-      this.CloudMessage.success(messageToDisplay);
+      this.CucCloudMessage.success(messageToDisplay);
     }
 
     const targetsToApplyChangesTo = targets.filter(target => !_.has(target, 'task.status') || target.task.status === 'done');
@@ -103,9 +103,9 @@ class IpLoadBalancerConfigurationCtrl {
           this.poller.$promise.then(() => {
           // check if at least one change remains
             if (_.chain(this.zones.data).map('changes').sum().value() > 0) {
-              this.CloudMessage.flushChildMessage();
+              this.CucCloudMessage.flushChildMessage();
             } else {
-              this.CloudMessage.flushMessages();
+              this.CucCloudMessage.flushMessages();
             }
           });
         }
@@ -120,7 +120,7 @@ class IpLoadBalancerConfigurationCtrl {
   startPolling() {
     this.stopTaskPolling();
 
-    this.poller = this.CloudPoll.pollArray({
+    this.poller = this.CucCloudPoll.pollArray({
       items: this.zones.data,
       pollFunction: zone => this.IpLoadBalancerConfigurationService
         .getZoneChanges(this.$stateParams.serviceName, zone.id),

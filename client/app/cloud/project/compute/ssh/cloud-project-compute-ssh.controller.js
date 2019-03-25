@@ -1,11 +1,11 @@
 class CloudProjectComputeSshCtrl {
   constructor(OvhApiCloudProjectSshKey, CloudProjectSSHKeyService, $translate,
-    ControllerHelper, CloudMessage, $stateParams, ovhDocUrl) {
+    CucControllerHelper, CucCloudMessage, $stateParams, ovhDocUrl) {
     this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
     this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
     this.$translate = $translate;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
     this.$stateParams = $stateParams;
     this.ovhDocUrl = ovhDocUrl;
 
@@ -36,22 +36,22 @@ class CloudProjectComputeSshCtrl {
   }
 
   initLoaders() {
-    this.createKey = this.ControllerHelper.request.getHashLoader({
+    this.createKey = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.CloudProjectSSHKeyService.createSSHKey(
         this.serviceName,
         this.sshKey,
       ),
-      errorHandler: err => this.CloudMessage.error([this.$translate.instant('cpc_ssh_add_submit_error'), (err.data && err.data.message) || ''].join(' ')),
+      errorHandler: err => this.CucCloudMessage.error([this.$translate.instant('cpc_ssh_add_submit_error'), (err.data && err.data.message) || ''].join(' ')),
       successHandler: () => {
         this.toggleAddSshKey();
         this.getSshKeys(true);
-        this.CloudMessage.success(this.$translate.instant('cpc_ssh_add_submit_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cpc_ssh_add_submit_success'));
       },
     });
 
-    this.keys = this.ControllerHelper.request.getArrayLoader({
+    this.keys = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudProjectSSHKeyService.getSSHKeys(this.serviceName),
-      errorHandler: err => this.CloudMessage.error([this.$translate.instant('cpc_ssh_error'), (err.data && err.data.message) || ''].join(' ')),
+      errorHandler: err => this.CucCloudMessage.error([this.$translate.instant('cpc_ssh_error'), (err.data && err.data.message) || ''].join(' ')),
       successHandler: () => this.filterSshKeys(),
     });
   }
@@ -73,14 +73,14 @@ class CloudProjectComputeSshCtrl {
     }
     const notUnique = _.find(this.keys.data, sshkey => sshkey.name === this.sshKey.name);
     if (notUnique) {
-      this.CloudMessage.error(this.$translate.instant('cpc_ssh_add_submit_name_error'));
+      this.CucCloudMessage.error(this.$translate.instant('cpc_ssh_add_submit_name_error'));
       return;
     }
     this.createKey.load();
   }
 
   openDeleteSshKey(sshKey) {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/cloud/project/compute/ssh/delete/compute-ssh-delete.html',
         controller: 'CloudProjectComputeSshDeleteCtrl',
@@ -92,9 +92,9 @@ class CloudProjectComputeSshCtrl {
       },
       successHandler: () => {
         this.getSshKeys(true);
-        this.CloudMessage.success(this.$translate.instant('cpc_ssh_delete_success'));
+        this.CucCloudMessage.success(this.$translate.instant('cpc_ssh_delete_success'));
       },
-      errorHandler: err => this.CloudMessage.error([this.$translate.instant('cpc_ssh_delete_error'), (err.data && err.data.message) || ''].join(' ')),
+      errorHandler: err => this.CucCloudMessage.error([this.$translate.instant('cpc_ssh_delete_error'), (err.data && err.data.message) || ''].join(' ')),
     });
   }
 

@@ -1,12 +1,12 @@
 class IpLoadBalancerHomeService {
-  constructor($q, SidebarMenu, IpLoadBalancerCipherService, OvhApiIpLoadBalancing, RegionService,
-    ServiceHelper) {
+  constructor($q, SidebarMenu, IpLoadBalancerCipherService, OvhApiIpLoadBalancing, CucRegionService,
+    CucServiceHelper) {
     this.$q = $q;
     this.SidebarMenu = SidebarMenu;
     this.IpLoadBalancerCipherService = IpLoadBalancerCipherService;
     this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-    this.RegionService = RegionService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucRegionService = CucRegionService;
+    this.CucServiceHelper = CucServiceHelper;
   }
 
   getInformations(serviceName) {
@@ -21,7 +21,7 @@ class IpLoadBalancerHomeService {
         failoverIp: response.failoverIp,
         natIp: response.natIp,
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_information_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_information_loading_error'));
   }
 
   getConfiguration(serviceName) {
@@ -33,7 +33,7 @@ class IpLoadBalancerHomeService {
           .transformCipher(response.sslConfiguration);
         return response;
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_configuration_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_configuration_loading_error'));
   }
 
   getUsage(serviceName) {
@@ -41,10 +41,10 @@ class IpLoadBalancerHomeService {
       .$promise
       .then(zones => this.$q.all(zones.map(zone => this.getUsageForZone(serviceName, zone))))
       .then(quotas => quotas.map((quota) => {
-        _.set(quota, 'region', this.RegionService.getRegion(quota.zone));
+        _.set(quota, 'region', this.CucRegionService.getRegion(quota.zone));
         return quota;
       }))
-      .catch(this.ServiceHelper.errorHandler('iplb_usage_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_usage_loading_error'));
   }
 
   getUsageForZone(serviceName, zoneName) {
@@ -61,7 +61,7 @@ class IpLoadBalancerHomeService {
     }, {
       alert,
     }).$promise
-      .catch(this.ServiceHelper.errorHandler('iplb_utilisation_update_alert_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_utilisation_update_alert_error'));
   }
 
   updateName(serviceName, newName) {
@@ -75,7 +75,7 @@ class IpLoadBalancerHomeService {
           ));
         return response;
       })
-      .catch(this.ServiceHelper.errorHandler('iplb_modal_name_change_updating_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_modal_name_change_updating_error'));
   }
 
   changeMenuTitle(serviceName, displayName) {
@@ -91,7 +91,7 @@ class IpLoadBalancerHomeService {
       serviceInfos: this.OvhApiIpLoadBalancing.v6().serviceInfos({ serviceName }).$promise,
     })
       .then(response => _.extend(response.serviceInfos, { offer: response.configuration.offer }))
-      .catch(this.ServiceHelper.errorHandler('iplb_subscription_loading_error'));
+      .catch(this.CucServiceHelper.errorHandler('iplb_subscription_loading_error'));
   }
 }
 

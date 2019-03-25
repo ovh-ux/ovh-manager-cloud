@@ -1,11 +1,11 @@
 class LogsHelperService {
-  constructor($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper,
-    LogsConstants, ovhDocUrl, URLS) {
+  constructor($translate, $state, OvhApiDbaas, CucServiceHelper,
+    CucCloudPoll, CucControllerModalHelper, LogsConstants, ovhDocUrl, URLS) {
     this.$translate = $translate;
     this.$state = $state;
-    this.ServiceHelper = ServiceHelper;
-    this.CloudPoll = CloudPoll;
-    this.ControllerModalHelper = ControllerModalHelper;
+    this.CucServiceHelper = CucServiceHelper;
+    this.CucCloudPoll = CucCloudPoll;
+    this.CucControllerModalHelper = CucControllerModalHelper;
     this.LogsConstants = LogsConstants;
     this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
     this.ovhDocUrl = ovhDocUrl;
@@ -29,7 +29,7 @@ class LogsHelperService {
    */
   pollOperation(serviceName, operation) {
     this.killPoller();
-    return this.CloudPoll.poll({
+    return this.CucCloudPoll.poll({
       item: operation,
       pollFunction: opn => this.OperationApiService
         .get({ serviceName, operationId: opn.operationId }).$promise,
@@ -47,7 +47,7 @@ class LogsHelperService {
    * @memberof LogsHelperService
    */
   handleError(errorMessage, error, messageData) {
-    return this.ServiceHelper.errorHandler({
+    return this.CucServiceHelper.errorHandler({
       textToTranslate: errorMessage,
       translateParams: messageData,
     })(error);
@@ -73,7 +73,7 @@ class LogsHelperService {
           return Promise.reject(error);
         }
         if (successMessage) {
-          this.ServiceHelper.successHandler(successMessage)(messageData);
+          this.CucServiceHelper.successHandler(successMessage)(messageData);
         }
         return pollResult;
       });
@@ -84,7 +84,7 @@ class LogsHelperService {
    * @param {string} serviceName
    */
   showOfferUpgradeModal(serviceName) {
-    return this.ControllerModalHelper.showInfoModal({
+    return this.CucControllerModalHelper.showInfoModal({
       titleText: this.$translate.instant('options_upgradequotalink_increase_quota_title'),
       text: this.$translate.instant('options_upgradequotalink_increase_quota_message'),
       okButtonText: this.$translate.instant('options_upgradequotalink_increase_quota_upgrade'),

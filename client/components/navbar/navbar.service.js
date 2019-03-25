@@ -5,13 +5,13 @@ class ManagerNavbarService {
     $q,
     $translate,
     atInternet,
-    FeatureAvailabilityService,
+    CucFeatureAvailabilityService,
     LANGUAGES,
     MANAGER_URLS,
     NavbarBuilder,
     NavbarNotificationService,
     OtrsPopupService,
-    ProductsService,
+    CucProductsService,
     REDIRECT_URLS,
     SessionService,
     ssoAuthentication,
@@ -24,13 +24,13 @@ class ManagerNavbarService {
     this.$q = $q;
     this.$translate = $translate;
     this.atInternet = atInternet;
-    this.featureAvailabilityService = FeatureAvailabilityService;
+    this.featureAvailabilityService = CucFeatureAvailabilityService;
     this.LANGUAGES = LANGUAGES;
     this.MANAGER_URLS = MANAGER_URLS;
     this.NavbarBuilder = NavbarBuilder;
     this.navbarNotificationService = NavbarNotificationService;
     this.otrsPopupService = OtrsPopupService;
-    this.productsService = ProductsService;
+    this.productsService = CucProductsService;
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.sections = {
       iaas: ['PROJECT', 'VPS', 'SERVER', 'DEDICATED_CLOUD', 'HOUSING'],
@@ -39,6 +39,7 @@ class ManagerNavbarService {
       vracks: 'VRACK',
       loadBalancer: 'LOAD_BALANCER',
       cloudDesktop: 'CLOUD_DESKTOP',
+      logsDataPlatform: 'DBAAS_LOGS',
     };
     this.sessionService = SessionService;
     this.ssoAuthentication = ssoAuthentication;
@@ -67,6 +68,7 @@ class ManagerNavbarService {
       vracks: getServices(this.sections.vracks, products),
       loadBalancer: getServices(this.sections.loadBalancer, products),
       cloudDesktop: getServices(this.sections.cloudDesktop, products),
+      logsDataPlatform: getServices(this.sections.logsDataPlatform, products),
     };
   }
 
@@ -246,6 +248,11 @@ class ManagerNavbarService {
       name: 'dbaas.metrics',
       title: this.$translate.instant('cloud_sidebar_section_metrics'),
       subLinks: this.constructor.getProductsMenu('dbaas.metrics.detail.dashboard', universeProducts.metrics),
+    }, {
+      // Logs
+      name: 'dbaas.logs',
+      title: this.$translate.instant('cloud_sidebar_section_logs'),
+      subLinks: this.constructor.getProductsMenu('dbaas.logs.detail', universeProducts.logsDataPlatform),
     }, {
       // Licences (Link)
       title: this.$translate.instant('cloud_sidebar_section_license'),

@@ -1,12 +1,12 @@
 class IpLoadBalancerServerFarmEditCtrl {
-  constructor($q, $state, $stateParams, CloudMessage, ControllerHelper,
+  constructor($q, $state, $stateParams, CucCloudMessage, CucControllerHelper,
     IpLoadBalancerConstant, IpLoadBalancerServerFarmService,
     IpLoadBalancerVrackService, IpLoadBalancerZoneService) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.IpLoadBalancerConstant = IpLoadBalancerConstant;
     this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
     this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
@@ -16,18 +16,18 @@ class IpLoadBalancerServerFarmEditCtrl {
   }
 
   initLoaders() {
-    this.zones = this.ControllerHelper.request.getArrayLoader({
+    this.zones = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
         this.$stateParams.serviceName,
       ),
     });
 
-    this.privateNetworks = this.ControllerHelper.request.getArrayLoader({
+    this.privateNetworks = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.IpLoadBalancerVrackService
         .getPrivateNetworks(this.$stateParams.serviceName),
     });
 
-    this.apiFarm = this.ControllerHelper.request.getHashLoader({
+    this.apiFarm = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.IpLoadBalancerServerFarmService.getAllFarmsTypes(
         this.$stateParams.serviceName,
       )
@@ -202,7 +202,7 @@ class IpLoadBalancerServerFarmEditCtrl {
   }
 
   editProbe() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/iplb/serverFarm/probe/iplb-server-farm-probe.html',
         controller: 'IpLoadBalancerServerFarmProbeEditCtrl',
@@ -224,7 +224,7 @@ class IpLoadBalancerServerFarmEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerFarmService
       .create(this.type, this.$stateParams.serviceName, this.getCleanFarm())
       .then(() => {
@@ -240,7 +240,7 @@ class IpLoadBalancerServerFarmEditCtrl {
       return this.$q.reject();
     }
     this.saving = true;
-    this.CloudMessage.flushChildMessage();
+    this.CucCloudMessage.flushChildMessage();
     return this.IpLoadBalancerServerFarmService
       .update(this.type, this.$stateParams.serviceName, this.farm.farmId, this.getCleanFarm())
       .then(() => {

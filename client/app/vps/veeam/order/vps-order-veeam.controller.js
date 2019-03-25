@@ -1,15 +1,15 @@
 class VpsOrderVeeamCtrl {
   constructor($scope, $stateParams, $translate, $window,
-    atInternet, CloudMessage, CloudNavigation, VpsService, ServiceHelper) {
+    atInternet, CucCloudMessage, CucCloudNavigation, VpsService, CucServiceHelper) {
     this.$scope = $scope;
     this.$translate = $translate;
     this.$window = $window;
     this.atInternet = atInternet;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
 
     $scope.model = {
@@ -31,20 +31,20 @@ class VpsOrderVeeamCtrl {
           });
       })
       .catch((error) => {
-        this.CloudMessage.error(`${this.$translate.instant('vps_configuration_veeam_order_step1_loading_error')} ${error.data}`);
+        this.CucCloudMessage.error(`${this.$translate.instant('vps_configuration_veeam_order_step1_loading_error')} ${error.data}`);
       });
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
     this.VpsService.canOrderOption(this.serviceName, 'automatedBackup').catch(() => {
-      this.CloudMessage.error(this.$translate.instant('vps_tab_VEEAM_dashboard_veeam_unavailable'));
+      this.CucCloudMessage.error(this.$translate.instant('vps_tab_VEEAM_dashboard_veeam_unavailable'));
     });
   }
 
   orderOption() {
     if (this.$scope.model.optionDetails && this.$scope.model.contractsValidated) {
-      this.ServiceHelper
+      this.CucServiceHelper
         .loadOnNewPage(this.VpsService
           .orderVeeamOption(this.serviceName, this.$scope.model.optionDetails.duration.duration))
         .then(({ url }) => {
@@ -55,7 +55,7 @@ class VpsOrderVeeamCtrl {
         type: 'action',
       });
     } else if (this.$scope.model.contractsValidated) {
-      this.CloudMessage.error(this.$translate.instant('vps_configuration_veeam_order_fail'));
+      this.CucCloudMessage.error(this.$translate.instant('vps_configuration_veeam_order_fail'));
     }
   }
 

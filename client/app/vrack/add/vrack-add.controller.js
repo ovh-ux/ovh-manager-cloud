@@ -1,7 +1,16 @@
 
 
 angular.module('managerApp').controller('VrackAddCtrl',
-  function ($q, $translate, $state, $rootScope, CloudMessage, VrackService, OvhApiOrder, TARGET) {
+  function (
+    $q,
+    $translate,
+    $state,
+    $rootScope,
+    CucCloudMessage,
+    CucVrackService,
+    OvhApiOrder,
+    TARGET,
+  ) {
     const self = this;
 
     self.TARGET = TARGET;
@@ -23,7 +32,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
       }).$promise.then((data) => {
         self.model.agreements = data.contracts;
       }).catch((error) => {
-        CloudMessage.error($translate.instant('vrack_error_reason', { message: error.data.message }));
+        CucCloudMessage.error($translate.instant('vrack_error_reason', { message: error.data.message }));
       });
     };
 
@@ -32,11 +41,11 @@ angular.module('managerApp').controller('VrackAddCtrl',
       return OvhApiOrder.Vrack().New().v6().create({
         quantity: this.model.quantityToOrder,
       }, {}).$promise.then((data) => {
-        CloudMessage.success($translate.instant('vrack_adding_success', { data: _.pick(data, ['url', 'orderId']) }));
+        CucCloudMessage.success($translate.instant('vrack_adding_success', { data: _.pick(data, ['url', 'orderId']) }));
         self.model.purchaseOrderUrl = data.url;
         self.loaders.validationPending = true;
       }).catch((error) => {
-        CloudMessage.error($translate.instant('vrack_error_reason', { message: error.data.message }));
+        CucCloudMessage.error($translate.instant('vrack_error_reason', { message: error.data.message }));
       }).finally(() => {
         self.loaders.loading = false;
       });
@@ -47,7 +56,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
       self.vrackOrderUrl = null;
 
       const promise = {
-        vrackOrderUrl: VrackService.getOrderUrl(),
+        vrackOrderUrl: CucVrackService.getOrderUrl(),
       };
 
       if (self.TARGET !== 'US') {

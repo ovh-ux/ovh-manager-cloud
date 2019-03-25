@@ -47,6 +47,7 @@ angular.module('managerApp')
     'g1',
     'g2',
     'g3',
+    't1',
   ])
   .constant('CLOUD_INSTANCE_CPU_FREQUENCY', {
     'ovh.vps-ssd': 2.4,
@@ -90,6 +91,7 @@ angular.module('managerApp')
     instance: {
       EU: ['SBG1', 'GRA1', 'GRA3', 'GRA5', 'SBG3', 'SBG5', 'WAW1', 'DE1', 'UK1'],
       CA: ['BHS1', 'BHS3'],
+      APAC: ['SYD1', 'SGP1'],
     },
     user: {
       EU: ['CZ', 'DE', 'ES', 'EU', 'FI', 'FR', 'GB', 'IE', 'IT', 'LT', 'MA', 'NL', 'PL', 'PT', 'SN', 'TN'],
@@ -134,4 +136,18 @@ angular.module('managerApp')
     UNSEALING: 'unsealing',
     UNSEALED: 'unsealed',
     USERNAME: 'pca',
+  })
+  .constant('TRACKING_CLOUD', {
+    pci_menu_header_instances: 'cloud::pci::menu::instances',
+    pci_menu_header_ssh_keys: 'cloud::pci::menu::ssh_keys',
+    pci_menu_header_snapshots: 'cloud::pci::menu::snapshots',
+    pci_menu_header_volume: 'cloud::pci::menu::additional_drives',
+    pci_menu_header_storage: 'cloud::pci::menu::storage',
+    pci_menu_header_openstack_users: 'cloud::pci::menu::openstack_users',
+    pci_menu_header_quota: 'cloud::pci::menu::quota',
+    pci_menu_header_regions: 'cloud::pci::menu::add_localisations',
+    pci_menu_header_consumption: 'cloud::pci::menu::consumption',
+    pci_menu_header_billing_history: 'cloud::pci::menu::billing_history',
+    pci_menu_header_credits: 'cloud::pci::menu::credits_and_vouchers',
+    pci_menu_header_contracts: 'cloud::pci::menu::contracts',
   });

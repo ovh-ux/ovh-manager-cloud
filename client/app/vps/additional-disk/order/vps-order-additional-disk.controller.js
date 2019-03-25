@@ -1,16 +1,16 @@
 class VpsOrderDiskCtrl {
-  constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage,
-    CloudNavigation, VpsService,
-    ServiceHelper) {
+  constructor($filter, $stateParams, $state, $translate, $q, $window, CucCloudMessage,
+    CucCloudNavigation, VpsService,
+    CucServiceHelper) {
     this.$filter = $filter;
     this.$translate = $translate;
     this.$q = $q;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.serviceName = $stateParams.serviceName;
     this.VpsService = VpsService;
-    this.ServiceHelper = ServiceHelper;
+    this.CucServiceHelper = CucServiceHelper;
 
     this.loaders = {
       capacity: false,
@@ -29,14 +29,14 @@ class VpsOrderDiskCtrl {
   }
 
   $onInit() {
-    this.previousState = this.CloudNavigation.getPreviousState();
+    this.previousState = this.CucCloudNavigation.getPreviousState();
   }
 
   getAdditionalDiskPrices() {
     this.loaders.capacity = true;
     this.VpsService.getAdditionalDiskPrices(this.serviceName)
       .then((data) => { this.capacityArray = data; })
-      .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
+      .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
       .finally(() => { this.loaders.capacity = false; });
   }
 
@@ -48,15 +48,15 @@ class VpsOrderDiskCtrl {
         this.VpsService
           .getAdditionalDiskFinalPrice(this.serviceName, this.model.capacity, this.model.duration)
           .then((offer) => { this.offer = offer; })
-          .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
+          .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')))
           .finally(() => { this.loaders.offer = false; });
       })
-      .catch(error => this.CloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')));
+      .catch(error => this.CucCloudMessage.error(error || this.$translate.instant('vps_order_additional_disk_fail')));
   }
 
   orderAdditionalDiskOption() {
     this.loaders.order = true;
-    this.ServiceHelper
+    this.CucServiceHelper
       .loadOnNewPage(this.VpsService.postAdditionalDiskOrder(
         this.serviceName,
         this.model.capacity,

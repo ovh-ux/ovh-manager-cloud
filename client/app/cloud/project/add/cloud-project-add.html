@@ -100,7 +100,7 @@
                                                                 <p class="bottom-space-m8 bold text-info" data-translate="cpa_paymentmean_creditCard_info"></p>
                                                                 <a class="btn btn-primary btn-lg bottom-space-m8"
                                                                     href="{{ CloudProjectAddCtrl.addCreditCardUrl }}" target="_blank"
-                                                                    a-disabled="CloudProjectAddCtrl.model.paymentMethod !== CloudProjectAddCtrl.model.noPaymentMethodEnum.MEAN"
+                                                                    data-ng-class="{ 'disabled': CloudProjectAddCtrl.model.paymentMethod !== CloudProjectAddCtrl.model.noPaymentMethodEnum.MEAN }"
                                                                     data-translate="cpa_paymentmean_empty_help_3dsCreditCard_link"></a><br />
                                                                 <p class="bottom-space-m8" data-translate="cpa_paymentmean_creditCard_info2" ></p>
                                                             </div>

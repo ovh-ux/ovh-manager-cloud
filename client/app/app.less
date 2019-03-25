@@ -18,14 +18,7 @@
 @import 'ovh-common-style/less/bootstrap3-col-height.less';
 @import 'ovh-common-style/less/spinner/spinner.less';
 @import 'ovh-common-style/less/fonts/open-sans.less';
-@import 'ovh-angular-form-flat/less/ovh-angular-form-flat.less';
-
-@flat-switch-cursor-color : @UNIVERS_SECONDARY;
-@flat-switch-background-color-active : #dfeeeb;
-@flat-switch-cursor-border-color : #53a191;
-
 @import 'ovh-manager-webfont/dist/less/ovh-font.less';
-
 @import 'ovh-angular-slider/less/ovh-angular-slider.less';
 @ovh-angular-slider-handle-background: #8d919c;
 @ovh-angular-slider-handle-border-color: darken(@ovh-angular-slider-handle-background, 5%);
@@ -38,9 +31,6 @@
 @import 'ovh-angular-responsive-page-switcher/dist/less/ovh-angular-responsive-page-switcher.less';
 
 @import "ovh-angular-otrs/dist/ovh-angular-otrs.less";
-
-// Overide ovh-form-flat Params
-@FormFlatBorderSize      : 1px;
 
 // Overide Bootstrap Params
 @screen-xs-max: @v6-max-with;
@@ -82,6 +72,41 @@
 @imgPath: '../assets/';
 
 @table-header-background-color : @UNIVERS_SECONDARY;
+
+:not(.oui-header-tabs__dropdown-container) > .oui-header-tabs__item_active > a {
+  border-bottom-color: @UNIVERS;
+}
+
+.cui-modal {
+  .modal-content {
+    .oui-modal {
+      background-color: white;
+
+      .oui-list__header {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+
+      .oui-list__link {
+        color: inherit;
+        font-size: inherit;
+        text-decoration: underline;
+        display: initial;
+      }
+
+      .oui-list__items {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        margin-bottom: 8.5px;
+        list-style-type: disc;
+      }
+    }
+
+    .oui-checkbox__label {
+      font-size: 1.6rem;
+    }
+  }
+}
 
 .table {
   &.table-pretty {
@@ -331,18 +356,13 @@ html {
 @import "ui-components/accordion/accordion-list.less";
 @import "ui-components/accordion/accordion.less";
 @import "ui-components/advanced-options/advanced-options.less";
-@import "ui-components/dropdown-menu/dropdown-menu.less";
 @import "ui-components/dual-list/dual-list.less";
 @import "ui-components/form/form.less";
 @import "ui-components/grid/grid.less";
-@import "ui-components/guide-component/guide-component.less";
 @import "ui-components/icons/button-action.less";
 @import "ui-components/inline-adder/inline-adder.less";
 @import "ui-components/input/key-value.less";
 //@import "ui-components/labels/labels.less";
-@import "ui-components/modal/modal.less";
-@import "ui-components/page/_variables.less";
-@import "ui-components/page/page.less";
 @import "ui-components/panel/panel.less";
 @import "ui-components/preview-list/_variables.less";
 @import "ui-components/preview-list/preview-list.less";
@@ -351,7 +371,6 @@ html {
 @import "ui-components/table/_normalize.less";
 @import "ui-components/table/_variables.less";
 @import "ui-components/table/table.less";
-@import "ui-components/tabs/tabs.less";
 //@import "ui-components/tile/_mixins.less";
 //@import "ui-components/tile/_variables.less";
 //@import "ui-components/tile/custom/definition/cui-tile-definition-description-region.less";
@@ -374,25 +393,18 @@ html {
 @import "../components/cloud-ui/search/search.less";
 @import "../components/cloud-ui/switch/switch.less";
 @import "../components/cloud-ui/table/table.less";
-@import "../components/cloud/cloud-consumption/consumption-chart.less";
-@import "../components/cloud/cloud-monitoring/monitoring-chart.less";
-@import "../components/cloud/cloud-space-meter-legend/cloud-space-meter-legend.less";
-@import "../components/cloud/cloud-space-meter-space-left/cloud-space-meter-space-left.less";
-@import "../components/cloud/cloud-space-meter/cloud-space-meter-uib-progress.less";
-@import "../components/cloud/cloud-space-meter/cloud-space-meter.less";
-@import "../components/cloud/project/billing/details-popover/details-popover.less";
-@import "../components/cloud/region/region.less";
+@import "cloud/components/project/billing/details-popover/details-popover.less";
+@import "cloud/components/region.less";
 @import "../components/contracts/contracts.less";
-@import "../components/highlightedElement/highlightedElement.less";
 @import "../components/navbar/navbar.less";
 @import "../components/manager-preload/manager-preload.less";
 @import "../components/ovh-ui/button/button.less";
 @import "../components/ovh-ui/constants.less";
 @import "../components/ovh-ui/mixins.less";
 @import "../components/ovh-ui/table/table.less";
-@import "../components/runabove/modal/modal.less";
-@import "../components/runabove/promise-task-state/promise-task-state.less";
-@import "../components/runabove/runabove.less";
+@import "cloud/components/runabove/modal/modal.less";
+@import "cloud/components/runabove/promise-task-state/promise-task-state.less";
+@import "cloud/components/runabove/runabove.less";
 @import "../components/sidebar/sidebar.less";
 // endinject
 // endinject

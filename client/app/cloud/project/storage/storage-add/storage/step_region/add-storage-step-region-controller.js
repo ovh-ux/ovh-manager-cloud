@@ -1,7 +1,7 @@
 angular.module('managerApp').controller('RA.add.storage.stepRegionCtrl',
-  ['$scope', 'RegionService',
-    function ($scope, RegionService) {
-      $scope.regionService = RegionService;
+  ['$scope', 'CucRegionService',
+    function ($scope, CucRegionService) {
+      $scope.regionService = CucRegionService;
       $scope.childStep = 'containerType';
 
       $scope.model.region = null;

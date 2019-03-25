@@ -1,9 +1,9 @@
 class NashaAddCtrl {
-  constructor($translate, $state, CloudMessage, ControllerHelper, NashaAddService) {
+  constructor($translate, $state, CucCloudMessage, CucControllerHelper, NashaAddService) {
     this.$translate = $translate;
     this.$state = $state;
-    this.CloudMessage = CloudMessage;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
     this.NashaAddService = NashaAddService;
 
     this.data = {};
@@ -40,26 +40,26 @@ class NashaAddCtrl {
   }
 
   initLoaders() {
-    this.datacenters = this.ControllerHelper.request.getArrayLoader({
+    this.datacenters = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getAvailableRegions(),
     });
 
-    this.offers = this.ControllerHelper.request.getArrayLoader({
+    this.offers = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getOffers(),
     });
 
-    this.durations = this.ControllerHelper.request.getArrayLoader({
+    this.durations = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.NashaAddService.getDurations(),
     });
   }
 
   loadMessages() {
     const stateName = 'paas.nasha-add';
-    this.CloudMessage.unSubscribe(stateName);
-    this.messageHandler = this.CloudMessage.subscribe(stateName, {
+    this.CucCloudMessage.unSubscribe(stateName);
+    this.messageHandler = this.CucCloudMessage.subscribe(stateName, {
       onMessage: () => this.refreshMessage(),
     });
-    this.CloudMessage.info(this.$translate.instant('nasha_order_datacenter_unavailable', { region: this.$translate.instant('nasha_order_datacenter_gra'), fallback: this.$translate.instant('nasha_order_datacenter_rbx') }));
+    this.CucCloudMessage.info(this.$translate.instant('nasha_order_datacenter_unavailable', { region: this.$translate.instant('nasha_order_datacenter_gra'), fallback: this.$translate.instant('nasha_order_datacenter_rbx') }));
   }
 }
 

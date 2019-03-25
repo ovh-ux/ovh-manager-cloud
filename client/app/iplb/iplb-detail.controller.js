@@ -1,8 +1,13 @@
 class IpLoadBalancerDetailCtrl {
-  constructor($stateParams, CloudMessage, CloudNavigation, IpLoadBalancerConfigurationService) {
+  constructor(
+    $stateParams,
+    CucCloudMessage,
+    CucCloudNavigation,
+    IpLoadBalancerConfigurationService,
+  ) {
     this.$stateParams = $stateParams;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
     this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
     this.messages = [];
 
@@ -10,15 +15,15 @@ class IpLoadBalancerDetailCtrl {
   }
 
   $onInit() {
-    this.CloudNavigation.init({
+    this.CucCloudNavigation.init({
       state: 'network.iplb.detail',
       stateParams: {
         serviceName: this.serviceName,
       },
     });
 
-    this.CloudMessage.unSubscribe('network.iplb.detail');
-    this.messageHandler = this.CloudMessage.subscribe('network.iplb.detail', { onMessage: () => this.refreshMessage() });
+    this.CucCloudMessage.unSubscribe('network.iplb.detail');
+    this.messageHandler = this.CucCloudMessage.subscribe('network.iplb.detail', { onMessage: () => this.refreshMessage() });
     this.checkPendingChanges();
   }
 

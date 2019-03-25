@@ -1,6 +1,6 @@
 angular.module('managerApp').controller('NashaPartitionZFSOptionsCtrl',
   function NashaPartitionZFSOptionsCtrl($uibModalInstance, $filter, $q, $stateParams, $scope,
-    $translate, CloudMessage, OvhApiDedicatedNasha, NashaPartitionZFSOptionsService) {
+    $translate, CucCloudMessage, OvhApiDedicatedNasha, NashaPartitionZFSOptionsService) {
     const self = this;
 
     self.enums = {};
@@ -28,11 +28,11 @@ angular.module('managerApp').controller('NashaPartitionZFSOptionsCtrl',
       }).$promise
         .then((result) => {
           $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
-          CloudMessage.success($translate.instant('nasha_partitions_zfs_modal_success'));
+          CucCloudMessage.success($translate.instant('nasha_partitions_zfs_modal_success'));
         })
         .catch(() => {
           self.dismiss();
-          CloudMessage.error($translate.instant('nasha_partitions_zfs_modal_fail'));
+          CucCloudMessage.error($translate.instant('nasha_partitions_zfs_modal_fail'));
         })
         .finally(() => {
           self.states.saving = false;
@@ -53,7 +53,7 @@ angular.module('managerApp').controller('NashaPartitionZFSOptionsCtrl',
         })
         .catch(() => {
           self.dismiss();
-          CloudMessage.error($translate.instant('nasha_partitions_zfs_modal_loading_fail'));
+          CucCloudMessage.error($translate.instant('nasha_partitions_zfs_modal_loading_fail'));
         })
         .finally(() => {
           self.loaders = false;

@@ -1,11 +1,12 @@
 class CloudProjectOpenstackUsersRcloneModalCtrl {
   constructor($stateParams, $uibModalInstance, CloudProjectOpenstackUsersRcloneService,
-    ControllerHelper, openstackUser) {
+    CucControllerHelper, openstackUser, URLS) {
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.CloudProjectOpenstackUsersRcloneService = CloudProjectOpenstackUsersRcloneService;
-    this.ControllerHelper = ControllerHelper;
+    this.CucControllerHelper = CucControllerHelper;
     this.openstackUser = openstackUser;
+    this.URLS = URLS;
 
     this.projectId = $stateParams.projectId;
 
@@ -33,7 +34,7 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
     return this.CloudProjectOpenstackUsersRcloneService
       .getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
       .then((response) => {
-        this.ControllerHelper.constructor.downloadContent({
+        this.CucControllerHelper.constructor.downloadContent({
           fileContent: response.content,
           fileName: 'rclone.sh',
         });
@@ -50,14 +51,14 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
   }
 
   initLoaders() {
-    this.regions = this.ControllerHelper.request.getArrayLoader({
+    this.regions = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.CloudProjectOpenstackUsersRcloneService
         .getValidRcloneRegions(this.projectId)
         .catch(error => this.cancel(error)),
     });
 
-    this.rCloneFileGuide = this.ControllerHelper.request.getHashLoader({
-      loaderFunction: () => this.ControllerHelper.navigation.getConstant('guides.rCloneFile')
+    this.rCloneFileGuide = this.CucControllerHelper.request.getHashLoader({
+      loaderFunction: () => this.CucControllerHelper.navigation.getConstant(_.get(this.URLS, 'guides.rCloneFile', ''))
         .catch(error => this.cancel(error)),
     });
   }

@@ -1,13 +1,13 @@
 class LogsDashboardsCrudCtrl {
   constructor($q, $state, $stateParams, $uibModalInstance, LogsDashboardsService,
-    ControllerHelper, CloudMessage, LogsStreamsService) {
+    CucControllerHelper, CucCloudMessage, LogsStreamsService) {
     this.$q = $q;
     this.$stateParams = $stateParams;
     this.$uibModalInstance = $uibModalInstance;
     this.serviceName = this.$stateParams.serviceName;
     this.LogsDashboardsService = LogsDashboardsService;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
     this.LogsStreamsService = LogsStreamsService;
     this.isEdit = false;
     this.isDuplicate = $state.$current.name === 'dbaas.logs.detail.dashboards.duplicate';
@@ -22,18 +22,18 @@ class LogsDashboardsCrudCtrl {
    * @memberof LogsDashboardsCrudCtrl
    */
   initLoaders() {
-    this.options = this.ControllerHelper.request.getArrayLoader({
+    this.options = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsDashboardsService.getSubscribedOptions(this.serviceName),
     });
     this.options.load();
 
-    this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+    this.mainOffer = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsDashboardsService.getMainOffer(this.serviceName),
     });
     this.mainOffer.load();
 
     if (this.isDuplicate) {
-      this.streams = this.ControllerHelper.request.getArrayLoader({
+      this.streams = this.CucControllerHelper.request.getArrayLoader({
         loaderFunction: () => this.LogsStreamsService.getOwnStreams(this.serviceName),
       });
       this.streams.load();
@@ -41,7 +41,7 @@ class LogsDashboardsCrudCtrl {
       this.title = 'logs_dashboards_duplicate_title';
       this.dashboard = this.LogsDashboardsService.constructor.getNewDashboard();
       if (!this.dashboardName) {
-        this.ControllerHelper.request.getHashLoader({
+        this.CucControllerHelper.request.getHashLoader({
           loaderFunction: () => this.LogsDashboardsService
             .getDashboard(this.serviceName, this.$stateParams.dashboardId)
             .then((aapiDashboard) => {
@@ -53,7 +53,7 @@ class LogsDashboardsCrudCtrl {
     } else if (this.$stateParams.dashboardId) {
       this.isEdit = true;
       this.title = 'logs_dashboards_update_title';
-      this.dashboard = this.ControllerHelper.request.getHashLoader({
+      this.dashboard = this.CucControllerHelper.request.getHashLoader({
         loaderFunction: () => this.LogsDashboardsService
           .getAapiDashboard(this.serviceName, this.$stateParams.dashboardId)
           .then(dashboard => dashboard.info),
@@ -87,13 +87,13 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .updateDashboard(this.serviceName, this.dashboard.data)
         .finally(() => {
           this.$uibModalInstance.close();
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
         }),
     });
     return this.saving.load();
@@ -108,13 +108,13 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .createDashboard(this.serviceName, this.dashboard.data)
         .finally(() => {
           this.$uibModalInstance.close();
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
         }),
     });
     return this.saving.load();
@@ -129,13 +129,13 @@ class LogsDashboardsCrudCtrl {
     if (this.form.$invalid) {
       return this.$q.reject();
     }
-    this.CloudMessage.flushChildMessage();
-    this.saving = this.ControllerHelper.request.getHashLoader({
+    this.CucCloudMessage.flushChildMessage();
+    this.saving = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsDashboardsService
         .duplicateDashboard(this.serviceName, this.dashboard.data, this.$stateParams.dashboardId)
         .finally(() => {
           this.$uibModalInstance.close();
-          this.ControllerHelper.scrollPageToTop();
+          this.CucControllerHelper.scrollPageToTop();
         }),
     });
     return this.saving.load();

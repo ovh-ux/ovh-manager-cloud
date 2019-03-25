@@ -1,6 +1,18 @@
+import '@uirouter/angularjs';
+import ngAtInternet from '@ovh-ux/ng-at-internet';
+import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
+import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
+import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
+import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
+import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
+import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
+import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
+import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
+import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
 angular.module('managerApp', [
@@ -15,19 +27,23 @@ angular.module('managerApp', [
   'ui.validate',
   'ui.sortable',
 
+  ngAtInternet,
+  ngAtInternetUiRouterPlugin,
+  ngOvhApiWrappers,
+  ngOvhCheckboxTable,
+  ngOvhDocUrl,
+  ngOvhFormFlat,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
-  'ovh-angular-apiv7',
+  ngOvhStopEvent,
+  ngOvhSwimmingPoll,
+  ngOvhCloudUniverseComponents,
+  ngOvhUserPref,
   'ovh-api-services',
   'ovh-common-style',
-  'ovh-angular-checkbox-table',
-  'ovh-angular-form-flat',
   'ovh-angular-q-allSettled',
-  'ovh-angular-stop-event',
-  'ovh-angular-a-disabled',
   'angularMoment',
   'ovh-angular-toaster',
-  'ovh-angular-swimming-poll',
   'oui',
   'oui.list-view',
   'chart.js',
@@ -52,16 +68,12 @@ angular.module('managerApp', [
   'ovh-angular-jquery-ui-droppable',
   'ovh-angular-slider',
   'ovh-angular-tail-logs',
-  'ng-at-internet',
-  'atInternetUiRouterPlugin',
   'matchmedia-ng',
-  'ovh-angular-user-pref',
-  'ovh-angular-doc-url',
   'ovhBrowserAlert',
   'angular-websocket',
   'angular-translate-loader-pluggable',
 
-  translateAsyncLoader,
+  ngTranslateAsyncLoader,
   cloudUniverseComponents,
 ])
   .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider,
@@ -238,5 +250,8 @@ angular.module('managerApp', [
 
       removeOnSuccessHook();
     });
+  })
+  .config(/* @ngInject */(CucConfigProvider, TARGET) => {
+    CucConfigProvider.setRegion(TARGET);
   })
   .run(/* @ngTranslationsInject:json ./common/translations */);

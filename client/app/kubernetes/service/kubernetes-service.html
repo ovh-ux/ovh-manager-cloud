@@ -27,20 +27,47 @@
                     <oui-tile-description>
                         <span class="oui-status"
                               data-ng-class="{
-                                     'oui-status_success' : $ctrl.cluster.status === 'READY',
-                                     'oui-status_warning' : $ctrl.cluster.status === 'INSTALLING' || $ctrl.cluster.status === 'DELETING' || $ctrl.cluster.status === 'RESETTING',
-                                     'oui-status_error' : $ctrl.cluster.status === 'ERROR'
+                                     'oui-status_success' : $ctrl.cluster.status === $ctrl.KUBERNETES.status.READY,
+                                     'oui-status_warning' : $ctrl.Kubernetes.isProcessing($ctrl.cluster.status),
+                                     'oui-status_error' : $ctrl.cluster.status === $ctrl.KUBERNETES.status.ERROR
                                      }"
                               data-translate="{{ 'kube_service_cluster_status_' + $ctrl.cluster.status }}">
                         </span>
                     </oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-disabled="$ctrl.cluster.status !== 'READY'">
+                    <oui-action-menu data-compact data-align="end" data-disabled="$ctrl.Kubernetes.isProcessing($ctrl.cluster.status)">
                         <oui-action-menu-item on-click="$ctrl.resetCluster()">
                             <span data-translate="kube_service_reset_title"></span>
                         </oui-action-menu-item>
+                        <oui-action-menu-item on-click="$ctrl.terminate()">
+                            <span data-translate="kube_service_terminate_title"></span>
+                        </oui-action-menu-item>
                     </oui-action-menu>
                 </oui-tile-definition>
-                <oui-tile-definition data-term="{{:: 'kube_service_cluster_version' | translate }}" data-description="{{:: $ctrl.cluster.version }}"></oui-tile-definition>
+                <oui-tile-definition data-term="{{:: 'kube_service_cluster_version' | translate }}">
+                    <oui-tile-description>
+                        <span data-ng-bind="$ctrl.cluster.version"></span>
+                        <span class="oui-color-error-dark ml-1"
+                              data-ng-if="!$ctrl.cluster.isUpToDate"
+                              data-translate="kube_service_cluster_update_available"></span>
+                    </oui-tile-description>
+                    <oui-action-menu data-compact data-align="end" data-ng-if="!$ctrl.cluster.isUpToDate" data-disabled="$ctrl.cluster.status !== $ctrl.KUBERNETES.status.READY">
+                        <oui-action-menu-item data-on-click="$ctrl.updateCluster()">
+                            <span data-translate="common_update"></span>
+                        </oui-action-menu-item>
+                    </oui-action-menu>
+                </oui-tile-definition>
+                <!-- upgrade policy -->
+                <oui-tile-definition data-term="{{ ::'kube_service_upgrade_policy' | translate }}">
+                    <oui-tile-description>
+                        <span data-translate="{{ $ctrl.upgradePolicy.localizationKey }}"></span>
+                    </oui-tile-description>
+                    <oui-action-menu data-compact data-align="end">
+                        <oui-action-menu-item on-click="$ctrl.showUgradePolicy()">
+                            <span data-translate="common_edit"></span>
+                        </oui-action-menu-item>
+                    </oui-action-menu>
+                </oui-tile-definition>
+                <!-- end of upgrade policy -->
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_region' | translate }}" data-description="{{:: $ctrl.cluster.region }}"></oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'kube_service_cluster_nodes_url' | translate }}">
                     <oui-tile-description>
@@ -102,5 +129,5 @@
             </oui-tile>
         </div>
     </div>
-    <div data-ui-view="kubernetesResetView"></div>
+    <div data-ui-view="kubernetesPopUpView"></div>
 </div>

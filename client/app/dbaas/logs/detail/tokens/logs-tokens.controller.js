@@ -1,14 +1,14 @@
 class LogsTokensCtrl {
-  constructor($q, $state, $stateParams, $translate, LogsTokensService, ControllerHelper,
-    CloudMessage) {
+  constructor($q, $state, $stateParams, $translate, LogsTokensService, CucControllerHelper,
+    CucCloudMessage) {
     this.$q = $q;
     this.$state = $state;
     this.$stateParams = $stateParams;
     this.serviceName = this.$stateParams.serviceName;
     this.$translate = $translate;
     this.LogsTokensService = LogsTokensService;
-    this.ControllerHelper = ControllerHelper;
-    this.CloudMessage = CloudMessage;
+    this.CucControllerHelper = CucControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
 
     this.initLoaders();
   }
@@ -19,14 +19,14 @@ class LogsTokensCtrl {
    * @memberof LogsTokensCtrl
    */
   initLoaders() {
-    this.tokens = this.ControllerHelper.request.getArrayLoader({
+    this.tokens = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsTokensService.getTokens(this.serviceName)
         .then(tokens => tokens.map((token) => {
           _.set(token, 'isLoadingCluster', true);
           return token;
         })),
     });
-    this.clusters = this.ControllerHelper.request.getArrayLoader({
+    this.clusters = this.CucControllerHelper.request.getArrayLoader({
       loaderFunction: () => this.LogsTokensService.getClusters(this.serviceName),
     });
     this.tokens.load();
@@ -50,8 +50,8 @@ class LogsTokensCtrl {
    * @memberof LogsTokensCtrl
    */
   showDeleteConfirm(token) {
-    this.CloudMessage.flushChildMessage();
-    return this.ControllerHelper.modal.showDeleteModal({
+    this.CucCloudMessage.flushChildMessage();
+    return this.CucControllerHelper.modal.showDeleteModal({
       titleText: this.$translate.instant('logs_tokens_delete_title'),
       textHtml: this.$translate.instant('logs_tokens_delete_message', { tokenName: token.name }),
     }).then(() => this.remove(token));
@@ -70,10 +70,10 @@ class LogsTokensCtrl {
    * @memberof LogsTokensCtrl
    */
   remove(token) {
-    this.delete = this.ControllerHelper.request.getHashLoader({
+    this.delete = this.CucControllerHelper.request.getHashLoader({
       loaderFunction: () => this.LogsTokensService.deleteToken(this.serviceName, token)
         .then(() => this.initLoaders())
-        .finally(() => this.ControllerHelper.scrollPageToTop()),
+        .finally(() => this.CucControllerHelper.scrollPageToTop()),
     });
     this.delete.load();
   }
