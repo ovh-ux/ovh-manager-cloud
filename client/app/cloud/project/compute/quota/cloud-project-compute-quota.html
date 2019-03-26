@@ -123,6 +123,30 @@
             </oui-column>
         </oui-datagrid>
 
+        <!-- QUOTA TABLE -->
+        <strong>{{ ::'cpci_add_regions_inactive' | translate }}</strong>
+
+        <oui-datagrid data-rows="CloudProjectComputeQuotaCtrl.availableRegions.data"
+            data-loading="CloudProjectComputeQuotaCtrl.availableRegions.loading">
+            <oui-column data-title="::'cloud_common_region' | translate" data-property="name" data-sortable="asc">
+                <div class="flag-box">
+                    <div class="flag-wrapper inline-block vertical-middle">
+                        <span class="flag-icon {{ :: CloudProjectComputeQuotaCtrl.regionService.getRegionIconFlag($row.name) }} flag" aria-hidden="true"></span>
+                    </div>
+                    <div class="flag-text inline-block left-space-m8 top-space-m8 vertical-middle">
+                        {{ :: CloudProjectComputeQuotaCtrl.regionService.getTranslatedMicroRegion($row.name) }}
+                    </div>
+                </div>
+            </oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item>
+                    <a class="oui-button oui-button_link"
+                        data-ui-sref="iaas.pci-project.compute.regions">
+                        <span data-translate="cpci_add_regions_activate"></span>
+                    </a>
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
     </div>
 
 </div>

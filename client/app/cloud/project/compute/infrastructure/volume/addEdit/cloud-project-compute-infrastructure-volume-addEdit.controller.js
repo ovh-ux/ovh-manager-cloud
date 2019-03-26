@@ -1,11 +1,13 @@
 angular.module('managerApp')
   .controller('CloudProjectComputeInfrastructureVolumeAddEditCtrl',
     function CloudProjectComputeInfrastructureVolumeAddEditCtrl(
-      $scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout,
-      OvhApiCloudProjectRegion, $translate,
-      CucCloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota,
-      $location, atInternet, OvhApiMe, CucRegionService,
-      CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA,
+      $rootScope, $scope, $stateParams, $timeout, $translate,
+      atInternet, CloudProjectComputeVolumesOrchestrator,
+      CucServiceHelper, CucControllerHelper,
+      CucRegionService, CucCloudMessage,
+      OvhApiCloudProjectRegion, OvhApiCloudProjectQuota,
+      CLOUD_VOLUME_TYPES, CLOUD_VOLUME_MAX_SIZE,
+      CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA,
     ) {
       const self = this;
 
@@ -57,6 +59,7 @@ angular.module('managerApp')
 
       function init() {
         self.getRegions();
+        self.getAvailableRegions();
 
         self.volumeInEditionParam = CloudProjectComputeVolumesOrchestrator.getEditVolumeParam();
         CloudProjectComputeVolumesOrchestrator.setEditVolumeParam(null);
@@ -212,6 +215,18 @@ angular.module('managerApp')
             self.loaders.panelsData.regions = false;
           });
         }
+      };
+
+      // --------- available REGIONS panel ---------
+
+      self.getAvailableRegions = function getAvailableRegions() {
+        self.availableRegions = CucControllerHelper.request.getHashLoader({
+          loaderFunction: () => OvhApiCloudProjectRegion.AvailableRegions().v6()
+            .query({ serviceName })
+            .$promise
+            .catch(error => CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+        });
+        return self.availableRegions.load();
       };
 
       $scope.$watch('VolumeAddEditCtrl.volumeInEdition.region', (value, oldValue) => {

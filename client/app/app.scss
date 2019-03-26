@@ -1,4 +1,17 @@
 
+// override bootstrap map to add custom widths
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    10: 10%,
+    15: 15%,
+    20: 20%
+  ),
+  $sizes
+);
+
 @import '../../node_modules/bs4/scss/_functions.scss';
 @import '../../node_modules/bs4/scss/_variables.scss';
 @import '../../node_modules/bs4/scss/_mixins.scss';

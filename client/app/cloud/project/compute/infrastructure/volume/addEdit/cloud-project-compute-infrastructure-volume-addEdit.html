@@ -436,7 +436,7 @@
                         <div class="popover-detail-item">
                             <table class="table table-pretty table-hover table-striped shadow-z-1 no-space">
                                 <tbody>
-
+                                    <!-- regions -->
                                     <tr data-ng-repeat="region in VolumeAddEditCtrl.panelsData.regions"
                                         data-ng-click="VolumeAddEditCtrl.volumeInEdition.region = region"
                                         class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress>
@@ -469,7 +469,41 @@
                                             </div>
                                         </td>
                                     </tr>
-
+                                    <!-- available regions but not activated -->
+                                    <tr data-ng-repeat="region in VolumeAddEditCtrl.availableRegions.data"
+                                        style="cursor: not-allowed;"
+                                        data-ng-if="!VolumeAddEditCtrl.availableRegions.loading && VolumeAddEditCtrl.availableRegions.data.length > 0">
+                                        <td style="width: 50px; vertical-align: middle">
+                                            <flat-radio>
+                                                <input type="radio" aria-hidden="true" tabindex="-1"
+                                                       name="regionsChoice" id="{{ ::region.name }}"
+                                                       value="{{ ::region.name }}"
+                                                       disabled="true">
+                                            </flat-radio>
+                                        </td>
+                                        <td class="space-p8 flag-box flag-box-cell">
+                                            <div class="popover-list-item popover-box top-space-m4">
+                                                <div class="popover-list-item-illustration box-left">
+                                                    <i class="flag-icon {{ ::VolumeAddEditCtrl.regionService.getRegionIconFlag(region.name) }} flag"></i>
+                                                </div>
+                                                <div class="box-right text-left">
+                                                    <h3 class="fs14 no-space normal" data-ng-bind="::VolumeAddEditCtrl.regionService.getTranslatedMicroRegion(region.name)"></h3>
+                                                    <h4 class="fs10 no-space normal" data-ng-bind="::VolumeAddEditCtrl.regionService.getTranslatedMicroRegionLocation(region.name)"></h4>
+                                                    <a class="fs10"
+                                                       href="{{ region.name | openStreetMap }}"
+                                                       target="_blank"
+                                                       data-ng-if="region.name | openStreetMap"
+                                                       data-ng-click="$event.stopPropagation()">
+                                                        {{ 'cloud_common_region_localize' | translate }}<i class="fa fa-map-marker left-space-m4"></i>
+                                                    </a>
+                                                    <a class="left-space-m8"
+                                                        data-ui-sref="iaas.pci-project.compute.regions">
+                                                        <span data-ng-bind=" ::'cpci_add_regions_activate' | translate "></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -27,6 +27,14 @@ class CloudRegionService {
       delete region.disabled; // eslint-disable-line
     }
   }
+
+  static isActive(region) {
+    return !region.notAvailable;
+  }
+
+  static setRegionInactiveMessage(region) {
+    _.set(region, 'disabled', 'INACTIVE');
+  }
 }
 
 angular.module('managerApp').service('CloudRegionService', CloudRegionService);
