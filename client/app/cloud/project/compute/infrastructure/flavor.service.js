@@ -9,6 +9,8 @@
       this.CLOUD_FLAVORTYPE_CATEGORY = CLOUD_FLAVORTYPE_CATEGORY;
       this.CLOUD_INSTANCE_CPU_FREQUENCY = CLOUD_INSTANCE_CPU_FREQUENCY;
       this.CLOUD_INSTANCE_NUMBER_OF_GPUS = CLOUD_INSTANCE_NUMBER_OF_GPUS;
+
+      this.initFlavorNameFormatRules();
     }
 
     static isOldFlavor(flavorName) {
@@ -80,20 +82,6 @@
       }
     }
 
-    getQuotaRam(flavor, quota) {
-      const quotaByRegion = _.find(quota, { region: flavor.region });
-      const instanceQuota = _.get(quotaByRegion, 'instance', false);
-      if (instanceQuota) {
-        return {
-          max: this.$filter('bytes')(instanceQuota.maxRam, 0, false, 'MB'),
-          used: this.$filter('bytes')(instanceQuota.usedRAM, 0, false, 'MB'),
-          remaining: this.$filter('bytes')(instanceQuota.maxRam - instanceQuota.usedRAM, 0, false, 'MB'),
-          required: this.$filter('bytes')(flavor.ram, 0, false, 'MB'),
-        };
-      }
-      return null;
-    }
-
     static getQuotaCore(flavor, quota) {
       const quotaByRegion = _.find(quota, { region: flavor.region });
       const instanceQuota = _.get(quotaByRegion, 'instance', false);
@@ -103,6 +91,84 @@
           used: instanceQuota.usedCores,
           remaining: instanceQuota.maxCores - instanceQuota.usedCores,
           required: flavor.vcpus,
+        };
+      }
+      return null;
+    }
+
+    initFlavorNameFormatRules() {
+      this.rules = [
+        {
+          condition: ({ currentIndex, currentValue }) => currentIndex === 0 && `${currentValue}`.toUpperCase() === 'WIN',
+          mapping: () => '',
+        },
+        {
+          condition: ({ currentValue, inputParts, currentIndex }) => `${currentValue}`.toUpperCase() === 'FLEX' && inputParts.length - 1 === currentIndex,
+          mapping: value => ` - ${value[0].toUpperCase()}${value.substr(1)}`,
+        },
+        {
+          condition: () => true,
+          mapping: value => `${value.toUpperCase()}`,
+          intermediateHyphen: true,
+        },
+      ];
+    }
+
+    /**
+     * convert flavor name to redable format
+     * examples
+     * win-hg-120-ssd-flex to HG-120-SSD - Flex
+     * hg-60-ssd-flex to HG-60-SSD - Flex
+     * s1-4 to S1-4
+     * gpu-60-flex to GPU-60 - Flex
+     * @param {string} flavorName
+     */
+    formatFlavorName(flavorName) {
+      const inputParts = flavorName.split('-');
+      return [].concat(...inputParts
+        .map((currentValue, currentIndex) => {
+          const matchingRule = this.rules.find(rule => rule.condition({
+            currentValue,
+            currentIndex,
+            inputParts,
+          }));
+
+          const rawReturnValue = matchingRule.mapping(currentValue);
+          return matchingRule.intermediateHyphen
+            ? [{ value: rawReturnValue, needsHyphen: true }, { isHyphen: true }]
+            : { value: rawReturnValue };
+        }))
+        .reduce((accumulator, currentValue, currentIndex, array) => {
+          let valueToAppend = '';
+          if (currentValue.isHyphen) {
+            if (currentIndex + 1 !== array.length) {
+              valueToAppend = '-';
+            }
+          }
+
+          if (!currentValue.isHyphen && currentValue.needsHyphen) {
+            valueToAppend = currentValue.value;
+          }
+
+          if (!currentValue.isHyphen && !currentValue.needsHyphen) {
+            accumulator.pop();
+            valueToAppend = currentValue.value;
+          }
+
+          return [...accumulator, valueToAppend];
+        }, [])
+        .join('');
+    }
+
+    getQuotaRam(flavor, quota) {
+      const quotaByRegion = _.find(quota, { region: flavor.region });
+      const instanceQuota = _.get(quotaByRegion, 'instance', false);
+      if (instanceQuota) {
+        return {
+          max: this.$filter('bytes')(instanceQuota.maxRam, 0, false, 'MB'),
+          used: this.$filter('bytes')(instanceQuota.usedRAM, 0, false, 'MB'),
+          remaining: this.$filter('bytes')(instanceQuota.maxRam - instanceQuota.usedRAM, 0, false, 'MB'),
+          required: this.$filter('bytes')(flavor.ram, 0, false, 'MB'),
         };
       }
       return null;
@@ -125,7 +191,7 @@
 
       const augmentedFlavor = _.cloneDeep(flavor);
       augmentedFlavor.frequency = this.CLOUD_INSTANCE_CPU_FREQUENCY[flavor.type];
-
+      augmentedFlavor.formattedName = this.formatFlavorName(augmentedFlavor.name);
       if (/vps/.test(flavor.type)) {
         return Object.assign({
           vps: true,

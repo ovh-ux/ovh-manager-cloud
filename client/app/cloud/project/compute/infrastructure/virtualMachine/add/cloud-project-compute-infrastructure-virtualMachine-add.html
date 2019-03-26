@@ -269,9 +269,8 @@
                                             data-disabled="flavor.disabled"
                                             data-thumbnail
                                             data-variant="light"
-                                            data-value="flavor"
-                                            class="h-100">
-                                    {{flavor.name}}
+                                            data-value="flavor">
+                                    {{ flavor.formattedName }}
                                     <span class="oui-radio__section">
                                         <span class="d-flex flex-wrap">
                                             <span data-translate="cpcivm_add_step3_label_ram"></span>
@@ -346,9 +345,8 @@
                                data-name="flavorSelected"
                                data-value="$ctrl.model.flavor"
                                data-thumbnail
-                               data-variant="light"
-                               class="h-100">
-                        {{$ctrl.model.flavor.name}}
+                               data-variant="light">
+                        {{ $ctrl.model.flavor.formattedName }}
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
                                 <span data-translate="cpcivm_add_step3_label_ram"></span>

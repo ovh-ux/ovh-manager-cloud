@@ -409,6 +409,10 @@ angular.module('managerApp')
           }
         }
         self.displayData.categories = _.sortBy(self.displayData.categories, 'order');
+        // if selected flavor is not available, set to null
+        if (!_.get(selectedFlavour, 'available')) {
+          _.set(self.vmInEdition, 'flavor', null);
+        }
       }
 
       function getDisplayImages(flavorType) {
@@ -1136,6 +1140,10 @@ angular.module('managerApp')
             OvhApiCloudProjectFlavor.v6().query({
               serviceName,
             }).$promise.then((flavorsList) => {
+              // clear cache only on success of function
+              OvhApiCloudProjectFlavor.v6().resetQueryCache();
+              OvhApiCloudProjectFlavor.v6().resetCache();
+
               const modifiedFlavorsList = flavorsList
                 .map(flavor => CloudFlavorService.augmentFlavor(flavor));
 
@@ -1159,7 +1167,6 @@ angular.module('managerApp')
                 });
               }
               self.panelsData.flavors = modifiedFlavorsList;
-
               if (!self.vmInEdition.flavor) { // this is a snapshot           to review
                 recalculateFlavor();
               }

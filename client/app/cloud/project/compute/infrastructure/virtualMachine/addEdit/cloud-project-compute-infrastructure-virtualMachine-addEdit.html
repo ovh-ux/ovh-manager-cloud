@@ -675,7 +675,7 @@
                                             </p>
                                             <dt data-translate="cpcivm_addedit_table_model"></dt>
                                             <dd>
-                                                <span data-ng-bind-html="'cpci_vm_flavor_category_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].name | translate"></span>
+                                                <span data-ng-bind="VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].formattedName"></span>
                                                 <span data-ng-if="VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].isOldFlavor">*</span>
                                             </dd>
                                             <dt data-translate="cpcivm_addedit_table_cpu"></dt>
@@ -849,7 +849,7 @@
                                                         </td>
                                                         <td class="text-center">
                                                             <label for="{{:: flavor.shortGroupName }}" class="bold">
-                                                                <span data-ng-bind="'cpci_vm_flavor_category_' + flavor.shortGroupName | translate"></span>
+                                                                <span data-ng-bind="flavor.formattedName"></span>
                                                                 <span data-ng-if="flavor.isOldFlavor">*</span>
                                                             </label>
                                                         </td>

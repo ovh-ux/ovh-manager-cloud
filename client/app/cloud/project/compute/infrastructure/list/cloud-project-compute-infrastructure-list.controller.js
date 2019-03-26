@@ -1,6 +1,6 @@
 class CloudProjectComputeInfrastructureListCtrl {
   constructor($scope, $q, $stateParams, $translate, $timeout, atInternet,
-    CucCloudMessage, CucCloudNavigation, CloudProjectOrchestrator,
+    CloudFlavorService, CucCloudMessage, CucCloudNavigation, CloudProjectOrchestrator,
     CloudProjectComputeInfrastructureService,
     OvhApiCloudProjectVolume, CucRegionService, OvhApiCloudProjectFlavor, TARGET) {
     this.$scope = $scope;
@@ -9,6 +9,7 @@ class CloudProjectComputeInfrastructureListCtrl {
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.atInternet = atInternet;
+    this.CloudFlavorService = CloudFlavorService;
     this.CucCloudMessage = CucCloudMessage;
     this.CucCloudNavigation = CucCloudNavigation;
     this.CloudProjectOrchestrator = CloudProjectOrchestrator;
@@ -104,10 +105,9 @@ class CloudProjectComputeInfrastructureListCtrl {
     _.set(instance, 'volumes', _.get(this.volumes, instance.id, []));
     _.set(instance, 'ipv4', instance.getPublicIpv4());
     _.set(instance, 'ipv6', instance.getPublicIpv6());
-    _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));
-    _.set(instance, 'macroRegion', this.CucRegionService.constructor.getMacroRegion(instance.region));
-    // patch for some translations that have &#160; html entities
-    _.set(instance, 'flavorTranslated', this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace('&#160;', ' '));
+    _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));    
+    _.set(instance, 'macroRegion', this.RegionService.constructor.getMacroRegion(instance.region));
+    _.set(instance, 'flavorTranslated', this.CloudFlavorService.formatFlavorName(flavor.name));
     return instance;
   }
 
