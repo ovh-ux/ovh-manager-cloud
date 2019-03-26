@@ -517,7 +517,7 @@
                                              data-ng-if="vm.flavor.name">
                                             <div class="flavor-offer-type right-space-m12">
                                                 <span class="ovh-font {{vm.flavor.typeGeneric | infrastructureFlavor:'icon'}}"></span>
-                                                <span translate="cpci_vm_flavor_category_{{vm.flavor.name}}" translate-default="?"></span>
+                                                <span data-ng-bind="vm.flavor.formattedName"></span>
                                             </div>
                                             <span class="flavor-offer-price right-space-m12"
                                                   data-ng-if="vm.status !== 'DRAFT' && !vm.monthlyBillingBoolean"

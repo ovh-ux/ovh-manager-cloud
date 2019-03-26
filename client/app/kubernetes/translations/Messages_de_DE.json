@@ -6,7 +6,7 @@
  "kube_service_name": "Name",
  "kube_service_description_information": "Im Folgenden finden Sie die Informationen zu Ihrem Kubernetes-Dienst und dazu, wie Sie auf diesen mit dem <a class=\"oui-link oui-link_icon\" href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">kubectl-Tool<span class=\"oui-icon oui-icon-external_link\" aria-hidden=\"true\"></span></a> zugreifen.",
  "kube_service_description_reset": "Sie können die Konfiguration Ihres Kubernetes-Clusters jederzeit zurücksetzen.",
- "kube_service_offer_beta": "Managed Kubernetes Dienst (gratis)",
+ "kube_service_offer_beta": "Managed Kubernetes Service (gratis)",
  "kube_service_file": "kubeconfig-Datei",
  "kube_service_file_error": "Beim Laden der Konfigurationsdatei ist ein Fehler aufgetreten.",
  "kube_service_file_help": "Die kubeconfig-Datei enthält die notwendigen Daten für die Befehlszeilenschnittstelle kubectl, um mit der API Ihres Clusters zu kommunizieren.",
@@ -98,5 +98,10 @@
  "kube_service_upgrade_policy_description_ALWAYS_UPDATE": "Die Komponenten meines Kubernetes-Dienstes mit älteren Versionen aktualisieren, um die Sicherheit und Stabilität des Dienstes sicherzustellen. Bei der Aktualisierung kann es aufgrund des Rolling Updates Ihrer Nodes zu einer Nichtverfügbarkeit von einigen Minuten kommen.",
  "kube_service_upgrade_policy_model_title": "Upgrade-Policy ändern",
  "kube_service_upgrade_policy_success": "Die Upgrade-Policy wurde geändert",
- "kube_service_upgrade_policy_error": "Bei der Änderung der Upgrade-Policy ist ein Fehler aufgetreten: {{ message }}"
+ "kube_service_upgrade_policy_error": "Bei der Änderung der Upgrade-Policy ist ein Fehler aufgetreten: {{ message }}",
+ "kube_service_terminate_title": "Meinen Dienst löschen",
+ "kube_service_terminate_warning": "Die Löschung dieses Elements zieht die endgültige Löschung sämtlicher dazugehöriger Daten nach sich. Im Rahmen dieser Löschung kann keine Rückerstattung erfolgen.",
+ "kube_service_terminate_enter": "Geben Sie im folgenden Feld „TERMINATE\" ein, um den Vorgang zu bestätigen.",
+ "kube_service_terminate_success": "Ihre Anfrage zur Löschung des Kubernetes-Clusters wurde registriert. Ihnen wurde eine E-Mail zugesandt, um Ihre Anfrage zur Löschung zu bestätigen.",
+ "kube_service_terminate_error": "Bei der Löschung Ihres Clusters ist ein Fehler aufgetreten: {{ message }}"
 }

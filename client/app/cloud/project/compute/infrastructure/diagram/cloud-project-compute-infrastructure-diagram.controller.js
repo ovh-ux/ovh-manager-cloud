@@ -1,7 +1,8 @@
 (() => {
   class CloudProjectComputeInfrastructureDiagramCtrl {
     constructor($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout,
-      $transitions, $translate, $uibModal, $window, CucCloudMessage, CucCloudNavigation,
+      $transitions, $translate, $uibModal, $window,
+      CloudFlavorService, CucCloudMessage, CucCloudNavigation,
       CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
       CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CucUserPref,
       OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage,
@@ -50,6 +51,7 @@
       this.REDIRECT_URLS = REDIRECT_URLS;
       this.TARGET = TARGET;
       this.URLS = URLS;
+      this.CloudFlavorService = CloudFlavorService;
     }
 
     $onInit() {
@@ -405,6 +407,12 @@
       initInfraQueue.push(this.CloudProjectOrchestrator.initInfrastructure({ serviceName })
         .then((infra) => {
           this.infra = infra;
+          _.forOwn(this.infra.vrack.publicCloud.items, (value) => {
+            const instanceFlavor = value.flavor;
+            instanceFlavor.formattedName = this.CloudFlavorService.formatFlavorName(
+              instanceFlavor.name,
+            );
+          });
 
           // check if there are IPFO import to poll
           this.checkPendingImportIpFailOver(serviceName);

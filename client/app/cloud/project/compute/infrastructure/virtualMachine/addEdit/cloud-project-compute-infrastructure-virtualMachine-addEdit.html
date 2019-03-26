@@ -675,7 +675,7 @@
                                             </p>
                                             <dt data-translate="cpcivm_addedit_table_model"></dt>
                                             <dd>
-                                                <span data-ng-bind-html="'cpci_vm_flavor_category_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].name | translate"></span>
+                                                <span data-ng-bind="VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].formattedName"></span>
                                                 <span data-ng-if="VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].isOldFlavor">*</span>
                                             </dd>
                                             <dt data-translate="cpcivm_addedit_table_cpu"></dt>
@@ -849,7 +849,7 @@
                                                         </td>
                                                         <td class="text-center">
                                                             <label for="{{:: flavor.shortGroupName }}" class="bold">
-                                                                <span data-ng-bind="'cpci_vm_flavor_category_' + flavor.shortGroupName | translate"></span>
+                                                                <span data-ng-bind="flavor.formattedName"></span>
                                                                 <span data-ng-if="flavor.isOldFlavor">*</span>
                                                             </label>
                                                         </td>
@@ -986,7 +986,7 @@
                                             class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: image.disabled ? ('cpcivm_addedit_image_disabled_' + image.disabled | translate) : (image.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
-                                            <td style="width: 50px;">
+                                            <td class="w-15">
                                                 <flat-radio>
                                                     <input type="radio" aria-hidden="true" tabindex="-1"
                                                            name="imagesChoice" id="{{::image.id}}"
@@ -996,7 +996,7 @@
                                                            data-ng-model="VmAddEditCtrl.model.imageId">
                                                 </flat-radio>
                                             </td>
-                                            <td class="no-space top-space-p8 bottom-space-p8" style="width: 50px;">
+                                            <td class="no-space top-space-p8 bottom-space-p8 w-15">
                                                 <img class="img-circle img-circle-bordered" width="50" height="50"
                                                      data-ng-src="assets/images/cloud/os/{{:: image.distribution}}_50.png"
                                                      alt="{{:: image.distribution }}" />
@@ -1037,7 +1037,7 @@
                                             class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: app.disabled ? ('cpcivm_addedit_image_disabled_' + app.disabled | translate) : (app.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
-                                            <td style="width: 50px;">
+                                            <td class="w-15">
                                                 <flat-radio>
                                                     <input type="radio" aria-hidden="true" tabindex="-1"
                                                            name="imagesChoice" id="{{::app.id}}"
@@ -1047,7 +1047,7 @@
                                                            data-ng-model="VmAddEditCtrl.model.imageId">
                                                 </flat-radio>
                                             </td>
-                                            <td class="no-space top-space-p8 bottom-space-p8" style="width: 50px;">
+                                            <td class="no-space top-space-p8 bottom-space-p8 w-15">
                                                 <img class="img-circle img-circle-bordered" width="50" height="50"
                                                      data-ng-src="assets/images/cloud/apps/{{:: app.applications[0] }}.png"
                                                      onerror="this.src='assets/images/cloud/apps/unknown.png'"
@@ -1094,7 +1094,7 @@
                                             class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress
                                             data-uib-tooltip="{{:: snapshot.disabled ? ('cpcivm_addedit_image_disabled_' + snapshot.disabled | translate) : (snapshot.deprecated ? ('cpcivm_addedit_image_deprecated' | translate) : '') }}">
 
-                                            <td style="width: 50px;">
+                                            <td class="w-15">
                                                 <flat-radio>
                                                     <input type="radio" aria-hidden="true" tabindex="-1"
                                                            name="imagesChoice" id="{{::snapshot.id}}"
@@ -1104,7 +1104,7 @@
                                                            data-ng-model="VmAddEditCtrl.model.imageId">
                                                 </flat-radio>
                                             </td>
-                                            <td class="no-space top-space-p8 bottom-space-p8" style="width: 50px;">
+                                            <td class="no-space top-space-p8 bottom-space-p8 w-15">
                                                 <div class="img-snapshot">
                                                     <i class="fa fa-{{snapshot.type}}"></i>
                                                 </div>
@@ -1183,12 +1183,12 @@
 
                                 <table class="table table-pretty table-hover table-striped shadow-z-1">
                                     <tbody>
-
+                                        <!-- activated regions -->
                                         <tr data-ng-repeat="region in VmAddEditCtrl.panelsData.regions"
                                             data-ng-click="VmAddEditCtrl.model.region = region"
                                             class="pointer" role="button" tabindex="0" cuc-click-enter-on-keypress>
 
-                                            <td style="width: 50px;">
+                                            <td class="w-15">
                                                 <flat-radio>
                                                     <input type="radio" aria-hidden="true" tabindex="-1"
                                                            name="regionsChoice" id="{{::region}}"
@@ -1197,7 +1197,7 @@
                                                            data-ng-model="VmAddEditCtrl.model.region">
                                                 </flat-radio>
                                             </td>
-                                            <td class="space-p8 flag-box flag-box-cell" style="width: 50px;">
+                                            <td class="space-p8 flag-box flag-box-cell w-15">
                                                 <div class="popover-list-item">
                                                     <div class="popover-list-item-illustration">
                                                         <i class="flag-icon {{:: VmAddEditCtrl.regionService.getRegionIconFlag(region) }} flag"></i>
@@ -1214,6 +1214,44 @@
                                                        data-ng-if="region | openStreetMap"
                                                        data-ng-click="$event.stopPropagation()">
                                                         {{ 'cloud_common_region_localize' | translate }}<i class="fa fa-map-marker fs14 left-space-m4"></i>
+                                                    </a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- available but not activated regions -->
+                                        <tr data-ng-repeat="region in VmAddEditCtrl.availableRegions.data track by region.name"
+                                            class="cursor-disabled"
+                                            data-ng-if="!VmAddEditCtrl.availableRegions.loading && VmAddEditCtrl.availableRegions.data.length > 0">
+                                            <td class="w-15">
+                                                <flat-radio>
+                                                    <input type="radio" aria-hidden="true" tabindex="-1"
+                                                           name="regionsChoice" id="{{::region.name}}"
+                                                           data-ovh-stop-event="click"
+                                                           disabled="true"
+                                                           value="{{::region.name}}">
+                                                </flat-radio>
+                                            </td>
+                                            <td class="space-p8 flag-box flag-box-cell w-15">
+                                                <div class="popover-list-item">
+                                                    <div class="popover-list-item-illustration">
+                                                        <i class="flag-icon {{:: VmAddEditCtrl.regionService.getRegionIconFlag(region.name) }} flag"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="left-space-p4">
+                                                <span class="fs14 no-space normal col-xs-12" data-ng-bind="::VmAddEditCtrl.regionService.getTranslatedMicroRegion(region.name)"></span>
+                                                <span class="fs10 no-space col-xs-12">
+                                                    {{ VmAddEditCtrl.regionService.getTranslatedMicroRegionLocation(region.name) }}
+                                                    <a class="left-space-m8"
+                                                       href="{{ region.name | openStreetMap }}"
+                                                       target="_blank"
+                                                       data-ng-if="region.name | openStreetMap"
+                                                       data-ng-click="$event.stopPropagation()">
+                                                        {{ 'cloud_common_region_localize' | translate }}<i class="fa fa-map-marker fs14 left-space-m4"></i>
+                                                    </a>
+                                                    <a class="left-space-m8"
+                                                        data-ui-sref="iaas.pci-project.compute.regions">
+                                                        <span data-ng-bind=" ::'cpci_add_regions_activate' | translate "></span>
                                                     </a>
                                                 </span>
                                             </td>
@@ -1434,9 +1472,9 @@
                                data-ng-if="!VmAddEditCtrl.projectHasNoSshKeys()">
                             <thead>
                                 <tr>
-                                    <th style="width: 50px;"></th>
+                                    <th class="w-15"></th>
                                     <th data-translate="cpcivm_addedit_sshkey_name"></th>
-                                    <th class="text-center" style="width: 50px;">
+                                    <th class="text-center w-15">
                                         <button class="no-style" type="button"
                                             data-ng-click="VmAddEditCtrl.getSshKeys(true)"
                                             title="{{:: 'cpcivm_addedit_sshkey_refresh_button' | translate}}">
