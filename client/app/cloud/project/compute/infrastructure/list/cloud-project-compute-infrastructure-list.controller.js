@@ -74,6 +74,7 @@ class CloudProjectComputeInfrastructureListCtrl {
   }
 
   initInfra() {
+    console.log('initInfra');
     this.loaders.infra = true;
     return this.$q.all({
       infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
@@ -105,8 +106,8 @@ class CloudProjectComputeInfrastructureListCtrl {
     _.set(instance, 'volumes', _.get(this.volumes, instance.id, []));
     _.set(instance, 'ipv4', instance.getPublicIpv4());
     _.set(instance, 'ipv6', instance.getPublicIpv6());
-    _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));    
-    _.set(instance, 'macroRegion', this.RegionService.constructor.getMacroRegion(instance.region));
+    _.set(instance, 'statusToTranslate', this.constructor.getStatusToTranslate(instance));
+    _.set(instance, 'macroRegion', this.CucRegionService.constructor.getMacroRegion(instance.region));
     _.set(instance, 'flavorTranslated', this.CloudFlavorService.formatFlavorName(flavor.name));
     return instance;
   }
