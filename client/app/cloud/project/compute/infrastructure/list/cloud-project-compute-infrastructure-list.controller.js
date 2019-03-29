@@ -74,7 +74,6 @@ class CloudProjectComputeInfrastructureListCtrl {
   }
 
   initInfra() {
-    console.log('initInfra');
     this.loaders.infra = true;
     return this.$q.all({
       infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
