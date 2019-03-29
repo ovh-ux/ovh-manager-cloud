@@ -49,6 +49,54 @@ angular.module('managerApp')
       self.data.totals.monthly.instance = roundNumber(self.data.totals.monthly.instance, 2);
     }
 
+    function initHourlyAdditionalServiceList() {
+      if (!_.get(self.data, 'hourlyBilling') || !_.get(self.data, 'hourlyBilling.hourlyUsage')) {
+        return;
+      }
+      const additionalServices = _.flatten(_.map(
+        _.get(self.data, 'hourlyBilling.hourlyUsage.instanceOption'),
+        instance => _.map(instance.details, (detail) => {
+          const newDetail = _.clone(detail);
+          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
+          return _.extend(newDetail, {
+            reference: instance.reference,
+            region: instance.region,
+            shortReference: _.last(instance.reference.split('.')),
+          });
+        }),
+      ));
+      self.data.hourlyAdditionalServices = _.groupBy(additionalServices, 'shortReference');
+      self.data.totals.hourly.additionalServices = _.reduce(
+        _.get(self.data, 'hourlyBilling.hourlyUsage.instanceOption'),
+        (sum, instance) => sum + roundNumber(instance.totalPrice, 2), 0,
+      );
+      self.data.totals.hourly.additionalServices = roundNumber(_.get(self.data, 'totals.hourly.additionalServices'), 2);
+    }
+
+    function initMonthlyAdditionalServiceList() {
+      if (!_.get(self.data, 'monthlyBilling') || !_.get(self.data, 'monthlyBilling.monthlyUsage')) {
+        return;
+      }
+      const additionalServices = _.flatten(_.map(
+        _.get(self.data, 'monthlyBilling.monthlyUsage.instanceOption'),
+        instance => _.map(instance.details, (detail) => {
+          const newDetail = _.clone(detail);
+          newDetail.totalPrice = roundNumber(newDetail.totalPrice, 2);
+          return _.extend(newDetail, {
+            reference: instance.reference,
+            region: instance.region,
+            shortReference: _.last(instance.reference.split('.')),
+          });
+        }),
+      ));
+      self.data.monthlyAdditionalServices = _.groupBy(additionalServices, 'shortReference');
+      self.data.totals.monthly.additionalServices = _.reduce(
+        _.get(self.data, 'monthlyBilling.monthlyUsage.instanceOption'),
+        (sum, instance) => sum + roundNumber(instance.totalPrice, 2), 0,
+      );
+      self.data.totals.monthly.additionalServices = roundNumber(_.get(self.data, 'totals.monthly.additionalServices'), 2);
+    }
+
     function initObjectStorageList() {
       if (!self.data.hourlyBilling || !self.data.hourlyBilling.hourlyUsage) {
         return;
@@ -165,6 +213,8 @@ angular.module('managerApp')
             .allSettled([
               initHourlyInstanceList(),
               initMonthlyInstanceList(),
+              initHourlyAdditionalServiceList(),
+              initMonthlyAdditionalServiceList(),
               initObjectStorageList(),
               initArchiveStorageList(),
               initSnapshotList(),
@@ -172,9 +222,14 @@ angular.module('managerApp')
               initInstanceBandwidth(),
             ])
             .then(() => {
-              self.data.totals.monthly.total = roundNumber(self.data.totals.monthly.instance, 2);
+              self.data.totals.monthly.total = roundNumber(
+                self.data.totals.monthly.instance
+                + self.data.totals.monthly.additionalServices,
+                2,
+              );
               self.data.totals.hourly.total = roundNumber(
                 self.data.totals.hourly.instance
+                + self.data.totals.hourly.additionalServices
                 + self.data.totals.hourly.snapshot
                 + self.data.totals.hourly.objectStorage
                 + self.data.totals.hourly.archiveStorage
@@ -195,6 +250,8 @@ angular.module('managerApp')
       self.data = {
         hourlyInstances: [],
         monthlyInstances: [],
+        hourlyAdditionalServices: [],
+        monthlyAdditionalServices: [],
         objectStorages: [],
         archiveStorages: [],
         snapshots: [],
@@ -207,6 +264,7 @@ angular.module('managerApp')
           hourly: {
             total: 0,
             instance: 0,
+            additionalServices: 0,
             objectStorage: 0,
             archiveStorage: 0,
             snapshot: 0,
@@ -216,6 +274,7 @@ angular.module('managerApp')
           monthly: {
             total: 0,
             instance: 0,
+            additionalServices: 0,
           },
         },
       };

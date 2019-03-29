@@ -5,6 +5,7 @@
  "cpbc_monthly_instance_col_total": "Forfait mensile",
  "cpbc_monthly_instance_col_total_tooltip": "Fatturato all'inizio del mese",
  "cpbc_hourly_instance_detail_title": "Server",
+ "cpbc_hourly_additional_services_detail_title": "Servizi aggiuntivi",
  "cpbc_hourly_instance_col_name": "Nome",
  "cpbc_hourly_instance_col_consumption": "Consumo",
  "cpbc_hourly_instance_col_consumption_tooltip": "Fatturato all'inizio del mese successivo",
@@ -63,5 +64,6 @@
  "cpbc_hourly_instance_trafic_trafic": "Traffico",
  "cpbc_hourly_instance_trafic_price": "Prezzo",
  "cpbc_hourly_instance_trafic_unlimitted": "Illimitato",
- "cpbc_hourly_instance_trafic_included": "Incluso"
+ "cpbc_hourly_instance_trafic_included": "Incluso",
+ "cpbc_platform_dc-adp": "Piattaforma di dati analitici"
 }

@@ -167,6 +167,7 @@
                        data-on-submit="$ctrl.submitStep('step2', 'pci-project_vmadd_dc')"
                        data-valid="$ctrl.isStep2Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step2">
+                <!-- all regions -->
                 <uib-tab index="0" heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
                     <div class="cui-grid-list">
                         <div class="cui-grid-list-item cui-grid-cell"
@@ -182,21 +183,32 @@
                                                data-text="{{region.macroRegion.text}}"
                                                data-values="region.dataCenters"
                                                data-variant="light">
-                                <span class="oui-select-picker__section text-center"
-                                      data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
-                                    <oui-button data-variant="link"
-                                                data-text="{{ 'cpcivm_add_step2_disabled_' + (region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled) | translate }}"
-                                                data-on-click="$ctrl.updateSshKeyRegion()"
-                                                data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
-                                    </oui-button>
-                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
-                                          data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
-                                    </span>
-                                </span>
+                                <oui-select-picker-section
+                                    data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
+                                    <div data-ng-switch="$ctrl.model.region.disabled || region.dataCenters[0].disabled">
+                                        <!-- region not activated, show link to activate it -->
+                                        <a class="oui-button oui-button_link"
+                                            data-ng-switch-when="INACTIVE"
+                                            data-ui-sref="iaas.pci-project.compute.regions">
+                                            <span data-ng-bind=" ::'cpci_add_regions_activate' | translate "></span>
+                                        </a>
+                                        <!-- SSH key not available for this region, show link to add the SSH key -->
+                                        <button type="button" class="oui-button oui-button_link"
+                                            data-ng-switch-when="SSH_KEY"
+                                            data-ng-click="$ctrl.updateSshKeyRegion()">
+                                            <span data-ng-bind=" ::'cpcivm_add_step2_disabled_SSH_KEY' | translate "></span>
+                                        </button>
+                                        <!-- show other message like instance, vram, vcup quota reached -->
+                                        <span data-ng-switch-default
+                                            data-ng-bind="::'cpcivm_add_step2_disabled_' + (region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled) | translate">
+                                        </span>
+                                    </div>
+                                </oui-select-picker-section>
                             </oui-select-picker>
                         </div>
                     </div>
                 </uib-tab>
+                <!-- regions by continent -->
                 <uib-tab data-ng-repeat="(continent, regions) in $ctrl.groupedRegions track by $index"
                          index="($index + 1)" heading="{{continent}}">
                     <div class="cui-grid-list">
@@ -213,17 +225,27 @@
                                                data-text="{{ region.macroRegion.text }}"
                                                data-values="region.dataCenters"
                                                data-variant="light">
-                                <span class="oui-select-picker__section text-center"
-                                      data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
-                                    <oui-button data-variant="link"
-                                                data-text="{{ 'cpcivm_add_step2_disabled_' + (region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled) | translate }}"
-                                                data-on-click="$ctrl.updateSshKeyRegion()"
-                                                data-ng-if="$ctrl.model.sshKey && ($ctrl.model.region.disabled === 'SSH_KEY' || (region.dataCenters.length === 1 && region.dataCenters[0].disabled === 'SSH_KEY'))">
-                                    </oui-button>
-                                    <span data-ng-bind="{{ ::'cpcivm_add_step2_disabled_' + region.disabled | translate }}"
-                                          data-ng-if="(region.dataCenters.length === 1 && region.dataCenters[0].disabled !== 'SSH_KEY') || $ctrl.model.region.disabled === 'SSH_KEY'">
-                                    </span>
-                                </span>
+                                <oui-select-picker-section
+                                    data-ng-if="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled">
+                                    <div data-ng-switch="$ctrl.model.region.disabled || region.dataCenters[0].disabled">
+                                        <!-- region not activated, show link to activate the button -->
+                                        <a class="oui-button oui-button_link"
+                                            data-ng-switch-when="INACTIVE"
+                                            data-ui-sref="iaas.pci-project.compute.regions">
+                                            <span data-ng-bind=" ::'cpci_add_regions_activate' | translate "></span>
+                                        </a>
+                                        <!-- SSH key not available for this region, show link to add the SSH key -->
+                                        <button type="button" class="oui-button oui-button_link"
+                                            data-ng-switch-when="SSH_KEY"
+                                            data-ng-click="$ctrl.updateSshKeyRegion()">
+                                            <span data-ng-bind=" ::'cpcivm_add_step2_disabled_SSH_KEY' | translate "></span>
+                                        </button>
+                                        <!-- show other message like instance, vram, vcup quota reached -->
+                                        <span data-ng-switch-default
+                                            data-ng-bind="::'cpcivm_add_step2_disabled_' + (region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled) | translate">
+                                        </span>
+                                    </div>
+                                </oui-select-picker-section>
                             </oui-select-picker>
                         </div>
                     </div>
@@ -269,9 +291,8 @@
                                             data-disabled="flavor.disabled"
                                             data-thumbnail
                                             data-variant="light"
-                                            data-value="flavor"
-                                            class="h-100">
-                                    {{flavor.name}}
+                                            data-value="flavor">
+                                    {{ flavor.formattedName }}
                                     <span class="oui-radio__section">
                                         <span class="d-flex flex-wrap">
                                             <span data-translate="cpcivm_add_step3_label_ram"></span>
@@ -346,9 +367,8 @@
                                data-name="flavorSelected"
                                data-value="$ctrl.model.flavor"
                                data-thumbnail
-                               data-variant="light"
-                               class="h-100">
-                        {{$ctrl.model.flavor.name}}
+                               data-variant="light">
+                        {{ $ctrl.model.flavor.formattedName }}
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
                                 <span data-translate="cpcivm_add_step3_label_ram"></span>

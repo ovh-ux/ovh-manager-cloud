@@ -1,4 +1,4 @@
-<oui-datagrid data-rows="$ctrl.regions" class="datagrid-without-pagination">
+<oui-datagrid data-rows="$ctrl.regions">
     <oui-column data-title="::'cpbc_hourly_instance_trafic_region' | translate" data-property="region">
         <span data-ng-bind=":: $ctrl.CucRegionService.getTranslatedMicroRegion($row.region)"></span>
     </oui-column>

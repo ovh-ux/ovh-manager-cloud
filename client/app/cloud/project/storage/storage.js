@@ -32,6 +32,7 @@ angular.module('managerApp')
           value: [
             '.',
             '../storage/storage-add',
+            '../compute/regions',
           ],
           format: 'json',
         },

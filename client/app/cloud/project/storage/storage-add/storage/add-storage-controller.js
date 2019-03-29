@@ -8,8 +8,11 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
   'OvhApiCloudProjectRegion',
   'CloudStorageContainers',
   'CucCloudMessage',
+  'CucControllerHelper',
+  'CucServiceHelper',
   function storageCtrl($q, $scope, $state, $stateParams, $timeout, $translate,
-    OvhApiCloudProjectRegion, CloudStorageContainers, CucCloudMessage) {
+    OvhApiCloudProjectRegion, CloudStorageContainers, CucCloudMessage,
+    CucControllerHelper, CucServiceHelper) {
     $scope.projectId = $stateParams.projectId;
 
     $scope.model = {};
@@ -98,8 +101,19 @@ angular.module('managerApp').controller('RA.add.storageCtrl', [
         });
     }
 
+    function getAvailableRegions() {
+      $scope.availableRegions = CucControllerHelper.request.getHashLoader({
+        loaderFunction: () => OvhApiCloudProjectRegion.AvailableRegions().v6()
+          .query({ serviceName: $scope.projectId })
+          .$promise
+          .catch(error => CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+      });
+      return $scope.availableRegions.load();
+    }
+
     function init() {
       loadMessage();
+      getAvailableRegions();
       return loadRegions()
         .then(() => {
           $scope.loadStep('region');

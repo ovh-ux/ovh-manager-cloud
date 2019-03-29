@@ -8,6 +8,8 @@ angular.module('managerApp')
         archiveStorage: false,
         snapshot: false,
         volume: false,
+        additionalServices: false,
+        outgoingTraffic: false,
       },
     };
   });

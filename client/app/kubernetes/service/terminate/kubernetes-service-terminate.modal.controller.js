@@ -1,5 +1,4 @@
-class kubernetesUpdateModalCtrl {
-  /* @ngInject */
+class kubernetesTerminateModalCtrl {
   constructor($scope, $state, $stateParams, CucControllerHelper) {
     this.$scope = $scope;
     this.$state = $state;
@@ -11,8 +10,8 @@ class kubernetesUpdateModalCtrl {
   openModal() {
     this.CucControllerHelper.modal.showModal({
       modalConfig: {
-        templateUrl: 'app/kubernetes/service/update/kubernetes-service-update.html',
-        controller: 'kubernetesUpdateCtrl',
+        templateUrl: 'app/kubernetes/service/terminate/kubernetes-service-terminate.html',
+        controller: 'kubernetesTerminateCtrl',
         controllerAs: '$ctrl',
         backdrop: 'static',
       },
@@ -27,4 +26,4 @@ class kubernetesUpdateModalCtrl {
   }
 }
 
-angular.module('managerApp').controller('kubernetesUpdateModalCtrl', kubernetesUpdateModalCtrl);
+angular.module('managerApp').controller('kubernetesTerminateModalCtrl', kubernetesTerminateModalCtrl);

@@ -107,7 +107,7 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
   }
 
   showUgradePolicy() {
-    this.ControllerHelper.modal.showModal({
+    this.CucControllerHelper.modal.showModal({
       modalConfig: {
         templateUrl: 'app/kubernetes/service/upgrade-policy/kubernetes-service-upgrade-policy.html',
         controller: 'kubernetesUpgradePolicyCtrl',
@@ -126,6 +126,12 @@ angular.module('managerApp').controller('KubernetesServiceCtrl', class Kubernete
 
   updateCluster() {
     return this.$state.go('paas.kube.service.update', {
+      cluster: this.cluster,
+    });
+  }
+
+  terminate() {
+    return this.$state.go('paas.kube.service.terminate', {
       cluster: this.cluster,
     });
   }

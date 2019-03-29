@@ -4,7 +4,8 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
   function CloudProjectComputeQuotaCtrl(
     $q, $stateParams, $translate, REDIRECT_URLS,
     OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CucCloudMessage, OtrsPopupService,
-    CucRegionService, TARGET,
+    CucRegionService, CucControllerHelper,
+    CucServiceHelper, OvhApiCloudProjectRegion, TARGET,
   ) {
     // ---------VARIABLE DECLARATION---------
 
@@ -43,6 +44,16 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
       }
     };
 
+    function getAvailableRegions() {
+      self.availableRegions = CucControllerHelper.request.getHashLoader({
+        loaderFunction: () => OvhApiCloudProjectRegion.AvailableRegions().v6()
+          .query({ serviceName })
+          .$promise
+          .catch(error => CucServiceHelper.errorHandler('cpci_add_regions_get_available_regions_error')(error)),
+      });
+      return self.availableRegions.load();
+    }
+
     // ---------UNLEASH---------
 
     function initPaymentMethods() {
@@ -69,7 +80,8 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
 
       self.loader.quota = true;
       self.loader.unleash = false;
-
+      // load available regions
+      getAvailableRegions();
       // check default payment mean
       initQueue.push(initPaymentMethods().then((defaultPaymentMean) => {
         self.datas.defaultPaymentMean = defaultPaymentMean;

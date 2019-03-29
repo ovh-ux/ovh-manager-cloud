@@ -1,3 +1,16 @@
+# [7.21.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.20.1...v7.21.0) (2019-03-20)
+
+
+
+## [7.20.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.20.0...v7.20.1) (2019-03-18)
+
+
+### Bug Fixes
+
+* **kubernetes:** display modals ([#1396](https://github.com/ovh-ux/ovh-manager-cloud/issues/1396)) ([f45ea01](https://github.com/ovh-ux/ovh-manager-cloud/commit/f45ea01))
+
+
+
 # [7.20.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.19.3...v7.20.0) (2019-03-13)
 
 
