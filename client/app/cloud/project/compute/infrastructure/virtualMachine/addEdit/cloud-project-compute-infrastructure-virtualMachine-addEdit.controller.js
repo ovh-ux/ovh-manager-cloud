@@ -446,7 +446,10 @@ angular.module('managerApp')
 
           // filter GPU
           if (['g1', 'g2', 'g3', 't1'].includes(flavorType)) {
-            self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], image => image.type === 'linux' || (flavorType ? _.includes(image.flavorType, flavorType) : true));
+            self.displayData.images[imageType] = _.filter(
+              self.displayData.images[imageType],
+              image => image.type === 'linux' || (image.flavorType ? _.includes(image.flavorType, flavorType) : true),
+            );
           } else {
             self.displayData.images[imageType] = _.filter(
               self.displayData.images[imageType],
