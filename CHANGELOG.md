@@ -1,3 +1,29 @@
+# [7.22.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.21.0...v7.22.0) (2019-04-01)
+
+
+### Bug Fixes
+
+* **cloud:** create windows/linux server with t1-180 instance ([#1410](https://github.com/ovh-ux/ovh-manager-cloud/issues/1410)) ([17b00b7](https://github.com/ovh-ux/ovh-manager-cloud/commit/17b00b7))
+* **cloud.logs:** new option translations ([d13e813](https://github.com/ovh-ux/ovh-manager-cloud/commit/d13e813))
+* **i18n:** add missing translations ([96a30be](https://github.com/ovh-ux/ovh-manager-cloud/commit/96a30be))
+* **i18n:** add missing translations ([c20ba70](https://github.com/ovh-ux/ovh-manager-cloud/commit/c20ba70))
+* **i18n:** add missing translations ([8308f09](https://github.com/ovh-ux/ovh-manager-cloud/commit/8308f09))
+* **i18n:** add missing translations ([e57a71e](https://github.com/ovh-ux/ovh-manager-cloud/commit/e57a71e))
+* **i18n:** add missing translations ([604a35c](https://github.com/ovh-ux/ovh-manager-cloud/commit/604a35c))
+* **i18n:** add missing translations ([3f60ac3](https://github.com/ovh-ux/ovh-manager-cloud/commit/3f60ac3))
+* **pci:** servers are not loaded in list view ([#1407](https://github.com/ovh-ux/ovh-manager-cloud/issues/1407)) ([87b69b5](https://github.com/ovh-ux/ovh-manager-cloud/commit/87b69b5))
+* **servers-storage:** loader visibility ([a488f1d](https://github.com/ovh-ux/ovh-manager-cloud/commit/a488f1d))
+* **translation:** t1-180 flavor ([#1324](https://github.com/ovh-ux/ovh-manager-cloud/issues/1324)) ([61d37fe](https://github.com/ovh-ux/ovh-manager-cloud/commit/61d37fe)), closes [#MBP-327](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBP-327) [#MBP-327](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBP-327) [#MBP-327](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBP-327)
+
+
+### Features
+
+* **kube:** add terminate cluster ([#1395](https://github.com/ovh-ux/ovh-manager-cloud/issues/1395)) ([0729acc](https://github.com/ovh-ux/ovh-manager-cloud/commit/0729acc))
+* **regions:** show inactive regions ([#1385](https://github.com/ovh-ux/ovh-manager-cloud/issues/1385)) ([5356d56](https://github.com/ovh-ux/ovh-manager-cloud/commit/5356d56)), closes [#MBP-377](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBP-377)
+* **usage:** additional services price ([7c66943](https://github.com/ovh-ux/ovh-manager-cloud/commit/7c66943)), closes [#MBP-286](https://github.com/ovh-ux/ovh-manager-cloud/issues/MBP-286)
+
+
+
 # [7.21.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.20.1...v7.21.0) (2019-03-20)
 
 
