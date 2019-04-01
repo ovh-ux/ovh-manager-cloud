@@ -1,5 +1,7 @@
 {
  "cpci_add_regions_title": "Regionen hinzufügen",
+ "cpci_add_regions_inactive": "Inaktive Regionen",
+ "cpci_add_regions_activate": "Region aktivieren",
  "cpci_add_regions_description": "OVH bietet Ihnen mehrere Regionen, um Ihre Infrastrukturen oder einen Container zu erstellen. Standardmäßig haben Sie Zugriff auf bestimmte Regionen, Sie können jedoch wahlweise weitere Regionen hinzufügen.",
  "cpci_add_regions_added_title": "Verfügbare Regionen",
  "cpci_add_regions_available_to_add_title": "Regionen, die Sie hinzufügen können",
