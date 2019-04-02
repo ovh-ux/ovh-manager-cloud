@@ -1,8 +1,11 @@
 angular.module('managerApp')
-  .controller('BillingInstanceListComponentCtrl', function BillingInstanceListComponentCtrl($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, OvhCloudPriceHelper) {
+  .controller('BillingInstanceListComponentCtrl', function BillingInstanceListComponentCtrl($q,
+    $stateParams, $translate, CucRegionService, OvhCloudPriceHelper, OvhApiCloudProjectImage,
+    OvhApiCloudProjectInstance, OvhApiMe, Toast) {
     const self = this;
     self.windowsStringPattern = '/^win-/';
     self.instanceConsumptionDetails = [];
+    self.CucRegionService = CucRegionService;
 
     self.data = {
       instances: [],
@@ -15,7 +18,6 @@ angular.module('managerApp')
       instanceList: false,
     };
 
-    self.DetailsPopoverService = DetailsPopoverService;
     self.currencySymbol = '';
 
     self.instanceToMonthly = null;
