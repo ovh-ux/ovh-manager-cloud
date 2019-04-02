@@ -86,6 +86,10 @@
                     <small>* </small><small data-translate="cpciif_buy_button_infos"></small>
                  </div>
             </div>
+            <oui-message data-type="warning"
+                         data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp === 0">
+                <span data-translate="cpciif_buy_no_instance_warning"></span>
+            </oui-message>
         </div>
     </div>
 
