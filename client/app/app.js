@@ -2,6 +2,7 @@ import '@uirouter/angularjs';
 
 import { Environment } from '@ovh-ux/manager-config';
 import ovhManagerCore from '@ovh-ux/manager-core';
+import ovhManagerAdp from '@ovh-ux/manager-adp';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
@@ -15,7 +16,6 @@ import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
-
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
 Environment.setRegion(__WEBPACK_REGION__);
@@ -80,6 +80,7 @@ angular.module('managerApp', [
 
   ngTranslateAsyncLoader,
   cloudUniverseComponents,
+  ovhManagerAdp,
 ])
   .config(($urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
