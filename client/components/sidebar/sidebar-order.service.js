@@ -1,8 +1,9 @@
 class SidebarOrderService {
-  constructor(atInternet, CucFeatureAvailabilityService, SidebarMenu, CloudProjectSidebar,
-    VpsSidebar, DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar, NashaSidebar,
-    VeeamSidebar, VeeamEnterpriseSidebar, DBaasTsSidebar, VrackSidebar, DeskaasSidebar,
-    IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar, KubernetesSidebar) {
+  constructor(atInternet, AnalyticsSidebar, CucFeatureAvailabilityService, SidebarMenu,
+    CloudProjectSidebar, VpsSidebar, DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar,
+    NashaSidebar, VeeamSidebar, VeeamEnterpriseSidebar, DBaasTsSidebar, VrackSidebar,
+    DeskaasSidebar, IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar,
+    KubernetesSidebar) {
     this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
     this.atInternet = atInternet;
@@ -26,6 +27,7 @@ class SidebarOrderService {
       LicenseSidebar,
       CloudDBSidebar,
       LogsSidebar,
+      AnalyticsSidebar,
     ];
   }
 

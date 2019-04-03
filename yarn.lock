@@ -1059,10 +1059,9 @@
   dependencies:
     lodash "^4.17.11"
 
-"@ovh-ux/ng-ovh-cloud-universe-components@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-cloud-universe-components/-/ng-ovh-cloud-universe-components-0.3.1.tgz#38b6d22f03fb4e76cfc6ac24da4afada3583ca00"
-  integrity sha512-U4CjjnBWG5NH8hF9Pi7RtF/kPu04ZYnhxDIQ40c8qJrAkEMTeCNCSWwuiITZ6iM5lw3mISudibJmkEIuWs2P/g==
+"@ovh-ux/ng-ovh-cloud-universe-components@https://github.com/ovh-ux/manager.git#manager-cloud-universe-components":
+  version "1.0.0"
+  resolved "https://github.com/ovh-ux/manager.git#f739e06ec32fe43b3cb5e5eacdee3901816c65c3"
   dependencies:
     bootstrap "~3.3.0"
     jsurl "^0.1.5"

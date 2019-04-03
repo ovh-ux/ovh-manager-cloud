@@ -1,8 +1,9 @@
 class SidebarContentService {
-  constructor($translate, CucFeatureAvailabilityService, SidebarMenu, SidebarHelper, MANAGER_URLS,
-    IaasSectionSidebarService, PaasSectionSidebarService, MetricsSectionSidebarService,
-    LogsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSectionSidebarService,
-    CloudDesktopSectionSidebarService, IpSectionSidebarService, LicenseSectionSidebarService) {
+  constructor($translate, AnalyticsSectionSidebarService, CucFeatureAvailabilityService,
+    SidebarMenu, SidebarHelper, MANAGER_URLS, IaasSectionSidebarService, PaasSectionSidebarService,
+    MetricsSectionSidebarService, LogsSectionSidebarService, VrackSectionSidebarService,
+    LoadBalancerSectionSidebarService, CloudDesktopSectionSidebarService, IpSectionSidebarService,
+    LicenseSectionSidebarService) {
     this.$translate = $translate;
     this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.SidebarMenu = SidebarMenu;
@@ -15,6 +16,7 @@ class SidebarContentService {
       PaasSectionSidebarService,
       MetricsSectionSidebarService,
       LogsSectionSidebarService,
+      AnalyticsSectionSidebarService,
       LoadBalancerSectionSidebarService,
       IpSectionSidebarService,
       LicenseSectionSidebarService,
