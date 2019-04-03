@@ -1,3 +1,20 @@
+## [7.22.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.22.0...v7.22.1) (2019-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([4c498f2](https://github.com/ovh-ux/ovh-manager-cloud/commit/4c498f2))
+* **i18n:** add missing translations ([251447a](https://github.com/ovh-ux/ovh-manager-cloud/commit/251447a))
+* **i18n.cloud.virtualmachine.add:** fix negation and typo ([#1414](https://github.com/ovh-ux/ovh-manager-cloud/issues/1414)) ([0d1a13b](https://github.com/ovh-ux/ovh-manager-cloud/commit/0d1a13b))
+* **iaas:** check if value is NaN ([fb0a6ff](https://github.com/ovh-ux/ovh-manager-cloud/commit/fb0a6ff))
+* **pci-usage:** replace tables with datagrid ([aa3806c](https://github.com/ovh-ux/ovh-manager-cloud/commit/aa3806c))
+* **pci-usage:** replace tables with datagrid ([fdb7d06](https://github.com/ovh-ux/ovh-manager-cloud/commit/fdb7d06))
+* **pci-usage:** replace tables with datagrid ([91ce86c](https://github.com/ovh-ux/ovh-manager-cloud/commit/91ce86c))
+* **pci-usage:** replace tables with datagrid ([ce44aff](https://github.com/ovh-ux/ovh-manager-cloud/commit/ce44aff))
+* **pci.ip:** add alert message when no pci instance ([79cf53c](https://github.com/ovh-ux/ovh-manager-cloud/commit/79cf53c))
+
+
+
 # [7.22.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.21.0...v7.22.0) (2019-04-01)
 
 
