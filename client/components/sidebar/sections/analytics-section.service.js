@@ -17,6 +17,8 @@ class AnalyticsSectionSidebarService {
       id: 'mainAnalyticsItem',
       title: this.$translate.instant('cloud_sidebar_section_analytics'),
       allowSubItems: true,
+      state: 'adp.list',
+      loadOnState: 'adp.list',
       icon: 'ovh-font ovh-font-adp',
       allowSearch: this.SidebarHelper.constructor
         .countProductsInSection(logsProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH,
