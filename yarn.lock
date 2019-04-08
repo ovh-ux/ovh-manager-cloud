@@ -966,7 +966,7 @@
 
 "@ovh-ux/manager-adp@https://github.com/ovh-ux/manager.git#manager-adp":
   version "0.0.0"
-  resolved "https://github.com/ovh-ux/manager.git#a8bca522781ee2986d59b5d90e4e0144ec2788e8"
+  resolved "https://github.com/ovh-ux/manager.git#d2fbfbe6e12349f7436e88c19771c6eb1cadbf48"
   dependencies:
     bootstrap4 twbs/bootstrap#v4.0.0
     fast-sha256 "^1.1.0"
@@ -7820,10 +7820,10 @@ ovh-manager-webfont@1.2.0:
   resolved "https://registry.yarnpkg.com/ovh-manager-webfont/-/ovh-manager-webfont-1.2.0.tgz#e59e89e6248b7bf97b204bb18521b2f5bd347961"
   integrity sha512-J2ticTEGQEKbiE0NpI8yaiGmVFrbyllonUHcIsfgaEhY1gl9cug0ktiJGTc40sVFwlygsNYoM360xZvJkeX7lw==
 
-ovh-ui-angular@2.25.1:
-  version "2.25.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.25.1.tgz#aecc51aef883fb08fc82ec4a4f79a59a88b7b635"
-  integrity sha512-RHhe3L1Hk8tNvQGXO37lX2EOmAR6gnrrt/qM+jKBP8XcPyMWFZxB9L3hPc4BtWaWrNKfIPY/q7esXPoxq1qj6Q==
+ovh-ui-angular@2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.27.0.tgz#bc8fd52bc1e4d991621f3ddbd7ba6bcee16d72b9"
+  integrity sha512-q1KlF5ryxfoeWYF3MumzEuF857MKjjf/adrO2nQmmvLRG+GzzuY6jPi0tP1v1UiastbFcglNhcg8nUlaKFQCLA==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
