@@ -8,6 +8,17 @@ pay attention to a few things:
 3. your code must be documented
 4. you may contribute through GitHub Pull Requests on `develop` branch
 
+# Translations
+
+The language translations sentences must be done in French only :fr: (temporarily, due to internal process).
+
+If you create a new sentence, please don't put a `qtlid`. Our translator does it ;)
+
+If you edit a sentence, we have two cases:
+
+* You change the meaning of the sentence, please remove the `qtlid`.
+* You correct a spelling mistake in a french sentence, please keep the `qtlid`.
+
 # Coding and documentation Style
 
 Refer to [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)
