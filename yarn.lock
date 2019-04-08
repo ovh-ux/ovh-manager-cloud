@@ -966,7 +966,7 @@
 
 "@ovh-ux/manager-adp@https://github.com/ovh-ux/manager.git#manager-adp":
   version "0.0.0"
-  resolved "https://github.com/ovh-ux/manager.git#9a75cde34e37a9b43fefaf5e92aa6ef625d5a3e6"
+  resolved "https://github.com/ovh-ux/manager.git#a8bca522781ee2986d59b5d90e4e0144ec2788e8"
   dependencies:
     bootstrap4 twbs/bootstrap#v4.0.0
     fast-sha256 "^1.1.0"
