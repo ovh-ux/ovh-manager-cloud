@@ -34,10 +34,10 @@ class VpsMonitoringCtrl {
     this.VpsService.getMonitoring(this.serviceName, this.period)
       .then((data) => {
         this.data = data;
-        this.constructor.humanizeData(data.cpu.values[0].points, this.monitoring.cpu);
-        this.constructor.humanizeData(data.ram.values[0].points, this.monitoring.ram);
-        this.constructor.humanizeData(data.netRx.values[0].points, this.monitoring.net[0]);
-        this.constructor.humanizeData(data.netTx.values[0].points, this.monitoring.net[1]);
+        this.constructor.humanizeData(_.get(data, 'cpu.values[0].points'), this.monitoring.cpu);
+        this.constructor.humanizeData(_.get(data, 'ram.values[0].points'), this.monitoring.ram);
+        this.constructor.humanizeData(_.get(data, 'netRx.values[0].points'), this.monitoring.net[0]);
+        this.constructor.humanizeData(_.get(data, 'netTx.values[0].points'), this.monitoring.net[1]);
         this.constructor.generateLabels(
           data.cpu.values[0].points,
           data.cpu.pointInterval,
