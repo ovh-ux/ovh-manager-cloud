@@ -1,3 +1,12 @@
+## [7.22.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.22.1...v7.22.2) (2019-04-11)
+
+
+### Bug Fixes
+
+* **vps.monitoring:** safely access to the monitoring data ([#1420](https://github.com/ovh-ux/ovh-manager-cloud/issues/1420)) ([0c3b4be](https://github.com/ovh-ux/ovh-manager-cloud/commit/0c3b4be))
+
+
+
 ## [7.22.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.22.0...v7.22.1) (2019-04-03)
 
 
