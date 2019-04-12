@@ -70,24 +70,16 @@ class LogsInputsService {
         name: 'inputs_logs_configure_format_syslog',
       },
       {
-        value: 'Apache',
-        name: 'inputs_logs_configure_format_apache',
+        value: 'Filebeat',
+        name: 'inputs_logs_configure_format_filebeat',
       },
       {
         value: 'HAProxy',
         name: 'inputs_logs_configure_format_ha_proxy',
       },
       {
-        value: 'MySQL Slow Queries',
-        name: 'inputs_logs_configure_format_my_sql',
-      },
-      {
         value: 'Twitter',
         name: 'inputs_logs_configure_format_twitter',
-      },
-      {
-        value: 'Nginx',
-        name: 'inputs_logs_configure_format_nginx',
       },
     ];
   }
