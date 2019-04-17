@@ -1,3 +1,18 @@
+# [7.23.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.22.2...v7.23.0) (2019-04-17)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([c301964](https://github.com/ovh-ux/ovh-manager-cloud/commit/c301964))
+* **i18n:** add missing translations ([dd59317](https://github.com/ovh-ux/ovh-manager-cloud/commit/dd59317))
+
+
+### Features
+
+* add chatbot accessible from the assistance menu ([#1423](https://github.com/ovh-ux/ovh-manager-cloud/issues/1423)) ([c56b26e](https://github.com/ovh-ux/ovh-manager-cloud/commit/c56b26e))
+
+
+
 ## [7.22.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.22.1...v7.22.2) (2019-04-11)
 
 
