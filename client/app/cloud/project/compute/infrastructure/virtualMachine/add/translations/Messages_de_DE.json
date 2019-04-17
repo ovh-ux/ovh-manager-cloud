@@ -83,7 +83,7 @@
  "cpcivm_add_step3_network_none": "Keines",
  "cpcivm_add_step3_flavor_prices_ERROR": "Die Preise der verfügbaren Angebote können nicht abgerufen werden: {{message}}",
  "cpcivm_add_step3_flavors_ERROR": "Die Liste der verfügbaren Angebote kann nicht geladen werden: {{message}}",
- "cpcivm_add_step3_hide_unavailable": "Nicht verfügbare Optionen verbergen",
+ "cpcivm_add_step3_hide_unavailable": "Die verfügbaren Optionen verbergen",
  "cpcivm_add_step4_title": "Ihre Instanz konfigurieren",
  "cpcivm_add_step5_title": "Wählen Sie einen Abrechnungszeitraum aus",
  "cpcivm_add_step5_message": "Die Monatspauschale wird beim Start der Instanz abgerechnet und ermöglicht es Ihnen, 50 % der Serverkosten zu sparen. Bei kurzer Nutzungsdauer empfehlen wir die stündliche Abrechnung und gegebenenfalls später auf die Monatspauschale zu wechseln.",
@@ -96,6 +96,6 @@
  "cpcivm_add_summary_instance": "Instanz",
  "cpcivm_add_summary_name": "Name",
  "cpcivm_add_summary_price_hourly": "Preis / Stunde (zzgl. MwSt.)",
- "cpcivm_add_summary_price_monthly": "Preis / Monat (zzgl. MwSt.)",
+ "cpcivm_add_summary_price_monthly": "Preis / Monat (zzgl.. MwSt.)",
  "cpcivm_add_summary_undefined": "Nicht angegeben"
 }
