@@ -8,11 +8,17 @@
     </h6>
     <p class="oui-paragraph mb-5" data-translate="streams_alerts_intro_text"></p>
 
-    <oui-action-menu text="{{ ::'create_alert' | translate}}" align="start" class="alerts">
-        <oui-action-menu-item text="{{ ::'counter_alert' | translate}}" on-click="ctrl.addAlert('counter')"></oui-action-menu-item>
-        <oui-action-menu-item text="{{ ::'numeric_alert' | translate}}" on-click="ctrl.addAlert('numeric')"></oui-action-menu-item>
-        <oui-action-menu-item text="{{ ::'textual_alert' | translate}}" on-click="ctrl.addAlert('textual')"></oui-action-menu-item>
-    </oui-action-menu>
+    
+    <label id="alertCondition" class="oui-label" data-translate="create_alert"></label>
+    <oui-select aria-labelledby="alertCondition"
+                name="alertCondition"
+                data-model="ctrl.alertCondition"
+                data-title="{{ ::'create_alert' | translate}}"
+                data-placeholder="{{ ::'create_alert' | translate}}"
+                data-items="ctrl.alertConditions" 
+                data-match="conditionName"
+                on-change="ctrl.addAlert(modelValue.id)">
+    </oui-select>
 
     <oui-spinner data-ng-show="ctrl.alertIds.loading"></oui-spinner>
     <oui-datagrid data-ng-if="!ctrl.alertIds.loading"
