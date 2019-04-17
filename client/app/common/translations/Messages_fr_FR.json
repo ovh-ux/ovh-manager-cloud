@@ -81,6 +81,7 @@
   "common_menu_support_new_ticket": "Créer une demande d'assistance",
   "common_menu_support_list_ticket": "Liste de mes demandes d'assistance",
   "common_menu_support_ask_for_assistance": "Demande d'assistance",
+  "common_menu_support_chatbot": "Démarrer une conversation",
   "common_menu_support_email_history": "Historique des emails",
   "common_menu_support_telephony_contact": "Assistance téléphonique",
   "common_menu_support_userAccount_1": "Bonjour {{username}}",
