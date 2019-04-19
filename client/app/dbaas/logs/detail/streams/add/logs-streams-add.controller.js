@@ -12,6 +12,8 @@ class LogsStreamsAddCtrl {
     this.isEdit = false;
     this.compressionAlgorithms = this.LogsStreamsService.getCompressionAlgorithms();
     this.storageDurations = this.LogsStreamsService.getStorageDurations();
+    this.storageTargets = this.LogsStreamsService.getStorageTargets();
+    this.storageContents = this.LogsStreamsService.getStorageContents();
     this.coldStoragePrice = { price: '' };
     this.initLoaders();
   }
