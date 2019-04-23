@@ -20,6 +20,22 @@ class LogsStreamsAlertsHomeCtrl {
 
     this.serviceName = this.$stateParams.serviceName;
     this.streamId = this.$stateParams.streamId;
+
+    this.alertConditions = [
+      {
+        id: 'counter',
+        conditionName: this.$translate.instant('counter_alert'),
+      },
+      {
+        id: 'numeric',
+        conditionName: this.$translate.instant('numeric_alert'),
+      },
+      {
+        id: 'textual',
+        conditionName: this.$translate.instant('textual_alert'),
+      },
+    ];
+
     this.initLoaders();
   }
 
