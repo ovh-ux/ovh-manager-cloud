@@ -566,13 +566,6 @@ class ManagerNavbarService {
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
           },
 
-          // Tickets
-          {
-            title: this.$translate.instant('common_menu_list_ticket'),
-            url: this.REDIRECT_URLS.support,
-            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
-          },
-
           // Logout
           {
             title: this.$translate.instant('global_logout'),
