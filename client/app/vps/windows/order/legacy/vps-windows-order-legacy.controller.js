@@ -1,13 +1,7 @@
-class VpsOrderWindowsCtrl {
-  constructor(
-    $q,
-    $stateParams,
-    $translate,
-    $window,
-    CucCloudMessage,
-    CucCloudNavigation,
-    VpsService,
-  ) {
+export default class VpsWindowsOrderLegacyCtrl {
+  /* @ngInject */
+  constructor($q, $stateParams, $translate, $window, CucCloudMessage,
+    CucCloudNavigation, VpsService) {
     this.$q = $q;
     this.$translate = $translate;
     this.serviceName = $stateParams.serviceName;
@@ -95,5 +89,3 @@ class VpsOrderWindowsCtrl {
     );
   }
 }
-
-angular.module('managerApp').controller('VpsOrderWindowsCtrl', VpsOrderWindowsCtrl);

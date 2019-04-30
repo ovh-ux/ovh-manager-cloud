@@ -1,133 +1,223 @@
-class VpsUpgradeCtrl {
-  constructor(
-    $filter,
-    $stateParams,
-    $state,
-    $translate,
-    $q,
-    $window,
-    CucCloudMessage,
-    CucCloudNavigation,
-    CucControllerHelper,
-    VpsService,
-  ) {
-    this.$filter = $filter;
-    this.$translate = $translate;
+import { OFFER_AGORA_MAPPING } from './vps-upgrade.constants';
+
+export default class VpsUpgradeCtrl {
+  /* @ngInject */
+  constructor($q, $translate, $window, CucCloudMessage, connectedUser, OvhApiOrder,
+    OvhApiVps, stateVps) {
+    // dependencies injections
     this.$q = $q;
+    this.$translate = $translate;
     this.$window = $window;
     this.CucCloudMessage = CucCloudMessage;
-    this.CucCloudNavigation = CucCloudNavigation;
-    this.CucControllerHelper = CucControllerHelper;
-    this.serviceName = $stateParams.serviceName;
-    this.Vps = VpsService;
+    this.connectedUser = connectedUser;
+    this.OvhApiOrder = OvhApiOrder;
+    this.OvhApiVps = OvhApiVps;
+    this.stateVps = stateVps;
 
-    this.loaders = {
-      step1: false,
-      step2: false,
+    // other attributes used in view
+    this.serviceName = this.stateVps.name;
+    this.chunkedAvailableUpgrade = null;
+    this.getMonthlyPrice = VpsUpgradeCtrl.getMonthlyPrice;
+
+    this.loading = {
+      init: false,
+      contracts: false,
+      order: false,
     };
 
-    this.completed = {
-      step1: false,
-      step2: false,
+    this.model = {
+      offer: null,
+      contracts: false,
     };
-    this.order = null;
-    this.selectedModel = {};
-    this.upgradesList = null;
   }
 
-  gotoPreviousState() {
-    return this.CucCloudNavigation.getPreviousState().go();
-  }
-
-  getCurrentModel() {
-    return _.find(this.upgradesList, upgrade => upgrade.isCurrentModel === true);
-  }
-
-  validateStep1() {
-    if (this.selectedModel.model === this.getCurrentModel().model) {
-      const title = this.$translate.instant('vps_warning_title');
-      const message = this.$translate.instant('vps_configuration_upgradevps_step1_warning');
-
-      this.CucControllerHelper.modal.showWarningModal({ title, message });
-      throw new Error(message);
-    } else {
-      this.completed.step1 = true;
-    }
-  }
-
-  loadUpgradesList() {
-    if (!this.upgradesList) {
-      this.loaders.step1 = true;
-      return this.Vps.upgradesList(this.serviceName).then((data) => {
-        this.upgradesList = data.results;
-        this.selectedModel.model = this.getCurrentModel().model;
-        return data;
-      }).catch((err) => {
-        this.$q.reject(err);
-        if (err.message) {
-          this.CucCloudMessage.error(err.message);
-        } else {
-          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
-        }
-        this.gotoPreviousState();
-      }).finally(() => {
-        this.loaders.step1 = false;
-      });
-    }
-    return this.$q.when();
-  }
-
-  initVpsConditions() {
-    this.conditionsAgree = false;
-    this.loaders.step2 = true;
-    this.order = null;
-    const modelToUpgradeTo = _.find(this.upgradesList, e => e.model === _.first(this.selectedModel.model.split(':')) && e.name === this.selectedModel.model.split(':')[1]);
-
-    if (_.isEmpty(modelToUpgradeTo)) {
-      return this.$q.when(true);
+  /**
+   *  Parse the model version by extracting the year and the version into this year
+   */
+  static parseModelVersion(modelVersion) {
+    const parseRegexp = new RegExp(/(\d{4})v(\d+)/);
+    if (parseRegexp.test(modelVersion)) {
+      const versionParts = parseRegexp.exec(modelVersion);
+      return {
+        year: parseInt(versionParts[1], 10),
+        version: parseInt(versionParts[2], 10),
+      };
     }
 
-    this.selectedModelForUpgrade = modelToUpgradeTo;
+    throw new Error(`Provided modelVersion (${modelVersion}) is not supported.`);
+  }
 
-    return this.Vps
-      .upgrade(
-        this.serviceName,
-        this.selectedModelForUpgrade.model,
-        this.selectedModelForUpgrade.duration.duration,
-      )
-      .then((data) => {
-        this.conditionsAgree = false;
-        this.selectedModelForUpgrade.duration.dateFormatted = this.$filter('date')(this.selectedModelForUpgrade.duration.date, 'dd/MM/yyyy');
-        this.order = data;
-        return data;
+  /**
+   *  Get the plan code for agora order from VPS model informations
+   */
+  static findMatchingUpgradeOffer(modelType, modelName, modelVersion, availableOffers) {
+    // rules are :
+    // - if version year is less than 2018, agora version will be 2018v3
+    // - otherwise agora version will be 2018v4
+    const versionInfos = VpsUpgradeCtrl.parseModelVersion(modelVersion);
+    const destVersion = versionInfos.year < 2018 ? '2018v3' : '2018v4';
+    const mappedType = _.get(OFFER_AGORA_MAPPING, modelType, modelType);
+    const offerPlanCode = `vps_${mappedType}_${modelName}_${destVersion}`;
+
+    return _.find(availableOffers, {
+      planCode: offerPlanCode,
+    });
+  }
+
+  /**
+   *  Find the monthly price object of given offer
+   */
+  static getMonthlyPrice(offer) {
+    return _.find(offer.offer.details.prices, {
+      duration: 'P1M',
+    });
+  }
+
+  /* =============================
+  =            Events            =
+  ============================== */
+
+  onContractsStepFormFocus() {
+    this.loading.contracts = true;
+    this.model.contracts = false;
+
+    return this.OvhApiOrder.Upgrade().Vps().v6().get({
+      serviceName: this.serviceName,
+      planCode: this.model.offer.offer.details.planCode,
+    }).$promise
+      .then((order) => {
+        this.order = order.order;
+        this.order.contracts = _.map(this.order.contracts, (contractParam) => {
+          const contract = contractParam;
+          contract.expanded = false;
+          return contract;
+        });
       })
-      .catch((err) => {
-        this.$q.reject(err);
-        if (err.message) {
-          this.CucCloudMessage.error(err.message);
-        } else {
-          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
-        }
+      .catch((error) => {
+        this.CucCloudMessage.error([
+          this.$translate.instant('vps_configuration_upgradevps_fail'),
+          _.get(error, 'data.message'),
+        ].join(' '));
       })
       .finally(() => {
-        this.loaders.step2 = false;
+        this.loading.contracts = false;
       });
   }
 
-  cancel() {
-    this.gotoPreviousState();
+  toggleContractExpand(toggledContract) {
+    // if contract is not expanded
+    // hide all contracts
+    if (!toggledContract.expanded) {
+      this.order.contracts.forEach((contract) => {
+        _.set(contract, 'expanded', false);
+      });
+    }
+    // toggle expand state of contract
+    _.set(toggledContract, 'expanded', !toggledContract.expanded);
   }
 
-  confirm() {
-    this.displayBC();
+  onStepperFinish() {
+    this.loading.order = true;
+
+    return this.OvhApiOrder.Upgrade().Vps().v6().save({
+      serviceName: this.serviceName,
+      planCode: this.model.offer.offer.details.planCode,
+    }, {
+      quantity: 1,
+    }).$promise
+      .then((response) => {
+        // open order url
+        this.$window.open(response.order.url, '_blank');
+
+        // display success message
+        this.CucCloudMessage.success({
+          textHtml: this.$translate.instant('vps_configuration_upgradevps_success', {
+            orderId: response.order.orderId,
+            url: response.order.url,
+          }),
+        });
+
+        // reinit the form
+        return this.$onInit();
+      })
+      .catch((error) => {
+        this.CucCloudMessage.error([
+          this.$translate.instant('vps_configuration_upgradevps_fail'),
+          _.get(error, 'data.message'),
+        ].join(' '));
+      })
+      .finally(() => {
+        this.loading.order = false;
+      });
   }
 
-  displayBC() {
-    this.$window.open(
-      this.order.url,
-      '_blank',
-    );
+  /* -----  End of Events  ------ */
+
+  /* =====================================
+  =            Initialization            =
+  ====================================== */
+
+  $onInit() {
+    this.loading.init = true;
+
+    this.model.offer = null;
+
+    return this.$q.all({
+      availableUpgrades: this.OvhApiVps.v6().availableUpgrade({
+        serviceName: this.serviceName,
+      }).$promise,
+      availableOffers: this.OvhApiOrder.Upgrade().Vps().v6().getAvailableOffers({
+        serviceName: this.serviceName,
+      }).$promise,
+    })
+      .then(({ availableUpgrades, availableOffers }) => {
+        // map available upgrades by adding details with the informations
+        // provided by /order/upgrade/vps API response
+        const availableUpgrade = _.map(availableUpgrades, (upgradeParam) => {
+          const upgrade = upgradeParam;
+          upgrade.isCurrentOffer = false;
+          upgrade.offer = {
+            name: upgrade.offer,
+            details: VpsUpgradeCtrl.findMatchingUpgradeOffer(
+              this.stateVps.offerType,
+              upgrade.name,
+              upgrade.version,
+              availableOffers,
+            ),
+          };
+          return upgrade;
+        });
+
+        // set current offer in available upgrade and concat with availabe ones
+        // then chunk the list for responsive display
+        this.chunkedAvailableUpgrade = _.chunk([{
+          isCurrentOffer: true,
+          disk: this.stateVps.model.disk,
+          memory: this.stateVps.model.memory,
+          name: this.stateVps.model.name,
+          offer: {
+            name: this.stateVps.model.offer,
+            details: VpsUpgradeCtrl.findMatchingUpgradeOffer(
+              this.stateVps.offerType,
+              this.stateVps.model.name,
+              this.stateVps.model.version,
+              availableOffers,
+            ),
+          },
+          vcore: this.stateVps.model.vcore,
+          version: this.stateVps.model.version,
+        }].concat(availableUpgrade), 3);
+      })
+      .catch((error) => {
+        this.CucCloudMessage.error([
+          this.$translate.instant('vps_configuration_upgradevps_fail'),
+          _.get(error, 'data.message'),
+        ].join(' '));
+      })
+      .finally(() => {
+        this.loading.init = false;
+      });
   }
+
+  /* -----  End of Initialization  ------ */
 }
-
-angular.module('managerApp').controller('VpsUpgradeCtrl', VpsUpgradeCtrl);

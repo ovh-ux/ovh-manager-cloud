@@ -1,4 +1,5 @@
-class VpsOrderSnapshotCtrl {
+export default class VpsSnapshotOrderLegacyCtrl {
+  /* @ngInject */
   constructor($stateParams, $translate, $window, CucCloudMessage, CucCloudNavigation, VpsService) {
     this.$translate = $translate;
     this.serviceName = $stateParams.serviceName;
@@ -70,5 +71,3 @@ class VpsOrderSnapshotCtrl {
     );
   }
 }
-
-angular.module('managerApp').controller('VpsOrderSnapshotCtrl', VpsOrderSnapshotCtrl);
