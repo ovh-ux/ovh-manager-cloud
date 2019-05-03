@@ -7,6 +7,9 @@ angular.module('managerApp')
       .state('iaas', {
         url: '/iaas',
         abstract: true,
+        resolve: {
+          connectedUser: /* @ngInject */ OvhApiMe => OvhApiMe.v6().get().$promise,
+        },
         template: '<ui-view/>',
         translations: {
           format: 'json',

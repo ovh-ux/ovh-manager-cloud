@@ -1052,6 +1052,13 @@
   dependencies:
     lodash "^4.17.11"
 
+"@ovh-ux/ng-ovh-chatbot@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-chatbot/-/ng-ovh-chatbot-2.0.0.tgz#9894c2e6baab6f244ecc3722c1a9e469c3f26d28"
+  integrity sha512-UdV33Pg3DfpNv5BUQ8zIV32YvF6Atbk0U9QV91wkFz0OceRb3A9i3JB95PtnCKqRrqpbKlq8dYwWm4BwT16ZpQ==
+  dependencies:
+    lodash "^4.17.11"
+
 "@ovh-ux/ng-ovh-checkbox-table@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-checkbox-table/-/ng-ovh-checkbox-table-1.0.0.tgz#0a431f47fbde05dd48ed8fe38693a4a76079af5d"
@@ -7797,10 +7804,10 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.1.0:
   version "1.1.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/4b976ddbcb272541b4959d4bf2621da5e3362276"
 
-ovh-ui-angular@~2.25.0:
-  version "2.25.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.25.1.tgz#aecc51aef883fb08fc82ec4a4f79a59a88b7b635"
-  integrity sha512-RHhe3L1Hk8tNvQGXO37lX2EOmAR6gnrrt/qM+jKBP8XcPyMWFZxB9L3hPc4BtWaWrNKfIPY/q7esXPoxq1qj6Q==
+ovh-ui-angular@~2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.29.1.tgz#a1413c1ef6f23ce2c4e0dc3068beccbad54d2d02"
+  integrity sha512-DaRj5B6+Ok15NH5J94SgzB7WtQe0d6Sr1DKyHv0/dD6QDR/aq3pmwDn+7/hE49MyhY4xy2gBfnwhFYy3ezQC7w==
   dependencies:
     bloodhound-js "^1.2.3"
     clipboard "^2.0.1"
@@ -7816,10 +7823,10 @@ ovh-ui-kit@^2.24.2:
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
-ovh-ui-kit@~2.24.0:
-  version "2.24.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.24.1.tgz#d56c8cbc7881655a9124b2300c3e1acea32c93e9"
-  integrity sha512-KlPg4dq1NqEEncAdlE5nGfihD16tfaRlyWiAJNhIpbZD/xfmSQchM5x39Y40kldatUR9t3HXch8D3dQ2e80ioA==
+ovh-ui-kit@~2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.29.1.tgz#63e4fa2b769d98d9c20282a4f60d01eccc5282f2"
+  integrity sha512-hdC9cdKju6iNOLCbRMK9dsU9efm1VVUKcE1o3SqxK61WiGl0KfJW2pHYenAGTHZ2ohHY2XE3Nak8i2QOeGIgeA==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 

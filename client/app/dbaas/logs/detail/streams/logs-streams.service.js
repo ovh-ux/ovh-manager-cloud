@@ -73,6 +73,32 @@ class LogsStreamsService {
         name: this.$translate.instant('logs_stream_retention_10y'),
       },
     ];
+
+    this.storageTargets = [
+      {
+        value: this.LogsConstants.PCS,
+        name: this.$translate.instant('logs_stream_target_pcs'),
+      },
+      {
+        value: this.LogsConstants.PCA,
+        name: this.$translate.instant('logs_stream_target_pca'),
+      },
+    ];
+
+    this.storageContents = [
+      {
+        value: this.LogsConstants.CONTENT_GELF,
+        name: this.$translate.instant('logs_stream_content_gelf'),
+      },
+      {
+        value: this.LogsConstants.CONTENT_PLAIN,
+        name: this.$translate.instant('logs_stream_content_plain'),
+      },
+      {
+        value: this.LogsConstants.CONTENT_ALL,
+        name: this.$translate.instant('logs_stream_content_all'),
+      },
+    ];
   }
 
   /**
@@ -262,6 +288,14 @@ class LogsStreamsService {
     return this.storageDurations;
   }
 
+  getStorageTargets() {
+    return this.storageTargets;
+  }
+
+  getStorageContents() {
+    return this.storageContents;
+  }
+
   getSubscribedOptions(serviceName) {
     return this.LogsOptionsService.getSubscribedOptionsByType(
       serviceName,
@@ -280,6 +314,8 @@ class LogsStreamsService {
       data: {
         coldStorageCompression: this.compressionAlgorithms[0].value,
         coldStorageRetention: this.storageDurations[0].value,
+        coldStorageContent: this.storageContents[0].value,
+        coldStorageTarget: this.storageTargets[0].value,
         coldStorageNotifyEnabled: true,
         coldStorageEnabled: false,
         webSocketEnabled: true,

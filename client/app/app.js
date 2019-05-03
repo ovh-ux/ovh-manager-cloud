@@ -5,6 +5,7 @@ import ovhManagerCore from '@ovh-ux/manager-core';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
+import ngOvhChatbot from '@ovh-ux/ng-ovh-chatbot';
 import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
@@ -35,6 +36,7 @@ angular.module('managerApp', [
   ngAtInternet,
   ngAtInternetUiRouterPlugin,
   ngOvhApiWrappers,
+  ngOvhChatbot,
   ngOvhCheckboxTable,
   ngOvhDocUrl,
   ngOvhFormFlat,

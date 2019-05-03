@@ -1,7 +1,7 @@
 {
  "cpcivm_add_title": "Adicionar servidor",
  "cpcivm_add_button_completed_text": "Iniciar agora",
- "cpcivm_add_step1_title": "Selecione um SO ou um Snapshot",
+ "cpcivm_add_step1_title": "Selecione um SO ou uma Snapshot",
  "cpcivm_add_step1_tab_os_linux": "Distribuições Unix",
  "cpcivm_add_step1_tab_os_windows": "Distribuições Windows",
  "cpcivm_add_step1_tab_apps": "Distribuições + Apps",
@@ -87,7 +87,7 @@
  "cpcivm_add_step4_title": "Configurar a sua instância",
  "cpcivm_add_step5_title": "Selecione um período de faturação",
  "cpcivm_add_step5_message": "O plano mensal é faturado a partir da ativação da instância e permite poupar 50% do preço dos servidores. Para uma utilização em períodos curtos, recomendamos que escolha a faturação à hora e mais tarde migre para o plano mensal caso preferir.",
- "cpcivm_add_step5_billing_period_hourly": "Horário",
+ "cpcivm_add_step5_billing_period_hourly": "À hora",
  "cpcivm_add_step5_billing_period_monthly": "Mensal",
  "cpcivm_add_launch_ERROR": "Ocorreu um erro durante a criação da sua nova instância: {{message}}",
  "cpcivm_add_summary_title": "Resumo",

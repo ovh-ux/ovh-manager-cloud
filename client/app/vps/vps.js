@@ -1,10 +1,12 @@
-angular.module('managerApp').config(($stateProvider) => {
-  const vpsHeader = {
-    templateUrl: 'app/vps/vps-header.html',
-    controller: 'VpsHeaderCtrl',
-    controllerAs: '$ctrl',
-  };
+export const vpsHeader = {
+  templateUrl: 'app/vps/vps-header.html',
+  controller: 'VpsHeaderCtrl',
+  controllerAs: '$ctrl',
+};
 
+export default { vpsHeader };
+
+angular.module('managerApp').config(($stateProvider) => {
   $stateProvider
     .state('iaas.vps', {
       url: '/vps',
@@ -18,6 +20,23 @@ angular.module('managerApp').config(($stateProvider) => {
     .state('iaas.vps.detail', {
       url: '/{serviceName}',
       redirectTo: 'iaas.vps.detail.dashboard',
+      resolve: {
+        stateVps: /* @ngInject */ ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
+          serviceName: _.get($transition$.params(), 'serviceName'),
+        }).$promise
+          .then(stateVps => OvhApiVps.v6().version({
+            serviceName: _.get($transition$.params(), 'serviceName'),
+          }).$promise.then((response) => {
+            _.set(stateVps, 'isFullAgora', response.version === 2);
+            return stateVps;
+          }))
+          .catch((error) => {
+            if (error.status === 404) {
+              return $q.reject(_.merge({ code: 'LOADING_STATE_ERROR' }, error));
+            }
+            return true;
+          }),
+      },
       views: {
         vpsHeader,
         vpsContainer: {
@@ -43,93 +62,6 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsContent: {
           templateUrl: 'app/vps/secondary-dns/vps-secondary-dns.html',
           controller: 'VpsSecondaryDnsCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.backup-storage', {
-      url: '/backup-storage',
-      redirectTo: 'iaas.vps.detail.backup-storage.list',
-      views: {
-        vpsContent: {
-          template: '<div data-ui-view="vpsBackupStorageContent"></div>',
-        },
-      },
-    })
-    .state('iaas.vps.detail.backup-storage.list', {
-      url: '/',
-      views: {
-        vpsBackupStorageContent: {
-          templateUrl: 'app/vps/backup-storage/vps-backup-storage.html',
-          controller: 'VpsBackupStorageCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.backup-storage.order', {
-      url: '/order',
-      views: {
-        vpsBackupStorageContent: {
-          templateUrl: 'app/vps/backup-storage/order/vps-order-backup-storage.html',
-          controller: 'VpsOrderBackupStorageCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.veeam', {
-      url: '/veeam',
-      redirectTo: 'iaas.vps.detail.veeam.list',
-      views: {
-        vpsContent: {
-          template: '<div data-ui-view="vpsVeeamContent"></div>',
-        },
-      },
-    })
-    .state('iaas.vps.detail.veeam.list', {
-      url: '/',
-      views: {
-        vpsVeeamContent: {
-          templateUrl: 'app/vps/veeam/vps-veeam.html',
-          controller: 'VpsVeeamCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.veeam.order', {
-      url: '/order',
-      views: {
-        vpsVeeamContent: {
-          templateUrl: 'app/vps/veeam/order/vps-order-veeam.html',
-          controller: 'VpsOrderVeeamCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.additional-disk', {
-      url: '/additional-disk',
-      redirectTo: 'iaas.vps.detail.additional-disk.list',
-      views: {
-        vpsContent: {
-          template: '<div data-ui-view="vpsAdditionalDiskContent"></div>',
-        },
-      },
-    })
-    .state('iaas.vps.detail.additional-disk.list', {
-      url: '/',
-      views: {
-        vpsAdditionalDiskContent: {
-          templateUrl: 'app/vps/additional-disk/vps-additional-disk.html',
-          controller: 'VpsAdditionalDiskCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.additional-disk.order', {
-      url: '/order',
-      views: {
-        vpsAdditionalDiskContent: {
-          templateUrl: 'app/vps/additional-disk/order/vps-order-additional-disk.html',
-          controller: 'VpsOrderDiskCtrl',
           controllerAs: '$ctrl',
         },
       },
@@ -178,39 +110,6 @@ angular.module('managerApp').config(($stateProvider) => {
         vpsContent: {
           templateUrl: 'app/vps/monitoring/vps-monitoring.html',
           controller: 'VpsMonitoringCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.snapshot-order', {
-      url: '/snapshot-order',
-      views: {
-        vpsHeader,
-        vpsContent: {
-          templateUrl: 'app/vps/snapshot-order/vps-snapshot-order.html',
-          controller: 'VpsOrderSnapshotCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.windows-order', {
-      url: '/windows-order',
-      views: {
-        vpsHeader,
-        vpsContent: {
-          templateUrl: 'app/vps/windows-order/vps-windows-order.html',
-          controller: 'VpsOrderWindowsCtrl',
-          controllerAs: '$ctrl',
-        },
-      },
-    })
-    .state('iaas.vps.detail.upgrade', {
-      url: '/upgrade',
-      views: {
-        vpsHeader,
-        vpsContent: {
-          templateUrl: 'app/vps/upgrade/vps-upgrade.html',
-          controller: 'VpsUpgradeCtrl',
           controllerAs: '$ctrl',
         },
       },

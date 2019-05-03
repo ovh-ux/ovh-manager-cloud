@@ -3,6 +3,7 @@ class ManagerNavbarService {
   constructor(
     $injector,
     $q,
+    $rootScope,
     $translate,
     atInternet,
     CucFeatureAvailabilityService,
@@ -22,6 +23,7 @@ class ManagerNavbarService {
   ) {
     this.$injector = $injector;
     this.$q = $q;
+    this.$rootScope = $rootScope;
     this.$translate = $translate;
     this.atInternet = atInternet;
     this.featureAvailabilityService = CucFeatureAvailabilityService;
@@ -293,6 +295,7 @@ class ManagerNavbarService {
 
   getAssistanceMenu(subsidiary) {
     const mustDisplayNewMenu = ['FR'].includes(subsidiary);
+    const mustDisplayChatbot = ['FR'].includes(subsidiary);
 
     const assistanceMenuItems = [
       {
@@ -372,6 +375,17 @@ class ManagerNavbarService {
           type: 'action',
         }),
         mustBeKept: this.coreConfig.getRegion() !== 'US',
+      },
+      {
+        title: `${this.$translate.instant('common_menu_support_chatbot')} <sup class="oui-color-california">OVH Chat</sup>`,
+        click: () => {
+          this.$rootScope.$broadcast('ovh-chatbot:open');
+          this.atInternet.trackClick({
+            name: 'assistance::helpline',
+            type: 'action',
+          });
+        },
+        mustBeKept: mustDisplayChatbot,
       },
     ];
 
@@ -550,13 +564,6 @@ class ManagerNavbarService {
             title: this.$translate.instant('common_menu_contacts'),
             url: this.REDIRECT_URLS.contacts,
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
-          },
-
-          // Tickets
-          {
-            title: this.$translate.instant('common_menu_list_ticket'),
-            url: this.REDIRECT_URLS.support,
-            click: () => this.trackUserMenuSection('my_otrs_tickets', 'otrs'),
           },
 
           // Logout

@@ -1,4 +1,5 @@
-class VpsOrderVeeamCtrl {
+export default class VpsOrderVeeamLegacyCtrl {
+  /* @ngInject */
   constructor($scope, $stateParams, $translate, $window,
     atInternet, CucCloudMessage, CucCloudNavigation, VpsService, CucServiceHelper) {
     this.$scope = $scope;
@@ -63,5 +64,3 @@ class VpsOrderVeeamCtrl {
     this.previousState.go();
   }
 }
-
-angular.module('managerApp').controller('VpsOrderVeeamCtrl', VpsOrderVeeamCtrl);

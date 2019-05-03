@@ -81,7 +81,7 @@
                 id="stream_enable_compression"
                 name="stream_enable_compression"
                 data-text="{{:: 'logs_streams_enable_archieve' | translate}}"
-                data-description="{{:: 'logs_streams_enable_archieve_description' | translate}} {{ 'streams_cold_storage_price' | translate }} {{ ctrl.coldStoragePrice.price }} {{ 'streams_cold_storage_price2' | translate }}"
+                data-description="{{:: 'logs_streams_enable_archieve_description' | translate}}"
                 data-model="ctrl.stream.data.coldStorageEnabled">
             </oui-checkbox>
         </oui-field>
@@ -111,6 +111,30 @@
                 </div>
             </oui-field>
 
+            <oui-field label="{{:: 'logs_streams_select_archieve_target' | translate }}" size="xl">
+                <div class="oui-select">
+                    <select class="oui-select__input"
+                            name="stream_archive_target"
+                            id="stream_archive_target"
+                            data-ng-model="ctrl.stream.data.coldStorageTarget"
+                            data-ng-options="target.value as target.name for target in ctrl.storageTargets">
+                    </select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </div>
+            </oui-field>
+
+            <oui-field label="{{:: 'logs_streams_select_archieve_content' | translate }}" size="xl">
+                <div class="oui-select">
+                    <select class="oui-select__input"
+                            name="stream_archive_content"
+                            id="stream_archive_content"
+                            data-ng-model="ctrl.stream.data.coldStorageContent"
+                            data-ng-options="content.value as content.name for content in ctrl.storageContents">
+                    </select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </div>
+            </oui-field>
+
             <oui-field label="{{:: 'logs_streams_notification_title' | translate }}">
                 <oui-checkbox
                     name="stream_notification"
@@ -119,6 +143,7 @@
                     data-text="{{:: 'logs_streams_notification_detail' | translate}}">
                 </oui-checkbox>
             </oui-field>
+
         </div>
 
         <oui-form-actions

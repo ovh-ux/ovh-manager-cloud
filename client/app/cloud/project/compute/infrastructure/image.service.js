@@ -39,6 +39,7 @@
     'rstudio',
     'minikube',
     'nvidia_ngc',
+    'dataiku',
   ];
 
   class CloudImageService {

@@ -1,7 +1,7 @@
 class VpsDashboardCtrl {
   constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
-    CucControllerHelper, CucRegionService, SidebarMenu, VpsActionService, VpsService, URLS,
-    REDIRECT_URLS) {
+    CucControllerHelper, CucRegionService, SidebarMenu, stateVps, VpsActionService, VpsService,
+    URLS, REDIRECT_URLS) {
     this.$filter = $filter;
     this.$q = $q;
     this.$scope = $scope;
@@ -13,6 +13,7 @@ class VpsDashboardCtrl {
     this.CucRegionService = CucRegionService;
     this.serviceName = $stateParams.serviceName;
     this.SidebarMenu = SidebarMenu;
+    this.stateVps = stateVps;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
     this.URLS = URLS;
@@ -139,7 +140,7 @@ class VpsDashboardCtrl {
       },
       order: {
         text: this.$translate.instant('common_order'),
-        callback: () => this.$state.go('iaas.vps.detail.snapshot-order', { serviceName: this.serviceName }),
+        callback: () => this.$state.go('iaas.vps.detail.snapshot.order', { serviceName: this.serviceName }),
         isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionAvailable,
       },
       restore: {
@@ -263,7 +264,7 @@ class VpsDashboardCtrl {
       },
       orderWindows: {
         text: this.$translate.instant('common_order'),
-        callback: () => this.$state.go('iaas.vps.detail.windows-order', { serviceName: this.serviceName }),
+        callback: () => this.$state.go('iaas.vps.detail.windows.order', { serviceName: this.serviceName }),
         isAvailable: () => !this.summary.loading && !this.summary.windowsActivated,
       },
       reboot: {
