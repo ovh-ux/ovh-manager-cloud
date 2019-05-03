@@ -1,10 +1,10 @@
 class HomeCtrl {
-  constructor($q, DocsService, CucFeatureAvailabilityService, ovhUserPref, TARGET) {
+  constructor($q, DocsService, CucFeatureAvailabilityService, ovhUserPref, coreConfig) {
     this.$q = $q;
     this.DocsService = DocsService;
     this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.ovhUserPref = ovhUserPref;
-    this.TARGET = TARGET;
+    this.region = coreConfig.getRegion();
   }
 
   $onInit() {

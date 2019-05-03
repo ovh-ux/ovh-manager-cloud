@@ -1,6 +1,16 @@
 class CloudProjectComputeInfrastructureService {
-  constructor($rootScope, $state, $translate, $uibModal, CucCloudMessage, CucUserPref,
-    CloudProjectComputeInfrastructureOrchestrator, CucControllerHelper, CucServiceHelper, TARGET) {
+  constructor(
+    $rootScope,
+    $state,
+    $translate,
+    $uibModal,
+    CucCloudMessage,
+    CucUserPref,
+    CloudProjectComputeInfrastructureOrchestrator,
+    CucControllerHelper,
+    CucServiceHelper,
+    coreConfig,
+  ) {
     this.$rootScope = $rootScope;
     this.$state = $state;
     this.$translate = $translate;
@@ -10,11 +20,11 @@ class CloudProjectComputeInfrastructureService {
     this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator; // eslint-disable-line
     this.CucControllerHelper = CucControllerHelper;
     this.CucServiceHelper = CucServiceHelper;
-    this.TARGET = TARGET;
+    this.coreConfig = coreConfig;
   }
 
   buyIpFailOver() {
-    if (this.TARGET === 'US') {
+    if (this.coreConfig.getRegion() === 'US') {
       return this.$uibModal.open({
         windowTopClass: 'cui-modal',
         templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy-agora.html',
@@ -43,7 +53,7 @@ class CloudProjectComputeInfrastructureService {
   }
 
   orderCredit() {
-    if (this.TARGET === 'US') {
+    if (this.coreConfig.getRegion() === 'US') {
       return this.$uibModal.open({
         windowTopClass: 'cui-modal',
         templateUrl: 'app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit-agora.html',

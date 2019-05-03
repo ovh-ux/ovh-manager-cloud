@@ -1,5 +1,4 @@
 angular.module('managerApp')
-  .constant('TARGET', 'EU')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     web: 'https://www.ovh.com/manager/web/index.html#/',

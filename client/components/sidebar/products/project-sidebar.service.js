@@ -1,9 +1,9 @@
 class CloudProjectSidebar {
-  constructor($translate, SidebarMenu, TARGET) {
+  constructor($translate, SidebarMenu, coreConfig) {
     this.$translate = $translate;
     this.SidebarMenu = SidebarMenu;
-    this.TARGET = TARGET;
 
+    this.region = coreConfig.getRegion();
     this.type = 'PROJECT';
   }
 

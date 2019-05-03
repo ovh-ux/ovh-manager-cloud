@@ -964,6 +964,19 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
+"@ovh-ux/manager-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-config/-/manager-config-0.1.0.tgz#aea676f88a4f0447211f93351ca55c4fc0d758d0"
+  integrity sha512-FC+aRA0nYmd3EDwbJnBGXZoEXeeI3k8/+N2I31rlzmwalPA4FvWAL0F+sM6eaHDTk1lwQcfbxYCcZAiaCd9r1g==
+
+"@ovh-ux/manager-core@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-core/-/manager-core-5.0.0.tgz#b88db32788ea7e479ec68b5461321099046ece21"
+  integrity sha512-bnkl4y9U7LXcefSfD2QUn1Pb/1vhBgSegGwKgeYnFnq7RVqbyRNon7kugnVGd8GVhKoKhcCcx2dqHbOS4huJTw==
+  dependencies:
+    "@ovh-ux/ng-translate-async-loader" "^2.0.0"
+    lodash "^4.17.11"
+
 "@ovh-ux/manager-webpack-config@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@ovh-ux/manager-webpack-config/-/manager-webpack-config-3.0.4.tgz#e6e4066c9696abd58aded6125e292c7e86e0fd2b"
@@ -1076,6 +1089,14 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-form-flat/-/ng-ovh-form-flat-4.0.0.tgz#d3da130cca543ddc60713e47a3a7c6c74fc97636"
   integrity sha512-8WXu3DHEih5cqVB9srvvIkMnnpBA7oAIL1sH6v3SQZdhR9VIPTYYMPKnOQe2zQ0zjcQVpbpHQdNv2v7hzd9YRQ==
+
+"@ovh-ux/ng-ovh-http@^4.0.1-beta.0":
+  version "4.0.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-http/-/ng-ovh-http-4.0.1-beta.0.tgz#ccf793c7d34252952d0bf92d8f3a9ff2ca35e52e"
+  integrity sha512-D+pQvfzVr01fXlE75U2U3RdcxSBciqIo7CV4gJM5jyAS3zCXP4/YzNF/tCNIihNs9nI/juSieAnI7ah5xwVn+g==
+  dependencies:
+    lodash "~4.17.11"
+    urijs "^1.19.1"
 
 "@ovh-ux/ng-ovh-proxy-request@^1.0.0-beta.0":
   version "1.0.0-beta.0"

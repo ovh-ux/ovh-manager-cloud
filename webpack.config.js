@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 const _ = require('lodash');
+const webpack = require('webpack'); // eslint-disable-line
 const webpackConfig = require('@ovh-ux/manager-webpack-config');
 
 const folder = './client/app';
@@ -67,5 +68,10 @@ module.exports = (env = {}) => {
         jquery: path.resolve(__dirname, 'node_modules/jquery'),
       },
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        __WEBPACK_REGION__: `'${env.region.toUpperCase()}'`,
+      }),
+    ],
   });
 };

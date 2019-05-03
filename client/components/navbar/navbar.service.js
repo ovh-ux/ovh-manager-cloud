@@ -16,7 +16,7 @@ class ManagerNavbarService {
     REDIRECT_URLS,
     SessionService,
     ssoAuthentication,
-    TARGET,
+    coreConfig,
     TranslateService,
     URLS,
     asyncLoader,
@@ -45,7 +45,7 @@ class ManagerNavbarService {
     };
     this.sessionService = SessionService;
     this.ssoAuthentication = ssoAuthentication;
-    this.TARGET = TARGET;
+    this.coreConfig = coreConfig;
     this.translateService = TranslateService;
     this.URLS = URLS;
     this.asyncLoader = asyncLoader;
@@ -374,7 +374,7 @@ class ManagerNavbarService {
           name: 'assistance::helpline',
           type: 'action',
         }),
-        mustBeKept: this.TARGET !== 'US',
+        mustBeKept: this.coreConfig.getRegion() !== 'US',
       },
       {
         title: `${this.$translate.instant('common_menu_support_chatbot')} <sup class="oui-color-california">OVH Chat</sup>`,
@@ -473,11 +473,11 @@ class ManagerNavbarService {
               title: this.$translate.instant('common_menu_account_security'),
               url: this.REDIRECT_URLS.userSecurity,
             },
-            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+            (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && {
               title: this.$translate.instant('common_menu_account_emails'),
               url: this.REDIRECT_URLS.userEmails,
             },
-            (this.TARGET === 'EU') && {
+            (this.coreConfig.getRegion() === 'EU') && {
               title: this.$translate.instant('common_menu_account_subscriptions'),
               url: this.REDIRECT_URLS.userSubscriptions,
             }, {
@@ -505,7 +505,7 @@ class ManagerNavbarService {
           },
 
           // Services
-          (this.TARGET === 'EU' || this.TARGET === 'CA') && (!currentUser.isEnterprise ? {
+          (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && (!currentUser.isEnterprise ? {
             name: 'user.services',
             title: this.$translate.instant('common_menu_renew'),
             url: this.REDIRECT_URLS.services,
@@ -532,18 +532,18 @@ class ManagerNavbarService {
               title: this.$translate.instant('common_menu_means_mean'),
               url: this.REDIRECT_URLS.paymentMeans,
             },
-            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+            (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && {
               title: this.$translate.instant('common_menu_means_ovhaccount'),
               url: this.REDIRECT_URLS.ovhAccount,
             },
-            (this.TARGET === 'EU' || this.TARGET === 'CA') && {
+            (this.coreConfig.getRegion() === 'EU' || this.coreConfig.getRegion() === 'CA') && {
               title: this.$translate.instant('common_menu_means_vouchers'),
               url: this.REDIRECT_URLS.billingVouchers,
             }, {
               title: this.$translate.instant('common_menu_means_refunds'),
               url: this.REDIRECT_URLS.billingRefunds,
             },
-            (this.TARGET === 'EU') && {
+            (this.coreConfig.getRegion() === 'EU') && {
               title: this.$translate.instant('common_menu_means_fidelity'),
               url: this.REDIRECT_URLS.billingFidelity,
             }, {
@@ -553,14 +553,14 @@ class ManagerNavbarService {
           },
 
           // Orders
-          (!currentUser.isEnterprise && this.TARGET === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
+          (!currentUser.isEnterprise && this.coreConfig.getRegion() === 'EU' && currentUser.ovhSubsidiary === 'FR') && {
             title: this.$translate.instant('common_menu_orders'),
             url: this.REDIRECT_URLS.orders,
             click: () => this.trackUserMenuSection('my_orders', 'orders'),
           },
 
           // Contacts
-          (this.TARGET === 'EU') && {
+          (this.coreConfig.getRegion() === 'EU') && {
             title: this.$translate.instant('common_menu_contacts'),
             url: this.REDIRECT_URLS.contacts,
             click: () => this.trackUserMenuSection('my_contacts', 'contacts'),
@@ -606,7 +606,7 @@ class ManagerNavbarService {
   }
 
   getManagersNames() {
-    switch (this.TARGET) {
+    switch (this.coreConfig.getRegion()) {
       case 'EU': {
         if (this.locale === 'FR') {
           return ['portal', 'web', 'dedicated', 'cloud', 'telecom', 'gamma', 'partners'];

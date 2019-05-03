@@ -5,7 +5,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
     $q, $stateParams, $translate, REDIRECT_URLS,
     OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CucCloudMessage, OtrsPopupService,
     CucRegionService, CucControllerHelper,
-    CucServiceHelper, OvhApiCloudProjectRegion, TARGET,
+    CucServiceHelper, OvhApiCloudProjectRegion, coreConfig,
   ) {
     // ---------VARIABLE DECLARATION---------
 
@@ -32,7 +32,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
 
     self.regionService = CucRegionService;
 
-    this.TARGET = TARGET;
+    this.region = coreConfig.getRegion();
 
     // ---------SUPPORT---------
 
@@ -57,7 +57,7 @@ angular.module('managerApp').controller('CloudProjectComputeQuotaCtrl',
     // ---------UNLEASH---------
 
     function initPaymentMethods() {
-      if (self.TARGET !== 'US') {
+      if (self.region !== 'US') {
         return OvhApiMe.PaymentMean().v6().getDefaultPaymentMean();
       }
 
