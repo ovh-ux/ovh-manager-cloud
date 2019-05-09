@@ -56,7 +56,6 @@
  "common_menu_renew_agreements": "Mijn contracten",
  "common_menu_orders": "Mijn bestellingen",
  "common_menu_contacts": "Mijn contacten",
- "common_menu_list_ticket": "Mijn support-verzoeken",
  "common_menu_language": "Taal",
  "common_menu_account": "Mijn account",
  "common_menu_account_infos": "Mijn profiel",
@@ -81,6 +80,7 @@
  "common_menu_support_new_ticket": "Maak een aanvraag ter assistentie aan",
  "common_menu_support_list_ticket": "Overzicht van mijn aanvragen ter assistentie",
  "common_menu_support_ask_for_assistance": "Ondersteuningsverzoek",
+ "common_menu_support_chatbot": "Gesprek starten",
  "common_menu_support_email_history": "E-mail geschiedenis",
  "common_menu_support_telephony_contact": "Telefonische assistentie",
  "common_menu_support_userAccount_1": "Hallo {{username}}",
@@ -98,6 +98,7 @@
  "common_modify": "Wijzigen",
  "common_select": "Selecteren",
  "common_add": "Toevoegen",
+ "common_update": "Update",
  "common_save": "Backup",
  "common_delete": "Verwijderen",
  "common_reinstall": "Herinstalleren",
@@ -213,7 +214,9 @@
  "common_duration_upto": "Tot {{duration}}",
  "common_duration_uptofirstdaynextmonth": "Tot de 1e van de volgende maand",
  "common_duration_engage": "Abonneren voor {{duration}}",
+ "common_price_ht": "Prijs excl. BTW",
  "common_price_ht_label": "{{price}} excl. btw",
+ "common_price_ttc": "Prijs incl. btw:",
  "common_price_ttc_label": "{{price}} incl. btw",
  "common_price_free": "Inbegrepen",
  "common_price_label_yearly": "/jaar",
@@ -626,5 +629,6 @@
  "guide_project_6": "Start een eerste cloudserver binnen 3 minuten",
  "guide_project_7": "Bereid de omgeving voor op het gebruik van de OpenStack API",
  "guide_project_8": "Maak en configureer een extra schijf op een instance",
- "guide_project_all": "Bekijk alle Public Cloud-handleidingen"
+ "guide_project_all": "Bekijk alle Public Cloud-handleidingen",
+ "guide_project_apac_trafic": "Hoe wordt het verkeer van mijn gehoste instanties in Sydney en Singapore gefactureerd?"
 }
