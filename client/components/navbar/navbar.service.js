@@ -412,7 +412,7 @@ class ManagerNavbarService {
     const currentLanguage = _.find(
       this.LANGUAGES.available,
       {
-        key: this.translateService.getUserLocale(),
+        key: this.$translate.use(),
       },
     );
 
