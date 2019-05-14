@@ -34,7 +34,7 @@ angular.module('managerApp').controller('KubernetesNodesAddCtrl', class Kubernet
 
   getPublicCloudProject() {
     return this.Kubernetes.getAssociatedPublicCloudProjects(this.serviceName)
-      .then((projects) => { this.project = _.first(projects); });
+      .then((project) => { this.project = project; });
   }
 
   getProjectQuota() {
