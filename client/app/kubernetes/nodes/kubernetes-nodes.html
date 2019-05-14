@@ -40,8 +40,7 @@
                 <oui-action-menu-item data-text="{{:: 'common_delete' | translate }}" data-on-click="$ctrl.confirmNodeDeletion($row.id)"></oui-action-menu-item>
             </oui-action-menu>
             <extra-top>
-                <oui-button data-ng-if="$ctrl.project"
-                            data-aria-label="{{:: 'kube_nodes_add' | translate }}"
+                <oui-button data-aria-label="{{:: 'kube_nodes_add' | translate }}"
                             data-text="{{:: 'kube_nodes_add' | translate }}"
                             data-on-click="$ctrl.openAddNodeForm($ctrl.project.project_id)">
                 </oui-button>

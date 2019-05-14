@@ -1,3 +1,17 @@
+# [7.25.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.24.0...v7.25.0) (2019-04-25)
+
+
+### Bug Fixes
+
+* **components.navbar:** remove duplicate ticket entry ([#1433](https://github.com/ovh-ux/ovh-manager-cloud/issues/1433)) ([ad548e5](https://github.com/ovh-ux/ovh-manager-cloud/commit/ad548e5))
+
+
+### Features
+
+* **cloud.project.infrastructure:** add dataiku application ([#1434](https://github.com/ovh-ux/ovh-manager-cloud/issues/1434)) ([c4d3612](https://github.com/ovh-ux/ovh-manager-cloud/commit/c4d3612))
+
+
+
 # [7.24.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.23.0...v7.24.0) (2019-04-23)
 
 
