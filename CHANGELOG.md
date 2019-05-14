@@ -1,3 +1,12 @@
+## [7.25.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.0...v7.25.1) (2019-05-14)
+
+
+### Bug Fixes
+
+* **kubernetes.nodes:** retrieve correctly the associated projects ([845b3bf](https://github.com/ovh-ux/ovh-manager-cloud/commit/845b3bf))
+
+
+
 # [7.25.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.24.0...v7.25.0) (2019-04-25)
 
 
