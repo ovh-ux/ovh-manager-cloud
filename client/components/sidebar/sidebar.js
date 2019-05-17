@@ -1,15 +1,19 @@
-angular.module('managerApp').run(($translate, asyncLoader) => {
-  asyncLoader.addTranslations(
-    import(`ovh-angular-sidebar-menu/src/ovh-angular-sidebar-menu/translations/Messages_${$translate.use()}.xml`)
-      .catch(() => import(`ovh-angular-sidebar-menu/src/ovh-angular-sidebar-menu/translations/Messages_${$translate.fallbackLanguage()}.xml`))
-      .then(x => x.default),
-  );
-  asyncLoader.addTranslations(import(`./translations/Messages_${$translate.use()}.json`).then(x => x.default));
-  $translate.refresh();
-});
+import { PUBLIC_CLOUD_URL } from './sidebar.constants';
+
 angular.module('managerApp')
-  .run(($q, $translate, Toast, SidebarMenu, SidebarOrderService, SidebarContentService,
-    CucProductsService, SessionService) => {
+  .run(/* @ngTranslationsInject:json ./translations */)
+  .run((
+    $q,
+    $translate,
+    atInternet,
+    coreConfig,
+    Toast,
+    SidebarMenu,
+    SidebarOrderService,
+    SidebarContentService,
+    CucProductsService,
+    SessionService,
+  ) => {
     const promise = $q.all({
       user: SessionService.getUser(),
       products: CucProductsService.getProducts(),
@@ -23,10 +27,20 @@ angular.module('managerApp')
     SidebarMenu.loadDeferred.promise
       .then((data) => {
         SidebarOrderService.buildSidebarMenuActions(data.user.ovhSubsidiary);
-        return SidebarContentService.buildSidebarContent(
+        SidebarContentService.buildSidebarContent(
           data.products.results,
           data.user.ovhSubsidiary,
         );
+        return SidebarMenu.addMenuItem({
+          category: 'cloud-sidebar-orphan-link',
+          title: $translate.instant('cloud_sidebar_public_cloud'),
+          url: PUBLIC_CLOUD_URL[coreConfig.getRegion()],
+          target: '_self',
+          onClick: () => atInternet.trackClick({
+            id: 'cloud_sidebar_go-to-public-cloud',
+            type: 'action',
+          }),
+        });
       })
       .then(() => {
         // After sidebar elements are all loaded, check if there is an element for the current state
