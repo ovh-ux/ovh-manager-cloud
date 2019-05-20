@@ -214,7 +214,7 @@
  "common_duration_upto": "Bis zum {{duration}}",
  "common_duration_uptofirstdaynextmonth": "Bis zum ersten Tag des nächsten Monats",
  "common_duration_engage": "Abonnieren für {{duration}}",
- "common_price_ht": "Preis (netto)",
+ "common_price_ht": "Preis zzgl. MwSt.",
  "common_price_ht_label": "{{price}} zzgl. MwSt.",
  "common_price_ttc": "Preis inkl. MwSt.",
  "common_price_ttc_label": "{{price}} inkl. MwSt.",
