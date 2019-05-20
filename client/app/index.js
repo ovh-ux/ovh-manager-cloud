@@ -42,8 +42,6 @@ import 'ng-slide-down';
 import 'script-loader!uri.js/src/URI.min.js';
 import 'script-loader!validator-js/validator.js';
 import 'ovh-jquery-ui-draggable-ng';
-import 'ovh-angular-responsive-popover';
-import 'ovh-angular-actions-menu';
 import 'script-loader!ovh-angular-sidebar-menu/dist/ovh-angular-sidebar-menu.min.js';
 import 'script-loader!ovh-angular-jquery-ui-droppable/dist/ovh-angular-jquery-ui-droppable.min.js';
 import 'script-loader!jsplumb/dist/js/jquery.jsPlumb-1.7.4-min.js';

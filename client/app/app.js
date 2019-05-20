@@ -15,7 +15,9 @@ import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
+import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
@@ -44,6 +46,7 @@ angular.module('managerApp', [
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
   ngOvhSwimmingPoll,
+  ngOvhActionsMenu,
   ngOvhCloudUniverseComponents,
   ngOvhUserPref,
   'ovh-api-services',
@@ -62,8 +65,6 @@ angular.module('managerApp', [
   'mgcrea.ngStrap.helpers.dimensions',
   'mgcrea.ngStrap.core',
   'ovh-angular-responsive-page-switcher',
-  'ovh-angular-responsive-popover',
-  'ovh-angular-sidebar-menu',
 
   'ng-slide-down',
   'ovh-angular-jsplumb',
@@ -82,6 +83,7 @@ angular.module('managerApp', [
 
   ngTranslateAsyncLoader,
   cloudUniverseComponents,
+  ovhManagerServerSidebar,
 ])
   .config(($urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
