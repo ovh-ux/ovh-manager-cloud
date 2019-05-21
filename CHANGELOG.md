@@ -1,3 +1,13 @@
+## [7.25.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.1...v7.25.2) (2019-05-21)
+
+
+### Features
+
+* **sidebar:** add link to new manager ([c8f296b](https://github.com/ovh-ux/ovh-manager-cloud/commit/c8f296b))
+* **sidebar:** add translations for redirection to public-cloud ([ad2b301](https://github.com/ovh-ux/ovh-manager-cloud/commit/ad2b301))
+
+
+
 ## [7.25.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.0...v7.25.1) (2019-05-14)
 
 
