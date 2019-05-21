@@ -997,10 +997,12 @@
     lodash "^4.17.11"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@git+https://github.com/ovh-ux/manager.git#split-manager-server-sidebar/feat-server-sidebar":
-  version "0.0.0"
-  resolved "git+https://github.com/ovh-ux/manager.git#4263a993b7507779ac266c2b58fa72021d9fe8e5"
+"@ovh-ux/manager-server-sidebar@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.1.0.tgz#2975a25d24b67ae3be05a091ae0b89569ea6ee0c"
+  integrity sha512-cjKDbnFEmQs6oOiYDpRBcln9l8fS0e31JXtXKbqfcJkrNuJ8bB9MYpxSbHLDf6u+MMYPVu2oZ7oqqw+bVOrH7g==
   dependencies:
+    "@ovh-ux/ng-ovh-sidebar-menu" "^8.0.1"
     jsurl "^0.1.5"
     lodash "^4.17.11"
 
