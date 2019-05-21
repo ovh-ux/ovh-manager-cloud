@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "99.0.0",
+  "version": "99.0.1",
   "private": true,
   "description": "OVH Cloud control panel",
   "keywords": [
