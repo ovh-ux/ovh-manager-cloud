@@ -989,6 +989,14 @@
     "@ovh-ux/ng-translate-async-loader" "^2.0.0"
     lodash "^4.17.11"
 
+"@ovh-ux/manager-navbar@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-0.3.3.tgz#0c1badc7001e571ee378e5bcb35632907aeb4225"
+  integrity sha512-aLRbFUuy5m6T009wEUqA6sXmNOL3+yRBK7gxlEfQw3PGUe5sPOnOXJiISnRinm9+Ned+LLjVxKFSdBd+q/diBA==
+  dependencies:
+    lodash "^4.17.11"
+    moment "^2.24.0"
+
 "@ovh-ux/manager-server-sidebar@git+https://github.com/ovh-ux/manager.git#split-manager-server-sidebar/feat-server-sidebar":
   version "0.0.0"
   resolved "git+https://github.com/ovh-ux/manager.git#dc927d7085af9d794eb6521a7551e29a94a7eb52"
@@ -1079,9 +1087,9 @@
     lodash "^4.17.11"
 
 "@ovh-ux/ng-ovh-chatbot@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-chatbot/-/ng-ovh-chatbot-2.0.0.tgz#9894c2e6baab6f244ecc3722c1a9e469c3f26d28"
-  integrity sha512-UdV33Pg3DfpNv5BUQ8zIV32YvF6Atbk0U9QV91wkFz0OceRb3A9i3JB95PtnCKqRrqpbKlq8dYwWm4BwT16ZpQ==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-chatbot/-/ng-ovh-chatbot-2.0.1.tgz#94e91326c1e17bcab164e04a1b08ab02f36f9ab8"
+  integrity sha512-JBrXtM/qZzMXEiPB72TpVaG7yAOJx+9oaf73eOwav1X7VfEZrGxwWMXyW+yLnChkvjfoW0ZAejudBL0Z9FoP5g==
   dependencies:
     lodash "^4.17.11"
 
@@ -1123,6 +1131,14 @@
   dependencies:
     lodash "~4.17.11"
     urijs "^1.19.1"
+
+"@ovh-ux/ng-ovh-otrs@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.0.2.tgz#1406d17e64a920e6cf5be2950ba0acc1aaa364a1"
+  integrity sha512-2e9TyXilq3PX+V9vgzjx5m6Q/JAE3MyFACfulFFiaqJRWtci2QmeZbTdPo1jqlYH1op79j0qTVzt0KZe3CG1pQ==
+  dependencies:
+    draggable "^4.2.0"
+    lodash "^4.17.11"
 
 "@ovh-ux/ng-ovh-proxy-request@^1.0.0-beta.0":
   version "1.0.0-beta.0"
@@ -3679,6 +3695,11 @@ dot-prop@^4.1.0, dot-prop@^4.1.1:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+draggable@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/draggable/-/draggable-4.2.0.tgz#149c0ca176df6d8b512048c8e451f499fc047b9a"
+  integrity sha1-FJwMoXbfbYtRIEjI5FH0mfwEe5o=
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -7913,11 +7934,6 @@ ovh-angular-list-view@ovh-ux/ovh-angular-list-view#^0.1.5:
   dependencies:
     angular-mock "^1.0.0"
     less-plugin-remcalc "^0.0.1"
-
-ovh-angular-otrs@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/ovh-angular-otrs/-/ovh-angular-otrs-6.3.0.tgz#3ad3c9626be1917b5f0f557375de3757ad9b08ba"
-  integrity sha512-sXxQUlsC0ucl9UVcnSB9ZQsqTnKmW/zQZM+VH0gNpnJo9v3Klk4lHN3n0Wnd62Ic8Ke3Vjgk74Jk2THjQOHfcg==
 
 ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0:
   version "5.0.0"

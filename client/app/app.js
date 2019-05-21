@@ -9,6 +9,7 @@ import ngOvhChatbot from '@ovh-ux/ng-ovh-chatbot';
 import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
+import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
@@ -17,6 +18,7 @@ import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
@@ -42,6 +44,7 @@ angular.module('managerApp', [
   ngOvhCheckboxTable,
   ngOvhDocUrl,
   ngOvhFormFlat,
+  ngOvhOtrs,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
@@ -69,7 +72,6 @@ angular.module('managerApp', [
   'ng-slide-down',
   'ovh-angular-jsplumb',
   'tmh.dynamicLocale',
-  'ovh-angular-otrs',
   'ovh-api-services',
 
   'ovh-jquery-ui-draggable-ng',
@@ -83,6 +85,7 @@ angular.module('managerApp', [
 
   ngTranslateAsyncLoader,
   cloudUniverseComponents,
+  ovhManagerNavbar,
   ovhManagerServerSidebar,
 ])
   .config(($urlRouterProvider, $locationProvider) => {
