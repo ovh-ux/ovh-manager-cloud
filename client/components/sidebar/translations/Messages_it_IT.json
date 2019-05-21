@@ -53,5 +53,6 @@
  "cloud_sidebar_actions_menu_clouddb": "Cloud DB",
  "cloud_sidebar_actions_menu_clouddesktop": "Cloud Desktop",
  "cloud_sidebar_actions_menu_kube": "Kubernetes®",
- "sidebar_menu_order_actions": "Ordina"
+ "sidebar_menu_order_actions": "Ordina",
+ "cloud_sidebar_public_cloud": "Try the new control panel"
 }
