@@ -1,3 +1,37 @@
+## [7.25.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.1...v7.25.3) (2019-05-21)
+
+
+### Bug Fixes
+
+* **components.navbar:** display the right label from language menu ([#1442](https://github.com/ovh-ux/ovh-manager-cloud/issues/1442)) ([1933604](https://github.com/ovh-ux/ovh-manager-cloud/commit/1933604))
+* **i18n:** add missing translations ([c97bd49](https://github.com/ovh-ux/ovh-manager-cloud/commit/c97bd49))
+* **i18n:** add missing translations ([3c07575](https://github.com/ovh-ux/ovh-manager-cloud/commit/3c07575))
+* **i18n:** add missing translations ([f90265e](https://github.com/ovh-ux/ovh-manager-cloud/commit/f90265e))
+* **i18n:** add missing translations ([52bc12e](https://github.com/ovh-ux/ovh-manager-cloud/commit/52bc12e))
+* **i18n:** add missing translations ([e383073](https://github.com/ovh-ux/ovh-manager-cloud/commit/e383073))
+* **i18n:** add missing translations ([c5f4a4e](https://github.com/ovh-ux/ovh-manager-cloud/commit/c5f4a4e))
+* **i18n:** add missing translations ([21d2739](https://github.com/ovh-ux/ovh-manager-cloud/commit/21d2739))
+* **i18n:** add missing translations ([d0456c1](https://github.com/ovh-ux/ovh-manager-cloud/commit/d0456c1))
+* **i18n:** add missing translations ([bca9b4b](https://github.com/ovh-ux/ovh-manager-cloud/commit/bca9b4b))
+* **i18n:** add missing translations ([49bfbb7](https://github.com/ovh-ux/ovh-manager-cloud/commit/49bfbb7))
+* **i18n:** add missing translations ([bcd97b8](https://github.com/ovh-ux/ovh-manager-cloud/commit/bcd97b8))
+* **i18n:** add missing translations ([8c2958b](https://github.com/ovh-ux/ovh-manager-cloud/commit/8c2958b))
+* **i18n:** add missing translations ([3abcdbb](https://github.com/ovh-ux/ovh-manager-cloud/commit/3abcdbb))
+* **i18n:** add missing translations ([7de24fa](https://github.com/ovh-ux/ovh-manager-cloud/commit/7de24fa))
+* **i18n:** add missing translations ([87a5247](https://github.com/ovh-ux/ovh-manager-cloud/commit/87a5247))
+* **i18n:** add missing translations ([31be5cb](https://github.com/ovh-ux/ovh-manager-cloud/commit/31be5cb))
+* **i18n:** add missing translations ([46bcd11](https://github.com/ovh-ux/ovh-manager-cloud/commit/46bcd11))
+* bump @ovh-ux/manager-server-sidebar ([37f0d84](https://github.com/ovh-ux/ovh-manager-cloud/commit/37f0d84))
+* **vps.snapshot.order.legacy:** add missing translations ([65c2e57](https://github.com/ovh-ux/ovh-manager-cloud/commit/65c2e57))
+
+
+### Features
+
+* **vps.upgrade:** wip: use agora to upgrade VPS ([#1294](https://github.com/ovh-ux/ovh-manager-cloud/issues/1294)) ([e621200](https://github.com/ovh-ux/ovh-manager-cloud/commit/e621200))
+* use server-sidebar ([#1445](https://github.com/ovh-ux/ovh-manager-cloud/issues/1445)) ([26bca3c](https://github.com/ovh-ux/ovh-manager-cloud/commit/26bca3c))
+
+
+
 ## [7.25.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.1...v7.25.2) (2019-05-21)
 
 
