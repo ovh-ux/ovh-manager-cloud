@@ -1,14 +1,14 @@
 export default class VpsUpgradeLegacyCtrl {
   /* @ngInject */
-  constructor($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation,
-    ControllerHelper, VpsService) {
+  constructor($filter, $stateParams, $translate, $q, $window, CucCloudMessage, CucCloudNavigation,
+    CucControllerHelper, VpsService) {
     this.$filter = $filter;
     this.$translate = $translate;
     this.$q = $q;
     this.$window = $window;
-    this.CloudMessage = CloudMessage;
-    this.CloudNavigation = CloudNavigation;
-    this.ControllerHelper = ControllerHelper;
+    this.CucCloudMessage = CucCloudMessage;
+    this.CucCloudNavigation = CucCloudNavigation;
+    this.CucControllerHelper = CucControllerHelper;
     this.serviceName = $stateParams.serviceName;
     this.Vps = VpsService;
 
@@ -27,7 +27,7 @@ export default class VpsUpgradeLegacyCtrl {
   }
 
   gotoPreviousState() {
-    return this.CloudNavigation.getPreviousState().go();
+    return this.CucCloudNavigation.getPreviousState().go();
   }
 
   getCurrentModel() {
@@ -39,7 +39,7 @@ export default class VpsUpgradeLegacyCtrl {
       const title = this.$translate.instant('vps_warning_title');
       const message = this.$translate.instant('vps_configuration_upgradevps_step1_warning');
 
-      this.ControllerHelper.modal.showWarningModal({ title, message });
+      this.CucControllerHelper.modal.showWarningModal({ title, message });
       throw new Error(message);
     } else {
       this.completed.step1 = true;
@@ -56,9 +56,9 @@ export default class VpsUpgradeLegacyCtrl {
       }).catch((err) => {
         this.$q.reject(err);
         if (err.message) {
-          this.CloudMessage.error(err.message);
+          this.CucCloudMessage.error(err.message);
         } else {
-          this.CloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
+          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
         }
         this.gotoPreviousState();
       }).finally(() => {
@@ -95,9 +95,9 @@ export default class VpsUpgradeLegacyCtrl {
       .catch((err) => {
         this.$q.reject(err);
         if (err.message) {
-          this.CloudMessage.error(err.message);
+          this.CucCloudMessage.error(err.message);
         } else {
-          this.CloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
+          this.CucCloudMessage.error(this.$translate.instant('vps_configuration_upgradevps_fail'));
         }
       })
       .finally(() => {
