@@ -9,11 +9,11 @@
  "vps_order_additional_disk_totalHT": "Cena netto:",
  "vps_order_additional_disk_totalTTC": "Cena brutto:",
  "vps_order_additional_disk_option": "Opcja:",
- "vps_order_additional_disk_offer_description": "Opcja dodatkowy dysk - {{ size }} do {{ date }}",
+ "vps_order_additional_disk_offer_description": "Opcja dodatkowego dysku - {{ size }} do {{ date }}",
  "vps_order_additional_disk_price": "Cena:",
  "vps_order_additional_disk_step2_title": "Podsumowanie",
  "vps_order_additional_disk_fail": "Wystąpił błąd podczas zamawiania dodatkowego dysku.",
  "vps_order_additional_disk_load_error": "Wystąpił błąd podczas ładowania dostępnych dysków dodatkowych.",
  "vps_order_additional_disk_explain": "Po kliknięciu przycisku „Zamów” otworzy się nowa zakładka i zostaniesz przekierowany do interfejsu płatności.",
- "vps_order_additional_disk_success": "Aby sfinalizować zamówienie, postępuj zgodnie z instrukcjami opisanymi w otwartej zakładce. Jeśli nie otworzy się żadna nowa zakładka, kliknij <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">ce lien</a>."
+ "vps_order_additional_disk_success": "Aby sfinalizować zamówienie, postępuj zgodnie z instrukcjami opisanymi w otwartej zakładce. Jeśli nie otworzy się żadna nowa zakładka, kliknij <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\">tutaj</a>."
 }
