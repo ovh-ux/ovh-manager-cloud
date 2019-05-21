@@ -1,3 +1,13 @@
+## [7.25.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.3...v7.25.4) (2019-05-21)
+
+
+### Bug Fixes
+
+* CA region use now right link ([d7c77e0](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7c77e0))
+* **vps:** fix upgrading ([616bb27](https://github.com/ovh-ux/ovh-manager-cloud/commit/616bb27))
+
+
+
 ## [7.25.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.1...v7.25.3) (2019-05-21)
 
 
