@@ -27,8 +27,6 @@
 @import 'flag-icon-css/less/flag-icon.less';
 @import 'ovh-angular-responsive-page-switcher/dist/less/ovh-angular-responsive-page-switcher.less';
 
-@import "ovh-angular-otrs/dist/ovh-angular-otrs.less";
-
 // Overide Bootstrap Params
 @screen-xs-max: @v6-max-with;
 @screen-sm-min: @v6-min-with;
@@ -122,13 +120,6 @@
  */
 html {
   height: 100%;
-}
-
-/* Move down content because we have a fixed navbar that is 50px tall */
-@media (min-width: @v6-min-with) {
-  body {
-    margin-top: @TopNavHeight;
-  }
 }
 
 .browsehappy {
@@ -392,7 +383,6 @@ html {
 @import "../components/cloud-ui/table/table.less";
 @import "cloud/components/region.less";
 @import "../components/contracts/contracts.less";
-@import "../components/navbar/navbar.less";
 @import "../components/manager-preload/manager-preload.less";
 @import "../components/ovh-ui/button/button.less";
 @import "../components/ovh-ui/constants.less";

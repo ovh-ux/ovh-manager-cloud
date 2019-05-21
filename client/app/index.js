@@ -58,7 +58,6 @@ import 'ovh-angular-pagination-front';
 import 'ovh-angular-responsive-page-switcher';
 import 'ovh-angular-responsive-tabs';
 import 'ovh-api-services';
-import 'ovh-angular-otrs';
 import 'script-loader!chart.js/dist/Chart.js';
 import 'script-loader!angular-chart.js/dist/angular-chart.js';
 import 'ovh-angular-list-view';
