@@ -9,15 +9,15 @@
       </head>
       <body
         data-ng-app="managerApp"
-        data-ng-controller="CloudMainController as CloudMainController"
+        data-ng-controller="CloudMainController as $ctrl"
         data-ng-cloak
         class="ng-cloak h-100"
-        data-ng-class="{ 'global-message-top-container': CloudMainController.expiringProject }"
+        data-ng-class="{ 'global-message-top-container': $ctrl.expiringProject }"
         style="overflow: hidden;">
 
         <div class="h-100 d-flex flex-column overflow-hidden">
             <div class="global-message-top"
-                data-ng-if="CloudMainController.expiringProject"
+                data-ng-if="$ctrl.expiringProject"
                 data-ng-include="'app/common/cloud-project-voucher-alert.html'">
             </div>
 
@@ -25,7 +25,7 @@
             <div class="skipnav">
                 <a class="oui-button oui-button_link" href=""
                     data-translate="common_skip_to_main_content"
-                    data-ng-click="CloudMainController.scrollTo('maincontent')">
+                    data-ng-click="$ctrl.scrollTo('maincontent')">
                 </a>
             </div>
             <!-- /Skip to main content -->
@@ -41,11 +41,22 @@
                 data-universe-click="$ctrl.openSidebar()">
             </ovh-manager-navbar>
 
+            <button
+                style="position: absolute; top: 0; left: 0; width: 48px; height: 44px; background-color: transparent; border: 0;"
+                data-ng-if="$ctrl.sidebarIsOpen"
+                data-ng-click="$ctrl.closeSidebar()">
+            </button>
+
             <div class="container-fluid h-100 w-100" style="overflow: auto">
-                <div class="row" style="position: relative;">
+                <div class="row">
 
                     <!-- SIDE MENU -->
-                    <ovh-manager-server-sidebar universe="'CLOUD'" class="col-md-3 col-lg-2"></ovh-manager-server-sidebar>
+                    <ovh-manager-server-sidebar
+                        universe="'CLOUD'"
+                        data-on-click="$ctrl.closeSidebar()"
+                        data-is-open="$ctrl.sidebarIsOpen"
+                        class="col-md-3 col-lg-2 px-0">
+                    </ovh-manager-server-sidebar>
 
                     <!-- CONTENT -->
                     <div id="content" class="col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2">
@@ -65,7 +76,7 @@
         </div>
 
         <!-- PRE LOADER -->
-        <div id="managerPreload" class="d-flex text-center" data-ng-class="!!navbar && managerPreloadHide">
+        <div id="managerPreload" class="d-flex text-center" data-ng-class="managerPreloadHide">
             <div class="m-auto">
                 <p class="lead mb-3" data-translate="preload_welcome"></p>
                 <hr class="my-0" />

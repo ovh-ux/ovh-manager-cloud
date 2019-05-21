@@ -999,7 +999,7 @@
 
 "@ovh-ux/manager-server-sidebar@git+https://github.com/ovh-ux/manager.git#split-manager-server-sidebar/feat-server-sidebar":
   version "0.0.0"
-  resolved "git+https://github.com/ovh-ux/manager.git#dc927d7085af9d794eb6521a7551e29a94a7eb52"
+  resolved "git+https://github.com/ovh-ux/manager.git#4263a993b7507779ac266c2b58fa72021d9fe8e5"
   dependencies:
     jsurl "^0.1.5"
     lodash "^4.17.11"
@@ -8007,10 +8007,10 @@ ovh-ui-kit@^2.24.2:
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
-ovh-ui-kit@~2.29.1:
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.29.1.tgz#63e4fa2b769d98d9c20282a4f60d01eccc5282f2"
-  integrity sha512-hdC9cdKju6iNOLCbRMK9dsU9efm1VVUKcE1o3SqxK61WiGl0KfJW2pHYenAGTHZ2ohHY2XE3Nak8i2QOeGIgeA==
+ovh-ui-kit@~2.32.0:
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.32.0.tgz#1e003eec0cd2fe5765057b733f6e2640927e4c86"
+  integrity sha512-QGLGbl1UTViyOVzGK+JFdJIi0nZbz0AuR2QTP72bKzFzWBqsQFQgMpg6Njbn/jYIfJlJogMJygWiGnZygm9p7g==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
