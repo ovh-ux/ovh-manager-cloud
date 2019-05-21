@@ -1,7 +1,7 @@
 (() => {
   class CloudOfferCtrl {
     constructor($q, $stateParams, $translate, CucFeatureAvailabilityService, CloudProjectAdd,
-      CucCloudMessage, OvhApiMe, TARGET, URLS) {
+      CucCloudMessage, OvhApiMe, coreConfig, URLS) {
       this.$q = $q;
       this.$stateParams = $stateParams;
       this.$translate = $translate;
@@ -9,7 +9,7 @@
       this.CucCloudMessage = CucCloudMessage;
       this.User = OvhApiMe;
       this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
-      this.TARGET = TARGET;
+      this.region = coreConfig.getRegion();
       this.URLS = URLS;
 
       this.data = {

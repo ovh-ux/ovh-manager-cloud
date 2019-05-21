@@ -1,0 +1,19 @@
+{
+ "vps_configuration_activate_snapshot_title": "Aktivovat možnost snapshotu",
+ "vps_configuration_activate_snapshot_back_btn_title": "Vraťte se ke správě VPS",
+ "vps_configuration_activate_snapshot_step1_confirmation": "V rámci první platby Vám bude účtována doba přímo úměrná počtu dní do dalšího data obnovení VPS.",
+ "vps_configuration_activate_snapshot_step1_alert": "Toto rozšíření bude fakturováno na základě sazby <strong>{{ amount }} bez DPH/měsíc</strong>",
+ "vps_configuration_activate_snapshot_step1_description": "Možnost snapshot Vám umožní vytvořit bod obnovy, který se uloží pro případ pozdějšího obnovení. ",
+ "vps_configuration_activate_snapshot_step1_instruction": "Pro aktivování této možnosti klikněte na \"Další\".",
+ "vps_configuration_activate_snapshot_step2_id": "K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko \"Dokončit\".",
+ "vps_configuration_activate_snapshot_step2_title": "Shrnutí",
+ "vps_configuration_activate_snapshot_step2_explication": "Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.",
+ "vps_configuration_activate_snapshot_step2_explication2": "Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.",
+ "vps_configuration_activate_snapshot_step2_totalHT": "Cena bez DPH:",
+ "vps_configuration_activate_snapshot_step2_totalTTC": "Cena vč. DPH:",
+ "vps_configuration_activate_snapshot_fail": "Při aktivaci snapshotu došlo k chybě.",
+ "vps_configuration_activate_snapshot_load_error": "Při načítání informací z snapshot došlo k chybě.",
+ "vps_configuration_activate_snapshot_load_error_none": "Žádné kontroly snapshot nebyly nalezeny pro tento VPS.",
+ "vps_configuration_activate_snapshot_order_explain": "Kliknutím na tlačítko Objednávka, Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní.",
+ "vps_configuration_activate_snapshot_success": "Chcete-li dokončit objednávku, postupujte podle pokynů na nové kartě, která byla otevřena. Pokud není otevřena žádná nová karta, klikněte na <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\"> tento odkaz </a>."
+}

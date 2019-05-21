@@ -1,5 +1,4 @@
 angular.module('managerApp')
-  .constant('TARGET', 'US')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     dedicated: 'https://us.ovhcloud.com/manager/dedicated/index.html#/',
@@ -52,10 +51,10 @@ angular.module('managerApp')
     renew: 'https://us.ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}',
     licensePage: 'https://us.ovhcloud.com/manager/dedicated/index.html#/configuration/license/{license}/detail',
   })
-// CA eq to en_CA
-// QC eq to fr_CA
-// WS eq to es_US
-// AU eq to en_CA
+  // CA eq to en_CA
+  // QC eq to fr_CA
+  // WS eq to es_US
+  // AU eq to en_CA
   .constant('URLS', {
     support: {
       US: 'https://us.ovhcloud.com/support/',
@@ -98,6 +97,9 @@ angular.module('managerApp')
       cloud_desktop: {
       },
       dbaas_logs: {
+      },
+      express_base: {
+        US: 'https://us.ovhcloud.com/order/express/#/express/review',
       },
       express_review_base: {
         US: 'https://us.ovhcloud.com/order/express/#/express/review',

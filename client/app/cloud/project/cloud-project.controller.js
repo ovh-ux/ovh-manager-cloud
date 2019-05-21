@@ -1,11 +1,11 @@
 angular.module('managerApp')
   .controller('CloudProjectCtrl', function CloudProjectCtrl($scope, $state, $stateParams, $transitions,
     atInternet, CloudProjectRightService, CucControllerHelper, ovhUserPref, OvhApiCloud,
-    TARGET, TRACKING_CLOUD) {
+    coreConfig, TRACKING_CLOUD) {
     const self = this;
     const serviceName = $stateParams.projectId;
     const onboardingKey = 'SHOW_PCI_ONBOARDING';
-    $scope.TARGET = TARGET;
+    $scope.region = coreConfig.getRegion();
     self.TRACKING_CLOUD = TRACKING_CLOUD;
 
     self.loaders = {

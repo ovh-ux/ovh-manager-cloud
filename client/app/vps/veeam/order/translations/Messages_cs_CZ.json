@@ -1,0 +1,22 @@
+{
+ "vps_configuration_veeam_order_title": "Objednat Automated Backup",
+ "vps_configuration_veeam_order_back_btn_title": "Vrátit se na seznam Automated backups.",
+ "vps_configuration_veeam_order_step1_loading_error": "Při načítání informací došlo k chybě.",
+ "vps_configuration_veeam_order_step1_info": "V rámci první platby Vám bude účtována doba přímo úměrná počtu dní do dalšího data obnovení VPS.",
+ "vps_configuration_veeam_order_step1_info2": "Služba bude následně fakturována na základě měsíční sazby <strong>{{ price }}</strong>",
+ "vps_configuration_veeam_order_step1_question": "Na záložce VPS {{serviceName}} objednejte možnost Automated Backup?",
+ "vps_configuration_veeam_order_step1_id": "K potvrzení Vašeho požadavku musíte souhlasit s podmínkami užití a poté kliknout na tlačítko \"Další\".",
+ "vps_configuration_veeam_order_step1_totalHT": "Cena bez DPH:",
+ "vps_configuration_veeam_order_step1_totalTTC": "Cena vč. DPH:",
+ "vps_configuration_veeam_order_step1_contracts": "Potvrzuji, že jsem se seznámil s následujícím:",
+ "vps_configuration_veeam_order_step2_generation_bc": "Vytváření objednávky...",
+ "vps_configuration_veeam_order_step2_bc": "Objednávka byla úspěšně vytvořena.",
+ "vps_configuration_veeam_order_step2_continue": "K potvrzení objednávky prosím klikněte na tlačítko \"Zaplatit\".",
+ "vps_configuration_veeam_order_step2_explication": "Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.",
+ "vps_configuration_veeam_order_step2_explication2": "Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.",
+ "vps_configuration_veeam_order_fail": "Při objednávání Automated Backup došlo k chybě.",
+ "vps_configuration_veeam_order_success": "Chcete-li dokončit objednávku, postupujte podle pokynů na nové kartě, která byla otevřena. Pokud není otevřena žádná nová karta, klikněte na <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\"> tento odkaz </a>.",
+ "vps_configuration_veeam_order_load_error": "Při načítání informací z  Automated Backup došlo k chybě.",
+ "vps_configuration_veeam_order_load_error_none": "Žádné kontroly Automated Backup nebyly nalezeny pro tento VPS.",
+ "vps_configuration_veeam_order_explain": "Kliknutím na tlačítko Objednávka, Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní."
+}

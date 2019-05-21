@@ -4,9 +4,9 @@
  * @description Manage translations
  */
 class TranslateServiceProvider {
-  constructor(LANGUAGES, TARGET) {
+  constructor(LANGUAGES, coreConfigProvider) {
     this.LANGUAGES = LANGUAGES;
-    this.TARGET = TARGET;
+    this.coreConfigProvider = coreConfigProvider;
     this.localeRegex = /^([a-zA-Z]+)(?:[_-]([a-zA-Z]+))?$/;
     this.availableLangsKeys = _.map(this.LANGUAGES.available, 'key');
     this.currentLanguage = this.LANGUAGES.defaultLoc;
@@ -75,7 +75,7 @@ class TranslateServiceProvider {
 
   preferredCountry(language) {
     if (_.indexOf(['FR', 'EN'], language.toUpperCase() > -1)) {
-      const customLanguage = _.get(this.LANGUAGES.preferred, `${language}.${this.TARGET}`);
+      const customLanguage = _.get(this.LANGUAGES.preferred, `${language}.${this.coreConfigProvider.getRegion()}`);
       if (customLanguage) {
         return customLanguage;
       }

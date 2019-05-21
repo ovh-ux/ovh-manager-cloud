@@ -1,5 +1,4 @@
 angular.module('managerApp')
-  .constant('TARGET', 'EU')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     web: 'https://www.ovh.com/manager/web/index.html#/',
@@ -279,6 +278,23 @@ angular.module('managerApp')
         PT: "https://www.ovh.pt/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
         SN: "https://www.ovh.sn/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
         TN: "https://www.ovh.com/tn/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+      },
+      express_base: {
+        CZ: 'https://www.ovh.cz/order/express/#/new/express/resume',
+        DE: 'https://www.ovh.de/order/express/#/new/express/resume',
+        ES: 'https://www.ovh.es/order/express/#/new/express/resume',
+        FI: 'https://www.ovh-hosting.fi/order/express/#/new/express/resume',
+        FR: 'https://www.ovh.com/fr/order/express/#/new/express/resume',
+        GB: 'https://www.ovh.co.uk/order/express/#/new/express/resume',
+        IE: 'https://www.ovh.ie/order/express/#/new/express/resume',
+        IT: 'https://www.ovh.it/order/express/#/new/express/resume',
+        LT: 'https://www.ovh.lt/order/express/#/new/express/resume',
+        MA: 'https://www.ovh.ma/order/express/#/new/express/resume',
+        NL: 'https://www.ovh.nl/order/express/#/new/express/resume',
+        PL: 'https://www.ovh.pl/order/express/#/new/express/resume',
+        PT: 'https://www.ovh.pt/order/express/#/new/express/resume',
+        SN: 'https://www.ovh.sn/order/express/#/new/express/resume',
+        TN: 'https://www.ovh.com/tn/order/express/#/new/express/resume',
       },
       express_review_base: {
         CZ: 'https://www.ovh.cz/order/express/#/express/review',

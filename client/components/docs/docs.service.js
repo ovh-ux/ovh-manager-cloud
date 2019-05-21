@@ -1,14 +1,14 @@
 class DocsService {
-  constructor($translate, TranslateService, TARGET, DOCS_ALL_GUIDES, DOCS_HOMEPAGE_GUIDES) {
+  constructor($translate, TranslateService, coreConfig, DOCS_ALL_GUIDES, DOCS_HOMEPAGE_GUIDES) {
     this.$translate = $translate;
     this.TranslateService = TranslateService;
-    this.TARGET = TARGET;
+    this.coreConfig = coreConfig;
     this.DOCS_ALL_GUIDES = DOCS_ALL_GUIDES;
     this.DOCS_HOMEPAGE_GUIDES = DOCS_HOMEPAGE_GUIDES;
   }
 
   getDomainOfGuides() {
-    if (this.TARGET === 'US') {
+    if (this.coreConfig.getRegion() === 'US') {
       return 'US';
     }
     const locale = this.TranslateService.getGeneralLanguage();

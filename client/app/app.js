@@ -1,4 +1,7 @@
 import '@uirouter/angularjs';
+
+import { Environment } from '@ovh-ux/manager-config';
+import ovhManagerCore from '@ovh-ux/manager-core';
 import ngAtInternet from '@ovh-ux/ng-at-internet';
 import ngAtInternetUiRouterPlugin from '@ovh-ux/ng-at-internet-ui-router-plugin';
 import ngOvhApiWrappers from '@ovh-ux/ng-ovh-api-wrappers';
@@ -6,15 +9,21 @@ import ngOvhChatbot from '@ovh-ux/ng-ovh-chatbot';
 import ngOvhCheckboxTable from '@ovh-ux/ng-ovh-checkbox-table';
 import ngOvhDocUrl from '@ovh-ux/ng-ovh-doc-url';
 import ngOvhFormFlat from '@ovh-ux/ng-ovh-form-flat';
+import ngOvhOtrs from '@ovh-ux/ng-ovh-otrs';
 import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
+import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+import ovhManagerNavbar from '@ovh-ux/manager-navbar';
+import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
+
+Environment.setRegion(__WEBPACK_REGION__);
 
 angular.module('managerApp', [
   'ngCookies',
@@ -27,7 +36,7 @@ angular.module('managerApp', [
   'ui.router',
   'ui.validate',
   'ui.sortable',
-
+  ovhManagerCore,
   ngAtInternet,
   ngAtInternetUiRouterPlugin,
   ngOvhApiWrappers,
@@ -35,10 +44,12 @@ angular.module('managerApp', [
   ngOvhCheckboxTable,
   ngOvhDocUrl,
   ngOvhFormFlat,
+  ngOvhOtrs,
   ngOvhSsoAuth,
   ngOvhSsoAuthModalPlugin,
   ngOvhStopEvent,
   ngOvhSwimmingPoll,
+  ngOvhActionsMenu,
   ngOvhCloudUniverseComponents,
   ngOvhUserPref,
   'ovh-api-services',
@@ -57,13 +68,10 @@ angular.module('managerApp', [
   'mgcrea.ngStrap.helpers.dimensions',
   'mgcrea.ngStrap.core',
   'ovh-angular-responsive-page-switcher',
-  'ovh-angular-responsive-popover',
-  'ovh-angular-sidebar-menu',
 
   'ng-slide-down',
   'ovh-angular-jsplumb',
   'tmh.dynamicLocale',
-  'ovh-angular-otrs',
   'ovh-api-services',
 
   'ovh-jquery-ui-draggable-ng',
@@ -77,39 +85,9 @@ angular.module('managerApp', [
 
   ngTranslateAsyncLoader,
   cloudUniverseComponents,
+  ovhManagerNavbar,
+  ovhManagerServerSidebar,
 ])
-  .config(($translateProvider, translatePluggableLoaderProvider, tmhDynamicLocaleProvider,
-    TranslateServiceProvider, LANGUAGES) => {
-    // Config current locale
-    TranslateServiceProvider.setUserLocale();
-
-    $translateProvider.useLoader('asyncLoader');
-    $translateProvider.useLoaderCache(true);
-    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
-    $translateProvider.useMissingTranslationHandler('translateMissingTranslationHandler');
-    $translateProvider.preferredLanguage(TranslateServiceProvider.getUserLocale());
-    $translateProvider.use(TranslateServiceProvider.getUserLocale());
-    $translateProvider.fallbackLanguage(LANGUAGES.fallback);
-
-    tmhDynamicLocaleProvider.localeLocationPattern('angular-i18n/angular-locale_{{locale}}.js');
-    tmhDynamicLocaleProvider.defaultLocale(_.kebabCase(TranslateServiceProvider.getUserLocale()));
-  })
-/*= =========  INTERCEPT ERROR IF NO TRANSLATION FOUND  ========== */
-  .factory('translateInterceptor', ($q) => {
-    const regexp = new RegExp(/Messages\w+\.json$/i);
-    return {
-      responseError(rejection) {
-        if (regexp.test(rejection.config.url)) {
-          return {};
-        }
-        return $q.reject(rejection);
-      },
-    };
-  })
-  .factory('translateMissingTranslationHandler', $sanitize => function (translationId) {
-    // Fix security issue: https://github.com/angular-translate/angular-translate/issues/1418
-    return $sanitize(translationId);
-  })
   .config(($urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(false);
@@ -253,7 +231,7 @@ angular.module('managerApp', [
       removeOnSuccessHook();
     });
   })
-  .config(/* @ngInject */(CucConfigProvider, TARGET) => {
-    CucConfigProvider.setRegion(TARGET);
+  .config(/* @ngInject */ (CucConfigProvider, coreConfigProvider) => {
+    CucConfigProvider.setRegion(coreConfigProvider.getRegion());
   })
   .run(/* @ngTranslationsInject:json ./common/translations */);

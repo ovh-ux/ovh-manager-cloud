@@ -2,7 +2,7 @@
     <div class="mt-5 py-5">
         <oui-message data-type="info"
             data-on-dismissed="$ctrl.onNewRegionsAvailableMessageDismiss()"
-            data-ng-if="$ctrl.showNewRegionsAvailableMessage && $ctrl.TARGET !== 'US'">
+            data-ng-if="$ctrl.showNewRegionsAvailableMessage && $ctrl.region !== 'US'">
             {{ ::'homepage_apac_regions_availability_message'| translate }}
         </oui-message>
         <div class="text-center">

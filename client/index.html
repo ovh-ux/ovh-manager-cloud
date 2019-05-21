@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="h-100">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,58 +9,74 @@
       </head>
       <body
         data-ng-app="managerApp"
-        data-ng-controller="CloudMainController as CloudMainController"
+        data-ng-controller="CloudMainController as $ctrl"
         data-ng-cloak
-        class="ng-cloak"
-        data-ng-class="{ 'global-message-top-container': CloudMainController.expiringProject }">
+        class="ng-cloak h-100"
+        data-ng-class="{ 'global-message-top-container': $ctrl.expiringProject }"
+        style="overflow: hidden;">
 
-        <div class="global-message-top"
-            data-ng-if="CloudMainController.expiringProject"
-            data-ng-include="'app/common/cloud-project-voucher-alert.html'">
-        </div>
+        <div class="h-100 d-flex flex-column overflow-hidden">
+            <div class="global-message-top"
+                data-ng-if="$ctrl.expiringProject"
+                data-ng-include="'app/common/cloud-project-voucher-alert.html'">
+            </div>
 
-        <!-- Skip to main content -->
-        <div class="skipnav">
-            <a class="oui-button oui-button_link" href=""
-                data-translate="common_skip_to_main_content"
-                data-ng-click="CloudMainController.scrollTo('maincontent')">
-            </a>
-        </div>
-        <!-- /Skip to main content -->
+            <!-- Skip to main content -->
+            <div class="skipnav">
+                <a class="oui-button oui-button_link" href=""
+                    data-translate="common_skip_to_main_content"
+                    data-ng-click="$ctrl.scrollTo('maincontent')">
+                </a>
+            </div>
+            <!-- /Skip to main content -->
 
-        <!-- TOP MENU -->
-        <oui-navbar fixed
-            data-active-link="cloud"
-            data-brand="::navbar.brand"
-            data-main-links="::navbar.managerLinks"
-            data-aside-links="::navbar.internalLinks"
-            data-toggler-links="::navbar.responsiveLinks">
-        </oui-navbar>
+            <ovh-manager-navbar
+                data-navbar-options="{
+                    toggle: {
+                        event: 'sidebar:loaded'
+                    },
+                    universe: 'server',
+                    version: 'beta'
+                }"
+                data-universe-click="$ctrl.openSidebar()">
+            </ovh-manager-navbar>
 
-        <div class="container-fluid">
-            <div class="row" style="position: relative;">
+            <button
+                style="position: absolute; top: 0; left: 0; width: 48px; height: 44px; background-color: transparent; border: 0;"
+                data-ng-if="$ctrl.sidebarIsOpen"
+                data-ng-click="$ctrl.closeSidebar()">
+            </button>
 
-                <!-- SIDE MENU -->
-                <div class="col-md-3 col-lg-2" data-sidebar-menu></div>
+            <div class="container-fluid h-100 w-100" style="overflow: auto">
+                <div class="row">
 
-                <!-- CONTENT -->
-                <div id="content" class="col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2">
+                    <!-- SIDE MENU -->
+                    <ovh-manager-server-sidebar
+                        universe="'CLOUD'"
+                        data-on-click="$ctrl.closeSidebar()"
+                        data-is-open="$ctrl.sidebarIsOpen"
+                        class="col-md-3 col-lg-2 px-0">
+                    </ovh-manager-server-sidebar>
 
-                    <!-- Skip content target -->
-                    <div class="skiptarget">
-                        <a id="maincontent" href="">-</a>
-                    </div>
-                    <!-- /Skip content target -->
+                    <!-- CONTENT -->
+                    <div id="content" class="col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2">
 
-                    <ovh-browser-alert></ovh-browser-alert>
-                    <ovh-chatbot></ovh-chatbot>
-                    <div data-ui-view=""></div>
+                        <!-- Skip content target -->
+                        <div class="skiptarget">
+                            <a id="maincontent" href="">-</a>
+                        </div>
+                        <!-- /Skip content target -->
+
+                        <ovh-browser-alert></ovh-browser-alert>
+                        <ovh-chatbot></ovh-chatbot>
+                        <div data-ui-view=""></div>
+                     </div>
                 </div>
             </div>
         </div>
 
         <!-- PRE LOADER -->
-        <div id="managerPreload" class="d-flex text-center" data-ng-class="!!navbar && managerPreloadHide">
+        <div id="managerPreload" class="d-flex text-center" data-ng-class="managerPreloadHide">
             <div class="m-auto">
                 <p class="lead mb-3" data-translate="preload_welcome"></p>
                 <hr class="my-0" />

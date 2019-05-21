@@ -12,8 +12,8 @@ angular.module('managerApp')
       return `${prefix}::${route}`;
     });
   })
-  .run(($cookies, atInternet, TRACKING, TARGET, OvhApiMe) => {
-    const { config } = TRACKING[TARGET];
+  .run(($cookies, atInternet, TRACKING, coreConfig, OvhApiMe) => {
+    const { config } = TRACKING[coreConfig.getRegion()];
     const referrerSite = $cookies.get('OrderCloud');
 
     if (referrerSite) {

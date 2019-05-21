@@ -1,7 +1,7 @@
 
 
 angular.module('managerApp').controller('VrackAddCtrl',
-  function (
+  function VrackAddCtrl(
     $q,
     $translate,
     $state,
@@ -9,11 +9,11 @@ angular.module('managerApp').controller('VrackAddCtrl',
     CucCloudMessage,
     CucVrackService,
     OvhApiOrder,
-    TARGET,
+    coreConfig,
   ) {
     const self = this;
 
-    self.TARGET = TARGET;
+    self.region = coreConfig.getRegion();
 
     this.loaders = {
       loading: false,
@@ -26,7 +26,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
       purchaseOrderUrl: '',
     };
 
-    this.getVrackContract = function () {
+    this.getVrackContract = function getVrackContract() {
       return OvhApiOrder.Vrack().New().v6().get({
         quantity: 1,
       }).$promise.then((data) => {
@@ -36,7 +36,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
       });
     };
 
-    this.addVrack = function () {
+    this.addVrack = function addVrack() {
       self.loaders.loading = true;
       return OvhApiOrder.Vrack().New().v6().create({
         quantity: this.model.quantityToOrder,
@@ -59,7 +59,7 @@ angular.module('managerApp').controller('VrackAddCtrl',
         vrackOrderUrl: CucVrackService.getOrderUrl(),
       };
 
-      if (self.TARGET !== 'US') {
+      if (self.region !== 'US') {
         promise.vrackContract = self.getVrackContract();
       }
 

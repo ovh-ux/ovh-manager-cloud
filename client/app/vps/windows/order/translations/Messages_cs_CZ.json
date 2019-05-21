@@ -1,0 +1,20 @@
+{
+ "vps_order_windows_title": "Možnost windows",
+ "vps_order_windows_step1_title": "Zvolte dobu trvání",
+ "vps_order_windows_step2_title": "Akceptace podmínek používání služby",
+ "vps_order_windows_step3_title": "Shrnutí",
+ "vps_order_windows_info": "Tato možnost Vám umožni instalovat OS typu Windows na Vaše VPS.",
+ "vps_order_windows_price_error": "Při získávání cen došlo k chybě.",
+ "vps_order_windows_order_error": "Při potvrzení objednávky došlo k chybě.",
+ "vps_order_windows_order_select_duration": "Zvolte období:",
+ "vps_order_windows_order_resume": "Shrnutí Vaší objednávky",
+ "vps_order_windows_order_price_HT": "Celková cena bez DPH:",
+ "vps_order_windows_order_price_TTC": "Celková cena s DPH:",
+ "vps_order_windows_order_final_txt": "Pro potvrzení objednávky klikněte na tlačítko \"Schválit\".",
+ "vps_order_windows_order_final_txt2": "Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní.",
+ "vps_order_windows_order_load_error": "Při načítání informací z Windows option došlo k chybě.",
+ "vps_order_windows_order_load_error_none": "Žádné kontroly Windows Option nebyly nalezeny pro tento VPS.",
+ "vps_order_windows_order_success": "Chcete-li dokončit objednávku, postupujte podle pokynů na nové kartě, která byla otevřena. Pokud není otevřena žádná nová karta, klikněte na <a href=\"{{ url }}\" target=\"_blank\" rel=\"noopener\"> tento odkaz </a>.",
+ "vps_order_windows_order_price": "Toto rozšíření bude fakturováno na základě sazby <strong>{{ amount }} bez DPH/měsíc</strong>",
+ "vps_order_windows_order_explain": "Kliknutím na tlačítko Objednávka, Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní."
+}

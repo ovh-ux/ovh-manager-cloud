@@ -1,5 +1,4 @@
 angular.module('managerApp')
-  .constant('TARGET', 'CA')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     dedicated: 'https://ca.ovh.com/manager/index.html#/',
@@ -156,6 +155,15 @@ angular.module('managerApp')
         QC: "https://ca.ovh.com/fr/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
         WE: "https://us.ovh.com/us/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
         WS: "https://us.ovh.com/es/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+      },
+      express_base: {
+        ASIA: 'https://ca.ovh.com/asia/order/express/#/new/express/resume',
+        AU: 'https://ca.ovh.com/au/order/express/#/new/express/resume',
+        CA: 'https://ca.ovh.com/en/order/express/#/new/express/resume',
+        QC: 'https://ca.ovh.com/fr/order/express/#/new/express/resume',
+        SG: 'https://ca.ovh.com/sg/order/express/#/new/express/resume',
+        WE: 'https://us.ovh.com/us/order/express/#/new/express/resume',
+        WS: 'https://us.ovh.com/es/order/express/#/new/express/resume',
       },
       express_review_base: {
         ASIA: 'https://ca.ovh.com/asia/order/express/#/express/review',
