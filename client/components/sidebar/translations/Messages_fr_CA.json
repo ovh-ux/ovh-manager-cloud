@@ -52,5 +52,6 @@
  "cloud_sidebar_actions_menu_clouddb": "CloudDB",
  "cloud_sidebar_actions_menu_clouddesktop": "Cloud Desktop",
  "cloud_sidebar_actions_menu_kube": "Kubernetes ®",
- "sidebar_menu_order_actions": "Commander"
+ "sidebar_menu_order_actions": "Commander",
+ "cloud_sidebar_public_cloud": "Tester la nouvelle interface"
 }

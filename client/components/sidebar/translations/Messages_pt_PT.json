@@ -53,5 +53,6 @@
  "cloud_sidebar_actions_menu_clouddb": "CloudDB",
  "cloud_sidebar_actions_menu_clouddesktop": "Cloud Desktop",
  "cloud_sidebar_actions_menu_kube": "Kubernetes ®",
- "sidebar_menu_order_actions": "Encomendar"
+ "sidebar_menu_order_actions": "Encomendar",
+ "cloud_sidebar_public_cloud": "Try the new control panel"
 }
