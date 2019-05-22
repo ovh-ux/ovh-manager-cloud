@@ -11,28 +11,8 @@ class CloudMainController {
   $onInit() {
     this.expiringProject = null;
 
-    this.init();
-
     this.$transitions.onStart({},
       () => this.closeSidebar());
-
-    this.$rootScope.$on('CloudMainController:refresh', () => {
-      this.init();
-    });
-  }
-
-  init() {
-    this.CucProductsService.getProducts()
-      .then(() => this.CucProductsService.getProductsOfType('PROJECT'))
-      .then(products => products.filter(product => product.expiration))
-      .then((products) => {
-        if (products && products.length) {
-          this.expiringProject = _.first(products);
-          this.expiringProjectInterval = this.$interval(() => {
-            this.updateRemainingTime();
-          }, 1000);
-        }
-      });
   }
 
   openSidebar() {
