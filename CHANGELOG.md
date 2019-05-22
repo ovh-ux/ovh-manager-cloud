@@ -1,3 +1,12 @@
+## [7.25.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.4...v7.25.5) (2019-05-22)
+
+
+### Performance Improvements
+
+* remove useless huge api call ([894c2c4](https://github.com/ovh-ux/ovh-manager-cloud/commit/894c2c4))
+
+
+
 ## [7.25.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.3...v7.25.4) (2019-05-21)
 
 
