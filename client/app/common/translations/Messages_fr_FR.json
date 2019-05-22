@@ -628,5 +628,7 @@
   "guide_project_7": "Préparer l'environnement pour utiliser l'API Openstack",
   "guide_project_8": "Créer et configurer un disque supplémentaire sur une instance",
   "guide_project_all": "Voir tous les guides Public Cloud",
-  "guide_project_apac_trafic": "Comment est facturé le trafic de mes instances hébergées à Sydney et Singapoure ?"
+  "guide_project_apac_trafic": "Comment est facturé le trafic de mes instances hébergées à Sydney et Singapoure ?",
+  "cloud_welcome": "Nouveau : découvrez la nouvelle interface Public Cloud",
+  "cloud_welcome_public_cloud": "Aller vers la nouvelle interface"
 }

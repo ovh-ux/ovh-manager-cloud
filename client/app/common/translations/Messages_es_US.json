@@ -619,5 +619,7 @@
   "guide_project_6": "Iniciar un primer servidor Cloud en 3 minutos",
   "guide_project_7": "Preparar el entorno para usar la API Openstack",
   "guide_project_8": "Crear y configurar un disco adicional en una instancia",
-  "guide_project_all": "Ver todas las guías de Public Cloud"
+  "guide_project_all": "Ver todas las guías de Public Cloud",
+  "cloud_welcome": "New: Discover the new Public Cloud interface",
+  "cloud_welcome_public_cloud": "Go to the new interface"
 }

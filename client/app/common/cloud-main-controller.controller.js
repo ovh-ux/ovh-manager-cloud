@@ -1,10 +1,14 @@
+import { PUBLIC_CLOUD_URL } from './main.constants';
+
 class CloudMainController {
-  constructor($document, $interval, $rootScope, $translate, CucProductsService) {
+  constructor($document, $interval, $rootScope, $translate, CucProductsService, TARGET) {
     this.$document = $document;
     this.$interval = $interval;
     this.$rootScope = $rootScope;
     this.$translate = $translate;
     this.CucProductsService = CucProductsService;
+
+    this.PUBLIC_CLOUD_URL = PUBLIC_CLOUD_URL[TARGET];
   }
 
   $onInit() {

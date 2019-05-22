@@ -619,5 +619,7 @@
  "guide_project_6": "Spusťte svůj první cloudový server za 3 minuty",
  "guide_project_7": "Příprava prostředí pro použití OpenStack API",
  "guide_project_8": "Vytvoření a konfigurace přídavného disku na instanci",
- "guide_project_all": "Podívejte se na kompletní dokumentaci Public Cloud"
+ "guide_project_all": "Podívejte se na kompletní dokumentaci Public Cloud",
+ "cloud_welcome": "New: Discover the new Public Cloud interface",
+ "cloud_welcome_public_cloud": "Go to the new interface"
 }

@@ -628,5 +628,7 @@
  "guide_project_7": "Prepare the environment for using the OpenStack API",
  "guide_project_8": "Create and configure an additional disk on an instance",
  "guide_project_all": "Zu den Public Cloud Anleitungen",
- "guide_project_apac_trafic": "Wie wird der Traffic meiner in Sydney und Singapur gehosteten Instanzen abgerechnet?"
+ "guide_project_apac_trafic": "Wie wird der Traffic meiner in Sydney und Singapur gehosteten Instanzen abgerechnet?",
+ "cloud_welcome": "New: Discover the new Public Cloud interface",
+ "cloud_welcome_public_cloud": "Go to the new interface"
 }
