@@ -1,3 +1,12 @@
+## [99.0.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.1...v99.0.2) (2019-05-23)
+
+
+### Features
+
+* change new manager url display ([#1456](https://github.com/ovh-ux/ovh-manager-cloud/issues/1456)) ([170127a](https://github.com/ovh-ux/ovh-manager-cloud/commit/170127a))
+
+
+
 ## [99.0.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.2...v99.0.1) (2019-05-21)
 
 
