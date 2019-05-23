@@ -626,5 +626,7 @@
  "guide_project_6": "Start een eerste cloudserver binnen 3 minuten",
  "guide_project_7": "Bereid de omgeving voor op het gebruik van de OpenStack API",
  "guide_project_8": "Maak en configureer een extra schijf op een instance",
- "guide_project_all": "Bekijk alle Public Cloud-handleidingen"
+ "guide_project_all": "Bekijk alle Public Cloud-handleidingen",
+ "cloud_welcome": "New: Discover the new Public Cloud interface",
+ "cloud_welcome_public_cloud": "Go to the new interface"
 }
