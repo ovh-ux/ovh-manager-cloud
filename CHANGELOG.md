@@ -1,3 +1,13 @@
+## [7.25.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.5...v7.25.6) (2019-05-27)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations ([48e1b67](https://github.com/ovh-ux/ovh-manager-cloud/commit/48e1b67))
+* **i18n:** add missing translations ([bdb9635](https://github.com/ovh-ux/ovh-manager-cloud/commit/bdb9635))
+
+
+
 ## [7.25.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.4...v7.25.5) (2019-05-22)
 
 
