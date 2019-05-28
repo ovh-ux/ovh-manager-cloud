@@ -65,11 +65,15 @@ class LogsHomeService {
    * @memberof LogsHomeService
    */
   getDataUsage(serviceName) {
-    return this.getAccount(serviceName)
+    return this.getAccountDetails(serviceName)
+      .then((accountDetails) => {
+        this.createdAt = accountDetails.service.createdAt;
+        return this.getAccount(serviceName);
+      })
       .then((account) => {
         const token = btoa(account.metrics.token);
         const query = {
-          start: moment().subtract(this.LogsConstants.DATA_STORAGE.TIME_PERIOD_MONTHS, 'month').unix() * 1000,
+          start: Math.max(moment().subtract(this.LogsConstants.DATA_STORAGE.TIME_PERIOD_MONTHS, 'month').unix() * 1000, moment(this.createdAt).unix() * 1000),
           queries: [{
             metric: this.LogsConstants.DATA_STORAGE.METRICS.SUM,
             aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
