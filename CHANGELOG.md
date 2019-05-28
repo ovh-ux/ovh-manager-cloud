@@ -1,3 +1,13 @@
+## [7.25.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.6...v7.25.7) (2019-05-28)
+
+
+### Bug Fixes
+
+* **components.translate:** remove duplicate service ([094249f](https://github.com/ovh-ux/ovh-manager-cloud/commit/094249f))
+* **dbaas.logs.detail:** take service.createdAt in account ([#1460](https://github.com/ovh-ux/ovh-manager-cloud/issues/1460)) ([4046862](https://github.com/ovh-ux/ovh-manager-cloud/commit/4046862))
+
+
+
 ## [7.25.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.5...v7.25.6) (2019-05-27)
 
 
