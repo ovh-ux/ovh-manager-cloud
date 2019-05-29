@@ -1,3 +1,12 @@
+## [7.25.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.7...v7.25.8) (2019-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump manager-navbar to v0.5.0 ([#1469](https://github.com/ovh-ux/ovh-manager-cloud/issues/1469)) ([0a845a2](https://github.com/ovh-ux/ovh-manager-cloud/commit/0a845a2))
+
+
+
 ## [7.25.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.6...v7.25.7) (2019-05-28)
 
 
