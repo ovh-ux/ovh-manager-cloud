@@ -40,7 +40,7 @@
   "dependencies": {
     "@ovh-ux/manager-config": "^0.1.0",
     "@ovh-ux/manager-core": "^5.2.5",
-    "@ovh-ux/manager-navbar": "^0.4.4",
+    "@ovh-ux/manager-navbar": "^0.5.0",
     "@ovh-ux/manager-server-sidebar": "^0.1.5",
     "@ovh-ux/ng-at-internet": "^4.0.0",
     "@ovh-ux/ng-at-internet-ui-router-plugin": "^2.0.0",
