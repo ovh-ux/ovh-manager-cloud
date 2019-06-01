@@ -1,5 +1,5 @@
 {
-  "name": "cloud",
+  "name": "ovh-manager-cloud",
   "version": "7.25.9",
   "private": true,
   "description": "OVH Cloud control panel",
