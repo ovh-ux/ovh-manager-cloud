@@ -1,3 +1,12 @@
+## [7.25.9](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.8...v7.25.9) (2019-06-03)
+
+
+### Bug Fixes
+
+* **deps:** upgrade manager-server-sidebar to 0.1.6 ([#1475](https://github.com/ovh-ux/ovh-manager-cloud/issues/1475)) ([f3dae39](https://github.com/ovh-ux/ovh-manager-cloud/commit/f3dae39))
+
+
+
 ## [7.25.8](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.7...v7.25.8) (2019-05-29)
 
 
