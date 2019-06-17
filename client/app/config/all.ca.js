@@ -77,6 +77,17 @@ angular.module('managerApp')
       WE: 'https://www.ovh.com/ca/en/support/',
       WS: 'https://www.ovh.com/ca/en/support/',
     },
+    manager_order: {
+      public_cloud_project: {
+        ASIA: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        AU: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        CA: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        QC: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        SG: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        WE: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+        WS: 'https://ca.ovh.com/manager/public-cloud/#/pci/projects/new',
+      },
+    },
     website_order: {
       vps: {
         ASIA: 'https://www.ovh.com/asia/vps/',

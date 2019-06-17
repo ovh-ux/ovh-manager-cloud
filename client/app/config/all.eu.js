@@ -110,6 +110,25 @@ angular.module('managerApp')
       SN: 'https://www.ovh.sn/support/',
       TN: 'https://www.ovh.com/tn/support/',
     },
+    manager_order: {
+      public_cloud_project: {
+        CZ: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        DE: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        ES: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        FI: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        FR: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        GB: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        IE: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        IT: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        LT: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        MA: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        NL: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        PL: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        PT: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        SN: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+        TN: 'https://www.ovh.com/manager/public-cloud/#/pci/projects/new',
+      },
+    },
     website_order: {
       vps: {
         CZ: 'https://www.ovh.cz/vps/',

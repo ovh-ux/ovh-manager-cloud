@@ -1,10 +1,18 @@
 class CloudProjectSidebar {
-  constructor($translate, SidebarMenu, TARGET) {
+  constructor($translate, OvhApiMe, SidebarMenu, URLS, TARGET) {
     this.$translate = $translate;
+    this.OvhApiMe = OvhApiMe;
     this.SidebarMenu = SidebarMenu;
+    this.URLS = URLS;
     this.TARGET = TARGET;
 
     this.type = 'PROJECT';
+
+    this.locale = null;
+    this.OvhApiMe.v6().get().$promise
+      .then((user) => {
+        this.locale = user.ovhSubsidiary;
+      });
   }
 
   loadIntoSection(section, services) {
@@ -37,7 +45,7 @@ class CloudProjectSidebar {
       id: 'order-pci-project-new',
       title: this.$translate.instant('cloud_sidebar_actions_menu_cloud_project'),
       icon: 'ovh-font ovh-font-public-cloud',
-      state: 'iaas.pci-project-new',
+      href: this.URLS.manager_order.public_cloud_project[this.locale],
     };
   }
 
