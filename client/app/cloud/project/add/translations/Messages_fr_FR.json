@@ -1,6 +1,8 @@
 {
   "cpa_title": "Création d'un nouveau projet Cloud public",
   "cpa_title_first": "Activation du compte Cloud public",
+  "cpa_project_public_cloud": "La création de projet évolue. Créez dès à présent votre projet dans la nouvelle interface Public Cloud.",
+  "cpa_project_create": "Créer un projet Public Cloud",
   "cpa_validationPending": "Votre compte client n'est pas encore éligible au Cloud public. Vous serez notifié par email dès que vous pourrez accéder à ce produit.",
   "cpa_contract_empty": "Vous avez accepté tous les contrats liés à ce produit.",
   "cpa_description": "Nom du projet",
