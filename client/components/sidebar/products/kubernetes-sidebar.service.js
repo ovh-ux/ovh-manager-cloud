@@ -1,3 +1,5 @@
+import { KUBE_ORDER } from './kubernetes-constants';
+
 class KubernetesSidebar {
   constructor($translate, OvhApiMe, SidebarMenu, URLS) {
     this.$translate = $translate;
@@ -13,30 +15,12 @@ class KubernetesSidebar {
       });
   }
 
-  addOrder(locale) {
-    const orderParams = [{
-      productId: 'cloud',
-      planCode: 'project.2018',
-      configuration: [{
-        label: 'description',
-        values: ['Kubernetes project'],
-      }],
-    }, {
-      productId: 'kubernetes',
-      planCode: 'kubernetes-managed-cluster',
-      configuration: [{
-        label: 'name',
-        values: ['Kubernetes cluster+'],
-      }],
-    }];
-
-    const orderUrl = `${_.get(this.URLS, `website_order.express_review_base.${locale}`)}?products=${JSURL.stringify(orderParams)}`;
-
+  addOrder() {
     return {
       id: 'order-kube',
       title: this.$translate.instant('cloud_sidebar_actions_menu_kube'),
       icon: 'ovh-font ovh-font-kubernetes',
-      href: orderUrl,
+      href: KUBE_ORDER,
       target: '_blank',
       external: true,
     };
