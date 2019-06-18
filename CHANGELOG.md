@@ -1,3 +1,14 @@
+## [99.0.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.2...v99.0.3) (2019-06-18)
+
+
+### Features
+
+* **sidebar:** change redirection for kube order ([#1483](https://github.com/ovh-ux/ovh-manager-cloud/issues/1483)) ([b549a46](https://github.com/ovh-ux/ovh-manager-cloud/commit/b549a46))
+* redirect pci project creation to public cloud manager ([2233c5a](https://github.com/ovh-ux/ovh-manager-cloud/commit/2233c5a))
+* remove project creation form ([504e297](https://github.com/ovh-ux/ovh-manager-cloud/commit/504e297))
+
+
+
 ## [99.0.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.1...v99.0.2) (2019-05-23)
 
 
