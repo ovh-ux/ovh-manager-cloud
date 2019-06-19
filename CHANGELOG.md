@@ -1,3 +1,12 @@
+## [7.25.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.9...v7.25.10) (2019-06-19)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.4 ([#1481](https://github.com/ovh-ux/ovh-manager-cloud/issues/1481)) ([50259c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/50259c9))
+
+
+
 ## [7.25.9](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.8...v7.25.9) (2019-06-03)
 
 
