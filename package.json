@@ -1,5 +1,5 @@
 {
-  "name": "cloud",
+  "name": "ovh-manager-cloud",
   "version": "7.25.9",
   "private": true,
   "description": "OVH Cloud control panel",
@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "@ovh-ux/manager-config": "^0.1.0",
-    "@ovh-ux/manager-core": "^5.2.5",
-    "@ovh-ux/manager-navbar": "^0.5.0",
+    "@ovh-ux/manager-core": "^6.0.0",
+    "@ovh-ux/manager-navbar": "^1.0.0",
     "@ovh-ux/manager-server-sidebar": "^0.1.6",
     "@ovh-ux/ng-at-internet": "^4.0.0",
     "@ovh-ux/ng-at-internet-ui-router-plugin": "^2.0.0",
@@ -52,7 +52,7 @@
     "@ovh-ux/ng-ovh-doc-url": "^1.0.0",
     "@ovh-ux/ng-ovh-form-flat": "^4.0.0",
     "@ovh-ux/ng-ovh-http": "^4.0.1-beta.0",
-    "@ovh-ux/ng-ovh-otrs": "^7.0.2",
+    "@ovh-ux/ng-ovh-otrs": "^7.1.4",
     "@ovh-ux/ng-ovh-proxy-request": "^1.0.0-beta.0",
     "@ovh-ux/ng-ovh-responsive-popover": "^5.0.0-beta.0",
     "@ovh-ux/ng-ovh-sidebar-menu": "^8.1.0",
