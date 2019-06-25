@@ -1,3 +1,13 @@
+## [7.25.11](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.10...v7.25.11) (2019-06-25)
+
+
+### Bug Fixes
+
+* **core:** add missing clipboard component translations ([#1488](https://github.com/ovh-ux/ovh-manager-cloud/issues/1488)) ([81908fa](https://github.com/ovh-ux/ovh-manager-cloud/commit/81908fa))
+* **deps:** upgrade some dependencies ([#1489](https://github.com/ovh-ux/ovh-manager-cloud/issues/1489)) ([8862cf8](https://github.com/ovh-ux/ovh-manager-cloud/commit/8862cf8))
+
+
+
 ## [7.25.10](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.9...v7.25.10) (2019-06-19)
 
 
