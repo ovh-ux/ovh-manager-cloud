@@ -1,3 +1,12 @@
+# [7.26.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.11...v7.26.0) (2019-06-28)
+
+
+### Features
+
+* update tracking id ([b235fb4](https://github.com/ovh-ux/ovh-manager-cloud/commit/b235fb4))
+
+
+
 ## [7.25.11](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.10...v7.25.11) (2019-06-25)
 
 
