@@ -1,3 +1,21 @@
+# [7.27.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.26.0...v7.27.0) (2019-07-01)
+
+
+### Bug Fixes
+
+* **deps:** upgrade ng-ovh-otrs to v7.1.5 ([#1493](https://github.com/ovh-ux/ovh-manager-cloud/issues/1493)) ([7150271](https://github.com/ovh-ux/ovh-manager-cloud/commit/7150271))
+* **i18n:** add missing translations ([18511a2](https://github.com/ovh-ux/ovh-manager-cloud/commit/18511a2))
+* **i18n:** add missing translations ([a4331fe](https://github.com/ovh-ux/ovh-manager-cloud/commit/a4331fe))
+* **i18n:** add missing translations ([9ba7cc6](https://github.com/ovh-ux/ovh-manager-cloud/commit/9ba7cc6))
+* **i18n:** add missing translations ([8c55bb4](https://github.com/ovh-ux/ovh-manager-cloud/commit/8c55bb4))
+
+
+### Features
+
+* **cloud.logs:** add filebeat 6.8 with 17 modules supported ([#1480](https://github.com/ovh-ux/ovh-manager-cloud/issues/1480)) ([ce189bc](https://github.com/ovh-ux/ovh-manager-cloud/commit/ce189bc))
+
+
+
 # [7.26.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.25.11...v7.26.0) (2019-06-28)
 
 
