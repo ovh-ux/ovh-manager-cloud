@@ -45,7 +45,7 @@
     }
 
     static checkLabel(label) {
-      return (label.key !== null && label.value !== null);
+      return (!!label.key && label.value !== null);
     }
 
     checkLabels() {
