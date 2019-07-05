@@ -170,10 +170,10 @@ angular.module('managerApp').constant('LogsConstants', {
       COLD_STORAGE_TOTAL: 'ldp.service.coldstorage.total',
     },
     AGGREGATORS: {
-      MAX: 'max',
+      ZIMSUM: 'zimsum',
     },
     DOWNSAMPLING_MODE: {
-      '24H_MAX': '24h-max-none',
+      '24H_MAX': '24h-avg-none',
     },
   },
   OFFER_STORAGE_MULTIPLIER: 1073741824,

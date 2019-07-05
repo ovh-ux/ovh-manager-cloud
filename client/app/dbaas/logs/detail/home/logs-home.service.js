@@ -76,12 +76,12 @@ class LogsHomeService {
           start: Math.max(moment().subtract(this.LogsConstants.DATA_STORAGE.TIME_PERIOD_MONTHS, 'month').unix() * 1000, moment(this.createdAt).unix() * 1000),
           queries: [{
             metric: this.LogsConstants.DATA_STORAGE.METRICS.SUM,
-            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.ZIMSUM,
             downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE['24H_MAX'],
           },
           {
             metric: this.LogsConstants.DATA_STORAGE.METRICS.COUNT,
-            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.ZIMSUM,
             downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE['24H_MAX'],
           }],
         };
