@@ -192,7 +192,11 @@ class LogsHomeService {
    * @memberof LogsHomeService
    */
   updateDisplayName(serviceName, service) {
-    return this.LogsLexiService.update({ serviceName }, service)
+    return this.LogsLexiService.update({ serviceName },
+      {
+        displayName: service.displayName,
+        isCapped: service.isCapped,
+      })
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_display_name_update_success', { })
@@ -213,7 +217,11 @@ class LogsHomeService {
    * @memberof LogsHomeService
    */
   updateCappedPlan(serviceName, service) {
-    return this.LogsLexiService.update({ serviceName }, service)
+    return this.LogsLexiService.update({ serviceName },
+      {
+        displayName: service.displayName,
+        isCapped: service.isCapped,
+      })
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { });

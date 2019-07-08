@@ -213,7 +213,20 @@ class LogsStreamsService {
    * @memberof LogsStreamsService
    */
   createStream(serviceName, stream) {
-    return this.StreamsApiService.create({ serviceName }, stream)
+    return this.StreamsApiService.create({ serviceName },
+      {
+        coldStorageCompression: stream.coldStorageCompression,
+        coldStorageContent: stream.coldStorageContent,
+        coldStorageEnabled: stream.coldStorageEnabled,
+        coldStorageNotifyEnabled: stream.coldStorageNotifyEnabled,
+        coldStorageRetention: stream.coldStorageRetention,
+        coldStorageTarget: stream.coldStorageTarget,
+        description: stream.description,
+        indexingEnabled: stream.indexingEnabled,
+        optionId: stream.optionId,
+        title: stream.title,
+        webSocketEnabled: stream.webSocketEnabled,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -231,7 +244,20 @@ class LogsStreamsService {
    * @memberof LogsStreamsService
    */
   updateStream(serviceName, stream) {
-    return this.StreamsApiService.update({ serviceName, streamId: stream.streamId }, stream)
+    return this.StreamsApiService.update({ serviceName, streamId: stream.streamId },
+      {
+        coldStorageCompression: stream.coldStorageCompression,
+        coldStorageContent: stream.coldStorageContent,
+        coldStorageEnabled: stream.coldStorageEnabled,
+        coldStorageNotifyEnabled: stream.coldStorageNotifyEnabled,
+        coldStorageRetention: stream.coldStorageRetention,
+        coldStorageTarget: stream.coldStorageTarget,
+        description: stream.description,
+        indexingEnabled: stream.indexingEnabled,
+        optionId: stream.optionId,
+        title: stream.title,
+        webSocketEnabled: stream.webSocketEnabled,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();

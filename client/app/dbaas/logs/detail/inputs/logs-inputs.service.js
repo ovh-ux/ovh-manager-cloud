@@ -397,7 +397,11 @@ class LogsInputsService {
 
   updateFlowgger(serviceName, input, flowgger) {
     return this.InputsApiLexiService
-      .updateFlowgger({ serviceName, inputId: input.info.inputId }, flowgger)
+      .updateFlowgger({ serviceName, inputId: input.info.inputId },
+        {
+          logFormat: flowgger.logFormat,
+          logFraming: flowgger.logFraming,
+        })
       .$promise
       .then((operation) => {
         this.InputsApiAapiService.resetAllCache();
@@ -408,7 +412,12 @@ class LogsInputsService {
 
   updateLogstash(serviceName, input, logstash) {
     return this.InputsApiLexiService
-      .updateLogstash({ serviceName, inputId: input.info.inputId }, logstash)
+      .updateLogstash({ serviceName, inputId: input.info.inputId },
+        {
+          filterSection: logstash.filterSection,
+          inputSection: logstash.inputSection,
+          patternSection: logstash.patternSection,
+        })
       .$promise
       .then((operation) => {
         this.InputsApiAapiService.resetAllCache();
