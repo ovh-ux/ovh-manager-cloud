@@ -227,7 +227,7 @@
  "logs_options_manage_input": "Recopiladores",
  "logs_options_overview_title": "Resumen de la opción",
  "logs_options_modal_reactivate_title": "Activar esta opción",
- "logs_options_modal_reactivate_description": "Debe ponerse en contacto con el equipo de soporte para reactivar la opción «{{optionType}}».",
+ "logs_options_modal_reactivate_description": "Debe contactar con el soporte para reactivar la opción «{{optionType}}».",
  "logs_options_manage_terminate_title": "Desactivar esta opción",
  "logs_options_manage_terminate_question": "¿Seguro que quiere desactivar la opción <strong>{{optionType}}</strong>? Recuerde que deberá contactar con el soporte para reactivar esta opción.",
  "logs_options_delete_error": "Se ha producido un error al desactivar la opción «{{optionType}}»: {{message}}",
