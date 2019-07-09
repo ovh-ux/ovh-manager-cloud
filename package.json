@@ -86,7 +86,7 @@
     "angular-websocket": "^2.0.0",
     "animate.css": "~3.1.0",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "~3.3.0",
+    "bootstrap": "~3.4.1",
     "bootstrap-additions": "~0.3.1",
     "bs4": "twbs/bootstrap#^4.0.0",
     "chart.js": "chartjs/Chart.js#^2.0",
