@@ -130,7 +130,7 @@
     "popper.js": "^1.14.1",
     "uri.js": "medialize/URI.js#~1.15.0",
     "validator-js": "chriso/validator.js#~3.37.0",
-    "xterm": "^3.4.1"
+    "xterm": "^3.8.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
