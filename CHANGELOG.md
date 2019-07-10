@@ -1,3 +1,13 @@
+## [7.27.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.27.1...v7.27.2) (2019-07-10)
+
+
+### Bug Fixes
+
+* **dbaas.metrics.token.add:** handle empty label ([#1497](https://github.com/ovh-ux/ovh-manager-cloud/issues/1497)) ([8808d10](https://github.com/ovh-ux/ovh-manager-cloud/commit/8808d10))
+* **i18n:** add missing translations ([a305f2b](https://github.com/ovh-ux/ovh-manager-cloud/commit/a305f2b))
+
+
+
 ## [7.27.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.27.0...v7.27.1) (2019-07-09)
 
 
