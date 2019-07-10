@@ -95,7 +95,7 @@
     "font-awesome": "^4.0.0",
     "jasmine-expect": "^3.8.0",
     "jquery": "~2.1",
-    "jquery-ui": "components/jqueryui#~1.11.2",
+    "jquery-ui": "components/jqueryui#~1.12.0",
     "jquery.cookie": "carhartl/jquery-cookie#~1.4.0",
     "jquery.scrollTo": "flesler/jquery.scrollTo#~1.4.14",
     "json3": "bestiejs/json3#~3.3.1",

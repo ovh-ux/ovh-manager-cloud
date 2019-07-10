@@ -6114,9 +6114,10 @@ jest-validate@^23.5.0:
     leven "^2.1.0"
     pretty-format "^23.6.0"
 
-jquery-ui@components/jqueryui#~1.11.2:
-  version "1.11.4"
-  resolved "https://codeload.github.com/components/jqueryui/tar.gz/c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+jquery-ui@components/jqueryui#~1.12.0:
+  version "1.12.1"
+  uid "44ecf3794cc56b65954cc19737234a3119d036cc"
+  resolved "https://codeload.github.com/components/jqueryui/tar.gz/44ecf3794cc56b65954cc19737234a3119d036cc"
 
 jquery.cookie@carhartl/jquery-cookie#~1.4.0:
   version "1.4.1"
