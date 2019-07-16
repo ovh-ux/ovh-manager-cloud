@@ -1133,10 +1133,10 @@
     lodash "~4.17.11"
     urijs "^1.19.1"
 
-"@ovh-ux/ng-ovh-otrs@^7.1.5":
-  version "7.1.5"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.1.5.tgz#704977ed49f2af18f1c132a4aaecf0513b411c5c"
-  integrity sha512-rZACe9m+do4vRqgV2AOulFKVIWsZiwY3tTc6iI9P7PIZcbpyqOzcnJlPrA96sfHiRV+bBcCnfvuwKSmS8Dig5g==
+"@ovh-ux/ng-ovh-otrs@^7.1.6":
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-otrs/-/ng-ovh-otrs-7.1.6.tgz#be254726ea7c5cbb933a28a422fa0d2f7426691c"
+  integrity sha512-GR2y+1zAFL2YZRkMra6I6crGMPDBUsbYpy5dqiCenK5KEx+cU+0iGSFQp0HFXRTPZkRMwfF/NN1jXI9m/tV+Uw==
   dependencies:
     draggable "^4.2.0"
     lodash "^4.17.11"
@@ -6164,9 +6164,9 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
 js-yaml@^3.12.0, js-yaml@^3.5.3, js-yaml@^3.9.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
-  integrity sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
+  integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -7977,10 +7977,10 @@ ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0:
   version "0.8.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-toaster/tar.gz/06d24889e94b8d816afee8e94185697cf68f2338"
 
-ovh-api-services@^6.30.0:
-  version "6.30.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-6.30.0.tgz#d02a5eda1878911077721a3677d1ba598d572f4c"
-  integrity sha512-JmtAkRQTE8Ky5h6Y50YTHjH4AUt7omEkeEBoNk6G+ytHuJhjHFfUgR2JsRt2V1W7OcZrHjRWC6yDrrFU6LYU3g==
+ovh-api-services@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-7.0.0.tgz#240ced6f8930eed94b4484aa558ad8f432af537f"
+  integrity sha512-aC2NDo9Rf7iwJvfnoPJ2E9Rtrv7Yy7tNXFJv4PifBqyUefjbTAUCfDNRrxgVnpOmPJ1h5SWjx19t3T/6w8qVDw==
   dependencies:
     lodash "^3.10.1"
 
@@ -11682,10 +11682,10 @@ xregexp@4.0.0:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
 
-xterm@^3.4.1:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/xterm/-/xterm-3.8.0.tgz#55d1de518bdc9c9793823f5e4e97d6898972938d"
-  integrity sha512-rS3HLryuMWbLsv98+jVVSUXCxmoyXPwqwJNC0ad0VSMdXgl65LefPztQVwfurkaF7kM7ZSgM8eJjnJ9kkdoR1w==
+xterm@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/xterm/-/xterm-3.8.1.tgz#0beabaccdc23bd3ab2397c5129ed9b06b0abb167"
+  integrity sha512-M8bKuibUOr07zReT+2XWQgwoHvBZpi8rkuiYMY+xstmMjfxtb3BgCTQMesmi2WEtmXQu6vIw6rg0v736KkLtQQ==
 
 y18n@^3.2.0, y18n@^3.2.1:
   version "3.2.1"
