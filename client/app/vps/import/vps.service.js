@@ -1,16 +1,30 @@
+import { IP_PRIMARY_TYPE } from './constants';
+
 angular.module('managerApp').service('VpsService', [
+  '$cacheFactory',
   '$http',
   '$q',
-  '$timeout',
-  '$cacheFactory',
   '$rootScope',
+  '$timeout',
+  '$translate',
   'additionalDisk.capacities',
   'additionalDisk.hasNoOption',
-  'VpsTaskService',
   'CucServiceHelper',
-  '$translate',
-  function VpsService($http, $q, $timeout, cache, $rootScope, additionalDiskCapacities,
-    additionalDiskHasNoOption, VpsTaskService, CucServiceHelper, $translate) {
+  'OvhApiIp',
+  'VpsTaskService',
+  function VpsService(
+    cache,
+    $http,
+    $q,
+    $rootScope,
+    $timeout,
+    $translate,
+    additionalDiskCapacities,
+    additionalDiskHasNoOption,
+    CucServiceHelper,
+    OvhApiIp,
+    VpsTaskService,
+  ) {
     const aapiRootPath = '/sws/vps';
 
 
@@ -276,10 +290,28 @@ angular.module('managerApp').service('VpsService', [
       return this.getSelectedVps(serviceName).then((vps) => {
         if (!ips) {
           return $q.reject('No ips');
-        } if (vps && vps.name) {
-          return $http.post([aapiRootPath, vps.name, 'ips', 'reverse'].join('/'), ips, { serviceType: 'aapi' })
-            .then((data) => { result = data.data; });
         }
+
+        if (vps && vps.name) {
+          const ip = _.head(ips.results);
+          const ipType = _.get(ip, 'type');
+
+          if (ipType === IP_PRIMARY_TYPE) {
+            return $http.post([aapiRootPath, vps.name, 'ips', 'reverse'].join('/'), ips, { serviceType: 'aapi' })
+              .then(({ data }) => { result = data; });
+          }
+
+          return OvhApiIp
+            .Reverse()
+            .v6()
+            .create({
+              ip: ip.ipAddress,
+            }, {
+              ipReverse: ip.ipAddress,
+              reverse: ip.reverse,
+            }).$promise;
+        }
+
         return $q.reject(vps);
       }).then(() => {
         resetCache();
