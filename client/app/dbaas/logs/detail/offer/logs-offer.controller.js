@@ -58,7 +58,7 @@ class LogsOfferCtrl {
       loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
         .then(response => this.$window.open(response.order.url, '_target'))
         .catch(() => this.CucControllerHelper.scrollPageToTop())
-        .finally(() => this.back()),
+        .finally(() => this.goToHomePage()),
     });
     this.savingOffer.load();
   }
