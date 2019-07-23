@@ -1,4 +1,5 @@
-class VpsAdditionalDiskCtrl {
+export default class {
+  /* @ngInject */
   constructor($q, $stateParams, $translate, CucCloudMessage, VpsActionService, VpsService) {
     this.$q = $q;
     this.serviceName = $stateParams.serviceName;
@@ -53,5 +54,3 @@ class VpsAdditionalDiskCtrl {
     return _.isEmpty(this.additionnalDisks);
   }
 }
-
-angular.module('managerApp').controller('VpsAdditionalDiskCtrl', VpsAdditionalDiskCtrl);

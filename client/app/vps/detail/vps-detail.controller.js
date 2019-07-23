@@ -1,4 +1,5 @@
-class VpsDetailCtrl {
+export default class {
+  /* @ngInject */
   constructor($filter, $scope, $stateParams, CucCloudMessage, CucCloudNavigation, VpsTaskService) {
     this.$filter = $filter;
     this.$scope = $scope;
@@ -32,5 +33,3 @@ class VpsDetailCtrl {
     this.messages = this.messageHandler.getMessages();
   }
 }
-
-angular.module('managerApp').controller('VpsDetailCtrl', VpsDetailCtrl);

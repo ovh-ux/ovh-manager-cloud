@@ -1,11 +1,17 @@
-class VpsMonitoringCtrl {
+import {
+  VPS_MONITORING_BPS_OPTIONS,
+  VPS_MONITORING_COLORS,
+  VPS_MONITORING_PERCENT_OPTIONS,
+} from './vps-monitoring.constants';
+
+export default class {
+  /* @ngInject */
   constructor(
     $q,
     $stateParams,
     $translate,
     CucCloudMessage,
     VpsActionService,
-    VpsMonitoringConstant,
     VpsService,
   ) {
     this.$q = $q;
@@ -13,7 +19,6 @@ class VpsMonitoringCtrl {
     this.CucCloudMessage = CucCloudMessage;
     this.serviceName = $stateParams.serviceName;
     this.VpsActionService = VpsActionService;
-    this.VpsMonitoringConstant = VpsMonitoringConstant;
     this.VpsService = VpsService;
 
     this.loaders = {
@@ -82,11 +87,9 @@ class VpsMonitoringCtrl {
   }
 
   loadOptions() {
-    this.colors = this.VpsMonitoringConstant.colors;
+    this.colors = VPS_MONITORING_COLORS;
     this.series = [this.$translate.instant('vps_monitoring_network_netRx'), this.$translate.instant('vps_monitoring_network_netTx')];
-    this.percentOption = this.VpsMonitoringConstant.percentOption;
-    this.bpsOption = this.VpsMonitoringConstant.bpsOption;
+    this.percentOption = VPS_MONITORING_PERCENT_OPTIONS;
+    this.bpsOption = VPS_MONITORING_BPS_OPTIONS;
   }
 }
-
-angular.module('managerApp').controller('VpsMonitoringCtrl', VpsMonitoringCtrl);

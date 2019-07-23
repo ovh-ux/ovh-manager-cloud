@@ -1,4 +1,5 @@
-class VpsHeaderCtrl {
+export default class {
+  /* @ngInject */
   constructor(
     $rootScope,
     $stateParams,
@@ -110,5 +111,3 @@ class VpsHeaderCtrl {
       .catch(() => this.CucCloudMessage.error(this.$translate.instant('vps_stop_bother_error')));
   }
 }
-
-angular.module('managerApp').controller('VpsHeaderCtrl', VpsHeaderCtrl);
