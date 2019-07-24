@@ -1,3 +1,19 @@
+# [7.28.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.27.2...v7.28.0) (2019-07-24)
+
+
+### Bug Fixes
+
+* **dbaas.logs.detail.offer:** fix cancel button ([#1517](https://github.com/ovh-ux/ovh-manager-cloud/issues/1517)) ([249f7de](https://github.com/ovh-ux/ovh-manager-cloud/commit/249f7de))
+* **i18n:** add missing translations ([cd1e5c2](https://github.com/ovh-ux/ovh-manager-cloud/commit/cd1e5c2))
+* **vps.import:** use ip call for additional ips ([#1516](https://github.com/ovh-ux/ovh-manager-cloud/issues/1516)) ([14bf185](https://github.com/ovh-ux/ovh-manager-cloud/commit/14bf185))
+
+
+### Features
+
+* **dbaas.logs:** allow users to define alerts with a single character ([#1503](https://github.com/ovh-ux/ovh-manager-cloud/issues/1503)) ([4ef2e5b](https://github.com/ovh-ux/ovh-manager-cloud/commit/4ef2e5b))
+
+
+
 ## [7.27.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.27.1...v7.27.2) (2019-07-10)
 
 
