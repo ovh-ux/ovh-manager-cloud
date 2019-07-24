@@ -166,7 +166,12 @@ class LogsDashboardsService {
    * @memberof LogsDashboardsService
    */
   createDashboard(serviceName, dashboard) {
-    return this.DashboardsApiService.create({ serviceName }, dashboard)
+    return this.DashboardsApiService.create({ serviceName },
+      {
+        description: dashboard.description,
+        optionId: dashboard.optionId,
+        title: dashboard.title,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -184,8 +189,8 @@ class LogsDashboardsService {
    * @memberof LogsDashboardsService
    */
   duplicateDashboard(serviceName, dashboard, dashboardId) {
-    if (!dashboard.streamId) { delete dashboard.streamId; } // eslint-disable-line
-    return this.DashboardsApiService.duplicate({ serviceName, dashboardId }, dashboard)
+    return this.DashboardsApiService.duplicate({ serviceName, dashboardId },
+      this.constructor.transformDashboardToDuplicate(dashboard))
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -204,7 +209,12 @@ class LogsDashboardsService {
    */
   updateDashboard(serviceName, dashboard) {
     return this.DashboardsApiService
-      .update({ serviceName, DashboardId: dashboard.dashboardId }, dashboard)
+      .update({ serviceName, dashboardId: dashboard.dashboardId },
+        {
+          title: dashboard.title,
+          description: dashboard.description,
+          optionId: dashboard.optionId,
+        })
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -256,6 +266,17 @@ class LogsDashboardsService {
       this.LogsHelperService.handleError('logs_dashboards_get_graylog_url_error', {}, { dashboardName: aapiDashboard.info.title });
     }
     return url;
+  }
+
+  static transformDashboardToDuplicate(dashboard) {
+    const toDuplicate = {
+      description: dashboard.description,
+      optionId: dashboard.optionId,
+      streamId: dashboard.streamId,
+      title: dashboard.title,
+    };
+    if (!dashboard.streamId) { delete toDuplicate.streamId; } // eslint-disable-line
+    return toDuplicate;
   }
 
   resetAllCache() {

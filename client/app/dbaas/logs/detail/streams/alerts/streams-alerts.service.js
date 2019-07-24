@@ -19,7 +19,21 @@ class LogsStreamsAlertsService {
    * @memberof LogsStreamsAlertsService
    */
   addAlert(serviceName, streamId, alert) {
-    return this.AlertsApiService.post({ serviceName, streamId }, alert).$promise
+    return this.AlertsApiService.post({ serviceName, streamId },
+      {
+        backlog: alert.backlog,
+        conditionType: alert.conditionType,
+        constraintType: alert.constraintType,
+        field: alert.field,
+        grace: alert.grace,
+        queryFilter: alert.queryFilter,
+        repeatNotificationsEnabled: alert.repeatNotificationsEnabled,
+        threshold: alert.threshold,
+        thresholdType: alert.thresholdType,
+        time: alert.time,
+        title: alert.title,
+        value: alert.value,
+      }).$promise
       .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'streams_alerts_add_success', { alertName: alert.title }))
       .catch(err => this.LogsHelperService.handleError('streams_alerts_add_error', err, { alertName: alert.title }));
   }
@@ -136,7 +150,21 @@ class LogsStreamsAlertsService {
    */
   updateAlert(serviceName, streamId, alert) {
     return this.AlertsApiService
-      .put({ serviceName, streamId, alertId: alert.alertId }, alert).$promise
+      .put({ serviceName, streamId, alertId: alert.alertId },
+        {
+          backlog: alert.backlog,
+          conditionType: alert.conditionType,
+          constraintType: alert.constraintType,
+          field: alert.field,
+          grace: alert.grace,
+          queryFilter: alert.queryFilter,
+          repeatNotificationsEnabled: alert.repeatNotificationsEnabled,
+          threshold: alert.threshold,
+          thresholdType: alert.thresholdType,
+          time: alert.time,
+          title: alert.title,
+          value: alert.value,
+        }).$promise
       .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'streams_alerts_update_success', { alertName: alert.title }))
       .catch(err => this.LogsHelperService.handleError('streams_alerts_update_error', err, { alertName: alert.title }));
   }

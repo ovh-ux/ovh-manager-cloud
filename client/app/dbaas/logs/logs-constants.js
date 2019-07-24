@@ -40,7 +40,7 @@ angular.module('managerApp').constant('LogsConstants', {
   TITLE_MAX_LENGTH: 255,
   FIELD_MIN_LENGTH: 3,
   FIELD_MAX_LENGTH: 50,
-  VALUE_MIN_LENGTH: 3,
+  VALUE_MIN_LENGTH: 1,
   VALUE_MAX_LENGTH: 50,
   TIME_PERIOD_MIN_IN_SECONDS: 1,
   TIME_PERIOD_MAX_IN_SECONDS: 3600,
@@ -170,10 +170,10 @@ angular.module('managerApp').constant('LogsConstants', {
       COLD_STORAGE_TOTAL: 'ldp.service.coldstorage.total',
     },
     AGGREGATORS: {
-      MAX: 'max',
+      ZIMSUM: 'zimsum',
     },
     DOWNSAMPLING_MODE: {
-      '24H_MAX': '24h-max-none',
+      '24H_MAX': '24h-avg-none',
     },
   },
   OFFER_STORAGE_MULTIPLIER: 1073741824,

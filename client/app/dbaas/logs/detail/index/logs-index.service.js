@@ -90,7 +90,12 @@ class LogsIndexService {
   }
 
   createIndex(serviceName, object) {
-    return this.IndexApiService.post({ serviceName }, object).$promise
+    return this.IndexApiService.post({ serviceName },
+      {
+        alertNotifyEnabled: object.alertNotifyEnabled,
+        optionId: object.optionId,
+        suffix: object.suffix,
+      }).$promise
       .then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_index_create_success', { name: object.suffix });
@@ -99,7 +104,11 @@ class LogsIndexService {
   }
 
   updateIndex(serviceName, index, indexInfo) {
-    return this.IndexApiService.put({ serviceName, indexId: index.indexId }, indexInfo)
+    return this.IndexApiService.put({ serviceName, indexId: index.indexId },
+      {
+        description: indexInfo.description,
+        alertNotifyEnabled: indexInfo.alertNotifyEnabled,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();
