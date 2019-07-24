@@ -76,12 +76,12 @@ class LogsHomeService {
           start: Math.max(moment().subtract(this.LogsConstants.DATA_STORAGE.TIME_PERIOD_MONTHS, 'month').unix() * 1000, moment(this.createdAt).unix() * 1000),
           queries: [{
             metric: this.LogsConstants.DATA_STORAGE.METRICS.SUM,
-            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.ZIMSUM,
             downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE['24H_MAX'],
           },
           {
             metric: this.LogsConstants.DATA_STORAGE.METRICS.COUNT,
-            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+            aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.ZIMSUM,
             downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE['24H_MAX'],
           }],
         };
@@ -192,7 +192,11 @@ class LogsHomeService {
    * @memberof LogsHomeService
    */
   updateDisplayName(serviceName, service) {
-    return this.LogsLexiService.update({ serviceName }, service)
+    return this.LogsLexiService.update({ serviceName },
+      {
+        displayName: service.displayName,
+        isCapped: service.isCapped,
+      })
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_display_name_update_success', { })
@@ -213,7 +217,11 @@ class LogsHomeService {
    * @memberof LogsHomeService
    */
   updateCappedPlan(serviceName, service) {
-    return this.LogsLexiService.update({ serviceName }, service)
+    return this.LogsLexiService.update({ serviceName },
+      {
+        displayName: service.displayName,
+        isCapped: service.isCapped,
+      })
       .$promise.then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_home_capped_update_success', { });

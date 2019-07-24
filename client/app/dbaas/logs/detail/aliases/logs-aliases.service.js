@@ -198,7 +198,12 @@ class LogsAliasesService {
    * @memberof LogsAliasesService
    */
   createAlias(serviceName, alias) {
-    return this.AliasApiService.create({ serviceName }, alias)
+    return this.AliasApiService.create({ serviceName },
+      {
+        description: alias.description,
+        optionId: alias.optionId,
+        suffix: alias.suffix,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -216,7 +221,11 @@ class LogsAliasesService {
    * @memberof LogsAliasesService
    */
   updateAlias(serviceName, alias) {
-    return this.AliasApiService.update({ serviceName, aliasId: alias.aliasId }, alias)
+    return this.AliasApiService.update({ serviceName, aliasId: alias.aliasId },
+      {
+        description: alias.description,
+        optionId: alias.optionId,
+      })
       .$promise
       .then((operation) => {
         this.resetAllCache();
@@ -226,7 +235,8 @@ class LogsAliasesService {
   }
 
   attachStream(serviceName, alias, stream) {
-    return this.AliasApiService.linkStream({ serviceName, aliasId: alias.aliasId }, stream)
+    return this.AliasApiService.linkStream({ serviceName, aliasId: alias.aliasId },
+      { streamId: stream.streamId })
       .$promise
       .then(operation => this.LogsHelperService.handleOperation(
         serviceName,
@@ -249,7 +259,8 @@ class LogsAliasesService {
   }
 
   attachIndex(serviceName, alias, index) {
-    return this.AliasApiService.linkIndex({ serviceName, aliasId: alias.aliasId }, index)
+    return this.AliasApiService.linkIndex({ serviceName, aliasId: alias.aliasId },
+      { indexId: index.indexId })
       .$promise
       .then(operation => this.LogsHelperService.handleOperation(
         serviceName,

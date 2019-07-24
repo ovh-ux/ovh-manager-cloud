@@ -162,7 +162,12 @@ class LogsRolesService {
   }
 
   addRole(serviceName, object) {
-    return this.RolesApiService.create({ serviceName }, object).$promise
+    return this.RolesApiService.create({ serviceName },
+      {
+        description: object.description,
+        name: object.name,
+        optionId: object.optionId,
+      }).$promise
       .then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_role_add_success', { name: object.name });
@@ -171,7 +176,12 @@ class LogsRolesService {
   }
 
   updateRole(serviceName, roleId, object) {
-    return this.RolesApiService.update({ serviceName, roleId }, object).$promise
+    return this.RolesApiService.update({ serviceName, roleId },
+      {
+        description: object.description,
+        name: object.name,
+        optionId: object.optionId,
+      }).$promise
       .then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_role_update_success', { name: object.name });
@@ -196,7 +206,11 @@ class LogsRolesService {
   }
 
   createMember(serviceName, roleId, userDetails) {
-    return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
+    return this.MembersApiService.create({ serviceName, roleId },
+      {
+        note: userDetails.note,
+        username: userDetails.username,
+      }).$promise
       .then((operation) => {
         this.resetAllCache();
         return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, 'logs_role_member_add_success', { name: userDetails.username });
