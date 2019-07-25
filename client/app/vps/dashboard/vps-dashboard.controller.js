@@ -1,8 +1,22 @@
 export default class {
   /* @ngInject */
-  constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
-    CucControllerHelper, CucRegionService, SidebarMenu, VpsActionService, VpsService,
-    URLS, REDIRECT_URLS) {
+  constructor(
+    $filter,
+    $q,
+    $scope,
+    $state,
+    $stateParams,
+    $translate,
+    CucCloudMessage,
+    CucControllerHelper,
+    CucRegionService,
+    SidebarMenu,
+    VpsActionService,
+    VpsService,
+    VpsCapabilitiesService,
+    URLS,
+    REDIRECT_URLS,
+  ) {
     this.$filter = $filter;
     this.$q = $q;
     this.$scope = $scope;
@@ -28,6 +42,11 @@ export default class {
       ip: false,
       polling: false,
     };
+
+    this.VpsCapabilitiesService = VpsCapabilitiesService;
+    VpsCapabilitiesService.getCapabilities().then((caps) => {
+      console.log(caps);
+    });
   }
 
   initLoaders() {
@@ -272,10 +291,14 @@ export default class {
         callback: () => this.VpsActionService.reboot(this.serviceName),
         isAvailable: () => !this.loaders.polling && !this.vps.loading,
       },
+      rebuild: {
+        callback: () => this.$state.go('iaas.vps.detail.dashboard.rebuild', { serviceName: this.serviceName }),
+        isAvailable: () => !this.loaders.polling && !this.vps.loading && this.isUSVps,
+      },
       reinstall: {
         text: this.$translate.instant('vps_configuration_reinstall_title_button'),
         callback: () => this.VpsActionService.reinstall(this.serviceName),
-        isAvailable: () => !this.loaders.polling && !this.vps.loading,
+        isAvailable: () => !this.loaders.polling && !this.vps.loading && !this.isUSVps,
       },
       rebootRescue: {
         text: this.$translate.instant('vps_configuration_reboot_rescue'),
