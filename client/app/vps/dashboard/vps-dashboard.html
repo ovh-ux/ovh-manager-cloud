@@ -13,6 +13,11 @@
                     data-ng-if="$ctrl.actions.reboot.isAvailable()">
                 </oui-tile-button>
                 <oui-tile-button
+                    data-on-click="$ctrl.actions.rebuild.callback()"
+                    data-ng-if="$ctrl.actions.rebuild.isAvailable()">
+                    <span data-translate="vps_configuration_reinstall_title_button"></span>
+                </oui-tile-button>
+                <oui-tile-button
                     data-text="{{ ::$ctrl.actions.reinstall.text }}"
                     data-on-click="$ctrl.actions.reinstall.callback()"
                     data-ng-if="$ctrl.actions.reinstall.isAvailable()">

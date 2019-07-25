@@ -16,6 +16,7 @@ export default /* @ngInject */($stateProvider) => {
       url: '/{serviceName}',
       redirectTo: 'iaas.vps.detail.dashboard',
       resolve: {
+        isUSVps: /* @ngInject */ coreConfig => coreConfig.isRegion('US'),
         stateVps: /* @ngInject */ ($transition$, $q, OvhApiVps) => OvhApiVps.v6().get({
           serviceName: _.get($transition$.params(), 'serviceName'),
         }).$promise
