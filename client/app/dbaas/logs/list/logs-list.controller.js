@@ -1,10 +1,9 @@
 class LogsListCtrl {
-  constructor($state, CucCloudMessage, LogsListService, CucControllerHelper, LogsConstants,
+  constructor($state, CucCloudMessage, LogsListService, LogsConstants,
     LogsHelperService, CucOrderHelperService) {
     this.$state = $state;
     this.CucCloudMessage = CucCloudMessage;
     this.LogsListService = LogsListService;
-    this.CucControllerHelper = CucControllerHelper;
     this.LogsConstants = LogsConstants;
     this.LogsHelperService = LogsHelperService;
     this.CucOrderHelperService = CucOrderHelperService;
@@ -43,10 +42,9 @@ class LogsListCtrl {
   }
 
   initLoaders() {
-    this.accounts = this.CucControllerHelper.request.getArrayLoader({
-      loaderFunction: () => this.LogsListService.getServices(),
+    return this.LogsListService.getServices().then((list) => {
+      this.accounts = list;
     });
-    this.accounts.load();
   }
 }
 
