@@ -41,6 +41,11 @@ export default class {
       ip: false,
       polling: false,
     };
+
+    this.VpsCapabilitiesService = VpsCapabilitiesService;
+    VpsCapabilitiesService.getCapabilities().then((caps) => {
+      console.log(caps);
+    });
   }
 
   $onInit() {

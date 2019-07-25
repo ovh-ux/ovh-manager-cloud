@@ -24,6 +24,7 @@ angular
     ovhManagerVpsCloudDatabase,
     ovhManagerVpsDashboard,
     ovhManagerVpsMonitoring,
+    ovhManagerVpsRebuild,
     ovhManagerVpsSecondaryDns,
     ovhManagerVpsSnapshot,
     ovhManagerVpsUpgrade,
