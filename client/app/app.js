@@ -72,7 +72,6 @@ angular.module('managerApp', [
   'ng-slide-down',
   'ovh-angular-jsplumb',
   'tmh.dynamicLocale',
-  'ovh-api-services',
 
   'ovh-jquery-ui-draggable-ng',
   'ovh-angular-jquery-ui-droppable',
