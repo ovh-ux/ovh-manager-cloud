@@ -229,7 +229,7 @@
   "logs_options_modal_reactivate_title": "Option désactivée",
   "logs_options_modal_reactivate_description": "Cette option sera bientôt supprimée et n'est plus utilisable.",
   "logs_options_manage_terminate_title": "Désactiver cette option",
-  "logs_options_manage_terminate_question": "Êtes-vous sûr de vouloir désactiver <strong>{{optionType}}</strong>? Veuillez noter que vous cette action est irréversible.",
+  "logs_options_manage_terminate_question": "Êtes-vous sûr de vouloir désactiver <strong>{{optionType}}</strong>? Veuillez noter que cette action est irréversible.",
   "logs_options_delete_error": "Une erreur est survenue lors de la désactivation de '{{optionType}}': {{message}}",
   "logs_options_delete_success": "L'option {{optionType}} a été désactivé avec succès",
   "logs_options_description_manage": "Pour gérer vos options, allez à la page",
