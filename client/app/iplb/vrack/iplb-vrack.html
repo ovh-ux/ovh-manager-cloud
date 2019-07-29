@@ -49,12 +49,12 @@
         <oui-column data-title="'iplb_vrack_list_col_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_subnet' | translate" data-property="subnet" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
-        <oui-column data-title="'iplb_vrack_list_col_farms' | translate">
+        <oui-column data-title="'iplb_vrack_list_col_farms' | translate" data-property="farmId">
             <span class="oui-chip" data-ng-repeat="farm in $row.farmId track by $index" data-ng-bind="farm.displayName || farm.farmId"></span>
         </oui-column>
-        <oui-action-menu align="end" compact>
-            <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ $ctrl.actions.deletePrivateNetwork.text }}" on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{ $ctrl.actions.editPrivateNetwork.text }}" data-on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-text="{{ $ctrl.actions.deletePrivateNetwork.text }}" data-on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>
