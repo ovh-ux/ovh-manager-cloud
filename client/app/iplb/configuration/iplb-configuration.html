@@ -55,11 +55,13 @@
         </oui-column>
         <oui-action-menu
             data-align="end"
+            data-disabled="!$isSelected"
             data-compact>
             <oui-action-menu-item
                 data-text="{{:: 'iplb_configuration_action_apply' | translate}}"
                 data-on-click="$ctrl.applyChanges($row.id)"
-                data-disabled="$row.task.status !== 'done'"></oui-action-menu-item>
+                data-disabled="$row.task.status && $row.task.status !== 'done'">
+            </oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>
