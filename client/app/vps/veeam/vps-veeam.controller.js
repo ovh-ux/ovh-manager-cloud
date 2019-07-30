@@ -1,4 +1,5 @@
-class VpsVeeamCtrl {
+export default class {
+  /* @ngInject */
   constructor($scope, $stateParams, $translate, CucCloudMessage, CucControllerHelper,
     VpsActionService, VpsService) {
     this.$scope = $scope;
@@ -87,5 +88,3 @@ class VpsVeeamCtrl {
     this.VpsActionService.unmount(this.serviceName, restorePoint);
   }
 }
-
-angular.module('managerApp').controller('VpsVeeamCtrl', VpsVeeamCtrl);

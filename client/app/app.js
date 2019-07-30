@@ -14,6 +14,7 @@ import ngOvhSsoAuth from '@ovh-ux/ng-ovh-sso-auth';
 import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
+import ngOvhUiRouterLayout from '@ovh-ux/ng-ui-router-layout';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
@@ -22,6 +23,8 @@ import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
+
+import ovhManagerVps from './vps/vps.module';
 
 Environment.setRegion(__WEBPACK_REGION__);
 
@@ -52,6 +55,7 @@ angular.module('managerApp', [
   ngOvhActionsMenu,
   ngOvhCloudUniverseComponents,
   ngOvhUserPref,
+  ngOvhUiRouterLayout,
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-q-allSettled',
@@ -72,7 +76,6 @@ angular.module('managerApp', [
   'ng-slide-down',
   'ovh-angular-jsplumb',
   'tmh.dynamicLocale',
-  'ovh-api-services',
 
   'ovh-jquery-ui-draggable-ng',
   'ovh-angular-jquery-ui-droppable',
@@ -87,6 +90,7 @@ angular.module('managerApp', [
   cloudUniverseComponents,
   ovhManagerNavbar,
   ovhManagerServerSidebar,
+  ovhManagerVps,
 ])
   .config(($urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
