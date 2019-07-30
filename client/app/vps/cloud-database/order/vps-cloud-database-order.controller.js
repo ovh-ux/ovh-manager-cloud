@@ -1,4 +1,5 @@
-class VpsCloudDatabaseOrderCtrl {
+export default class {
+  /* @ngInject */
   constructor(
     $q,
     $timeout,
@@ -186,5 +187,3 @@ class VpsCloudDatabaseOrderCtrl {
     this.$window.open(this.purchaseOrder.url);
   }
 }
-
-angular.module('managerApp').controller('VpsCloudDatabaseOrderCtrl', VpsCloudDatabaseOrderCtrl);

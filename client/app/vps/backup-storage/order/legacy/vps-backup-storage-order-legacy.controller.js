@@ -1,4 +1,4 @@
-export default class VpsBackupStorageOrderLegacyCtrl {
+export default class VpsBackupStorageOrderlegacyOrderController {
   /* @ngInject */
   constructor($stateParams, $translate, $window, CucCloudMessage, CucCloudNavigation,
     CucServiceHelper, VpsService) {

@@ -1,6 +1,7 @@
-class VpsDashboardCtrl {
+export default class {
+  /* @ngInject */
   constructor($filter, $q, $scope, $state, $stateParams, $translate, CucCloudMessage,
-    CucControllerHelper, CucRegionService, SidebarMenu, stateVps, VpsActionService, VpsService,
+    CucControllerHelper, CucRegionService, SidebarMenu, VpsActionService, VpsService,
     URLS, REDIRECT_URLS) {
     this.$filter = $filter;
     this.$q = $q;
@@ -13,7 +14,6 @@ class VpsDashboardCtrl {
     this.CucRegionService = CucRegionService;
     this.serviceName = $stateParams.serviceName;
     this.SidebarMenu = SidebarMenu;
-    this.stateVps = stateVps;
     this.VpsActionService = VpsActionService;
     this.VpsService = VpsService;
     this.URLS = URLS;
@@ -325,5 +325,3 @@ class VpsDashboardCtrl {
     return params ? `(${JSON.stringify(params)})` : '';
   }
 }
-
-angular.module('managerApp').controller('VpsDashboardCtrl', VpsDashboardCtrl);

@@ -1,4 +1,5 @@
-class VpsSecondaryDnsCtrl {
+export default class {
+  /* @ngInject */
   constructor($stateParams, CucCloudMessage, VpsActionService, VpsService) {
     this.serviceName = $stateParams.serviceName;
     this.CucCloudMessage = CucCloudMessage;
@@ -40,5 +41,3 @@ class VpsSecondaryDnsCtrl {
       .finally(() => this.refreshSecondaryDnsList());
   }
 }
-
-angular.module('managerApp').controller('VpsSecondaryDnsCtrl', VpsSecondaryDnsCtrl);

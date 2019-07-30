@@ -1,4 +1,5 @@
-class VpsBackupStorageCtrl {
+export default class {
+  /* @ngInject */
   constructor($stateParams, CucControllerHelper, VpsActionService, VpsService) {
     this.serviceName = $stateParams.serviceName;
     this.CucControllerHelper = CucControllerHelper;
@@ -49,5 +50,3 @@ class VpsBackupStorageCtrl {
       .then(() => this.backup.load());
   }
 }
-
-angular.module('managerApp').controller('VpsBackupStorageCtrl', VpsBackupStorageCtrl);

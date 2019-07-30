@@ -1,4 +1,5 @@
-class VpsCloudDatabaseCtrl {
+export default class {
+  /* @ngInject */
   constructor(
     $q,
     $stateParams,
@@ -151,5 +152,3 @@ class VpsCloudDatabaseCtrl {
     ));
   }
 }
-
-angular.module('managerApp').controller('VpsCloudDatabaseCtrl', VpsCloudDatabaseCtrl);

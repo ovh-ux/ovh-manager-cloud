@@ -23,6 +23,8 @@ import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
 import cloudUniverseComponents from '../cloudUniverseComponents';
 
+import ovhManagerVps from './vps/vps.module';
+
 Environment.setRegion(__WEBPACK_REGION__);
 
 angular.module('managerApp', [
@@ -86,6 +88,7 @@ angular.module('managerApp', [
   cloudUniverseComponents,
   ovhManagerNavbar,
   ovhManagerServerSidebar,
+  ovhManagerVps,
 ])
   .config(($urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');

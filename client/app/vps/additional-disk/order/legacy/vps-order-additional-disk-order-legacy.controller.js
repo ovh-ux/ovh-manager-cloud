@@ -1,4 +1,4 @@
-export default class VpsOrderDiskLegacyCtrl {
+export default class VpsOrderDisklegacyOrderController {
   /* @ngInject */
   constructor($filter, $stateParams, $state, $translate, $q, $window, CucCloudMessage,
     CucCloudNavigation, VpsService,
