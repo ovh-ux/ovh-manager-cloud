@@ -1,3 +1,16 @@
+## [7.28.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.0...v7.28.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* **dbaas.logs:** fix datagrid skeleton ([#1523](https://github.com/ovh-ux/ovh-manager-cloud/issues/1523)) ([1e3ac76](https://github.com/ovh-ux/ovh-manager-cloud/commit/1e3ac76)), closes [#1289](https://github.com/ovh-ux/ovh-manager-cloud/issues/1289)
+* **dbaas.logs.translations:** fix typo in translations ([#1525](https://github.com/ovh-ux/ovh-manager-cloud/issues/1525)) ([36bf095](https://github.com/ovh-ux/ovh-manager-cloud/commit/36bf095))
+* **i18n:** add missing translations ([c59e81e](https://github.com/ovh-ux/ovh-manager-cloud/commit/c59e81e))
+* **i18n:** add missing translations ([dfa921e](https://github.com/ovh-ux/ovh-manager-cloud/commit/dfa921e))
+* **i18n:** add missing translations ([591cdc8](https://github.com/ovh-ux/ovh-manager-cloud/commit/591cdc8))
+
+
+
 # [7.28.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.27.2...v7.28.0) (2019-07-24)
 
 
