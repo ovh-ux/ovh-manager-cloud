@@ -1,7 +1,9 @@
 (() => {
   class VeeamStorageUpdateQuotaCtrl {
-    constructor($uibModalInstance, inventoryName, serviceName, CucControllerHelper, VeeamService) {
+    constructor($uibModalInstance, currentQuota, inventoryName,
+      serviceName, CucControllerHelper, VeeamService) {
       this.$uibModalInstance = $uibModalInstance;
+      this.currentQuota = currentQuota;
       this.inventoryName = inventoryName;
       this.serviceName = serviceName;
       this.CucControllerHelper = CucControllerHelper;
@@ -13,6 +15,7 @@
     }
 
     $onInit() {
+      this.newQuota = this.currentQuota;
       this.capabilities.load();
     }
 

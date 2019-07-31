@@ -56,14 +56,15 @@
       }
     }
 
-    updateQuota(inventoryName) {
+    updateQuota(storage) {
       this.CucControllerHelper.modal.showModal({
         modalConfig: {
           templateUrl: 'app/veeam/storage/update-quota/veeam-storage-update-quota.html',
           controller: 'VeeamStorageUpdateQuotaCtrl',
           controllerAs: 'VeeamStorageUpdateQuotaCtrl',
           resolve: {
-            inventoryName: () => inventoryName,
+            currentQuota: () => storage.quota.value,
+            inventoryName: () => storage.inventoryName,
             serviceName: () => this.$stateParams.serviceName,
           },
         },

@@ -9,7 +9,9 @@
         
         <p class="oui-modal__text" data-translate="veeam_storage_update_quota_information"
             data-translate-values="{maxquota: VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}"></p>
-        <oui-field data-label="{{ ::'veeam_quota' | translate }}">
+        <oui-field data-label="{{ ::'veeam_quota' | translate }}"
+            data-size="s"
+            data-help-text="{{ :: 'veeam_storage_quota_unit' | translate }}">
             <input
                 type="number"
                 min="1000"
@@ -20,6 +22,7 @@
                 class="oui-input"
                 data-ng-model="VeeamStorageUpdateQuotaCtrl.newQuota"
                 required
+                autofocus
                 data-ng-class="{'oui-input_error': form.$submitted && form.newQuota.$invalid}"/>
         </oui-field>
     </oui-modal>
