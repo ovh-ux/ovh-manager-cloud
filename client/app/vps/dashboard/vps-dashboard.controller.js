@@ -41,10 +41,26 @@ export default class {
       ip: false,
       polling: false,
     };
+  }
 
-    this.VpsCapabilitiesService = VpsCapabilitiesService;
-    VpsCapabilitiesService.getCapabilities().then((caps) => {
-      console.log(caps);
+  $onInit() {
+    this.initActions();
+    this.initLoaders();
+
+    this.vps.load();
+    this.summary.load();
+    this.plan.load();
+
+    this.$scope.$on('tasks.pending', (event, opt) => {
+      if (opt === this.serviceName) {
+        this.loaders.polling = true;
+      }
+    });
+    this.$scope.$on('tasks.success', (event, opt) => {
+      if (opt === this.serviceName) {
+        this.loaders.polling = false;
+        this.vps.load();
+      }
     });
   }
 

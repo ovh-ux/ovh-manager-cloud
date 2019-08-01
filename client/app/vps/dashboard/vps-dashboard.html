@@ -441,7 +441,7 @@
                 </oui-tile-definition>
                 <div data-ng-if="!($ctrl.vps.loading || $ctrl.plan.loading)">
                     <oui-tile-definition
-                        data-ng-if="$ctrl.plan.data.offer"
+                        data-ng-if="$ctrl.plan.data.offer && $ctrl.hasFeature($ctrl.DASHBOARD_FEATURES.upgrade)"
                         data-term="{{ ::'common_tile_subscription_offer' | translate }}"
                         data-description="{{ ::$ctrl.plan.data.offer }}">
                         <oui-action-menu
