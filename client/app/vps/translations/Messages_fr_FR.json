@@ -218,7 +218,6 @@
   "vps_configuration_add_ipv4_title_button": "Gérer mes IP",
   "vps_configuration_add_ipv6_title_button": "Ajouter IPv6",
   "vps_configuration_monitoring_title_button": "Monitoring",
-  "vps_configuration_monitoring_title": "Monitoring",
   "vps_tab_monitoring": "Monitoring",
   "vps_configuration_monitoring_usage_proc": "Utilisation du processeur",
   "vps_configuration_monitoring_usage_ram": "Utilisation de la RAM",
