@@ -1,3 +1,15 @@
+## [7.28.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.1...v7.28.2) (2019-08-02)
+
+
+### Bug Fixes
+
+* **cloud.logs:** allow to create index again ([#1534](https://github.com/ovh-ux/ovh-manager-cloud/issues/1534)) ([aa0bd25](https://github.com/ovh-ux/ovh-manager-cloud/commit/aa0bd25))
+* **i18n:** add missing translations ([3b4002e](https://github.com/ovh-ux/ovh-manager-cloud/commit/3b4002e))
+* **iplb.configuration:** enable button to apply configuration([#1527](https://github.com/ovh-ux/ovh-manager-cloud/issues/1527)) ([16f0e5f](https://github.com/ovh-ux/ovh-manager-cloud/commit/16f0e5f))
+* **veeam.storage:** display error message if quota upgrade fails ([#1533](https://github.com/ovh-ux/ovh-manager-cloud/issues/1533)) ([f84effb](https://github.com/ovh-ux/ovh-manager-cloud/commit/f84effb))
+
+
+
 ## [7.28.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.0...v7.28.1) (2019-07-30)
 
 
