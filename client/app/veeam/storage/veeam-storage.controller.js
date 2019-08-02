@@ -71,7 +71,11 @@
         .then((result) => {
           this.VeeamService.startPolling(this.$stateParams.serviceName, result.data)
             .then(this.storageInfos.load.bind(this));
-        });
+        })
+        .catch(error => this.VeeamService.unitOfWork.messages.push({
+          text: error.message,
+          type: 'error',
+        }));
     }
 
     $onInit() {
