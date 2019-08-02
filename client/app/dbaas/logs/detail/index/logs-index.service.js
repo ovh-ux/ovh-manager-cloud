@@ -94,6 +94,7 @@ class LogsIndexService {
       {
         alertNotifyEnabled: object.alertNotifyEnabled,
         optionId: object.optionId,
+        description: object.description,
         suffix: object.suffix,
       }).$promise
       .then((operation) => {
