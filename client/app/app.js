@@ -15,6 +15,7 @@ import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import ngOvhStopEvent from '@ovh-ux/ng-ovh-stop-event';
 import ngOvhSwimmingPoll from '@ovh-ux/ng-ovh-swimming-poll';
 import ngOvhUiRouterLayout from '@ovh-ux/ng-ui-router-layout';
+import ngOvhUiRouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
 import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
@@ -56,6 +57,7 @@ angular.module('managerApp', [
   ngOvhCloudUniverseComponents,
   ngOvhUserPref,
   ngOvhUiRouterLayout,
+  ngOvhUiRouterLineProgress,
   'ovh-api-services',
   'ovh-common-style',
   'ovh-angular-q-allSettled',
