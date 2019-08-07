@@ -19,12 +19,11 @@
                 readonly>
         </oui-field>
 
-        <oui-field data-label="{{ ::'iplb_utilisation_update_alert_threshold' | translate }}">
+        <oui-field data-label="{{:: ('iplb_utilisation_update_alert_threshold' | translate) + ' (' + ('GiB' | translate) + ')' }}">
             <input class="oui-input"
                 type="number"
                 id="included"
                 name="included"
-                step="100"
                 data-min="0"
                 data-ng-model="IpLoadBalancerUpdateQuotaCtrl.alert"
                 cuc-autofocus>
