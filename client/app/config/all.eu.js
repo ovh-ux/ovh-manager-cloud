@@ -3,7 +3,8 @@ angular.module('managerApp')
   .constant('MANAGER_URLS', {
     web: 'https://www.ovh.com/manager/web/index.html#/',
     dedicated: 'https://www.ovh.com/manager/dedicated/index.html#/',
-    cloud: 'https://www.ovh.com/manager/cloud/index.html#/',
+    cloud: 'https://www.ovh.com/manager/cloud/repsac/index.html#/',
+    publicCloud: 'https://www.ovh.com/manager/public-cloud/index.html#/',
     telecom: 'https://www.ovhtelecom.fr/manager/index.html#/',
     sunrise: 'https://www.ovh.com/manager/sunrise/index.html#/',
     gamma: 'https://www.ovh.com/manager/sunrise/index.html#/',
