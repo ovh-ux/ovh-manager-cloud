@@ -2,7 +2,8 @@ angular.module('managerApp')
   .constant('UNIVERSE', 'CLOUD')
   .constant('MANAGER_URLS', {
     dedicated: 'https://ca.ovh.com/manager/index.html#/',
-    cloud: 'https://ca.ovh.com/manager/cloud/index.html#/',
+    cloud: 'https://ca.ovh.com/manager/cloud/repsac/index.html#/',
+    publicCloud: 'https://ca.ovh.com/manager/public-cloud/index.html#/',
     sunrise: 'https://ca.ovh.com/manager/sunrise/index.html#/',
     gamma: 'https://ca.ovh.com/manager/sunrise/index.html#/',
     portal: 'https://www.ovh.com/manager/portal/index.html#/',
