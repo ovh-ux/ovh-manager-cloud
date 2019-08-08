@@ -551,6 +551,7 @@
   "common_database_version_postgresql_95": "PostgreSQL 9.5",
   "common_database_version_postgresql_96": "PostgreSQL 9.6",
   "common_database_version_postgresql_10": "PostgreSQL 10",
+  "common_database_version_postgresql_11": "PostgreSQL 11",
   "common_database_version_redis_32": "Redis 3.2",
   "common_database_version_redis_40": "Redis 4.0",
   "common_database_version_mongodb_34": "MongoDB 3.4",
