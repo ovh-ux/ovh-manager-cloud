@@ -5,16 +5,18 @@ export default class {
     $stateParams,
     $translate,
     CucCloudMessage,
+    CucFeatureAvailabilityService,
+    CucProductsService,
     OvhApiMe,
     VpsNotificationIpv6,
-    STOP_NOTIFICATION_USER_PREF,
     VpsService,
-    CucProductsService,
+    STOP_NOTIFICATION_USER_PREF,
   ) {
     this.$rootScope = $rootScope;
     this.$stateParams = $stateParams;
     this.$translate = $translate;
     this.CucCloudMessage = CucCloudMessage;
+    this.CucFeatureAvailabilityService = CucFeatureAvailabilityService;
     this.OvhApiMe = OvhApiMe;
     this.VpsNotificationIpv6 = VpsNotificationIpv6;
     this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
@@ -31,12 +33,6 @@ export default class {
       autoRenew: true,
       ipV6: true,
     };
-
-    this.OvhApiMe.v6()
-      .get().$promise
-      .then((me) => {
-        this.user = me;
-      });
   }
 
   $onInit() {
@@ -44,6 +40,12 @@ export default class {
     this.$rootScope.$on('changeDescription', (event, data) => {
       this.description = data;
     });
+    this.showDatabaseTab = false;
+    this.CucFeatureAvailabilityService
+      .hasFeaturePromise('VPS', 'cloudDatabase')
+      .then((hasFeature) => {
+        this.showDatabaseTab = hasFeature;
+      });
     this.VpsService.getSelectedVps(this.serviceName)
       .then((vps) => {
         this.vps = vps;

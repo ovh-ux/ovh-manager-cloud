@@ -16,7 +16,7 @@
         <oui-header-tabs-item data-text="{{:: 'vps_tab_additional_disk' | translate }}"
                               data-state="iaas.vps.detail.additional-disk"
                               data-state-params="{ serviceName: $ctrl.serviceName }"></oui-header-tabs-item>
-        <oui-header-tabs-item data-ng-if="$ctrl.user.ovhSubsidiary !== 'CA'"
+        <oui-header-tabs-item data-ng-if="$ctrl.showDatabaseTab"
                               data-text="{{:: 'vps_tab_cloud_database' | translate }}"
                               data-state="iaas.vps.detail.cloud-database"
                               data-state-params="{ serviceName: $ctrl.serviceName }"></oui-header-tabs-item>
