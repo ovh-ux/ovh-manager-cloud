@@ -1,3 +1,23 @@
+# [7.29.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.3...v7.29.0) (2019-08-12)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 2] ([0807841](https://github.com/ovh-ux/ovh-manager-cloud/commit/0807841))
+* **i18n:** add missing translations [CDS 4] ([4557c6b](https://github.com/ovh-ux/ovh-manager-cloud/commit/4557c6b))
+* update manager urls ([#1546](https://github.com/ovh-ux/ovh-manager-cloud/issues/1546)) ([500d1ba](https://github.com/ovh-ux/ovh-manager-cloud/commit/500d1ba))
+* **i18n:** add missing translations [CDS 8] ([b462140](https://github.com/ovh-ux/ovh-manager-cloud/commit/b462140))
+* **i18n:** add new postgres version ([#1542](https://github.com/ovh-ux/ovh-manager-cloud/issues/1542)) ([5446618](https://github.com/ovh-ux/ovh-manager-cloud/commit/5446618))
+* **iplb:** quota threshold modal ([#1544](https://github.com/ovh-ux/ovh-manager-cloud/issues/1544)) ([e7686fb](https://github.com/ovh-ux/ovh-manager-cloud/commit/e7686fb))
+
+
+### Features
+
+* add @ovh-ux/ng-ovh-request-tagger ([#1550](https://github.com/ovh-ux/ovh-manager-cloud/issues/1550)) ([27715d8](https://github.com/ovh-ux/ovh-manager-cloud/commit/27715d8))
+* add @ovh-ux/ng-ui-router-line-progress ([#1540](https://github.com/ovh-ux/ovh-manager-cloud/issues/1540)) ([c6e14ef](https://github.com/ovh-ux/ovh-manager-cloud/commit/c6e14ef))
+
+
+
 ## [7.28.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.2...v7.28.3) (2019-08-12)
 
 
