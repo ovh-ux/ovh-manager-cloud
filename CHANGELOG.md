@@ -1,3 +1,12 @@
+## [7.28.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.2...v7.28.3) (2019-08-12)
+
+
+### Bug Fixes
+
+* **sidebar:** use nasha from cloud manager ([#1545](https://github.com/ovh-ux/ovh-manager-cloud/issues/1545)) ([8905069](https://github.com/ovh-ux/ovh-manager-cloud/commit/8905069))
+
+
+
 ## [7.28.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.1...v7.28.2) (2019-08-02)
 
 
