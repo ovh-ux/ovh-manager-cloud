@@ -1,3 +1,12 @@
+## [7.29.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.29.0...v7.29.1) (2019-08-20)
+
+
+### Bug Fixes
+
+* **vps:** hide VPS and cloudDatabase tabs in both CA and US region ([#1549](https://github.com/ovh-ux/ovh-manager-cloud/issues/1549)) ([1aeee3a](https://github.com/ovh-ux/ovh-manager-cloud/commit/1aeee3a))
+
+
+
 # [7.29.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.28.3...v7.29.0) (2019-08-12)
 
 
