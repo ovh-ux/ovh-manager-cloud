@@ -1,3 +1,12 @@
+## [99.0.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.3...v99.0.4) (2019-08-22)
+
+
+### Bug Fixes
+
+* remove partners entry from the navbar ([#1557](https://github.com/ovh-ux/ovh-manager-cloud/issues/1557)) ([20a5dcc](https://github.com/ovh-ux/ovh-manager-cloud/commit/20a5dcc))
+
+
+
 ## [99.0.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.2...v99.0.3) (2019-06-18)
 
 
