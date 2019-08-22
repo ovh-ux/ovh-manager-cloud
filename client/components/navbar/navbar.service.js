@@ -609,7 +609,7 @@ class ManagerNavbarService {
     switch (this.TARGET) {
       case 'EU': {
         if (this.locale === 'FR') {
-          return ['portal', 'web', 'dedicated', 'cloud', 'telecom', 'gamma', 'partners'];
+          return ['portal', 'web', 'dedicated', 'cloud', 'telecom', 'gamma'];
         }
 
         return ['portal', 'web', 'dedicated', 'cloud', 'telecom', 'gamma'];
@@ -640,7 +640,7 @@ class ManagerNavbarService {
         class: managerName,
         title: this.$translate.instant(`common_menu_${managerName}`),
         url: managerUrls[managerName],
-        isPrimary: ['partners', 'labs'].indexOf(managerName) === -1,
+        isPrimary: ['labs'].indexOf(managerName) === -1,
       };
 
       if (products && managerName === currentUniverse) {
