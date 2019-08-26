@@ -1,4 +1,7 @@
-import { OFFER_AGORA_MAPPING } from './vps-upgrade.constants';
+import {
+  OFFER_AGORA_MAPPING,
+  VERSION_AGORA_MAPPING,
+} from './vps-upgrade.constants';
 
 export default class VpsUpgradeCtrl {
   /* @ngInject */
@@ -52,10 +55,15 @@ export default class VpsUpgradeCtrl {
    */
   static findMatchingUpgradeOffer(modelType, modelName, modelVersion, availableOffers) {
     // rules are :
+    // - if ref is a special case, map it
     // - if version year is less than 2018, agora version will be 2018v3
     // - otherwise agora version will be 2018v4
     const versionInfos = VpsUpgradeCtrl.parseModelVersion(modelVersion);
-    const destVersion = versionInfos.year < 2018 ? '2018v3' : '2018v4';
+    const destVersion = _.get(
+      VERSION_AGORA_MAPPING,
+      modelVersion,
+      versionInfos.year < 2018 ? '2018v3' : '2018v4',
+    );
     const mappedType = _.get(OFFER_AGORA_MAPPING, modelType, modelType);
     const offerPlanCode = `vps_${mappedType}_${modelName}_${destVersion}`;
 
