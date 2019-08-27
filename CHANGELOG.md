@@ -1,3 +1,20 @@
+# [7.30.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.29.1...v7.30.0) (2019-08-26)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 19] ([b37eb5b](https://github.com/ovh-ux/ovh-manager-cloud/commit/b37eb5b))
+* **i18n:** add missing translations [CDS 20] ([24463f3](https://github.com/ovh-ux/ovh-manager-cloud/commit/24463f3))
+* **i18n:** add missing translations [CDS 21] ([46fcec3](https://github.com/ovh-ux/ovh-manager-cloud/commit/46fcec3))
+* **i18n:** add missing translations [CDS 22] ([775d0ba](https://github.com/ovh-ux/ovh-manager-cloud/commit/775d0ba))
+
+
+### Features
+
+* **vps.upgrade:** handle new refs in special mapping ([#1556](https://github.com/ovh-ux/ovh-manager-cloud/issues/1556)) ([1e63424](https://github.com/ovh-ux/ovh-manager-cloud/commit/1e63424))
+
+
+
 ## [7.29.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.29.0...v7.29.1) (2019-08-20)
 
 
