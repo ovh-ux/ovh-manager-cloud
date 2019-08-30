@@ -89,13 +89,15 @@
                         <oui-tile-description>
                             <div data-ng-if="!$ctrl.hasMultipleRegions()">
                                 <i class="flag-icon {{ ::$ctrl.detailedRegions[0].icon }} flag flag__icon-sm mr-1" aria-hidden="true"></i>
-                                <span data-ng-bind=":: $ctrl.detailedRegions[0].microRegion.text"></span> -
+                                <span data-ng-bind=":: $ctrl.detailedRegions[0].microRegion.text"></span>
+                                <span data-ng-if="::$ctrl.detailedRegions[0].country"> - </span>
                                 <small data-ng-bind=":: $ctrl.detailedRegions[0].country"></small>
                             </div>
                             <div data-ng-if="$ctrl.hasMultipleRegions()" data-ng-repeat="(key, regions) in $ctrl.regionsGroup track by $index">
                                 <i class="flag-icon {{ ::regions[0].icon }} flag flag__icon-sm mr-1" aria-hidden="true"></i>
-                                <span data-ng-repeat="region in regions track by $index" data-ng-bind=":: region.macroRegion.code + (!$last ? ', ' : '')"></span> -
-                                <small data-ng-bind=":: key"></small>
+                                <span data-ng-repeat="region in regions track by $index" data-ng-bind=":: region.macroRegion.code + (!$last ? ', ' : '')"></span>
+                                <span data-ng-if="::key"> - </span>
+                                <small data-ng-bind="::key"></small>
                             </div>
                         </oui-tile-description>
                     </oui-tile-definition>
