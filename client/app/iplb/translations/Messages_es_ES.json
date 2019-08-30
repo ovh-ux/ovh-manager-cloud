@@ -63,5 +63,6 @@
   "iplb_utilisation_update_alert_included_data": "Datos incluidos",
   "iplb_utilisation_update_alert_threshold": "Umbral de alerta",
   "iplb_utilisation_update_alert_error": "Se ha producido un error al actualizar el umbral de alerta.",
-  "iplb_usage_loading_error": "Se ha producido un error al cargar la sección «Uso»."
+  "iplb_usage_loading_error": "Se ha producido un error al cargar la sección «Uso».",
+  "iplb_gigabytes": "GB"
 }
