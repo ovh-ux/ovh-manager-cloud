@@ -14,7 +14,6 @@ import ovhManagerVpsVeeam from './veeam';
 import ovhManagerVpsWindows from './windows';
 
 import ovhManagerVpsKvmNovnc from './modal/shortcut/kvm/novnc/novnc.module';
-import ovhManagerVpsRebuild from './dashboard/rebuild';
 
 const moduleName = 'ovhManagerVps';
 
@@ -25,7 +24,6 @@ angular
     ovhManagerVpsCloudDatabase,
     ovhManagerVpsDashboard,
     ovhManagerVpsMonitoring,
-    ovhManagerVpsRebuild,
     ovhManagerVpsSecondaryDns,
     ovhManagerVpsSnapshot,
     ovhManagerVpsUpgrade,

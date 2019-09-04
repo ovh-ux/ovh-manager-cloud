@@ -1,4 +1,5 @@
 export const DASHBOARD_FEATURES = {
+  autorenew: 'autorenew',
   rebuild: 'rebuild',
   reinstall: 'reinstall',
   status: 'status',

@@ -45,6 +45,10 @@
                         <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
                     </a>
                 </div>
+                <oui-tile-button data-on-click="$ctrl.actions.terminate.callback()"
+                                 data-ng-if="$ctrl.actions.terminate.isAvailable()">
+                    <span data-translate="vps_configuration_terminate"></span>
+                </oui-tile-button>
             </oui-tile>
         </div>
 
@@ -436,13 +440,13 @@
                 </oui-tile-definition>
                 <div data-ng-if="!($ctrl.vps.loading || $ctrl.plan.loading)">
                     <oui-tile-definition
-                        data-ng-if="$ctrl.plan.data.offer && $ctrl.hasFeature($ctrl.DASHBOARD_FEATURES.upgrade)"
+                        data-ng-if="$ctrl.plan.data.offer"
                         data-term="{{ ::'common_tile_subscription_offer' | translate }}"
                         data-description="{{ ::$ctrl.plan.data.offer }}">
                         <oui-action-menu
                             data-compact
                             data-align="end"
-                            data-ng-if="$ctrl.actions.upgrade.isAvailable()">
+                            data-ng-if="$ctrl.actions.upgrade.isAvailable() && $ctrl.hasFeature($ctrl.DASHBOARD_FEATURES.upgrade)">
                             <div class="oui-dropdown-menu__item">
                                 <a class="oui-dropdown-option"
                                     data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.constructor.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
