@@ -246,7 +246,8 @@ export default class {
       manageAutorenew: {
         text: this.$translate.instant('common_manage'),
         href: this.CucControllerHelper.navigation.constructor.getUrl(_.get(this.REDIRECT_URLS, 'renew'), { serviceName: this.serviceName, serviceType: 'VPS' }),
-        isAvailable: () => !this.vps.loading && !this.loaders.plan,
+        isAvailable: () => !this.vps.loading && !this.loaders.plan
+          && this.hasFeature(DASHBOARD_FEATURES.autorenew),
       },
       manageContact: {
         text: this.$translate.instant('common_manage'),
@@ -309,6 +310,10 @@ export default class {
         text: this.$translate.instant('vps_configuration_reversedns_title_button'),
         callback: () => this.VpsActionService.reverseDns(this.serviceName),
         isAvailable: () => !this.loaders.ip,
+      },
+      terminate: {
+        callback: () => this.$state.go('iaas.vps.detail.dashboard.terminate'),
+        isAvailable: () => !this.vps.loading,
       },
       terminateAdditionalDiskOption: {
         text: this.$translate.instant('vps_configuration_desactivate_option'),
