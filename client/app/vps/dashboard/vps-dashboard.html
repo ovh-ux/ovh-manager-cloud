@@ -27,7 +27,8 @@
                     data-on-click="$ctrl.actions.kvm.callback()"
                     data-ng-if="$ctrl.actions.kvm.isAvailable()">
                 </oui-tile-button>
-                <div class="oui-tile__item oui-tile__item_button">
+                <div class="oui-tile__item oui-tile__item_button"
+                     data-ng-if="$ctrl.actions.changeOwner.isAvailable()">
                     <a data-ng-href="{{ ::$ctrl.actions.changeOwner.href }}"
                         data-at-internet-click="{ name: $ctrl.action.atInternetClickTag }"
                         class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
