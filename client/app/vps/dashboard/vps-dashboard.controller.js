@@ -235,7 +235,7 @@ export default class {
       changeOwner: {
         text: this.$translate.instant('vps_change_owner'),
         atInternetClickTag: 'VPS-Actions-ChangeOwner',
-        isAvailable: () => !this.loaders.url,
+        isAvailable: () => !this.loaders.url && !_.isEmpty(this.actions.changeOwner.href),
         isExternal: true,
       },
       kvm: {
