@@ -438,7 +438,7 @@
   "vps_move_alert": "Votre VPS a changé d'univers ! Retrouvez bientôt tous vos serveurs (virtuels et dédiés) dans un même grand univers.",
   "vps_tab_dashboard": "Accueil",
   "vps_configuration_edit_name_title": "Modifier le nom",
-  "vps_setting_name_updated": "Nom du service modifié",
+  "vps_setting_name_updated": "Nom du projet modifié",
   "vps_default_name": "Nom par défaut",
   "vps_personal_name": "Nom personnalisé",
   "vps_change_owner": "Changer le propriétaire",
