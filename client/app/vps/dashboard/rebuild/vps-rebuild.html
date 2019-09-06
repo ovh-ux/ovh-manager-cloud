@@ -3,9 +3,9 @@
            data-primary-label="{{:: 'vps_configuration_rebuild_confirm' | translate }}"
            data-primary-action="$ctrl.rebuildVps($ctrl.vpsOptions)"
            data-primary-disabled="$ctrl.rebuild.$invalid"
-           data-secondary-action="$ctrl.close()"
+           data-secondary-action="$ctrl.goBackToDashboard()"
            data-secondary-label="{{:: 'vps_configuration_rebuild_cancel' | translate }}"
-           data-on-dismiss="$ctrl.close()"
+           data-on-dismiss="$ctrl.goBackToDashboard()"
            data-loading="$ctrl.isLoading">
 
     <form novalidate name="$ctrl.rebuild">

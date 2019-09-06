@@ -4,9 +4,9 @@ import template from './vps-rebuild.html';
 export default {
   bindings: {
     availableImages: '<',
-    close: '<',
     displayError: '<',
     displaySuccess: '<',
+    goBackToDashboard: '<',
     serviceName: '<',
     sshKeys: '<',
   },

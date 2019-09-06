@@ -218,6 +218,7 @@
   "vps_configuration_add_ipv4_title_button": "Gérer mes IP",
   "vps_configuration_add_ipv6_title_button": "Ajouter IPv6",
   "vps_configuration_monitoring_title_button": "Monitoring",
+  "vps_configuration_monitoring_title": "Monitoring",
   "vps_tab_monitoring": "Monitoring",
   "vps_configuration_monitoring_usage_proc": "Utilisation du processeur",
   "vps_configuration_monitoring_usage_ram": "Utilisation de la RAM",
@@ -449,5 +450,6 @@
   "vps_configuration_sla_title_enable": "Activer le monitoring SLA pour ce serveur ?",
   "vps_configuration_sla_title_disable": "Désactiver le monitoring SLA pour ce serveur ?",
   "vps_service_expired": "Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.",
-  "vps_back_to_configuration": "Retour à la configuration de mon VPS"
+  "vps_back_to_configuration": "Retour à la configuration de mon VPS",
+  "vps_tab_tasks": "Opérations"
 }

@@ -7,6 +7,9 @@ export default /* @ngInject */($stateProvider) => {
       url: '/vps',
       templateUrl: 'app/vps/vps.html',
       abstract: true,
+      resolve: {
+        currentUser: /* @ngInject */ OvhApiMe => OvhApiMe.v6().get().$promise,
+      },
       translations: {
         value: ['../common', '../vps'],
         format: 'json',
@@ -21,7 +24,6 @@ export default /* @ngInject */($stateProvider) => {
           OvhApiVpsCapabilities,
         ) => OvhApiVpsCapabilities.Aapi().query({ serviceName }).$promise
           .then(capabilities => capabilities.map(capability => _.kebabCase(capability))),
-        currentUser: /* @ngInject */ OvhApiMe => OvhApiMe.v6().get().$promise,
         serviceName: /* @ngInject */ $transition$ => $transition$.params().serviceName,
         stateVps: /* @ngInject */ ($q, serviceName, OvhApiVps) => OvhApiVps.v6().get({
           serviceName,

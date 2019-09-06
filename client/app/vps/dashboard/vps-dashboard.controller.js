@@ -212,13 +212,12 @@ export default class {
     return this.VpsService.updateDisplayName(this.serviceName, newDisplayName)
       .then(() => {
         this.$scope.$emit('changeDescription', newDisplayName);
-        const menuItem = this.SidebarMenu.getItemById(this.serviceName);
-        menuItem.title = newDisplayName;
 
-        this.CucCloudMessage.success(this.$translate.instant('vps_setting_name_updated'));
+        return this.$state.reload()
+          .then(() => this.CucCloudMessage
+            .success(this.$translate.instant('vps_setting_name_updated')));
       })
-      .catch(err => this.CucCloudMessage.error(err))
-      .finally(() => this.vps.load());
+      .catch(err => this.CucCloudMessage.error(err));
   }
 
   initActions() {
