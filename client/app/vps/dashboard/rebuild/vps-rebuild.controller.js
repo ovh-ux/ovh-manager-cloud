@@ -14,10 +14,11 @@ export default class VpsRebuildController {
     this.isLoading = true;
     return this.vpsRebuild
       .rebuildVps(this.serviceName, options)
-      .then(() => this.close().then(() => {
+      .then(() => this.goBackToDashboard())
+      .then(() => {
         this.displaySuccess();
-      }))
-      .catch(error => this.close().then(() => {
+      })
+      .catch(error => this.goBackToDashboard().then(() => {
         const errorDetail = _.get(error, 'data.message', error.message);
         this.displayError('vps_configuration_reinstall_fail', errorDetail);
       }));

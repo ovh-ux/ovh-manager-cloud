@@ -71,7 +71,7 @@
                 <div data-ng-if="!$ctrl.vps.loading">
                     <oui-tile-definition
                         data-term="{{ ::'vps_dashboard_name' | translate }}"
-                        data-description="{{ ::$ctrl.vps.data.displayName || $ctrl.vps.data.name }}">
+                        data-description="{{ $ctrl.vps.data.displayName || $ctrl.vps.data.name }}">
                         <oui-action-menu
                             data-compact
                             data-align="end"

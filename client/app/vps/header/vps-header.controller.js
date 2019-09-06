@@ -67,13 +67,18 @@ export default class {
   }
 
   getFeatures() {
-    return TAB_FEATURES
-      .map(feature => feature.title)
-      .filter(feature => this.capabilities.includes(feature))
-      .map(feature => ({
+    return _.map(
+      _.filter(
+        _.map(
+          TAB_FEATURES, 'title',
+        ),
+        feature => this.capabilities.includes(feature),
+      ),
+      feature => ({
         textId: `vps_tab_${_.snakeCase(feature)}`,
         state: `iaas.vps.detail.${_.snakeCase(feature)}`,
-      }));
+      }),
+    );
   }
 
   checkMessages(vps) {
