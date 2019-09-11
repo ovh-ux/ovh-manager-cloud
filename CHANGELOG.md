@@ -1,3 +1,18 @@
+# [7.32.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.31.0...v7.32.0) (2019-09-11)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 29] ([9d51ea9](https://github.com/ovh-ux/ovh-manager-cloud/commit/9d51ea9))
+* **i18n:** add missing translations [CDS 30] ([55fd563](https://github.com/ovh-ux/ovh-manager-cloud/commit/55fd563))
+
+
+### Features
+
+* add manager banner ([#1571](https://github.com/ovh-ux/ovh-manager-cloud/issues/1571)) ([e427b51](https://github.com/ovh-ux/ovh-manager-cloud/commit/e427b51))
+
+
+
 # [7.31.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.30.1...v7.31.0) (2019-09-02)
 
 
