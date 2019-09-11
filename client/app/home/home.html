@@ -1,5 +1,7 @@
 <div class="container-fluid">
-    <div class="mt-5 py-5">
+    <div class="py-5">
+        <ovh-manager-banner class="d-block mb-4"></ovh-manager-banner>
+
         <oui-message data-type="info"
             data-on-dismissed="$ctrl.onNewRegionsAvailableMessageDismiss()"
             data-ng-if="$ctrl.showNewRegionsAvailableMessage && $ctrl.region !== 'US'">

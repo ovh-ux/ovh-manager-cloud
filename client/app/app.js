@@ -20,6 +20,7 @@ import ngOvhUserPref from '@ovh-ux/ng-ovh-user-pref';
 import ngTranslateAsyncLoader from '@ovh-ux/ng-translate-async-loader';
 import ngOvhActionsMenu from '@ovh-ux/ng-ovh-actions-menu';
 import ngOvhCloudUniverseComponents from '@ovh-ux/ng-ovh-cloud-universe-components';
+import ovhManagerBanner from '@ovh-ux/manager-banner';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerServerSidebar from '@ovh-ux/manager-server-sidebar';
 
@@ -90,6 +91,7 @@ angular.module('managerApp', [
 
   ngTranslateAsyncLoader,
   cloudUniverseComponents,
+  ovhManagerBanner,
   ovhManagerNavbar,
   ovhManagerServerSidebar,
   ovhManagerVps,
