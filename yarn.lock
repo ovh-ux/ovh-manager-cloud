@@ -1004,13 +1004,13 @@
     lodash "^4.17.14"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.4.2.tgz#74923c545e9c1312dc8011f8c20b4edcffa631b4"
-  integrity sha512-hEKPeLHYgQyJissB8ZPb3z9cL4/Txg1Z7ynHNsBExB2aWJg2IVaBcfnGlS9c35Chct1cgs5c29EjiIx5hHgONQ==
+"@ovh-ux/manager-server-sidebar@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.5.2.tgz#6e2b7e135ccaf17a39daade7b88d388936d3361f"
+  integrity sha512-fR+Be8VgvgMMXMEciVpnRzNTnZKgjZeU6vbb8kvJWIQiE8xWd17dplc6CkpneljCec/zoINm6NaaeGnb7Q9rXw==
   dependencies:
     jsurl "^0.1.5"
-    lodash "^4.17.14"
+    lodash "^4.17.15"
 
 "@ovh-ux/manager-webpack-config@^3.0.4":
   version "3.0.4"
