@@ -1,3 +1,12 @@
+## [99.0.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.4...v99.0.5) (2019-09-17)
+
+
+### Features
+
+* **vps:** add vps redirection into legacy section ([#1565](https://github.com/ovh-ux/ovh-manager-cloud/issues/1565)) ([506e61e](https://github.com/ovh-ux/ovh-manager-cloud/commit/506e61e))
+
+
+
 ## [99.0.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.3...v99.0.4) (2019-08-22)
 
 
