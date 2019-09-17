@@ -1,11 +1,14 @@
+import { MANAGER_URLS } from '../sidebar.constants';
+
 class VpsSidebar {
-  constructor($translate, OvhApiMe, SidebarMenu, REDIRECT_URLS, URLS) {
+  constructor($translate, CucConfig, OvhApiMe, SidebarMenu, REDIRECT_URLS, URLS) {
     this.$translate = $translate;
     this.User = OvhApiMe;
     this.SidebarMenu = SidebarMenu;
     this.REDIRECT_URLS = REDIRECT_URLS;
     this.URLS = URLS;
 
+    this.region = CucConfig.getRegion();
     this.locale = null;
     this.type = 'VPS';
 
@@ -21,7 +24,7 @@ class VpsSidebar {
         id: vps.serviceName,
         title: vps.displayName || vps.serviceName,
         icon: 'ovh-font ovh-font-vps',
-        state: 'iaas.vps.detail.dashboard',
+        url: `${_.get(MANAGER_URLS, `${this.region}.CLOUD`, MANAGER_URLS.EU.CLOUD)}#/iaas/vps/${vps.serviceName}`,
         stateParams: {
           serviceName: vps.serviceName,
         },
