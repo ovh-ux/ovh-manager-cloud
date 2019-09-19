@@ -69,8 +69,6 @@ import 'ovh-ui-angular';
 import 'script-loader!popper.js/dist/umd/popper.js';
 import 'angular-translate-loader-pluggable';
 
-import 'script-loader!../assets/noVNC/include/util.js';
-
 import './app.scss';
 import './app.less';
 
