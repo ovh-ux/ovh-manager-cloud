@@ -1,3 +1,12 @@
+# [7.33.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.32.1...v7.33.0) (2019-10-07)
+
+
+### Features
+
+* enterprise cloud database ([#1580](https://github.com/ovh-ux/ovh-manager-cloud/issues/1580)) ([19e7445](https://github.com/ovh-ux/ovh-manager-cloud/commit/19e7445))
+
+
+
 ## [7.32.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.32.0...v7.32.1) (2019-09-19)
 
 
