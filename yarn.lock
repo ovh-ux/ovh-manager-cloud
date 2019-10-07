@@ -1008,11 +1008,12 @@
     lodash "^4.17.14"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.5.2.tgz#6e2b7e135ccaf17a39daade7b88d388936d3361f"
-  integrity sha512-fR+Be8VgvgMMXMEciVpnRzNTnZKgjZeU6vbb8kvJWIQiE8xWd17dplc6CkpneljCec/zoINm6NaaeGnb7Q9rXw==
+"@ovh-ux/manager-server-sidebar@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.6.2.tgz#ebc5559b4a729df6877f9b909d5ad88164201b11"
+  integrity sha512-JJ7RVK7CxCvZX6bPrgVIYwQvJeTuxSjXdFcvnbc28TFGoeJpNGsZ5J2hKjnExScpaDgp4zn+IOF+lkwFJCMM4A==
   dependencies:
+    font-awesome "~4.7.0"
     jsurl "^0.1.5"
     lodash "^4.17.15"
 
@@ -4648,7 +4649,7 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "=3.1.0"
 
-font-awesome@^4.0.0:
+font-awesome@^4.0.0, font-awesome@~4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
   integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
