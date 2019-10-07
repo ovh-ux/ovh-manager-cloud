@@ -1,3 +1,12 @@
+## [7.33.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.33.0...v7.33.1) (2019-10-07)
+
+
+### Features
+
+* bump @ovh-ux/manager-navbar ([#1584](https://github.com/ovh-ux/ovh-manager-cloud/issues/1584)) ([5239f20](https://github.com/ovh-ux/ovh-manager-cloud/commit/5239f20))
+
+
+
 # [7.33.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.32.1...v7.33.0) (2019-10-07)
 
 
