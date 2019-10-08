@@ -1008,10 +1008,10 @@
     lodash "^4.17.15"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.6.2.tgz#ebc5559b4a729df6877f9b909d5ad88164201b11"
-  integrity sha512-JJ7RVK7CxCvZX6bPrgVIYwQvJeTuxSjXdFcvnbc28TFGoeJpNGsZ5J2hKjnExScpaDgp4zn+IOF+lkwFJCMM4A==
+"@ovh-ux/manager-server-sidebar@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.6.3.tgz#3ccbea8a9e41b24be978311bdd20030fb591119a"
+  integrity sha512-wiExLchTd2TrHNUw1FMvOemxy7lUtj1H+AZ51by3DlmqSCi3/5P7TrGfcxWhSk+Cpu4dFq0+S+NoO8ZdE6GQ1g==
   dependencies:
     font-awesome "~4.7.0"
     jsurl "^0.1.5"
