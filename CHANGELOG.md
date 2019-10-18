@@ -1,3 +1,12 @@
+## [7.33.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.33.2...v7.33.3) (2019-10-18)
+
+
+### Bug Fixes
+
+* **vps:** disable vps section for US ([#1593](https://github.com/ovh-ux/ovh-manager-cloud/issues/1593)) ([09f38a3](https://github.com/ovh-ux/ovh-manager-cloud/commit/09f38a353c6796f73a55de4d13f32eace592e5b2))
+
+
+
 ## [7.33.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.33.1...v7.33.2) (2019-10-08)
 
 

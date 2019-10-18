@@ -1,6 +1,6 @@
 {
   "name": "ovh-manager-cloud",
-  "version": "7.33.2",
+  "version": "7.33.3",
   "private": true,
   "description": "OVH Cloud control panel",
   "keywords": [
