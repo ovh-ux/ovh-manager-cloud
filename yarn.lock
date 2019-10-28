@@ -1008,9 +1008,10 @@
     lodash "^4.17.15"
     moment "^2.24.0"
 
-"@ovh-ux/manager-server-sidebar@git+https://github.com/ovh/manager#split-manager-server-sidebar/feat-vps-order-link":
-  version "0.6.7"
-  resolved "git+https://github.com/ovh/manager#992179dd6b6e3ddcddb9da11ac5ac7e3d3391df9"
+"@ovh-ux/manager-server-sidebar@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-server-sidebar/-/manager-server-sidebar-0.7.0.tgz#60d9acdb82c62594b5450a0b00fb4c81abdaebbe"
+  integrity sha512-E5DhxWb7OF0q349Ch82vN6JCAVbXgzm0nd2S5BJhaZSpLldu0A4sVW9ygR1cyqVriIiWrRwMhJk75dQJBvitDg==
   dependencies:
     font-awesome "~4.7.0"
     jsurl "^0.1.5"
