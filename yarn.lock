@@ -8020,10 +8020,10 @@ ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0:
   version "0.8.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-toaster/tar.gz/06d24889e94b8d816afee8e94185697cf68f2338"
 
-ovh-api-services@^9.8.0:
-  version "9.8.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.8.0.tgz#9764da1793ba3bd01bf897c2be6298a9de6cc2cb"
-  integrity sha512-WI9TfBkxkR5TZvQU1Xx8NIRwpS3TVqa7gQwRye+3Wj+b2UIGKAOmf0/fjGTsXSQBPsnMo3U4P+9YmjSO0OX5/A==
+ovh-api-services@^9.23.3:
+  version "9.23.3"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.23.3.tgz#352445b336bcaaf3a730584e485d71d1e88825bf"
+  integrity sha512-XnMVLmptJZAIQWYBc8byKWUVA1SiEeLfQOh94Js+Oi6gym90UTi9WwtBM9crtGbiCM8ORahlCn4cr2sNVkpM+w==
   dependencies:
     lodash "^4.17.15"
 
