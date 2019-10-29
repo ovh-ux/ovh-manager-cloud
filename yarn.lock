@@ -1000,10 +1000,10 @@
     "@ovh-ux/ng-translate-async-loader" "^2.0.0"
     lodash "^4.17.15"
 
-"@ovh-ux/manager-navbar@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-2.0.3.tgz#75ca0096b3f044097ad0a7b2c408a5dfa39e56e9"
-  integrity sha512-15TrMZ3af59Urh/cewSjZvAZqD0aArzeEg7BwtpWiM8USHtqCKtuTXTsUTD5EHufFkenyfv/x+oFq4lqJd/IbQ==
+"@ovh-ux/manager-navbar@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-navbar/-/manager-navbar-2.1.0.tgz#9f6cb3a905db9c21015e487c4740b761b392474a"
+  integrity sha512-1h5JU5L4IvxSRP1HaCIY1IK0NNL3sHYrIl6hSnmcW/3ZF48cB/7VKXFn3QZRH74jNta0VwGZj13UA1s+P0eTGg==
   dependencies:
     lodash "^4.17.15"
     moment "^2.24.0"
