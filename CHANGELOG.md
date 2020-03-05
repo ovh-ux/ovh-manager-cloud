@@ -1,3 +1,7 @@
+## [99.0.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.5...v99.0.6) (2020-03-05)
+
+
+
 ## [99.0.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v99.0.4...v99.0.5) (2019-09-17)
 
 
